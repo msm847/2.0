@@ -3,6 +3,7 @@ import ModulesGrid from "@/components/vigilum/ModulesGrid";
 import ClauseDemo from "@/components/vigilum/ClauseDemo";
 import UseCases from "@/components/vigilum/UseCases";
 import AboutSection from "@/components/vigilum/AboutSection";
+import Newsletter from "@/components/vigilum/Newsletter";
 
 const VigilumPage = () => {
   return (
@@ -12,6 +13,7 @@ const VigilumPage = () => {
       <ClauseDemo />
       <UseCases />
       <AboutSection />
+      <Newsletter />
     </div>
   );
 };
