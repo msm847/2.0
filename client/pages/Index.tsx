@@ -235,11 +235,9 @@ export default function Index() {
                   STRUCTURAL RISK SIMULATION
                 </p>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
-                  Vigilum projects legal systems into a semantic typology space
-                  — mapping how clause logic translates into Discretionary Gaps,
-                  Compliance Illusion, Risk Transfer, or Structural Blindspots.
-                  <br />
-                  <em>This is not anomaly detection. It's design modeling.</em>
+                  Clause structures are mapped into higher-dimensional semantic
+                  typology space — revealing how legal form produces risk in
+                  permissible form.
                 </p>
                 <button className="text-vigilum-blue hover:text-purple-400 transition-colors duration-300 font-medium text-sm">
                   → Explore Typologies
