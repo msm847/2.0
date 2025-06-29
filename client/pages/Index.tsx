@@ -22,19 +22,19 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="min-h-screen bg-vigilum text-vigilum-body font-plex-sans">
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Shield className="w-8 h-8 text-blue-400" />
-            <span className="text-xl font-bold">Vigilum.AI</span>
+            <Shield className="w-8 h-8 text-vigilum-blue" />
+            <span className="text-xl font-medium">Vigilum.AI</span>
           </div>
           <div className="flex items-center space-x-4">
             <Link to="/vigilum">
               <Button
                 variant="outline"
-                className="border-slate-600 text-slate-300 hover:bg-slate-800"
+                className="border-slate-600 text-vigilum-subheadline hover:bg-slate-800 font-medium"
               >
                 Full Platform
               </Button>
@@ -44,38 +44,49 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-4 py-20">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-6xl font-bold mb-12 tracking-tight">
-            When <span className="text-red-400">meaning</span> collapses,
+      <main className="container mx-auto px-4 py-32">
+        <div className="max-w-3xl mx-auto space-y-12">
+          <h1 className="text-6xl font-medium tracking-tight leading-tight">
+            When meaning collapses,
             <br />
-            power hides in <span className="text-blue-400">format</span>.
+            power hides in format.
           </h1>
 
-          <div className="mb-8">
-            <p className="text-sm text-slate-400 uppercase tracking-wider mb-2">
-              STRUCTURAL GOVERNANCE INTELLIGENCE
-            </p>
-            <p className="text-lg text-slate-300 mb-6 max-w-3xl mx-auto">
-              — where structure, not intent, defines institutional risk
+          <div className="space-y-6">
+            <div>
+              <p
+                className="text-sm text-vigilum-label uppercase tracking-wide font-medium mb-3"
+                style={{ letterSpacing: "-0.02em" }}
+              >
+                STRUCTURAL GOVERNANCE INTELLIGENCE
+              </p>
+              <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
+                — where structure, not intent, defines institutional risk
+              </p>
+            </div>
+
+            <p
+              className="text-2xl text-vigilum-body font-medium leading-relaxed max-w-2xl"
+              style={{ lineHeight: "1.5" }}
+            >
+              Vigilum simulates how legal systems encode exposure through clause
+              sequence, override logic, and typological collapse.
             </p>
           </div>
 
-          <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
-            Vigilum simulates how legal systems encode exposure through clause
-            sequence, override logic, and typological collapse.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex gap-4">
             <Link to="/vigilum">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button
+                size="lg"
+                className="bg-vigilum-blue hover:bg-blue-600 text-white font-medium px-8 py-3"
+              >
                 Explore Platform
               </Button>
             </Link>
             <Button
               size="lg"
               variant="outline"
-              className="border-slate-600 text-slate-300 hover:bg-slate-800"
+              className="border-slate-600 text-vigilum-subheadline hover:bg-slate-800 font-medium px-8 py-3"
             >
               View the Codex
             </Button>
