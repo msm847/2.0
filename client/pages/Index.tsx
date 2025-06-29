@@ -140,7 +140,7 @@ export default function Index() {
 
               <div className="space-y-4">
                 <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
-                  CLAUSE-BASED INTELLIGENCE
+                  FROM LANGUAGE TO LOGIC
                 </p>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
                   Vigilum analyzes legal clauses as executable operators —
