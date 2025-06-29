@@ -306,9 +306,6 @@ export default function Index() {
                 <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
                   LOOPHOLE PATTERN RECOGNITION
                 </p>
-                <h3 className="text-xl font-medium text-vigilum-body">
-                  Loophole Pattern Recognition
-                </h3>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
                   Trained on a corpus of 200+ known structural evasions — from
                   Article 72 expansions to in-house procurement exemptions —
