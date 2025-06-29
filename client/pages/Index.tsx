@@ -32,10 +32,7 @@ export default function Index() {
           </div>
           <div className="flex items-center space-x-4">
             <Link to="/vigilum">
-              <Button
-                variant="outline"
-                className="border-slate-600 text-vigilum-label hover:bg-slate-800 font-medium"
-              >
+              <Button className="bg-vigilum-label text-black hover:bg-slate-400 font-medium">
                 Full Platform
               </Button>
             </Link>
