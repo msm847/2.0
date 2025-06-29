@@ -47,9 +47,9 @@ export default function Index() {
       <main className="container mx-auto px-4 py-20">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-6xl font-bold mb-6 tracking-tight">
-            Before it's <span className="text-red-400">corruption</span>,
+            When <span className="text-red-400">meaning</span> collapses,
             <br />
-            it's <span className="text-blue-400">design</span>.
+            power hides in <span className="text-blue-400">format</span>.
           </h1>
 
           <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
