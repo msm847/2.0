@@ -88,45 +88,243 @@ export default function Index() {
             </Button>
           </div>
 
-          {/* Feature Grid */}
+          {/* Module Block */}
           <div className="grid md:grid-cols-3 gap-8 mt-20">
-            <div className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Brain className="w-8 h-8 text-blue-600" />
+            {/* Column 1 - Clause-Based Intelligence */}
+            <div
+              className="group p-8 rounded-lg border border-slate-700/30 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer"
+              style={{ background: "rgba(255, 255, 255, 0.02)" }}
+            >
+              <div className="mb-6">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    className="w-12 h-12 text-vigilum-blue group-hover:text-yellow-400 transition-colors duration-300"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <rect
+                      x="6"
+                      y="6"
+                      width="36"
+                      height="28"
+                      rx="2"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M12 12h24M12 18h20M12 24h16"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <circle
+                      cx="38"
+                      cy="38"
+                      r="6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M35 38h6M38 35v6"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M24 30l8 4"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeDasharray="2,2"
+                    />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                AI-Powered Analysis
-              </h3>
-              <p className="text-slate-400">
-                Six specialized modules analyze legal structures using quantum
-                logic and semantic weighting to detect risk patterns.
-              </p>
+
+              <div className="space-y-4">
+                <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
+                  CLAUSE-BASED INTELLIGENCE
+                </p>
+                <h3 className="text-xl font-medium text-vigilum-body">
+                  Clause-Based Intelligence
+                </h3>
+                <p className="text-base leading-relaxed text-vigilum-subheadline">
+                  Vigilum analyzes legal clauses as executable operators —
+                  modeling how risk is embedded not by keywords, but through
+                  clause sequence, override paths, and non-commutative legal
+                  structure.
+                  <br />
+                  <em>Risk isn't stated — it's simulated.</em>
+                </p>
+                <button className="text-vigilum-blue hover:text-yellow-400 transition-colors duration-300 font-medium text-sm">
+                  → View the CLAVIS module
+                </button>
+              </div>
             </div>
 
-            <div className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-8 h-8 text-green-600" />
+            {/* Column 2 - Structural Risk Simulation */}
+            <div
+              className="group p-8 rounded-lg border border-slate-700/30 hover:border-purple-500/50 transition-all duration-300 cursor-pointer"
+              style={{ background: "rgba(255, 255, 255, 0.02)" }}
+            >
+              <div className="mb-6">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    className="w-12 h-12 text-vigilum-blue group-hover:text-purple-400 transition-colors duration-300"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="12"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      opacity="0.6"
+                    />
+                    <circle
+                      cx="24"
+                      cy="24"
+                      r="6"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      opacity="0.4"
+                    />
+                    <text
+                      x="18"
+                      y="12"
+                      className="text-xs font-mono fill-current"
+                    >
+                      DG
+                    </text>
+                    <text
+                      x="30"
+                      y="12"
+                      className="text-xs font-mono fill-current"
+                    >
+                      CI
+                    </text>
+                    <text
+                      x="18"
+                      y="38"
+                      className="text-xs font-mono fill-current"
+                    >
+                      RT
+                    </text>
+                    <text
+                      x="30"
+                      y="38"
+                      className="text-xs font-mono fill-current"
+                    >
+                      SB
+                    </text>
+                    <path
+                      d="M24 6v12M42 24H30M24 42V30M6 24h12"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      opacity="0.5"
+                    />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Proactive Detection
-              </h3>
-              <p className="text-slate-400">
-                Identify structural vulnerabilities before any funds are spent,
-                tenders awarded, or laws signed.
-              </p>
+
+              <div className="space-y-4">
+                <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
+                  STRUCTURAL RISK SIMULATION
+                </p>
+                <h3 className="text-xl font-medium text-vigilum-body">
+                  Structural Risk Simulation
+                </h3>
+                <p className="text-base leading-relaxed text-vigilum-subheadline">
+                  Vigilum projects legal systems into a semantic typology space
+                  — mapping how clause logic translates into Discretionary Gaps,
+                  Compliance Illusion, Risk Transfer, or Structural Blindspots.
+                  <br />
+                  <em>This is not anomaly detection. It's design modeling.</em>
+                </p>
+                <button className="text-vigilum-blue hover:text-purple-400 transition-colors duration-300 font-medium text-sm">
+                  → Explore Typologies
+                </button>
+              </div>
             </div>
 
-            <div className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-purple-600" />
+            {/* Column 3 - Loophole Pattern Recognition */}
+            <div
+              className="group p-8 rounded-lg border border-slate-700/30 hover:border-blue-500/50 transition-all duration-300 cursor-pointer"
+              style={{ background: "rgba(255, 255, 255, 0.02)" }}
+            >
+              <div className="mb-6">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    className="w-12 h-12 text-vigilum-blue group-hover:text-blue-400 transition-colors duration-300"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <rect
+                      x="6"
+                      y="8"
+                      width="36"
+                      height="24"
+                      rx="2"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M12 14h24M12 20h20M12 26h16"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M18 36c0-4 4-8 12-6s8 6 4 10c-2 2-8 0-10-2"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                    <circle
+                      cx="36"
+                      cy="40"
+                      r="3"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <text
+                      x="34"
+                      y="42"
+                      className="text-xs font-mono fill-current"
+                    >
+                      L
+                    </text>
+                    <path
+                      d="M24 32l6 4M30 32l-6 4"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      opacity="0.6"
+                    />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Real-World Validated
-              </h3>
-              <p className="text-slate-400">
-                Grounded in analysis of major cases including the Vilnius
-                Stadium project and EU procurement patterns.
-              </p>
+
+              <div className="space-y-4">
+                <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
+                  LOOPHOLE PATTERN RECOGNITION
+                </p>
+                <h3 className="text-xl font-medium text-vigilum-body">
+                  Loophole Pattern Recognition
+                </h3>
+                <p className="text-base leading-relaxed text-vigilum-subheadline">
+                  Trained on a corpus of 200+ known structural evasions — from
+                  Article 72 expansions to in-house procurement exemptions —
+                  Vigilum matches clause logic to real-world loophole profiles
+                  before they're exploited.
+                </p>
+                <button className="text-vigilum-blue hover:text-blue-400 transition-colors duration-300 font-medium text-sm">
+                  → Browse Loophole Library
+                </button>
+              </div>
             </div>
           </div>
 
