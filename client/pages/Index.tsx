@@ -46,29 +46,30 @@ export default function Index() {
       {/* Hero Section */}
       <main className="container mx-auto px-4 py-20">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-6xl font-bold mb-6 tracking-tight">
+          <h1 className="text-6xl font-bold mb-12 tracking-tight">
             When <span className="text-red-400">meaning</span> collapses,
             <br />
             power hides in <span className="text-blue-400">format</span>.
           </h1>
 
-          <p className="text-xl text-slate-300 mb-4 max-w-3xl mx-auto">
+          <div className="mb-8">
+            <p className="text-sm text-slate-400 uppercase tracking-wider mb-2">
+              STRUCTURAL GOVERNANCE INTELLIGENCE
+            </p>
+            <p className="text-lg text-slate-300 mb-6 max-w-3xl mx-auto">
+              — where structure, not intent, defines institutional risk
+            </p>
+          </div>
+
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
             Vigilum simulates how legal systems encode exposure through clause
             sequence, override logic, and typological collapse.
-          </p>
-
-          <p className="text-lg text-slate-400 mb-8 max-w-3xl mx-auto">
-            <strong className="text-white">
-              Structural Governance Intelligence
-            </strong>{" "}
-            — where structure, not intent, defines institutional risk.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Link to="/vigilum">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 Explore Platform
-                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
             <Button
@@ -76,7 +77,7 @@ export default function Index() {
               variant="outline"
               className="border-slate-600 text-slate-300 hover:bg-slate-800"
             >
-              Watch Demo
+              View the Codex
             </Button>
           </div>
 
