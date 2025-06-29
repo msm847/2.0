@@ -111,5 +111,48 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family:
+      "IBM Plex Sans",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-plex-sans {
+    font-family:
+      "IBM Plex Sans",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  .font-plex-mono {
+    font-family: "IBM Plex Mono", "Consolas", "Monaco", monospace;
+  }
+
+  .text-vigilum-label {
+    color: hsl(var(--vigilum-label));
+  }
+
+  .text-vigilum-subheadline {
+    color: hsl(var(--vigilum-subheadline));
+  }
+
+  .text-vigilum-body {
+    color: hsl(var(--vigilum-body));
+  }
+
+  .bg-vigilum {
+    background-color: hsl(var(--vigilum-bg));
+  }
+
+  .text-vigilum-blue {
+    color: hsl(var(--vigilum-blue));
+  }
+
+  .bg-vigilum-blue {
+    background-color: hsl(var(--vigilum-blue));
   }
 }
