@@ -52,11 +52,13 @@ export default function Index() {
             power hides in <span className="text-blue-400">format</span>.
           </h1>
 
-          <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 mb-4 max-w-3xl mx-auto">
             Vigilum simulates how legal systems encode exposure through clause
             sequence, override logic, and typological collapse.
+          </p>
+
+          <p className="text-lg text-slate-400 mb-8 max-w-3xl mx-auto">
             <strong className="text-white">
-              {" "}
               Structural Governance Intelligence
             </strong>{" "}
             — where structure, not intent, defines institutional risk.
