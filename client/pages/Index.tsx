@@ -233,9 +233,6 @@ export default function Index() {
               </div>
 
               <div className="space-y-4">
-                <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
-                  STRUCTURAL RISK SIMULATION
-                </p>
                 <h3 className="text-xl font-medium text-vigilum-body">
                   Structural Risk Simulation
                 </h3>
