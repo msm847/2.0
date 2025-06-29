@@ -95,8 +95,8 @@ const Hero = () => {
 
           {/* Animation */}
           <div className="lg:pl-12">
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8">
-              <h3 className="text-lg font-semibold mb-6 text-center">
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-8">
+              <h3 className="text-lg font-medium mb-6 text-center text-vigilum-subheadline font-plex-mono">
                 Non-Commutative Clause Logic
               </h3>
 
@@ -105,12 +105,14 @@ const Hero = () => {
                 <div
                   className={`p-4 rounded border-2 transition-all duration-1000 ${
                     animationStep >= 1
-                      ? "border-blue-400 bg-blue-400/10"
-                      : "border-slate-600 bg-slate-700/50"
+                      ? "border-vigilum-blue/60 bg-vigilum-blue/5"
+                      : "border-slate-600 bg-slate-700/30"
                   }`}
                 >
-                  <div className="text-sm text-slate-400 mb-1">Clause A:</div>
-                  <div className="text-white">
+                  <div className="text-sm text-vigilum-label mb-1 font-plex-mono">
+                    Clause A:
+                  </div>
+                  <div className="text-vigilum-body font-medium">
                     "Emergency procurement may bypass standard tender
                     procedures..."
                   </div>
@@ -119,8 +121,10 @@ const Hero = () => {
                 {/* Arrow */}
                 <div className="flex justify-center">
                   <div
-                    className={`transition-all duration-500 ${
-                      animationStep >= 2 ? "text-yellow-400" : "text-slate-600"
+                    className={`transition-all duration-500 text-2xl ${
+                      animationStep >= 2
+                        ? "text-vigilum-blue"
+                        : "text-slate-600"
                     }`}
                   >
                     ↓
@@ -131,12 +135,14 @@ const Hero = () => {
                 <div
                   className={`p-4 rounded border-2 transition-all duration-1000 ${
                     animationStep >= 2
-                      ? "border-green-400 bg-green-400/10"
-                      : "border-slate-600 bg-slate-700/50"
+                      ? "border-vigilum-blue/60 bg-vigilum-blue/5"
+                      : "border-slate-600 bg-slate-700/30"
                   }`}
                 >
-                  <div className="text-sm text-slate-400 mb-1">Clause B:</div>
-                  <div className="text-white">
+                  <div className="text-sm text-vigilum-label mb-1 font-plex-mono">
+                    Clause B:
+                  </div>
+                  <div className="text-vigilum-body font-medium">
                     "Emergency status determination is at ministry
                     discretion..."
                   </div>
@@ -145,8 +151,8 @@ const Hero = () => {
                 {/* Result */}
                 <div className="flex justify-center">
                   <div
-                    className={`transition-all duration-500 ${
-                      animationStep >= 3 ? "text-red-400" : "text-slate-600"
+                    className={`transition-all duration-500 text-2xl ${
+                      animationStep >= 3 ? "text-orange-400" : "text-slate-600"
                     }`}
                   >
                     ⚠
@@ -156,14 +162,16 @@ const Hero = () => {
                 <div
                   className={`p-4 rounded border-2 transition-all duration-1000 ${
                     animationStep >= 3
-                      ? "border-red-400 bg-red-400/10"
-                      : "border-slate-600 bg-slate-700/50"
+                      ? "border-orange-400/60 bg-orange-400/5"
+                      : "border-slate-600 bg-slate-700/30"
                   }`}
                 >
-                  <div className="text-sm text-slate-400 mb-1">Result:</div>
+                  <div className="text-sm text-vigilum-label mb-1 font-plex-mono">
+                    Result:
+                  </div>
                   <div
-                    className={`transition-all duration-500 ${
-                      animationStep >= 3 ? "text-red-300" : "text-slate-500"
+                    className={`transition-all duration-500 font-medium ${
+                      animationStep >= 3 ? "text-orange-300" : "text-slate-500"
                     }`}
                   >
                     <strong>Discretionary Gap (DG)</strong> - Unlimited bypass
@@ -172,7 +180,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="mt-6 text-center text-sm text-slate-400">
+              <div className="mt-6 text-center text-sm text-vigilum-label font-plex-mono">
                 Order matters: A→B ≠ B→A
               </div>
             </div>
