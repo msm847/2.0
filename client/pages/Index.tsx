@@ -230,9 +230,9 @@ export default function Index() {
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-medium text-vigilum-body">
-                  Structural Risk Simulation
-                </h3>
+                <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
+                  STRUCTURAL RISK SIMULATION
+                </p>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
                   Vigilum projects legal systems into a semantic typology space
                   — mapping how clause logic translates into Discretionary Gaps,
