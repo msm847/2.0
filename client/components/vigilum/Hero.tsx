@@ -36,16 +36,14 @@ const Hero = () => {
                 power hides in <span className="text-blue-400">format</span>.
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
-                Vigilum detects how institutions encode exposure into legal
-                systems — structurally, before it breaches.
+                Vigilum simulates how legal systems encode exposure through
+                clause sequence, override logic, and typological collapse.
               </p>
               <p className="text-lg text-slate-400 max-w-2xl">
-                A new category of tool:{" "}
                 <strong className="text-white">
                   Structural Governance Intelligence
                 </strong>{" "}
-                — focused on systemic risk by design rather than after-the-fact
-                compliance breaches.
+                — where structure, not intent, defines institutional risk.
               </p>
             </div>
 
