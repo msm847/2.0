@@ -53,13 +53,13 @@ export default function Index() {
           </h1>
 
           <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-            Vigilum detects how institutions encode exposure into legal systems
-            — structurally, before it breaches. A new category of tool:
+            Vigilum simulates how legal systems encode exposure through clause
+            sequence, override logic, and typological collapse.
             <strong className="text-white">
               {" "}
               Structural Governance Intelligence
-            </strong>
-            .
+            </strong>{" "}
+            — where structure, not intent, defines institutional risk.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
