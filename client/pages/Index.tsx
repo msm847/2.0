@@ -135,22 +135,30 @@ export default function Index() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-slate-700">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-8 border-t border-slate-700/50">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400">6</div>
-              <div className="text-sm text-slate-400">AI Modules</div>
+              <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
+                6
+              </div>
+              <div className="text-sm text-vigilum-label">AI Modules</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400">200+</div>
-              <div className="text-sm text-slate-400">Loopholes Mapped</div>
+              <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
+                200+
+              </div>
+              <div className="text-sm text-vigilum-label">Loopholes Mapped</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400">4</div>
-              <div className="text-sm text-slate-400">Risk Typologies</div>
+              <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
+                4
+              </div>
+              <div className="text-sm text-vigilum-label">Risk Typologies</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">€2B+</div>
-              <div className="text-sm text-slate-400">Risk Detected</div>
+              <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
+                €2B+
+              </div>
+              <div className="text-sm text-vigilum-label">Risk Detected</div>
             </div>
           </div>
 
