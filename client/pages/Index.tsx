@@ -145,10 +145,9 @@ export default function Index() {
                   To logic
                 </p>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
-                  Vigilum analyzes legal clauses as executable operators —
-                  modeling how risk is embedded not by keywords, but through
-                  clause sequence, override paths, and non-commutative legal
-                  structure.
+                  Legal texts are interpreted as executable operators — modeling
+                  how risk is embedded not by keywords, but through clause
+                  sequence, override paths, and non-commutative legal structure.
                   <br />
                   <em>Risk isn't stated — it's simulated.</em>
                 </p>
