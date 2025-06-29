@@ -78,7 +78,7 @@ export default function Index() {
             <Link to="/vigilum">
               <Button
                 size="lg"
-                className="bg-vigilum-blue hover:bg-blue-600 text-white font-medium px-8 py-3"
+                className="bg-blue-700 hover:bg-blue-800 text-white font-medium px-8 py-3"
               >
                 Explore Platform
               </Button>
