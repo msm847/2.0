@@ -31,9 +31,9 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold tracking-tight">
-                Before it's <span className="text-red-400">corruption</span>,
+                When <span className="text-red-400">meaning</span> collapses,
                 <br />
-                it's <span className="text-blue-400">design</span>.
+                power hides in <span className="text-blue-400">format</span>.
               </h1>
               <p className="text-xl text-slate-300 max-w-2xl">
                 Vigilum detects how institutions encode exposure into legal
