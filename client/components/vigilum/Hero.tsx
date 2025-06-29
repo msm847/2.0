@@ -66,8 +66,7 @@ const Hero = () => {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-slate-600 text-vigilum-label hover:bg-slate-800 font-medium px-8 py-3"
+                className="bg-vigilum-label text-black hover:bg-slate-400 font-medium px-8 py-3"
               >
                 View the Codex
               </Button>
