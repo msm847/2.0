@@ -35,15 +35,21 @@ const Hero = () => {
                 <br />
                 power hides in <span className="text-blue-400">format</span>.
               </h1>
-              <p className="text-xl text-slate-300 max-w-2xl">
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm text-slate-400 uppercase tracking-wider mb-2">
+                  STRUCTURAL GOVERNANCE INTELLIGENCE
+                </p>
+                <p className="text-lg text-slate-300 max-w-2xl">
+                  — where structure, not intent, defines institutional risk
+                </p>
+              </div>
+
+              <p className="text-xl text-white max-w-2xl">
                 Vigilum simulates how legal systems encode exposure through
                 clause sequence, override logic, and typological collapse.
-              </p>
-              <p className="text-lg text-slate-400 max-w-2xl">
-                <strong className="text-white">
-                  Structural Governance Intelligence
-                </strong>{" "}
-                — where structure, not intent, defines institutional risk.
               </p>
             </div>
 
@@ -52,21 +58,14 @@ const Hero = () => {
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white"
               >
-                Explore the Codex
+                Explore Platform
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-slate-400 text-white hover:bg-slate-800"
               >
-                See Loophole Map
-              </Button>
-              <Button
-                size="lg"
-                variant="ghost"
-                className="text-slate-300 hover:text-white hover:bg-slate-800"
-              >
-                Try Simulation
+                View the Codex
               </Button>
             </div>
 
