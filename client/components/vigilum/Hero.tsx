@@ -12,9 +12,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+    <section className="relative min-h-screen bg-vigilum text-vigilum-body font-plex-sans overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
@@ -26,44 +26,48 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight">
-                When <span className="text-red-400">meaning</span> collapses,
-                <br />
-                power hides in <span className="text-blue-400">format</span>.
-              </h1>
-            </div>
+          <div className="space-y-12">
+            <h1 className="text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
+              When meaning collapses,
+              <br />
+              power hides in format.
+            </h1>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div>
-                <p className="text-sm text-slate-400 uppercase tracking-wider mb-2">
+                <p
+                  className="text-sm text-vigilum-label uppercase tracking-wide font-medium mb-3"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
                   STRUCTURAL GOVERNANCE INTELLIGENCE
                 </p>
-                <p className="text-lg text-slate-300 max-w-2xl">
+                <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed max-w-2xl">
                   — where structure, not intent, defines institutional risk
                 </p>
               </div>
 
-              <p className="text-xl text-white max-w-2xl">
+              <p
+                className="text-2xl text-vigilum-body font-medium leading-relaxed max-w-2xl"
+                style={{ lineHeight: "1.5" }}
+              >
                 Vigilum simulates how legal systems encode exposure through
                 clause sequence, override logic, and typological collapse.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex gap-4">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white"
+                className="bg-vigilum-blue hover:bg-blue-600 text-white font-medium px-8 py-3"
               >
                 Explore Platform
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-slate-400 text-white hover:bg-slate-800"
+                className="border-slate-600 text-vigilum-subheadline hover:bg-slate-800 font-medium px-8 py-3"
               >
                 View the Codex
               </Button>
