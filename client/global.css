@@ -41,6 +41,13 @@
 
     --radius: 0.5rem;
 
+    /* Vigilum color system */
+    --vigilum-bg: 217 28% 6%; /* #0F121A */
+    --vigilum-label: 223 13% 69%; /* #AAB0BF */
+    --vigilum-subheadline: 223 14% 83%; /* #D0D4DB */
+    --vigilum-body: 225 22% 97%; /* #F5F7FA */
+    --vigilum-blue: 222 100% 59%; /* #316EFF */
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
