@@ -306,7 +306,7 @@ export default function Index() {
 
               <div className="space-y-4">
                 <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
-                  LOOPHOLE PATTERN RECOGNITION
+                  PERFORMANCE OVER PROMISE
                 </p>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
                   Trained on a corpus of 200+ known structural evasions — from
