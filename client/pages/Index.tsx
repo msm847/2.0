@@ -34,7 +34,7 @@ export default function Index() {
             <Link to="/vigilum">
               <Button
                 variant="outline"
-                className="border-slate-600 text-black hover:bg-slate-800 font-medium"
+                className="border-slate-600 text-vigilum-label hover:bg-slate-800 font-medium"
               >
                 Full Platform
               </Button>
