@@ -142,9 +142,6 @@ export default function Index() {
                 <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
                   CLAUSE-BASED INTELLIGENCE
                 </p>
-                <h3 className="text-xl font-medium text-vigilum-body">
-                  Clause-Based Intelligence
-                </h3>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
                   Vigilum analyzes legal clauses as executable operators —
                   modeling how risk is embedded not by keywords, but through
