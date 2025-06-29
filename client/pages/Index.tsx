@@ -145,11 +145,11 @@ export default function Index() {
                   To logic
                 </p>
                 <p className="text-base leading-relaxed text-vigilum-subheadline">
-                  Legal texts are interpreted as executable operators — modeling
-                  how risk is embedded not by keywords, but through clause
-                  sequence, override paths, and non-commutative legal structure.
+                  Failure isn't random — it's recursive, institutional, and
+                  often indistinguishable from function.
                   <br />
-                  <em>Risk isn't stated — it's simulated.</em>
+                  Structure is simulated long before consequence emerges,
+                  encoding risk through what appears to constrain.
                 </p>
                 <button className="text-vigilum-blue hover:text-yellow-400 transition-colors duration-300 font-medium text-sm">
                   → View the CLAVIS module
