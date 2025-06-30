@@ -33,49 +33,81 @@ export default function Index() {
 
           <div
             className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30"
-            style={{ top: "35%", right: "30%" }}
+            style={{
+              top: "35%",
+              right: "30%",
+              animation: "float-1 19s infinite linear, pulse 2.1s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
           </div>
           <div
             className="absolute w-4 h-4 bg-cyan-400 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-400/40"
-            style={{ top: "25%", right: "25%" }}
+            style={{
+              top: "25%",
+              right: "25%",
+              animation: "float-2 22s infinite linear, pulse 2.3s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-20"></div>
           </div>
           <div
             className="absolute w-2 h-2 bg-vigilum-blue rounded-full opacity-50 animate-pulse shadow-md shadow-vigilum-blue/40"
-            style={{ top: "55%", left: "35%" }}
+            style={{
+              top: "55%",
+              left: "35%",
+              animation: "float-3 18s infinite linear, pulse 2s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-25"></div>
           </div>
           <div
             className="absolute w-3 h-3 bg-blue-300 rounded-full opacity-35 animate-pulse shadow-lg shadow-blue-300/30"
-            style={{ top: "45%", left: "65%" }}
+            style={{
+              top: "45%",
+              left: "65%",
+              animation: "float-1 21s infinite linear, pulse 2.2s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-blue-300 rounded-full animate-ping opacity-20"></div>
           </div>
           <div
             className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-45 animate-pulse shadow-md shadow-cyan-400/30"
-            style={{ top: "75%", left: "20%" }}
+            style={{
+              top: "75%",
+              left: "20%",
+              animation: "float-2 17s infinite linear, pulse 1.9s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-20"></div>
           </div>
           <div
             className="absolute w-3 h-3 bg-vigilum-blue rounded-full opacity-40 animate-pulse shadow-lg shadow-vigilum-blue/40"
-            style={{ top: "85%", right: "40%" }}
+            style={{
+              top: "85%",
+              right: "40%",
+              animation: "float-3 20s infinite linear, pulse 2.4s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-25"></div>
           </div>
           <div
             className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-35 animate-pulse shadow-md shadow-blue-400/30"
-            style={{ top: "110%", left: "45%" }}
+            style={{
+              top: "110%",
+              left: "45%",
+              animation: "float-1 23s infinite linear, pulse 2.1s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
           </div>
           <div
             className="absolute w-4 h-4 bg-cyan-300 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-300/40"
-            style={{ top: "130%", right: "30%" }}
+            style={{
+              top: "130%",
+              right: "30%",
+              animation: "float-2 16s infinite linear, pulse 2.5s infinite",
+            }}
           >
             <div className="absolute inset-0 bg-cyan-300 rounded-full animate-ping opacity-20"></div>
           </div>
