@@ -309,26 +309,24 @@ export default function Index() {
           >
             <defs>
               <linearGradient
-                id="web-gradient-1"
+                id="connection-blue"
                 x1="0%"
                 y1="0%"
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.1" />
+                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.08" />
               </linearGradient>
               <linearGradient
-                id="web-gradient-2"
-                x1="100%"
+                id="connection-cyan"
+                x1="0%"
                 y1="0%"
-                x2="0%"
+                x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.6" />
-                <stop offset="50%" stopColor="#316EFF" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.1" />
+                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.06" />
               </linearGradient>
             </defs>
 
