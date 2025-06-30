@@ -210,19 +210,19 @@
 
 @keyframes float-2 {
   0% {
-    transform: translate3d(0, 0, 0) rotateY(0deg);
+    transform: translate3d(0, 0, 0);
     opacity: 0.4;
   }
   33% {
-    transform: translate3d(-75px, 80px, 25px) rotateY(120deg);
+    transform: translate3d(-75px, 80px, 25px);
     opacity: 0.6;
   }
   66% {
-    transform: translate3d(80px, -40px, -15px) rotateY(240deg);
+    transform: translate3d(80px, -40px, -15px);
     opacity: 0.3;
   }
   100% {
-    transform: translate3d(0, 0, 0) rotateY(360deg);
+    transform: translate3d(0, 0, 0);
     opacity: 0.4;
   }
 }
