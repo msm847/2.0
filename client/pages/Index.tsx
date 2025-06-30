@@ -527,7 +527,7 @@ export default function Index() {
             </line>
 
             {/* Mid-level interconnections */}
-            <line stroke="#60A5FA" strokeWidth="1" opacity="0.3">
+            <line stroke="#60A5FA" strokeWidth="0.8" opacity="0.3">
               <animate
                 attributeName="x1"
                 values="85%;90%;80%;85%"
