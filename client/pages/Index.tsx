@@ -372,18 +372,38 @@ export default function Index() {
 
             {/* cyan-400 (25%, right 25%) to blue-300 (45%, left 65%) */}
             <line
-              x1="75%"
-              y1="25%"
-              x2="65%"
-              y2="45%"
               stroke="url(#connection-cyan)"
-              strokeWidth="0.3"
-              opacity="0.12"
+              strokeWidth="0.8"
+              opacity="0.3"
               className="scroll-reveal-0"
             >
               <animate
+                attributeName="x1"
+                values="75%;73%;78%;76%;75%"
+                dur="22s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="25%;28%;23%;26%;25%"
+                dur="22s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="65%;67%;63%;66%;65%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="45%;43%;48%;44%;45%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
                 attributeName="opacity"
-                values="0.06;0.15;0.06"
+                values="0.15;0.4;0.15"
                 dur="7s"
                 repeatCount="indefinite"
               />
