@@ -71,25 +71,25 @@ export default function Index() {
               </div>
 
               {/* Three-way arrow diagram */}
-              <div className="relative flex justify-center items-center h-32">
+              <div className="relative flex justify-center items-center h-48">
                 {/* Central point */}
-                <div className="absolute w-3 h-3 bg-vigilum-blue rounded-full"></div>
+                <div className="absolute w-4 h-4 bg-vigilum-blue rounded-full"></div>
 
                 {/* Top arrow and bubble - Clause Sequence */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
                   <div className="flex flex-col items-center">
-                    <div className="bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50 mb-2">
-                      <span className="text-sm text-vigilum-body font-medium font-plex-mono">
+                    <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50 mb-4">
+                      <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
                         clause sequence
                       </span>
                     </div>
                     <svg
-                      className="w-8 h-8 text-vigilum-blue"
-                      viewBox="0 0 24 24"
+                      className="w-12 h-16 text-vigilum-blue"
+                      viewBox="0 0 24 32"
                       fill="none"
                     >
                       <path
-                        d="M12 2L12 10M12 2L8 6M12 2L16 6"
+                        d="M12 4L12 24M12 4L8 8M12 4L16 8"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
@@ -100,23 +100,23 @@ export default function Index() {
                 </div>
 
                 {/* Bottom left arrow and bubble - Override Logic */}
-                <div className="absolute -bottom-4 -left-16">
+                <div className="absolute -bottom-12 -left-20">
                   <div className="flex flex-col items-center">
                     <svg
-                      className="w-8 h-8 text-vigilum-blue transform rotate-45"
-                      viewBox="0 0 24 24"
+                      className="w-12 h-16 text-vigilum-blue transform rotate-45"
+                      viewBox="0 0 24 32"
                       fill="none"
                     >
                       <path
-                        d="M12 2L12 10M12 2L8 6M12 2L16 6"
+                        d="M12 4L12 24M12 4L8 8M12 4L16 8"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <div className="bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50 mt-2">
-                      <span className="text-sm text-vigilum-body font-medium font-plex-mono">
+                    <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50 mt-4">
+                      <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
                         override logic
                       </span>
                     </div>
@@ -124,23 +124,23 @@ export default function Index() {
                 </div>
 
                 {/* Bottom right arrow and bubble - Typological Collapse */}
-                <div className="absolute -bottom-4 -right-16">
+                <div className="absolute -bottom-12 -right-20">
                   <div className="flex flex-col items-center">
                     <svg
-                      className="w-8 h-8 text-vigilum-blue transform -rotate-45"
-                      viewBox="0 0 24 24"
+                      className="w-12 h-16 text-vigilum-blue transform -rotate-45"
+                      viewBox="0 0 24 32"
                       fill="none"
                     >
                       <path
-                        d="M12 2L12 10M12 2L8 6M12 2L16 6"
+                        d="M12 4L12 24M12 4L8 8M12 4L16 8"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <div className="bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50 mt-2">
-                      <span className="text-sm text-vigilum-body font-medium font-plex-mono">
+                    <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50 mt-4">
+                      <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
                         typological collapse
                       </span>
                     </div>
