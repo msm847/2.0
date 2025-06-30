@@ -409,35 +409,41 @@ export default function Index() {
               />
             </line>
 
-            <line stroke="url(#web-gradient-2)" strokeWidth="0.6" opacity="0.2">
+            {/* Mid level - vigilum-blue (55%, left 35%) to blue-300 (45%, left 65%) */}
+            <line
+              stroke="#316EFF"
+              strokeWidth="0.8"
+              opacity="0.3"
+              className="scroll-reveal-1"
+            >
               <animate
                 attributeName="x1"
-                values="50%;55%;45%;50%"
-                dur="19s"
+                values="35%;37%;33%;36%;35%"
+                dur="18s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="y1"
-                values="10%;15%;5%;10%"
-                dur="19s"
+                values="55%;53%;58%;54%;55%"
+                dur="18s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="x2"
-                values="10%;15%;5%;10%"
-                dur="22s"
+                values="65%;67%;63%;66%;65%"
+                dur="21s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="y2"
-                values="30%;35%;25%;30%"
-                dur="22s"
+                values="45%;43%;48%;44%;45%"
+                dur="21s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="opacity"
-                values="0.1;0.25;0.05;0.1"
-                dur="8s"
+                values="0.15;0.35;0.15"
+                dur="5s"
                 repeatCount="indefinite"
               />
             </line>
