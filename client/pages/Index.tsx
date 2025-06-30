@@ -54,7 +54,10 @@ export default function Index() {
           <div className="absolute top-[25%] left-[40%] w-1 h-1 bg-blue-300 rounded-full opacity-30 animate-pulse"></div>
 
           {/* Connection lines */}
-          <svg className="absolute inset-0 w-full h-full opacity-20">
+          <svg
+            className="absolute inset-0 w-full opacity-20"
+            style={{ height: "200vh" }}
+          >
             <defs>
               <linearGradient
                 id="line-gradient-1"
