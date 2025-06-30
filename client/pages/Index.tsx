@@ -85,30 +85,194 @@ export default function Index() {
             <div className="absolute inset-0 bg-cyan-300 rounded-full animate-ping opacity-20"></div>
           </div>
 
-          {/* Smaller distributed nodes */}
+          {/* Enhanced medium nodes with more movement */}
+          <div
+            className="absolute w-2 h-2 bg-blue-500 rounded-full opacity-45 animate-pulse shadow-md shadow-blue-500/30"
+            style={{
+              top: "10%",
+              left: "50%",
+              animation: "float-1 18s infinite linear, pulse 2s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div
+            className="absolute w-3 h-3 bg-cyan-500 rounded-full opacity-40 animate-pulse shadow-lg shadow-cyan-500/35"
+            style={{
+              top: "30%",
+              left: "10%",
+              animation: "float-2 22s infinite linear, pulse 2.5s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-cyan-500 rounded-full animate-ping opacity-30"></div>
+          </div>
+          <div
+            className="absolute w-2 h-2 bg-blue-300 rounded-full opacity-50 animate-pulse shadow-md shadow-blue-300/40"
+            style={{
+              top: "50%",
+              right: "10%",
+              animation: "float-3 16s infinite linear, pulse 1.8s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-blue-300 rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div
+            className="absolute w-3 h-3 bg-vigilum-blue rounded-full opacity-35 animate-pulse shadow-lg shadow-vigilum-blue/45"
+            style={{
+              top: "65%",
+              left: "80%",
+              animation: "float-1 20s infinite linear, pulse 2.2s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-30"></div>
+          </div>
+          <div
+            className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-40 animate-pulse shadow-md shadow-cyan-400/35"
+            style={{
+              top: "95%",
+              left: "15%",
+              animation: "float-2 24s infinite linear, pulse 1.9s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div
+            className="absolute w-4 h-4 bg-blue-600 rounded-full opacity-30 animate-pulse shadow-lg shadow-blue-600/40"
+            style={{
+              top: "105%",
+              right: "20%",
+              animation: "float-3 19s infinite linear, pulse 2.1s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-blue-600 rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div
+            className="absolute w-2 h-2 bg-cyan-300 rounded-full opacity-45 animate-pulse shadow-md shadow-cyan-300/30"
+            style={{
+              top: "125%",
+              left: "60%",
+              animation: "float-1 21s infinite linear, pulse 2.3s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-cyan-300 rounded-full animate-ping opacity-30"></div>
+          </div>
+          <div
+            className="absolute w-3 h-3 bg-blue-400 rounded-full opacity-35 animate-pulse shadow-lg shadow-blue-400/35"
+            style={{
+              top: "140%",
+              left: "35%",
+              animation: "float-2 17s infinite linear, pulse 2.4s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div
+            className="absolute w-2 h-2 bg-vigilum-blue rounded-full opacity-50 animate-pulse shadow-md shadow-vigilum-blue/40"
+            style={{
+              top: "155%",
+              right: "15%",
+              animation: "float-3 23s infinite linear, pulse 2s infinite",
+            }}
+          >
+            <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-30"></div>
+          </div>
+
+          {/* Smaller distributed nodes with enhanced movement */}
           <div
             className="absolute w-1 h-1 bg-vigilum-blue rounded-full opacity-40 animate-pulse"
-            style={{ top: "20%", left: "60%" }}
+            style={{
+              top: "20%",
+              left: "60%",
+              animation: "float-1 25s infinite linear, pulse 1.5s infinite",
+            }}
           ></div>
           <div
             className="absolute w-1 h-1 bg-cyan-300 rounded-full opacity-30 animate-pulse"
-            style={{ top: "40%", left: "80%" }}
+            style={{
+              top: "40%",
+              left: "80%",
+              animation: "float-2 28s infinite linear, pulse 1.7s infinite",
+            }}
           ></div>
           <div
             className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-35 animate-pulse"
-            style={{ top: "60%", left: "15%" }}
+            style={{
+              top: "60%",
+              left: "15%",
+              animation: "float-3 26s infinite linear, pulse 1.6s infinite",
+            }}
           ></div>
           <div
             className="absolute w-1 h-1 bg-vigilum-blue rounded-full opacity-25 animate-pulse"
-            style={{ top: "70%", left: "70%" }}
+            style={{
+              top: "70%",
+              left: "70%",
+              animation: "float-1 27s infinite linear, pulse 1.8s infinite",
+            }}
           ></div>
           <div
             className="absolute w-1 h-1 bg-blue-300 rounded-full opacity-30 animate-pulse"
-            style={{ top: "90%", left: "55%" }}
+            style={{
+              top: "90%",
+              left: "55%",
+              animation: "float-2 24s infinite linear, pulse 1.9s infinite",
+            }}
           ></div>
           <div
             className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-25 animate-pulse"
-            style={{ top: "120%", left: "25%" }}
+            style={{
+              top: "120%",
+              left: "25%",
+              animation: "float-3 29s infinite linear, pulse 1.4s infinite",
+            }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-blue-500 rounded-full opacity-30 animate-pulse"
+            style={{
+              top: "35%",
+              left: "45%",
+              animation: "float-1 30s infinite linear, pulse 1.6s infinite",
+            }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-cyan-500 rounded-full opacity-25 animate-pulse"
+            style={{
+              top: "80%",
+              left: "85%",
+              animation: "float-2 26s infinite linear, pulse 1.7s infinite",
+            }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-blue-600 rounded-full opacity-35 animate-pulse"
+            style={{
+              top: "115%",
+              left: "75%",
+              animation: "float-3 25s infinite linear, pulse 1.5s infinite",
+            }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-vigilum-blue rounded-full opacity-30 animate-pulse"
+            style={{
+              top: "135%",
+              left: "10%",
+              animation: "float-1 28s infinite linear, pulse 1.8s infinite",
+            }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-cyan-300 rounded-full opacity-25 animate-pulse"
+            style={{
+              top: "145%",
+              right: "25%",
+              animation: "float-2 27s infinite linear, pulse 1.9s infinite",
+            }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30 animate-pulse"
+            style={{
+              top: "165%",
+              left: "55%",
+              animation: "float-3 24s infinite linear, pulse 1.6s infinite",
+            }}
           ></div>
 
           {/* Connection lines */}
