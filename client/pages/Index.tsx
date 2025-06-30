@@ -333,15 +333,35 @@ export default function Index() {
             {/* Top level - Sparse connections (2-3 lines) */}
             {/* blue-400 (35%, right 30%) to cyan-400 (25%, right 25%) */}
             <line
-              x1="70%"
-              y1="35%"
-              x2="75%"
-              y2="25%"
               stroke="url(#connection-blue)"
               strokeWidth="1"
               opacity="0.4"
               className="scroll-reveal-0"
             >
+              <animate
+                attributeName="x1"
+                values="70%;73%;72%;68%;70%"
+                dur="19s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="35%;33%;38%;34%;35%"
+                dur="19s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="75%;73%;78%;76%;75%"
+                dur="22s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="25%;28%;23%;26%;25%"
+                dur="22s"
+                repeatCount="indefinite"
+              />
               <animate
                 attributeName="opacity"
                 values="0.2;0.5;0.2"
