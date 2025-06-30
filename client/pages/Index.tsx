@@ -343,32 +343,8 @@ export default function Index() {
               className="scroll-reveal-0"
             >
               <animate
-                attributeName="x1"
-                values="70%;75%;65%;70%"
-                dur="22s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y1"
-                values="25%;30%;20%;25%"
-                dur="22s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="x2"
-                values="35%;30%;40%;35%"
-                dur="18s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y2"
-                values="55%;60%;50%;55%"
-                dur="18s"
-                repeatCount="indefinite"
-              />
-              <animate
                 attributeName="opacity"
-                values="0.2;0.4;0.15;0.2"
+                values="0.08;0.18;0.08"
                 dur="6s"
                 repeatCount="indefinite"
               />
