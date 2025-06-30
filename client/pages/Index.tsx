@@ -30,12 +30,7 @@ export default function Index() {
         {/* Floating Network Nodes */}
         <div className="absolute inset-0">
           {/* Large central nodes - distributed across extended height */}
-          <div
-            className="absolute w-3 h-3 bg-vigilum-blue rounded-full opacity-60 animate-pulse shadow-lg shadow-vigilum-blue/50"
-            style={{ top: "15%", left: "25%" }}
-          >
-            <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-30"></div>
-          </div>
+
           <div
             className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30"
             style={{ top: "35%", right: "30%" }}
