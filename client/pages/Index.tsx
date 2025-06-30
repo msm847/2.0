@@ -344,7 +344,7 @@ export default function Index() {
             >
               <animate
                 attributeName="opacity"
-                values="0.08;0.18;0.08"
+                values="0.2;0.5;0.2"
                 dur="6s"
                 repeatCount="indefinite"
               />
