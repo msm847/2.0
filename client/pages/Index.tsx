@@ -315,8 +315,8 @@ export default function Index() {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.08" />
+                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.2" />
               </linearGradient>
               <linearGradient
                 id="connection-cyan"
@@ -325,8 +325,8 @@ export default function Index() {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.06" />
+                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.15" />
               </linearGradient>
             </defs>
 
