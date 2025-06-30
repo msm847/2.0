@@ -304,7 +304,7 @@ export default function Index() {
 
           {/* Circle Interconnections */}
           <svg
-            className="absolute inset-0 w-full opacity-10"
+            className="absolute inset-0 w-full opacity-30"
             style={{ height: "200vh" }}
           >
             <defs>
