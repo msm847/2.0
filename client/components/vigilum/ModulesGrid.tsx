@@ -25,7 +25,7 @@ const modules = [
     id: "obscura",
     name: "OBSCURA",
     title: "Procurement Distortion Engine",
-    icon: Gavel,
+    icon: Database,
     description: "Flags procedural anomalies in tenders",
     detail:
       "Detects distortions in procurement processes, identifying when standard procedures are bypassed or manipulated.",
