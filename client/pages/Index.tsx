@@ -302,9 +302,9 @@ export default function Index() {
             }}
           ></div>
 
-          {/* Dynamic Web Connections */}
+          {/* Circle Interconnections */}
           <svg
-            className="absolute inset-0 w-full opacity-15"
+            className="absolute inset-0 w-full opacity-12"
             style={{ height: "200vh" }}
           >
             <defs>
