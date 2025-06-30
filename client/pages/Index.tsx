@@ -22,7 +22,103 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-vigilum text-vigilum-body font-plex-sans">
+    <div className="min-h-screen bg-vigilum text-vigilum-body font-plex-sans relative overflow-hidden">
+      {/* Animated 3D Network Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-vigilum-bg via-slate-900/50 to-vigilum-bg"></div>
+
+        {/* Floating Network Nodes */}
+        <div className="absolute inset-0">
+          {/* Large central nodes */}
+          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-vigilum-blue rounded-full opacity-60 animate-pulse shadow-lg shadow-vigilum-blue/50">
+            <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-30"></div>
+          </div>
+          <div className="absolute top-3/4 right-1/3 w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30">
+            <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
+          </div>
+          <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-cyan-400 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-400/40">
+            <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-20"></div>
+          </div>
+          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-vigilum-blue rounded-full opacity-50 animate-pulse shadow-md shadow-vigilum-blue/40">
+            <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div className="absolute top-1/3 left-2/3 w-3 h-3 bg-blue-300 rounded-full opacity-35 animate-pulse shadow-lg shadow-blue-300/30">
+            <div className="absolute inset-0 bg-blue-300 rounded-full animate-ping opacity-20"></div>
+          </div>
+
+          {/* Smaller distributed nodes */}
+          <div className="absolute top-[15%] left-[60%] w-1 h-1 bg-vigilum-blue rounded-full opacity-40 animate-pulse"></div>
+          <div className="absolute top-[80%] left-[20%] w-1 h-1 bg-cyan-300 rounded-full opacity-30 animate-pulse"></div>
+          <div className="absolute top-[40%] left-[80%] w-1 h-1 bg-blue-400 rounded-full opacity-35 animate-pulse"></div>
+          <div className="absolute top-[70%] left-[70%] w-1 h-1 bg-vigilum-blue rounded-full opacity-25 animate-pulse"></div>
+          <div className="absolute top-[25%] left-[40%] w-1 h-1 bg-blue-300 rounded-full opacity-30 animate-pulse"></div>
+
+          {/* Connection lines */}
+          <svg className="absolute inset-0 w-full h-full opacity-20">
+            <defs>
+              <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.6"/>
+                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.3"/>
+                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.1"/>
+              </linearGradient>
+              <linearGradient id="line-gradient-2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.4"/>
+                <stop offset="50%" stopColor="#316EFF" stopOpacity="0.2"/>
+                <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.1"/>
+              </linearGradient>
+            </defs>
+
+            {/* Main connection lines */}
+            <line x1="25%" y1="25%" x2="75%" y2="50%" stroke="url(#line-gradient-1)" strokeWidth="1">
+              <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/>
+            </line>
+            <line x1="33%" y1="75%" x2="66%" y2="33%" stroke="url(#line-gradient-2)" strokeWidth="1">
+              <animate attributeName="opacity" values="0.2;0.5;0.2" dur="6s" repeatCount="indefinite"/>
+            </line>
+            <line x1="67%" y1="25%" x2="25%" y2="75%" stroke="url(#line-gradient-1)" strokeWidth="1">
+              <animate attributeName="opacity" values="0.1;0.3;0.1" dur="5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="20%" y1="50%" x2="80%" y2="40%" stroke="url(#line-gradient-2)" strokeWidth="1">
+              <animate attributeName="opacity" values="0.15;0.35;0.15" dur="7s" repeatCount="indefinite"/>
+            </line>
+
+            {/* Secondary connection web */}
+            <line x1="60%" y1="15%" x2="40%" y2="40%" stroke="#316EFF" strokeWidth="0.5" opacity="0.2">
+              <animate attributeName="opacity" values="0.1;0.3;0.1" dur="8s" repeatCount="indefinite"/>
+            </line>
+            <line x1="20%" y1="80%" x2="70%" y2="70%" stroke="#60A5FA" strokeWidth="0.5" opacity="0.15">
+              <animate attributeName="opacity" values="0.05;0.25;0.05" dur="6s" repeatCount="indefinite"/>
+            </line>
+            <line x1="80%" y1="40%" x2="70%" y2="70%" stroke="#93C5FD" strokeWidth="0.5" opacity="0.1">
+              <animate attributeName="opacity" values="0.05;0.2;0.05" dur="9s" repeatCount="indefinite"/>
+            </line>
+          </svg>
+        </div>
+
+        {/* Moving particles */}
+        <div className="absolute inset-0">
+          <div className="absolute w-1 h-1 bg-vigilum-blue rounded-full opacity-60 shadow-sm shadow-vigilum-blue/50"
+               style={{
+                 animation: 'float-1 20s infinite linear',
+                 left: '10%',
+                 top: '20%'
+               }}></div>
+          <div className="absolute w-0.5 h-0.5 bg-cyan-400 rounded-full opacity-40"
+               style={{
+                 animation: 'float-2 25s infinite linear',
+                 left: '70%',
+                 top: '60%'
+               }}></div>
+          <div className="absolute w-0.5 h-0.5 bg-blue-300 rounded-full opacity-30"
+               style={{
+                 animation: 'float-3 30s infinite linear',
+                 left: '40%',
+                 top: '80%'
+               }}></div>
+        </div>
+      </div>
+
+      <div className="relative z-10">
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
