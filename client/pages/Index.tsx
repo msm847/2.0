@@ -330,9 +330,18 @@ export default function Index() {
               </linearGradient>
             </defs>
 
-            {/* Web connections that follow the moving circles */}
-            {/* Upper network connections */}
-            <line stroke="url(#web-gradient-1)" strokeWidth="1" opacity="0.3">
+            {/* Top level - Sparse connections (2-3 lines) */}
+            {/* blue-400 (35%, right 30%) to cyan-400 (25%, right 25%) */}
+            <line
+              x1="70%"
+              y1="35%"
+              x2="75%"
+              y2="25%"
+              stroke="url(#connection-blue)"
+              strokeWidth="0.4"
+              opacity="0.15"
+              className="scroll-reveal-0"
+            >
               <animate
                 attributeName="x1"
                 values="70%;75%;65%;70%"
