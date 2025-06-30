@@ -767,7 +767,7 @@ export default function Index() {
             {/* Dense lower web connections */}
             <line
               stroke="url(#web-gradient-2)"
-              strokeWidth="0.6"
+              strokeWidth="0.8"
               opacity="0.22"
             >
               <animate
