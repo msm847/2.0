@@ -36,7 +36,7 @@ const modules = [
     id: "nullum",
     name: "NULLUM",
     title: "Judicial Stalling Detector",
-    icon: Building2,
+    icon: Gavel,
     description: "Traces patterns of legal delay",
     detail:
       "Identifies systematic patterns of judicial or administrative delays that serve to obstruct accountability.",
