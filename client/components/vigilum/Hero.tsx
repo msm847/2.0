@@ -48,13 +48,92 @@ const Hero = () => {
                 </p>
               </div>
 
-              <p
-                className="text-2xl text-vigilum-body font-medium leading-relaxed max-w-2xl"
-                style={{ lineHeight: "1.5" }}
-              >
-                Vigilum simulates how legal systems encode exposure through
-                clause sequence, override logic, and typological collapse.
-              </p>
+              <div className="relative max-w-2xl">
+                {/* Central text */}
+                <div className="text-center mb-8">
+                  <p className="text-2xl text-vigilum-body font-medium leading-relaxed">
+                    Vigilum simulates how legal systems encode exposure through
+                  </p>
+                </div>
+
+                {/* Three-way arrow diagram */}
+                <div className="relative flex justify-center items-center h-32">
+                  {/* Central point */}
+                  <div className="absolute w-3 h-3 bg-vigilum-blue rounded-full"></div>
+
+                  {/* Top arrow and bubble - Clause Sequence */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="flex flex-col items-center">
+                      <div className="bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50 mb-2">
+                        <span className="text-sm text-vigilum-body font-medium font-plex-mono">
+                          clause sequence
+                        </span>
+                      </div>
+                      <svg
+                        className="w-8 h-8 text-vigilum-blue"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 2L12 10M12 2L8 6M12 2L16 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Bottom left arrow and bubble - Override Logic */}
+                  <div className="absolute -bottom-4 -left-16">
+                    <div className="flex flex-col items-center">
+                      <svg
+                        className="w-8 h-8 text-vigilum-blue transform rotate-45"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 2L12 10M12 2L8 6M12 2L16 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <div className="bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50 mt-2">
+                        <span className="text-sm text-vigilum-body font-medium font-plex-mono">
+                          override logic
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom right arrow and bubble - Typological Collapse */}
+                  <div className="absolute -bottom-4 -right-16">
+                    <div className="flex flex-col items-center">
+                      <svg
+                        className="w-8 h-8 text-vigilum-blue transform -rotate-45"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M12 2L12 10M12 2L8 6M12 2L16 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <div className="bg-slate-800/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50 mt-2">
+                        <span className="text-sm text-vigilum-body font-medium font-plex-mono">
+                          typological collapse
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="flex gap-4">
