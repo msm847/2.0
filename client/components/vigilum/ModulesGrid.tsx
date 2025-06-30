@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Key, Gavel, Building2, Gauge, Network, Radio } from "lucide-react";
+import {
+  Key,
+  Gavel,
+  Building2,
+  Gauge,
+  Network,
+  Radio,
+  Database,
+} from "lucide-react";
 
 const modules = [
   {
