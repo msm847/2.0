@@ -597,7 +597,7 @@ export default function Index() {
               />
             </line>
 
-            <line stroke="#93C5FD" strokeWidth="0.5" opacity="0.2">
+            <line stroke="#93C5FD" strokeWidth="0.8" opacity="0.2">
               <animate
                 attributeName="x1"
                 values="45%;50%;40%;45%"
