@@ -346,7 +346,7 @@ export default function Index() {
               />
               <animate
                 attributeName="y1"
-                values="35%;33%;38%;34%;35%"
+                values="35%;33%;38.5%;33.5%;35%"
                 dur="19s"
                 repeatCount="indefinite"
               />
