@@ -334,7 +334,7 @@ export default function Index() {
             {/* blue-400 (35%, right 30%) to cyan-400 (25%, right 25%) */}
             <line
               stroke="url(#connection-blue)"
-              strokeWidth="1"
+              strokeWidth="0.8"
               opacity="0.4"
               className="scroll-reveal-0"
             >
