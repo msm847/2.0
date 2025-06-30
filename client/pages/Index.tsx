@@ -350,34 +350,20 @@ export default function Index() {
               />
             </line>
 
-            <line stroke="#316EFF" strokeWidth="0.8" opacity="0.25">
-              <animate
-                attributeName="x1"
-                values="65%;70%;60%;65%"
-                dur="21s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y1"
-                values="45%;50%;40%;45%"
-                dur="21s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="x2"
-                values="20%;25%;15%;20%"
-                dur="17s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="y2"
-                values="75%;80%;70%;75%"
-                dur="17s"
-                repeatCount="indefinite"
-              />
+            {/* cyan-400 (25%, right 25%) to blue-300 (45%, left 65%) */}
+            <line
+              x1="75%"
+              y1="25%"
+              x2="65%"
+              y2="45%"
+              stroke="url(#connection-cyan)"
+              strokeWidth="0.3"
+              opacity="0.12"
+              className="scroll-reveal-0"
+            >
               <animate
                 attributeName="opacity"
-                values="0.15;0.3;0.1;0.15"
+                values="0.06;0.15;0.06"
                 dur="7s"
                 repeatCount="indefinite"
               />
