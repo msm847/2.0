@@ -698,7 +698,7 @@ export default function Index() {
             </line>
 
             {/* Cross-network connections */}
-            <line stroke="url(#web-gradient-1)" strokeWidth="0.4" opacity="0.2">
+            <line stroke="url(#web-gradient-1)" strokeWidth="0.8" opacity="0.2">
               <animate
                 attributeName="x1"
                 values="10%;15%;5%;10%"
