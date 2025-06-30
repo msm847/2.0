@@ -487,6 +487,124 @@ export default function Index() {
               />
             </line>
 
+            {/* Additional Matrix Connections for Full Network */}
+            {/* blue-300 (45%, left 65%) to cyan-400 (75%, left 20%) - float-1 21s to float-2 17s */}
+            <line
+              stroke="url(#connection-cyan)"
+              strokeWidth="0.8"
+              opacity="0.25"
+              className="scroll-reveal-1"
+            >
+              <animate
+                attributeName="x1"
+                values="65%;69%;63.5%;62%;65%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="45%;43%;48.5%;43.5%;45%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="20%;15.5%;25%;21.5%;20%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="75%;79%;72%;77%;75%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.12;0.3;0.12"
+                dur="6s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            {/* vigilum-blue (55%, left 35%) to cyan-400 (75%, left 20%) - float-3 18s to float-2 17s */}
+            <line
+              stroke="url(#connection-blue)"
+              strokeWidth="0.8"
+              opacity="0.25"
+              className="scroll-reveal-1"
+            >
+              <animate
+                attributeName="x1"
+                values="35%;29%;40%;36.5%;35%"
+                dur="18s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="55%;51%;60%;53%;55%"
+                dur="18s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="20%;15.5%;25%;21.5%;20%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="75%;79%;72%;77%;75%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.12;0.28;0.12"
+                dur="7s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            {/* blue-400 (35%, right 30%) to blue-300 (45%, left 65%) - float-1 19s to float-1 21s */}
+            <line
+              stroke="#316EFF"
+              strokeWidth="0.8"
+              opacity="0.25"
+              className="scroll-reveal-1"
+            >
+              <animate
+                attributeName="x1"
+                values="70%;74%;72.5%;67%;70%"
+                dur="19s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="35%;33%;38.5%;33.5%;35%"
+                dur="19s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="65%;69%;63.5%;62%;65%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="45%;43%;48.5%;43.5%;45%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.12;0.26;0.12"
+                dur="8s"
+                repeatCount="indefinite"
+              />
+            </line>
+
             {/* Lower level - vigilum-blue (85%, right 40%) to blue-400 (110%, left 45%) */}
             <line
               stroke="url(#connection-blue)"
