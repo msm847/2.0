@@ -29,29 +29,87 @@ export default function Index() {
 
         {/* Floating Network Nodes */}
         <div className="absolute inset-0">
-          {/* Large central nodes */}
-          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-vigilum-blue rounded-full opacity-60 animate-pulse shadow-lg shadow-vigilum-blue/50">
+          {/* Large central nodes - distributed across extended height */}
+          <div
+            className="absolute w-3 h-3 bg-vigilum-blue rounded-full opacity-60 animate-pulse shadow-lg shadow-vigilum-blue/50"
+            style={{ top: "15%", left: "25%" }}
+          >
             <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-30"></div>
           </div>
-          <div className="absolute top-3/4 right-1/3 w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30">
+          <div
+            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30"
+            style={{ top: "35%", right: "30%" }}
+          >
             <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
           </div>
-          <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-cyan-400 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-400/40">
+          <div
+            className="absolute w-4 h-4 bg-cyan-400 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-400/40"
+            style={{ top: "25%", right: "25%" }}
+          >
             <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-20"></div>
           </div>
-          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-vigilum-blue rounded-full opacity-50 animate-pulse shadow-md shadow-vigilum-blue/40">
+          <div
+            className="absolute w-2 h-2 bg-vigilum-blue rounded-full opacity-50 animate-pulse shadow-md shadow-vigilum-blue/40"
+            style={{ top: "55%", left: "35%" }}
+          >
             <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-25"></div>
           </div>
-          <div className="absolute top-1/3 left-2/3 w-3 h-3 bg-blue-300 rounded-full opacity-35 animate-pulse shadow-lg shadow-blue-300/30">
+          <div
+            className="absolute w-3 h-3 bg-blue-300 rounded-full opacity-35 animate-pulse shadow-lg shadow-blue-300/30"
+            style={{ top: "45%", left: "65%" }}
+          >
             <div className="absolute inset-0 bg-blue-300 rounded-full animate-ping opacity-20"></div>
+          </div>
+          <div
+            className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-45 animate-pulse shadow-md shadow-cyan-400/30"
+            style={{ top: "75%", left: "20%" }}
+          >
+            <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-20"></div>
+          </div>
+          <div
+            className="absolute w-3 h-3 bg-vigilum-blue rounded-full opacity-40 animate-pulse shadow-lg shadow-vigilum-blue/40"
+            style={{ top: "85%", right: "40%" }}
+          >
+            <div className="absolute inset-0 bg-vigilum-blue rounded-full animate-ping opacity-25"></div>
+          </div>
+          <div
+            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-35 animate-pulse shadow-md shadow-blue-400/30"
+            style={{ top: "110%", left: "45%" }}
+          >
+            <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
+          </div>
+          <div
+            className="absolute w-4 h-4 bg-cyan-300 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-300/40"
+            style={{ top: "130%", right: "30%" }}
+          >
+            <div className="absolute inset-0 bg-cyan-300 rounded-full animate-ping opacity-20"></div>
           </div>
 
           {/* Smaller distributed nodes */}
-          <div className="absolute top-[15%] left-[60%] w-1 h-1 bg-vigilum-blue rounded-full opacity-40 animate-pulse"></div>
-          <div className="absolute top-[80%] left-[20%] w-1 h-1 bg-cyan-300 rounded-full opacity-30 animate-pulse"></div>
-          <div className="absolute top-[40%] left-[80%] w-1 h-1 bg-blue-400 rounded-full opacity-35 animate-pulse"></div>
-          <div className="absolute top-[70%] left-[70%] w-1 h-1 bg-vigilum-blue rounded-full opacity-25 animate-pulse"></div>
-          <div className="absolute top-[25%] left-[40%] w-1 h-1 bg-blue-300 rounded-full opacity-30 animate-pulse"></div>
+          <div
+            className="absolute w-1 h-1 bg-vigilum-blue rounded-full opacity-40 animate-pulse"
+            style={{ top: "20%", left: "60%" }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-cyan-300 rounded-full opacity-30 animate-pulse"
+            style={{ top: "40%", left: "80%" }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-35 animate-pulse"
+            style={{ top: "60%", left: "15%" }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-vigilum-blue rounded-full opacity-25 animate-pulse"
+            style={{ top: "70%", left: "70%" }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-blue-300 rounded-full opacity-30 animate-pulse"
+            style={{ top: "90%", left: "55%" }}
+          ></div>
+          <div
+            className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-25 animate-pulse"
+            style={{ top: "120%", left: "25%" }}
+          ></div>
 
           {/* Connection lines */}
           <svg
