@@ -56,84 +56,22 @@ const Hero = () => {
                   </p>
                 </div>
 
-                {/* Three-way arrow diagram */}
-                <div
-                  className="relative flex justify-center items-center"
-                  style={{ height: "150px" }}
-                >
-                  {/* Central point */}
-                  <div className="absolute w-4 h-4 bg-vigilum-blue rounded-full"></div>
-
-                  {/* Top arrow and bubble - Clause Sequence */}
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                    <div className="flex flex-col items-center">
-                      <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50 mb-2">
-                        <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                          clause sequence
-                        </span>
-                      </div>
-                      <svg
-                        className="w-8 h-8 text-vigilum-blue transform rotate-180"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M12 4L12 20M12 20L8 16M12 20L16 16"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
+                {/* Three concept boxes */}
+                <div className="flex justify-center items-center gap-8">
+                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
+                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
+                      clause sequence
+                    </span>
                   </div>
-
-                  {/* Bottom left arrow and bubble - Override Logic */}
-                  <div className="absolute -bottom-8 -left-16">
-                    <div className="flex flex-col items-center">
-                      <svg
-                        className="w-8 h-8 text-vigilum-blue transform rotate-135"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M12 4L12 20M12 20L8 16M12 20L16 16"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50 mt-2">
-                        <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                          override logic
-                        </span>
-                      </div>
-                    </div>
+                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
+                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
+                      override logic
+                    </span>
                   </div>
-
-                  {/* Bottom right arrow and bubble - Typological Collapse */}
-                  <div className="absolute -bottom-8 -right-16">
-                    <div className="flex flex-col items-center">
-                      <svg
-                        className="w-8 h-8 text-vigilum-blue transform rotate-45"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M12 4L12 20M12 20L8 16M12 20L16 16"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50 mt-2">
-                        <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                          typological collapse
-                        </span>
-                      </div>
-                    </div>
+                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
+                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
+                      typological collapse
+                    </span>
                   </div>
                 </div>
               </div>
