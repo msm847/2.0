@@ -156,3 +156,65 @@
     background-color: hsl(var(--vigilum-blue));
   }
 }
+
+/* 3D Network Background Animations */
+@keyframes float-1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate3d(100px, -50px, 20px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(50px, 100px, -10px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate3d(-50px, -25px, 15px) rotate(270deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translate3d(-75px, 80px, 25px) rotateY(120deg);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate3d(80px, -40px, -15px) rotateY(240deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateZ(0deg);
+    opacity: 0.3;
+  }
+  40% {
+    transform: translate3d(60px, -80px, 30px) rotateX(144deg) rotateZ(144deg);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translate3d(-90px, 20px, -20px) rotateX(288deg) rotateZ(288deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateX(360deg) rotateZ(360deg);
+    opacity: 0.3;
+  }
+}
