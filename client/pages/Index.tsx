@@ -451,7 +451,7 @@ export default function Index() {
             {/* cyan-400 (75%, left 20%) to vigilum-blue (85%, right 40%) */}
             <line
               stroke="#67E8F9"
-              strokeWidth="0.6"
+              strokeWidth="0.8"
               opacity="0.25"
               className="scroll-reveal-1"
             >
