@@ -229,19 +229,19 @@
 
 @keyframes float-3 {
   0% {
-    transform: translate3d(0, 0, 0) rotateX(0deg) rotateZ(0deg);
+    transform: translate3d(0, 0, 0);
     opacity: 0.3;
   }
   40% {
-    transform: translate3d(60px, -80px, 30px) rotateX(144deg) rotateZ(144deg);
+    transform: translate3d(60px, -80px, 30px);
     opacity: 0.5;
   }
   80% {
-    transform: translate3d(-90px, 20px, -20px) rotateX(288deg) rotateZ(288deg);
+    transform: translate3d(-90px, 20px, -20px);
     opacity: 0.2;
   }
   100% {
-    transform: translate3d(0, 0, 0) rotateX(360deg) rotateZ(360deg);
+    transform: translate3d(0, 0, 0);
     opacity: 0.3;
   }
 }
