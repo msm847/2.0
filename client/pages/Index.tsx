@@ -141,14 +141,15 @@ export default function Index() {
               </linearGradient>
             </defs>
 
-            {/* Main connection lines */}
+            {/* Initial connection lines - visible at top */}
             <line
               x1="25%"
-              y1="25%"
-              x2="75%"
-              y2="50%"
+              y1="15%"
+              x2="70%"
+              y2="25%"
               stroke="url(#line-gradient-1)"
               strokeWidth="1"
+              className="scroll-reveal-0"
             >
               <animate
                 attributeName="opacity"
@@ -158,12 +159,13 @@ export default function Index() {
               />
             </line>
             <line
-              x1="33%"
-              y1="75%"
-              x2="66%"
-              y2="33%"
+              x1="65%"
+              y1="45%"
+              x2="35%"
+              y2="55%"
               stroke="url(#line-gradient-2)"
               strokeWidth="1"
+              className="scroll-reveal-0"
             >
               <animate
                 attributeName="opacity"
@@ -172,13 +174,16 @@ export default function Index() {
                 repeatCount="indefinite"
               />
             </line>
+
+            {/* Mid-scroll lines */}
             <line
-              x1="67%"
-              y1="25%"
-              x2="25%"
-              y2="75%"
+              x1="20%"
+              y1="75%"
+              x2="85%"
+              y2="45%"
               stroke="url(#line-gradient-1)"
               strokeWidth="1"
+              className="scroll-reveal-1"
             >
               <animate
                 attributeName="opacity"
@@ -188,12 +193,13 @@ export default function Index() {
               />
             </line>
             <line
-              x1="20%"
-              y1="50%"
-              x2="80%"
-              y2="40%"
+              x1="35%"
+              y1="55%"
+              x2="20%"
+              y2="75%"
               stroke="url(#line-gradient-2)"
-              strokeWidth="1"
+              strokeWidth="0.5"
+              className="scroll-reveal-1"
             >
               <animate
                 attributeName="opacity"
@@ -202,16 +208,14 @@ export default function Index() {
                 repeatCount="indefinite"
               />
             </line>
-
-            {/* Secondary connection web */}
             <line
-              x1="60%"
-              y1="15%"
-              x2="40%"
-              y2="40%"
+              x1="70%"
+              y1="25%"
+              x2="45%"
+              y2="110%"
               stroke="#316EFF"
               strokeWidth="0.5"
-              opacity="0.2"
+              className="scroll-reveal-1"
             >
               <animate
                 attributeName="opacity"
@@ -220,14 +224,32 @@ export default function Index() {
                 repeatCount="indefinite"
               />
             </line>
+
+            {/* Lower scroll lines */}
+            <line
+              x1="45%"
+              y1="110%"
+              x2="70%"
+              y2="130%"
+              stroke="url(#line-gradient-1)"
+              strokeWidth="1"
+              className="scroll-reveal-2"
+            >
+              <animate
+                attributeName="opacity"
+                values="0.2;0.4;0.2"
+                dur="6s"
+                repeatCount="indefinite"
+              />
+            </line>
             <line
               x1="20%"
-              y1="80%"
-              x2="70%"
-              y2="70%"
+              y1="75%"
+              x2="45%"
+              y2="110%"
               stroke="#60A5FA"
               strokeWidth="0.5"
-              opacity="0.15"
+              className="scroll-reveal-2"
             >
               <animate
                 attributeName="opacity"
@@ -237,13 +259,29 @@ export default function Index() {
               />
             </line>
             <line
-              x1="80%"
-              y1="40%"
+              x1="25%"
+              y1="120%"
               x2="70%"
-              y2="70%"
+              y2="130%"
+              stroke="url(#line-gradient-2)"
+              strokeWidth="0.5"
+              className="scroll-reveal-2"
+            >
+              <animate
+                attributeName="opacity"
+                values="0.1;0.3;0.1"
+                dur="9s"
+                repeatCount="indefinite"
+              />
+            </line>
+            <line
+              x1="55%"
+              y1="90%"
+              x2="30%"
+              y2="130%"
               stroke="#93C5FD"
               strokeWidth="0.5"
-              opacity="0.1"
+              className="scroll-reveal-2"
             >
               <animate
                 attributeName="opacity"
