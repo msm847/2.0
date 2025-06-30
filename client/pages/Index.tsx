@@ -448,6 +448,84 @@ export default function Index() {
               />
             </line>
 
+            {/* cyan-400 (75%, left 20%) to vigilum-blue (85%, right 40%) */}
+            <line
+              stroke="#67E8F9"
+              strokeWidth="0.6"
+              opacity="0.25"
+              className="scroll-reveal-1"
+            >
+              <animate
+                attributeName="x1"
+                values="20%;22%;18%;21%;20%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="75%;73%;78%;74%;75%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="60%;62%;58%;61%;60%"
+                dur="20s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="85%;83%;88%;84%;85%"
+                dur="20s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.12;0.3;0.12"
+                dur="7s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            {/* Lower level - vigilum-blue (85%, right 40%) to blue-400 (110%, left 45%) */}
+            <line
+              stroke="url(#connection-blue)"
+              strokeWidth="0.8"
+              opacity="0.3"
+              className="scroll-reveal-2"
+            >
+              <animate
+                attributeName="x1"
+                values="60%;62%;58%;61%;60%"
+                dur="20s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="85%;83%;88%;84%;85%"
+                dur="20s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="45%;47%;43%;46%;45%"
+                dur="23s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="110%;108%;113%;109%;110%"
+                dur="23s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.15;0.35;0.15"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </line>
+
             {/* Mid-level interconnections */}
             <line stroke="#60A5FA" strokeWidth="1" opacity="0.3">
               <animate
