@@ -562,7 +562,7 @@ export default function Index() {
 
             <line
               stroke="url(#web-gradient-1)"
-              strokeWidth="0.7"
+              strokeWidth="0.8"
               opacity="0.25"
             >
               <animate
