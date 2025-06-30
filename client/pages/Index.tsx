@@ -338,8 +338,8 @@ export default function Index() {
               x2="75%"
               y2="25%"
               stroke="url(#connection-blue)"
-              strokeWidth="0.4"
-              opacity="0.15"
+              strokeWidth="1"
+              opacity="0.4"
               className="scroll-reveal-0"
             >
               <animate
