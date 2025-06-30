@@ -302,663 +302,441 @@ export default function Index() {
             }}
           ></div>
 
-          {/* Connection lines */}
+          {/* Dynamic Web Connections */}
           <svg
-            className="absolute inset-0 w-full opacity-20"
+            className="absolute inset-0 w-full opacity-15"
             style={{ height: "200vh" }}
           >
             <defs>
               <linearGradient
-                id="line-gradient-1"
+                id="web-gradient-1"
                 x1="0%"
                 y1="0%"
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.6" />
-                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.3" />
+                <stop offset="0%" stopColor="#316EFF" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.4" />
                 <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.1" />
               </linearGradient>
               <linearGradient
-                id="line-gradient-2"
-                x1="0%"
-                y1="100%"
-                x2="100%"
-                y2="0%"
+                id="web-gradient-2"
+                x1="100%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
               >
-                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#316EFF" stopOpacity="0.2" />
+                <stop offset="0%" stopColor="#67E8F9" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="#316EFF" stopOpacity="0.3" />
                 <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.1" />
               </linearGradient>
             </defs>
 
-            {/* Top section - Sparse connections (3-4 lines) */}
-            <line
-              x1="25%"
-              y1="15%"
-              x2="70%"
-              y2="25%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="1"
-              className="scroll-reveal-0"
-            >
+            {/* Web connections that follow the moving circles */}
+            {/* Upper network connections */}
+            <line stroke="url(#web-gradient-1)" strokeWidth="1" opacity="0.3">
               <animate
-                attributeName="opacity"
-                values="0.1;0.4;0.1"
-                dur="4s"
+                attributeName="x1"
+                values="70%;75%;65%;70%"
+                dur="22s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="65%"
-              y1="45%"
-              x2="35%"
-              y2="55%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="1"
-              className="scroll-reveal-0"
-            >
+              <animate
+                attributeName="y1"
+                values="25%;30%;20%;25%"
+                dur="22s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="35%;30%;40%;35%"
+                dur="18s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="55%;60%;50%;55%"
+                dur="18s"
+                repeatCount="indefinite"
+              />
               <animate
                 attributeName="opacity"
-                values="0.2;0.5;0.2"
+                values="0.2;0.4;0.15;0.2"
                 dur="6s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="50%"
-              y1="10%"
-              x2="10%"
-              y2="30%"
-              stroke="#316EFF"
-              strokeWidth="0.5"
-              className="scroll-reveal-0"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.1;0.3;0.1"
-                dur="5s"
                 repeatCount="indefinite"
               />
             </line>
 
-            {/* Upper-mid section - More connections (8-10 lines) */}
-            <line
-              x1="20%"
-              y1="40%"
-              x2="80%"
-              y2="35%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="1"
-              className="scroll-reveal-1"
-            >
+            <line stroke="#316EFF" strokeWidth="0.8" opacity="0.25">
               <animate
-                attributeName="opacity"
-                values="0.15;0.35;0.15"
-                dur="6s"
+                attributeName="x1"
+                values="65%;70%;60%;65%"
+                dur="21s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="65%"
-              y1="25%"
-              x2="35%"
-              y2="55%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.1;0.3;0.1"
-                dur="7s"
+                attributeName="y1"
+                values="45%;50%;40%;45%"
+                dur="21s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="80%"
-              y1="40%"
-              x2="15%"
-              y2="60%"
-              stroke="#60A5FA"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.08;0.25;0.08"
-                dur="8s"
+                attributeName="x2"
+                values="20%;25%;15%;20%"
+                dur="17s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="50%"
-              y1="20%"
-              x2="65%"
-              y2="45%"
-              stroke="#316EFF"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.12;0.28;0.12"
-                dur="5s"
+                attributeName="y2"
+                values="75%;80%;70%;75%"
+                dur="17s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="10%"
-              y1="30%"
-              x2="50%"
-              y2="45%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
                 attributeName="opacity"
-                values="0.1;0.3;0.1"
-                dur="9s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="90%"
-              y1="35%"
-              x2="25%"
-              y2="55%"
-              stroke="#93C5FD"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.05;0.2;0.05"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="35%"
-              y1="55%"
-              x2="80%"
-              y2="40%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.15;0.32;0.15"
+                values="0.15;0.3;0.1;0.15"
                 dur="7s"
                 repeatCount="indefinite"
               />
             </line>
 
-            {/* Mid section - Dense network (15+ lines) */}
-            <line
-              x1="20%"
-              y1="75%"
-              x2="85%"
-              y2="65%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="1"
-              className="scroll-reveal-1"
-            >
+            <line stroke="url(#web-gradient-2)" strokeWidth="0.6" opacity="0.2">
               <animate
-                attributeName="opacity"
-                values="0.2;0.4;0.2"
-                dur="5s"
+                attributeName="x1"
+                values="50%;55%;45%;50%"
+                dur="19s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="70%"
-              y1="70%"
-              x2="15%"
-              y2="95%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.8"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.18;0.38;0.18"
-                dur="6s"
+                attributeName="y1"
+                values="10%;15%;5%;10%"
+                dur="19s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="35%"
-              y1="75%"
-              x2="65%"
-              y2="85%"
-              stroke="#316EFF"
-              strokeWidth="0.6"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.12;0.3;0.12"
-                dur="7s"
+                attributeName="x2"
+                values="10%;15%;5%;10%"
+                dur="22s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="55%"
-              y1="90%"
-              x2="20%"
-              y2="75%"
-              stroke="#60A5FA"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
+              <animate
+                attributeName="y2"
+                values="30%;35%;25%;30%"
+                dur="22s"
+                repeatCount="indefinite"
+              />
               <animate
                 attributeName="opacity"
-                values="0.1;0.25;0.1"
+                values="0.1;0.25;0.05;0.1"
                 dur="8s"
                 repeatCount="indefinite"
               />
             </line>
-            <line
-              x1="80%"
-              y1="80%"
-              x2="35%"
-              y2="90%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
+
+            {/* Mid-level interconnections */}
+            <line stroke="#60A5FA" strokeWidth="1" opacity="0.3">
               <animate
-                attributeName="opacity"
-                values="0.08;0.22;0.08"
-                dur="9s"
+                attributeName="x1"
+                values="85%;90%;80%;85%"
+                dur="20s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="25%"
-              y1="85%"
-              x2="75%"
-              y2="75%"
-              stroke="#93C5FD"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.15;0.28;0.15"
-                dur="6s"
+                attributeName="y1"
+                values="45%;50%;40%;45%"
+                dur="20s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="45%"
-              y1="70%"
-              x2="85%"
-              y2="95%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.1;0.3;0.1"
-                dur="7s"
+                attributeName="x2"
+                values="15%;20%;10%;15%"
+                dur="24s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="15%"
-              y1="85%"
-              x2="55%"
-              y2="65%"
-              stroke="#316EFF"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
-                attributeName="opacity"
-                values="0.12;0.26;0.12"
-                dur="8s"
+                attributeName="y2"
+                values="95%;100%;90%;95%"
+                dur="24s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="65%"
-              y1="95%"
-              x2="25%"
-              y2="70%"
-              stroke="#60A5FA"
-              strokeWidth="0.5"
-              className="scroll-reveal-1"
-            >
               <animate
                 attributeName="opacity"
-                values="0.09;0.24;0.09"
+                values="0.2;0.35;0.12;0.2"
                 dur="5s"
                 repeatCount="indefinite"
               />
             </line>
 
-            {/* Lower section - Very dense network (20+ lines) */}
             <line
-              x1="45%"
-              y1="110%"
-              x2="70%"
-              y2="130%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="1"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.2;0.45;0.2"
-                dur="5s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="20%"
-              y1="105%"
-              x2="80%"
-              y2="125%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.8"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.18;0.4;0.18"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="60%"
-              y1="115%"
-              x2="25%"
-              y2="140%"
-              stroke="#316EFF"
+              stroke="url(#web-gradient-1)"
               strokeWidth="0.7"
-              className="scroll-reveal-2"
+              opacity="0.25"
             >
               <animate
+                attributeName="x1"
+                values="20%;25%;15%;20%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="75%;80%;70%;75%"
+                dur="17s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="60%;65%;55%;60%"
+                dur="16s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="115%;120%;110%;115%"
+                dur="16s"
+                repeatCount="indefinite"
+              />
+              <animate
                 attributeName="opacity"
-                values="0.15;0.35;0.15"
+                values="0.18;0.32;0.1;0.18"
+                dur="6s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            <line stroke="#93C5FD" strokeWidth="0.5" opacity="0.2">
+              <animate
+                attributeName="x1"
+                values="45%;50%;40%;45%"
+                dur="23s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="110%;115%;105%;110%"
+                dur="23s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="70%;75%;65%;70%"
+                dur="16s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="130%;135%;125%;130%"
+                dur="16s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.15;0.28;0.08;0.15"
                 dur="7s"
                 repeatCount="indefinite"
               />
             </line>
+
+            {/* Lower dense web */}
+            <line stroke="url(#web-gradient-2)" strokeWidth="0.8" opacity="0.3">
+              <animate
+                attributeName="x1"
+                values="25%;30%;20%;25%"
+                dur="24s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="120%;125%;115%;120%"
+                dur="24s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="75%;80%;70%;75%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="155%;160%;150%;155%"
+                dur="21s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.2;0.4;0.12;0.2"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            <line stroke="#316EFF" strokeWidth="0.6" opacity="0.25">
+              <animate
+                attributeName="x1"
+                values="60%;65%;55%;60%"
+                dur="18s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="140%;145%;135%;140%"
+                dur="18s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="35%;40%;30%;35%"
+                dur="25s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="120%;125%;115%;120%"
+                dur="25s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.16;0.3;0.1;0.16"
+                dur="6s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            {/* Cross-network connections */}
+            <line stroke="url(#web-gradient-1)" strokeWidth="0.4" opacity="0.2">
+              <animate
+                attributeName="x1"
+                values="10%;15%;5%;10%"
+                dur="28s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="30%;35%;25%;30%"
+                dur="28s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="85%;90%;80%;85%"
+                dur="20s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="130%;135%;125%;130%"
+                dur="20s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.1;0.2;0.05;0.1"
+                dur="9s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            <line stroke="#60A5FA" strokeWidth="0.5" opacity="0.18">
+              <animate
+                attributeName="x1"
+                values="55%;60%;50%;55%"
+                dur="26s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y1"
+                values="90%;95%;85%;90%"
+                dur="26s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="x2"
+                values="25%;30%;20%;25%"
+                dur="19s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="y2"
+                values="145%;150%;140%;145%"
+                dur="19s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.12;0.22;0.06;0.12"
+                dur="8s"
+                repeatCount="indefinite"
+              />
+            </line>
+
+            {/* Dense lower web connections */}
             <line
-              x1="35%"
-              y1="120%"
-              x2="75%"
-              y2="135%"
-              stroke="#60A5FA"
+              stroke="url(#web-gradient-2)"
               strokeWidth="0.6"
-              className="scroll-reveal-2"
+              opacity="0.22"
             >
               <animate
-                attributeName="opacity"
-                values="0.12;0.32;0.12"
-                dur="8s"
+                attributeName="x1"
+                values="75%;80%;70%;75%"
+                dur="17s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="85%"
-              y1="110%"
-              x2="15%"
-              y2="145%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
               <animate
-                attributeName="opacity"
-                values="0.1;0.28;0.1"
-                dur="9s"
+                attributeName="y1"
+                values="125%;130%;120%;125%"
+                dur="17s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="25%"
-              y1="120%"
-              x2="55%"
-              y2="110%"
-              stroke="#93C5FD"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
               <animate
-                attributeName="opacity"
-                values="0.08;0.25;0.08"
-                dur="6s"
+                attributeName="x2"
+                values="30%;35%;25%;30%"
+                dur="23s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="65%"
-              y1="125%"
-              x2="30%"
-              y2="115%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
+              <animate
+                attributeName="y2"
+                values="165%;170%;160%;165%"
+                dur="23s"
+                repeatCount="indefinite"
+              />
               <animate
                 attributeName="opacity"
-                values="0.12;0.3;0.12"
+                values="0.18;0.28;0.1;0.18"
                 dur="7s"
                 repeatCount="indefinite"
               />
             </line>
-            <line
-              x1="45%"
-              y1="135%"
-              x2="80%"
-              y2="115%"
-              stroke="#316EFF"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
+
+            <line stroke="#93C5FD" strokeWidth="0.4" opacity="0.15">
               <animate
-                attributeName="opacity"
-                values="0.1;0.26;0.1"
-                dur="8s"
+                attributeName="x1"
+                values="40%;45%;35%;40%"
+                dur="21s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="15%"
-              y1="130%"
-              x2="70%"
-              y2="150%"
-              stroke="#60A5FA"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
               <animate
-                attributeName="opacity"
-                values="0.09;0.24;0.09"
-                dur="5s"
+                attributeName="y1"
+                values="155%;160%;150%;155%"
+                dur="21s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="55%"
-              y1="145%"
-              x2="25%"
-              y2="125%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
               <animate
-                attributeName="opacity"
-                values="0.11;0.27;0.11"
-                dur="9s"
+                attributeName="x2"
+                values="80%;85%;75%;80%"
+                dur="19s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="75%"
-              y1="140%"
-              x2="40%"
-              y2="120%"
-              stroke="#93C5FD"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
               <animate
-                attributeName="opacity"
-                values="0.08;0.22;0.08"
-                dur="6s"
+                attributeName="y2"
+                values="140%;145%;135%;140%"
+                dur="19s"
                 repeatCount="indefinite"
               />
-            </line>
-            <line
-              x1="30%"
-              y1="155%"
-              x2="85%"
-              y2="135%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
               <animate
                 attributeName="opacity"
-                values="0.13;0.29;0.13"
-                dur="7s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="50%"
-              y1="125%"
-              x2="20%"
-              y2="150%"
-              stroke="#316EFF"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.1;0.25;0.1"
-                dur="8s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="90%"
-              y1="130%"
-              x2="35%"
-              y2="160%"
-              stroke="#60A5FA"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.07;0.21;0.07"
-                dur="5s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="60%"
-              y1="150%"
-              x2="15%"
-              y2="135%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.12;0.28;0.12"
-                dur="9s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="25%"
-              y1="140%"
-              x2="70%"
-              y2="165%"
-              stroke="#93C5FD"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.09;0.23;0.09"
-                dur="6s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="80%"
-              y1="155%"
-              x2="45%"
-              y2="135%"
-              stroke="url(#line-gradient-2)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.14;0.31;0.14"
-                dur="7s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="40%"
-              y1="165%"
-              x2="75%"
-              y2="145%"
-              stroke="#316EFF"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.11;0.26;0.11"
-                dur="8s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="10%"
-              y1="150%"
-              x2="65%"
-              y2="170%"
-              stroke="#60A5FA"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.08;0.22;0.08"
-                dur="5s"
-                repeatCount="indefinite"
-              />
-            </line>
-            <line
-              x1="55%"
-              y1="175%"
-              x2="30%"
-              y2="145%"
-              stroke="url(#line-gradient-1)"
-              strokeWidth="0.5"
-              className="scroll-reveal-2"
-            >
-              <animate
-                attributeName="opacity"
-                values="0.1;0.24;0.1"
+                values="0.1;0.2;0.05;0.1"
                 dur="9s"
                 repeatCount="indefinite"
               />
