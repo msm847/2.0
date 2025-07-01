@@ -22,7 +22,7 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-vigilum text-vigilum-body font-plex-sans relative overflow-hidden">
+    <div className="min-h-screen bg-black text-vigilum-body font-plex-sans relative overflow-hidden">
       {/* Animated 3D Network Background */}
       <div className="absolute inset-0 pointer-events-none z-0 min-h-[200vh]">
         <div className="absolute inset-0 bg-gradient-to-br from-vigilum-bg via-slate-900/50 to-vigilum-bg"></div>
