@@ -82,11 +82,7 @@ export default function Index() {
 
               <div className="relative max-w-2xl">
                 {/* Central text */}
-                <div className="text-center mb-8">
-                  <p className="text-2xl text-vigilum-body font-medium leading-relaxed">
-                    Vigilum simulates how legal systems encode exposure through
-                  </p>
-                </div>
+                <div className="text-center mb-8"></div>
 
                 {/* Three concept boxes */}
                 <div className="flex justify-center items-center gap-8">
