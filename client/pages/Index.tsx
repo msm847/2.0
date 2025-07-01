@@ -51,7 +51,7 @@ export default function Index() {
             <div className="flex items-center space-x-4">
               <Link to="/vigilum">
                 <Button className="bg-white text-black hover:bg-gray-100 font-medium">
-                  Full Platform
+                  <p>Explore Platform</p>
                 </Button>
               </Link>
             </div>
