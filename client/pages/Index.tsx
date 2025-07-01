@@ -95,12 +95,6 @@ export default function Index() {
                   Explore Platform
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 font-medium px-8 py-3"
-              >
-                View the Codex
-              </Button>
             </div>
 
             {/* Module Block */}
