@@ -26,9 +26,7 @@ export default function Index() {
       <div className="relative z-10">
         {/* Header */}
         <header className="container mx-auto px-4 py-6">
-            }}
-          >
-            <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
+          <nav className="flex items-center justify-between">
           </div>
           <div
             className="absolute w-4 h-4 bg-cyan-400 rounded-full opacity-30 animate-pulse shadow-lg shadow-cyan-400/40"
