@@ -25,13 +25,7 @@ export default function Index() {
     <div className="min-h-screen bg-black text-vigilum-body font-plex-sans relative overflow-hidden">
       <div className="relative z-10">
         {/* Header */}
-
-          <div
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30"
-            style={{
-              top: "35%",
-              right: "30%",
-              animation: "float-1 19s infinite linear, pulse 2.1s infinite",
+        <header className="container mx-auto px-4 py-6">
             }}
           >
             <div className="absolute inset-0 bg-blue-400 rounded-full animate-ping opacity-20"></div>
