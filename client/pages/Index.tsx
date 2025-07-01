@@ -13,11 +13,25 @@ export default function Index() {
 
   const fetchHello = async () => {
     try {
-      const response = await fetch("/api/demo");
+      const response = await fetch("/api/demo", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // Add timeout to prevent hanging
+        signal: AbortSignal.timeout(5000),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = (await response.json()) as DemoResponse;
       setMessageFromServer(data.message);
     } catch (error) {
       console.error("Error fetching hello:", error);
+      // Set a fallback message instead of leaving it empty
+      setMessageFromServer("API connection unavailable");
     }
   };
 
