@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Search, Brain } from "lucide-react";
+import MatrixBackground from "../components/MatrixBackground";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
