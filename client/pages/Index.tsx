@@ -24,7 +24,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-black text-vigilum-body font-plex-sans relative overflow-hidden">
       <div className="relative z-10">
-          {/* Large central nodes - distributed across extended height */}
+        {/* Header */}
 
           <div
             className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40 animate-pulse shadow-md shadow-blue-400/30"
