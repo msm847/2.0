@@ -27,7 +27,6 @@ export default function Index() {
         {/* Header */}
         <header className="container mx-auto px-4 py-6">
           <nav className="flex items-center justify-between">
-          <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Shield className="w-8 h-8 text-vigilum-blue" />
               <span className="text-xl font-medium">Vigilum.AI</span>
