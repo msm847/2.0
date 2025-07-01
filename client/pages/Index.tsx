@@ -401,8 +401,10 @@ export default function Index() {
         </main>
         <div
           className="relative mt-5 flex flex-col"
+          scriptsClientOnly={true}
           dangerouslySetInnerHTML={{
-            __html: `<p>Hello there, I am custom HTML code!</p><!-- Matrix Background Canvas -->
+            __html: `<p>Hello there, I am custom HTML code!</p>
+<!-- Matrix Background Canvas -->
 <canvas id="matrix-canvas"></canvas>
 
 <style>
@@ -570,13 +572,13 @@ export default function Index() {
   }
 })();
 </script>
-
 `,
           }}
         />
         <div className="relative mt-5 flex flex-col">
           <canvas />
         </div>
+        <div className="relative mt-5 flex flex-col" />
       </div>
     </div>
   );
