@@ -87,14 +87,7 @@ export default function Index() {
             </div>
 
             <div className="flex gap-4">
-              <Link to="/vigilum">
-                <Button
-                  size="lg"
-                  className="bg-blue-700 hover:bg-blue-800 text-white font-medium px-8 py-3"
-                >
-                  Explore Platform
-                </Button>
-              </Link>
+              <Link to="/vigilum" />
             </div>
 
             {/* Module Block */}
