@@ -8,7 +8,9 @@ export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
 
   useEffect(() => {
-    fetchHello();
+    // Add a small delay to ensure the server is ready
+    const timer = setTimeout(fetchHello, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const fetchHello = async () => {
