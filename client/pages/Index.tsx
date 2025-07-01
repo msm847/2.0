@@ -558,6 +558,9 @@ export default function Index() {
 `,
           }}
         />
+        <div className="relative mt-5 flex flex-col">
+          <canvas />
+        </div>
       </div>
     </div>
   );
