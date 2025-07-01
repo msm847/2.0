@@ -83,25 +83,6 @@ export default function Index() {
               <div className="relative max-w-2xl">
                 {/* Central text */}
                 <div className="text-center mb-8"></div>
-
-                {/* Three concept boxes */}
-                <div className="flex justify-center items-center gap-8">
-                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
-                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                      clause sequence
-                    </span>
-                  </div>
-                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
-                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                      override logic
-                    </span>
-                  </div>
-                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
-                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                      typological collapse
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
 
