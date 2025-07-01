@@ -1,0 +1,168 @@
+<!-- Matrix Background Canvas -->
+<canvas id="matrix-canvas"></canvas>
+
+<style>
+  #matrix-canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: -999 !important;
+    background: transparent !important;
+    pointer-events: none !important;
+  }
+</style>
+
+<script>
+  (function () {
+    "use strict";
+
+    // Check if document is ready
+    function initMatrix() {
+      var canvas = document.getElementById("matrix-canvas");
+      if (!canvas) return;
+
+      var ctx = canvas.getContext("2d");
+      var particles = [];
+      var animationId;
+
+      // Responsive particle count
+      function getParticleCount() {
+        return window.innerWidth < 768 ? 60 : 100;
+      }
+
+      // Particle constructor function
+      function createParticle() {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 1, // 0.5px per frame velocity
+          vy: (Math.random() - 0.5) * 1,
+          size: 2,
+        };
+      }
+
+      // Initialize particles
+      function initParticles() {
+        particles = [];
+        var count = getParticleCount();
+        for (var i = 0; i < count; i++) {
+          particles.push(createParticle());
+        }
+      }
+
+      // Update particle positions and handle bouncing
+      function updateParticles() {
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+
+          // Update position
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Bounce off edges
+          if (p.x <= 0 || p.x >= canvas.width) {
+            p.vx = -p.vx;
+            p.x = Math.max(0, Math.min(canvas.width, p.x));
+          }
+          if (p.y <= 0 || p.y >= canvas.height) {
+            p.vy = -p.vy;
+            p.y = Math.max(0, Math.min(canvas.height, p.y));
+          }
+        }
+      }
+
+      // Calculate distance between two particles
+      function getDistance(p1, p2) {
+        var dx = p1.x - p2.x;
+        var dy = p1.y - p2.y;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+
+      // Draw particles and connections
+      function draw() {
+        // Clear canvas with transparent background
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw connections first (behind particles)
+        ctx.strokeStyle = "#00ff41";
+        for (var i = 0; i < particles.length; i++) {
+          for (var j = i + 1; j < particles.length; j++) {
+            var distance = getDistance(particles[i], particles[j]);
+
+            if (distance < 120) {
+              // Calculate opacity based on distance (closer = more opaque)
+              var opacity = (1 - distance / 120) * 0.6;
+
+              ctx.globalAlpha = opacity;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw particles
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = "#00ff41";
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // Animation loop
+      function animate() {
+        updateParticles();
+        draw();
+        animationId = requestAnimationFrame(animate);
+      }
+
+      // Resize handler
+      function handleResize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Reinitialize particles if count changed
+        var newCount = getParticleCount();
+        if (particles.length !== newCount) {
+          initParticles();
+        }
+      }
+
+      // Initialize canvas
+      function setupCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+        animate();
+      }
+
+      // Window resize event
+      window.addEventListener("resize", handleResize);
+
+      // Cleanup function
+      window.addEventListener("beforeunload", function () {
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+        }
+        window.removeEventListener("resize", handleResize);
+      });
+
+      // Start the matrix
+      setupCanvas();
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMatrix);
+    } else {
+      initMatrix();
+    }
+  })();
+</script>
