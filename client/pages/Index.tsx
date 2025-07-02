@@ -315,7 +315,7 @@ export default function Index() {
                     Vigilum matches clause logic to real-world loophole profiles
                     before they're exploited.
                   </p>
-                  <button className="text-vigilum-blue hover:text-blue-400 transition-colors duration-300 font-medium text-sm">
+                  <button className="text-vigilum-blue hover:text-[#57A0D2] transition-colors duration-300 font-medium text-sm">
                     → Browse Loophole Library
                   </button>
                 </div>
