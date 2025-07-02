@@ -314,6 +314,11 @@ export default function Index() {
               </div>
             </div>
 
+            <div className="relative mt-5" style={{ height: "auto" }}>
+              <p>
+                <br />
+              </p>
+            </div>
             <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed mt-12">
               "The concept of truth cannot be defined in terms of the concepts
               of the object language."
