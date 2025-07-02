@@ -274,45 +274,45 @@ export default function Index() {
                       viewBox="0 0 48 48"
                       fill="none"
                     >
-                      <rect
-                        x="6"
-                        y="8"
-                        width="36"
-                        height="24"
-                        rx="2"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
+                      {/* Speedometer arc */}
                       <path
-                        d="M12 14h24M12 20h20M12 26h16"
+                        d="M8 32c0-8.84 7.16-16 16-16s16 7.16 16 16"
                         stroke="currentColor"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M18 36c0-4 4-8 12-6s8 6 4 10c-2 2-8 0-10-2"
-                        stroke="currentColor"
-                        strokeWidth="2"
+                        strokeWidth="3"
+                        strokeLinecap="round"
                         fill="none"
                       />
-                      <circle
-                        cx="36"
-                        cy="40"
-                        r="3"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      />
-                      <text
-                        x="34"
-                        y="42"
-                        className="text-xs font-mono fill-current"
-                      >
-                        L
-                      </text>
+                      {/* Center dot */}
+                      <circle cx="24" cy="32" r="2.5" fill="currentColor" />
+                      {/* Needle/pointer */}
                       <path
-                        d="M24 32l6 4M30 32l-6 4"
+                        d="M24 32l8-8"
                         stroke="currentColor"
-                        strokeWidth="1"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
+                      {/* Speed marks */}
+                      <path
+                        d="M11 29l2 1M13 25l2 2M16 22l2 2"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
                         opacity="0.6"
+                      />
+                      <path
+                        d="M37 29l-2 1M35 25l-2 2M32 22l-2 2"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        opacity="0.6"
+                      />
+                      {/* Bottom arc extension */}
+                      <path
+                        d="M12 35c0-1 0.5-2 1-2M36 35c0-1-0.5-2-1-2"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        opacity="0.7"
                       />
                     </svg>
                   </div>
