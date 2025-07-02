@@ -100,77 +100,11 @@ export default function Index() {
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                    >
-                      {/* Document */}
-                      <rect
-                        x="4"
-                        y="8"
-                        width="18"
-                        height="22"
-                        rx="2"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        fill="none"
-                      />
-                      {/* Document lines */}
-                      <path
-                        d="M8 14h10M8 18h8M8 22h6"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      {/* Arrow */}
-                      <path
-                        d="M26 19h8"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M30 15l4 4-4 4"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        fill="none"
-                      />
-                      {/* Network nodes */}
-                      <circle
-                        cx="39"
-                        cy="12"
-                        r="3"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        fill="none"
-                      />
-                      <circle
-                        cx="43"
-                        cy="24"
-                        r="3"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        fill="none"
-                      />
-                      <circle
-                        cx="35"
-                        cy="32"
-                        r="3"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        fill="none"
-                      />
-                      {/* Network connections */}
-                      <path
-                        d="M36.5 14.5l5 7.5M40.5 21.5l-3.5 8.5M37.5 29.5l3.5-6.5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
+                    <div className="flex items-center gap-2">
+                      <FileText className="w-6 h-6 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300" />
+                      <ArrowRight className="w-4 h-4 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300" />
+                      <Share2 className="w-6 h-6 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300" />
+                    </div>
                   </div>
                 </div>
 
