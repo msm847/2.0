@@ -68,16 +68,8 @@ export default function Index() {
             </h1>
 
             <div className="space-y-6">
-              <div>
-                <p
-                  className="text-sm text-vigilum-label uppercase tracking-wide font-medium mb-3"
-                  style={{ letterSpacing: "-0.02em" }}
-                >
-                  STRUCTURAL GOVERNANCE INTELLIGENCE
-                </p>
-                <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
-                  — where structure, not intent, defines institutional risk
-                </p>
+              <div className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
+                — where structure, not intent, defines institutional risk
               </div>
 
               <div className="relative max-w-2xl">
