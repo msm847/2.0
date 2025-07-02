@@ -322,46 +322,9 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-8 border-t border-slate-700/50">
-              <div className="text-center">
-                <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
-                  6
-                </div>
-                <div className="text-sm text-vigilum-label">AI Modules</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
-                  200+
-                </div>
-                <div className="text-sm text-vigilum-label">
-                  Loopholes Mapped
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
-                  4
-                </div>
-                <div className="text-sm text-vigilum-label">
-                  Risk Typologies
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-medium text-vigilum-blue font-plex-mono">
-                  €2B+
-                </div>
-                <div className="text-sm text-vigilum-label">Risk Detected</div>
-              </div>
-            </div>
-
-            {/* Server Message */}
-            {messageFromServer && (
-              <div className="mt-12 p-4 bg-slate-800 rounded-lg border border-slate-700">
-                <p className="text-slate-300 text-sm">
-                  Server Status: {messageFromServer}
-                </p>
-              </div>
-            )}
+            <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
+              — where structure, not intent, defines institutional risk
+            </p>
           </div>
         </main>
         <MatrixBackground />
