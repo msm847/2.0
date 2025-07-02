@@ -228,12 +228,10 @@ export default function Index() {
                     STRUCTURAL RISK SIMULATION
                   </p>
                   <p className="text-base leading-relaxed text-vigilum-subheadline">
-                    <p>
-                      Trained on a corpus of 200+ known structural evasions —
-                      from Article 72 expansions to in-house procurement
-                      exemptions — Vigilum matches clause logic to real-world
-                      loophole profiles before they're exploited.
-                    </p>
+                    Trained on a corpus of 200+ known structural evasions — from
+                    Article 72 expansions to in-house procurement exemptions —
+                    Vigilum matches clause logic to real-world loophole profiles
+                    before they're exploited.
                   </p>
                   <button className="text-vigilum-blue hover:text-[#4682B4] transition-colors duration-300 font-medium text-sm">
                     → Explore Typologies
