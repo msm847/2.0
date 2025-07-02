@@ -314,8 +314,14 @@ export default function Index() {
               </div>
             </div>
 
-            <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
-              — where structure, not intent, defines institutional risk
+            <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed mt-12">
+              <p>
+                "The concept of truth cannot be defined in terms of the concepts
+                of the object language."
+              </p>
+            </p>
+            <p className="text-sm text-vigilum-label uppercase tracking-wide font-medium mb-3">
+              <p>– Alfred Tarski, 1944</p>
             </p>
           </div>
         </main>
