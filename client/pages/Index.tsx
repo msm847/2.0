@@ -94,7 +94,7 @@ export default function Index() {
             <div className="grid md:grid-cols-3 gap-8 mt-20">
               {/* Column 1 - Clause-Based Intelligence */}
               <div
-                className="group p-8 rounded-lg border border-slate-700/30 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer"
+                className="group p-8 rounded-lg border border-slate-700/30 hover:border-[#00BFFF] transition-all duration-300 cursor-pointer hover:bg-[#00E6FF]/15"
                 style={{ background: "rgba(255, 255, 255, 0.02)" }}
               >
                 <div className="mb-6">
