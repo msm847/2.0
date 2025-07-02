@@ -143,8 +143,14 @@ export default function Index() {
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <div className="relative">
-                      <Globe className="w-12 h-12 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300" />
-                      <Shield className="w-5 h-5 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300 absolute -bottom-1 -right-1" />
+                      <Globe
+                        className="w-12 h-12 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300"
+                        strokeWidth={1.5}
+                      />
+                      <Shield
+                        className="w-5 h-5 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300 absolute -bottom-1 -right-1"
+                        strokeWidth={1.5}
+                      />
                     </div>
                   </div>
                 </div>
