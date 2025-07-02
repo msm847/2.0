@@ -318,9 +318,11 @@ export default function Index() {
               "The concept of truth cannot be defined in terms of the concepts
               of the object language."
             </p>
-            <p className="text-sm text-vigilum-label uppercase tracking-wide font-medium mb-3">
-              <p>– Alfred Tarski, 1944</p>
-            </p>
+            <p className="font-medium">– Alfred Tarski, 1944</p>
+            <p
+              className="text-sm text-vigilum-label uppercase font-medium mt-12"
+              style={{ letterSpacing: "0.035em" }}
+            />
           </div>
         </main>
         <MatrixBackground />
