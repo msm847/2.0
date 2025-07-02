@@ -153,7 +153,7 @@ export default function Index() {
                     Structure is simulated long before consequence emerges,
                     encoding risk through what appears to constrain.
                   </p>
-                  <button className="text-vigilum-blue hover:text-yellow-400 transition-colors duration-300 font-medium text-sm">
+                  <button className="text-vigilum-blue hover:text-[#00BFFF] transition-colors duration-300 font-medium text-sm">
                     → View the CLAVIS module
                   </button>
                 </div>
