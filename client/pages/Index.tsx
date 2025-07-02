@@ -195,63 +195,53 @@ export default function Index() {
                       viewBox="0 0 48 48"
                       fill="none"
                     >
+                      {/* Globe outline */}
                       <circle
                         cx="24"
                         cy="24"
                         r="18"
                         stroke="currentColor"
-                        strokeWidth="2"
+                        strokeWidth="2.5"
+                        fill="none"
                       />
-                      <circle
-                        cx="24"
-                        cy="24"
-                        r="12"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        opacity="0.6"
-                      />
-                      <circle
-                        cx="24"
-                        cy="24"
-                        r="6"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        opacity="0.4"
-                      />
-                      <text
-                        x="18"
-                        y="12"
-                        className="text-xs font-mono fill-current"
-                      >
-                        DG
-                      </text>
-                      <text
-                        x="30"
-                        y="12"
-                        className="text-xs font-mono fill-current"
-                      >
-                        CI
-                      </text>
-                      <text
-                        x="18"
-                        y="38"
-                        className="text-xs font-mono fill-current"
-                      >
-                        RT
-                      </text>
-                      <text
-                        x="30"
-                        y="38"
-                        className="text-xs font-mono fill-current"
-                      >
-                        SB
-                      </text>
+                      {/* Globe grid lines - vertical */}
                       <path
-                        d="M24 6v12M42 24H30M24 42V30M6 24h12"
+                        d="M24 6v36M16 12v24M32 12v24"
                         stroke="currentColor"
-                        strokeWidth="1"
-                        opacity="0.5"
+                        strokeWidth="1.5"
+                        opacity="0.7"
                       />
+                      {/* Globe grid lines - horizontal */}
+                      <path
+                        d="M6 24h36M10 15h28M10 33h28"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        opacity="0.7"
+                      />
+                      {/* Globe curved sections */}
+                      <path
+                        d="M24 6c-6 6-6 12 0 18s6 12 0 18M24 6c6 6 6 12 0 18s-6 12 0 18"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        opacity="0.6"
+                        fill="none"
+                      />
+                      {/* Shield */}
+                      <path
+                        d="M30 30v8c0 2 4 4 6 4s6-2 6-4v-8l-6-2-6 2z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        fill="none"
+                      />
+                      {/* RISK text */}
+                      <text
+                        x="20"
+                        y="26"
+                        className="text-xs font-bold fill-current"
+                        textAnchor="middle"
+                      >
+                        RISK
+                      </text>
                     </svg>
                   </div>
                 </div>
