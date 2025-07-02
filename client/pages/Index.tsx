@@ -167,7 +167,7 @@ export default function Index() {
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <svg
-                      className="w-12 h-12 text-vigilum-blue group-hover:text-purple-400 transition-colors duration-300"
+                      className="w-12 h-12 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300"
                       viewBox="0 0 48 48"
                       fill="none"
                     >
