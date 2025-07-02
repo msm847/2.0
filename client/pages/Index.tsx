@@ -241,7 +241,7 @@ export default function Index() {
                     semantic typology space — revealing how legal form produces
                     risk in permissible form.
                   </p>
-                  <button className="text-vigilum-blue hover:text-purple-400 transition-colors duration-300 font-medium text-sm">
+                  <button className="text-vigilum-blue hover:text-[#4682B4] transition-colors duration-300 font-medium text-sm">
                     → Explore Typologies
                   </button>
                 </div>
