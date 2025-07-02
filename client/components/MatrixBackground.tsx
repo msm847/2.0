@@ -20,18 +20,18 @@ export default function MatrixBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Responsive particle count
+    // Particle count reduced by 25%
     const getParticleCount = () => {
-      return window.innerWidth < 768 ? 60 : 100;
+      return window.innerWidth < 768 ? 45 : 75;
     };
 
-    // Particle constructor function with speed 1.3
+    // Particle speed reduced by 20%
     const createParticle = (): Particle => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 1.3,
-      vy: (Math.random() - 0.5) * 1.3,
-      size: 2.4,
+      vx: (Math.random() - 0.5) * 1.04, // 1.3 * 0.8 = 1.04
+      vy: (Math.random() - 0.5) * 1.04,
+      size: 2.4, // 20% larger than original
     });
 
     // Initialize particles
