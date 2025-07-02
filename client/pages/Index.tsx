@@ -163,52 +163,7 @@ export default function Index() {
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-vigilum-blue group-hover:text-[#57A0D2] transition-colors duration-300"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                    >
-                      {/* Speedometer arc */}
-                      <path
-                        d="M8 32c0-8.84 7.16-16 16-16s16 7.16 16 16"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        fill="none"
-                      />
-                      {/* Center dot */}
-                      <circle cx="24" cy="32" r="2.5" fill="currentColor" />
-                      {/* Needle/pointer */}
-                      <path
-                        d="M24 32l8-8"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                      {/* Speed marks */}
-                      <path
-                        d="M11 29l2 1M13 25l2 2M16 22l2 2"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        opacity="0.6"
-                      />
-                      <path
-                        d="M37 29l-2 1M35 25l-2 2M32 22l-2 2"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        opacity="0.6"
-                      />
-                      {/* Bottom arc extension */}
-                      <path
-                        d="M12 35c0-1 0.5-2 1-2M36 35c0-1-0.5-2-1-2"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        opacity="0.7"
-                      />
-                    </svg>
+                    <Gauge className="w-12 h-12 text-vigilum-blue group-hover:text-[#57A0D2] transition-colors duration-300" />
                   </div>
                 </div>
 
