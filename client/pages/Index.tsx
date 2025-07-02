@@ -96,37 +96,70 @@ export default function Index() {
                       viewBox="0 0 48 48"
                       fill="none"
                     >
+                      {/* Document */}
                       <rect
-                        x="6"
-                        y="6"
-                        width="36"
-                        height="28"
+                        x="4"
+                        y="8"
+                        width="18"
+                        height="22"
                         rx="2"
                         stroke="currentColor"
+                        strokeWidth="2.5"
+                        fill="none"
+                      />
+                      {/* Document lines */}
+                      <path
+                        d="M8 14h10M8 18h8M8 22h6"
+                        stroke="currentColor"
                         strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      {/* Arrow */}
+                      <path
+                        d="M26 19h8"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
                       />
                       <path
-                        d="M12 12h24M12 18h20M12 24h16"
+                        d="M30 15l4 4-4 4"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                      />
+                      {/* Network nodes */}
+                      <circle
+                        cx="39"
+                        cy="12"
+                        r="3"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        fill="none"
                       />
                       <circle
-                        cx="38"
-                        cy="38"
-                        r="6"
+                        cx="43"
+                        cy="24"
+                        r="3"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        fill="none"
+                      />
+                      <circle
+                        cx="35"
+                        cy="32"
+                        r="3"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        fill="none"
+                      />
+                      {/* Network connections */}
+                      <path
+                        d="M36.5 14.5l5 7.5M40.5 21.5l-3.5 8.5M37.5 29.5l3.5-6.5"
                         stroke="currentColor"
                         strokeWidth="2"
-                      />
-                      <path
-                        d="M35 38h6M38 35v6"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M24 30l8 4"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        strokeDasharray="2,2"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </div>
