@@ -133,59 +133,10 @@ export default function Index() {
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                    >
-                      {/* Globe outline */}
-                      <circle
-                        cx="24"
-                        cy="24"
-                        r="18"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        fill="none"
-                      />
-                      {/* Globe grid lines - vertical */}
-                      <path
-                        d="M24 6v36M16 12v24M32 12v24"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        opacity="0.7"
-                      />
-                      {/* Globe grid lines - horizontal */}
-                      <path
-                        d="M6 24h36M10 15h28M10 33h28"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        opacity="0.7"
-                      />
-                      {/* Globe curved sections */}
-                      <path
-                        d="M24 6c-6 6-6 12 0 18s6 12 0 18M24 6c6 6 6 12 0 18s-6 12 0 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        opacity="0.6"
-                        fill="none"
-                      />
-                      {/* Shield */}
-                      <path
-                        d="M30 30v8c0 2 4 4 6 4s6-2 6-4v-8l-6-2-6 2z"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                      {/* RISK text */}
-                      <text
-                        x="20"
-                        y="26"
-                        className="text-xs font-bold fill-current"
-                        textAnchor="middle"
-                      >
-                        RISK
-                      </text>
-                    </svg>
+                    <div className="relative">
+                      <Globe className="w-12 h-12 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300" />
+                      <Shield className="w-5 h-5 text-vigilum-blue group-hover:text-[#4682B4] transition-colors duration-300 absolute -bottom-1 -right-1" />
+                    </div>
                   </div>
                 </div>
 
