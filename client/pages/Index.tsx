@@ -2,7 +2,16 @@ import { DemoResponse } from "@shared/api";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Search, Brain } from "lucide-react";
+import {
+  ArrowRight,
+  Shield,
+  Search,
+  Brain,
+  FileText,
+  Share2,
+  Globe,
+  Gauge,
+} from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 
 export default function Index() {
