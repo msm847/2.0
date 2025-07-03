@@ -23,6 +23,7 @@ import MatrixBackground from "../components/MatrixBackground";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Add a longer delay to ensure the server is fully ready
@@ -32,7 +33,7 @@ export default function Index() {
 
   // Function to handle navigation with hash scrolling
   const handleNavigation = (hash: string) => {
-    window.location.href = `/vigilum${hash}`;
+    navigate(`/vigilum${hash}`);
   };
 
   const fetchHello = async () => {
