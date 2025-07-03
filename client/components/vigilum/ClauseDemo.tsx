@@ -1,324 +1,327 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { AlertTriangle, CheckCircle, Info } from "lucide-react";
-
-const presetExamples = [
-  {
-    id: "emergency",
-    title: "Emergency Procurement",
-    text: "In cases of extreme urgency, procurement procedures may be bypassed when the contracting authority determines immediate action is necessary.",
-    analysis: {
-      score: 85,
-      typologies: ["DG", "SB"],
-      explanation:
-        "High discretionary gap due to undefined 'extreme urgency' and authority determining necessity. Creates structural blindspot in oversight.",
-    },
-  },
-  {
-    id: "modification",
-    title: "Contract Modification",
-    text: "Contract modifications are permitted when unforeseen circumstances arise that could not have been anticipated during the original tender process.",
-    analysis: {
-      score: 72,
-      typologies: ["RT", "DG"],
-      explanation:
-        "Risk transfer to public party through 'unforeseen circumstances' clause. Discretionary interpretation of what constitutes 'unforeseen'.",
-    },
-  },
-  {
-    id: "inhouse",
-    title: "In-House Exception",
-    text: "Public entities may award contracts directly to entities over which they exercise control similar to that exercised over their own departments.",
-    analysis: {
-      score: 45,
-      typologies: ["CI"],
-      explanation:
-        "Potential conflict of interest through unclear definition of 'control similar'. Otherwise structured with reasonable safeguards.",
-    },
-  },
-];
+import {
+  Upload,
+  Search,
+  Download,
+  Activity,
+  AlertTriangle,
+  BarChart3,
+  FileText,
+} from "lucide-react";
 
 const ClauseDemo = () => {
   const [inputText, setInputText] = useState("");
-  const [analysis, setAnalysis] = useState<any>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysis, setAnalysis] = useState(null);
+  const [showGraph, setShowGraph] = useState(false);
 
-  const analyzeClause = async (text: string) => {
+  // Sample clause for demonstration
+  const sampleClause = `"The contracting authority may, at its sole discretion and without prior notice, modify the terms of this agreement where such modifications are deemed necessary for operational efficiency, subject to internal administrative procedures that shall be determined separately."`;
+
+  // Simulate clause analysis
+  const analyzeClause = async () => {
+    if (!inputText.trim()) return;
+
     setIsAnalyzing(true);
+    setAnalysis(null);
+    setShowGraph(false);
 
-    // Simulate analysis delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Simulate processing time
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // Simple heuristic analysis for demo
-    const words = text.toLowerCase();
-    let score = 0;
-    const detectedTypologies = [];
-
-    // Check for discretionary language
-    if (
-      words.includes("may") ||
-      words.includes("discretion") ||
-      words.includes("determine")
-    ) {
-      score += 30;
-      detectedTypologies.push("DG");
-    }
-
-    // Check for emergency/urgency
-    if (
-      words.includes("emergency") ||
-      words.includes("urgent") ||
-      words.includes("immediate")
-    ) {
-      score += 25;
-      detectedTypologies.push("SB");
-    }
-
-    // Check for risk transfer language
-    if (
-      words.includes("unforeseen") ||
-      words.includes("circumstances") ||
-      words.includes("modify")
-    ) {
-      score += 20;
-      detectedTypologies.push("RT");
-    }
-
-    // Check for conflict potential
-    if (
-      words.includes("control") ||
-      words.includes("direct") ||
-      words.includes("related")
-    ) {
-      score += 15;
-      detectedTypologies.push("CI");
-    }
-
-    const explanation = generateExplanation(detectedTypologies, score);
-
-    setAnalysis({
-      score: Math.min(score, 100),
-      typologies: [...new Set(detectedTypologies)],
-      explanation,
-    });
-
-    setIsAnalyzing(false);
-  };
-
-  const generateExplanation = (typologies: string[], score: number) => {
-    const typologyDescriptions = {
-      DG: "discretionary authority without clear constraints",
-      SB: "procedural gaps that could obscure accountability",
-      RT: "potential for shifting risk from private to public parties",
-      CI: "relationships that could create conflicts of interest",
+    // Generate analysis results
+    const analysisResult = {
+      clause_id: "Clause 3.4.2",
+      risk_typology: ["DG", "RT"],
+      override_path: ["3.4.2 → 3.5.1"],
+      semantic_vector: {
+        DG: 0.91,
+        RT: 0.74,
+        CI: 0.22,
+        SB: 0.05,
+      },
+      similar_loophole: "L002",
+      inference_flag: "OverrideByDesign",
+      risk_indicators: [
+        "Discretionary authority without bounds",
+        "Procedural ambiguity mechanism",
+        "Unilateral modification rights",
+        "Administrative self-determination",
+      ],
+      override_mechanisms: [
+        "Sole discretion clause",
+        "Operational efficiency exception",
+        "Internal procedure determination",
+      ],
     };
 
-    if (typologies.length === 0) {
-      return "No significant structural risks detected in this clause.";
-    }
+    setAnalysis(analysisResult);
+    setIsAnalyzing(false);
 
-    const descriptions = typologies.map(
-      (t) => typologyDescriptions[t as keyof typeof typologyDescriptions],
-    );
-    return `Detected ${descriptions.join(", ")}. Risk level: ${score > 70 ? "High" : score > 40 ? "Medium" : "Low"}.`;
+    // Show graph after analysis
+    setTimeout(() => setShowGraph(true), 500);
   };
 
-  const loadExample = (example: any) => {
-    setInputText(example.text);
-    setAnalysis(example.analysis);
-  };
+  const downloadResults = () => {
+    if (!analysis) return;
 
-  const getRiskColor = (score: number) => {
-    if (score >= 70) return "text-red-600";
-    if (score >= 40) return "text-yellow-600";
-    return "text-green-600";
+    const dataStr = JSON.stringify(analysis, null, 2);
+    const dataUri =
+      "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+
+    const exportFileDefaultName = `vigilum-analysis-${Date.now()}.json`;
+
+    const linkElement = document.createElement("a");
+    linkElement.setAttribute("href", dataUri);
+    linkElement.setAttribute("download", exportFileDefaultName);
+    linkElement.click();
   };
 
   return (
-    <section className="py-20 bg-white">
+    <div className="bg-gray-800 py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Try the System
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Paste a legal clause or contract snippet to see how Vigilum analyzes
-            structural risks. This is a simplified demonstration of the full
-            platform.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-blue-900/30 px-3 py-1 rounded-full border border-blue-700 mb-4">
+              <Search className="w-3 h-3 text-blue-400" />
+              <span className="text-xs text-blue-300 font-mono uppercase tracking-wider">
+                CLAVIS - Clause Intelligence
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+              PRIMARY COGNITION TEST
+            </h2>
+            <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
+              Input legal text → Vector projection → Override mapping → Risk
+              fingerprint. Real-time structural analysis.
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Input Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Input Section */}
             <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Legal Text Input
-                </label>
-                <Textarea
+              <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold text-white font-mono">
+                    CLAUSE INPUT
+                  </h3>
+                  <Button
+                    onClick={() => setInputText(sampleClause)}
+                    variant="outline"
+                    size="sm"
+                    className="border-gray-600 text-gray-400 hover:bg-gray-800 font-mono text-xs"
+                  >
+                    LOAD SAMPLE
+                  </Button>
+                </div>
+
+                <textarea
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
-                  placeholder="Paste a clause or legal text here..."
-                  className="min-h-32"
+                  placeholder="Paste legal clause for structural analysis..."
+                  className="w-full h-40 bg-gray-800 border border-gray-600 rounded-lg p-4 text-gray-300 font-mono text-sm resize-none focus:outline-none focus:border-blue-500"
                 />
-              </div>
 
-              <div className="flex flex-wrap gap-2">
-                <Button
-                  onClick={() => analyzeClause(inputText)}
-                  disabled={!inputText.trim() || isAnalyzing}
-                  className="bg-blue-600 hover:bg-blue-700"
-                >
-                  {isAnalyzing ? "Analyzing..." : "Analyze Clause"}
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setInputText("");
-                    setAnalysis(null);
-                  }}
-                >
-                  Clear
-                </Button>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">
-                  Try Examples:
-                </h3>
-                <div className="space-y-2">
-                  {presetExamples.map((example) => (
-                    <button
-                      key={example.id}
-                      onClick={() => loadExample(example)}
-                      className="block w-full text-left p-3 border border-slate-200 rounded-lg hover:border-slate-300 hover:bg-slate-50 transition-colors"
-                    >
-                      <div className="font-medium text-slate-900">
-                        {example.title}
-                      </div>
-                      <div className="text-sm text-slate-600 truncate">
-                        {example.text}
-                      </div>
-                    </button>
-                  ))}
+                <div className="flex items-center justify-between mt-4">
+                  <div className="text-xs text-gray-500 font-mono">
+                    {inputText.length} characters
+                  </div>
+                  <Button
+                    onClick={analyzeClause}
+                    disabled={!inputText.trim() || isAnalyzing}
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-mono px-6"
+                  >
+                    {isAnalyzing ? (
+                      <>
+                        <Activity className="w-4 h-4 mr-2 animate-spin" />
+                        ANALYZING
+                      </>
+                    ) : (
+                      <>
+                        <Search className="w-4 h-4 mr-2" />
+                        ANALYZE
+                      </>
+                    )}
+                  </Button>
                 </div>
               </div>
+
+              {/* Processing Status */}
+              {isAnalyzing && (
+                <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Activity className="w-5 h-5 text-blue-400 animate-spin" />
+                    <span className="text-sm font-mono text-blue-400">
+                      STRUCTURAL ANALYSIS IN PROGRESS
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-xs text-gray-400">
+                      → Semantic vector decomposition
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      → Override pathway mapping
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      → Risk typology projection
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      → Behavioral simulation
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Analysis Side */}
+            {/* Results Section */}
             <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Analysis Result
-                </label>
+              {analysis && (
+                <>
+                  {/* JSON Output */}
+                  <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-bold text-white font-mono">
+                        RISK REPORT
+                      </h3>
+                      <Button
+                        onClick={downloadResults}
+                        variant="outline"
+                        size="sm"
+                        className="border-gray-600 text-gray-400 hover:bg-gray-800 font-mono text-xs"
+                      >
+                        <Download className="w-3 h-3 mr-1" />
+                        JSON
+                      </Button>
+                    </div>
 
-                {isAnalyzing ? (
-                  <div className="border border-slate-200 rounded-lg p-6">
-                    <div className="flex items-center justify-center space-x-3">
-                      <div className="animate-spin h-6 w-6 border-2 border-blue-600 border-t-transparent rounded-full"></div>
-                      <span className="text-slate-600">
-                        Analyzing structure...
-                      </span>
+                    <pre className="text-xs text-gray-300 font-mono bg-gray-800 border border-gray-600 rounded p-4 overflow-auto max-h-60">
+                      {JSON.stringify(analysis, null, 2)}
+                    </pre>
+                  </div>
+
+                  {/* Visual Analysis */}
+                  <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+                    <h3 className="text-lg font-bold text-white font-mono mb-4">
+                      VECTOR ANALYSIS
+                    </h3>
+
+                    <div className="space-y-4">
+                      {Object.entries(analysis.semantic_vector).map(
+                        ([key, value]) => (
+                          <div key={key}>
+                            <div className="flex items-center justify-between mb-2">
+                              <div className="flex items-center space-x-2">
+                                <div
+                                  className={`w-3 h-3 rounded-full ${
+                                    key === "DG"
+                                      ? "bg-yellow-400"
+                                      : key === "RT"
+                                        ? "bg-orange-400"
+                                        : key === "CI"
+                                          ? "bg-blue-400"
+                                          : "bg-red-400"
+                                  }`}
+                                />
+                                <span className="text-sm font-mono text-gray-300">
+                                  {key}
+                                </span>
+                              </div>
+                              <span className="text-sm font-mono text-gray-400">
+                                {value.toFixed(2)}
+                              </span>
+                            </div>
+                            <div className="w-full bg-gray-800 rounded-full h-2">
+                              <div
+                                className={`h-2 rounded-full transition-all duration-1000 ${
+                                  key === "DG"
+                                    ? "bg-yellow-400"
+                                    : key === "RT"
+                                      ? "bg-orange-400"
+                                      : key === "CI"
+                                        ? "bg-blue-400"
+                                        : "bg-red-400"
+                                }`}
+                                style={{
+                                  width: `${showGraph ? value * 100 : 0}%`,
+                                }}
+                              />
+                            </div>
+                          </div>
+                        ),
+                      )}
                     </div>
                   </div>
-                ) : analysis ? (
-                  <div className="border border-slate-200 rounded-lg p-6 space-y-4">
-                    {/* Risk Score */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-slate-700">
-                        Structural Risk Score
-                      </span>
-                      <div className="flex items-center space-x-2">
-                        <span
-                          className={`text-2xl font-bold ${getRiskColor(analysis.score)}`}
+
+                  {/* Risk Indicators */}
+                  <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <AlertTriangle className="w-5 h-5 text-orange-400" />
+                      <h3 className="text-lg font-bold text-white font-mono">
+                        RISK INDICATORS
+                      </h3>
+                    </div>
+
+                    <div className="space-y-2">
+                      {analysis.risk_indicators.map((indicator, index) => (
+                        <div
+                          key={index}
+                          className="text-xs text-gray-400 border-l-2 border-orange-400 pl-3"
                         >
-                          {analysis.score}
-                        </span>
-                        <span className="text-slate-500">/100</span>
-                      </div>
-                    </div>
-
-                    {/* Risk Bar */}
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className={`h-2 rounded-full transition-all duration-500 ${
-                          analysis.score >= 70
-                            ? "bg-red-500"
-                            : analysis.score >= 40
-                              ? "bg-yellow-500"
-                              : "bg-green-500"
-                        }`}
-                        style={{ width: `${analysis.score}%` }}
-                      ></div>
-                    </div>
-
-                    {/* Typologies */}
-                    {analysis.typologies.length > 0 && (
-                      <div>
-                        <div className="text-sm font-medium text-slate-700 mb-2">
-                          Detected Risk Typologies:
+                          → {indicator}
                         </div>
-                        <div className="flex flex-wrap gap-2">
-                          {analysis.typologies.map((type: string) => (
-                            <span
-                              key={type}
-                              className="px-2 py-1 bg-red-100 text-red-800 rounded text-sm font-medium"
-                            >
-                              {type}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Explanation */}
-                    <div className="bg-slate-50 rounded-lg p-4">
-                      <div className="flex items-start space-x-2">
-                        <Info
-                          size={16}
-                          className="text-slate-500 mt-0.5 flex-shrink-0"
-                        />
-                        <p className="text-sm text-slate-700">
-                          {analysis.explanation}
-                        </p>
-                      </div>
+                      ))}
                     </div>
 
-                    <div className="text-xs text-slate-500">
-                      Risk computed from clause interaction and semantic
-                      patterns, not just keywords.
+                    <div className="mt-6 pt-4 border-t border-gray-700">
+                      <div className="text-xs text-orange-400 font-mono mb-2">
+                        INFERENCE FLAG: {analysis.inference_flag}
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        Similar loophole pattern: {analysis.similar_loophole}
+                      </div>
                     </div>
                   </div>
-                ) : (
-                  <div className="border border-slate-200 rounded-lg p-6 text-center text-slate-500">
-                    Enter text above and click "Analyze Clause" to see results
+                </>
+              )}
+
+              {/* Default State */}
+              {!analysis && !isAnalyzing && (
+                <div className="bg-gray-900 border border-gray-700 rounded-lg p-12 text-center">
+                  <FileText className="w-12 h-12 text-gray-600 mx-auto mb-4" />
+                  <div className="text-lg font-mono text-gray-500 mb-2">
+                    AWAITING INPUT
                   </div>
-                )}
-              </div>
+                  <div className="text-sm text-gray-600">
+                    Enter legal clause for structural analysis
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
-          <div className="mt-12 bg-blue-50 rounded-lg p-6">
+          {/* Methodology Note */}
+          <div className="mt-16 bg-blue-900/20 border border-blue-700 rounded-lg p-6">
             <div className="flex items-start space-x-3">
-              <Info className="text-blue-600 mt-1 flex-shrink-0" size={20} />
+              <BarChart3 className="w-5 h-5 text-blue-400 mt-1" />
               <div>
-                <h4 className="font-semibold text-blue-900 mb-2">
-                  Demo Limitations
-                </h4>
-                <p className="text-blue-800 text-sm">
-                  This is a simplified demonstration. The full Vigilum platform
-                  uses advanced AI models, comprehensive legal databases, and
-                  cross-module analysis to provide more accurate and detailed
-                  structural risk assessments.
-                </p>
+                <div className="text-sm font-bold text-blue-400 font-mono mb-2">
+                  SEMANTIC ANALYSIS METHODOLOGY
+                </div>
+                <div className="text-sm text-gray-300 leading-relaxed">
+                  CLAVIS employs semantic vector decomposition to identify
+                  embedded override mechanisms in legal text. Risk typologies
+                  (DG, RT, CI, SB) represent different vectors of institutional
+                  failure. Output includes override pathways, similar loophole
+                  patterns, and behavioral simulation parameters.
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
