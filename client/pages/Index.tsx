@@ -206,11 +206,11 @@ export default function Index() {
 
             <div className="relative mt-12" style={{ position: "relative" }} />
             <div className="mt-12">
-              <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
+              <p className="text-lg text-gray-700 font-medium leading-relaxed">
                 "The concept of truth cannot be defined in terms of the concepts
                 of the object language."
               </p>
-              <p className="font-medium">– Alfred Tarski, 1944</p>
+              <p className="font-medium text-gray-600">– Alfred Tarski, 1944</p>
             </div>
             <p
               className="text-sm text-vigilum-label uppercase font-medium mt-12"
