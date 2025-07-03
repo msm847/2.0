@@ -105,7 +105,7 @@ export default function Index() {
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Brain className="mr-3 h-4 w-4" />
-                      Five AI-Powered Modules
+                      Modules
                     </a>
                     <a
                       href="#try-system"
