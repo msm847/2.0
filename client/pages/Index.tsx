@@ -137,8 +137,8 @@ export default function Index() {
 
               {/* Column 2 - Structural Risk Simulation */}
               <div
-                className="group p-8 rounded-lg border border-slate-700/30 hover:border-[#4682B4] transition-all duration-300 cursor-pointer hover:bg-[#0080FE]/15"
-                style={{ background: "rgba(255, 255, 255, 0.02)" }}
+                className="group p-8 rounded-lg border border-gray-200 hover:border-[#4682B4] transition-all duration-300 cursor-pointer hover:bg-[#0080FE]/10"
+                style={{ background: "rgba(0, 0, 0, 0.02)" }}
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
