@@ -65,6 +65,13 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-slate-800">
             <div className="flex flex-col space-y-4">
+              <Link
+                to="/"
+                className="text-slate-300 hover:text-white transition-colors"
+                onClick={toggleMenu}
+              >
+                Home
+              </Link>
               <a
                 href="#modules"
                 className="text-slate-300 hover:text-white transition-colors"
