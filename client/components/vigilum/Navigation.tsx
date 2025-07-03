@@ -20,6 +20,12 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link
+              to="/"
+              className="text-slate-300 hover:text-white transition-colors"
+            >
+              Home
+            </Link>
             <a
               href="#modules"
               className="text-slate-300 hover:text-white transition-colors"
