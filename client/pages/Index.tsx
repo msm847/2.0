@@ -179,7 +179,7 @@ export default function Index() {
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <Gauge
-                      className="w-11 h-11 text-vigilum-blue group-hover:text-[#57A0D2] transition-colors duration-300"
+                      className="w-11 h-11 text-blue-600 group-hover:text-[#57A0D2] transition-colors duration-300"
                       strokeWidth={1.5}
                     />
                   </div>
