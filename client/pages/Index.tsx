@@ -85,49 +85,44 @@ export default function Index() {
             </div>
             <div className="flex items-center space-x-4">
               <div className="relative group">
-                <Button className="bg-black text-white hover:bg-gray-800 font-medium">
-                  Explore Platform
-                  <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
+                <Link to="/vigilum">
+                  <Button className="bg-black text-white hover:bg-gray-800 font-medium">
+                    Explore Platform
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
 
                 {/* Hover Dropdown */}
                 <div className="absolute right-0 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50">
                   <div className="py-1">
                     <Link
-                      to="/vigilum"
-                      className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
-                    >
-                      <Shield className="mr-3 h-4 w-4" />
-                      Full Platform
-                    </Link>
-                    <a
-                      href="#modules"
+                      to="/modules"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Brain className="mr-3 h-4 w-4" />
                       Modules
-                    </a>
-                    <a
-                      href="#try-system"
+                    </Link>
+                    <Link
+                      to="/try-system"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Search className="mr-3 h-4 w-4" />
                       Try the System
-                    </a>
-                    <a
-                      href="#use-cases"
+                    </Link>
+                    <Link
+                      to="/use-cases"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <FileText className="mr-3 h-4 w-4" />
                       Live Use Cases
-                    </a>
-                    <a
-                      href="#about"
+                    </Link>
+                    <Link
+                      to="/about"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Globe className="mr-3 h-4 w-4" />
                       About
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
