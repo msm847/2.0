@@ -65,64 +65,53 @@ export default function Index() {
               <span className="text-xl font-medium">Vigilum.AI</span>
             </div>
             <div className="flex items-center space-x-4">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button className="bg-black text-white hover:bg-gray-800 font-medium">
-                    Explore Platform
-                    <ChevronDown className="ml-2 h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  align="end"
-                  className="w-56 bg-white border border-gray-200 shadow-lg"
-                >
-                  <DropdownMenuItem asChild>
+              <div className="relative group">
+                <Button className="bg-black text-white hover:bg-gray-800 font-medium">
+                  Explore Platform
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+
+                {/* Hover Dropdown */}
+                <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50">
+                  <div className="py-1">
                     <Link
                       to="/vigilum"
-                      className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Shield className="mr-3 h-4 w-4" />
                       Full Platform
                     </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <a
                       href="#modules"
-                      className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Brain className="mr-3 h-4 w-4" />
                       Five AI-Powered Modules
                     </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <a
                       href="#try-system"
-                      className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Search className="mr-3 h-4 w-4" />
                       Try the System
                     </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <a
                       href="#use-cases"
-                      className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <FileText className="mr-3 h-4 w-4" />
                       Live Use Cases
                     </a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <a
                       href="#about"
-                      className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Globe className="mr-3 h-4 w-4" />
                       About
                     </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+                  </div>
+                </div>
+              </div>
             </div>
           </nav>
         </header>
