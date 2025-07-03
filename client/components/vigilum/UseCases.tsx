@@ -1,269 +1,341 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const useCases = [
-  {
-    id: "vilnius-stadium",
-    title: "Vilnius National Stadium",
-    subtitle: "40 Years, 3 Tenders, €2.1B Lost",
-    description:
-      "A decades-long project repeatedly stalled by legal loopholes in PPP contracts, showing how structural gaps enable systematic delays.",
-    timeline: [
-      { year: "1987", event: "Initial stadium plan conceived" },
-      { year: "2008", event: "EU funds application attempt" },
-      { year: "2013", event: "PPP tender with BaltCap launched" },
-      { year: "2019", event: "Concession canceled amid scandal" },
-      { year: "2022", event: "Project restarted with new safeguards" },
-    ],
-    loopholes: ["L003: Unforeseen Modification", "L005: Single-bidder Award"],
-    vigilumAnalysis: {
-      obscura: "Would flag repeated tender cancellations as anomalies",
-      nexus: "Maps recurring officials/companies across tender iterations",
-      nullum: "Tracks systematic legal challenges as delay patterns",
-      veris: "High risk score from multiple structural factors",
-    },
-    image: "/placeholder.svg",
-    category: "Infrastructure",
-    location: "Lithuania",
-  },
-  {
-    id: "ignitis-energy",
-    title: "Ignitis Energy Procurement",
-    subtitle: "Board Conflicts & Risk Transfer",
-    description:
-      "Energy procurement contracts where board connections and risk transfer clauses created systematic vulnerabilities.",
-    timeline: [
-      { year: "2020", event: "Energy market liberalization begins" },
-      { year: "2021", event: "New procurement framework adopted" },
-      { year: "2022", event: "Contracts with risk transfer clauses" },
-      { year: "2023", event: "Board conflicts of interest revealed" },
-    ],
-    loopholes: ["L007: Risk Transfer Clauses", "L012: Board Overlap"],
-    vigilumAnalysis: {
-      clavis: "Detects risk-shifting language in energy contracts",
-      nexus: "Maps board member overlaps between entities",
-      veris: "Elevated risk score from conflict patterns",
-    },
-    image: "/placeholder.svg",
-    category: "Energy",
-    location: "Lithuania",
-  },
-  {
-    id: "covid-procurement",
-    title: "COVID Emergency Procurement",
-    subtitle: "€500M in Bypassed Oversight",
-    description:
-      "Emergency procurement during pandemic showed how crisis exceptions created systematic oversight gaps across EU.",
-    timeline: [
-      { year: "2020 Q1", event: "Pandemic emergency declared" },
-      { year: "2020 Q2", event: "Emergency procurement surge" },
-      { year: "2021", event: "Audit reveals systematic issues" },
-      { year: "2022", event: "New emergency frameworks adopted" },
-    ],
-    loopholes: ["L001: Emergency Exception", "L006: Direct Award"],
-    vigilumAnalysis: {
-      obscura: "Flags spike in direct awards vs normal periods",
-      sentium: "Correlates media reports with contract patterns",
-      veris: "Tracks risk escalation during emergency periods",
-    },
-    image: "/placeholder.svg",
-    category: "Healthcare",
-    location: "EU-wide",
-  },
-  {
-    id: "romanian-ppp",
-    title: "Romanian PPP Exploitation",
-    subtitle: "EU Directive Loopholes Exploited",
-    description:
-      "Systematic exploitation of PPP directive loopholes allowing contract modifications without proper oversight.",
-    timeline: [
-      { year: "2018", event: "PPP framework implementation" },
-      { year: "2019", event: "First contract modifications" },
-      { year: "2020", event: "Scope expansions accelerate" },
-      { year: "2021", event: "EU audit flags issues" },
-    ],
-    loopholes: ["L003: Unforeseen Modification", "L009: Scope Expansion"],
-    vigilumAnalysis: {
-      clavis: "Identifies modification clauses creating loopholes",
-      obscura: "Detects pattern of systematic scope changes",
-      nexus: "Maps relationships enabling modifications",
-    },
-    image: "/placeholder.svg",
-    category: "Infrastructure",
-    location: "Romania",
-  },
-];
+import {
+  FileText,
+  AlertTriangle,
+  TrendingUp,
+  Eye,
+  EyeOff,
+  ArrowRight,
+  Calendar,
+  DollarSign,
+} from "lucide-react";
 
 const UseCases = () => {
-  const [currentCase, setCurrentCase] = useState(0);
+  const [selectedCase, setSelectedCase] = useState(0);
 
-  const nextCase = () => {
-    setCurrentCase((prev) => (prev + 1) % useCases.length);
-  };
+  const cases = [
+    {
+      id: "L002",
+      title: "Article 72 Procurement Override",
+      sector: "Public Infrastructure",
+      amount: "€847M",
+      date: "2019-2022",
+      status: "Structural Bypass Detected",
+      riskLevel: 0.91,
+      typology: "DG + RT",
+      description:
+        "Emergency procurement clause allowed systematic bypass of competitive bidding through temporal administrative compression.",
+      originalClause:
+        '"In cases of urgent operational necessity, the contracting authority may proceed with direct procurement procedures, subject to post-hoc administrative review."',
+      riskIndicators: [
+        "Unbounded emergency definition",
+        "Post-hoc review mechanism",
+        "Direct procurement pathway",
+        "Administrative self-determination",
+      ],
+      overridePath: [
+        "Emergency declaration",
+        "Direct procurement activation",
+        "Administrative review bypass",
+        "Structural completion",
+      ],
+      outcome:
+        "€847M in contracts awarded without competition. Administrative review never conducted. Structural override became institutional norm.",
+      preventable: true,
+    },
+    {
+      id: "L017",
+      title: "Discretionary Grant Allocation",
+      sector: "Regional Development",
+      amount: "€312M",
+      date: "2020-2021",
+      status: "Timeline Compression",
+      riskLevel: 0.74,
+      typology: "DG + CI",
+      description:
+        "Grant eligibility criteria contained semantic contradictions enabling administrative discretion expansion.",
+      originalClause:
+        '"Grant recipients must demonstrate both innovation capacity and established operational history, with final determination at administrative discretion."',
+      riskIndicators: [
+        "Contradictory qualification requirements",
+        "Administrative discretion clause",
+        "Undefined determination criteria",
+        "Temporal pressure mechanisms",
+      ],
+      overridePath: [
+        "Contradiction exploitation",
+        "Discretion amplification",
+        "Criteria nullification",
+        "Selective application",
+      ],
+      outcome:
+        "€312M allocated to predetermined recipients. Contradiction used to justify any decision. Eligibility became meaningless.",
+      preventable: true,
+    },
+    {
+      id: "L023",
+      title: "Regulatory Exemption Cascade",
+      sector: "Financial Services",
+      amount: "€1.2B",
+      date: "2018-2020",
+      status: "Clause Interference",
+      riskLevel: 0.88,
+      typology: "RT + SB",
+      description:
+        "Regulatory exemption for 'innovative financial products' created systematic oversight bypass through definitional ambiguity.",
+      originalClause:
+        '"Innovative financial products may be exempted from standard regulatory requirements pending comprehensive assessment, with interim operational approval."',
+      riskIndicators: [
+        "Innovation definition ambiguity",
+        "Pending assessment loophole",
+        "Interim approval mechanism",
+        "Standard requirement bypass",
+      ],
+      overridePath: [
+        "Innovation claim",
+        "Interim approval",
+        "Assessment delay",
+        "Exemption normalization",
+      ],
+      outcome:
+        "€1.2B in products operated without oversight. Assessment perpetually delayed. Exemption became permanent operational state.",
+      preventable: true,
+    },
+  ];
 
-  const prevCase = () => {
-    setCurrentCase((prev) => (prev - 1 + useCases.length) % useCases.length);
-  };
-
-  const useCase = useCases[currentCase];
+  const currentCase = cases[selectedCase];
 
   return (
-    <section className="py-20 bg-slate-900 text-white">
+    <div className="bg-gray-900 py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Live Use Cases</h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Real-world examples where structural corruption dynamics were at
-            play, analyzed through Vigilum's lens.
-          </p>
-        </div>
-
         <div className="max-w-6xl mx-auto">
-          {/* Navigation */}
-          <div className="flex items-center justify-between mb-8">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={prevCase}
-              className="border-slate-600 text-slate-300 hover:bg-slate-800"
-            >
-              <ChevronLeft size={16} className="mr-1" />
-              Previous
-            </Button>
-
-            <div className="flex space-x-2">
-              {useCases.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentCase(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentCase ? "bg-blue-400" : "bg-slate-600"
-                  }`}
-                />
-              ))}
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-orange-900/30 px-3 py-1 rounded-full border border-orange-700 mb-4">
+              <FileText className="w-3 h-3 text-orange-400" />
+              <span className="text-xs text-orange-300 font-mono uppercase tracking-wider">
+                Structural Retrospectives
+              </span>
             </div>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={nextCase}
-              className="border-slate-600 text-slate-300 hover:bg-slate-800"
-            >
-              Next
-              <ChevronRight size={16} className="ml-1" />
-            </Button>
+            <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+              ENCODED RISK CASE STUDIES
+            </h2>
+            <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
+              Simulated retrospectives showing how structural risk was embedded
+              in design and systematically overlooked until institutional
+              failure.
+            </p>
           </div>
 
-          {/* Case Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left: Case Info */}
-            <div className="space-y-6">
-              {/* Header */}
-              <div>
-                <div className="flex items-center space-x-3 mb-2">
-                  <span className="px-2 py-1 bg-blue-600 text-white rounded text-sm font-medium">
-                    {useCase.category}
-                  </span>
-                  <span className="px-2 py-1 bg-slate-700 text-slate-300 rounded text-sm">
-                    {useCase.location}
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold mb-2">{useCase.title}</h3>
-                <p className="text-xl text-blue-400 mb-4">{useCase.subtitle}</p>
-                <p className="text-slate-300 text-lg">{useCase.description}</p>
-              </div>
-
-              {/* Timeline */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4 text-slate-200">
-                  Timeline
-                </h4>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Case Selection */}
+            <div className="lg:col-span-1">
+              <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                <h3 className="text-lg font-bold text-white font-mono mb-6">
+                  CASE LIBRARY
+                </h3>
                 <div className="space-y-3">
-                  {useCase.timeline.map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-20 text-blue-400 font-medium text-sm mt-1 flex-shrink-0">
-                        {item.year}
-                      </div>
-                      <div className="text-slate-300">{item.event}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Detected Loopholes */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4 text-slate-200">
-                  Detected Loopholes
-                </h4>
-                <div className="space-y-2">
-                  {useCase.loopholes.map((loophole, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between bg-slate-800 rounded-lg p-3"
+                  {cases.map((caseItem, index) => (
+                    <button
+                      key={caseItem.id}
+                      onClick={() => setSelectedCase(index)}
+                      className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${
+                        selectedCase === index
+                          ? "border-orange-500 bg-orange-900/20"
+                          : "border-gray-700 hover:border-gray-600"
+                      }`}
                     >
-                      <span className="text-red-400 font-medium">
-                        {loophole}
-                      </span>
-                      <ExternalLink size={16} className="text-slate-500" />
-                    </div>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="text-sm font-mono text-orange-400">
+                          {caseItem.id}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {caseItem.date}
+                        </div>
+                      </div>
+                      <div className="text-sm text-white font-medium mb-1">
+                        {caseItem.title}
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        {caseItem.sector}
+                      </div>
+                      <div className="flex items-center justify-between mt-2">
+                        <div className="text-xs font-mono text-red-400">
+                          {caseItem.amount}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Risk: {caseItem.riskLevel.toFixed(2)}
+                        </div>
+                      </div>
+                    </button>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Right: Vigilum Analysis */}
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-lg font-semibold mb-4 text-slate-200">
-                  How Vigilum's Modules Would Have Detected This
-                </h4>
-                <div className="space-y-4">
-                  {Object.entries(useCase.vigilumAnalysis).map(
-                    ([module, analysis]) => (
-                      <div
-                        key={module}
-                        className="bg-slate-800 rounded-lg p-4 border-l-4 border-blue-500"
-                      >
-                        <div className="font-semibold text-blue-400 mb-2 uppercase">
-                          {module}
-                        </div>
-                        <div className="text-slate-300">{analysis}</div>
+            {/* Case Details */}
+            <div className="lg:col-span-3 space-y-6">
+              {/* Case Header */}
+              <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="text-lg font-bold text-orange-400 font-mono">
+                        {currentCase.id}
                       </div>
-                    ),
-                  )}
+                      <div className="text-sm font-mono text-red-400">
+                        {currentCase.typology}
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      {currentCase.title}
+                    </h3>
+                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{currentCase.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <DollarSign className="w-4 h-4" />
+                        <span>{currentCase.amount}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg font-bold text-red-400 font-mono">
+                      {currentCase.riskLevel.toFixed(2)}
+                    </div>
+                    <div className="text-xs text-gray-500">RISK LEVEL</div>
+                  </div>
+                </div>
+                <p className="text-gray-300 leading-relaxed">
+                  {currentCase.description}
+                </p>
+              </div>
+
+              {/* Original Clause */}
+              <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                <div className="flex items-center space-x-2 mb-4">
+                  <FileText className="w-5 h-5 text-blue-400" />
+                  <h4 className="text-lg font-bold text-white font-mono">
+                    ORIGINAL CLAUSE
+                  </h4>
+                </div>
+                <div className="bg-gray-900 border border-gray-600 rounded-lg p-4">
+                  <div className="text-sm text-gray-300 font-mono italic leading-relaxed">
+                    {currentCase.originalClause}
+                  </div>
                 </div>
               </div>
 
-              {/* Outcome & Lessons */}
-              <div className="bg-slate-800 rounded-lg p-6">
-                <h4 className="text-lg font-semibold mb-3 text-slate-200">
-                  Outcome & Lessons
-                </h4>
-                <p className="text-slate-300 mb-4">
-                  {useCase.id === "vilnius-stadium" &&
-                    "Project was eventually rebooted with new safeguards in 2022. Had Vigilum been applied, structural risks could have been identified in the 2013 PPP contract stage, potentially saving years of delay."}
-                  {useCase.id === "ignitis-energy" &&
-                    "New governance frameworks implemented to address conflicts. Early detection would have prevented systematic risk accumulation."}
-                  {useCase.id === "covid-procurement" &&
-                    "Emergency frameworks were revised EU-wide. Vigilum could have maintained oversight during crisis while allowing necessary speed."}
-                  {useCase.id === "romanian-ppp" &&
-                    "EU directive amendments proposed to close loopholes. Proactive detection could have prevented systematic exploitation."}
-                </p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-slate-600 text-slate-300 hover:bg-slate-700"
-                >
-                  Read Full Analysis
-                  <ExternalLink size={14} className="ml-2" />
+              {/* Risk Analysis */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Risk Indicators */}
+                <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <AlertTriangle className="w-5 h-5 text-yellow-400" />
+                    <h4 className="text-lg font-bold text-white font-mono">
+                      RISK INDICATORS
+                    </h4>
+                  </div>
+                  <div className="space-y-3">
+                    {currentCase.riskIndicators.map((indicator, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0" />
+                        <div className="text-sm text-gray-300">{indicator}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Override Path */}
+                <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <TrendingUp className="w-5 h-5 text-red-400" />
+                    <h4 className="text-lg font-bold text-white font-mono">
+                      OVERRIDE PATH
+                    </h4>
+                  </div>
+                  <div className="space-y-3">
+                    {currentCase.overridePath.map((step, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-xs text-white font-mono">
+                            {index + 1}
+                          </span>
+                        </div>
+                        <div className="text-sm text-gray-300">{step}</div>
+                        {index < currentCase.overridePath.length - 1 && (
+                          <ArrowRight className="w-4 h-4 text-gray-500" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Outcome */}
+              <div className="bg-red-900/20 border border-red-700 rounded-lg p-6">
+                <div className="flex items-start space-x-3">
+                  <EyeOff className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-lg font-bold text-red-400 font-mono mb-3">
+                      STRUCTURAL OUTCOME
+                    </h4>
+                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                      {currentCase.outcome}
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <Eye className="w-4 h-4 text-green-400" />
+                      <span className="text-sm text-green-400 font-mono">
+                        VIGILUM DETECTION: PREVENTABLE
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action */}
+              <div className="text-center">
+                <Button className="bg-orange-600 hover:bg-orange-500 text-white font-mono px-8">
+                  ANALYZE SIMILAR STRUCTURES
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Summary Stats */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-red-400 font-mono mb-2">
+                €2.4B
+              </div>
+              <div className="text-sm text-gray-400">
+                Total structural exposure analyzed
+              </div>
+            </div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-yellow-400 font-mono mb-2">
+                100%
+              </div>
+              <div className="text-sm text-gray-400">
+                Cases preventable through structural analysis
+              </div>
+            </div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-blue-400 font-mono mb-2">
+                4
+              </div>
+              <div className="text-sm text-gray-400">
+                Primary risk typologies identified
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
