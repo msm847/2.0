@@ -87,13 +87,6 @@ const Navigation = () => {
               >
                 About
               </a>
-              <Button
-                size="sm"
-                className="bg-blue-600 hover:bg-blue-700 text-white w-fit"
-                onClick={toggleMenu}
-              >
-                Try Platform
-              </Button>
             </div>
           </div>
         )}
