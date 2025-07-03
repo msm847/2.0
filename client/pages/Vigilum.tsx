@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import ModulesGrid from "@/components/vigilum/ModulesGrid";
@@ -7,6 +9,26 @@ import AboutSection from "@/components/vigilum/AboutSection";
 import Newsletter from "@/components/vigilum/Newsletter";
 
 const VigilumPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle hash scrolling when component mounts or location changes
+    const handleHashScroll = () => {
+      if (location.hash) {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, 100);
+        }
+      }
+    };
+
+    handleHashScroll();
+  }, [location]);
   return (
     <div className="min-h-screen">
       <Navigation />
