@@ -32,14 +32,22 @@ export default function Index() {
 
   const fetchHello = async () => {
     try {
-      const response = await fetch("/api/demo", {
+      // Check if we're in development or production
+      const baseUrl = window.location.origin;
+      const apiUrl = `${baseUrl}/api/demo`;
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+      const response = await fetch(apiUrl, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        // Add timeout to prevent hanging
-        signal: AbortSignal.timeout(5000),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -49,8 +57,19 @@ export default function Index() {
       setMessageFromServer(data.message);
     } catch (error) {
       console.error("Error fetching hello:", error);
-      // Set a fallback message instead of leaving it empty
-      setMessageFromServer("API connection unavailable");
+
+      // More specific error handling
+      if (error instanceof Error) {
+        if (error.name === "AbortError") {
+          setMessageFromServer("Request timeout - server unavailable");
+        } else if (error.message.includes("fetch")) {
+          setMessageFromServer("Network error - cannot reach server");
+        } else {
+          setMessageFromServer("API connection unavailable");
+        }
+      } else {
+        setMessageFromServer("Unknown error occurred");
+      }
     }
   };
 
