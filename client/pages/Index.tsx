@@ -102,15 +102,15 @@ export default function Index() {
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <div className="flex items-center gap-1.5">
                       <FileText
-                        className="w-8 h-8 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300"
+                        className="w-8 h-8 text-blue-600 group-hover:text-[#00BFFF] transition-colors duration-300"
                         strokeWidth={1.5}
                       />
                       <ArrowRight
-                        className="w-6 h-6 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300"
+                        className="w-6 h-6 text-blue-600 group-hover:text-[#00BFFF] transition-colors duration-300"
                         strokeWidth={1.5}
                       />
                       <Share2
-                        className="w-8 h-8 text-vigilum-blue group-hover:text-[#00BFFF] transition-colors duration-300"
+                        className="w-8 h-8 text-blue-600 group-hover:text-[#00BFFF] transition-colors duration-300"
                         strokeWidth={1.5}
                       />
                     </div>
