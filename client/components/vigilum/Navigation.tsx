@@ -84,7 +84,7 @@ const Navigation = () => {
                 className="text-slate-300 hover:text-white transition-colors"
                 onClick={toggleMenu}
               >
-                Use Cases
+                Live Examples
               </a>
               <a
                 href="#about"
