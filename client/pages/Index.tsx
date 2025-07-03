@@ -213,7 +213,7 @@ export default function Index() {
               <p className="font-medium text-gray-600">– Alfred Tarski, 1944</p>
             </div>
             <p
-              className="text-sm text-vigilum-label uppercase font-medium mt-12"
+              className="text-sm text-gray-600 uppercase font-medium mt-12"
               style={{ letterSpacing: "0.035em" }}
             />
           </div>
