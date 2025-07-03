@@ -1,224 +1,207 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Activity, BarChart3 } from "lucide-react";
 
 const Hero = () => {
-  const [animationStep, setAnimationStep] = useState(0);
+  const [activeRisk, setActiveRisk] = useState(0);
+
+  const riskTypologies = [
+    {
+      code: "DG",
+      name: "Discretionary Gap",
+      color: "text-yellow-400",
+      description: "Administrative override potential",
+      value: 0.91,
+    },
+    {
+      code: "RT",
+      name: "Regulatory Tunneling",
+      color: "text-orange-400",
+      description: "Compliance pathway deviation",
+      value: 0.74,
+    },
+    {
+      code: "CI",
+      name: "Clause Interference",
+      color: "text-blue-400",
+      description: "Semantic contradiction matrix",
+      value: 0.22,
+    },
+    {
+      code: "SB",
+      name: "Structural Bypass",
+      color: "text-red-400",
+      description: "Institutional route nullification",
+      value: 0.05,
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimationStep((prev) => (prev + 1) % 4);
+      setActiveRisk((prev) => (prev + 1) % riskTypologies.length);
     }, 2000);
+
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-vigilum text-vigilum-body font-plex-sans overflow-hidden">
+    <div className="relative bg-gray-900 pt-24 pb-16 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #ffffff 1px, transparent 1px),
-                           radial-gradient(circle at 75% 75%, #ffffff 1px, transparent 1px)`,
-            backgroundSize: "50px 50px",
-          }}
-        />
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-yellow-500/20" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent)] animate-pulse" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
-          {/* Content */}
-          <div className="space-y-12">
-            <h1 className="text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
-              When meaning collapses,
-              <br />
-              power hides in format.
-            </h1>
-
-            <div className="space-y-8">
-              <div>
-                <p
-                  className="text-sm text-vigilum-label uppercase tracking-wide font-medium mb-3"
-                  style={{ letterSpacing: "-0.02em" }}
-                >
-                  STRUCTURAL GOVERNANCE INTELLIGENCE
+      <div className="relative container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div>
+              <div className="mb-6">
+                <div className="inline-flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-full border border-gray-700 mb-4">
+                  <Activity className="w-3 h-3 text-green-400" />
+                  <span className="text-xs text-gray-300 font-mono uppercase tracking-wider">
+                    Structural Analysis Active
+                  </span>
+                </div>
+                <h1 className="text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6">
+                  LEGAL BEHAVIOR
+                  <span className="block text-blue-400">SIMULATION</span>
+                </h1>
+                <p className="text-xl text-gray-300 leading-relaxed font-light mb-8">
+                  Vigilum detects embedded governance risk through semantic
+                  analysis of legal structure. Not corruption detection —{" "}
+                  <span className="text-yellow-400 font-medium">
+                    corruption prediction
+                  </span>
+                  .
                 </p>
-                <p className="text-lg text-vigilum-subheadline font-medium leading-relaxed max-w-2xl">
-                  — where structure, not intent, defines institutional risk
-                </p>
               </div>
 
-              <div className="relative max-w-2xl">
-                {/* Central text */}
-                <div className="text-center mb-8">
-                  <p className="text-2xl text-vigilum-body font-medium leading-relaxed">
-                    Vigilum simulates how legal systems encode exposure through
-                  </p>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a href="#demo">
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-mono px-8 py-4 border border-blue-500"
+                  >
+                    ANALYZE STRUCTURE
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
+                <a href="#modules">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-gray-600 text-gray-300 hover:bg-gray-800 font-mono px-8 py-4"
+                  >
+                    VIEW MODULES
+                  </Button>
+                </a>
+              </div>
 
-                {/* Three concept boxes */}
-                <div className="flex justify-center items-center gap-8">
-                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
-                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                      clause sequence
-                    </span>
+              {/* Key Metrics */}
+              <div className="grid grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-400 font-mono">
+                    200+
                   </div>
-                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
-                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                      override logic
-                    </span>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">
+                    Known Evasions
                   </div>
-                  <div className="bg-slate-800/30 backdrop-blur-sm px-3 py-2 rounded border border-slate-700/50">
-                    <span className="text-sm text-vigilum-label font-medium font-plex-mono tracking-wide">
-                      typological collapse
-                    </span>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-yellow-400 font-mono">
+                    4
+                  </div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">
+                    Risk Typologies
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-orange-400 font-mono">
+                    €2B+
+                  </div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">
+                    Structural Risk
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <Button
-                size="lg"
-                className="bg-blue-700 hover:bg-blue-800 text-white font-medium px-8 py-3"
-              >
-                Explore Platform
-              </Button>
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 font-medium px-8 py-3"
-              >
-                View the Codex
-              </Button>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-700/50">
-              <div className="text-center">
-                <div className="text-2xl font-medium text-vigilum-blue font-plex-mono">
-                  6
-                </div>
-                <div className="text-sm text-vigilum-label">AI Modules</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-medium text-vigilum-blue font-plex-mono">
-                  200+
-                </div>
-                <div className="text-sm text-vigilum-label">
-                  Loopholes Mapped
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-medium text-vigilum-blue font-plex-mono">
-                  4
-                </div>
-                <div className="text-sm text-vigilum-label">
-                  Risk Typologies
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-medium text-vigilum-blue font-plex-mono">
-                  €2B+
-                </div>
-                <div className="text-sm text-vigilum-label">Risk Detected</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Animation */}
-          <div className="lg:pl-12">
-            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-8">
-              <h3 className="text-lg font-medium mb-6 text-center text-vigilum-subheadline font-plex-mono">
-                Non-Commutative Clause Logic
-              </h3>
-
-              <div className="space-y-6">
-                {/* Clause A */}
-                <div
-                  className={`p-4 rounded border-2 transition-all duration-1000 ${
-                    animationStep >= 1
-                      ? "border-vigilum-blue/60 bg-vigilum-blue/5"
-                      : "border-slate-600 bg-slate-700/30"
-                  }`}
-                >
-                  <div className="text-sm text-vigilum-label mb-1 font-plex-mono">
-                    Clause A:
-                  </div>
-                  <div className="text-vigilum-body font-medium">
-                    "Emergency procurement may bypass standard tender
-                    procedures..."
-                  </div>
+            {/* Right Column - Risk Typology Visualization */}
+            <div className="relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-lg font-bold text-white font-mono">
+                    RISK TYPOLOGY MATRIX
+                  </h3>
+                  <BarChart3 className="w-5 h-5 text-gray-400" />
                 </div>
 
-                {/* Arrow */}
-                <div className="flex justify-center">
-                  <div
-                    className={`transition-all duration-500 text-2xl ${
-                      animationStep >= 2
-                        ? "text-vigilum-blue"
-                        : "text-slate-600"
-                    }`}
-                  >
-                    ↓
-                  </div>
+                <div className="space-y-4">
+                  {riskTypologies.map((risk, index) => (
+                    <div
+                      key={risk.code}
+                      className={`transition-all duration-500 ${
+                        activeRisk === index
+                          ? "scale-105 bg-gray-700/50"
+                          : "bg-gray-800/30"
+                      } border border-gray-700 rounded-lg p-4`}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center space-x-3">
+                          <div
+                            className={`text-sm font-bold font-mono ${risk.color}`}
+                          >
+                            {risk.code}
+                          </div>
+                          <div className="text-sm text-white font-medium">
+                            {risk.name}
+                          </div>
+                        </div>
+                        <div className="text-sm font-mono text-gray-400">
+                          {risk.value.toFixed(2)}
+                        </div>
+                      </div>
+                      <div className="text-xs text-gray-400 mb-2">
+                        {risk.description}
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2">
+                        <div
+                          className={`h-2 rounded-full transition-all duration-1000 ${
+                            risk.code === "DG"
+                              ? "bg-yellow-400"
+                              : risk.code === "RT"
+                                ? "bg-orange-400"
+                                : risk.code === "CI"
+                                  ? "bg-blue-400"
+                                  : "bg-red-400"
+                          }`}
+                          style={{
+                            width: `${
+                              activeRisk === index ? risk.value * 100 : 0
+                            }%`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Clause B */}
-                <div
-                  className={`p-4 rounded border-2 transition-all duration-1000 ${
-                    animationStep >= 2
-                      ? "border-vigilum-blue/60 bg-vigilum-blue/5"
-                      : "border-slate-600 bg-slate-700/30"
-                  }`}
-                >
-                  <div className="text-sm text-vigilum-label mb-1 font-plex-mono">
-                    Clause B:
+                <div className="mt-6 pt-4 border-t border-gray-700">
+                  <div className="text-xs text-gray-500 font-mono">
+                    SEMANTIC VECTOR PROJECTION
                   </div>
-                  <div className="text-vigilum-body font-medium">
-                    "Emergency status determination is at ministry
-                    discretion..."
+                  <div className="text-xs text-gray-400 mt-1">
+                    Real-time structural risk assessment
                   </div>
                 </div>
-
-                {/* Result */}
-                <div className="flex justify-center">
-                  <div
-                    className={`transition-all duration-500 text-2xl ${
-                      animationStep >= 3 ? "text-orange-400" : "text-slate-600"
-                    }`}
-                  >
-                    ⚠
-                  </div>
-                </div>
-
-                <div
-                  className={`p-4 rounded border-2 transition-all duration-1000 ${
-                    animationStep >= 3
-                      ? "border-orange-400/60 bg-orange-400/5"
-                      : "border-slate-600 bg-slate-700/30"
-                  }`}
-                >
-                  <div className="text-sm text-vigilum-label mb-1 font-plex-mono">
-                    Result:
-                  </div>
-                  <div
-                    className={`transition-all duration-500 font-medium ${
-                      animationStep >= 3 ? "text-orange-300" : "text-slate-500"
-                    }`}
-                  >
-                    <strong>Discretionary Gap (DG)</strong> - Unlimited bypass
-                    authority
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 text-center text-sm text-vigilum-label font-plex-mono">
-                Order matters: A→B ≠ B→A
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
