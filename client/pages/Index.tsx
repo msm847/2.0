@@ -77,7 +77,7 @@ export default function Index() {
             </h1>
 
             <div className="space-y-6">
-              <div className="text-lg text-vigilum-subheadline font-medium leading-relaxed">
+              <div className="text-lg text-gray-700 font-medium leading-relaxed">
                 — where structure, not intent, defines institutional risk
               </div>
 
