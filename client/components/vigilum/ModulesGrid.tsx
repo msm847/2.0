@@ -1,210 +1,281 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
-  Key,
-  Gavel,
-  Building2,
-  Gauge,
-  Network,
-  Radio,
+  Search,
   Database,
+  Gavel,
+  BarChart3,
+  Activity,
+  ArrowRight,
+  AlertTriangle,
 } from "lucide-react";
 
-const modules = [
-  {
-    id: "clavis",
-    name: "CLAVIS",
-    title: "Clause Intelligence",
-    icon: Key,
-    description: "Identifies risk-shifting clause logic",
-    detail:
-      "Scans individual contract clauses to detect risk-shifting logic – clauses that unfairly transfer risk or accountability from one party to another.",
-    typology: "RT", // Risk Transfer
-    color: "blue",
-  },
-  {
-    id: "obscura",
-    name: "OBSCURA",
-    title: "Procurement Distortion Engine",
-    icon: Database,
-    description: "Flags procedural anomalies in tenders",
-    detail:
-      "Detects distortions in procurement processes, identifying when standard procedures are bypassed or manipulated.",
-    typology: "SB", // Structural Blindspot
-    color: "purple",
-  },
-  {
-    id: "nullum",
-    name: "NULLUM",
-    title: "Judicial Stalling Detector",
-    icon: Gavel,
-    description: "Traces patterns of legal delay",
-    detail:
-      "Identifies systematic patterns of judicial or administrative delays that serve to obstruct accountability.",
-    typology: "SB", // Structural Blindspot
-    color: "red",
-  },
-  {
-    id: "veris",
-    name: "VERIS",
-    title: "Structural Risk Index",
-    icon: Gauge,
-    description: "Quantifies institutional fragility",
-    detail:
-      "Combines findings from other modules to generate a comprehensive risk score for institutional structures.",
-    typology: "ALL",
-    color: "green",
-  },
-  {
-    id: "nexus",
-    name: "NEXUS POTENTIA",
-    title: "Political Graph Mapper",
-    icon: Network,
-    description: "Maps power/control relationships",
-    detail:
-      "Uses graph theory to map relationships between political actors, companies, and institutions to identify potential conflicts of interest.",
-    typology: "CI", // Conflict of Interest
-    color: "orange",
-  },
-  {
-    id: "sentium",
-    name: "SENTIUM",
-    title: "Civic Signal Channel",
-    icon: Radio,
-    description: "Integrates whistleblower & public signals",
-    detail:
-      "Aggregates and correlates external signals including whistleblower reports, media coverage, and public complaints.",
-    typology: "DG", // Discretionary Gap
-    color: "teal",
-  },
-];
-
-const typologyColors = {
-  RT: "bg-blue-100 text-blue-800",
-  SB: "bg-red-100 text-red-800",
-  CI: "bg-orange-100 text-orange-800",
-  DG: "bg-teal-100 text-teal-800",
-  ALL: "bg-gray-100 text-gray-800",
-};
-
 const ModulesGrid = () => {
-  const [hoveredModule, setHoveredModule] = useState<string | null>(null);
+  const [activeModule, setActiveModule] = useState(0);
+  const [failureMode, setFailureMode] = useState(false);
+
+  const modules = [
+    {
+      id: "CLAVIS",
+      name: "Clause Intelligence",
+      icon: Search,
+      color: "blue",
+      bgColor: "bg-blue-900/20",
+      borderColor: "border-blue-500",
+      textColor: "text-blue-400",
+      description:
+        "Input → Analysis → Override → Risk projection through semantic vector mapping",
+      capabilities: [
+        "Clause vector decomposition",
+        "Semantic override detection",
+        "Risk fingerprint generation",
+        "Legal simulation modeling",
+      ],
+      riskLevel: 0.91,
+      status: "OPERATIONAL",
+    },
+    {
+      id: "OBSCURA",
+      name: "Timeline Compression",
+      icon: Database,
+      color: "yellow",
+      bgColor: "bg-yellow-900/20",
+      borderColor: "border-yellow-500",
+      textColor: "text-yellow-400",
+      description:
+        "Frictionless procurement detection through temporal sequence analysis",
+      capabilities: [
+        "Timeline sequence mapping",
+        "Procedural compression analysis",
+        "Administrative drift detection",
+        "Temporal risk accumulation",
+      ],
+      riskLevel: 0.74,
+      status: "ACTIVE",
+    },
+    {
+      id: "NULLUM",
+      name: "Delay Mapping",
+      icon: Gavel,
+      color: "red",
+      bgColor: "bg-red-900/20",
+      borderColor: "border-red-500",
+      textColor: "text-red-400",
+      description:
+        "Risk accumulation through user non-interaction and procedural drift",
+      capabilities: [
+        "Non-interaction tracking",
+        "Systemic delay analysis",
+        "Institutional route mapping",
+        "Passive risk accumulation",
+      ],
+      riskLevel: 0.22,
+      status: "MONITORING",
+    },
+  ];
+
+  // Simulate failure behavior
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveModule((prev) => (prev + 1) % modules.length);
+    }, 3000);
+
+    const failureInterval = setInterval(() => {
+      setFailureMode(true);
+      setTimeout(() => setFailureMode(false), 500);
+    }, 8000);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(failureInterval);
+    };
+  }, []);
 
   return (
-    <section className="py-20 bg-slate-50">
+    <div className="bg-gray-900 py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Modules</h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Each module targets specific structural vulnerabilities, working in
-            concert to provide comprehensive governance intelligence.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-full border border-gray-700 mb-4">
+              <Activity className="w-3 h-3 text-green-400" />
+              <span className="text-xs text-gray-300 font-mono uppercase tracking-wider">
+                Module Architecture
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+              SEMANTIC INTELLIGENCE MODULES
+            </h2>
+            <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
+              Modular risk detection machine. Each module simulates specific
+              failure behaviors in legal structure.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {modules.map((module) => {
-            const Icon = module.icon;
-            const isHovered = hoveredModule === module.id;
+          {/* Modules Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {modules.map((module, index) => {
+              const Icon = module.icon;
+              const isActive = activeModule === index;
+              const isFailure = failureMode && isActive;
 
-            return (
-              <div
-                key={module.id}
-                className={`group relative bg-white rounded-lg border-2 p-6 cursor-pointer transition-all duration-300 ${
-                  isHovered
-                    ? "border-slate-400 shadow-xl transform -translate-y-2"
-                    : "border-slate-200 shadow-md hover:border-slate-300 hover:shadow-lg"
-                }`}
-                onMouseEnter={() => setHoveredModule(module.id)}
-                onMouseLeave={() => setHoveredModule(null)}
-              >
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`p-3 rounded-lg bg-${module.color}-100 text-${module.color}-600`}
-                    >
-                      <Icon size={24} />
+              return (
+                <div
+                  key={module.id}
+                  className={`group relative ${module.bgColor} backdrop-blur-sm border-2 ${
+                    isActive ? module.borderColor : "border-gray-700"
+                  } rounded-lg p-6 transition-all duration-500 cursor-pointer ${
+                    isActive ? "scale-105 shadow-2xl" : "hover:scale-102"
+                  } ${isFailure ? "animate-pulse border-red-500" : ""}`}
+                >
+                  {/* Failure Alert */}
+                  {isFailure && (
+                    <div className="absolute -top-2 -right-2 bg-red-500 rounded-full p-1">
+                      <AlertTriangle className="w-4 h-4 text-white" />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-slate-900">
-                        {module.name}
-                      </h3>
-                      <p className="text-sm text-slate-600">{module.title}</p>
+                  )}
+
+                  {/* Module Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-3">
+                      <div
+                        className={`w-12 h-12 ${
+                          module.color === "blue"
+                            ? "bg-blue-600"
+                            : module.color === "yellow"
+                              ? "bg-yellow-600"
+                              : "bg-red-600"
+                        } rounded-lg flex items-center justify-center`}
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3
+                          className={`text-lg font-bold font-mono ${module.textColor}`}
+                        >
+                          {module.id}
+                        </h3>
+                        <p className="text-xs text-gray-500 uppercase tracking-wider">
+                          {module.name}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-mono text-gray-400">
+                        {module.riskLevel.toFixed(2)}
+                      </div>
+                      <div
+                        className={`text-xs ${
+                          isFailure ? "text-red-400" : "text-green-400"
+                        } font-mono`}
+                      >
+                        {isFailure ? "FAILURE" : module.status}
+                      </div>
                     </div>
                   </div>
-                  <span
-                    className={`px-2 py-1 rounded text-xs font-medium ${
-                      typologyColors[
-                        module.typology as keyof typeof typologyColors
-                      ]
+
+                  {/* Module Description */}
+                  <p className="text-sm text-gray-300 leading-relaxed mb-6">
+                    {module.description}
+                  </p>
+
+                  {/* Capabilities */}
+                  <div className="space-y-2 mb-6">
+                    {module.capabilities.map((capability, capIndex) => (
+                      <div
+                        key={capIndex}
+                        className={`text-xs text-gray-400 transition-all duration-300 ${
+                          isActive
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-70 translate-x-2"
+                        }`}
+                        style={{ transitionDelay: `${capIndex * 100}ms` }}
+                      >
+                        → {capability}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Risk Level Bar */}
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-gray-500 font-mono">
+                        RISK LEVEL
+                      </span>
+                      <span className="text-xs text-gray-400 font-mono">
+                        {(module.riskLevel * 100).toFixed(0)}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-800 rounded-full h-2">
+                      <div
+                        className={`h-2 rounded-full transition-all duration-1000 ${
+                          module.color === "blue"
+                            ? "bg-blue-400"
+                            : module.color === "yellow"
+                              ? "bg-yellow-400"
+                              : "bg-red-400"
+                        }`}
+                        style={{
+                          width: `${
+                            isActive
+                              ? module.riskLevel * 100
+                              : module.riskLevel * 50
+                          }%`,
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <button
+                    className={`w-full py-2 px-4 rounded-lg border transition-all duration-300 font-mono text-sm ${
+                      isActive
+                        ? `${module.borderColor} ${module.textColor} bg-gray-800`
+                        : "border-gray-700 text-gray-400 hover:border-gray-600"
                     }`}
                   >
-                    {module.typology}
-                  </span>
+                    ANALYZE MODULE
+                    <ArrowRight className="inline w-4 h-4 ml-2" />
+                  </button>
                 </div>
+              );
+            })}
+          </div>
 
-                {/* Description */}
-                <p className="text-slate-700 mb-4">{module.description}</p>
-
-                {/* Detailed info on hover */}
-                <div
-                  className={`transition-all duration-300 ${
-                    isHovered
-                      ? "opacity-100 max-h-40"
-                      : "opacity-0 max-h-0 overflow-hidden"
-                  }`}
-                >
-                  <div className="border-t border-slate-200 pt-4">
-                    <p className="text-sm text-slate-600">{module.detail}</p>
-                  </div>
+          {/* System Integration Status */}
+          <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <BarChart3 className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                <div className="text-lg font-bold text-white font-mono">
+                  VECTOR SPACE
                 </div>
-
-                {/* Interaction indicator */}
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-2 h-2 bg-slate-400 rounded-full"></div>
+                <div className="text-sm text-gray-400">
+                  Multi-dimensional semantic analysis
                 </div>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Typology Legend */}
-        <div className="mt-16 bg-white rounded-lg p-6 border border-slate-200">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">
-            Risk Typologies
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="flex items-center space-x-2">
-              <span className="px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800">
-                RT
-              </span>
-              <span className="text-sm text-slate-600">Risk Transfer</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span className="px-2 py-1 rounded text-xs font-medium bg-red-100 text-red-800">
-                SB
-              </span>
-              <span className="text-sm text-slate-600">
-                Structural Blindspot
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span className="px-2 py-1 rounded text-xs font-medium bg-orange-100 text-orange-800">
-                CI
-              </span>
-              <span className="text-sm text-slate-600">
-                Conflict of Interest
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span className="px-2 py-1 rounded text-xs font-medium bg-teal-100 text-teal-800">
-                DG
-              </span>
-              <span className="text-sm text-slate-600">Discretionary Gap</span>
+              <div className="text-center">
+                <Activity className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
+                <div className="text-lg font-bold text-white font-mono">
+                  REAL-TIME
+                </div>
+                <div className="text-sm text-gray-400">
+                  Continuous structural monitoring
+                </div>
+              </div>
+              <div className="text-center">
+                <Database className="w-8 h-8 text-orange-400 mx-auto mb-3" />
+                <div className="text-lg font-bold text-white font-mono">
+                  BEHAVIORAL
+                </div>
+                <div className="text-sm text-gray-400">
+                  Legal behavior simulation engine
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
