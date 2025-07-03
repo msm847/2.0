@@ -36,7 +36,7 @@ const Navigation = () => {
               href="#cases"
               className="text-slate-300 hover:text-white transition-colors"
             >
-              Use Cases
+              Live Examples
             </a>
             <a
               href="#about"
