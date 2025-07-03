@@ -96,7 +96,7 @@ export default function Index() {
               {/* Column 1 - Clause-Based Intelligence */}
               <div
                 className="group p-8 rounded-lg border border-gray-200 hover:border-[#00BFFF] transition-all duration-300 cursor-pointer hover:bg-[#00E6FF]/10"
-                style={{ background: "rgba(0, 0, 0, 0.02)" }}
+                style={{ background: "rgba(255, 255, 255, 0.8)" }}
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
