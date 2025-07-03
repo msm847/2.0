@@ -95,34 +95,34 @@ export default function Index() {
                 {/* Hover Dropdown */}
                 <div className="absolute right-0 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50">
                   <div className="py-1">
-                    <Link
-                      to="/vigilum#modules"
+                    <a
+                      href="/vigilum#modules"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Brain className="mr-3 h-4 w-4" />
                       Modules
-                    </Link>
-                    <Link
-                      to="/vigilum#try-system"
+                    </a>
+                    <a
+                      href="/vigilum#try-system"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Search className="mr-3 h-4 w-4" />
                       Try the System
-                    </Link>
-                    <Link
-                      to="/vigilum#use-cases"
+                    </a>
+                    <a
+                      href="/vigilum#use-cases"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <FileText className="mr-3 h-4 w-4" />
                       Live Use Cases
-                    </Link>
-                    <Link
-                      to="/vigilum#about"
+                    </a>
+                    <a
+                      href="/vigilum#about"
                       className="flex items-center px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150"
                     >
                       <Globe className="mr-3 h-4 w-4" />
                       About
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
