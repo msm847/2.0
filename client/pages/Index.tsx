@@ -30,6 +30,11 @@ export default function Index() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Function to handle navigation with hash scrolling
+  const handleNavigation = (hash: string) => {
+    window.location.href = `/vigilum${hash}`;
+  };
+
   const fetchHello = async () => {
     try {
       // Check if we're in development or production
