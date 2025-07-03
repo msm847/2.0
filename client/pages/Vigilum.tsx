@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
@@ -29,8 +29,9 @@ const VigilumPage = () => {
 
     handleHashScroll();
   }, [location]);
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-900 text-gray-100 font-mono">
       <Navigation />
       <Hero />
       <div id="modules">
