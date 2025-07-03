@@ -118,18 +118,18 @@ export default function Index() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-sm uppercase text-vigilum-label tracking-wide font-medium font-plex-mono">
+                  <p className="text-sm uppercase text-gray-600 tracking-wide font-medium font-plex-mono">
                     From language
                     <br />
                     To logic
                   </p>
-                  <p className="text-base leading-relaxed text-vigilum-subheadline">
+                  <p className="text-base leading-relaxed text-gray-700">
                     Trained on a corpus of 200+ known structural evasions — from
                     Article 72 expansions to in-house procurement exemptions —
                     Vigilum matches clause logic to real-world loophole profiles
                     before they're exploited.
                   </p>
-                  <button className="text-vigilum-blue hover:text-[#00BFFF] transition-colors duration-300 font-medium text-sm">
+                  <button className="text-blue-600 hover:text-[#00BFFF] transition-colors duration-300 font-medium text-sm">
                     → View the CLAVIS module
                   </button>
                 </div>
