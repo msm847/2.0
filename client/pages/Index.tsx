@@ -25,8 +25,8 @@ export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
 
   useEffect(() => {
-    // Add a small delay to ensure the server is ready
-    const timer = setTimeout(fetchHello, 100);
+    // Add a longer delay to ensure the server is fully ready
+    const timer = setTimeout(fetchHello, 1000);
     return () => clearTimeout(timer);
   }, []);
 
