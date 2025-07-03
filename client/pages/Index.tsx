@@ -108,14 +108,14 @@ export default function Index() {
                       Modules
                     </button>
                     <button
-                      onClick={() => handleNavigation("#try-system")}
+                      onClick={() => handleNavigation("#demo")}
                       className="flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150 text-left"
                     >
                       <Search className="mr-3 h-4 w-4" />
                       Try the System
                     </button>
                     <button
-                      onClick={() => handleNavigation("#use-cases")}
+                      onClick={() => handleNavigation("#cases")}
                       className="flex items-center w-full px-4 py-2 text-gray-900 hover:bg-gray-50 transition-colors duration-150 text-left"
                     >
                       <FileText className="mr-3 h-4 w-4" />
