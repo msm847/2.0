@@ -48,7 +48,7 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-vigilum-body font-plex-sans relative overflow-hidden">
+    <div className="min-h-screen bg-white text-gray-900 font-plex-sans relative overflow-hidden">
       <div className="relative z-10">
         {/* Header */}
         <header className="container mx-auto px-4 py-6">
