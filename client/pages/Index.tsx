@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
   ArrowRight,
   Shield,
   Search,
@@ -11,6 +17,7 @@ import {
   Share2,
   Globe,
   Gauge,
+  ChevronDown,
 } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 
