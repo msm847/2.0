@@ -173,8 +173,8 @@ export default function Index() {
 
               {/* Column 3 - Loophole Pattern Recognition */}
               <div
-                className="group p-8 rounded-lg border border-slate-700/30 hover:border-[#57A0D2] transition-all duration-300 cursor-pointer hover:bg-[#73C2FB]/15"
-                style={{ background: "rgba(255, 255, 255, 0.02)" }}
+                className="group p-8 rounded-lg border border-gray-200 hover:border-[#57A0D2] transition-all duration-300 cursor-pointer hover:bg-[#73C2FB]/10"
+                style={{ background: "rgba(0, 0, 0, 0.02)" }}
               >
                 <div className="mb-6">
                   <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
