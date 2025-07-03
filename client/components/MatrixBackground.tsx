@@ -20,17 +20,17 @@ export default function MatrixBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Particle count reduced by 25%
+    // Particle count reduced by 20% from previous (75→60, 45→36)
     const getParticleCount = () => {
-      return window.innerWidth < 768 ? 45 : 75;
+      return window.innerWidth < 768 ? 36 : 60;
     };
 
-    // Particle speed reduced by 20%
+    // Particle speed reduced by 15% from previous (1.04→0.884)
     const createParticle = (): Particle => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 1.04, // 1.3 * 0.8 = 1.04
-      vy: (Math.random() - 0.5) * 1.04,
+      vx: (Math.random() - 0.5) * 0.884, // 1.04 * 0.85 = 0.884
+      vy: (Math.random() - 0.5) * 0.884,
       size: 2.4, // 20% larger than original
     });
 
@@ -83,9 +83,10 @@ export default function MatrixBackground() {
             particlesRef.current[j],
           );
 
-          if (distance < 300) {
+          if (distance < 240) {
+            // Connection distance reduced by 20% from 300px to 240px
             // Calculate opacity based on distance (closer = more opaque)
-            const opacity = (1 - distance / 300) * 0.6;
+            const opacity = (1 - distance / 240) * 0.6;
 
             ctx.globalAlpha = opacity;
             ctx.lineWidth = 1.3;
