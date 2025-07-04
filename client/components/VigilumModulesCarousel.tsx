@@ -47,9 +47,9 @@ const modules = [
     tagline: "Delay disarms enforcement.",
     description:
       "Detects legal stalling patterns—timeline collapse, expiration clustering, and procedural bypass that dissolve accountability.",
-    color: "#374151",
+    color: "#1e232b",
     secondaryColor: "#1f2937",
-    textColor: "#f1f5f9",
+    textColor: "#9ca3af",
     accentColor: "#9ca3af",
     icon: Shield,
     glyph: "Δ",
