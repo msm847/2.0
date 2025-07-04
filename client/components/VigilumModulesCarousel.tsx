@@ -103,9 +103,9 @@ const modules = [
     tagline: "Witness becomes signal.",
     description:
       "Encrypts civic reporting and cross-validates with AI-detected risks. Turns whistleblower input into structural triangulation.",
-    color: "#0891b2",
+    color: "#036373",
     secondaryColor: "#0e7490",
-    textColor: "#ffffff",
+    textColor: "#a2e9f5",
     accentColor: "#22d3ee",
     icon: MessageCircle,
     glyph: "��",
