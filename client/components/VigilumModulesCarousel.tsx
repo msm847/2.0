@@ -192,16 +192,13 @@ export default function VigilumModulesCarousel({
 
         {/* Main Module Card */}
         <div
-          className={`relative transition-all duration-700 ease-in-out transform ${
-            isExpanded ? "scale-105" : "scale-100"
-          } hover:shadow-2xl`}
+          className="relative transition-all duration-700 ease-in-out transform scale-100 hover:shadow-2xl"
           style={{
             backgroundColor: currentModule.color,
             boxShadow: isHovered
               ? `0 10px 30px ${currentModule.color}40, 0 0 40px ${currentModule.textColor}1A`
               : `0 10px 30px ${currentModule.color}40`,
           }}
-          onClick={() => setIsExpanded(!isExpanded)}
         >
           <div className="relative p-8 md:p-12">
             {/* Background Pattern */}
