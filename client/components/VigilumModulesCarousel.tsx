@@ -247,7 +247,7 @@ export default function VigilumModulesCarousel({
                   >
                     <Icon
                       className="w-8 h-8"
-                      style={{ color: currentModule.textColor }}
+                      style={{ color: currentModule.color }}
                     />
                   </div>
                   <div>
