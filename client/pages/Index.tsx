@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
 import DecryptedText from "../components/DecryptedText";
+import VigilumModulesCarousel from "../components/VigilumModulesCarousel";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
