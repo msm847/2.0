@@ -421,26 +421,26 @@ const UseCases = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-red-400 font-mono mb-2">
-                €2.4B
+                L001-L006
               </div>
               <div className="text-sm text-gray-400">
-                Total structural exposure analyzed
+                EU procurement directive clauses analyzed
               </div>
             </div>
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-yellow-400 font-mono mb-2">
-                100%
+                0.7
               </div>
               <div className="text-sm text-gray-400">
-                Cases preventable through structural analysis
+                Average structural risk level detected
               </div>
             </div>
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-blue-400 font-mono mb-2">
-                4
+                6
               </div>
               <div className="text-sm text-gray-400">
-                Primary risk typologies identified
+                Critical loophole profiles documented
               </div>
             </div>
           </div>
