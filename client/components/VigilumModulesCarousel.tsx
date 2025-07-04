@@ -109,7 +109,6 @@ export default function VigilumModulesCarousel({
 }: VigilumModulesCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextModule = () => {
