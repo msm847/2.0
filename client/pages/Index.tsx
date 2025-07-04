@@ -224,241 +224,171 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Epistemic Semantic Operators */}
-            <div className="relative mb-20" id="semantic-operators">
-              {/* Epistemic Field Background */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-radial from-indigo-500/3 via-transparent to-transparent blur-3xl animate-pulse"></div>
-                <div className="absolute inset-0 bg-gradient-conic from-violet-500/2 via-transparent to-blue-500/2 blur-2xl animate-spin-slow"></div>
+            {/* Structural Clause Operators */}
+            <div
+              className="relative mb-20 bg-gray-950 p-8 rounded-xl"
+              id="clause-operators"
+            >
+              {/* Structural Texture Background */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <div
+                  className="w-full h-full"
+                  style={{
+                    background: `
+                      repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 2px,
+                        rgba(255, 255, 255, 0.1) 2px,
+                        rgba(255, 255, 255, 0.1) 3px
+                      ),
+                      repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 2px,
+                        rgba(255, 255, 255, 0.1) 2px,
+                        rgba(255, 255, 255, 0.1) 3px
+                      )
+                    `,
+                  }}
+                />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
                 {clausePhases.map((phase, index) => {
-                  // Typological color schemes
-                  const getTypologyColors = (index) => {
+                  // Typological mapping per specification
+                  const getTypologyData = (index) => {
                     switch (index) {
-                      case 0: // Legality is Structure (CI - Clause Interference)
+                      case 0: // Legality is Structure (CI)
                         return {
-                          bg: "#E0E5F5",
-                          border: "#C5CCE8",
-                          glow: "#8B9DE8",
-                          glyph: "⊗",
-                          shadow: "rgba(139, 157, 232, 0.2)",
-                        };
-                      case 1: // Discretion is Formatted (DG - Discretionary Gap)
-                        return {
-                          bg: "#F5EDE0",
-                          border: "#E8D5C0",
-                          glow: "#D4A874",
-                          glyph: "τ",
-                          shadow: "rgba(212, 168, 116, 0.2)",
-                        };
-                      case 2: // Meaning is Positional (OD - Override Detection)
-                        return {
-                          bg: "#F7F1D4",
-                          border: "#EDE3B8",
-                          glow: "#D4C574",
+                          className: "clause-ci",
+                          bg: "#DCE5FA",
+                          border: "#B5C7ED",
                           glyph: "ϕ",
-                          shadow: "rgba(212, 197, 116, 0.2)",
+                          typology: "CI",
                         };
-                      case 3: // See Together (SC - Structural Collapse/Awakening)
+                      case 1: // Discretion is Formatted (DG)
                         return {
-                          bg: "#F8D4D4",
-                          border: "#F0B8B8",
-                          glow: "#E88888",
-                          glyph: "Λ",
-                          shadow: "rgba(232, 136, 136, 0.2)",
+                          className: "clause-dg",
+                          bg: "#F5D6B3",
+                          border: "#E0BA89",
+                          glyph: "Δ",
+                          typology: "DG",
+                        };
+                      case 2: // Meaning is Positional (OD)
+                        return {
+                          className: "clause-od",
+                          bg: "#F3E6BA",
+                          border: "#E6D197",
+                          glyph: "⊗",
+                          typology: "OD",
+                        };
+                      case 3: // See Together. Break the Illusion. (SC)
+                        return {
+                          className: "clause-sc",
+                          bg: "#F6D4D4",
+                          border: "#E9BABA",
+                          glyph: "λ",
+                          typology: "SC",
                         };
                       default:
                         return {
+                          className: "clause-default",
                           bg: "#F0F0F0",
                           border: "#E0E0E0",
-                          glow: "#C0C0C0",
                           glyph: "○",
-                          shadow: "rgba(192, 192, 192, 0.2)",
+                          typology: "DEFAULT",
                         };
                     }
                   };
 
-                  // Arc positioning with horizontal arc and inward rotation
-                  const getArcTransform = () => {
+                  const typologyData = getTypologyData(index);
+
+                  // Arc positioning
+                  const getArcStyle = () => {
                     switch (index) {
                       case 0:
-                        return "perspective(1000px) rotateY(2deg) rotateX(3deg) translateY(-2px)";
+                        return { transform: "rotateY(2deg)" };
                       case 1:
-                        return "perspective(1000px) rotateY(1deg) rotateX(3deg) translateY(-1px)";
+                        return { transform: "rotateY(0.5deg)" };
                       case 2:
-                        return "perspective(1000px) rotateY(-1deg) rotateX(3deg) translateY(-1px)";
+                        return { transform: "rotateY(-0.5deg)" };
                       case 3:
-                        return "perspective(1000px) rotateY(-2deg) rotateX(3deg) translateY(-2px)";
+                        return { transform: "rotateY(-2deg)" };
                       default:
-                        return "perspective(1000px) rotateX(3deg)";
+                        return { transform: "rotateY(0deg)" };
                     }
                   };
-
-                  const getHoverTransform = () => {
-                    switch (index) {
-                      case 0:
-                        return "perspective(1000px) rotateY(2deg) rotateX(4.5deg) translateY(-2px) scale(1.04)";
-                      case 1:
-                        return "perspective(1000px) rotateY(1deg) rotateX(4.5deg) translateY(-1px) scale(1.04)";
-                      case 2:
-                        return "perspective(1000px) rotateY(-1deg) rotateX(4.5deg) translateY(-1px) scale(1.04)";
-                      case 3:
-                        return "perspective(1000px) rotateY(-2deg) rotateX(4.5deg) translateY(-2px) scale(1.04)";
-                      default:
-                        return "perspective(1000px) rotateX(4.5deg) scale(1.04)";
-                    }
-                  };
-
-                  const colors = getTypologyColors(index);
 
                   return (
                     <div
                       key={index}
-                      className={`transition-all duration-1000 ${
-                        currentPhase === index
-                          ? phase.visual
-                          : "opacity-70 translate-y-2 scale-98"
+                      className={`vigilum-clause-box ${typologyData.className} ${
+                        currentPhase === index ? "active" : ""
                       }`}
+                      data-glyph={typologyData.glyph}
                       style={{
-                        willChange: "transform, opacity",
+                        ...getArcStyle(),
+                        backgroundColor: typologyData.bg,
+                        borderColor: typologyData.border,
+                        position: "relative",
+                        padding: "2rem",
+                        borderRadius: "12px",
+                        border: "1px solid",
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                        transformStyle: "preserve-3d",
+                        willChange: "transform",
+                        perspective: "1000px",
                       }}
+                      onMouseEnter={() => handleBoxHover(index)}
                     >
-                      <div
-                        className="relative group cursor-pointer semantic-operator"
-                        style={{
-                          transform: getArcTransform(),
-                          transition:
-                            "transform 0.3s ease-out, box-shadow 0.3s ease-out",
-                          willChange: "transform",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = getHoverTransform();
-                          e.currentTarget.style.boxShadow = `0 15px 40px ${colors.shadow}, 0 0 30px ${colors.shadow}`;
-                          handleBoxHover(index);
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = getArcTransform();
-                          e.currentTarget.style.boxShadow = `0 8px 25px rgba(0, 0, 0, 0.1)`;
-                        }}
-                        data-typology={colors.glyph}
-                      >
-                        {/* Semantic Lens Surface */}
-                        <div
-                          className="relative p-6 rounded-lg text-center overflow-hidden border-2"
-                          style={{
-                            backgroundColor: colors.bg,
-                            borderColor: colors.border,
-                            boxShadow: `
-                              0 8px 25px rgba(0, 0, 0, 0.1),
-                              inset 0 1px 0 rgba(255, 255, 255, 0.8),
-                              inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-                            `,
-                            transformOrigin: "center bottom",
-                          }}
-                        >
-                          {/* Epistemic Pressure Gradient */}
-                          <div
-                            className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
-                            style={{
-                              background: `
-                                radial-gradient(ellipse 120% 150% at center,
-                                  ${colors.glow} 0%,
-                                  transparent 70%
-                                )
-                              `,
-                            }}
-                          />
-
-                          {/* Typology Glyph */}
-                          <div
-                            className="absolute bottom-2 right-3 opacity-20 group-hover:opacity-40 transition-opacity duration-300"
-                            style={{
-                              fontSize: "1.2rem",
-                              color: colors.glow,
-                              fontFamily: "serif",
-                              fontWeight: "300",
-                            }}
-                          >
-                            {colors.glyph}
-                          </div>
-
-                          {/* Surface Tension Field */}
-                          <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                            <div
-                              className="w-full h-full"
-                              style={{
-                                background: `
-                                  repeating-linear-gradient(
-                                    120deg,
-                                    transparent,
-                                    transparent 15px,
-                                    ${colors.glow} 15px,
-                                    ${colors.glow} 16px
-                                  )
-                                `,
-                              }}
-                            />
-                          </div>
-
-                          {/* Content Layer */}
-                          <div className="relative z-10">
-                            <div
-                              className="text-sm font-bold uppercase tracking-wider mb-3 transition-all duration-300 group-hover:scale-105"
-                              style={{
-                                color: "#1a1a1a",
-                                textShadow: `0 0 8px ${colors.glow}20`,
-                              }}
-                            >
-                              {phase.title}
-                            </div>
-                            <div
-                              className="text-sm leading-relaxed transition-all duration-300 group-hover:scale-102"
-                              style={{
-                                color: "#2a2a2a",
-                                fontWeight: index === 3 ? "600" : "400",
-                              }}
-                            >
-                              {index === 3 ? (
-                                <span className="font-bold">
-                                  {phase.description}
-                                </span>
-                              ) : (
-                                phase.description
-                              )}
-                            </div>
-                          </div>
-
-                          {/* Perceptual Activation Pulse */}
-                          <div
-                            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none"
-                            style={{
-                              boxShadow: `inset 0 0 20px ${colors.glow}30`,
-                              animation: "pulse 2s ease-in-out infinite",
-                            }}
-                          />
-                        </div>
-
-                        {/* Arrow for mobile (if needed) */}
-                        {index < 3 && (
-                          <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
+                      {/* Content */}
+                      <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-gray-900">
+                        {phase.title}
+                      </h3>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {index === 3 ? (
+                          <span className="font-bold">{phase.description}</span>
+                        ) : (
+                          phase.description
                         )}
+                      </p>
+
+                      {/* Glyph Overlay */}
+                      <div
+                        className="absolute bottom-3 right-4 glyph-overlay"
+                        style={{
+                          fontSize: "2.2rem",
+                          opacity: "0.1",
+                          color: "#333",
+                          pointerEvents: "none",
+                          transition: "opacity 0.3s ease",
+                        }}
+                      >
+                        {typologyData.glyph}
                       </div>
+
+                      {/* Arrow for mobile */}
+                      {index < 3 && (
+                        <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
+                      )}
                     </div>
                   );
                 })}
               </div>
 
-              {/* Epistemic Collapse Trigger (activated after all boxes hovered) */}
-              <div
-                className={`absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-1000 epistemic-collapse ${epistemicCollapseTriggered ? "active" : ""}`}
-                style={{
-                  background:
-                    "radial-gradient(ellipse 150% 50% at center bottom, rgba(120, 119, 198, 0.1) 0%, transparent 100%)",
-                  transform: "translateY(5px)",
-                }}
-              />
+              {/* Collective Trigger - Grid Curvature */}
+              {epistemicCollapseTriggered && (
+                <div
+                  className="absolute inset-0 pointer-events-none structural-collapse"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse 200% 50% at center bottom, rgba(120, 119, 198, 0.05) 0%, transparent 100%)",
+                    transform: "perspective(2000px) rotateX(1deg)",
+                    borderRadius: "12px",
+                  }}
+                />
+              )}
             </div>
 
             {/* Primary Engagement */}
