@@ -118,7 +118,7 @@ export default function Index() {
     },
     {
       title: "meaning is positional",
-      description: "Clauses collide,\nnot coexist",
+      description: "Nothing means until positioned",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
     },
