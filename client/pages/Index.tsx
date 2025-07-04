@@ -118,7 +118,7 @@ export default function Index() {
     },
     {
       title: "meaning is positional",
-      description: "Nothing means until positioned",
+      description: "A ⇄ B ≠ B ⇄ A",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
     },
