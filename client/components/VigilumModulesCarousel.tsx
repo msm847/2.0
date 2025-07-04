@@ -350,10 +350,10 @@ export default function VigilumModulesCarousel({
                 : "opacity-50 scale-90"
             }`}
             style={{
-              color: index === currentIndex ? module.textColor : "#6B7280",
+              color: index === currentIndex ? module.accentColor : "#6B7280",
               textShadow:
                 index === currentIndex
-                  ? `0 0 8px ${module.textColor}80, 0 0 16px ${module.textColor}40`
+                  ? `0 0 8px ${module.accentColor}80, 0 0 16px ${module.accentColor}40`
                   : "none",
             }}
           >
