@@ -241,8 +241,8 @@ export default function Index() {
                 </Button>
               </Link>
               <p className="text-sm text-gray-500 mt-4 font-mono">
-                Input legal text → Vector projection → Override mapping → Risk
-                fingerprint
+                ϕ(c₁…cₙ) ⇨ ⊗(sequence logic) ⇨ G(override graph) ⇨ τ(typology
+                projection) ⇨ Λ(pattern flag)
               </p>
             </div>
 
