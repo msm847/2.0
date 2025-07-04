@@ -394,9 +394,13 @@ const UseCases = () => {
                       {currentCase.outcome}
                     </p>
                     <div className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4 text-green-400" />
-                      <span className="text-sm text-green-400 font-mono">
-                        VIGILUM DETECTION: PREVENTABLE
+                      <Eye
+                        className={`w-4 h-4 ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} mt-1 flex-shrink-0`}
+                      />
+                      <span
+                        className={`text-sm ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} font-mono`}
+                      >
+                        {currentCase.detection}
                       </span>
                     </div>
                   </div>
