@@ -371,57 +371,6 @@ export default function Index() {
                           {glassData.glyph}
                         </div>
 
-                        {/* Special Shatter Overlay for Red Box */}
-                        {index === 3 && (
-                          <div className="absolute inset-0 opacity-0 shatter-overlay pointer-events-none">
-                            {/* SVG Crack Pattern */}
-                            <svg
-                              className="absolute inset-0 w-full h-full"
-                              viewBox="0 0 200 120"
-                              style={{ opacity: 0 }}
-                            >
-                              <defs>
-                                <path
-                                  id="crack1"
-                                  d="M50,20 L120,80 L180,40"
-                                  strokeWidth="0.5"
-                                  stroke="rgba(255, 255, 255, 0.6)"
-                                  fill="none"
-                                />
-                                <path
-                                  id="crack2"
-                                  d="M20,60 L100,30 L160,90"
-                                  strokeWidth="0.3"
-                                  stroke="rgba(255, 255, 255, 0.4)"
-                                  fill="none"
-                                />
-                                <path
-                                  id="crack3"
-                                  d="M80,10 L140,100 L190,60"
-                                  strokeWidth="0.4"
-                                  stroke="rgba(255, 255, 255, 0.5)"
-                                  fill="none"
-                                />
-                              </defs>
-                              <use href="#crack1" className="crack-line" />
-                              <use href="#crack2" className="crack-line" />
-                              <use href="#crack3" className="crack-line" />
-                            </svg>
-
-                            {/* Shattered State Content */}
-                            <div className="absolute inset-0 flex items-center justify-center shattered-content opacity-0">
-                              <div className="text-center">
-                                <h3 className="text-xl font-bold text-red-400 mb-2">
-                                  STRUCTURE EXPOSED
-                                </h3>
-                                <p className="text-sm text-gray-300">
-                                  Simulation no longer holds.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
                         {/* Arrow for mobile */}
                         {index < 3 && (
                           <ArrowRight className="w-4 h-4 text-gray-400 mx-auto mt-4 md:hidden opacity-50" />
