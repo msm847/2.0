@@ -211,9 +211,12 @@ export default function VigilumModulesCarousel({
         <div
           className="relative transition-all duration-700 ease-in-out transform scale-100 hover:shadow-2xl"
           style={{
-            backgroundColor: currentModule.color,
+            backgroundColor: isHovered
+              ? currentModule.secondaryColor
+              : currentModule.color,
+            borderLeft: `2px solid ${currentModule.accentColor}`,
             boxShadow: isHovered
-              ? `0 10px 30px ${currentModule.color}40, 0 0 40px ${currentModule.textColor}1A`
+              ? `0 10px 30px ${currentModule.secondaryColor}60, 0 0 40px ${currentModule.accentColor}20`
               : `0 10px 30px ${currentModule.color}40`,
           }}
         >
