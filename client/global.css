@@ -418,3 +418,169 @@
     filter: drop-shadow(0 0 20px rgba(232, 136, 136, 0.5)) brightness(1.02);
   }
 }
+
+/* Vigilum Clause Box Semantic Operators */
+.vigilum-clause-box {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* Clause Types - Exact Color Specifications */
+.clause-ci {
+  background-color: #dce5fa !important;
+  border-color: #b5c7ed !important;
+}
+
+.clause-dg {
+  background-color: #f5d6b3 !important;
+  border-color: #e0ba89 !important;
+}
+
+.clause-od {
+  background-color: #f3e6ba !important;
+  border-color: #e6d197 !important;
+}
+
+.clause-sc {
+  background-color: #f6d4d4 !important;
+  border-color: #e9baba !important;
+}
+
+/* Hover Activation - Semantic Operator Response */
+.vigilum-clause-box:hover {
+  transform: scale(1.03) rotateX(2deg);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Glyph Overlay Positioning */
+.vigilum-clause-box::after {
+  content: attr(data-glyph);
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 2.2rem;
+  opacity: 0.1;
+  color: #333;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Glyph Activation on Hover */
+.vigilum-clause-box:hover::after {
+  opacity: 0.2;
+  animation: glyph-pulse 2s ease-in-out infinite;
+}
+
+.vigilum-clause-box:hover .glyph-overlay {
+  opacity: 0.2 !important;
+  animation: glyph-flicker 1.5s ease-in-out infinite;
+}
+
+/* Glyph Animation Effects */
+@keyframes glyph-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glyph-flicker {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  75% {
+    opacity: 0.18;
+  }
+}
+
+/* Typological Resonance - Enhanced Hover Effects */
+.clause-ci:hover {
+  box-shadow:
+    0 12px 30px rgba(181, 199, 237, 0.3),
+    0 0 20px rgba(181, 199, 237, 0.2),
+    inset 0 0 20px rgba(181, 199, 237, 0.1);
+}
+
+.clause-dg:hover {
+  box-shadow:
+    0 12px 30px rgba(224, 186, 137, 0.3),
+    0 0 20px rgba(224, 186, 137, 0.2),
+    inset 0 0 20px rgba(224, 186, 137, 0.1);
+}
+
+.clause-od:hover {
+  box-shadow:
+    0 12px 30px rgba(230, 209, 151, 0.3),
+    0 0 20px rgba(230, 209, 151, 0.2),
+    inset 0 0 20px rgba(230, 209, 151, 0.1);
+}
+
+.clause-sc:hover {
+  box-shadow:
+    0 12px 30px rgba(233, 186, 186, 0.3),
+    0 0 20px rgba(233, 186, 186, 0.2),
+    inset 0 0 20px rgba(233, 186, 186, 0.1);
+}
+
+/* Collective Trigger - Structural Illusion Collapse */
+.clause-sc.awakened {
+  animation: structural-awakening 4s ease-in-out infinite;
+}
+
+@keyframes structural-awakening {
+  0%,
+  100% {
+    box-shadow:
+      0 12px 30px rgba(233, 186, 186, 0.3),
+      0 0 20px rgba(233, 186, 186, 0.2);
+  }
+  33% {
+    box-shadow:
+      0 15px 40px rgba(233, 186, 186, 0.4),
+      0 0 30px rgba(233, 186, 186, 0.3);
+  }
+  66% {
+    box-shadow:
+      0 10px 25px rgba(233, 186, 186, 0.35),
+      0 0 25px rgba(233, 186, 186, 0.25);
+  }
+}
+
+/* Grid Curvature Effect */
+.structural-collapse {
+  animation: grid-curvature 3s ease-out forwards;
+}
+
+@keyframes grid-curvature {
+  0% {
+    transform: perspective(2000px) rotateX(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(2000px) rotateX(1deg);
+    opacity: 0.7;
+  }
+}
