@@ -75,9 +75,9 @@ const modules = [
     tagline: "Exposure emerges in pattern.",
     description:
       "Unifies all module outputs into a structural risk map. Triggers escalation when latent design risk reaches systemic visibility.",
-    color: "#059669",
+    color: "#035e4a",
     secondaryColor: "#047857",
-    textColor: "#ffffff",
+    textColor: "#c0f1e4",
     accentColor: "#34d399",
     icon: Activity,
     glyph: "Σ",
