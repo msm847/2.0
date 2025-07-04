@@ -245,3 +245,87 @@
     opacity: 0.3;
   }
 }
+
+/* 3D Curved Box Effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Gradient utilities for curved surfaces */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+.bg-gradient-conic {
+  background: conic-gradient(var(--tw-gradient-stops));
+}
+
+/* Slow spin animation for background effects */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Cognitive pressure field animations */
+@keyframes pressure-pulse {
+  0%,
+  100% {
+    transform: scale(1) rotateX(-3deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.02) rotateX(-5deg);
+    opacity: 0.9;
+  }
+}
+
+.animate-pressure-pulse {
+  animation: pressure-pulse 4s ease-in-out infinite;
+}
+
+/* Warped surface effects */
+@keyframes surface-wave {
+  0%,
+  100% {
+    transform: rotateX(-3deg) scaleY(0.96);
+  }
+  33% {
+    transform: rotateX(-4deg) scaleY(0.94);
+  }
+  66% {
+    transform: rotateX(-2deg) scaleY(0.98);
+  }
+}
+
+.animate-surface-wave {
+  animation: surface-wave 6s ease-in-out infinite;
+}
+
+/* Depth shadow animations */
+@keyframes depth-breathe {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: perspective(100px) rotateX(90deg) translateZ(-20px) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: perspective(100px) rotateX(90deg) translateZ(-25px) scale(1.05);
+  }
+}
+
+.animate-depth-breathe {
+  animation: depth-breathe 5s ease-in-out infinite;
+}
