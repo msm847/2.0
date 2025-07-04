@@ -19,9 +19,9 @@ const modules = [
     tagline: "Structure discloses intent.",
     description:
       "Parses legal clauses to detect embedded risk logic, exposing how contracts simulate legality while shifting liability.",
-    color: "#3C3B6E",
-    textColor: "#FFFFFF",
-    accentColor: "#5A5FCC",
+    color: "#0D1B4C",
+    textColor: "#D6E1FF",
+    accentColor: "#D6E1FF",
     icon: Search,
   },
   {
@@ -31,9 +31,9 @@ const modules = [
     tagline: "Procedures conceal design.",
     description:
       "Flags tenders pre-structured for capture—compressed timelines, single-bid dominance, or emergency justification misuse.",
-    color: "#FF4500",
-    textColor: "#FFFFFF",
-    accentColor: "#FF6B35",
+    color: "#3D2000",
+    textColor: "#FF8A1F",
+    accentColor: "#FF8A1F",
     icon: Eye,
   },
   {
@@ -43,9 +43,9 @@ const modules = [
     tagline: "Delay disarms enforcement.",
     description:
       "Detects legal stalling patterns—timeline collapse, expiration clustering, and procedural bypass that dissolve accountability.",
-    color: "#4B4B4B",
-    textColor: "#FFFFFF",
-    accentColor: "#707070",
+    color: "#1E1E1E",
+    textColor: "#BBBBBB",
+    accentColor: "#BBBBBB",
     icon: Shield,
   },
   {
@@ -55,9 +55,9 @@ const modules = [
     tagline: "Influence is relational.",
     description:
       "Maps hidden networks, revolving doors, and control clusters behind awards using recursive relationship inference.",
-    color: "#008080",
-    textColor: "#FFFFFF",
-    accentColor: "#20B2AA",
+    color: "#0C201C",
+    textColor: "#5DF2C8",
+    accentColor: "#5DF2C8",
     icon: Network,
   },
   {
@@ -67,9 +67,9 @@ const modules = [
     tagline: "Exposure emerges in pattern.",
     description:
       "Unifies all module outputs into a structural risk map. Triggers escalation when latent design risk reaches systemic visibility.",
-    color: "#CC0000",
-    textColor: "#FFFFFF",
-    accentColor: "#FF3333",
+    color: "#2E0000",
+    textColor: "#FF4A4A",
+    accentColor: "#FF4A4A",
     icon: Activity,
   },
   {
@@ -79,9 +79,9 @@ const modules = [
     tagline: "Integrity becomes quantifiable.",
     description:
       "Aggregates all risk vectors into a composite signal score—quantifying governance fragility across entities, tenders, and time.",
-    color: "#DAA520",
-    textColor: "#000000",
-    accentColor: "#FFD700",
+    color: "#3A2E00",
+    textColor: "#F7D960",
+    accentColor: "#F7D960",
     icon: BarChart3,
   },
   {
@@ -91,9 +91,9 @@ const modules = [
     tagline: "Witness becomes signal.",
     description:
       "Encrypts civic reporting and cross-validates with AI-detected risks. Turns whistleblower input into structural triangulation.",
-    color: "#8A2BE2",
-    textColor: "#FFFFFF",
-    accentColor: "#B19CD9",
+    color: "#2A103D",
+    textColor: "#C89BFF",
+    accentColor: "#C89BFF",
     icon: MessageCircle,
   },
 ];
