@@ -438,7 +438,18 @@ export default function Index() {
               <Link to="/vigilum#demo">
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-mono px-8 py-4 text-lg border border-blue-500"
+                  className="text-white font-mono px-8 py-4 text-lg transition-all duration-200"
+                  style={{
+                    backgroundColor: "#004E45",
+                    border: "1px solid #003B34",
+                    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.05)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#006B60";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "#004E45";
+                  }}
                 >
                   <Upload className="mr-2 h-5 w-5" />
                   Simulate Multi-Clause Behavior
