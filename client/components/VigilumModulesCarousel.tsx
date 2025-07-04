@@ -150,6 +150,9 @@ export default function VigilumModulesCarousel({
 
   return (
     <div className="relative w-full max-w-6xl mx-auto">
+      {/* Semantic Processor Wire - Vertical Connection Line */}
+      <div className="absolute left-8 top-0 bottom-0 w-px bg-white opacity-[0.04] pointer-events-none z-10" />
+
       {/* Module Display */}
       <div
         className="relative overflow-hidden rounded-lg"
