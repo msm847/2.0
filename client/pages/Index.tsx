@@ -329,7 +329,11 @@ export default function Index() {
 
                         {/* Content */}
                         <div
-                          className={`relative z-10 ${index === 3 ? "absolute inset-0 flex flex-col items-center justify-center text-center" : ""}`}
+                          className={
+                            index === 3
+                              ? "absolute inset-0 flex flex-col items-center justify-center text-center z-10"
+                              : "relative z-10"
+                          }
                         >
                           <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white">
                             {phase.title}
