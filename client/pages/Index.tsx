@@ -227,51 +227,22 @@ export default function Index() {
 
             {/* Glass-Logic Semantic Containers */}
             <div className="relative mb-20 px-4" id="glass-logic-containers">
-              {/* Deep Charcoal Background with Semantic Grid */}
-              <div
-                className="absolute inset-0 rounded-2xl overflow-hidden"
-                style={{ backgroundColor: "#0A0E14" }}
-              >
-                {/* Faint Procedural Grid */}
-                <div
-                  className="absolute inset-0 opacity-3"
-                  style={{
-                    background: `
-                      repeating-linear-gradient(
-                        0deg,
-                        transparent,
-                        transparent 32px,
-                        rgba(255, 255, 255, 0.02) 32px,
-                        rgba(255, 255, 255, 0.02) 33px
-                      ),
-                      repeating-linear-gradient(
-                        90deg,
-                        transparent,
-                        transparent 32px,
-                        rgba(255, 255, 255, 0.02) 32px,
-                        rgba(255, 255, 255, 0.02) 33px
-                      )
-                    `,
-                  }}
+              {/* Live Canvas-Rendered Symbolic Glitch Background */}
+              <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                <LetterGlitch
+                  glitchColors={[
+                    "#0A0E14",
+                    "#1a2332",
+                    "#2b4539",
+                    "#61dca3",
+                    "#61b3dc",
+                  ]}
+                  glitchSpeed={80}
+                  centerVignette={false}
+                  outerVignette={true}
+                  smooth={true}
+                  className="w-full h-full"
                 />
-
-                {/* Semantic Glyph Texture */}
-                <div className="absolute inset-0 opacity-3 pointer-events-none">
-                  <div className="grid grid-cols-12 gap-8 h-full p-8">
-                    {Array.from({ length: 48 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="text-white text-lg font-light"
-                        style={{
-                          opacity: Math.random() * 0.1,
-                          transform: `rotate(${Math.random() * 360}deg)`,
-                        }}
-                      >
-                        {["ϕ", "Δ", "⊗", "λ", "∇", "∂", "∞", "≈"][i % 8]}
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Glass Container Grid */}
