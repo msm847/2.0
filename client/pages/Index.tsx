@@ -45,15 +45,23 @@ export default function Index() {
     return () => clearInterval(interval);
   }, []);
 
-  // Track structural collapse trigger
+  // Track glass shatter trigger - when all 3 other boxes hovered, prepare red box for shatter
   useEffect(() => {
+    if (hoveredBoxes.size === 3 && !hoveredBoxes.has(3)) {
+      // All boxes except red box hovered - prepare for shatter
+      const redBox = document.querySelector(".glass-clause-sc");
+      if (redBox) {
+        redBox.classList.add("shatter-ready");
+      }
+    }
+
     if (hoveredBoxes.size === 4 && !epistemicCollapseTriggered) {
       setEpistemicCollapseTriggered(true);
 
-      // Trigger structural awakening on "Break the Illusion" box
-      const awakeningBox = document.querySelector(".clause-sc");
-      if (awakeningBox) {
-        awakeningBox.classList.add("awakened");
+      // Trigger glass shatter on red "See Together" box
+      const redBox = document.querySelector(".glass-clause-sc");
+      if (redBox) {
+        redBox.classList.add("shattered");
       }
     }
   }, [hoveredBoxes, epistemicCollapseTriggered]);
