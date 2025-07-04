@@ -152,38 +152,50 @@ export default function Index() {
             <div className="flex items-center space-x-4">
               <div className="relative group">
                 <Link to="/vigilum">
-                  <Button className="bg-gray-800 text-white hover:bg-gray-700 font-mono border border-gray-600">
+                  <Button
+                    className="text-white hover:bg-opacity-80 font-mono border border-gray-600"
+                    style={{
+                      background:
+                        "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                    }}
+                  >
                     STRUCTURAL ANALYSIS
                     <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
 
-                <div className="absolute right-0 mt-2 w-full bg-gray-800 border border-gray-600 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50">
+                <div
+                  className="absolute right-0 mt-2 w-full border border-gray-600 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
+                  style={{
+                    background:
+                      "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                  }}
+                >
                   <div className="py-1">
                     <button
                       onClick={() => handleNavigation("#modules")}
-                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-gray-700 transition-colors duration-150 text-left"
+                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
                     >
                       <Brain className="mr-3 h-4 w-4" />
                       MODULES
                     </button>
                     <button
                       onClick={() => handleNavigation("#demo")}
-                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-gray-700 transition-colors duration-150 text-left"
+                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
                     >
                       <Search className="mr-3 h-4 w-4" />
                       CLAVIS
                     </button>
                     <button
                       onClick={() => handleNavigation("#cases")}
-                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-gray-700 transition-colors duration-150 text-left"
+                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
                     >
                       <FileText className="mr-3 h-4 w-4" />
                       CASE STUDIES
                     </button>
                     <button
                       onClick={() => handleNavigation("#about")}
-                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-gray-700 transition-colors duration-150 text-left"
+                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
                     >
                       <Globe className="mr-3 h-4 w-4" />
                       METHODOLOGY
