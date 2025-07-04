@@ -100,8 +100,8 @@ export default function Index() {
       color: "text-yellow-400",
     },
     {
-      title: "Clauses execute in order",
-      description: "Power survives in sequence",
+      title: "Legal meaning is positional",
+      description: "Structure declares what holds",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
     },
