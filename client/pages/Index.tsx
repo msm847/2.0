@@ -216,171 +216,255 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Structural Clause Operators */}
-            <div
-              className="relative mb-20 bg-gray-950 p-8 rounded-xl"
-              id="clause-operators"
-            >
-              {/* Structural Texture Background */}
-              <div className="absolute inset-0 opacity-5 pointer-events-none">
+            {/* Glass-Logic Semantic Containers */}
+            <div className="relative mb-20 px-4" id="glass-logic-containers">
+              {/* Deep Charcoal Background with Semantic Grid */}
+              <div
+                className="absolute inset-0 rounded-2xl overflow-hidden"
+                style={{ backgroundColor: "#0A0E14" }}
+              >
+                {/* Faint Procedural Grid */}
                 <div
-                  className="w-full h-full"
+                  className="absolute inset-0 opacity-3"
                   style={{
                     background: `
                       repeating-linear-gradient(
                         0deg,
                         transparent,
-                        transparent 2px,
-                        rgba(255, 255, 255, 0.1) 2px,
-                        rgba(255, 255, 255, 0.1) 3px
+                        transparent 32px,
+                        rgba(255, 255, 255, 0.02) 32px,
+                        rgba(255, 255, 255, 0.02) 33px
                       ),
                       repeating-linear-gradient(
                         90deg,
                         transparent,
-                        transparent 2px,
-                        rgba(255, 255, 255, 0.1) 2px,
-                        rgba(255, 255, 255, 0.1) 3px
+                        transparent 32px,
+                        rgba(255, 255, 255, 0.02) 32px,
+                        rgba(255, 255, 255, 0.02) 33px
                       )
                     `,
                   }}
                 />
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-                {clausePhases.map((phase, index) => {
-                  // Typological mapping per specification
-                  const getTypologyData = (index) => {
-                    switch (index) {
-                      case 0: // Legality is Structure (CI)
-                        return {
-                          className: "clause-ci",
-                          bg: "#DCE5FA",
-                          border: "#B5C7ED",
-                          glyph: "ϕ",
-                          typology: "CI",
-                        };
-                      case 1: // Discretion is Formatted (DG)
-                        return {
-                          className: "clause-dg",
-                          bg: "#F5D6B3",
-                          border: "#E0BA89",
-                          glyph: "Δ",
-                          typology: "DG",
-                        };
-                      case 2: // Meaning is Positional (OD)
-                        return {
-                          className: "clause-od",
-                          bg: "#F3E6BA",
-                          border: "#E6D197",
-                          glyph: "⊗",
-                          typology: "OD",
-                        };
-                      case 3: // See Together. Break the Illusion. (SC)
-                        return {
-                          className: "clause-sc",
-                          bg: "#F6D4D4",
-                          border: "#E9BABA",
-                          glyph: "λ",
-                          typology: "SC",
-                        };
-                      default:
-                        return {
-                          className: "clause-default",
-                          bg: "#F0F0F0",
-                          border: "#E0E0E0",
-                          glyph: "○",
-                          typology: "DEFAULT",
-                        };
-                    }
-                  };
-
-                  const typologyData = getTypologyData(index);
-
-                  // Arc positioning
-                  const getArcStyle = () => {
-                    switch (index) {
-                      case 0:
-                        return { transform: "rotateY(2deg)" };
-                      case 1:
-                        return { transform: "rotateY(0.5deg)" };
-                      case 2:
-                        return { transform: "rotateY(-0.5deg)" };
-                      case 3:
-                        return { transform: "rotateY(-2deg)" };
-                      default:
-                        return { transform: "rotateY(0deg)" };
-                    }
-                  };
-
-                  return (
-                    <div
-                      key={index}
-                      className={`vigilum-clause-box ${typologyData.className} ${
-                        currentPhase === index ? "active" : ""
-                      }`}
-                      data-glyph={typologyData.glyph}
-                      style={{
-                        ...getArcStyle(),
-                        backgroundColor: typologyData.bg,
-                        borderColor: typologyData.border,
-                        position: "relative",
-                        padding: "2rem",
-                        borderRadius: "12px",
-                        border: "1px solid",
-                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                        transformStyle: "preserve-3d",
-                        willChange: "transform",
-                        perspective: "1000px",
-                      }}
-                      onMouseEnter={() => handleBoxHover(index)}
-                    >
-                      {/* Content */}
-                      <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-gray-900">
-                        {phase.title}
-                      </h3>
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        {index === 3 ? (
-                          <span className="font-bold">{phase.description}</span>
-                        ) : (
-                          phase.description
-                        )}
-                      </p>
-
-                      {/* Glyph Overlay */}
+                {/* Semantic Glyph Texture */}
+                <div className="absolute inset-0 opacity-3 pointer-events-none">
+                  <div className="grid grid-cols-12 gap-8 h-full p-8">
+                    {Array.from({ length: 48 }).map((_, i) => (
                       <div
-                        className="absolute bottom-3 right-4 glyph-overlay"
+                        key={i}
+                        className="text-white text-lg font-light"
                         style={{
-                          fontSize: "2.2rem",
-                          opacity: "0.1",
-                          color: "#333",
-                          pointerEvents: "none",
-                          transition: "opacity 0.3s ease",
+                          opacity: Math.random() * 0.1,
+                          transform: `rotate(${Math.random() * 360}deg)`,
                         }}
                       >
-                        {typologyData.glyph}
+                        {["ϕ", "Δ", "⊗", "λ", "∇", "∂", "∞", "≈"][i % 8]}
                       </div>
-
-                      {/* Arrow for mobile */}
-                      {index < 3 && (
-                        <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
-                      )}
-                    </div>
-                  );
-                })}
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              {/* Collective Trigger - Grid Curvature */}
-              {epistemicCollapseTriggered && (
-                <div
-                  className="absolute inset-0 pointer-events-none structural-collapse"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse 200% 50% at center bottom, rgba(120, 119, 198, 0.05) 0%, transparent 100%)",
-                    transform: "perspective(2000px) rotateX(1deg)",
-                    borderRadius: "12px",
-                  }}
-                />
-              )}
+              {/* Glass Container Grid */}
+              <div className="relative p-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                  {clausePhases.map((phase, index) => {
+                    // Glass-Logic Typological Mapping
+                    const getGlassTypology = (index) => {
+                      switch (index) {
+                        case 0: // Legality is Structure (CI)
+                          return {
+                            className: "glass-clause-ci",
+                            accentColor: "#3A56D8",
+                            glyph: "ϕ",
+                            typology: "CI",
+                            floatDelay: "0s",
+                          };
+                        case 1: // Discretion is Formatted (DG)
+                          return {
+                            className: "glass-clause-dg",
+                            accentColor: "#F85E00",
+                            glyph: "Δ",
+                            typology: "DG",
+                            floatDelay: "1.5s",
+                          };
+                        case 2: // Meaning is Positional (OD)
+                          return {
+                            className: "glass-clause-od",
+                            accentColor: "#F4C900",
+                            glyph: "⊗",
+                            typology: "OD",
+                            floatDelay: "3s",
+                          };
+                        case 3: // See Together. Break the Illusion. (SC)
+                          return {
+                            className: "glass-clause-sc",
+                            accentColor: "#FF1B4C",
+                            glyph: "λ",
+                            typology: "SC",
+                            floatDelay: "4.5s",
+                          };
+                        default:
+                          return {
+                            className: "glass-clause-default",
+                            accentColor: "#FFFFFF",
+                            glyph: "○",
+                            typology: "DEFAULT",
+                            floatDelay: "0s",
+                          };
+                      }
+                    };
+
+                    const glassData = getGlassTypology(index);
+
+                    return (
+                      <div
+                        key={index}
+                        className={`glass-logic-container ${glassData.className} ${
+                          currentPhase === index ? "logic-active" : ""
+                        }`}
+                        data-typology={glassData.typology}
+                        style={{
+                          "--accent-color": glassData.accentColor,
+                          "--float-delay": glassData.floatDelay,
+                          position: "relative",
+                          background: "rgba(255, 255, 255, 0.05)",
+                          backdropFilter: "blur(12px)",
+                          border: "1px solid rgba(255, 255, 255, 0.15)",
+                          borderLeft: `3px solid ${glassData.accentColor}`,
+                          borderRadius: "16px",
+                          padding: "2rem",
+                          transition:
+                            "transform 0.3s ease, box-shadow 0.3s ease",
+                          transformStyle: "preserve-3d",
+                          willChange: "transform",
+                          animation: `glass-float 6s ease-in-out infinite`,
+                          animationDelay: glassData.floatDelay,
+                        }}
+                        onMouseEnter={() => handleBoxHover(index)}
+                      >
+                        {/* Glass Reflectivity Edge */}
+                        <div
+                          className="absolute top-0 left-0 right-0 h-px"
+                          style={{
+                            background:
+                              "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)",
+                          }}
+                        />
+
+                        {/* Inner Glass Glow */}
+                        <div
+                          className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 glass-inner-glow"
+                          style={{
+                            boxShadow: `inset 0 0 20px ${glassData.accentColor}20`,
+                          }}
+                        />
+
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white">
+                            {phase.title}
+                          </h3>
+                          <p className="text-sm text-gray-300 leading-relaxed">
+                            {index === 3 ? (
+                              <span className="font-bold text-white">
+                                {phase.description}
+                              </span>
+                            ) : (
+                              phase.description
+                            )}
+                          </p>
+                        </div>
+
+                        {/* Faint Typology Glyph */}
+                        <div
+                          className="absolute bottom-4 right-4 text-white transition-opacity duration-300 glass-glyph"
+                          style={{
+                            fontSize: "1.8rem",
+                            opacity: "0.1",
+                            fontFamily: "serif",
+                            fontWeight: "300",
+                          }}
+                        >
+                          {glassData.glyph}
+                        </div>
+
+                        {/* Special Shatter Overlay for Red Box */}
+                        {index === 3 && (
+                          <div className="absolute inset-0 opacity-0 shatter-overlay pointer-events-none">
+                            {/* SVG Crack Pattern */}
+                            <svg
+                              className="absolute inset-0 w-full h-full"
+                              viewBox="0 0 200 120"
+                              style={{ opacity: 0 }}
+                            >
+                              <defs>
+                                <path
+                                  id="crack1"
+                                  d="M50,20 L120,80 L180,40"
+                                  strokeWidth="0.5"
+                                  stroke="rgba(255, 255, 255, 0.6)"
+                                  fill="none"
+                                />
+                                <path
+                                  id="crack2"
+                                  d="M20,60 L100,30 L160,90"
+                                  strokeWidth="0.3"
+                                  stroke="rgba(255, 255, 255, 0.4)"
+                                  fill="none"
+                                />
+                                <path
+                                  id="crack3"
+                                  d="M80,10 L140,100 L190,60"
+                                  strokeWidth="0.4"
+                                  stroke="rgba(255, 255, 255, 0.5)"
+                                  fill="none"
+                                />
+                              </defs>
+                              <use href="#crack1" className="crack-line" />
+                              <use href="#crack2" className="crack-line" />
+                              <use href="#crack3" className="crack-line" />
+                            </svg>
+
+                            {/* Shattered State Content */}
+                            <div className="absolute inset-0 flex items-center justify-center shattered-content opacity-0">
+                              <div className="text-center">
+                                <h3 className="text-xl font-bold text-red-400 mb-2">
+                                  STRUCTURE EXPOSED
+                                </h3>
+                                <p className="text-sm text-gray-300">
+                                  Simulation no longer holds.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Arrow for mobile */}
+                        {index < 3 && (
+                          <ArrowRight className="w-4 h-4 text-gray-400 mx-auto mt-4 md:hidden opacity-50" />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Ambient System Activity Indicators */}
+                <div className="absolute top-4 right-4 flex space-x-2">
+                  <div
+                    className="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                    style={{ animationDelay: "0s" }}
+                  />
+                  <div
+                    className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"
+                    style={{ animationDelay: "0.5s" }}
+                  />
+                  <div
+                    className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"
+                    style={{ animationDelay: "1s" }}
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Primary Engagement */}
