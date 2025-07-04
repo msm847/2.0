@@ -88,8 +88,8 @@ export default function Index() {
 
   const clausePhases = [
     {
-      title: "System Intent",
-      description: "Legal structures encode intent through design",
+      title: "Legality is structure",
+      description: "Safety is not implied",
       visual: "opacity-100 translate-y-0",
       color: "text-blue-400",
     },
