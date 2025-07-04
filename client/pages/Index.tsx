@@ -214,7 +214,11 @@ export default function Index() {
                         {phase.title}
                       </div>
                       <div className="text-sm text-gray-300 leading-relaxed">
-                        {phase.description}
+                        {index === 3 ? (
+                          <span className="font-bold">{phase.description}</span>
+                        ) : (
+                          phase.description
+                        )}
                       </div>
                       {index < 3 && (
                         <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
