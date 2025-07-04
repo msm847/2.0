@@ -452,7 +452,7 @@ export default function Index() {
 
               {/* Epistemic Collapse Trigger (activated after all boxes hovered) */}
               <div
-                className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-1000 epistemic-collapse"
+                className={`absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-1000 epistemic-collapse ${epistemicCollapseTriggered ? "active" : ""}`}
                 style={{
                   background:
                     "radial-gradient(ellipse 150% 50% at center bottom, rgba(120, 119, 198, 0.1) 0%, transparent 100%)",
