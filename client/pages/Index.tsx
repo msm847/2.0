@@ -196,46 +196,94 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Animated Clause Logic Flow - Warped Field */}
-            <div className="relative mb-20 perspective-1000">
-              {/* Cognitive Pressure Field Background */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 via-transparent to-transparent blur-3xl animate-pulse"></div>
-                <div className="absolute inset-0 bg-gradient-conic from-purple-500/3 via-transparent to-blue-500/3 blur-2xl animate-spin-slow"></div>
+            {/* Epistemic Semantic Operators */}
+            <div className="relative mb-20" id="semantic-operators">
+              {/* Epistemic Field Background */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-radial from-indigo-500/3 via-transparent to-transparent blur-3xl animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-conic from-violet-500/2 via-transparent to-blue-500/2 blur-2xl animate-spin-slow"></div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
                 {clausePhases.map((phase, index) => {
-                  // Arc positioning - create shallow arc with outer boxes angled inward
+                  // Typological color schemes
+                  const getTypologyColors = (index) => {
+                    switch (index) {
+                      case 0: // Legality is Structure (CI - Clause Interference)
+                        return {
+                          bg: "#E0E5F5",
+                          border: "#C5CCE8",
+                          glow: "#8B9DE8",
+                          glyph: "⊗",
+                          shadow: "rgba(139, 157, 232, 0.2)",
+                        };
+                      case 1: // Discretion is Formatted (DG - Discretionary Gap)
+                        return {
+                          bg: "#F5EDE0",
+                          border: "#E8D5C0",
+                          glow: "#D4A874",
+                          glyph: "τ",
+                          shadow: "rgba(212, 168, 116, 0.2)",
+                        };
+                      case 2: // Meaning is Positional (OD - Override Detection)
+                        return {
+                          bg: "#F7F1D4",
+                          border: "#EDE3B8",
+                          glow: "#D4C574",
+                          glyph: "ϕ",
+                          shadow: "rgba(212, 197, 116, 0.2)",
+                        };
+                      case 3: // See Together (SC - Structural Collapse/Awakening)
+                        return {
+                          bg: "#F8D4D4",
+                          border: "#F0B8B8",
+                          glow: "#E88888",
+                          glyph: "Λ",
+                          shadow: "rgba(232, 136, 136, 0.2)",
+                        };
+                      default:
+                        return {
+                          bg: "#F0F0F0",
+                          border: "#E0E0E0",
+                          glow: "#C0C0C0",
+                          glyph: "○",
+                          shadow: "rgba(192, 192, 192, 0.2)",
+                        };
+                    }
+                  };
+
+                  // Arc positioning with horizontal arc and inward rotation
                   const getArcTransform = () => {
                     switch (index) {
                       case 0:
-                        return "rotateY(8deg) rotateX(-2deg)";
+                        return "perspective(1000px) rotateY(2deg) rotateX(3deg) translateY(-2px)";
                       case 1:
-                        return "rotateY(3deg) rotateX(-1deg)";
+                        return "perspective(1000px) rotateY(1deg) rotateX(3deg) translateY(-1px)";
                       case 2:
-                        return "rotateY(-3deg) rotateX(-1deg)";
+                        return "perspective(1000px) rotateY(-1deg) rotateX(3deg) translateY(-1px)";
                       case 3:
-                        return "rotateY(-8deg) rotateX(-2deg)";
+                        return "perspective(1000px) rotateY(-2deg) rotateX(3deg) translateY(-2px)";
                       default:
-                        return "rotateY(0deg)";
+                        return "perspective(1000px) rotateX(3deg)";
                     }
                   };
 
                   const getHoverTransform = () => {
                     switch (index) {
                       case 0:
-                        return "rotateY(12deg) rotateX(-5deg) rotateZ(2deg)";
+                        return "perspective(1000px) rotateY(2deg) rotateX(4.5deg) translateY(-2px) scale(1.04)";
                       case 1:
-                        return "rotateY(5deg) rotateX(-3deg) rotateZ(-1deg)";
+                        return "perspective(1000px) rotateY(1deg) rotateX(4.5deg) translateY(-1px) scale(1.04)";
                       case 2:
-                        return "rotateY(-5deg) rotateX(-3deg) rotateZ(1deg)";
+                        return "perspective(1000px) rotateY(-1deg) rotateX(4.5deg) translateY(-1px) scale(1.04)";
                       case 3:
-                        return "rotateY(-12deg) rotateX(-5deg) rotateZ(-2deg)";
+                        return "perspective(1000px) rotateY(-2deg) rotateX(4.5deg) translateY(-2px) scale(1.04)";
                       default:
-                        return "rotateY(0deg)";
+                        return "perspective(1000px) rotateX(4.5deg) scale(1.04)";
                     }
                   };
+
+                  const colors = getTypologyColors(index);
 
                   return (
                     <div
@@ -243,117 +291,82 @@ export default function Index() {
                       className={`transition-all duration-1000 ${
                         currentPhase === index
                           ? phase.visual
-                          : "opacity-40 translate-y-4 scale-95"
+                          : "opacity-70 translate-y-2 scale-98"
                       }`}
                       style={{
-                        perspective: "1000px",
-                        transformStyle: "preserve-3d",
+                        willChange: "transform, opacity",
                       }}
                     >
                       <div
-                        className="relative group cursor-pointer"
+                        className="relative group cursor-pointer semantic-operator"
                         style={{
                           transform: getArcTransform(),
-                          transformStyle: "preserve-3d",
-                          transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                          transition:
+                            "transform 0.3s ease-out, box-shadow 0.3s ease-out",
+                          willChange: "transform",
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform = getHoverTransform();
+                          e.currentTarget.style.boxShadow = `0 15px 40px ${colors.shadow}, 0 0 30px ${colors.shadow}`;
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.transform = getArcTransform();
+                          e.currentTarget.style.boxShadow = `0 8px 25px rgba(0, 0, 0, 0.1)`;
                         }}
+                        data-typology={colors.glyph}
                       >
-                        {/* Curved Surface with Cognitive Pressure */}
+                        {/* Semantic Lens Surface */}
                         <div
-                          className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-lg text-center overflow-hidden"
+                          className="relative p-6 rounded-lg text-center overflow-hidden border-2"
                           style={{
-                            transform: "rotateX(-3deg) scaleY(0.96)",
-                            transformOrigin: "center bottom",
+                            backgroundColor: colors.bg,
+                            borderColor: colors.border,
                             boxShadow: `
-                              0 8px 25px rgba(0, 0, 0, 0.4),
-                              0 0 0 1px rgba(255, 255, 255, 0.05),
-                              inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                              inset 0 -1px 0 rgba(0, 0, 0, 0.2)
+                              0 8px 25px rgba(0, 0, 0, 0.1),
+                              inset 0 1px 0 rgba(255, 255, 255, 0.8),
+                              inset 0 -1px 0 rgba(0, 0, 0, 0.1)
                             `,
-                            background: `
-                              radial-gradient(ellipse 150% 100% at center bottom,
-                                rgba(55, 65, 81, 0.6) 0%,
-                                rgba(55, 65, 81, 0.3) 70%,
-                                rgba(55, 65, 81, 0.1) 100%
-                              ),
-                              linear-gradient(to bottom,
-                                rgba(75, 85, 99, 0.4) 0%,
-                                rgba(55, 65, 81, 0.6) 100%
-                              )
-                            `,
+                            transformOrigin: "center bottom",
                           }}
                         >
-                          {/* Pressure Field Gradient */}
+                          {/* Epistemic Pressure Gradient */}
                           <div
-                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300"
                             style={{
                               background: `
                                 radial-gradient(ellipse 120% 150% at center,
-                                  ${phase.color.replace("text-", "")}20 0%,
+                                  ${colors.glow} 0%,
                                   transparent 70%
-                                ),
-                                radial-gradient(ellipse 80% 200% at center bottom,
-                                  rgba(255, 255, 255, 0.05) 0%,
-                                  transparent 50%
                                 )
                               `,
                             }}
                           />
 
-                          {/* Reactive Light Beam */}
+                          {/* Typology Glyph */}
                           <div
-                            className="absolute inset-x-0 bottom-0 h-px opacity-0 group-hover:opacity-100 transition-all duration-500"
+                            className="absolute bottom-2 right-3 opacity-20 group-hover:opacity-40 transition-opacity duration-300"
                             style={{
-                              background: `linear-gradient(90deg,
-                                transparent 0%,
-                                ${
-                                  phase.color.includes("blue")
-                                    ? "#60A5FA"
-                                    : phase.color.includes("yellow")
-                                      ? "#FBBF24"
-                                      : phase.color.includes("orange")
-                                        ? "#FB923C"
-                                        : "#EF4444"
-                                } 50%,
-                                transparent 100%
-                              )`,
-                              boxShadow: `0 0 20px ${
-                                phase.color.includes("blue")
-                                  ? "#60A5FA"
-                                  : phase.color.includes("yellow")
-                                    ? "#FBBF24"
-                                    : phase.color.includes("orange")
-                                      ? "#FB923C"
-                                      : "#EF4444"
-                              }`,
+                              fontSize: "1.2rem",
+                              color: colors.glow,
+                              fontFamily: "serif",
+                              fontWeight: "300",
                             }}
-                          />
+                          >
+                            {colors.glyph}
+                          </div>
 
-                          {/* Surface Tension Grid */}
-                          <div className="absolute inset-0 opacity-20">
+                          {/* Surface Tension Field */}
+                          <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
                             <div
                               className="w-full h-full"
                               style={{
                                 background: `
                                   repeating-linear-gradient(
-                                    45deg,
+                                    120deg,
                                     transparent,
-                                    transparent 10px,
-                                    rgba(255, 255, 255, 0.02) 10px,
-                                    rgba(255, 255, 255, 0.02) 11px
-                                  ),
-                                  repeating-linear-gradient(
-                                    -45deg,
-                                    transparent,
-                                    transparent 10px,
-                                    rgba(255, 255, 255, 0.02) 10px,
-                                    rgba(255, 255, 255, 0.02) 11px
+                                    transparent 15px,
+                                    ${colors.glow} 15px,
+                                    ${colors.glow} 16px
                                   )
                                 `,
                               }}
@@ -363,22 +376,21 @@ export default function Index() {
                           {/* Content Layer */}
                           <div className="relative z-10">
                             <div
-                              className={`text-sm font-bold uppercase tracking-wider mb-3 transition-all duration-300 group-hover:scale-105 ${phase.color}`}
+                              className="text-sm font-bold uppercase tracking-wider mb-3 transition-all duration-300 group-hover:scale-105"
                               style={{
-                                textShadow: `0 0 10px ${
-                                  phase.color.includes("blue")
-                                    ? "#60A5FA"
-                                    : phase.color.includes("yellow")
-                                      ? "#FBBF24"
-                                      : phase.color.includes("orange")
-                                        ? "#FB923C"
-                                        : "#EF4444"
-                                }50`,
+                                color: "#1a1a1a",
+                                textShadow: `0 0 8px ${colors.glow}20`,
                               }}
                             >
                               {phase.title}
                             </div>
-                            <div className="text-sm text-gray-300 leading-relaxed transition-all duration-300 group-hover:text-gray-100">
+                            <div
+                              className="text-sm leading-relaxed transition-all duration-300 group-hover:scale-102"
+                              style={{
+                                color: "#2a2a2a",
+                                fontWeight: index === 3 ? "600" : "400",
+                              }}
+                            >
                               {index === 3 ? (
                                 <span className="font-bold">
                                   {phase.description}
@@ -389,20 +401,12 @@ export default function Index() {
                             </div>
                           </div>
 
-                          {/* Depth Shadow */}
+                          {/* Perceptual Activation Pulse */}
                           <div
-                            className="absolute inset-x-0 -bottom-2 h-8 opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                            className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none"
                             style={{
-                              background: `
-                                radial-gradient(ellipse 90% 100% at center top,
-                                  rgba(0, 0, 0, 0.6) 0%,
-                                  rgba(0, 0, 0, 0.2) 50%,
-                                  transparent 100%
-                                )
-                              `,
-                              transform:
-                                "perspective(100px) rotateX(90deg) translateZ(-20px)",
-                              filter: "blur(6px)",
+                              boxShadow: `inset 0 0 20px ${colors.glow}30`,
+                              animation: "pulse 2s ease-in-out infinite",
                             }}
                           />
                         </div>
@@ -416,6 +420,16 @@ export default function Index() {
                   );
                 })}
               </div>
+
+              {/* Epistemic Collapse Trigger (activated after all boxes hovered) */}
+              <div
+                className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-1000 epistemic-collapse"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 150% 50% at center bottom, rgba(120, 119, 198, 0.1) 0%, transparent 100%)",
+                  transform: "translateY(5px)",
+                }}
+              />
             </div>
 
             {/* Primary Engagement */}
