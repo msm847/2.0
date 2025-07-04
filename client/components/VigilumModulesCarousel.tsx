@@ -299,8 +299,12 @@ export default function VigilumModulesCarousel({
 
             {/* Semantic Glyph */}
             <div
-              className="absolute bottom-2 right-3 text-2xl opacity-[0.08] pointer-events-none text-white font-serif"
-              style={{ fontSize: "1.6rem" }}
+              className="absolute bottom-2 right-3 text-2xl opacity-20 pointer-events-none font-serif"
+              style={{
+                fontSize: "1.6rem",
+                color: currentModule.accentColor,
+                textShadow: `0 0 8px ${currentModule.accentColor}40`,
+              }}
             >
               {currentModule.glyph}
             </div>
