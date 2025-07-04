@@ -19,9 +19,9 @@ const modules = [
     tagline: "Structure discloses intent.",
     description:
       "Parses legal clauses to detect embedded risk logic, exposing how contracts simulate legality while shifting liability.",
-    color: "#2563eb",
+    color: "#1a3d82",
     secondaryColor: "#1e40af",
-    textColor: "#ffffff",
+    textColor: "#dce3f7",
     accentColor: "#60a5fa",
     icon: Search,
     glyph: "ϕ",
