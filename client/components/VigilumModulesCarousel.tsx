@@ -61,9 +61,9 @@ const modules = [
     tagline: "Influence is relational.",
     description:
       "Maps hidden networks, revolving doors, and control clusters behind awards using recursive relationship inference.",
-    color: "#7c3aed",
+    color: "#4e27a6",
     secondaryColor: "#6d28d9",
-    textColor: "#ffffff",
+    textColor: "#ded1f7",
     accentColor: "#a78bfa",
     icon: Network,
     glyph: "λ",
