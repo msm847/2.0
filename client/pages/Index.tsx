@@ -182,7 +182,7 @@ export default function Index() {
                 <span className="block text-blue-400">INTELLIGENCE</span>
               </h1>
               <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
-                Mapping structural override before it's encoded as compliance
+                Simulating override before discretion encodes compliance
               </p>
             </div>
 
