@@ -45,21 +45,13 @@ export default function Index() {
     return () => clearInterval(interval);
   }, []);
 
-  // Track epistemic collapse trigger
+  // Track structural collapse trigger
   useEffect(() => {
     if (hoveredBoxes.size === 4 && !epistemicCollapseTriggered) {
       setEpistemicCollapseTriggered(true);
 
-      // Trigger epistemic collapse visual effect
-      const collapseElement = document.querySelector(".epistemic-collapse");
-      if (collapseElement) {
-        collapseElement.classList.add("active");
-      }
-
-      // Trigger awakening shimmer on final box
-      const awakeningBox = document.querySelector(
-        '.semantic-operator[data-typology="Λ"]',
-      );
+      // Trigger structural awakening on "Break the Illusion" box
+      const awakeningBox = document.querySelector(".clause-sc");
       if (awakeningBox) {
         awakeningBox.classList.add("awakened");
       }
