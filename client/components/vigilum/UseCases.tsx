@@ -258,7 +258,7 @@ const UseCases = () => {
                           {caseItem.id}
                         </div>
                         <div className="text-xs text-gray-500">
-                          {caseItem.date}
+                          Risk: {caseItem.riskLevel.toFixed(1)}
                         </div>
                       </div>
                       <div className="text-sm text-white font-medium mb-1">
@@ -268,11 +268,11 @@ const UseCases = () => {
                         {caseItem.sector}
                       </div>
                       <div className="flex items-center justify-between mt-2">
-                        <div className="text-xs font-mono text-red-400">
-                          {caseItem.amount}
+                        <div className="text-xs font-mono text-blue-400">
+                          {caseItem.duration}
                         </div>
                         <div className="text-xs text-gray-500">
-                          Risk: {caseItem.riskLevel.toFixed(2)}
+                          {caseItem.typology}
                         </div>
                       </div>
                     </button>
