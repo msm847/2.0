@@ -16,6 +16,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import MatrixBackground from "../components/MatrixBackground";
+import DecryptedText from "../components/DecryptedText";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
