@@ -242,7 +242,7 @@ const UseCases = () => {
                 <h3 className="text-lg font-bold text-white font-mono mb-6">
                   CLAUSE LIBRARY
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-3 max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 pr-2">
                   {cases.map((caseItem, index) => (
                     <button
                       key={caseItem.id}
