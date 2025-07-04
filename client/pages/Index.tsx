@@ -196,37 +196,225 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Animated Clause Logic Flow */}
-            <div className="relative mb-20">
+            {/* Animated Clause Logic Flow - Warped Field */}
+            <div className="relative mb-20 perspective-1000">
+              {/* Cognitive Pressure Field Background */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 via-transparent to-transparent blur-3xl animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-conic from-purple-500/3 via-transparent to-blue-500/3 blur-2xl animate-spin-slow"></div>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {clausePhases.map((phase, index) => (
-                  <div
-                    key={index}
-                    className={`transition-all duration-1000 ${
-                      currentPhase === index
-                        ? phase.visual
-                        : "opacity-40 translate-y-4 scale-95"
-                    }`}
-                  >
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-lg text-center">
+                {clausePhases.map((phase, index) => {
+                  // Arc positioning - create shallow arc with outer boxes angled inward
+                  const getArcTransform = () => {
+                    switch (index) {
+                      case 0:
+                        return "rotateY(8deg) rotateX(-2deg)";
+                      case 1:
+                        return "rotateY(3deg) rotateX(-1deg)";
+                      case 2:
+                        return "rotateY(-3deg) rotateX(-1deg)";
+                      case 3:
+                        return "rotateY(-8deg) rotateX(-2deg)";
+                      default:
+                        return "rotateY(0deg)";
+                    }
+                  };
+
+                  const getHoverTransform = () => {
+                    switch (index) {
+                      case 0:
+                        return "rotateY(12deg) rotateX(-5deg) rotateZ(2deg)";
+                      case 1:
+                        return "rotateY(5deg) rotateX(-3deg) rotateZ(-1deg)";
+                      case 2:
+                        return "rotateY(-5deg) rotateX(-3deg) rotateZ(1deg)";
+                      case 3:
+                        return "rotateY(-12deg) rotateX(-5deg) rotateZ(-2deg)";
+                      default:
+                        return "rotateY(0deg)";
+                    }
+                  };
+
+                  return (
+                    <div
+                      key={index}
+                      className={`transition-all duration-1000 ${
+                        currentPhase === index
+                          ? phase.visual
+                          : "opacity-40 translate-y-4 scale-95"
+                      }`}
+                      style={{
+                        perspective: "1000px",
+                        transformStyle: "preserve-3d",
+                      }}
+                    >
                       <div
-                        className={`text-sm font-bold uppercase tracking-wider mb-3 ${phase.color}`}
+                        className="relative group cursor-pointer"
+                        style={{
+                          transform: getArcTransform(),
+                          transformStyle: "preserve-3d",
+                          transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = getHoverTransform();
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = getArcTransform();
+                        }}
                       >
-                        {phase.title}
-                      </div>
-                      <div className="text-sm text-gray-300 leading-relaxed">
-                        {index === 3 ? (
-                          <span className="font-bold">{phase.description}</span>
-                        ) : (
-                          phase.description
+                        {/* Curved Surface with Cognitive Pressure */}
+                        <div
+                          className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-lg text-center overflow-hidden"
+                          style={{
+                            transform: "rotateX(-3deg) scaleY(0.96)",
+                            transformOrigin: "center bottom",
+                            boxShadow: `
+                              0 8px 25px rgba(0, 0, 0, 0.4),
+                              0 0 0 1px rgba(255, 255, 255, 0.05),
+                              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                              inset 0 -1px 0 rgba(0, 0, 0, 0.2)
+                            `,
+                            background: `
+                              radial-gradient(ellipse 150% 100% at center bottom,
+                                rgba(55, 65, 81, 0.6) 0%,
+                                rgba(55, 65, 81, 0.3) 70%,
+                                rgba(55, 65, 81, 0.1) 100%
+                              ),
+                              linear-gradient(to bottom,
+                                rgba(75, 85, 99, 0.4) 0%,
+                                rgba(55, 65, 81, 0.6) 100%
+                              )
+                            `,
+                          }}
+                        >
+                          {/* Pressure Field Gradient */}
+                          <div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            style={{
+                              background: `
+                                radial-gradient(ellipse 120% 150% at center,
+                                  ${phase.color.replace("text-", "")}20 0%,
+                                  transparent 70%
+                                ),
+                                radial-gradient(ellipse 80% 200% at center bottom,
+                                  rgba(255, 255, 255, 0.05) 0%,
+                                  transparent 50%
+                                )
+                              `,
+                            }}
+                          />
+
+                          {/* Reactive Light Beam */}
+                          <div
+                            className="absolute inset-x-0 bottom-0 h-px opacity-0 group-hover:opacity-100 transition-all duration-500"
+                            style={{
+                              background: `linear-gradient(90deg,
+                                transparent 0%,
+                                ${
+                                  phase.color.includes("blue")
+                                    ? "#60A5FA"
+                                    : phase.color.includes("yellow")
+                                      ? "#FBBF24"
+                                      : phase.color.includes("orange")
+                                        ? "#FB923C"
+                                        : "#EF4444"
+                                } 50%,
+                                transparent 100%
+                              )`,
+                              boxShadow: `0 0 20px ${
+                                phase.color.includes("blue")
+                                  ? "#60A5FA"
+                                  : phase.color.includes("yellow")
+                                    ? "#FBBF24"
+                                    : phase.color.includes("orange")
+                                      ? "#FB923C"
+                                      : "#EF4444"
+                              }`,
+                            }}
+                          />
+
+                          {/* Surface Tension Grid */}
+                          <div className="absolute inset-0 opacity-20">
+                            <div
+                              className="w-full h-full"
+                              style={{
+                                background: `
+                                  repeating-linear-gradient(
+                                    45deg,
+                                    transparent,
+                                    transparent 10px,
+                                    rgba(255, 255, 255, 0.02) 10px,
+                                    rgba(255, 255, 255, 0.02) 11px
+                                  ),
+                                  repeating-linear-gradient(
+                                    -45deg,
+                                    transparent,
+                                    transparent 10px,
+                                    rgba(255, 255, 255, 0.02) 10px,
+                                    rgba(255, 255, 255, 0.02) 11px
+                                  )
+                                `,
+                              }}
+                            />
+                          </div>
+
+                          {/* Content Layer */}
+                          <div className="relative z-10">
+                            <div
+                              className={`text-sm font-bold uppercase tracking-wider mb-3 transition-all duration-300 group-hover:scale-105 ${phase.color}`}
+                              style={{
+                                textShadow: `0 0 10px ${
+                                  phase.color.includes("blue")
+                                    ? "#60A5FA"
+                                    : phase.color.includes("yellow")
+                                      ? "#FBBF24"
+                                      : phase.color.includes("orange")
+                                        ? "#FB923C"
+                                        : "#EF4444"
+                                }50`,
+                              }}
+                            >
+                              {phase.title}
+                            </div>
+                            <div className="text-sm text-gray-300 leading-relaxed transition-all duration-300 group-hover:text-gray-100">
+                              {index === 3 ? (
+                                <span className="font-bold">
+                                  {phase.description}
+                                </span>
+                              ) : (
+                                phase.description
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Depth Shadow */}
+                          <div
+                            className="absolute inset-x-0 -bottom-2 h-8 opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                            style={{
+                              background: `
+                                radial-gradient(ellipse 90% 100% at center top,
+                                  rgba(0, 0, 0, 0.6) 0%,
+                                  rgba(0, 0, 0, 0.2) 50%,
+                                  transparent 100%
+                                )
+                              `,
+                              transform:
+                                "perspective(100px) rotateX(90deg) translateZ(-20px)",
+                              filter: "blur(6px)",
+                            }}
+                          />
+                        </div>
+
+                        {/* Arrow for mobile (if needed) */}
+                        {index < 3 && (
+                          <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
                         )}
                       </div>
-                      {index < 3 && (
-                        <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
-                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
