@@ -33,9 +33,9 @@ const modules = [
     tagline: "Procedures conceal design.",
     description:
       "Flags tenders pre-structured for capture—compressed timelines, single-bid dominance, or emergency justification misuse.",
-    color: "#dc2626",
+    color: "#941b1b",
     secondaryColor: "#b91c1c",
-    textColor: "#ffffff",
+    textColor: "#f1d1d1",
     accentColor: "#f87171",
     icon: Eye,
     glyph: "⊗",
