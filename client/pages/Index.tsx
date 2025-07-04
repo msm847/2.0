@@ -308,19 +308,6 @@ export default function Index() {
                 </p>
               </div>
             </div>
-
-            {/* Structural Trust Indicator */}
-            <div className="text-center">
-              <div className="inline-flex items-center space-x-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700 px-6 py-3 rounded-lg">
-                <div className="text-xs text-gray-500 uppercase tracking-wider">
-                  Structural Foresight
-                </div>
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <div className="text-xs text-gray-400 font-mono">
-                  {messageFromServer || "System operational"}
-                </div>
-              </div>
-            </div>
           </div>
         </main>
       </div>
