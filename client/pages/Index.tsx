@@ -345,7 +345,7 @@ export default function Index() {
                           <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white">
                             {phase.title}
                           </h3>
-                          <p className="text-sm text-gray-300 leading-relaxed">
+                          <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
                             {index === 3 ? (
                               <span className="font-bold text-white">
                                 {phase.description}
