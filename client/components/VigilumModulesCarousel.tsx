@@ -267,11 +267,7 @@ export default function VigilumModulesCarousel({
               </div>
 
               {/* Description */}
-              <div
-                className={`transition-all duration-500 overflow-hidden ${
-                  isExpanded ? "max-h-40 opacity-100" : "max-h-24 opacity-90"
-                }`}
-              >
+              <div className="transition-all duration-500 overflow-hidden max-h-40 opacity-100">
                 <p
                   className="text-base leading-relaxed"
                   style={{ color: currentModule.textColor }}
@@ -279,18 +275,6 @@ export default function VigilumModulesCarousel({
                   {currentModule.description}
                 </p>
               </div>
-
-              {/* Expand Indicator */}
-              {!isExpanded && (
-                <div className="mt-4">
-                  <p
-                    className="text-xs uppercase tracking-wider opacity-60 cursor-pointer hover:opacity-100 transition-opacity"
-                    style={{ color: currentModule.textColor }}
-                  >
-                    Click to expand →
-                  </p>
-                </div>
-              )}
             </div>
 
             {/* Progress Bar */}
