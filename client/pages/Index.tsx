@@ -18,6 +18,7 @@ import {
 import MatrixBackground from "../components/MatrixBackground";
 import DecryptedText from "../components/DecryptedText";
 import VigilumModulesCarousel from "../components/VigilumModulesCarousel";
+import LetterGlitch from "../components/LetterGlitch";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
