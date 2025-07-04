@@ -212,12 +212,6 @@ export default function Index() {
                         <ArrowRight className="w-4 h-4 text-gray-500 mx-auto mt-4 md:hidden" />
                       )}
                     </div>
-                    {index < 3 && (
-                      <ArrowRight
-                        className="hidden md:block w-6 h-6 text-gray-500 absolute top-1/2 -translate-y-1/2"
-                        style={{ left: `${(index + 1) * 25 - 3}%` }}
-                      />
-                    )}
                   </div>
                 ))}
               </div>
