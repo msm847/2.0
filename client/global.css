@@ -584,3 +584,241 @@
     opacity: 0.7;
   }
 }
+
+/* ===== GLASS-LOGIC SEMANTIC CONTAINERS ===== */
+
+/* Core Glass Container Styling */
+.glass-logic-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px;
+  padding: 2rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Floating Animation - Ambient System Activity */
+@keyframes glass-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-3px) translateX(1px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-1px);
+  }
+  75% {
+    transform: translateY(-2px) translateX(2px);
+  }
+}
+
+/* Hover Behavior - Cognitive Activation */
+.glass-logic-container:hover {
+  transform: scale(1.03) rotateX(2deg) rotateY(-1deg) !important;
+  animation-play-state: paused;
+}
+
+/* Typology-Specific Hover Glows */
+.glass-clause-ci:hover {
+  box-shadow:
+    0 12px 30px rgba(58, 86, 216, 0.3),
+    0 0 40px rgba(58, 86, 216, 0.2),
+    inset 0 0 20px rgba(58, 86, 216, 0.1);
+}
+
+.glass-clause-ci:hover .glass-inner-glow {
+  opacity: 1;
+}
+
+.glass-clause-dg:hover {
+  box-shadow:
+    0 12px 30px rgba(248, 94, 0, 0.3),
+    0 0 40px rgba(248, 94, 0, 0.2),
+    inset 0 0 20px rgba(248, 94, 0, 0.1);
+}
+
+.glass-clause-dg:hover .glass-inner-glow {
+  opacity: 1;
+}
+
+.glass-clause-od:hover {
+  box-shadow:
+    0 12px 30px rgba(244, 201, 0, 0.3),
+    0 0 40px rgba(244, 201, 0, 0.2),
+    inset 0 0 20px rgba(244, 201, 0, 0.1);
+}
+
+.glass-clause-od:hover .glass-inner-glow {
+  opacity: 1;
+}
+
+.glass-clause-sc:hover {
+  box-shadow:
+    0 12px 30px rgba(255, 27, 76, 0.3),
+    0 0 40px rgba(255, 27, 76, 0.2),
+    inset 0 0 20px rgba(255, 27, 76, 0.1);
+}
+
+.glass-clause-sc:hover .glass-inner-glow {
+  opacity: 1;
+}
+
+/* Glyph Animation on Hover */
+.glass-logic-container:hover .glass-glyph {
+  opacity: 0.3;
+  animation: glyph-ambient 2s ease-in-out infinite;
+}
+
+@keyframes glyph-ambient {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+/* Special Red Box - Glass Shatter Preparation */
+.glass-clause-sc {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-clause-sc:hover {
+  animation: pre-shatter-flicker 0.5s ease-in-out;
+}
+
+@keyframes pre-shatter-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.98;
+  }
+  75% {
+    opacity: 0.96;
+  }
+}
+
+/* Glass Shatter State - Triggered when all boxes hovered */
+.glass-clause-sc.shattered {
+  animation: glass-shatter 1.5s ease-out forwards;
+}
+
+.glass-clause-sc.shattered .shatter-overlay {
+  opacity: 1;
+}
+
+.glass-clause-sc.shattered .shatter-overlay svg {
+  opacity: 1 !important;
+  animation: crack-spread 1s ease-out forwards;
+}
+
+.glass-clause-sc.shattered .shattered-content {
+  opacity: 1 !important;
+  animation: content-emerge 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes glass-shatter {
+  0% {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    background: rgba(255, 27, 76, 0.1);
+    border-color: rgba(255, 27, 76, 0.3);
+    transform: scale(1.02);
+  }
+  100% {
+    background: rgba(255, 27, 76, 0.15);
+    border-color: rgba(255, 27, 76, 0.4);
+    transform: scale(1);
+  }
+}
+
+@keyframes crack-spread {
+  0% {
+    stroke-dasharray: 0, 1000;
+  }
+  100% {
+    stroke-dasharray: 1000, 0;
+  }
+}
+
+@keyframes content-emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Crack Line Animation */
+.crack-line {
+  stroke-dasharray: 0, 1000;
+  animation: none;
+}
+
+.glass-clause-sc.shattered .crack-line {
+  animation: crack-draw 0.8s ease-out forwards;
+}
+
+@keyframes crack-draw {
+  0% {
+    stroke-dasharray: 0, 1000;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 1000, 0;
+    opacity: 0.8;
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .glass-logic-container {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .glass-logic-container:hover {
+    transform: scale(1.02) rotateX(1deg) !important;
+  }
+
+  @keyframes glass-float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Utility Classes */
+.opacity-3 {
+  opacity: 0.03;
+}
