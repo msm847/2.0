@@ -284,6 +284,14 @@ export default function VigilumModulesCarousel({
               </div>
             </div>
 
+            {/* Semantic Glyph */}
+            <div
+              className="absolute bottom-2 right-3 text-2xl opacity-[0.08] pointer-events-none text-white font-serif"
+              style={{ fontSize: "1.6rem" }}
+            >
+              {currentModule.glyph}
+            </div>
+
             {/* Progress Bar */}
             <div className="absolute bottom-0 left-0 right-0 h-1">
               <div
