@@ -250,8 +250,7 @@ export default function Index() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  Input → Analysis → Override → Risk projection through semantic
-                  vector mapping
+                  Clause analysis through semantic vector mapping
                 </p>
               </div>
 
