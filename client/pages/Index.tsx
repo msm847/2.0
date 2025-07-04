@@ -247,67 +247,12 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Structural Intelligence Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {/* CLAVIS */}
-              <div className="group bg-gray-800/30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg hover:border-blue-500 transition-all duration-300 cursor-pointer">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                    <Search className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-blue-400">CLAVIS</h3>
-                    <p className="text-xs text-gray-500 uppercase tracking-wider">
-                      CLAUSE INTELLIGENCE
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Clause analysis through semantic vector mapping
-                </p>
-              </div>
-
-              {/* OBSCURA */}
-              <div className="group bg-gray-800/30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg hover:border-yellow-500 transition-all duration-300 cursor-pointer">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mr-4">
-                    <BarChart3 className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-yellow-400">
-                      OBSCURA
-                    </h3>
-                    <p className="text-xs text-gray-500 uppercase tracking-wider">
-                      TIMELINE COMPRESSION
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Frictionless procurement detection through temporal sequence
-                  analysis
-                </p>
-              </div>
-
-              {/* NULLUM */}
-              <div className="group bg-gray-800/30 backdrop-blur-sm border border-gray-700 p-6 rounded-lg hover:border-orange-500 transition-all duration-300 cursor-pointer">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mr-4">
-                    <Gauge className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-orange-400">
-                      NULLUM
-                    </h3>
-                    <p className="text-xs text-gray-500 uppercase tracking-wider">
-                      DELAY MAPPING
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Risk accumulation through user non-interaction and procedural
-                  drift
-                </p>
-              </div>
+            {/* Vigilum Modules Carousel */}
+            <div className="mb-16">
+              <VigilumModulesCarousel
+                autoRotate={true}
+                rotationInterval={4500}
+              />
             </div>
           </div>
         </main>
