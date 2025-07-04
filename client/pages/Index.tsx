@@ -336,6 +336,7 @@ export default function Index() {
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform = getHoverTransform();
                           e.currentTarget.style.boxShadow = `0 15px 40px ${colors.shadow}, 0 0 30px ${colors.shadow}`;
+                          handleBoxHover(index);
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.transform = getArcTransform();
