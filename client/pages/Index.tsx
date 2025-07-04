@@ -183,7 +183,15 @@ export default function Index() {
                 <span className="block text-blue-400">INTELLIGENCE</span>
               </h1>
               <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
-                Simulating override before discretion encodes compliance
+                <DecryptedText
+                  text="Simulating override before discretion encodes compliance"
+                  animateOn="view"
+                  sequential={true}
+                  speed={80}
+                  className="text-gray-400"
+                  encryptedClassName="text-gray-600"
+                  useOriginalCharsOnly={true}
+                />
               </p>
             </div>
 
