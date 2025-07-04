@@ -124,7 +124,7 @@ export default function VigilumModulesCarousel({
   };
 
   useEffect(() => {
-    if (autoRotate && !isHovered && !isExpanded) {
+    if (autoRotate && !isHovered) {
       intervalRef.current = setInterval(nextModule, rotationInterval);
     } else if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -136,7 +136,7 @@ export default function VigilumModulesCarousel({
         clearInterval(intervalRef.current);
       }
     };
-  }, [autoRotate, isHovered, isExpanded, rotationInterval]);
+  }, [autoRotate, isHovered, rotationInterval]);
 
   const currentModule = modules[currentIndex];
   const Icon = currentModule.icon;
