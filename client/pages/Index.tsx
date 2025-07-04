@@ -207,7 +207,7 @@ export default function Index() {
                         : "opacity-40 translate-y-4 scale-95"
                     }`}
                   >
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-lg">
+                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-lg text-center">
                       <div
                         className={`text-sm font-bold uppercase tracking-wider mb-3 ${phase.color}`}
                       >
