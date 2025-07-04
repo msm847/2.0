@@ -350,7 +350,7 @@ export default function VigilumModulesCarousel({
             key={module.id}
             className={`text-sm font-mono font-bold transition-all duration-300 ${
               index === currentIndex
-                ? "opacity-100 scale-125"
+                ? "opacity-100 scale-110"
                 : "opacity-50 scale-90"
             }`}
             style={{
