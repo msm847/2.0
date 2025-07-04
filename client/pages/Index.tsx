@@ -106,8 +106,8 @@ export default function Index() {
       color: "text-orange-400",
     },
     {
-      title: "Test the System",
-      description: "Simulate legal behavior through clause analysis",
+      title: "Run the clause engine",
+      description: "Watch structure disclose intent",
       visual: "opacity-100 translate-y-0 scale-105 pulse",
       color: "text-red-400",
     },
