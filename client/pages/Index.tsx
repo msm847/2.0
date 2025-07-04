@@ -131,7 +131,12 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 font-mono relative overflow-hidden">
+    <div
+      className="min-h-screen text-gray-100 font-mono relative overflow-hidden"
+      style={{
+        background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+      }}
+    >
       <MatrixBackground />
 
       <div className="relative z-10">
