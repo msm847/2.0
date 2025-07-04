@@ -94,8 +94,8 @@ export default function Index() {
       color: "text-blue-400",
     },
     {
-      title: "Embedded Risk",
-      description: "Discretionary exposure accumulates in clause vectors",
+      title: "Discretion is formatted",
+      description: "Freedom is a simulation",
       visual: "opacity-100 translate-y-0 scale-105",
       color: "text-yellow-400",
     },
