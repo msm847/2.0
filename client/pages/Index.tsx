@@ -237,7 +237,7 @@ export default function Index() {
                   className="bg-blue-600 hover:bg-blue-500 text-white font-mono px-8 py-4 text-lg border border-blue-500"
                 >
                   <Upload className="mr-2 h-5 w-5" />
-                  Execute Clause Simulation
+                  Simulate Multi-Clause Behavior
                 </Button>
               </Link>
               <p className="text-sm text-gray-500 mt-4 font-mono">
