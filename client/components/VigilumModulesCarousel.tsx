@@ -324,31 +324,13 @@ export default function VigilumModulesCarousel({
         </button>
       </div>
 
-      {/* Dot Pagination */}
-      <div className="flex justify-center space-x-3 mt-6">
+      {/* Module Network Indicators */}
+      <div className="flex justify-center mt-6 space-x-3">
         {modules.map((module, index) => (
           <button
             key={module.id}
             onClick={() => goToModule(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "scale-125 ring-2 ring-white/50"
-                : "scale-100 hover:scale-110"
-            }`}
-            style={{
-              backgroundColor:
-                index === currentIndex ? module.color : "#4B5563",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Module Network Indicators */}
-      <div className="flex justify-center mt-4 space-x-3">
-        {modules.map((module, index) => (
-          <div
-            key={module.id}
-            className={`text-sm font-mono font-bold transition-all duration-300 ${
+            className={`text-sm font-mono font-bold transition-all duration-300 cursor-pointer hover:opacity-80 ${
               index === currentIndex
                 ? "opacity-100 scale-110"
                 : "opacity-50 scale-90"
@@ -362,7 +344,7 @@ export default function VigilumModulesCarousel({
             }}
           >
             {module.name}
-          </div>
+          </button>
         ))}
       </div>
     </div>
