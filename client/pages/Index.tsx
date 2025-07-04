@@ -131,7 +131,7 @@ export default function Index() {
     },
     {
       title: "meaning is positional",
-      description: "Clauses collide, not coexist",
+      description: "Clauses collide,\nnot coexist",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
     },
