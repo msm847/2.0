@@ -106,8 +106,8 @@ export default function Index() {
       color: "text-orange-400",
     },
     {
-      title: "Run the clause engine",
-      description: "Watch structure disclose intent",
+      title: "SEE TOGETHER",
+      description: "BREAK THE ILLUSION",
       visual: "opacity-100 translate-y-0 scale-105 pulse",
       color: "text-red-400",
     },
