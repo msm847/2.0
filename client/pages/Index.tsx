@@ -101,7 +101,7 @@ export default function Index() {
     },
     {
       title: "meaning is positional",
-      description: "Structure declares what holds",
+      description: "Clauses collide, not coexist",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
     },
