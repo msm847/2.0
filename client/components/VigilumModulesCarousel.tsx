@@ -89,9 +89,9 @@ const modules = [
     tagline: "Integrity becomes quantifiable.",
     description:
       "Aggregates all risk vectors into a composite signal score—quantifying governance fragility across entities, tenders, and time.",
-    color: "#d97706",
+    color: "#a65800",
     secondaryColor: "#b45309",
-    textColor: "#ffffff",
+    textColor: "#f5d199",
     accentColor: "#fbbf24",
     icon: BarChart3,
     glyph: "τ",
