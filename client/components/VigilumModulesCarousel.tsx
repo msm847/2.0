@@ -326,17 +326,21 @@ export default function VigilumModulesCarousel({
       </div>
 
       {/* Module Network Indicators */}
-      <div className="flex justify-center mt-4 space-x-2">
+      <div className="flex justify-center mt-4 space-x-3">
         {modules.map((module, index) => (
           <div
             key={module.id}
-            className={`text-xs font-mono transition-all duration-300 ${
+            className={`text-sm font-mono font-bold transition-all duration-300 ${
               index === currentIndex
-                ? "opacity-100 scale-110"
-                : "opacity-40 scale-90"
+                ? "opacity-100 scale-125"
+                : "opacity-50 scale-90"
             }`}
             style={{
-              color: index === currentIndex ? module.color : "#6B7280",
+              color: index === currentIndex ? module.textColor : "#6B7280",
+              textShadow:
+                index === currentIndex
+                  ? `0 0 8px ${module.textColor}80, 0 0 16px ${module.textColor}40`
+                  : "none",
             }}
           >
             {module.name}
