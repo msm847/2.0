@@ -111,16 +111,16 @@ export default function Index() {
       color: "text-blue-400",
     },
     {
-      title: "Discretion is formatted",
-      description: "Freedom is a simulation",
-      visual: "opacity-100 translate-y-0 scale-105",
-      color: "text-yellow-400",
-    },
-    {
       title: "meaning is positional",
       description: "A ⇄ B ≠ B ⇄ A",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
+    },
+    {
+      title: "Discretion is formatted",
+      description: "Freedom is a simulation",
+      visual: "opacity-100 translate-y-0 scale-105",
+      color: "text-yellow-400",
     },
     {
       title: "SEE TOGETHER",
