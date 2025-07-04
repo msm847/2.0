@@ -240,7 +240,7 @@ const UseCases = () => {
             <div className="lg:col-span-1">
               <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
                 <h3 className="text-lg font-bold text-white font-mono mb-6">
-                  CASE LIBRARY
+                  CLAUSE LIBRARY
                 </h3>
                 <div className="space-y-3">
                   {cases.map((caseItem, index) => (
