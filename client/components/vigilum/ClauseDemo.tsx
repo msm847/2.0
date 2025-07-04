@@ -94,8 +94,8 @@ const ClauseDemo = () => {
               PRIMARY COGNITION TEST
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
-              Input legal text → Vector projection → Override mapping → Risk
-              fingerprint. Real-time structural analysis.
+              ϕ(c₁…cₙ) ⇨ ⊗(sequence logic) ⇨ G(override graph) ⇨ τ(typology
+              projection) ⇨ Λ(pattern flag). Real-time structural analysis.
             </p>
           </div>
 
