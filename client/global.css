@@ -329,3 +329,92 @@
 .animate-depth-breathe {
   animation: depth-breathe 5s ease-in-out infinite;
 }
+
+/* Epistemic Semantic Operators */
+.semantic-operator {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.semantic-operator:hover {
+  z-index: 10;
+}
+
+/* Scale utility classes */
+.scale-98 {
+  transform: scale(0.98);
+}
+
+.scale-102 {
+  transform: scale(1.02);
+}
+
+/* Epistemic collapse effect */
+@keyframes epistemic-collapse {
+  0% {
+    opacity: 0;
+    transform: translateY(0px) scaleY(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(5px) scaleY(0.98);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(5px) scaleY(0.95);
+  }
+}
+
+.epistemic-collapse.active {
+  animation: epistemic-collapse 2s ease-out forwards;
+}
+
+/* Perceptual activation enhancements */
+@keyframes semantic-pulse {
+  0%,
+  100% {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.semantic-operator:hover .semantic-lens {
+  animation: semantic-pulse 1.5s ease-in-out infinite;
+}
+
+/* Typological resonance */
+.semantic-operator[data-typology="⊗"]:hover {
+  filter: drop-shadow(0 0 15px rgba(139, 157, 232, 0.4));
+}
+
+.semantic-operator[data-typology="τ"]:hover {
+  filter: drop-shadow(0 0 15px rgba(212, 168, 116, 0.4));
+}
+
+.semantic-operator[data-typology="ϕ"]:hover {
+  filter: drop-shadow(0 0 15px rgba(212, 197, 116, 0.4));
+}
+
+.semantic-operator[data-typology="Λ"]:hover {
+  filter: drop-shadow(0 0 15px rgba(232, 136, 136, 0.4));
+}
+
+/* Awakening trigger for final box */
+.semantic-operator[data-typology="Λ"].awakened {
+  animation: awakening-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes awakening-shimmer {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 15px rgba(232, 136, 136, 0.4)) brightness(1);
+  }
+  33% {
+    filter: drop-shadow(0 0 25px rgba(232, 136, 136, 0.6)) brightness(1.05);
+  }
+  66% {
+    filter: drop-shadow(0 0 20px rgba(232, 136, 136, 0.5)) brightness(1.02);
+  }
+}
