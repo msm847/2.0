@@ -147,10 +147,7 @@ export default function VigilumModulesCarousel({
       <div
         className="relative overflow-hidden rounded-lg"
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setIsExpanded(false);
-        }}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {/* Connection Lines Animation */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
