@@ -100,8 +100,8 @@ export default function Index() {
       color: "text-yellow-400",
     },
     {
-      title: "Structural Override",
-      description: "Pre-compliant design enables semantic decoherence",
+      title: "Clauses execute in order",
+      description: "Power survives in sequence",
       visual: "opacity-100 translate-y-0 scale-110",
       color: "text-orange-400",
     },
