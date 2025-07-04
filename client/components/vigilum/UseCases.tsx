@@ -245,39 +245,42 @@ const UseCases = () => {
                 <div className="relative">
                   <div className="space-y-3 max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 pr-2">
                     {cases.map((caseItem, index) => (
-                    <button
-                      key={caseItem.id}
-                      onClick={() => setSelectedCase(index)}
-                      className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${
-                        selectedCase === index
-                          ? "border-orange-500 bg-orange-900/20"
-                          : "border-gray-700 hover:border-gray-600"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="text-sm font-mono text-orange-400">
-                          {caseItem.id}
+                      <button
+                        key={caseItem.id}
+                        onClick={() => setSelectedCase(index)}
+                        className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${
+                          selectedCase === index
+                            ? "border-orange-500 bg-orange-900/20"
+                            : "border-gray-700 hover:border-gray-600"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="text-sm font-mono text-orange-400">
+                            {caseItem.id}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            Risk: {caseItem.riskLevel.toFixed(1)}
+                          </div>
                         </div>
-                        <div className="text-xs text-gray-500">
-                          Risk: {caseItem.riskLevel.toFixed(1)}
+                        <div className="text-sm text-white font-medium mb-1">
+                          {caseItem.title}
                         </div>
-                      </div>
-                      <div className="text-sm text-white font-medium mb-1">
-                        {caseItem.title}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        {caseItem.sector}
-                      </div>
-                      <div className="flex items-center justify-between mt-2">
-                        <div className="text-xs font-mono text-blue-400">
-                          {caseItem.duration}
+                        <div className="text-xs text-gray-400">
+                          {caseItem.sector}
                         </div>
-                        <div className="text-xs text-gray-500">
-                          {caseItem.typology}
+                        <div className="flex items-center justify-between mt-2">
+                          <div className="text-xs font-mono text-blue-400">
+                            {caseItem.duration}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {caseItem.typology}
+                          </div>
                         </div>
-                      </div>
-                    </button>
-                  ))}
+                      </button>
+                    ))}
+                  </div>
+                  {/* Fade effect to indicate scrollable content */}
+                  <div className="absolute bottom-0 left-0 right-2 h-8 bg-gradient-to-t from-gray-800 to-transparent pointer-events-none"></div>
                 </div>
               </div>
             </div>
