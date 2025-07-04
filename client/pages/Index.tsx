@@ -45,6 +45,31 @@ export default function Index() {
     return () => clearInterval(interval);
   }, []);
 
+  // Track epistemic collapse trigger
+  useEffect(() => {
+    if (hoveredBoxes.size === 4 && !epistemicCollapseTriggered) {
+      setEpistemicCollapseTriggered(true);
+
+      // Trigger epistemic collapse visual effect
+      const collapseElement = document.querySelector(".epistemic-collapse");
+      if (collapseElement) {
+        collapseElement.classList.add("active");
+      }
+
+      // Trigger awakening shimmer on final box
+      const awakeningBox = document.querySelector(
+        '.semantic-operator[data-typology="Λ"]',
+      );
+      if (awakeningBox) {
+        awakeningBox.classList.add("awakened");
+      }
+    }
+  }, [hoveredBoxes, epistemicCollapseTriggered]);
+
+  const handleBoxHover = (index) => {
+    setHoveredBoxes((prev) => new Set([...prev, index]));
+  };
+
   const handleNavigation = (hash: string) => {
     navigate(`/vigilum${hash}`);
   };
