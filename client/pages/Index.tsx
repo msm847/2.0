@@ -182,8 +182,7 @@ export default function Index() {
                 <span className="block text-blue-400">INTELLIGENCE</span>
               </h1>
               <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
-                Detecting embedded override paths in legal structure before
-                institutional collapse
+                Mapping structural override before it's encoded as compliance
               </p>
             </div>
 
