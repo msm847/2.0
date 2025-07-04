@@ -23,6 +23,7 @@ const modules = [
     textColor: "#D6E1FF",
     accentColor: "#D6E1FF",
     icon: Search,
+    glyph: "ϕ",
   },
   {
     id: "obscura",
@@ -35,6 +36,7 @@ const modules = [
     textColor: "#FF8A1F",
     accentColor: "#FF8A1F",
     icon: Eye,
+    glyph: "⊗",
   },
   {
     id: "nullum",
@@ -47,6 +49,7 @@ const modules = [
     textColor: "#BBBBBB",
     accentColor: "#BBBBBB",
     icon: Shield,
+    glyph: "Δ",
   },
   {
     id: "nexus",
@@ -59,6 +62,7 @@ const modules = [
     textColor: "#5DF2C8",
     accentColor: "#5DF2C8",
     icon: Network,
+    glyph: "λ",
   },
   {
     id: "vigilo",
@@ -71,6 +75,7 @@ const modules = [
     textColor: "#FF4A4A",
     accentColor: "#FF4A4A",
     icon: Activity,
+    glyph: "Σ",
   },
   {
     id: "veris",
@@ -83,6 +88,7 @@ const modules = [
     textColor: "#F7D960",
     accentColor: "#F7D960",
     icon: BarChart3,
+    glyph: "τ",
   },
   {
     id: "sentium",
@@ -95,6 +101,7 @@ const modules = [
     textColor: "#C89BFF",
     accentColor: "#C89BFF",
     icon: MessageCircle,
+    glyph: "Ω",
   },
 ];
 
