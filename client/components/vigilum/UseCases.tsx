@@ -226,12 +226,12 @@ const UseCases = () => {
               </span>
             </div>
             <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
-              ENCODED RISK CASE STUDIES
+              CLAUSE ANALYSIS LIBRARY
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
-              Simulated retrospectives showing how structural risk was embedded
-              in design and systematically overlooked until institutional
-              failure.
+              Structural analysis of EU procurement directive clauses revealing
+              embedded loopholes and override paths that enable systematic
+              competition bypass.
             </p>
           </div>
 
