@@ -158,7 +158,7 @@ export default function Index() {
                         "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
                     }}
                   >
-                    STRUCTURAL ANALYSIS
+                    HOME
                     <ChevronDown className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
