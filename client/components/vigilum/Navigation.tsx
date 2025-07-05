@@ -60,16 +60,6 @@ const Navigation = () => {
             </a>
           </div>
 
-          {/* Structural Status Indicator */}
-          <div className="hidden md:flex items-center space-x-3">
-            <div className="flex items-center space-x-2">
-              <Activity className="w-4 h-4 text-green-400" />
-              <span className="text-xs text-gray-400 font-mono">
-                OPERATIONAL
-              </span>
-            </div>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
