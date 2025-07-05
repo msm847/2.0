@@ -12,14 +12,7 @@ const Hero = () => {
 
       <div className="relative container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6">
-              VIGILUM
-              <span className="block text-blue-400">
-                GOVERNANCE INTELLIGENCE
-              </span>
-            </h1>
-          </div>
+          <div className="text-center"></div>
         </div>
       </div>
     </div>
