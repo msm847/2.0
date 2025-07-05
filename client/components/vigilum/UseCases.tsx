@@ -485,7 +485,14 @@ const UseCases = () => {
 
           {/* Summary Stats */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+            <div
+              className="rounded-lg p-6 text-center border"
+              style={{
+                backgroundColor: "#102c22",
+                borderColor: "rgba(0,255,204,0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+              }}
+            >
               <div className="text-3xl font-bold text-red-400 font-mono mb-2">
                 L001-L006
               </div>
