@@ -250,7 +250,7 @@ const UseCases = () => {
                 </h3>
                 <div className="relative">
                   <div
-                    className="space-y-3 max-h-96 overflow-y-auto scrollbar-thin pr-2"
+                    className="space-y-3 max-h-96 overflow-y-auto vigilum-scrollbar pr-2"
                     style={{
                       scrollbarTrackColor: "rgba(12, 35, 28, 0.75)",
                       scrollbarThumbColor: "rgba(0,255,204,0.2)",
