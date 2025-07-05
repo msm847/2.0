@@ -33,12 +33,6 @@ const Navigation = () => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <Link
-              to="/"
-              className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
-            >
-              Home
-            </Link>
             <button
               onClick={() => handleNavigation("#modules")}
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
@@ -81,13 +75,6 @@ const Navigation = () => {
             style={{ borderTopColor: "rgba(34, 68, 54, 0.8)" }}
           >
             <div className="flex flex-col space-y-4">
-              <Link
-                to="/"
-                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
-                onClick={toggleMenu}
-              >
-                Home
-              </Link>
               <button
                 onClick={() => handleNavigation("#modules")}
                 className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
