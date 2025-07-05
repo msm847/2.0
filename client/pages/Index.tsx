@@ -141,7 +141,7 @@ export default function Index() {
 
       <div className="relative z-10">
         {/* Header */}
-        <header className="container mx-auto px-4 py-6">
+        <header className="container mx-auto px-4 py-3">
           <nav className="flex items-center justify-between">
             <div className="flex items-center">
               <span className="text-xl font-bold tracking-tight">
