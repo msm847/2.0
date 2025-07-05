@@ -900,7 +900,7 @@ const CLAVISModule = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-col items-center justify-center h-full text-center min-h-[500px]">
+                  <div className="flex flex-col items-center justify-center h-full text-center min-h-[400px] -mt-8">
                     <Eye className="w-16 h-16 mx-auto mb-6 text-gray-600" />
                     <div className="text-gray-500 mb-4">
                       Select clauses in the sequence builder to begin simulation
