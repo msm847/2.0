@@ -39,30 +39,30 @@ const Navigation = () => {
             >
               Home
             </Link>
-            <a
-              href="#modules"
+            <button
+              onClick={() => handleNavigation("#modules")}
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
             >
               Modules
-            </a>
-            <a
-              href="#demo"
+            </button>
+            <button
+              onClick={() => handleNavigation("#demo")}
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
             >
               CLAVIS
-            </a>
-            <a
-              href="#cases"
+            </button>
+            <button
+              onClick={() => handleNavigation("#cases")}
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider whitespace-nowrap"
             >
-              Case Studies
-            </a>
-            <a
-              href="#about"
+              Clause Library
+            </button>
+            <button
+              onClick={() => handleNavigation("#about")}
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
             >
               Methodology
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
