@@ -466,7 +466,11 @@ const CLAVISModule = () => {
                   <select
                     value={selectedTypologyFilter}
                     onChange={(e) => setSelectedTypologyFilter(e.target.value)}
-                    className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white text-sm"
+                    className="w-full rounded px-3 py-2 text-white text-sm border"
+                    style={{
+                      backgroundColor: "rgba(12, 35, 28, 0.7)",
+                      borderColor: "rgba(34, 68, 54, 0.8)",
+                    }}
                   >
                     <option value="ALL">All Typologies</option>
                     {Object.entries(RISK_TYPOLOGIES).map(([key, value]) => (
