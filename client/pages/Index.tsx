@@ -149,15 +149,6 @@ export default function Index() {
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              <Button
-                className="text-white hover:bg-opacity-80 font-mono border border-gray-600"
-                style={{
-                  background:
-                    "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
-                }}
-              >
-                SEE TOGETHER
-              </Button>
               <div className="relative group">
                 <Link to="/vigilum">
                   <Button
@@ -207,6 +198,10 @@ export default function Index() {
                     >
                       <Globe className="mr-3 h-4 w-4" />
                       METHODOLOGY
+                    </button>
+                    <button className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left">
+                      <Share2 className="mr-3 h-4 w-4" />
+                      SEE TOGETHER
                     </button>
                   </div>
                 </div>
