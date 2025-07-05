@@ -245,16 +245,6 @@ const Newsletter = () => {
               )}
             </div>
           </div>
-
-          {/* System Status */}
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center space-x-2 bg-gray-800 px-4 py-2 rounded-full border border-gray-700">
-              <Activity className="w-3 h-3 text-green-400" />
-              <span className="text-xs text-gray-300 font-mono">
-                STRUCTURAL ANALYSIS NETWORK: OPERATIONAL
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
