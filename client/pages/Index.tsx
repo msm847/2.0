@@ -462,53 +462,144 @@ export default function Index() {
             </div>
 
             {/* Vigilum Modules */}
-            <div className="mb-16 text-center">
-              <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3">
+            <div className="mb-20 text-center -mt-8">
+              <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3 relative">
                 <Link
                   to="/module/clavis"
-                  className="hover:text-blue-400 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-blue-400 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #60a5fa, 0 0 25px #60a5fa40";
+                    e.target.style.filter = "drop-shadow(0 0 8px #60a5fa60)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   CLAVIS
                 </Link>
                 <span className="text-gray-600">•</span>
                 <Link
                   to="/module/obscura"
-                  className="hover:text-red-400 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-red-400 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #f87171, 0 0 25px #f8717140";
+                    e.target.style.filter = "drop-shadow(0 0 8px #f8717160)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   OBSCURA
                 </Link>
                 <span className="text-gray-600">•</span>
                 <Link
                   to="/module/nullum"
-                  className="hover:text-gray-300 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-gray-300 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #9ca3af, 0 0 25px #9ca3af40";
+                    e.target.style.filter = "drop-shadow(0 0 8px #9ca3af60)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   NULLUM
                 </Link>
                 <span className="text-gray-600">•</span>
                 <Link
                   to="/module/nexus-potentia"
-                  className="hover:text-purple-400 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #a78bfa, 0 0 25px #a78bfa40";
+                    e.target.style.filter = "drop-shadow(0 0 8px #a78bfa60)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   NEXUS POTENTIA
                 </Link>
                 <span className="text-gray-600">•</span>
                 <Link
                   to="/module/vigilo-core"
-                  className="hover:text-green-400 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #34d399, 0 0 25px #34d39940";
+                    e.target.style.filter = "drop-shadow(0 0 8px #34d39960)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   VIGILO CORE
                 </Link>
                 <span className="text-gray-600">•</span>
                 <Link
                   to="/module/veris"
-                  className="hover:text-yellow-400 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-yellow-400 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #fbbf24, 0 0 25px #fbbf2440";
+                    e.target.style.filter = "drop-shadow(0 0 8px #fbbf2460)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   VERIS
                 </Link>
                 <span className="text-gray-600">•</span>
                 <Link
                   to="/module/sentium"
-                  className="hover:text-cyan-400 transition-colors hover:scale-110 inline-block"
+                  className="hover:text-cyan-400 transition-all duration-300 hover:scale-110 inline-block relative"
+                  style={{
+                    textShadow: "none",
+                    filter: "none",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.textShadow =
+                      "0 0 15px #22d3ee, 0 0 25px #22d3ee40";
+                    e.target.style.filter = "drop-shadow(0 0 8px #22d3ee60)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.textShadow = "none";
+                    e.target.style.filter = "none";
+                  }}
                 >
                   SENTIUM
                 </Link>
