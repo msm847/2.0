@@ -415,37 +415,6 @@ const UseCases = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* Override Path */}
-                <div
-                  className="rounded-lg p-6 border"
-                  style={{
-                    backgroundColor: "#102c22",
-                    borderColor: "rgba(0,255,204,0.06)",
-                  }}
-                >
-                  <div className="flex items-center space-x-2 mb-4">
-                    <TrendingUp className="w-5 h-5 text-red-400" />
-                    <h4 className="text-lg font-bold text-white font-mono">
-                      OVERRIDE PATH
-                    </h4>
-                  </div>
-                  <div className="space-y-3">
-                    {currentCase.overridePath.map((step, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs text-white font-mono">
-                            {index + 1}
-                          </span>
-                        </div>
-                        <div className="text-sm text-gray-300">{step}</div>
-                        {index < currentCase.overridePath.length - 1 && (
-                          <ArrowRight className="w-4 h-4 text-gray-500" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Outcome */}
