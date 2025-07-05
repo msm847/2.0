@@ -461,12 +461,42 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Vigilum Modules Carousel */}
-            <div className="mb-16">
-              <VigilumModulesCarousel
-                autoRotate={true}
-                rotationInterval={4500}
-              />
+            {/* Vigilum Modules */}
+            <div className="mb-16 text-center">
+              <Link
+                to="/vigilum#modules"
+                className="inline-block hover:scale-105 transition-transform duration-300"
+              >
+                <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3">
+                  <span className="hover:text-blue-400 transition-colors">
+                    CLAVIS
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className="hover:text-red-400 transition-colors">
+                    OBSCURA
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className="hover:text-gray-300 transition-colors">
+                    NULLUM
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className="hover:text-purple-400 transition-colors">
+                    NEXUS POTENTIA
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className="hover:text-green-400 transition-colors">
+                    VIGILO CORE
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className="hover:text-yellow-400 transition-colors">
+                    VERIS
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className="hover:text-cyan-400 transition-colors">
+                    SENTIUM
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
         </main>
