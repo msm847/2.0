@@ -241,8 +241,8 @@ const ModuleGrid = () => {
                             : `${module.color}20`,
                   }}
                 >
-                  {/* Glyph and Status */}
-                  <div className="flex items-start justify-between mb-4">
+                  {/* Glyph */}
+                  <div className="mb-4">
                     <div
                       className={`text-4xl font-bold transition-all duration-300 ${
                         isPhantom ? "opacity-50" : ""
@@ -256,18 +256,6 @@ const ModuleGrid = () => {
                       }}
                     >
                       {module.glyph}
-                    </div>
-                    <div
-                      className={`px-2 py-1 rounded-full text-xs font-mono font-bold border ${
-                        isPhantom ? "opacity-60" : ""
-                      }`}
-                      style={{
-                        backgroundColor: `${getStatusColor(module.status)}20`,
-                        borderColor: getStatusColor(module.status),
-                        color: getStatusColor(module.status),
-                      }}
-                    >
-                      {module.status}
                     </div>
                   </div>
 
@@ -305,63 +293,6 @@ const ModuleGrid = () => {
                     >
                       "{module.tagline}"
                     </p>
-                  </div>
-
-                  {/* Typology Focus */}
-                  <div className="mb-4">
-                    <div className="text-xs text-gray-400 mb-2 font-mono">
-                      TYPOLOGY FOCUS
-                    </div>
-                    <div className="flex flex-wrap gap-1">
-                      {module.typologyFocus.map((type) => (
-                        <span
-                          key={type}
-                          className="px-2 py-1 rounded text-xs font-mono"
-                          style={{
-                            backgroundColor: `${module.accentColor}20`,
-                            color: module.accentColor,
-                            border: `1px solid ${module.accentColor}40`,
-                          }}
-                        >
-                          {type}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Risk Fingerprint */}
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between text-xs font-mono mb-2">
-                      <span
-                        className={`text-gray-400 ${isPhantom ? "opacity-60" : ""}`}
-                      >
-                        {isPhantom ? "SEMANTIC CAPACITY" : "RISK FINGERPRINT"}
-                      </span>
-                      <span
-                        style={{ color: module.accentColor }}
-                        className={isPhantom ? "opacity-60" : ""}
-                      >
-                        {isPhantom
-                          ? "RESERVED"
-                          : module.riskFingerprint.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-700/50 rounded-full h-2">
-                      {isPhantom ? (
-                        <div className="h-2 rounded-full bg-gray-600/30 animate-pulse opacity-30" />
-                      ) : (
-                        <div
-                          className="h-2 rounded-full transition-all duration-1000"
-                          style={{
-                            width: `${module.riskFingerprint * 100}%`,
-                            backgroundColor: module.accentColor,
-                            boxShadow: isHovered
-                              ? `0 0 10px ${module.accentColor}`
-                              : "none",
-                          }}
-                        />
-                      )}
-                    </div>
                   </div>
 
                   {/* Analyze Button */}
