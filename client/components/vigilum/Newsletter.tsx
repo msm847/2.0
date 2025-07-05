@@ -138,7 +138,14 @@ const Newsletter = () => {
 
           {/* Subscription Form */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-8">
+            <div
+              className="rounded-lg p-8 border"
+              style={{
+                backgroundColor: "#102c22",
+                borderColor: "rgba(0,255,204,0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+              }}
+            >
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="text-center mb-6">
