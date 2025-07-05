@@ -254,11 +254,31 @@ const UseCases = () => {
                       <button
                         key={caseItem.id}
                         onClick={() => setSelectedCase(index)}
-                        className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${
-                          selectedCase === index
-                            ? "border-orange-500 bg-orange-900/20"
-                            : "border-gray-700 hover:border-gray-600"
-                        }`}
+                        className="w-full text-left p-4 rounded-lg border transition-all duration-300"
+                        style={{
+                          backgroundColor:
+                            selectedCase === index
+                              ? "#1a3c2f"
+                              : "rgba(12, 35, 28, 0.85)",
+                          borderColor:
+                            selectedCase === index
+                              ? "rgba(0,255,204,0.3)"
+                              : "rgba(0,255,204,0.06)",
+                          boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                        }}
+                        onMouseEnter={(e) => {
+                          if (selectedCase !== index) {
+                            e.target.style.backgroundColor = "#1a3c2f";
+                            e.target.style.borderColor = "rgba(0,255,204,0.15)";
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (selectedCase !== index) {
+                            e.target.style.backgroundColor =
+                              "rgba(12, 35, 28, 0.85)";
+                            e.target.style.borderColor = "rgba(0,255,204,0.06)";
+                          }
+                        }}
                       >
                         <div className="flex items-center justify-between mb-2">
                           <div className="text-sm font-mono text-orange-400">
