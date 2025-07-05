@@ -207,7 +207,7 @@ export default function Index() {
         </header>
 
         {/* Cognitive Entrypoint - Clause Logic Simulation */}
-        <main className="container mx-auto px-4 py-16">
+        <main className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             {/* System Identity */}
             <div className="text-center mb-16 relative">
