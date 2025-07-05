@@ -414,6 +414,26 @@ const CLAVISModule = () => {
     setSelectedClauses([null, null, null]);
   };
 
+  const shuffleClauses = () => {
+    // Get non-null clauses
+    const nonNullClauses = selectedClauses.filter((clause) => clause !== null);
+
+    // Shuffle using Fisher-Yates algorithm
+    const shuffled = [...nonNullClauses];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    // Create new sequence with shuffled clauses
+    const newSequence = [null, null, null];
+    shuffled.forEach((clause, index) => {
+      newSequence[index] = clause;
+    });
+
+    setSelectedClauses(newSequence);
+  };
+
   return (
     <div
       className="py-20"
