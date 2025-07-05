@@ -486,7 +486,19 @@ const CLAVISModule = () => {
                   {filteredClauses.map((clause) => (
                     <div
                       key={clause.id}
-                      className="bg-gray-700 border border-gray-600 rounded-lg p-4 cursor-pointer hover:bg-gray-600 transition-colors"
+                      className="rounded-lg p-4 cursor-pointer transition-colors border"
+                      style={{
+                        backgroundColor: "rgba(12, 35, 28, 0.5)",
+                        borderColor: "rgba(34, 68, 54, 0.6)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor =
+                          "rgba(16, 44, 34, 0.8)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor =
+                          "rgba(12, 35, 28, 0.5)";
+                      }}
                       onClick={() => {
                         // Auto-assign to first empty slot
                         const emptySlot = selectedClauses.findIndex(
