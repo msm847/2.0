@@ -149,6 +149,15 @@ export default function Index() {
               </span>
             </div>
             <div className="flex items-center space-x-4">
+              <Button
+                className="text-white hover:bg-opacity-80 font-mono border border-gray-600"
+                style={{
+                  background:
+                    "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                }}
+              >
+                SEE TOGETHER
+              </Button>
               <div className="relative group">
                 <Link to="/vigilum">
                   <Button
