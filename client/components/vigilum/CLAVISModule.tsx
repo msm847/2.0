@@ -570,7 +570,23 @@ const CLAVISModule = () => {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-gray-600 text-gray-300 hover:bg-gray-700"
+                      className="text-gray-300 hover:text-white font-mono transition-all duration-300"
+                      style={{
+                        backgroundColor: "rgba(12, 35, 28, 0.7)",
+                        borderColor: "rgba(34, 68, 54, 0.8)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          "rgba(16, 44, 34, 0.8)";
+                        e.currentTarget.style.borderColor =
+                          "rgba(96, 165, 250, 0.5)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          "rgba(12, 35, 28, 0.7)";
+                        e.currentTarget.style.borderColor =
+                          "rgba(34, 68, 54, 0.8)";
+                      }}
                       onClick={clearAllSlots}
                     >
                       Clear All
