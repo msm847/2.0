@@ -312,7 +312,13 @@ const UseCases = () => {
                     ))}
                   </div>
                   {/* Fade effect to indicate scrollable content */}
-                  <div className="absolute bottom-0 left-0 right-2 h-8 bg-gradient-to-t from-gray-800 to-transparent pointer-events-none"></div>
+                  <div
+                    className="absolute bottom-0 left-0 right-2 h-8 pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(16, 44, 34, 0.7) 0%, transparent 100%)",
+                    }}
+                  ></div>
                 </div>
               </div>
             </div>
