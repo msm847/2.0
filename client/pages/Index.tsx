@@ -463,40 +463,56 @@ export default function Index() {
 
             {/* Vigilum Modules */}
             <div className="mb-16 text-center">
-              <Link
-                to="/vigilum#modules"
-                className="inline-block hover:scale-105 transition-transform duration-300"
-              >
-                <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3">
-                  <span className="hover:text-blue-400 transition-colors">
-                    CLAVIS
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="hover:text-red-400 transition-colors">
-                    OBSCURA
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="hover:text-gray-300 transition-colors">
-                    NULLUM
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="hover:text-purple-400 transition-colors">
-                    NEXUS POTENTIA
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="hover:text-green-400 transition-colors">
-                    VIGILO CORE
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="hover:text-yellow-400 transition-colors">
-                    VERIS
-                  </span>
-                  <span className="text-gray-600">•</span>
-                  <span className="hover:text-cyan-400 transition-colors">
-                    SENTIUM
-                  </span>
-                </div>
-              </Link>
+              <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3">
+                <Link
+                  to="/module/clavis"
+                  className="hover:text-blue-400 transition-colors hover:scale-110 inline-block"
+                >
+                  CLAVIS
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link
+                  to="/module/obscura"
+                  className="hover:text-red-400 transition-colors hover:scale-110 inline-block"
+                >
+                  OBSCURA
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link
+                  to="/module/nullum"
+                  className="hover:text-gray-300 transition-colors hover:scale-110 inline-block"
+                >
+                  NULLUM
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link
+                  to="/module/nexus-potentia"
+                  className="hover:text-purple-400 transition-colors hover:scale-110 inline-block"
+                >
+                  NEXUS POTENTIA
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link
+                  to="/module/vigilo-core"
+                  className="hover:text-green-400 transition-colors hover:scale-110 inline-block"
+                >
+                  VIGILO CORE
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link
+                  to="/module/veris"
+                  className="hover:text-yellow-400 transition-colors hover:scale-110 inline-block"
+                >
+                  VERIS
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link
+                  to="/module/sentium"
+                  className="hover:text-cyan-400 transition-colors hover:scale-110 inline-block"
+                >
+                  SENTIUM
+                </Link>
+              </div>
             </div>
           </div>
         </main>
