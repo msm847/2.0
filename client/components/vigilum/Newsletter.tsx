@@ -94,7 +94,18 @@ const Newsletter = () => {
               return (
                 <div
                   key={audience.id}
-                  className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-500 transition-all duration-300"
+                  className="rounded-lg p-6 transition-all duration-300 border"
+                  style={{
+                    backgroundColor: "rgba(12, 35, 28, 0.85)",
+                    borderColor: "rgba(0,255,204,0.06)",
+                    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.borderColor = "rgba(34, 197, 94, 0.5)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.borderColor = "rgba(0,255,204,0.06)";
+                  }}
                 >
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
