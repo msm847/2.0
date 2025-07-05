@@ -251,7 +251,14 @@ const AboutSection = () => {
 
           {/* Technical Architecture */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
+            <div
+              className="rounded-lg p-8 border"
+              style={{
+                backgroundColor: "#102c22",
+                borderColor: "rgba(0,255,204,0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+              }}
+            >
               <div className="flex items-center space-x-3 mb-6">
                 <Code className="w-6 h-6 text-blue-400" />
                 <h3 className="text-xl font-bold text-white font-mono">
