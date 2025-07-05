@@ -664,26 +664,6 @@ const CLAVISModule = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* Pipeline Visualization */}
-                {simulationResult && (
-                  <div className="mt-6 pt-6 border-t border-gray-700">
-                    <div className="text-sm text-gray-400 mb-3">
-                      Simulation Pipeline:
-                    </div>
-                    <div className="flex items-center space-x-2 text-xs font-mono text-gray-500">
-                      <span>ϕ</span>
-                      <ArrowRight className="w-3 h-3" />
-                      <span>⊗</span>
-                      <ArrowRight className="w-3 h-3" />
-                      <span>G</span>
-                      <ArrowRight className="w-3 h-3" />
-                      <span>τ</span>
-                      <ArrowRight className="w-3 h-3" />
-                      <span>Λ</span>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
 
