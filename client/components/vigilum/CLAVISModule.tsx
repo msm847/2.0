@@ -194,7 +194,7 @@ const CLAVISModule = () => {
     // 3. Override Graph Generation (G)
     const overrideGraph = generateOverrideGraph(clauseVector);
 
-    // 4. Risk Projection (��)
+    // 4. Risk Projection (τ)
     const riskProjection = projectRiskTypologies(clauseVector);
 
     // 5. Pattern Flagging (Λ)
@@ -579,7 +579,7 @@ const CLAVISModule = () => {
                 </div>
 
                 <div className="text-sm text-gray-400 mb-6">
-                  Non-Commutative Clause Sequence ϕ(c₁, c₂, c₃)
+                  Non-Commutative Sequence ϕ(c₁, c₂, c₃)
                 </div>
 
                 {/* Sequence Slots */}
