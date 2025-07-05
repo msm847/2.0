@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import ModulesGrid from "@/components/vigilum/ModulesGrid";
-import ClauseDemo from "@/components/vigilum/ClauseDemo";
+import CLAVISModule from "@/components/vigilum/CLAVISModule";
 import UseCases from "@/components/vigilum/UseCases";
 import AboutSection from "@/components/vigilum/AboutSection";
 import Newsletter from "@/components/vigilum/Newsletter";
