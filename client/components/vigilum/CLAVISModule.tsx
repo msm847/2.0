@@ -360,7 +360,7 @@ const CLAVISModule = () => {
 
     // Special handling for L001→L002→L003 sequence
     const clauseIds = clauses.map((c) => c.id);
-    if (clauseIds.join("→") === "L001→L002��L003") {
+    if (clauseIds.join("→") === "L001→L002→L003") {
       return `The sequence L001→L002→L003 creates a layered escape hatch in procurement. Clause L001 (Art.32(2)(a)) allows a negotiated award after an open tender fails. Clause L002 (Art.32(2)(c)) then lets the authority skip any competition outright under an "extreme urgency". In practice this means the authority could either engineer a no-bid situation or simply declare an emergency to justify a direct award. Finally, L003 (Art.72(1)(c)) permits the contract to be inflated or altered (up to +50%) post-award due to "unforeseeable" events. The combined effect is a compliance illusion: formal rules (tendering, oversight) remain on the books, but enforcement is nullified by these operator clauses. Notably, because Vigilum treats clauses as non-commutative operators, this exact order matters – swapping L002 and L001, for example, would yield a different structural outcome. Structure, not wording, drives the system's meaning here.`;
     }
 
@@ -415,7 +415,11 @@ const CLAVISModule = () => {
   };
 
   return (
-    <div className="bg-gray-900 py-20" id="clavis-module">
+    <div
+      className="py-20"
+      style={{ backgroundColor: "#0B1E16" }}
+      id="clavis-module"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
