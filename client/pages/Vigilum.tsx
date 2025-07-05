@@ -31,7 +31,12 @@ const VigilumPage = () => {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 font-mono">
+    <div
+      className="min-h-screen text-gray-100 font-mono"
+      style={{
+        background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+      }}
+    >
       <Navigation />
       <Hero />
       <div id="modules">
