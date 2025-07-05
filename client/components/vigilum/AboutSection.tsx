@@ -1,46 +1,6 @@
-import { useState, useEffect } from "react";
-import {
-  Activity,
-  Brain,
-  BarChart3,
-  Network,
-  Zap,
-  Code,
-  GitBranch,
-  Triangle,
-} from "lucide-react";
+import { Brain, Zap } from "lucide-react";
 
 const AboutSection = () => {
-  const [activeMatrix, setActiveMatrix] = useState(0);
-
-  const matrices = [
-    {
-      title: "SEMANTIC VECTOR SPACE",
-      description: "Multi-dimensional legal clause decomposition",
-      dimensions: ["DG", "RT", "CI", "SB"],
-      color: "blue",
-    },
-    {
-      title: "TYPOLOGY GEOMETRY",
-      description: "Risk pattern spatial relationships",
-      dimensions: ["Override", "Constraint", "Projection", "Collapse"],
-      color: "yellow",
-    },
-    {
-      title: "BEHAVIORAL SIMULATION",
-      description: "Legal system response modeling",
-      dimensions: ["Intent", "Structure", "Override", "Outcome"],
-      color: "orange",
-    },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveMatrix((prev) => (prev + 1) % matrices.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="py-20" style={{ backgroundColor: "#0B1E16" }}>
       <div className="container mx-auto px-4">
