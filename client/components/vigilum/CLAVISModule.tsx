@@ -721,13 +721,13 @@ const CLAVISModule = () => {
             {/* Output Panel */}
             <div className="lg:col-span-4">
               <div
-                className="rounded-lg border h-full min-h-[600px] flex flex-col"
+                className="rounded-lg p-6 border h-full min-h-[600px]"
                 style={{
                   backgroundColor: "rgba(16, 44, 34, 0.7)",
                   borderColor: "rgba(34, 68, 54, 0.8)",
                 }}
               >
-                <div className="flex items-center justify-between p-6 pb-0 mb-6 flex-shrink-0">
+                <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-bold text-white font-mono">
                     SIMULATION OUTPUT
                   </h3>
@@ -736,14 +736,9 @@ const CLAVISModule = () => {
 
                 {simulationResult ? (
                   <div
-                    className="space-y-6 max-h-[480px] overflow-y-auto overflow-x-hidden pb-6 flex-1"
+                    className="space-y-6 max-h-[480px] overflow-y-auto overflow-x-hidden"
                     style={{
                       wordWrap: "break-word",
-                      width: "100%",
-                      minWidth: "0",
-                      paddingLeft: "24px",
-                      paddingRight: "24px",
-                      boxSizing: "border-box",
                     }}
                   >
                     {/* Narrative Interpretation */}
