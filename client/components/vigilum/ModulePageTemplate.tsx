@@ -482,7 +482,7 @@ const ModulePageTemplate = ({
           </div>
 
           {/* Cross-Module Switch Panel */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-16">
             <div className="flex flex-wrap justify-center gap-3">
               {modules
                 .filter((id) => id !== moduleData.id)
