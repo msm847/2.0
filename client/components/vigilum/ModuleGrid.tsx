@@ -334,22 +334,35 @@ const ModuleGrid = () => {
                   {/* Risk Fingerprint */}
                   <div className="mb-6">
                     <div className="flex items-center justify-between text-xs font-mono mb-2">
-                      <span className="text-gray-400">RISK FINGERPRINT</span>
-                      <span style={{ color: module.accentColor }}>
-                        {module.riskFingerprint.toFixed(2)}
+                      <span
+                        className={`text-gray-400 ${isPhantom ? "opacity-60" : ""}`}
+                      >
+                        {isPhantom ? "SEMANTIC CAPACITY" : "RISK FINGERPRINT"}
+                      </span>
+                      <span
+                        style={{ color: module.accentColor }}
+                        className={isPhantom ? "opacity-60" : ""}
+                      >
+                        {isPhantom
+                          ? "RESERVED"
+                          : module.riskFingerprint.toFixed(2)}
                       </span>
                     </div>
                     <div className="w-full bg-gray-700/50 rounded-full h-2">
-                      <div
-                        className="h-2 rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${module.riskFingerprint * 100}%`,
-                          backgroundColor: module.accentColor,
-                          boxShadow: isHovered
-                            ? `0 0 10px ${module.accentColor}`
-                            : "none",
-                        }}
-                      />
+                      {isPhantom ? (
+                        <div className="h-2 rounded-full bg-gray-600/30 animate-pulse opacity-30" />
+                      ) : (
+                        <div
+                          className="h-2 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${module.riskFingerprint * 100}%`,
+                            backgroundColor: module.accentColor,
+                            boxShadow: isHovered
+                              ? `0 0 10px ${module.accentColor}`
+                              : "none",
+                          }}
+                        />
+                      )}
                     </div>
                   </div>
 
