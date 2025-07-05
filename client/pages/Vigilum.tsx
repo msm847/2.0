@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
-import ModulesGrid from "@/components/vigilum/ModulesGrid";
+import ModuleGrid from "@/components/vigilum/ModuleGrid";
 import CLAVISModule from "@/components/vigilum/CLAVISModule";
 import UseCases from "@/components/vigilum/UseCases";
 import AboutSection from "@/components/vigilum/AboutSection";
