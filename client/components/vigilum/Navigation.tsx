@@ -5,8 +5,14 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleNavigation = (hash: string) => {
+    navigate(`/vigilum${hash}`);
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav
