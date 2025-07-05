@@ -210,7 +210,7 @@ export default function Index() {
         <main className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             {/* System Identity */}
-            <div className="text-center mb-16 relative">
+            <div className="text-center mb-10 relative">
               {/* Vertical Trace Lines */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 pointer-events-none">
                 <svg className="w-full h-full" style={{ opacity: 0.03 }}>
