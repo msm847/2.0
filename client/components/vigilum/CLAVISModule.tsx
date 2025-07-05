@@ -183,7 +183,7 @@ const CLAVISModule = () => {
   }, [selectedClauses]);
 
   const runSimulation = (sequence) => {
-    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → �� → G → τ → Λ
+    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → ⊗ → G → τ → Λ
 
     // 1. Clause Vector Assembly (ϕ)
     const clauseVector = sequence.filter((c) => c !== null);
@@ -666,30 +666,52 @@ const CLAVISModule = () => {
                       </div>
                       <div className="grid grid-cols-5 gap-3">
                         {Object.entries(simulationResult.riskProjection).map(
-                          ([type, score]) => (
-                            <div
-                              key={type}
-                              className={`text-center p-3 rounded-lg border ${
-                                score > 0.3
-                                  ? "border-yellow-500 bg-yellow-900/20"
-                                  : "border-gray-600 bg-gray-700/30"
-                              }`}
-                            >
+                          ([type, score]) => {
+                            const isActive = score > 0.3;
+                            return (
                               <div
-                                className="text-2xl font-mono mb-1"
-                                style={{ color: RISK_TYPOLOGIES[type].color }}
+                                key={type}
+                                className={`text-center p-3 rounded-lg border ${
+                                  isActive
+                                    ? "border-green-500 bg-green-900/20"
+                                    : "border-red-500 bg-red-900/20"
+                                }`}
                               >
-                                {RISK_TYPOLOGIES[type].glyph}
+                                <div className="flex items-center justify-center mb-1">
+                                  <div
+                                    className="text-2xl font-mono"
+                                    style={{
+                                      color: RISK_TYPOLOGIES[type].color,
+                                    }}
+                                  >
+                                    {RISK_TYPOLOGIES[type].glyph}
+                                  </div>
+                                  <div
+                                    className={`ml-1 text-xs ${isActive ? "text-green-400" : "text-red-400"}`}
+                                  >
+                                    {isActive ? "🟢" : "🔴"}
+                                  </div>
+                                </div>
+                                <div className="text-xs text-gray-400 mb-1">
+                                  {type}
+                                </div>
+                                <div className="text-xs font-mono text-white mb-1">
+                                  {score.toFixed(2)}
+                                </div>
+                                <div
+                                  className={`text-xs font-bold ${isActive ? "text-green-400" : "text-red-400"}`}
+                                >
+                                  {isActive ? "ACTIVE" : "INACTIVE"}
+                                </div>
                               </div>
-                              <div className="text-xs text-gray-400">
-                                {type}
-                              </div>
-                              <div className="text-xs font-mono text-white">
-                                {score.toFixed(2)}
-                              </div>
-                            </div>
-                          ),
+                            );
+                          },
                         )}
+                      </div>
+                      <div className="mt-3 text-xs text-gray-400">
+                        Risk typology axes (DG, CI, RT, SB, OD) are defined
+                        structurally. Active indicators reflect discretionary
+                        loopholes and enforcement gaps.
                       </div>
                     </div>
 
