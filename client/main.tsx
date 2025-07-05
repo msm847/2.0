@@ -28,6 +28,19 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/vigilum" element={<VigilumPage />} />
+          <Route path="/module/clavis" element={<CLAVISModulePage />} />
+          <Route path="/module/obscura" element={<OBSCURAModulePage />} />
+          <Route path="/module/nullum" element={<NULLUMModulePage />} />
+          <Route
+            path="/module/nexus-potentia"
+            element={<NEXUSPOTENTIAModulePage />}
+          />
+          <Route
+            path="/module/vigilo-core"
+            element={<VIGILOCOREModulePage />}
+          />
+          <Route path="/module/veris" element={<VERISModulePage />} />
+          <Route path="/module/sentium" element={<SENTIUMModulePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
