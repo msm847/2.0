@@ -40,7 +40,7 @@ const VigilumPage = () => {
       <Navigation />
       <Hero />
       <div id="modules">
-        <ModulesGrid />
+        <ModuleGrid />
       </div>
       <div id="demo">
         <CLAVISModule />
