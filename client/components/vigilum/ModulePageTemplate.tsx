@@ -52,6 +52,16 @@ const modules = [
   "sentium",
 ];
 
+const moduleColors = {
+  clavis: { accent: "#60a5fa", color: "#1a3d82", text: "#dce3f7" },
+  obscura: { accent: "#f87171", color: "#941b1b", text: "#f1d1d1" },
+  nullum: { accent: "#9ca3af", color: "#1e232b", text: "#9ca3af" },
+  "nexus-potentia": { accent: "#a78bfa", color: "#4e27a6", text: "#ded1f7" },
+  "vigilo-core": { accent: "#34d399", color: "#035e4a", text: "#c0f1e4" },
+  veris: { accent: "#fbbf24", color: "#a65800", text: "#f5d199" },
+  sentium: { accent: "#22d3ee", color: "#036373", text: "#a2e9f5" },
+};
+
 const getStatusColor = (status: string) => {
   switch (status) {
     case "OPERATIONAL":
