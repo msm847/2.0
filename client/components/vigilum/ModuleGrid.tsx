@@ -445,7 +445,8 @@ const ModuleGrid = () => {
         <div className="text-center">
           <p className="text-sm text-gray-400 font-mono">
             Each module operates as an autonomous semantic processor within the
-            Vigilum cognitive environment
+            Vigilum cognitive environment. Expansion capacity reserved for
+            future intelligence systems.
           </p>
         </div>
       </div>
