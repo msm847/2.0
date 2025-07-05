@@ -183,7 +183,7 @@ const CLAVISModule = () => {
   }, [selectedClauses]);
 
   const runSimulation = (sequence) => {
-    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → ⊗ → G → τ → Λ
+    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → �� → G → τ → Λ
 
     // 1. Clause Vector Assembly (ϕ)
     const clauseVector = sequence.filter((c) => c !== null);
@@ -766,19 +766,25 @@ const CLAVISModule = () => {
 
                     {/* Formal Notation */}
                     <div className="pt-4 border-t border-gray-700">
-                      <div className="text-sm font-bold text-gray-400 font-mono mb-2">
+                      <div className="text-sm font-bold text-gray-400 font-mono mb-3">
                         CLAUSE VECTOR NOTATION (ϕ)
                       </div>
-                      <div className="text-xs font-mono text-gray-500">
-                        ϕ(
-                        {simulationResult.clauseVector
-                          .map((c) => c.id)
-                          .join(", ")}
-                        ) = [
-                        {simulationResult.clauseVector
-                          .map((c) => `${c.strictness}_${c.transparency}`)
-                          .join(", ")}
-                        ]
+                      <div className="bg-gray-700 border border-gray-600 rounded-lg p-3">
+                        <div className="text-sm font-mono text-gray-300 mb-2">
+                          ϕ(c₁, c₂, c₃) = (
+                          {simulationResult.clauseVector
+                            .map(
+                              (c) =>
+                                `${c.id}: ${c.strictness}_${c.transparency}`,
+                            )
+                            .join(", ")}
+                          )
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          Each operator maximizes structural risk through
+                          flexibility + opacity. Sequence in ϕ⃗ is
+                          non-commutative: semantic weight depends on neighbors.
+                        </div>
                       </div>
                     </div>
                   </div>
