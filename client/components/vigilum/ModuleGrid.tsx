@@ -367,30 +367,47 @@ const ModuleGrid = () => {
                   </div>
 
                   {/* Analyze Button */}
-                  <Link to={`/module/${module.id}`}>
+                  {isPhantom ? (
                     <Button
-                      className="w-full font-mono text-sm transition-all duration-300 group"
+                      disabled
+                      className="w-full font-mono text-sm opacity-40 cursor-not-allowed"
                       style={{
-                        backgroundColor: module.color,
-                        borderColor: module.accentColor,
-                        color: module.textColor,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor =
-                          module.secondaryColor;
-                        e.currentTarget.style.boxShadow = `0 0 20px ${module.accentColor}40`;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = module.color;
-                        e.currentTarget.style.boxShadow = "none";
+                        backgroundColor: "#1f2937",
+                        borderColor: "#374151",
+                        color: "#6b7280",
                       }}
                     >
                       <span className="flex items-center justify-center gap-2">
-                        ANALYZE MODULE
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        COMING SOON
+                        <HelpCircle className="w-4 h-4" />
                       </span>
                     </Button>
-                  </Link>
+                  ) : (
+                    <Link to={`/module/${module.id}`}>
+                      <Button
+                        className="w-full font-mono text-sm transition-all duration-300 group"
+                        style={{
+                          backgroundColor: module.color,
+                          borderColor: module.accentColor,
+                          color: module.textColor,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor =
+                            module.secondaryColor;
+                          e.currentTarget.style.boxShadow = `0 0 20px ${module.accentColor}40`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = module.color;
+                          e.currentTarget.style.boxShadow = "none";
+                        }}
+                      >
+                        <span className="flex items-center justify-center gap-2">
+                          ANALYZE MODULE
+                          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </span>
+                      </Button>
+                    </Link>
+                  )}
                 </div>
 
                 {/* Hover Glow Effect */}
