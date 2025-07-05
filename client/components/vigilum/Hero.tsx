@@ -79,22 +79,13 @@ const Hero = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="#demo">
+                <a href="#modules">
                   <Button
                     size="lg"
                     className="bg-blue-600 hover:bg-blue-500 text-white font-mono px-8 py-4 border border-blue-500"
                   >
-                    ANALYZE STRUCTURE
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </a>
-                <a href="#modules">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-gray-600 text-gray-300 hover:bg-gray-800 font-mono px-8 py-4"
-                  >
                     VIEW MODULES
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
               </div>
