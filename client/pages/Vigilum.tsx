@@ -38,7 +38,7 @@ const VigilumPage = () => {
         <ModulesGrid />
       </div>
       <div id="demo">
-        <ClauseDemo />
+        <CLAVISModule />
       </div>
       <div id="cases">
         <UseCases />
