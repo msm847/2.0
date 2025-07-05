@@ -411,13 +411,30 @@ const ModuleGrid = () => {
                 </div>
 
                 {/* Hover Glow Effect */}
-                {isHovered && (
+                {isHovered && !isPhantom && (
                   <div
                     className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-50 transition-opacity duration-500"
                     style={{
                       backgroundColor: module.accentColor,
                     }}
                   />
+                )}
+
+                {/* Phantom Module Corner Pulse */}
+                {isPhantom && isHovered && (
+                  <div className="absolute inset-0 rounded-2xl -z-10 transition-opacity duration-500">
+                    <div
+                      className="absolute top-0 left-0 w-4 h-4 rounded-full blur-sm opacity-30 animate-pulse"
+                      style={{ backgroundColor: "#0f3d2a" }}
+                    />
+                    <div
+                      className="absolute bottom-0 right-0 w-4 h-4 rounded-full blur-sm opacity-20 animate-pulse"
+                      style={{
+                        backgroundColor: "#0f3d2a",
+                        animationDelay: "0.5s",
+                      }}
+                    />
+                  </div>
                 )}
               </div>
             );
