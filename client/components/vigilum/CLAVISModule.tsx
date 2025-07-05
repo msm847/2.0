@@ -705,8 +705,13 @@ const CLAVISModule = () => {
 
                 {simulationResult ? (
                   <div
-                    className="space-y-6 max-h-[480px] overflow-y-auto overflow-x-hidden pr-2 w-full"
-                    style={{ wordWrap: "break-word" }}
+                    className="space-y-6 max-h-[480px] overflow-y-auto overflow-x-hidden"
+                    style={{
+                      wordWrap: "break-word",
+                      width: "100%",
+                      minWidth: "0",
+                      flex: "1 1 auto",
+                    }}
                   >
                     {/* Narrative Interpretation */}
                     <div className="w-full">
