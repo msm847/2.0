@@ -263,7 +263,10 @@ const ModulesGrid = () => {
                 </div>
               </div>
               <div className="text-center">
-                <Database className="w-8 h-8 text-orange-400 mx-auto mb-3" />
+                <Database
+                  className="w-8 h-8 mx-auto mb-3"
+                  style={{ color: "rgb(248,113,113)" }}
+                />
                 <div className="text-lg font-bold text-white font-mono">
                   BEHAVIORAL
                 </div>
