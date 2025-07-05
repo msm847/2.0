@@ -709,18 +709,18 @@ const CLAVISModule = () => {
                     style={{ wordWrap: "break-word" }}
                   >
                     {/* Narrative Interpretation */}
-                    <div>
+                    <div className="w-full">
                       <div className="text-sm font-bold text-blue-400 font-mono mb-3">
                         STRUCTURAL INTERPRETATION
                       </div>
                       <div
-                        className="rounded-lg p-4 border"
+                        className="rounded-lg p-4 border w-full"
                         style={{
                           backgroundColor: "rgba(12, 35, 28, 0.7)",
                           borderColor: "rgba(34, 68, 54, 0.6)",
                         }}
                       >
-                        <p className="text-sm text-gray-300 leading-relaxed">
+                        <p className="text-sm text-gray-300 leading-relaxed w-full break-words">
                           {simulationResult.narrative}
                         </p>
                       </div>
