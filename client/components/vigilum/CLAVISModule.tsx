@@ -890,7 +890,13 @@ const CLAVISModule = () => {
           </div>
 
           {/* Methodology Note */}
-          <div className="mt-12 bg-blue-900/20 border border-blue-700 rounded-lg p-6">
+          <div
+            className="mt-12 rounded-lg p-6 border"
+            style={{
+              backgroundColor: "rgba(59, 130, 246, 0.1)",
+              borderColor: "rgba(59, 130, 246, 0.3)",
+            }}
+          >
             <div className="flex items-start space-x-3">
               <BarChart3 className="w-5 h-5 text-blue-400 mt-1" />
               <div>
