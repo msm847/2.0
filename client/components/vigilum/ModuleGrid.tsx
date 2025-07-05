@@ -193,27 +193,54 @@ const ModuleGrid = () => {
           {modules.map((module) => {
             const IconComponent = module.icon;
             const isHovered = hoveredModule === module.id;
+            const isPhantom = module.isPhantom;
 
             return (
               <div
                 key={module.id}
                 className={`relative group transition-all duration-500 ease-out ${
-                  isHovered ? "scale-105 z-10" : ""
+                  isHovered && !isPhantom
+                    ? "scale-105 z-10"
+                    : isHovered && isPhantom
+                      ? "scale-102"
+                      : ""
                 }`}
                 onMouseEnter={() => setHoveredModule(module.id)}
                 onMouseLeave={() => setHoveredModule(null)}
               >
                 {/* Module Card */}
                 <div
-                  className="relative backdrop-blur-lg border border-white/10 rounded-2xl p-6 h-full min-h-[420px] flex flex-col transition-all duration-500"
+                  className={`relative backdrop-blur-lg border rounded-2xl p-6 h-full min-h-[420px] flex flex-col transition-all duration-500 ${
+                    isPhantom ? "border-dashed" : ""
+                  }`}
                   style={{
-                    backgroundColor: `${module.color}20`,
-                    borderColor: isHovered
-                      ? module.accentColor
-                      : "rgba(255,255,255,0.1)",
-                    boxShadow: isHovered
-                      ? `0 0 40px ${module.accentColor}40, inset 0 0 20px ${module.color}30`
-                      : "inset 0 0 0 1px rgba(255,255,255,0.05)",
+                    backgroundColor: isPhantom
+                      ? "rgba(255,255,255,0.03)"
+                      : `${module.color}20`,
+                    borderColor:
+                      isHovered && !isPhantom
+                        ? module.accentColor
+                        : isPhantom
+                          ? "rgba(255,255,255,0.05)"
+                          : "rgba(255,255,255,0.1)",
+                    boxShadow:
+                      isHovered && !isPhantom
+                        ? `inset 0 0 15px rgba(255,255,255,0.03), 0 0 8px ${module.accentColor}`
+                        : isHovered && isPhantom
+                          ? "inset 0 0 10px rgba(255,255,255,0.02)"
+                          : "inset 0 0 0 1px rgba(255,255,255,0.05)",
+                    background:
+                      isHovered && !isPhantom
+                        ? `radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent),
+                         radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent),
+                         ${module.color}20`
+                        : isPhantom && isHovered
+                          ? `radial-gradient(circle at top left, rgba(15,61,42,0.3), transparent),
+                           radial-gradient(circle at bottom right, rgba(15,61,42,0.2), transparent),
+                           rgba(255,255,255,0.03)`
+                          : isPhantom
+                            ? "rgba(255,255,255,0.03)"
+                            : `${module.color}20`,
                   }}
                 >
                   {/* Glyph and Status */}
