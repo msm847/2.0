@@ -81,7 +81,10 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800">
+          <div
+            className="md:hidden py-4 border-t"
+            style={{ borderTopColor: "rgba(34, 68, 54, 0.8)" }}
+          >
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
