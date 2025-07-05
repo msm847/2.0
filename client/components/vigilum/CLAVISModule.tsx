@@ -688,9 +688,9 @@ const CLAVISModule = () => {
             </div>
 
             {/* Output Panel */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-4">
               <div
-                className="rounded-lg p-6 border"
+                className="rounded-lg p-6 border h-full min-h-[600px]"
                 style={{
                   backgroundColor: "rgba(16, 44, 34, 0.7)",
                   borderColor: "rgba(34, 68, 54, 0.8)",
