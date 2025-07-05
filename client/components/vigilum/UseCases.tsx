@@ -417,14 +417,14 @@ const UseCases = () => {
                 </div>
 
                 {/* Structural Outcome */}
-                <div className="bg-red-900/20 border border-red-700 rounded-lg p-6 overflow-x-auto">
-                  <div className="flex items-start space-x-3 min-w-max">
+                <div className="bg-red-900/20 border border-red-700 rounded-lg p-6 max-h-96 overflow-y-auto">
+                  <div className="flex items-start space-x-3">
                     <EyeOff className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <h4 className="text-lg font-bold text-red-400 font-mono mb-3 whitespace-nowrap">
+                    <div>
+                      <h4 className="text-lg font-bold text-red-400 font-mono mb-3">
                         STRUCTURAL OUTCOME
                       </h4>
-                      <p className="text-sm text-gray-300 leading-relaxed mb-4 whitespace-nowrap">
+                      <p className="text-sm text-gray-300 leading-relaxed mb-4">
                         {currentCase.outcome}
                       </p>
                       <div className="flex items-center space-x-2">
@@ -432,7 +432,7 @@ const UseCases = () => {
                           className={`w-4 h-4 ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} mt-1 flex-shrink-0`}
                         />
                         <span
-                          className={`text-sm ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} font-mono whitespace-nowrap`}
+                          className={`text-sm ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} font-mono`}
                         >
                           {currentCase.detection}
                         </span>
