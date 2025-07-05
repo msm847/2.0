@@ -226,7 +226,7 @@ const UseCases = () => {
               </span>
             </div>
             <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
-              CLAUSE ANALYSIS LIBRARY
+              CLAUSE LIBRARY
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Structural analysis of EU procurement directive clauses revealing
