@@ -105,7 +105,7 @@ const modules = [
     subtitle: "Structural Risk Index",
     tagline: "Integrity becomes quantifiable.",
     description:
-      "Aggregates all risk vectors into a composite signal score—quantifying governance fragility across entities, tenders, and time.",
+      "Aggregates all risk vectors into a composite signal score��quantifying governance fragility across entities, tenders, and time.",
     color: "#a65800",
     secondaryColor: "#b45309",
     textColor: "#f5d199",
@@ -413,7 +413,7 @@ const ModuleGrid = () => {
                 {/* Hover Glow Effect */}
                 {isHovered && !isPhantom && (
                   <div
-                    className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-50 transition-opacity duration-500"
+                    className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-[0.375] transition-opacity duration-500"
                     style={{
                       backgroundColor: module.accentColor,
                     }}
