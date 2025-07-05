@@ -169,11 +169,30 @@ const Newsletter = () => {
                           key={audience.id}
                           type="button"
                           onClick={() => setRole(audience.id)}
-                          className={`p-3 rounded-lg border text-sm font-mono transition-all duration-300 ${
-                            role === audience.id
-                              ? "border-green-500 bg-green-900/20 text-green-400"
-                              : "border-gray-600 text-gray-400 hover:border-gray-500"
-                          }`}
+                          className="p-3 rounded-lg border text-sm font-mono transition-all duration-300"
+                          style={{
+                            backgroundColor:
+                              role === audience.id
+                                ? "rgba(34, 197, 94, 0.1)"
+                                : "rgba(12, 35, 28, 0.5)",
+                            borderColor:
+                              role === audience.id
+                                ? "rgba(34, 197, 94, 0.5)"
+                                : "rgba(0,255,204,0.15)",
+                            color: role === audience.id ? "#22c55e" : "#9ca3af",
+                          }}
+                          onMouseEnter={(e) => {
+                            if (role !== audience.id) {
+                              e.target.style.borderColor =
+                                "rgba(0,255,204,0.3)";
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (role !== audience.id) {
+                              e.target.style.borderColor =
+                                "rgba(0,255,204,0.15)";
+                            }
+                          }}
                         >
                           {audience.title.toUpperCase()}
                         </button>
