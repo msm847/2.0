@@ -736,11 +736,14 @@ const CLAVISModule = () => {
 
                 {simulationResult ? (
                   <div
-                    className="space-y-6 max-h-[480px] overflow-y-auto overflow-x-hidden px-6 pb-6 flex-1"
+                    className="space-y-6 max-h-[480px] overflow-y-auto overflow-x-hidden pb-6 flex-1"
                     style={{
                       wordWrap: "break-word",
-                      width: "calc(100% - 0px)",
+                      width: "100%",
                       minWidth: "0",
+                      paddingLeft: "24px",
+                      paddingRight: "24px",
+                      boxSizing: "border-box",
                     }}
                   >
                     {/* Narrative Interpretation */}
