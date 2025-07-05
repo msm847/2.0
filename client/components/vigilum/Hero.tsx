@@ -61,12 +61,6 @@ const Hero = () => {
             {/* Left Column - Content */}
             <div>
               <div className="mb-6">
-                <div className="inline-flex items-center space-x-2 bg-gray-800 px-3 py-1 rounded-full border border-gray-700 mb-4">
-                  <Activity className="w-3 h-3 text-green-400" />
-                  <span className="text-xs text-gray-300 font-mono uppercase tracking-wider">
-                    Structural Analysis Active
-                  </span>
-                </div>
                 <h1 className="text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6">
                   LEGAL BEHAVIOR
                   <span className="block text-blue-400">SIMULATION</span>
