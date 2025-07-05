@@ -433,7 +433,7 @@ export default function Index() {
             </div>
 
             {/* Primary Engagement */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 -mt-12">
               <Link to="/vigilum#demo">
                 <Button
                   size="lg"
@@ -455,7 +455,7 @@ export default function Index() {
                 </Button>
               </Link>
               <p className="text-sm text-gray-500 mt-4 font-mono">
-                ϕ(c₁…cₙ) ⇨ ⊗(sequence logic) ⇨ G(override graph) ⇨ τ(typology
+                ϕ(c��…cₙ) ⇨ ⊗(sequence logic) ⇨ G(override graph) ⇨ τ(typology
                 projection) ⇨ Λ(pattern flag)
               </p>
             </div>
