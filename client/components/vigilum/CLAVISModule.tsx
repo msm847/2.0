@@ -443,7 +443,7 @@ const CLAVISModule = () => {
           {/* Main Interface Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Clause Library Panel */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-4">
               <div
                 className="rounded-lg p-6 h-fit border"
                 style={{
