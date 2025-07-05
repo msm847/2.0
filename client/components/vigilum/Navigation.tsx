@@ -88,34 +88,30 @@ const Navigation = () => {
               >
                 Home
               </Link>
-              <a
-                href="#modules"
-                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
-                onClick={toggleMenu}
+              <button
+                onClick={() => handleNavigation("#modules")}
+                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
                 Modules
-              </a>
-              <a
-                href="#demo"
-                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
-                onClick={toggleMenu}
+              </button>
+              <button
+                onClick={() => handleNavigation("#demo")}
+                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
                 CLAVIS
-              </a>
-              <a
-                href="#cases"
-                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
-                onClick={toggleMenu}
+              </button>
+              <button
+                onClick={() => handleNavigation("#cases")}
+                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
-                Case Studies
-              </a>
-              <a
-                href="#about"
-                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
-                onClick={toggleMenu}
+                Clause Library
+              </button>
+              <button
+                onClick={() => handleNavigation("#about")}
+                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
                 Methodology
-              </a>
+              </button>
             </div>
           </div>
         )}
