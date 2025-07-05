@@ -482,25 +482,41 @@ const ModulePageTemplate = ({
           </div>
 
           {/* Cross-Module Switch Panel */}
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-white font-mono mb-6">
-              SWITCH TO ANOTHER MODULE
-            </h3>
-
+          <div className="text-center mb-8">
             <div className="flex flex-wrap justify-center gap-3">
               {modules
                 .filter((id) => id !== moduleData.id)
-                .map((moduleId) => (
-                  <Link key={moduleId} to={`/module/${moduleId}`}>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="bg-transparent border-gray-600 text-gray-400 hover:bg-gray-800 font-mono"
-                    >
-                      {moduleId.toUpperCase().replace("-", " ")}
-                    </Button>
-                  </Link>
-                ))}
+                .map((moduleId) => {
+                  const moduleColor = moduleColors[moduleId];
+                  return (
+                    <Link key={moduleId} to={`/module/${moduleId}`}>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="bg-transparent border-gray-600 text-gray-400 font-mono transition-all duration-300"
+                        style={{
+                          borderColor: "rgba(75, 85, 99, 0.5)",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.borderColor =
+                            moduleColor.accent;
+                          e.currentTarget.style.color = moduleColor.text;
+                          e.currentTarget.style.backgroundColor = `${moduleColor.color}20`;
+                          e.currentTarget.style.boxShadow = `0 0 15px ${moduleColor.accent}40`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.borderColor =
+                            "rgba(75, 85, 99, 0.5)";
+                          e.currentTarget.style.color = "#9ca3af";
+                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.boxShadow = "none";
+                        }}
+                      >
+                        {moduleId.toUpperCase().replace("-", " ")}
+                      </Button>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
         </div>
