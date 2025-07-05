@@ -163,6 +163,8 @@ const getStatusColor = (status: string) => {
       return "#3b82f6";
     case "ESCALATED":
       return "#f87171";
+    case "OFFLINE":
+      return "#374151";
     default:
       return "#9ca3af";
   }
