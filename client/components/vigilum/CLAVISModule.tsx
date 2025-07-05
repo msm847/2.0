@@ -831,7 +831,11 @@ const CLAVISModule = () => {
                             (pattern, index) => (
                               <div
                                 key={index}
-                                className="bg-red-900/20 border border-red-700 rounded-lg p-3"
+                                className="rounded-lg p-3 border"
+                                style={{
+                                  backgroundColor: "rgba(220, 38, 38, 0.1)",
+                                  borderColor: "rgba(220, 38, 38, 0.3)",
+                                }}
                               >
                                 <div className="flex items-center space-x-2 mb-1">
                                   <AlertTriangle className="w-4 h-4 text-red-400" />
