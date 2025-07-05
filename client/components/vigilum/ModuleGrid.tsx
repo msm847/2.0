@@ -182,9 +182,9 @@ const ModuleGrid = () => {
             SEMANTIC INTELLIGENCE MODULES
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Seven specialized cognitive processors designed to detect and
-            analyze embedded governance risks through structural pattern
-            recognition.
+            Eight cognitive processor slots: seven active modules analyzing
+            embedded governance risks, plus one reserved for future semantic
+            expansion.
           </p>
         </div>
 
