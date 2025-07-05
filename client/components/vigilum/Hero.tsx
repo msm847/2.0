@@ -74,34 +74,6 @@ const Hero = () => {
                   .
                 </p>
               </div>
-
-              {/* Key Metrics */}
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400 font-mono">
-                    200+
-                  </div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">
-                    Known Evasions
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-400 font-mono">
-                    4
-                  </div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">
-                    Risk Typologies
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400 font-mono">
-                    €2B+
-                  </div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">
-                    Structural Risk
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right Column - Risk Typology Visualization */}
