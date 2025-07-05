@@ -294,7 +294,13 @@ const UseCases = () => {
             {/* Case Details */}
             <div className="lg:col-span-3 space-y-6">
               {/* Case Header */}
-              <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+              <div
+                className="rounded-lg p-6 border"
+                style={{
+                  backgroundColor: "#102c22",
+                  borderColor: "rgba(0,255,204,0.06)",
+                }}
+              >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <div className="flex items-center space-x-3 mb-2">
