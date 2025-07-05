@@ -854,7 +854,13 @@ const CLAVISModule = () => {
                       <div className="text-sm font-bold text-gray-400 font-mono mb-3">
                         CLAUSE VECTOR NOTATION (ϕ)
                       </div>
-                      <div className="bg-gray-700 border border-gray-600 rounded-lg p-3">
+                      <div
+                        className="rounded-lg p-3 border"
+                        style={{
+                          backgroundColor: "rgba(12, 35, 28, 0.7)",
+                          borderColor: "rgba(34, 68, 54, 0.6)",
+                        }}
+                      >
                         <div className="text-sm font-mono text-gray-300 mb-2">
                           ϕ(c₁, c₂, c₃) = (
                           {simulationResult.clauseVector
