@@ -1,49 +1,4 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Activity, BarChart3 } from "lucide-react";
-
 const Hero = () => {
-  const [activeRisk, setActiveRisk] = useState(0);
-
-  const riskTypologies = [
-    {
-      code: "DG",
-      name: "Discretionary Gap",
-      color: "text-yellow-400",
-      description: "Administrative override potential",
-      value: 0.91,
-    },
-    {
-      code: "RT",
-      name: "Regulatory Tunneling",
-      color: "text-orange-400",
-      description: "Compliance pathway deviation",
-      value: 0.74,
-    },
-    {
-      code: "CI",
-      name: "Clause Interference",
-      color: "text-blue-400",
-      description: "Semantic contradiction matrix",
-      value: 0.22,
-    },
-    {
-      code: "SB",
-      name: "Structural Bypass",
-      color: "text-red-400",
-      description: "Institutional route nullification",
-      value: 0.05,
-    },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveRisk((prev) => (prev + 1) % riskTypologies.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div
       className="relative pt-24 pb-16 overflow-hidden"
