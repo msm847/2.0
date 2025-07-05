@@ -107,12 +107,29 @@ const ModulePageTemplate = ({
 
   return (
     <div
-      className="min-h-screen text-gray-100 font-mono"
+      className="min-h-screen text-gray-100 font-mono relative"
       style={{
         backgroundColor: "#0B1E16",
       }}
     >
-      <Navigation />
+      {/* Left Side Ambient Light */}
+      <div
+        className="absolute left-0 top-0 w-32 h-full pointer-events-none z-0"
+        style={{
+          background: `linear-gradient(to right, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 50%, transparent 100%)`
+        }}
+      />
+
+      {/* Right Side Ambient Light */}
+      <div
+        className="absolute right-0 top-0 w-32 h-full pointer-events-none z-0"
+        style={{
+          background: `linear-gradient(to left, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 50%, transparent 100%)`
+        }}
+      />
+
+      <div className="relative z-10">
+        <Navigation />
 
       {/* Module Header */}
       <div className="pt-24 pb-8 px-4">
