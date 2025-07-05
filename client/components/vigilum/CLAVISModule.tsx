@@ -900,12 +900,12 @@ const CLAVISModule = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="text-center py-12">
-                    <Eye className="w-12 h-12 mx-auto mb-4 text-gray-600" />
-                    <div className="text-gray-500">
+                  <div className="flex flex-col items-center justify-center h-full text-center min-h-[500px]">
+                    <Eye className="w-16 h-16 mx-auto mb-6 text-gray-600" />
+                    <div className="text-gray-500 mb-4">
                       Select clauses in the sequence builder to begin simulation
                     </div>
-                    <div className="text-xs text-gray-600 mt-2">
+                    <div className="text-xs text-gray-600 max-w-md leading-relaxed">
                       ϕ(c₁…c₃) ⇨ ⊗(sequence logic) ⇨ G(override graph) ⇨
                       τ(typology projection) ⇨ Λ(pattern flag)
                     </div>
