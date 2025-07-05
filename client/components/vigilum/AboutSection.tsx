@@ -14,7 +14,7 @@ const AboutSection = () => {
               </span>
             </div>
             <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
-              SEMANTIC METHODOLOGY
+              METHODOLOGY
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Vigilum operates through semantic analysis of legal structure.
