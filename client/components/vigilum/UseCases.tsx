@@ -361,7 +361,13 @@ const UseCases = () => {
               {/* Risk Analysis */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Risk Indicators */}
-                <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+                <div
+                  className="rounded-lg p-6 border"
+                  style={{
+                    backgroundColor: "#102c22",
+                    borderColor: "rgba(0,255,204,0.06)",
+                  }}
+                >
                   <div className="flex items-center space-x-2 mb-4">
                     <AlertTriangle className="w-5 h-5 text-yellow-400" />
                     <h4 className="text-lg font-bold text-white font-mono">
