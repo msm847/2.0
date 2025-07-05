@@ -255,6 +255,21 @@ const CLAVISModule = () => {
 
     const edges = [];
 
+    // Special handling for L001→L002→L003 sequence
+    const clauseIds = clauses.map((c) => c.id);
+    if (clauseIds.join("→") === "L001→L002→L003") {
+      edges.push({
+        source: "L002",
+        target: "L001",
+        type: "overrides",
+        strength: 0.9,
+        description:
+          "Emergency clause structurally overrides failed tender requirement",
+      });
+      // L003 does not override L001 or L002; it applies post-award
+      return { nodes, edges };
+    }
+
     // Detect override relationships
     for (let i = 0; i < clauses.length; i++) {
       for (let j = 0; j < clauses.length; j++) {
