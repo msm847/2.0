@@ -249,7 +249,13 @@ const UseCases = () => {
                   CLAUSE LIBRARY
                 </h3>
                 <div className="relative">
-                  <div className="space-y-3 max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 pr-2">
+                  <div
+                    className="space-y-3 max-h-96 overflow-y-auto scrollbar-thin pr-2"
+                    style={{
+                      scrollbarTrackColor: "rgba(12, 35, 28, 0.75)",
+                      scrollbarThumbColor: "rgba(0,255,204,0.2)",
+                    }}
+                  >
                     {cases.map((caseItem, index) => (
                       <button
                         key={caseItem.id}
