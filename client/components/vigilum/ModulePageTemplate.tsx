@@ -109,7 +109,7 @@ const ModulePageTemplate = ({
     <div
       className="min-h-screen text-gray-100 font-mono"
       style={{
-        background: `radial-gradient(circle at 30% 50%, ${moduleData.color}15 0%, #0B1E16 50%, #050D0A 100%)`,
+        backgroundColor: "#0B1E16",
       }}
     >
       <Navigation />
