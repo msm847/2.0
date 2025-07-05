@@ -9,6 +9,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import VigilumPage from "./pages/Vigilum";
 import NotFound from "./pages/NotFound";
+import CLAVISModulePage from "./pages/modules/CLAVISModule";
+import OBSCURAModulePage from "./pages/modules/OBSCURAModule";
+import NULLUMModulePage from "./pages/modules/NULLUMModule";
+import NEXUSPOTENTIAModulePage from "./pages/modules/NEXUSPOTENTIAModule";
+import VIGILOCOREModulePage from "./pages/modules/VIGILOCOREModule";
+import VERISModulePage from "./pages/modules/VERISModule";
+import SENTIUMModulePage from "./pages/modules/SENTIUMModule";
 
 const queryClient = new QueryClient();
 
