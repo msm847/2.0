@@ -177,7 +177,7 @@ const ModuleGrid = () => {
     <div className="py-20 px-4" style={{ backgroundColor: "#0B1E16" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-20">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-mono tracking-tight">
             SEMANTIC INTELLIGENCE MODULES
           </h2>
