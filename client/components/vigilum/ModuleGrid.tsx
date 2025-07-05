@@ -133,6 +133,24 @@ const modules = [
     typologyFocus: ["CI", "OD"],
     riskFingerprint: 0.67,
   },
+  {
+    id: "unallocated",
+    name: "UNALLOCATED MODULE",
+    subtitle: "Awaiting activation",
+    tagline: "Future cognition reserved.",
+    description:
+      "Semantic engine slot reserved for future pattern detection system. Vigilum expansion capacity maintained.",
+    color: "#1c1c1c",
+    secondaryColor: "#2a2a2a",
+    textColor: "#6b7280",
+    accentColor: "#4b5563",
+    icon: HelpCircle,
+    glyph: "∅",
+    status: "OFFLINE",
+    typologyFocus: ["RESERVED"],
+    riskFingerprint: 0,
+    isPhantom: true,
+  },
 ];
 
 const getStatusColor = (status: string) => {
