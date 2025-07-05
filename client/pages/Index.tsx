@@ -433,7 +433,7 @@ export default function Index() {
             </div>
 
             {/* Primary Engagement */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <Link to="/vigilum#demo">
                 <Button
                   size="lg"
