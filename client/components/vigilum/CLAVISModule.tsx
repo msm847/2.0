@@ -736,7 +736,7 @@ const CLAVISModule = () => {
 
                 {simulationResult ? (
                   <div
-                    className="space-y-6 max-h-[520px] overflow-y-auto overflow-x-hidden"
+                    className="space-y-6 max-h-[540px] overflow-y-auto overflow-x-hidden"
                     style={{
                       wordWrap: "break-word",
                       width: "100%",
