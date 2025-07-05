@@ -394,7 +394,7 @@ const ModuleGrid = () => {
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor =
                             module.secondaryColor;
-                          e.currentTarget.style.boxShadow = `0 0 20px ${module.accentColor}40`;
+                          e.currentTarget.style.boxShadow = `0 0 15px ${module.accentColor}40`;
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = module.color;
