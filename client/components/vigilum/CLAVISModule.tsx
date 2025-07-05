@@ -482,7 +482,7 @@ const CLAVISModule = () => {
                 </div>
 
                 {/* Clause List */}
-                <div className="space-y-3 max-h-96 overflow-y-auto">
+                <div className="space-y-3 max-h-[480px] overflow-y-auto">
                   {filteredClauses.map((clause) => (
                     <div
                       key={clause.id}
