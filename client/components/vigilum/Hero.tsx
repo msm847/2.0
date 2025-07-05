@@ -45,7 +45,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative bg-gray-900 pt-24 pb-16 overflow-hidden">
+    <div
+      className="relative pt-24 pb-16 overflow-hidden"
+      style={{ backgroundColor: "#0B1E16" }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-yellow-500/20" />
