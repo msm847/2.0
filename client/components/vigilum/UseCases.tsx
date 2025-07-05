@@ -472,14 +472,6 @@ const UseCases = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Action */}
-              <div className="text-center">
-                <Button className="bg-orange-600 hover:bg-orange-500 text-white font-mono px-8">
-                  ANALYZE SIMILAR STRUCTURES
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </div>
             </div>
           </div>
 
