@@ -47,7 +47,7 @@ const Navigation = () => {
             </a>
             <a
               href="#cases"
-              className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
+              className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider whitespace-nowrap"
             >
               Case Studies
             </a>
