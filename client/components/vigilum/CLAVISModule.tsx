@@ -731,7 +731,7 @@ const CLAVISModule = () => {
                       <div className="text-sm font-bold text-yellow-400 font-mono mb-3">
                         RISK TYPOLOGY PROJECTION (τ)
                       </div>
-                      <div className="grid grid-cols-5 gap-3">
+                      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 w-full">
                         {Object.entries(simulationResult.riskProjection).map(
                           ([type, score]) => {
                             const isActive = score > 0.3;
