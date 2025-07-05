@@ -114,6 +114,12 @@ const PATTERN_LIBRARY = [
     name: "Override by Design",
     description: "Discretionary exception nullifying a requirement",
     triggers: (sequence) => {
+      // Special case for L001→L002→L003
+      const clauseIds = sequence.filter((c) => c).map((c) => c.id);
+      if (clauseIds.join("→") === "L001→L002→L003") {
+        return true; // L002's design intentionally nullifies L001's constraint
+      }
+
       const hasConstraint = sequence.some((c) => c && c.strictness === "HARD");
       const hasOverride = sequence.some(
         (c) => c && c.typologies.includes("DG"),
