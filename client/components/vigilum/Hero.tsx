@@ -75,17 +75,6 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="#modules">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 hover:bg-blue-500 text-white font-mono px-8 py-4 border border-blue-500"
-                  >
-                    VIEW MODULES
-                  </Button>
-                </a>
-              </div>
-
               {/* Key Metrics */}
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
