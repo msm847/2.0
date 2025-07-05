@@ -445,7 +445,7 @@ const CLAVISModule = () => {
             {/* Clause Library Panel */}
             <div className="lg:col-span-4">
               <div
-                className="rounded-lg p-6 h-fit border"
+                className="rounded-lg p-6 border"
                 style={{
                   backgroundColor: "rgba(16, 44, 34, 0.7)",
                   borderColor: "rgba(34, 68, 54, 0.8)",
