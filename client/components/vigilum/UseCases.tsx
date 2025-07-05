@@ -369,29 +369,29 @@ const UseCases = () => {
                 </p>
               </div>
 
-              {/* Original Clause */}
-              <div
-                className="rounded-lg p-6 border"
-                style={{
-                  backgroundColor: "#102c22",
-                  borderColor: "rgba(0,255,204,0.06)",
-                }}
-              >
-                <div className="flex items-center space-x-2 mb-4">
-                  <FileText className="w-5 h-5 text-blue-400" />
-                  <h4 className="text-lg font-bold text-white font-mono">
-                    ORIGINAL CLAUSE
-                  </h4>
-                </div>
-                <div className="bg-gray-900 border border-gray-600 rounded-lg p-4">
-                  <div className="text-sm text-gray-300 font-mono italic leading-relaxed">
-                    {currentCase.originalClause}
+              {/* Original Clause and Risk Indicators Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Original Clause */}
+                <div
+                  className="rounded-lg p-6 border"
+                  style={{
+                    backgroundColor: "#102c22",
+                    borderColor: "rgba(0,255,204,0.06)",
+                  }}
+                >
+                  <div className="flex items-center space-x-2 mb-4">
+                    <FileText className="w-5 h-5 text-blue-400" />
+                    <h4 className="text-lg font-bold text-white font-mono">
+                      ORIGINAL CLAUSE
+                    </h4>
+                  </div>
+                  <div className="bg-gray-900 border border-gray-600 rounded-lg p-4">
+                    <div className="text-sm text-gray-300 font-mono italic leading-relaxed">
+                      {currentCase.originalClause}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Risk Analysis */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Risk Indicators */}
                 <div
                   className="rounded-lg p-6 border"
@@ -415,28 +415,28 @@ const UseCases = () => {
                     ))}
                   </div>
                 </div>
+              </div>
 
-                {/* Structural Outcome */}
-                <div className="bg-red-900/20 border border-red-700 rounded-lg p-6 max-h-96 overflow-y-auto">
-                  <div className="flex items-start space-x-3">
-                    <EyeOff className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="text-lg font-bold text-red-400 font-mono mb-3">
-                        STRUCTURAL OUTCOME
-                      </h4>
-                      <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                        {currentCase.outcome}
-                      </p>
-                      <div className="flex items-center space-x-2">
-                        <Eye
-                          className={`w-4 h-4 ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} mt-1 flex-shrink-0`}
-                        />
-                        <span
-                          className={`text-sm ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} font-mono`}
-                        >
-                          {currentCase.detection}
-                        </span>
-                      </div>
+              {/* Structural Outcome */}
+              <div className="bg-red-900/20 border border-red-700 rounded-lg p-6 min-h-80 max-h-96 overflow-y-auto">
+                <div className="flex items-start space-x-3">
+                  <EyeOff className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-lg font-bold text-red-400 font-mono mb-3">
+                      STRUCTURAL OUTCOME
+                    </h4>
+                    <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                      {currentCase.outcome}
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <Eye
+                        className={`w-4 h-4 ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} mt-1 flex-shrink-0`}
+                      />
+                      <span
+                        className={`text-sm ${currentCase.preventable ? "text-green-400" : "text-yellow-400"} font-mono`}
+                      >
+                        {currentCase.detection}
+                      </span>
                     </div>
                   </div>
                 </div>
