@@ -500,7 +500,14 @@ const UseCases = () => {
                 EU procurement directive clauses analyzed
               </div>
             </div>
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+            <div
+              className="rounded-lg p-6 text-center border"
+              style={{
+                backgroundColor: "#102c22",
+                borderColor: "rgba(0,255,204,0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+              }}
+            >
               <div className="text-3xl font-bold text-yellow-400 font-mono mb-2">
                 0.7
               </div>
@@ -508,7 +515,14 @@ const UseCases = () => {
                 Average structural risk level detected
               </div>
             </div>
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
+            <div
+              className="rounded-lg p-6 text-center border"
+              style={{
+                backgroundColor: "#102c22",
+                borderColor: "rgba(0,255,204,0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+              }}
+            >
               <div className="text-3xl font-bold text-blue-400 font-mono mb-2">
                 6
               </div>
