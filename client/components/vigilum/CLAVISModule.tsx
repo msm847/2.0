@@ -360,7 +360,7 @@ const CLAVISModule = () => {
 
     // Special handling for L001→L002→L003 sequence
     const clauseIds = clauses.map((c) => c.id);
-    if (clauseIds.join("→") === "L001→L002→L003") {
+    if (clauseIds.join("→") === "L001→L002��L003") {
       return `The sequence L001→L002→L003 creates a layered escape hatch in procurement. Clause L001 (Art.32(2)(a)) allows a negotiated award after an open tender fails. Clause L002 (Art.32(2)(c)) then lets the authority skip any competition outright under an "extreme urgency". In practice this means the authority could either engineer a no-bid situation or simply declare an emergency to justify a direct award. Finally, L003 (Art.72(1)(c)) permits the contract to be inflated or altered (up to +50%) post-award due to "unforeseeable" events. The combined effect is a compliance illusion: formal rules (tendering, oversight) remain on the books, but enforcement is nullified by these operator clauses. Notably, because Vigilum treats clauses as non-commutative operators, this exact order matters – swapping L002 and L001, for example, would yield a different structural outcome. Structure, not wording, drives the system's meaning here.`;
     }
 
@@ -719,10 +719,10 @@ const CLAVISModule = () => {
                     {simulationResult.overrideGraph.edges.length > 0 && (
                       <div>
                         <div className="text-sm font-bold text-red-400 font-mono mb-3">
-                          OVERRIDE GRAPH (G)
+                          DIRECTED OVERRIDE GRAPH (G)
                         </div>
                         <div className="bg-gray-700 border border-gray-600 rounded-lg p-4">
-                          <div className="space-y-2">
+                          <div className="space-y-3">
                             {simulationResult.overrideGraph.edges.map(
                               (edge, index) => {
                                 const sourceNode =
@@ -734,24 +734,33 @@ const CLAVISModule = () => {
                                     (n) => n.id === edge.target,
                                   );
                                 return (
-                                  <div
-                                    key={index}
-                                    className="flex items-center space-x-3 text-sm"
-                                  >
-                                    <span className="text-blue-400 font-mono">
-                                      {sourceNode?.label}
-                                    </span>
-                                    <ArrowRight className="w-4 h-4 text-red-400" />
-                                    <span className="text-blue-400 font-mono">
-                                      {targetNode?.label}
-                                    </span>
-                                    <span className="text-xs text-gray-400">
-                                      ({edge.type})
-                                    </span>
+                                  <div key={index} className="space-y-1">
+                                    <div className="flex items-center space-x-3 text-sm">
+                                      <span className="text-blue-400 font-mono font-bold">
+                                        {edge.source}
+                                      </span>
+                                      <ArrowRight className="w-4 h-4 text-red-400" />
+                                      <span className="text-blue-400 font-mono font-bold">
+                                        {edge.target}
+                                      </span>
+                                      <span className="text-xs text-red-400 font-bold">
+                                        ({edge.type})
+                                      </span>
+                                    </div>
+                                    {edge.description && (
+                                      <div className="text-xs text-gray-300 ml-8">
+                                        {edge.description}
+                                      </div>
+                                    )}
                                   </div>
                                 );
                               },
                             )}
+                          </div>
+                          <div className="mt-4 pt-3 border-t border-gray-600 text-xs text-gray-400">
+                            Graphically shows structural influence between
+                            clauses. Override arrows represent how discretionary
+                            clauses nullify constraints.
                           </div>
                         </div>
                       </div>
