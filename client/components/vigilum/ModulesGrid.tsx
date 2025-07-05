@@ -268,7 +268,7 @@ const ModulesGrid = () => {
                   style={{ color: "rgb(248,113,113)" }}
                 />
                 <div className="text-lg font-bold text-white font-mono">
-                  BEHAVIORAL
+                  <p>REASONING</p>
                 </div>
                 <div className="text-sm text-gray-400">
                   Legal behavior simulation engine
