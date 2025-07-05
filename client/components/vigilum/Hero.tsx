@@ -67,7 +67,7 @@ const Hero = () => {
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed font-light mb-8">
                   Vigilum detects embedded governance risk through semantic
-                  analysis of legal structure. Not corruption detection ��{" "}
+                  analysis of legal structure. Not corruption detection —{" "}
                   <span className="text-yellow-400 font-medium">
                     corruption prediction
                   </span>
