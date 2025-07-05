@@ -474,55 +474,6 @@ const UseCases = () => {
               </div>
             </div>
           </div>
-
-          {/* Summary Stats */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              className="rounded-lg p-6 text-center border"
-              style={{
-                backgroundColor: "#102c22",
-                borderColor: "rgba(0,255,204,0.06)",
-                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-              }}
-            >
-              <div className="text-3xl font-bold text-red-400 font-mono mb-2">
-                L001-L006
-              </div>
-              <div className="text-sm text-gray-400">
-                EU procurement directive clauses analyzed
-              </div>
-            </div>
-            <div
-              className="rounded-lg p-6 text-center border"
-              style={{
-                backgroundColor: "#102c22",
-                borderColor: "rgba(0,255,204,0.06)",
-                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-              }}
-            >
-              <div className="text-3xl font-bold text-yellow-400 font-mono mb-2">
-                0.7
-              </div>
-              <div className="text-sm text-gray-400">
-                Average structural risk level detected
-              </div>
-            </div>
-            <div
-              className="rounded-lg p-6 text-center border"
-              style={{
-                backgroundColor: "#102c22",
-                borderColor: "rgba(0,255,204,0.06)",
-                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-              }}
-            >
-              <div className="text-3xl font-bold text-blue-400 font-mono mb-2">
-                6
-              </div>
-              <div className="text-sm text-gray-400">
-                Critical loophole profiles documented
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
