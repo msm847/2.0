@@ -769,7 +769,13 @@ const CLAVISModule = () => {
                         <div className="text-sm font-bold text-red-400 font-mono mb-3">
                           DIRECTED OVERRIDE GRAPH (G)
                         </div>
-                        <div className="bg-gray-700 border border-gray-600 rounded-lg p-4">
+                        <div
+                          className="rounded-lg p-4 border"
+                          style={{
+                            backgroundColor: "rgba(12, 35, 28, 0.7)",
+                            borderColor: "rgba(34, 68, 54, 0.6)",
+                          }}
+                        >
                           <div className="space-y-3">
                             {simulationResult.overrideGraph.edges.map(
                               (edge, index) => {
