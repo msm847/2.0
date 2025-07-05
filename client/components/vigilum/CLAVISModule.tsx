@@ -183,7 +183,7 @@ const CLAVISModule = () => {
   }, [selectedClauses]);
 
   const runSimulation = (sequence) => {
-    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → ⊗ → G → τ → Λ
+    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → ⊗ → G → �� → Λ
 
     // 1. Clause Vector Assembly (ϕ)
     const clauseVector = sequence.filter((c) => c !== null);
@@ -324,7 +324,7 @@ const CLAVISModule = () => {
 
     // Special handling for L001→L002→L003 sequence
     const clauseIds = clauses.map((c) => c.id);
-    if (clauseIds.join("→") === "L001→L002→L003") {
+    if (clauseIds.join("→") === "L001���L002→L003") {
       return {
         DG: 1.0, // Active: All three clauses introduce unbounded flexibility
         CI: 1.0, // Active: Sequence simulates compliance while undermining it
@@ -587,11 +587,15 @@ const CLAVISModule = () => {
                   {selectedClauses.map((clause, index) => (
                     <div
                       key={index}
-                      className={`border-2 border-dashed rounded-lg p-6 min-h-24 transition-colors ${
-                        clause
-                          ? "border-blue-500 bg-blue-900/20"
-                          : "border-gray-600 bg-gray-700/30"
-                      }`}
+                      className="border-2 border-dashed rounded-lg p-6 min-h-24 transition-colors"
+                      style={{
+                        borderColor: clause
+                          ? "#22c55e"
+                          : "rgba(34, 68, 54, 0.6)",
+                        backgroundColor: clause
+                          ? "rgba(34, 197, 94, 0.1)"
+                          : "rgba(12, 35, 28, 0.3)",
+                      }}
                     >
                       <div className="flex items-center justify-between mb-2">
                         <div className="text-sm font-mono text-gray-400">
