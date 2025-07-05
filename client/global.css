@@ -722,3 +722,64 @@
 .opacity-3 {
   opacity: 0.03;
 }
+
+/* ===== CUSTOM SCROLLBARS - VIGILUM THEME ===== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.vigilum-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.vigilum-scrollbar::-webkit-scrollbar-track {
+  background: rgba(11, 30, 22, 0.3);
+  border-radius: 3px;
+}
+
+.vigilum-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 68, 54, 0.6);
+  border-radius: 3px;
+  border: 1px solid rgba(11, 30, 22, 0.2);
+}
+
+.vigilum-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 68, 54, 0.8);
+  box-shadow: 0 0 6px rgba(0, 255, 204, 0.3);
+}
+
+.vigilum-scrollbar::-webkit-scrollbar-thumb:active {
+  background: rgba(52, 211, 153, 0.4);
+}
+
+.vigilum-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox */
+.vigilum-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 68, 54, 0.6) rgba(11, 30, 22, 0.3);
+}
+
+/* IE/Edge legacy support */
+.vigilum-scrollbar {
+  -ms-overflow-style: none;
+}
+
+.vigilum-scrollbar::-ms-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.vigilum-scrollbar::-ms-scrollbar-track {
+  background: rgba(11, 30, 22, 0.3);
+}
+
+.vigilum-scrollbar::-ms-scrollbar-thumb {
+  background: rgba(34, 68, 54, 0.6);
+  border-radius: 3px;
+}
+
+.vigilum-scrollbar::-ms-scrollbar-thumb:hover {
+  background: rgba(34, 68, 54, 0.8);
+}
