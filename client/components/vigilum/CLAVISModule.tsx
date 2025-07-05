@@ -727,7 +727,7 @@ const CLAVISModule = () => {
                     </div>
 
                     {/* Risk Typology Glyphs */}
-                    <div>
+                    <div className="w-full">
                       <div className="text-sm font-bold text-yellow-400 font-mono mb-3">
                         RISK TYPOLOGY PROJECTION (τ)
                       </div>
