@@ -246,18 +246,23 @@ const ModuleGrid = () => {
                   {/* Glyph and Status */}
                   <div className="flex items-start justify-between mb-4">
                     <div
-                      className="text-4xl font-bold transition-all duration-300"
+                      className={`text-4xl font-bold transition-all duration-300 ${
+                        isPhantom ? "opacity-50" : ""
+                      }`}
                       style={{
                         color: module.accentColor,
-                        textShadow: isHovered
-                          ? `0 0 20px ${module.accentColor}`
-                          : "none",
+                        textShadow:
+                          isHovered && !isPhantom
+                            ? `0 0 20px ${module.accentColor}`
+                            : "none",
                       }}
                     >
                       {module.glyph}
                     </div>
                     <div
-                      className="px-2 py-1 rounded-full text-xs font-mono font-bold border"
+                      className={`px-2 py-1 rounded-full text-xs font-mono font-bold border ${
+                        isPhantom ? "opacity-60" : ""
+                      }`}
                       style={{
                         backgroundColor: `${getStatusColor(module.status)}20`,
                         borderColor: getStatusColor(module.status),
