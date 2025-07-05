@@ -554,7 +554,13 @@ const CLAVISModule = () => {
 
             {/* Sequence Builder */}
             <div className="lg:col-span-4">
-              <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+              <div
+                className="rounded-lg p-6 border"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                }}
+              >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-bold text-white font-mono">
                     SEQUENCE BUILDER
