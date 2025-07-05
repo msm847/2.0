@@ -19,15 +19,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <Shield className="w-8 h-8 text-blue-400" />
+          <Link to="/" className="flex items-center">
             <span className="text-xl font-bold text-white tracking-tight">
               VIGILUM.AI
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <Link
               to="/"
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
