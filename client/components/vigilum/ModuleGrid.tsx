@@ -1,0 +1,350 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Eye,
+  Search,
+  Shield,
+  Network,
+  Activity,
+  BarChart3,
+  MessageCircle,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const modules = [
+  {
+    id: "clavis",
+    name: "CLAVIS",
+    subtitle: "Clause Intelligence Engine",
+    tagline: "Structure discloses intent.",
+    description:
+      "Parses legal clauses to detect embedded risk logic, exposing how contracts simulate legality while shifting liability.",
+    color: "#1a3d82",
+    secondaryColor: "#1e40af",
+    textColor: "#dce3f7",
+    accentColor: "#60a5fa",
+    icon: Search,
+    glyph: "ϕ",
+    status: "OPERATIONAL",
+    typologyFocus: ["DG", "CI"],
+    riskFingerprint: 0.91,
+  },
+  {
+    id: "obscura",
+    name: "OBSCURA",
+    subtitle: "Procurement Distortion Detector",
+    tagline: "Procedures conceal design.",
+    description:
+      "Flags tenders pre-structured for capture—compressed timelines, single-bid dominance, or emergency justification misuse.",
+    color: "#941b1b",
+    secondaryColor: "#b91c1c",
+    textColor: "#f1d1d1",
+    accentColor: "#f87171",
+    icon: Eye,
+    glyph: "⊗",
+    status: "ACTIVE",
+    typologyFocus: ["RT", "SB"],
+    riskFingerprint: 0.74,
+  },
+  {
+    id: "nullum",
+    name: "NULLUM",
+    subtitle: "Judicial Stalling Detector",
+    tagline: "Delay disarms enforcement.",
+    description:
+      "Detects legal stalling patterns—timeline collapse, expiration clustering, and procedural bypass that dissolve accountability.",
+    color: "#1e232b",
+    secondaryColor: "#1f2937",
+    textColor: "#9ca3af",
+    accentColor: "#9ca3af",
+    icon: Shield,
+    glyph: "Δ",
+    status: "MONITORING",
+    typologyFocus: ["OD", "RT"],
+    riskFingerprint: 0.22,
+  },
+  {
+    id: "nexus-potentia",
+    name: "NEXUS POTENTIA",
+    subtitle: "Political Graph Mapper",
+    tagline: "Influence is relational.",
+    description:
+      "Maps hidden networks, revolving doors, and control clusters behind awards using recursive relationship inference.",
+    color: "#4e27a6",
+    secondaryColor: "#6d28d9",
+    textColor: "#ded1f7",
+    accentColor: "#a78bfa",
+    icon: Network,
+    glyph: "λ",
+    status: "OPERATIONAL",
+    typologyFocus: ["DG", "SB"],
+    riskFingerprint: 0.85,
+  },
+  {
+    id: "vigilo-core",
+    name: "VIGILO CORE",
+    subtitle: "Signal Integrator",
+    tagline: "Exposure emerges in pattern.",
+    description:
+      "Unifies all module outputs into a structural risk map. Triggers escalation when latent design risk reaches systemic visibility.",
+    color: "#035e4a",
+    secondaryColor: "#047857",
+    textColor: "#c0f1e4",
+    accentColor: "#34d399",
+    icon: Activity,
+    glyph: "Σ",
+    status: "OPERATIONAL",
+    typologyFocus: ["ALL"],
+    riskFingerprint: 0.96,
+  },
+  {
+    id: "veris",
+    name: "VERIS",
+    subtitle: "Structural Risk Index",
+    tagline: "Integrity becomes quantifiable.",
+    description:
+      "Aggregates all risk vectors into a composite signal score—quantifying governance fragility across entities, tenders, and time.",
+    color: "#a65800",
+    secondaryColor: "#b45309",
+    textColor: "#f5d199",
+    accentColor: "#fbbf24",
+    icon: BarChart3,
+    glyph: "τ",
+    status: "ESCALATED",
+    typologyFocus: ["ALL"],
+    riskFingerprint: 0.92,
+  },
+  {
+    id: "sentium",
+    name: "SENTIUM",
+    subtitle: "Civic Signal Channel",
+    tagline: "Witness becomes signal.",
+    description:
+      "Encrypts civic reporting and cross-validates with AI-detected risks. Turns whistleblower input into structural triangulation.",
+    color: "#036373",
+    secondaryColor: "#0e7490",
+    textColor: "#a2e9f5",
+    accentColor: "#22d3ee",
+    icon: MessageCircle,
+    glyph: "Ω",
+    status: "MONITORING",
+    typologyFocus: ["CI", "OD"],
+    riskFingerprint: 0.67,
+  },
+];
+
+const getStatusColor = (status: string) => {
+  switch (status) {
+    case "OPERATIONAL":
+      return "#34d399";
+    case "MONITORING":
+      return "#facc15";
+    case "ACTIVE":
+      return "#3b82f6";
+    case "ESCALATED":
+      return "#f87171";
+    default:
+      return "#9ca3af";
+  }
+};
+
+const ModuleGrid = () => {
+  const [hoveredModule, setHoveredModule] = useState<string | null>(null);
+
+  return (
+    <div className="py-20 px-4" style={{ backgroundColor: "#0B1E16" }}>
+      <div className="container mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-mono tracking-tight">
+            SEMANTIC INTELLIGENCE MODULES
+          </h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Seven specialized cognitive processors designed to detect and
+            analyze embedded governance risks through structural pattern
+            recognition.
+          </p>
+        </div>
+
+        {/* Module Grid - 2x4 responsive layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+          {modules.map((module) => {
+            const IconComponent = module.icon;
+            const isHovered = hoveredModule === module.id;
+
+            return (
+              <div
+                key={module.id}
+                className={`relative group transition-all duration-500 ease-out ${
+                  isHovered ? "scale-105 z-10" : ""
+                }`}
+                onMouseEnter={() => setHoveredModule(module.id)}
+                onMouseLeave={() => setHoveredModule(null)}
+              >
+                {/* Module Card */}
+                <div
+                  className="relative backdrop-blur-lg border border-white/10 rounded-2xl p-6 h-full min-h-[420px] flex flex-col transition-all duration-500"
+                  style={{
+                    backgroundColor: `${module.color}20`,
+                    borderColor: isHovered
+                      ? module.accentColor
+                      : "rgba(255,255,255,0.1)",
+                    boxShadow: isHovered
+                      ? `0 0 40px ${module.accentColor}40, inset 0 0 20px ${module.color}30`
+                      : "inset 0 0 0 1px rgba(255,255,255,0.05)",
+                  }}
+                >
+                  {/* Glyph and Status */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div
+                      className="text-4xl font-bold transition-all duration-300"
+                      style={{
+                        color: module.accentColor,
+                        textShadow: isHovered
+                          ? `0 0 20px ${module.accentColor}`
+                          : "none",
+                      }}
+                    >
+                      {module.glyph}
+                    </div>
+                    <div
+                      className="px-2 py-1 rounded-full text-xs font-mono font-bold border"
+                      style={{
+                        backgroundColor: `${getStatusColor(module.status)}20`,
+                        borderColor: getStatusColor(module.status),
+                        color: getStatusColor(module.status),
+                      }}
+                    >
+                      {module.status}
+                    </div>
+                  </div>
+
+                  {/* Module Info */}
+                  <div className="flex-1 mb-6">
+                    <h3
+                      className="text-xl font-bold mb-2 font-mono"
+                      style={{ color: module.textColor }}
+                    >
+                      {module.name}
+                    </h3>
+                    <p
+                      className="text-sm mb-3 opacity-80"
+                      style={{ color: module.textColor }}
+                    >
+                      {module.subtitle}
+                    </p>
+                    <p
+                      className="text-xs leading-relaxed mb-4 opacity-70"
+                      style={{ color: module.textColor }}
+                    >
+                      {module.description}
+                    </p>
+
+                    {/* Tagline */}
+                    <p
+                      className="text-xs italic font-mono mb-4"
+                      style={{ color: module.accentColor }}
+                    >
+                      "{module.tagline}"
+                    </p>
+                  </div>
+
+                  {/* Typology Focus */}
+                  <div className="mb-4">
+                    <div className="text-xs text-gray-400 mb-2 font-mono">
+                      TYPOLOGY FOCUS
+                    </div>
+                    <div className="flex flex-wrap gap-1">
+                      {module.typologyFocus.map((type) => (
+                        <span
+                          key={type}
+                          className="px-2 py-1 rounded text-xs font-mono"
+                          style={{
+                            backgroundColor: `${module.accentColor}20`,
+                            color: module.accentColor,
+                            border: `1px solid ${module.accentColor}40`,
+                          }}
+                        >
+                          {type}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Risk Fingerprint */}
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between text-xs font-mono mb-2">
+                      <span className="text-gray-400">RISK FINGERPRINT</span>
+                      <span style={{ color: module.accentColor }}>
+                        {module.riskFingerprint.toFixed(2)}
+                      </span>
+                    </div>
+                    <div className="w-full bg-gray-700/50 rounded-full h-2">
+                      <div
+                        className="h-2 rounded-full transition-all duration-1000"
+                        style={{
+                          width: `${module.riskFingerprint * 100}%`,
+                          backgroundColor: module.accentColor,
+                          boxShadow: isHovered
+                            ? `0 0 10px ${module.accentColor}`
+                            : "none",
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Analyze Button */}
+                  <Link to={`/module/${module.id}`}>
+                    <Button
+                      className="w-full font-mono text-sm transition-all duration-300 group"
+                      style={{
+                        backgroundColor: module.color,
+                        borderColor: module.accentColor,
+                        color: module.textColor,
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor =
+                          module.secondaryColor;
+                        e.currentTarget.style.boxShadow = `0 0 20px ${module.accentColor}40`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = module.color;
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                    >
+                      <span className="flex items-center justify-center gap-2">
+                        ANALYZE MODULE
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Hover Glow Effect */}
+                {isHovered && (
+                  <div
+                    className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-50 transition-opacity duration-500"
+                    style={{
+                      backgroundColor: module.accentColor,
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="text-center">
+          <p className="text-sm text-gray-400 font-mono">
+            Each module operates as an autonomous semantic processor within the
+            Vigilum cognitive environment
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ModuleGrid;
