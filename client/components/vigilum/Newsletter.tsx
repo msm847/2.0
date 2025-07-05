@@ -66,7 +66,7 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="bg-gray-900 py-20">
+    <div className="py-20" style={{ backgroundColor: "#0B1E16" }}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
