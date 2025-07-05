@@ -719,13 +719,23 @@ const CLAVISModule = () => {
                         STRUCTURAL INTERPRETATION
                       </div>
                       <div
-                        className="rounded-lg p-4 border w-full"
+                        className="rounded-lg p-4 border"
                         style={{
                           backgroundColor: "rgba(12, 35, 28, 0.7)",
                           borderColor: "rgba(34, 68, 54, 0.6)",
+                          width: "100%",
+                          minWidth: "0",
                         }}
                       >
-                        <p className="text-sm text-gray-300 leading-relaxed w-full break-words">
+                        <p
+                          className="text-sm text-gray-300 leading-relaxed"
+                          style={{
+                            width: "100%",
+                            wordWrap: "break-word",
+                            overflowWrap: "break-word",
+                            hyphens: "auto",
+                          }}
+                        >
                           {simulationResult.narrative}
                         </p>
                       </div>
