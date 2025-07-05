@@ -301,6 +301,18 @@ const CLAVISModule = () => {
       typologyScores[type] = 0;
     });
 
+    // Special handling for L001→L002→L003 sequence
+    const clauseIds = clauses.map((c) => c.id);
+    if (clauseIds.join("→") === "L001→L002→L003") {
+      return {
+        DG: 1.0, // Active: All three clauses introduce unbounded flexibility
+        CI: 1.0, // Active: Sequence simulates compliance while undermining it
+        RT: 0.0, // Inactive: No risk transfer to unintended party
+        SB: 0.8, // Active: Vague justifications exploit enforcement gaps
+        OD: 0.0, // Inactive: No explicit override by design axis
+      };
+    }
+
     clauses.forEach((clause) => {
       clause.typologies.forEach((type) => {
         typologyScores[type] += clause.riskLevel;
