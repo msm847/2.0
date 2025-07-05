@@ -381,7 +381,15 @@ const ModuleGrid = () => {
                       </span>
                     </Button>
                   ) : (
-                    <Link to={`/module/${module.id}`}>
+                    <Link
+                      to={`/module/${module.id}`}
+                      onClick={() => {
+                        // Scroll to top when navigating to module page
+                        setTimeout(() => {
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }, 100);
+                      }}
+                    >
                       <Button
                         className="w-full font-mono text-sm transition-all duration-300 group"
                         style={{
