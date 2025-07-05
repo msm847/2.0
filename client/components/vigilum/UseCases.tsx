@@ -418,7 +418,7 @@ const UseCases = () => {
               </div>
 
               {/* Structural Outcome */}
-              <div className="bg-red-900/20 border border-red-700 rounded-lg p-6 min-h-80 max-h-96 overflow-y-auto">
+              <div className="bg-red-900/20 border border-red-700 rounded-lg p-6">
                 <div className="flex items-start space-x-3">
                   <EyeOff className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                   <div>
