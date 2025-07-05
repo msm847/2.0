@@ -91,7 +91,7 @@ const UseCases = () => {
       description:
         'Allows substantial contract expansions under the pretext of unforeseeability. By claiming changes were unpredictable and keeping each increase below 50%, a contractor and authority can legally bypass a new tender. Over time, the contract can balloon far beyond its initial scope ("scope creep") while formally obeying the rules.',
       originalClause:
-        '"Contracts… may be modified without a new procedure… in any of the following cases: (c) where all of the following conditions are fulfilled: (i) the need for modification has been brought about by circumstances which a diligent contracting authority could not foresee; (ii) the modification does not alter the overall nature of the contract; (iii) any increase in price is not higher than 50% of the value of the original contract… Such consecutive modifications shall not be aimed at circumventing this Directive."',
+        '"Contracts�� may be modified without a new procedure… in any of the following cases: (c) where all of the following conditions are fulfilled: (i) the need for modification has been brought about by circumstances which a diligent contracting authority could not foresee; (ii) the modification does not alter the overall nature of the contract; (iii) any increase in price is not higher than 50% of the value of the original contract… Such consecutive modifications shall not be aimed at circumventing this Directive."',
       riskIndicators: [
         "Multiple small contract modifications that individually stay below the 50% increase threshold but cumulatively greatly expand the contract's scope or value",
         'Justifications for changes consistently citing "unforeseen circumstances" that might have been anticipated or planned for (e.g. foreseeable technical challenges presented as surprises)',
@@ -165,7 +165,7 @@ const UseCases = () => {
         "National laws with weak subcontracting rules – e.g. the country exempts many contracts or sectors from subcontract transparency, allowing a shadow procurement process",
       ],
       overridePath: [
-        "Concession awarded – A government awards a concession/PPP contract to a private operator (often via competition for the main contract)",
+        "Concession awarded �� A government awards a concession/PPP contract to a private operator (often via competition for the main contract)",
         "National opt-out – EU directives do not mandate uniform rules for subcontracts; each Member State decides what, if any, controls or publication requirements to impose",
         "No oversight (in some cases) – If the national law does not require open tendering or transparency for subcontracts (or limits such rules by contract type/size), the prime contractor is left largely unchecked in choosing subcontractors",
         "Unregulated subcontracting – The concessionaire can hand-pick subcontractors without competition, awarding large parts of the project privately. These internal decisions effectively fall outside public procurement scrutiny",
@@ -226,7 +226,7 @@ const UseCases = () => {
               </span>
             </div>
             <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
-              CLAUSE LIBRARY
+              Library
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Structural analysis of EU procurement directive clauses revealing
