@@ -579,7 +579,7 @@ const CLAVISModule = () => {
                         e.currentTarget.style.backgroundColor =
                           "rgba(16, 44, 34, 0.8)";
                         e.currentTarget.style.borderColor =
-                          "rgba(96, 165, 250, 0.5)";
+                          "rgba(248, 113, 113, 0.5)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.backgroundColor =
