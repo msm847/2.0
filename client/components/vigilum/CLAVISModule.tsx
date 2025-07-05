@@ -183,7 +183,7 @@ const CLAVISModule = () => {
   }, [selectedClauses]);
 
   const runSimulation = (sequence) => {
-    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → ⊗ → G → �� → Λ
+    // Semantic Simulation Pipeline: ϕ(c₁…c₃) → ⊗ → G → τ → Λ
 
     // 1. Clause Vector Assembly (ϕ)
     const clauseVector = sequence.filter((c) => c !== null);
@@ -324,7 +324,7 @@ const CLAVISModule = () => {
 
     // Special handling for L001→L002→L003 sequence
     const clauseIds = clauses.map((c) => c.id);
-    if (clauseIds.join("→") === "L001���L002→L003") {
+    if (clauseIds.join("→") === "L001→L002→L003") {
       return {
         DG: 1.0, // Active: All three clauses introduce unbounded flexibility
         CI: 1.0, // Active: Sequence simulates compliance while undermining it
@@ -673,7 +673,13 @@ const CLAVISModule = () => {
 
             {/* Output Panel */}
             <div className="lg:col-span-5">
-              <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
+              <div
+                className="rounded-lg p-6 border"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                }}
+              >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-bold text-white font-mono">
                     SIMULATION OUTPUT
