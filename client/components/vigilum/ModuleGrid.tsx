@@ -182,7 +182,11 @@ const ModuleGrid = () => {
             SEMANTIC INTELLIGENCE MODULES
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Cognitive processor modules analyzing embedded governance risks.
+            Not corruption detection —{" "}
+            <span className="text-yellow-400 font-medium">
+              corruption prediction
+            </span>
+            .
           </p>
         </div>
 
