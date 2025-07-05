@@ -246,32 +246,6 @@ const Newsletter = () => {
             </div>
           </div>
 
-          {/* Network Statistics */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
-              <div className="text-2xl font-bold text-green-400 font-mono mb-2">
-                847
-              </div>
-              <div className="text-sm text-gray-400">Active practitioners</div>
-            </div>
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
-              <div className="text-2xl font-bold text-blue-400 font-mono mb-2">
-                23
-              </div>
-              <div className="text-sm text-gray-400">
-                Institutional partners
-              </div>
-            </div>
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 text-center">
-              <div className="text-2xl font-bold text-yellow-400 font-mono mb-2">
-                156
-              </div>
-              <div className="text-sm text-gray-400">
-                Methodology implementations
-              </div>
-            </div>
-          </div>
-
           {/* System Status */}
           <div className="mt-12 text-center">
             <div className="inline-flex items-center space-x-2 bg-gray-800 px-4 py-2 rounded-full border border-gray-700">
