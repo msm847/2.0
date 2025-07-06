@@ -128,11 +128,11 @@ const Navigation = () => {
             <span className="mx-6 text-gray-600 text-xs">·</span>
             <button
               onClick={() => handleNavigation("#newsletter")}
-              className={getSeeTogetherStyles(activeSection === "newsletter")}
+              className={`${getSeeTogetherStyles(activeSection === "newsletter")} whitespace-nowrap`}
               onMouseEnter={() => setSeeTogetherHovered(true)}
               onMouseLeave={() => setSeeTogetherHovered(false)}
             >
-              SEE TOGETHER
+              See together
             </button>
           </div>
 
@@ -184,11 +184,11 @@ const Navigation = () => {
               </button>
               <button
                 onClick={() => handleNavigation("#newsletter")}
-                className={`${getSeeTogetherStyles(activeSection === "newsletter")} text-left`}
+                className={`${getSeeTogetherStyles(activeSection === "newsletter")} text-left whitespace-nowrap`}
                 onMouseEnter={() => setSeeTogetherHovered(true)}
                 onMouseLeave={() => setSeeTogetherHovered(false)}
               >
-                SEE TOGETHER
+                See together
               </button>
             </div>
           </div>
