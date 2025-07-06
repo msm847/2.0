@@ -5,7 +5,7 @@ const ProblemPage = () => {
   return (
     <CISubPage
       slug="problem"
-      heading="The Blindspot"
+      heading="Trillion+ Blindspot"
       lead="Traditional compliance systems detect violations after they occur. But institutional corruption operates within legal boundaries, exploiting structural design flaws that remain invisible to conventional oversight."
       customDiagram={<BlindspotDiagram />}
       bodyHtml={`
