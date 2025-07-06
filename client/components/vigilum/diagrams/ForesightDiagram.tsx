@@ -13,10 +13,11 @@ const ForesightDiagram = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setScanProgress((prev) => {
-        const newProgress = (prev + 2) % 101;
+        const newProgress = (prev + 2) % 401; // 0 to 400 for longer cycle
         if (newProgress === 0) {
           setDetectedThreats([]);
-        } else if (newProgress > 20 && newProgress % 25 === 0) {
+        } else if (newProgress > 50 && newProgress % 80 === 0) {
+          // Adjusted for longer cycle
           // Generate static position for new threat
           const angle = Math.random() * 2 * Math.PI;
           const radius = Math.random() * 100;
