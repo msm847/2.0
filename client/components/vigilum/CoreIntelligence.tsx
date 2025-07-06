@@ -14,7 +14,7 @@ const CoreIntelligence = () => {
     {
       id: "problem",
       icon: "alert-circle",
-      name: "The Blindspot",
+      name: "Trillion+ Blindspot",
       href: "/core-intelligence/problem",
     },
     {
