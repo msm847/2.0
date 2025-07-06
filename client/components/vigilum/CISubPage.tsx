@@ -22,6 +22,7 @@ const CISubPage = ({
   heading,
   lead,
   lottieUrl,
+  customDiagram,
   bodyHtml,
   ctaLabel = "Book a Demo",
   ctaHref = "/contact",
