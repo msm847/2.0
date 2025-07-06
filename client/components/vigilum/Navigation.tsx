@@ -169,7 +169,7 @@ const Navigation = () => {
                       : "500",
                 }}
               >
-                CLAVIS
+                SPE
               </button>
               <button
                 onClick={() => handleNavigation("#cases")}
