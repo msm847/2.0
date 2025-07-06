@@ -7,7 +7,7 @@ const ImpactPage = () => {
       slug="impact"
       heading="Prevention Timeline"
       lead="Structural foresight transforms institutional risk from reactive damage control to predictive prevention. Organizations implementing Vigilum see measurable improvements across all institutional integrity metrics."
-      lottieUrl="/animations/prevention-timeline.json"
+      customDiagram={<TimelineDiagram />}
       bodyHtml={`
         <h2>Immediate Impact (0-30 Days)</h2>
         <ul>
