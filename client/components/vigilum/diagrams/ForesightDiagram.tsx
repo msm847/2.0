@@ -15,8 +15,8 @@ const ForesightDiagram = () => {
   const [allThreats, setAllThreats] = useState<Threat[]>([]);
 
   useEffect(() => {
-    // Generate random number of threats between 3-6
-    const numThreats = Math.floor(Math.random() * 4) + 3; // 3 to 6
+    // Always generate all 6 threats
+    const numThreats = 6;
     const threats: Threat[] = [];
 
     for (let i = 0; i < numThreats; i++) {
