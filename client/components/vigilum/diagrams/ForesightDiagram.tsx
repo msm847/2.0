@@ -152,7 +152,7 @@ const ForesightDiagram = () => {
           />
         ))}
 
-        {/* Progress Indicator */}
+        {/* Scan Label */}
         <div
           style={{
             position: "absolute",
@@ -165,7 +165,7 @@ const ForesightDiagram = () => {
             textAlign: "center",
           }}
         >
-          STRUCTURAL SCAN: {scanProgress}%
+          STRUCTURAL SCAN
         </div>
 
         {/* Prediction Labels */}
