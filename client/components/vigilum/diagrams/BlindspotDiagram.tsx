@@ -119,17 +119,19 @@ const BlindspotDiagram = () => {
           key={angle}
           style={{
             position: "absolute",
-            width: "100px",
-            height: "2px",
-            background: `linear-gradient(90deg, rgba(0, 255, 255, 0.3), transparent)`,
+            width: "140px",
+            height: "3px",
+            background: `linear-gradient(90deg, rgba(0, 255, 255, 0.4), transparent)`,
             transformOrigin: "0 50%",
             transform: `rotate(${angle}deg)`,
             top: "50%",
             left: "50%",
-            marginTop: "-1px",
+            marginTop: "-1.5px",
             opacity: animationStep === 3 ? 1 : 0.3,
             transition: "opacity 0.5s ease",
             zIndex: 1,
+            boxShadow:
+              animationStep === 3 ? "0 0 8px rgba(0, 255, 255, 0.6)" : "none",
           }}
         />
       ))}
