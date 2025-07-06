@@ -60,6 +60,7 @@ const App = () => (
             path="/core-intelligence/deployment"
             element={<DeploymentPage />}
           />
+          <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
