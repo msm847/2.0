@@ -112,118 +112,106 @@ const InteractiveCard = ({
     ),
   };
 
+  const cardStyle = {
+    display: "block",
+    background: "#0a0a0a",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    borderRadius: "12px",
+    padding: "2rem",
+    textDecoration: "none",
+    color: "inherit",
+    transition: "all 400ms ease-out",
+    position: "relative" as const,
+    overflow: "hidden" as const,
+    animationDelay: `${delay}ms`,
+    opacity: 0,
+    transform: "translateY(60px)",
+    animation: "cardEntrance 800ms ease-out forwards",
+  };
+
+  const cardHoverStyle = {
+    transform: "translateY(-6px) scale(1.02)",
+    boxShadow: "0 14px 30px rgba(0, 255, 255, 0.12)",
+    borderColor: "rgba(0, 255, 255, 0.2)",
+  };
+
+  const iconStyle = {
+    color: isHovered ? "#00ffff" : "#ffffff",
+    transition: "color 300ms ease-out",
+    width: "40px",
+    height: "40px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+  const buttonStyle = {
+    fontFamily: '"Courier New", monospace',
+    fontSize: "0.875rem",
+    fontWeight: 500,
+    padding: "0.75rem 1.5rem",
+    border: `1px solid ${isHovered ? "#00ffff" : "rgba(255, 255, 255, 0.2)"}`,
+    borderRadius: "6px",
+    background: isHovered ? "rgba(0, 255, 255, 0.1)" : "transparent",
+    cursor: "pointer",
+    textTransform: "uppercase" as const,
+    letterSpacing: "0.05em",
+    color: isHovered ? "#00ffff" : "#ffffff",
+    transform: isHovered ? "scale(1.05)" : "scale(1)",
+    transition: "all 300ms ease-out",
+  };
+
   return (
-    <Link
-      to={href}
-      className="ci-card"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        animationDelay: `${delay}ms`,
-        opacity: 0,
-        transform: "translateY(60px)",
-        animation: "cardEntrance 800ms ease-out forwards",
-      }}
-    >
-      <div className="card-content">
-        <div
-          className="icon-container"
-          style={{
-            color: isHovered ? "#00ffff" : "#ffffff",
-            transition: "color 300ms ease-out",
-          }}
-        >
-          {featherIcons[icon] || featherIcons["alert-circle"]}
-        </div>
-        <h3 className="card-title">{name}</h3>
-        <button
-          className="ghost-btn"
-          style={{
-            backgroundColor: isHovered
-              ? "rgba(0, 255, 255, 0.1)"
-              : "transparent",
-            borderColor: isHovered ? "#00ffff" : "rgba(255, 255, 255, 0.2)",
-            color: isHovered ? "#00ffff" : "#ffffff",
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
-            transition: "all 300ms ease-out",
-          }}
-        >
-          Learn More
-        </button>
-      </div>
-
-      <style jsx>{`
-        .ci-card {
-          display: block;
-          background: #0a0a0a;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 12px;
-          padding: 2rem;
-          text-decoration: none;
-          color: inherit;
-          transition: all 400ms ease-out;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .ci-card:hover {
-          transform: translateY(-6px) scale(1.02);
-          box-shadow: 0 14px 30px rgba(0, 255, 255, 0.12);
-          border-color: rgba(0, 255, 255, 0.2);
-        }
-
-        .card-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 1.5rem;
-        }
-
-        .icon-container {
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .icon-svg {
-          width: 100%;
-          height: 100%;
-        }
-
-        .card-title {
-          font-family: "Courier New", monospace;
-          font-size: 1.25rem;
-          font-weight: 600;
-          margin: 0;
-          color: #ffffff;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        .ghost-btn {
-          font-family: "Courier New", monospace;
-          font-size: 0.875rem;
-          font-weight: 500;
-          padding: 0.75rem 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 6px;
-          background: transparent;
-          cursor: pointer;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        @keyframes cardEntrance {
-          to {
-            opacity: 1;
-            transform: translateY(0);
+    <>
+      <style>
+        {`
+          @keyframes cardEntrance {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
-        }
-      `}</style>
-    </Link>
+        `}
+      </style>
+      <Link
+        to={href}
+        className="ci-card"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{
+          ...cardStyle,
+          ...(isHovered ? cardHoverStyle : {}),
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <div style={iconStyle}>
+            {featherIcons[icon] || featherIcons["alert-circle"]}
+          </div>
+          <h3
+            style={{
+              fontFamily: '"Courier New", monospace',
+              fontSize: "1.25rem",
+              fontWeight: 600,
+              margin: 0,
+              color: "#ffffff",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+            }}
+          >
+            {name}
+          </h3>
+          <button style={buttonStyle}>Learn More</button>
+        </div>
+      </Link>
+    </>
   );
 };
 
