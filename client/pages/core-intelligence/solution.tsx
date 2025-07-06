@@ -1,4 +1,5 @@
 import CISubPage from "@/components/vigilum/CISubPage";
+import ForesightDiagram from "@/components/vigilum/diagrams/ForesightDiagram";
 
 const SolutionPage = () => {
   return (
@@ -10,7 +11,7 @@ const SolutionPage = () => {
       bodyHtml={`
         <h2>Beyond Reactive Compliance</h2>
         <p>Structural foresight operates at the intersection of <strong>legal architecture analysis</strong> and <strong>institutional behavior prediction</strong>. We examine how legal systems encode latent vulnerabilities.</p>
-        
+
         <h3>Core Capabilities</h3>
         <ul>
           <li><strong>Predictive Risk Assessment:</strong> Identify exploitation pathways before activation</li>
