@@ -112,7 +112,7 @@ const ForesightDiagram = () => {
             height: "2px",
             background: `linear-gradient(90deg, rgba(0, 255, 255, 0.8), transparent)`,
             transformOrigin: "0 50%",
-            transform: `rotate(${scanProgress * 3.6}deg)`,
+            transform: `rotate(${scanProgress * 0.9}deg)`, // Adjusted for longer cycle (0.9 = 360/400)
             top: "50%",
             left: "50%",
             marginTop: "-1px",
