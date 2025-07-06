@@ -5,13 +5,13 @@ const IntegrationDiagram = () => {
   const [dataFlow, setDataFlow] = useState(false);
 
   const systems = [
-    { name: "Legal Mgmt", x: 50, y: 50, color: "#ff6b6b" },
-    { name: "Compliance", x: 200, y: 50, color: "#ffd93d" },
-    { name: "Risk Assess", x: 50, y: 150, color: "#6bcf7f" },
-    { name: "Audit Trail", x: 200, y: 150, color: "#4ecdc4" },
+    { name: "Legal Mgmt", x: 65, y: 60, color: "#ff6b6b" },
+    { name: "Compliance", x: 235, y: 60, color: "#ffd93d" },
+    { name: "Risk Assess", x: 65, y: 190, color: "#6bcf7f" },
+    { name: "Audit Trail", x: 235, y: 190, color: "#4ecdc4" },
   ];
 
-  const vigilumCore = { x: 125, y: 100 };
+  const vigilumCore = { x: 150, y: 125 };
 
   useEffect(() => {
     const interval = setInterval(() => {
