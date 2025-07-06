@@ -59,7 +59,17 @@ export default function Index() {
   };
 
   const handleNavigation = (hash: string) => {
-    navigate(`/vigilum${hash}`);
+    if (hash === "#newsletter") {
+      navigate("/vigilum");
+      setTimeout(() => {
+        const element = document.getElementById("newsletter");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      navigate(`/vigilum${hash}`);
+    }
   };
 
   const fetchHello = async () => {
