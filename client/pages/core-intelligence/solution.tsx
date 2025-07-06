@@ -7,7 +7,7 @@ const SolutionPage = () => {
       slug="solution"
       heading="Structural Foresight"
       lead="Vigilum transforms institutional risk assessment through predictive structural analysis. Instead of waiting for corruption to surface, we identify exploitable design patterns before they can be activated."
-      lottieUrl="/animations/foresight-projection.json"
+      customDiagram={<ForesightDiagram />}
       bodyHtml={`
         <h2>Beyond Reactive Compliance</h2>
         <p>Structural foresight operates at the intersection of <strong>legal architecture analysis</strong> and <strong>institutional behavior prediction</strong>. We examine how legal systems encode latent vulnerabilities.</p>
