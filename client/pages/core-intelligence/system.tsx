@@ -1,4 +1,5 @@
 import CISubPage from "@/components/vigilum/CISubPage";
+import SevenEnginesDiagram from "@/components/vigilum/diagrams/SevenEnginesDiagram";
 
 const SystemPage = () => {
   return (
@@ -10,7 +11,7 @@ const SystemPage = () => {
       bodyHtml={`
         <h2>Engine Architecture</h2>
         <p>Each engine specializes in distinct analytical domains while maintaining <strong>semantic interoperability</strong> for comprehensive institutional assessment.</p>
-        
+
         <h3>Core Engines</h3>
         <ul>
           <li><strong>SPE - Semantic Permutation Engine:</strong> Operator sequence analysis and override pathway detection</li>
