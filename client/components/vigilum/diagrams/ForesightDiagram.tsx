@@ -4,37 +4,48 @@ interface Threat {
   id: number;
   x: number;
   y: number;
+  angle: number;
+  radius: number;
+  detected: boolean;
 }
 
 const ForesightDiagram = () => {
   const [scanProgress, setScanProgress] = useState(0);
-  const [detectedThreats, setDetectedThreats] = useState<Threat[]>([]);
+  const [allThreats, setAllThreats] = useState<Threat[]>([]);
 
   useEffect(() => {
+    // Pre-generate threat positions
+    const threats: Threat[] = [];
+    for (let i = 0; i < 8; i++) {
+      const angle = Math.random() * 2 * Math.PI;
+      const radius = Math.random() * 100;
+      const centerX = 125;
+      const centerY = 125;
+      const x = centerX + Math.cos(angle) * radius;
+      const y = centerY + Math.sin(angle) * radius;
+
+      threats.push({
+        id: Date.now() + Math.random() + i,
+        x: x - 4,
+        y: y - 4,
+        angle: angle,
+        radius: radius,
+        detected: false,
+      });
+    }
+    setAllThreats(threats);
+
     const interval = setInterval(() => {
       setScanProgress((prev) => {
-        const newProgress = (prev + 2) % 401; // 0 to 400 for longer cycle
-        if (newProgress === 0) {
-          setDetectedThreats([]);
-        } else if (newProgress > 50 && newProgress % 80 === 0) {
-          // Adjusted for longer cycle
-          // Generate static position for new threat
-          const angle = Math.random() * 2 * Math.PI;
-          const radius = Math.random() * 100;
-          const centerX = 125;
-          const centerY = 125;
-          const x = centerX + Math.cos(angle) * radius;
-          const y = centerY + Math.sin(angle) * radius;
+        const newProgress = (prev + 6) % 401; // 3x faster (was +2, now +6)
 
-          setDetectedThreats((threats) => [
-            ...threats,
-            {
-              id: Date.now() + Math.random(),
-              x: x - 4, // Center the dot
-              y: y - 4, // Center the dot
-            },
-          ]);
+        // Reset detection when cycle restarts
+        if (newProgress === 0) {
+          setAllThreats((prevThreats) =>
+            prevThreats.map((threat) => ({ ...threat, detected: false })),
+          );
         }
+
         return newProgress;
       });
     }, 100);
