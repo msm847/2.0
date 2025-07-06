@@ -16,6 +16,12 @@ import NEXUSPOTENTIAModulePage from "./pages/modules/NEXUSPOTENTIAModule";
 import VIGILOCOREModulePage from "./pages/modules/VIGILOCOREModule";
 import VERISModulePage from "./pages/modules/VERISModule";
 import SENTIUMModulePage from "./pages/modules/SENTIUMModule";
+import ProblemPage from "./pages/core-intelligence/problem";
+import SolutionPage from "./pages/core-intelligence/solution";
+import MethodPage from "./pages/core-intelligence/method";
+import SystemPage from "./pages/core-intelligence/system";
+import ImpactPage from "./pages/core-intelligence/impact";
+import DeploymentPage from "./pages/core-intelligence/deployment";
 
 const queryClient = new QueryClient();
 
