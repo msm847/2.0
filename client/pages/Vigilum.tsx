@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import ModuleGrid from "@/components/vigilum/ModuleGrid";
-import CLAVISModule from "@/components/vigilum/CLAVISModule";
+import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
 import UseCases from "@/components/vigilum/UseCases";
 import AboutSection from "@/components/vigilum/AboutSection";
 import Newsletter from "@/components/vigilum/Newsletter";
@@ -43,7 +43,7 @@ const VigilumPage = () => {
         <ModuleGrid />
       </div>
       <div id="demo">
-        <CLAVISModule />
+        <SemanticPermutationEngine />
       </div>
       <div id="cases">
         <UseCases />
