@@ -1,4 +1,5 @@
 import CISubPage from "@/components/vigilum/CISubPage";
+import IntegrationDiagram from "@/components/vigilum/diagrams/IntegrationDiagram";
 
 const DeploymentPage = () => {
   return (
@@ -10,7 +11,7 @@ const DeploymentPage = () => {
       bodyHtml={`
         <h2>Deployment Architecture</h2>
         <p>Vigilum operates as a <strong>structural analysis layer</strong> that integrates with existing legal and compliance systems without requiring infrastructure replacement.</p>
-        
+
         <h3>Integration Methods</h3>
         <ul>
           <li><strong>API Integration:</strong> Direct connection to existing legal management systems</li>
