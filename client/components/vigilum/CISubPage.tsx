@@ -11,6 +11,7 @@ interface CISubPageProps {
   heading: string;
   lead: string;
   lottieUrl?: string;
+  customDiagram?: React.ReactNode;
   bodyHtml: string;
   ctaLabel?: string;
   ctaHref?: string;
