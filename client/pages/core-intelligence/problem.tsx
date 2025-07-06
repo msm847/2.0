@@ -1,4 +1,5 @@
 import CISubPage from "@/components/vigilum/CISubPage";
+import BlindspotDiagram from "@/components/vigilum/diagrams/BlindspotDiagram";
 
 const ProblemPage = () => {
   return (
@@ -10,7 +11,7 @@ const ProblemPage = () => {
       bodyHtml={`
         <h2>The Invisible Crisis</h2>
         <p>Every year, trillions of dollars flow through institutional systems designed with <strong>exploitable structural flaws</strong>. These aren't accidental oversights—they're predictable vulnerabilities embedded in legal architecture.</p>
-        
+
         <h3>Why Traditional Oversight Fails</h3>
         <ul>
           <li><strong>Reactive Detection:</strong> Current systems identify problems after damage occurs</li>
