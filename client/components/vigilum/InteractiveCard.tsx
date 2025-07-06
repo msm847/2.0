@@ -132,7 +132,7 @@ const InteractiveCard = ({
   const cardHoverStyle = {
     transform: "translateY(-6px) scale(1.02)",
     boxShadow: "0 14px 30px rgba(0, 255, 255, 0.12)",
-    borderColor: "rgba(0, 255, 255, 0.2)",
+    border: "1px solid rgba(0, 255, 255, 0.2)",
   };
 
   const iconStyle = {
