@@ -7,7 +7,7 @@ const ProblemPage = () => {
       slug="problem"
       heading="The Blindspot"
       lead="Traditional compliance systems detect violations after they occur. But institutional corruption operates within legal boundaries, exploiting structural design flaws that remain invisible to conventional oversight."
-      lottieUrl="/animations/blindspot-reveal.json"
+      customDiagram={<BlindspotDiagram />}
       bodyHtml={`
         <h2>The Invisible Crisis</h2>
         <p>Every year, trillions of dollars flow through institutional systems designed with <strong>exploitable structural flaws</strong>. These aren't accidental oversights—they're predictable vulnerabilities embedded in legal architecture.</p>
