@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import ModuleGrid from "@/components/vigilum/ModuleGrid";
-import AboutSection from "@/components/vigilum/AboutSection";
+import CoreIntelligence from "@/components/vigilum/CoreIntelligence";
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
 import UseCases from "@/components/vigilum/UseCases";
 import Newsletter from "@/components/vigilum/Newsletter";
