@@ -122,13 +122,19 @@ const CoreIntelligence = () => {
           <div className="text-center mb-16">
             <h2
               className="section-title text-4xl font-bold text-white mb-4 font-mono tracking-tight"
-              style={{ color: "#ffffff" }}
+              style={{
+                color: "#ffffff",
+                textShadow: "0 0 20px rgba(0, 255, 255, 0.15)",
+              }}
             >
               CORE INTELLIGENCE
             </h2>
             <p
               className="subtitle text-xl text-gray-300 font-light max-w-3xl mx-auto"
-              style={{ color: "#a0a0a0" }}
+              style={{
+                color: "#a0a0a0",
+                textShadow: "0 0 10px rgba(255, 255, 255, 0.1)",
+              }}
             >
               Seven AI engines. One structural foresight system.
             </p>
@@ -157,27 +163,21 @@ const CoreIntelligence = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 480px) {
-          .card-grid {
-            grid-template-columns: 1fr !important;
+      <style>
+        {`
+          @media (max-width: 480px) {
+            .card-grid {
+              grid-template-columns: 1fr !important;
+            }
           }
-        }
 
-        @media (max-width: 768px) {
-          .card-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+          @media (max-width: 768px) {
+            .card-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
           }
-        }
-
-        .section-title {
-          text-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
-        }
-
-        .subtitle {
-          text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
