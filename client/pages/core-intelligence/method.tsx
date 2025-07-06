@@ -1,4 +1,5 @@
 import CISubPage from "@/components/vigilum/CISubPage";
+import MatrixDiagram from "@/components/vigilum/diagrams/MatrixDiagram";
 
 const MethodPage = () => {
   return (
@@ -10,7 +11,7 @@ const MethodPage = () => {
       bodyHtml={`
         <h2>Semantic Decomposition</h2>
         <p>Legal text undergoes <strong>semantic vectorization</strong> to extract latent institutional behavior patterns. Each clause becomes a mathematical object with quantified risk properties.</p>
-        
+
         <h3>Three-Layer Analysis</h3>
         <ul>
           <li><strong>Semantic Layer:</strong> Text-to-vector transformation revealing hidden meaning structures</li>
