@@ -59,9 +59,9 @@ const Navigation = () => {
             </button>
             <button
               onClick={() => handleNavigation("#newsletter")}
-              className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
+              className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider whitespace-nowrap"
             >
-              See together
+              see together
             </button>
           </div>
 
@@ -107,9 +107,9 @@ const Navigation = () => {
               </button>
               <button
                 onClick={() => handleNavigation("#newsletter")}
-                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
+                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left whitespace-nowrap"
               >
-                See together
+                see together
               </button>
             </div>
           </div>
