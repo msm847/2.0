@@ -145,23 +145,47 @@ const ForesightDiagram = () => {
         />
 
         {/* Detected Vulnerabilities */}
-        {detectedThreats.map((threat) => (
-          <div
-            key={threat.id}
-            style={{
-              position: "absolute",
-              width: "8px",
-              height: "8px",
-              background: "#ff6b6b",
-              borderRadius: "50%",
-              top: `${threat.y}px`,
-              left: `${threat.x}px`,
-              boxShadow: "0 0 8px rgba(255, 107, 107, 0.8)",
-              animation: "pulse 1s infinite",
-              zIndex: 3,
-            }}
-          />
-        ))}
+        {allThreats.map((threat) => {
+          // Calculate current beam angle in radians
+          const beamAngle = (scanProgress * 0.9 * Math.PI) / 180;
+
+          // Normalize angles to 0-2π range
+          const normalizedBeamAngle =
+            ((beamAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+          const normalizedThreatAngle =
+            ((threat.angle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+          // Check if beam is near this threat (within ~15 degrees)
+          const angleDiff = Math.abs(
+            normalizedBeamAngle - normalizedThreatAngle,
+          );
+          const isNearBeam = angleDiff < 0.26 || angleDiff > 2 * Math.PI - 0.26; // 0.26 radians ≈ 15 degrees
+
+          // Update detected status
+          if (isNearBeam && !threat.detected) {
+            threat.detected = true;
+          }
+
+          return (
+            <div
+              key={threat.id}
+              style={{
+                position: "absolute",
+                width: "8px",
+                height: "8px",
+                background: "#ff6b6b",
+                borderRadius: "50%",
+                top: `${threat.y}px`,
+                left: `${threat.x}px`,
+                boxShadow: "0 0 8px rgba(255, 107, 107, 0.8)",
+                animation: "pulse 1s infinite",
+                zIndex: 3,
+                opacity: threat.detected ? 1 : 0,
+                transition: "opacity 0.3s ease",
+              }}
+            />
+          );
+        })}
 
         {/* Scan Label */}
         <div
