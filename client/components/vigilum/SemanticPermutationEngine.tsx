@@ -410,23 +410,55 @@ const SemanticPermutationEngine = () => {
               OPERATOR SEQUENCE
             </h3>
             <div className="flex gap-3">
-              <Button
+              <button
                 onClick={shuffleOperators}
-                variant="outline"
-                size="sm"
-                className="font-mono"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                  color: "#34d399",
+                  boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(34, 68, 54, 0.9)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 15px rgba(52, 211, 153, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(16, 44, 34, 0.7)";
+                  e.currentTarget.style.boxShadow =
+                    "inset 0 0 0 1px rgba(52, 211, 153, 0.1)";
+                }}
               >
-                <RefreshCw className="w-4 h-4 mr-2" />
+                <RefreshCw className="w-4 h-4 mr-2 inline" />
                 SHUFFLE
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={resetToDefault}
-                variant="outline"
-                size="sm"
-                className="font-mono"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                  color: "#34d399",
+                  boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(34, 68, 54, 0.9)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 15px rgba(52, 211, 153, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(16, 44, 34, 0.7)";
+                  e.currentTarget.style.boxShadow =
+                    "inset 0 0 0 1px rgba(52, 211, 153, 0.1)";
+                }}
               >
                 RESET
-              </Button>
+              </button>
             </div>
           </div>
 
@@ -639,11 +671,27 @@ const SemanticPermutationEngine = () => {
               PERMUTATION RESULTS
             </h3>
             <div className="flex gap-3">
-              <Button
+              <button
                 onClick={() => setShowTrace(!showTrace)}
-                variant="outline"
-                size="sm"
-                className="font-mono"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 flex items-center"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                  color: "#34d399",
+                  boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(34, 68, 54, 0.9)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 15px rgba(52, 211, 153, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(16, 44, 34, 0.7)";
+                  e.currentTarget.style.boxShadow =
+                    "inset 0 0 0 1px rgba(52, 211, 153, 0.1)";
+                }}
               >
                 <Eye className="w-4 h-4 mr-2" />
                 TRACE
@@ -652,25 +700,57 @@ const SemanticPermutationEngine = () => {
                 ) : (
                   <ChevronDown className="w-4 h-4 ml-2" />
                 )}
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={() => setShowJSON(!showJSON)}
-                variant="outline"
-                size="sm"
-                className="font-mono"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 flex items-center"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                  color: "#34d399",
+                  boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(34, 68, 54, 0.9)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 15px rgba(52, 211, 153, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(16, 44, 34, 0.7)";
+                  e.currentTarget.style.boxShadow =
+                    "inset 0 0 0 1px rgba(52, 211, 153, 0.1)";
+                }}
               >
                 <FileText className="w-4 h-4 mr-2" />
                 JSON
-              </Button>
-              <Button
+              </button>
+              <button
                 onClick={downloadResults}
-                variant="outline"
-                size="sm"
-                className="font-mono"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 flex items-center"
+                style={{
+                  backgroundColor: "rgba(16, 44, 34, 0.7)",
+                  borderColor: "rgba(34, 68, 54, 0.8)",
+                  color: "#34d399",
+                  boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(34, 68, 54, 0.9)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 15px rgba(52, 211, 153, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(16, 44, 34, 0.7)";
+                  e.currentTarget.style.boxShadow =
+                    "inset 0 0 0 1px rgba(52, 211, 153, 0.1)";
+                }}
               >
                 <Download className="w-4 h-4 mr-2" />
                 DOWNLOAD
-              </Button>
+              </button>
             </div>
           </div>
 
