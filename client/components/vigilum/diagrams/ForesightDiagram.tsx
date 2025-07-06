@@ -237,7 +237,7 @@ const ForesightDiagram = () => {
       >
         <div style={{ marginBottom: "5px" }}>FORESIGHT ENGINE</div>
         <div style={{ color: "#ffffff" }}>
-          Threats: {detectedThreats.length}
+          Threats: {allThreats.filter((t) => t.detected).length}
         </div>
         <div style={{ color: "#ffffff" }}>Status: ACTIVE</div>
       </div>
