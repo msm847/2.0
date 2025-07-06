@@ -95,22 +95,22 @@ const IntegrationDiagram = () => {
           return (
             <g key={`system-${index}`}>
               <rect
-                x={system.x - 20}
-                y={system.y - 15}
-                width="40"
-                height="30"
+                x={system.x - 40}
+                y={system.y - 30}
+                width="80"
+                height="60"
                 fill={connected ? system.color : "rgba(255, 255, 255, 0.1)"}
                 stroke={connected ? system.color : "rgba(255, 255, 255, 0.3)"}
                 strokeWidth="2"
-                rx="4"
+                rx="8"
                 opacity={connected ? "0.8" : "0.5"}
               />
               <text
                 x={system.x}
-                y={system.y + 3}
+                y={system.y + 6}
                 textAnchor="middle"
                 fill={connected ? "#000000" : "#ffffff"}
-                fontSize="8"
+                fontSize="12"
                 fontFamily="monospace"
                 fontWeight="bold"
               >
@@ -118,9 +118,9 @@ const IntegrationDiagram = () => {
               </text>
               {/* Connection Status */}
               <circle
-                cx={system.x + 18}
-                cy={system.y - 12}
-                r="3"
+                cx={system.x + 36}
+                cy={system.y - 24}
+                r="5"
                 fill={connected ? "#00ff00" : "#ff0000"}
               >
                 {connected && (
