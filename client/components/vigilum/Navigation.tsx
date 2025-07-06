@@ -91,7 +91,7 @@ const Navigation = () => {
                 onClick={() => handleNavigation("#cases")}
                 className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
-                Clause Library
+                Library
               </button>
               <button
                 onClick={() => handleNavigation("#about")}
