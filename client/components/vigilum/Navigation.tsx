@@ -132,14 +132,7 @@ const Navigation = () => {
               onMouseEnter={() => setSeeTogetherHovered(true)}
               onMouseLeave={() => setSeeTogetherHovered(false)}
             >
-              <span className="inline-flex items-center">
-                SEE TOGETHER
-                {seeTogetherHovered && (
-                  <span className="ml-2 transition-all duration-300 animate-pulse">
-                    ⟶
-                  </span>
-                )}
-              </span>
+              SEE TOGETHER
             </button>
           </div>
 
@@ -195,14 +188,7 @@ const Navigation = () => {
                 onMouseEnter={() => setSeeTogetherHovered(true)}
                 onMouseLeave={() => setSeeTogetherHovered(false)}
               >
-                <span className="inline-flex items-center">
-                  SEE TOGETHER
-                  {seeTogetherHovered && (
-                    <span className="ml-2 transition-all duration-300 animate-pulse">
-                      ⟶
-                    </span>
-                  )}
-                </span>
+                SEE TOGETHER
               </button>
             </div>
           </div>
