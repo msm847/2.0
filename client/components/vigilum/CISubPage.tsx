@@ -201,49 +201,51 @@ const CISubPage = ({
         </div>
       </div>
 
-      <style jsx>{`
-        .prose h2 {
-          color: #00ffff;
-          font-size: 1.5rem;
-          font-weight: 600;
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
+      <style>
+        {`
+          .prose h2 {
+            color: #00ffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+          }
 
-        .prose h3 {
-          color: #ffffff;
-          font-size: 1.25rem;
-          font-weight: 500;
-          margin-top: 1.5rem;
-          margin-bottom: 0.75rem;
-        }
+          .prose h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+          }
 
-        .prose p {
-          margin-bottom: 1.5rem;
-        }
+          .prose p {
+            margin-bottom: 1.5rem;
+          }
 
-        .prose ul {
-          margin: 1.5rem 0;
-          padding-left: 2rem;
-        }
+          .prose ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+          }
 
-        .prose li {
-          margin-bottom: 0.5rem;
-          color: #d1d5db;
-        }
+          .prose li {
+            margin-bottom: 0.5rem;
+            color: #d1d5db;
+          }
 
-        .prose strong {
-          color: #00ffff;
-          font-weight: 600;
-        }
+          .prose strong {
+            color: #00ffff;
+            font-weight: 600;
+          }
 
-        .prose em {
-          color: #fbbf24;
-          font-style: normal;
-        }
-      `}</style>
+          .prose em {
+            color: #fbbf24;
+            font-style: normal;
+          }
+        `}
+      </style>
     </div>
   );
 };
