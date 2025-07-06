@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 
+interface Threat {
+  id: number;
+  x: number;
+  y: number;
+}
+
 const ForesightDiagram = () => {
   const [scanProgress, setScanProgress] = useState(0);
-  const [detectedThreats, setDetectedThreats] = useState<number[]>([]);
+  const [detectedThreats, setDetectedThreats] = useState<Threat[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -11,7 +17,22 @@ const ForesightDiagram = () => {
         if (newProgress === 0) {
           setDetectedThreats([]);
         } else if (newProgress > 20 && newProgress % 25 === 0) {
-          setDetectedThreats((threats) => [...threats, Math.random()]);
+          // Generate static position for new threat
+          const angle = Math.random() * 2 * Math.PI;
+          const radius = Math.random() * 100;
+          const centerX = 125;
+          const centerY = 125;
+          const x = centerX + Math.cos(angle) * radius;
+          const y = centerY + Math.sin(angle) * radius;
+
+          setDetectedThreats((threats) => [
+            ...threats,
+            {
+              id: Date.now() + Math.random(),
+              x: x - 4, // Center the dot
+              y: y - 4, // Center the dot
+            },
+          ]);
         }
         return newProgress;
       });
