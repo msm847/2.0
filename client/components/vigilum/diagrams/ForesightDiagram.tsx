@@ -183,19 +183,45 @@ const ForesightDiagram = () => {
             key={threat.id}
             style={{
               position: "absolute",
-              width: "8px",
-              height: "8px",
-              background: "#ff6b6b",
-              borderRadius: "50%",
               top: `${threat.y}px`,
               left: `${threat.x}px`,
-              boxShadow: "0 0 8px rgba(255, 107, 107, 0.8)",
-              animation: "pulse 1s infinite",
-              zIndex: 3,
               opacity: threat.detected ? 1 : 0,
-              transition: "opacity 0.3s ease",
+              transition: "opacity 0.2s ease-in",
+              zIndex: 3,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
-          />
+          >
+            {/* Threat Dot */}
+            <div
+              style={{
+                width: "10px",
+                height: "10px",
+                background: "#ff6b6b",
+                borderRadius: "50%",
+                boxShadow: "0 0 8px rgba(255, 107, 107, 0.8)",
+                animation: threat.detected ? "pulse 1s infinite" : "none",
+                marginBottom: "2px",
+              }}
+            />
+            {/* Threat Label */}
+            <div
+              style={{
+                fontSize: "8px",
+                fontFamily: "monospace",
+                color: "#ff6b6b",
+                fontWeight: "bold",
+                textAlign: "center",
+                background: "rgba(0, 0, 0, 0.8)",
+                padding: "1px 3px",
+                borderRadius: "2px",
+                border: "1px solid rgba(255, 107, 107, 0.5)",
+              }}
+            >
+              {threat.label}
+            </div>
+          </div>
         ))}
 
         {/* Scan Label */}
