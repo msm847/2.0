@@ -1,4 +1,5 @@
 import CISubPage from "@/components/vigilum/CISubPage";
+import TimelineDiagram from "@/components/vigilum/diagrams/TimelineDiagram";
 
 const ImpactPage = () => {
   return (
@@ -15,7 +16,7 @@ const ImpactPage = () => {
           <li><strong>Override Detection:</strong> Identification of existing circumvention pathways</li>
           <li><strong>Priority Ranking:</strong> Risk-weighted remediation recommendations</li>
         </ul>
-        
+
         <h2>Short-Term Results (1-6 Months)</h2>
         <ul>
           <li><strong>85% Reduction</strong> in institutional risk exposure</li>
