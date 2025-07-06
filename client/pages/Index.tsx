@@ -189,6 +189,13 @@ export default function Index() {
                       ENGINES
                     </button>
                     <button
+                      onClick={() => handleNavigation("#about")}
+                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
+                    >
+                      <Globe className="mr-3 h-4 w-4" />
+                      METHODOLOGY
+                    </button>
+                    <button
                       onClick={() => handleNavigation("#demo")}
                       className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
                     >
@@ -201,13 +208,6 @@ export default function Index() {
                     >
                       <FileText className="mr-3 h-4 w-4" />
                       LIBRARY
-                    </button>
-                    <button
-                      onClick={() => handleNavigation("#about")}
-                      className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
-                    >
-                      <Globe className="mr-3 h-4 w-4" />
-                      METHODOLOGY
                     </button>
                     <button
                       onClick={() => handleNavigation("#newsletter")}

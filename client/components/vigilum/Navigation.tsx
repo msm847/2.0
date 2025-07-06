@@ -160,6 +160,12 @@ const Navigation = () => {
                 ENGINES
               </button>
               <button
+                onClick={() => handleNavigation("#about")}
+                className={`${getButtonStyles("about", activeSection === "about")} text-left`}
+              >
+                METHODOLOGY
+              </button>
+              <button
                 onClick={() => handleNavigation("#demo")}
                 className={`${getButtonStyles("demo", activeSection === "demo" || activeSection === "clavis")} text-left`}
                 style={{
@@ -176,12 +182,6 @@ const Navigation = () => {
                 className={`${getButtonStyles("cases", activeSection === "cases")} text-left`}
               >
                 LIBRARY
-              </button>
-              <button
-                onClick={() => handleNavigation("#about")}
-                className={`${getButtonStyles("about", activeSection === "about")} text-left`}
-              >
-                METHODOLOGY
               </button>
               <button
                 onClick={() => handleNavigation("#newsletter")}
