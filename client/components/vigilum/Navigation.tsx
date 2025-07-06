@@ -98,6 +98,13 @@ const Navigation = () => {
             </button>
             <span className="mx-6 text-gray-600 text-xs">·</span>
             <button
+              onClick={() => handleNavigation("#about")}
+              className={getButtonStyles("about", activeSection === "about")}
+            >
+              METHODOLOGY
+            </button>
+            <span className="mx-6 text-gray-600 text-xs">·</span>
+            <button
               onClick={() => handleNavigation("#demo")}
               className={getButtonStyles(
                 "demo",
@@ -118,13 +125,6 @@ const Navigation = () => {
               className={getButtonStyles("cases", activeSection === "cases")}
             >
               LIBRARY
-            </button>
-            <span className="mx-6 text-gray-600 text-xs">·</span>
-            <button
-              onClick={() => handleNavigation("#about")}
-              className={getButtonStyles("about", activeSection === "about")}
-            >
-              METHODOLOGY
             </button>
             <span className="mx-6 text-gray-600 text-xs">·</span>
             <button
