@@ -22,6 +22,7 @@ import MethodPage from "./pages/core-intelligence/method";
 import SystemPage from "./pages/core-intelligence/system";
 import ImpactPage from "./pages/core-intelligence/impact";
 import DeploymentPage from "./pages/core-intelligence/deployment";
+import ContactPage from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
