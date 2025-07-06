@@ -112,22 +112,33 @@ const ForesightDiagram = () => {
         />
 
         {/* Detected Vulnerabilities */}
-        {detectedThreats.map((threat, index) => (
-          <div
-            key={index}
-            style={{
-              position: "absolute",
-              width: "8px",
-              height: "8px",
-              background: "#ff6b6b",
-              borderRadius: "50%",
-              top: `${30 + Math.sin(threat * 10) * 80}px`,
-              left: `${30 + Math.cos(threat * 10) * 80}px`,
-              boxShadow: "0 0 8px rgba(255, 107, 107, 0.8)",
-              animation: "pulse 1s infinite",
-            }}
-          />
-        ))}
+        {detectedThreats.map((threat, index) => {
+          // Generate random position within circle bounds
+          const angle = threat * 2 * Math.PI;
+          const radius = Math.random() * 100; // Random distance from center (0-100px)
+          const centerX = 125;
+          const centerY = 125;
+          const x = centerX + Math.cos(angle) * radius;
+          const y = centerY + Math.sin(angle) * radius;
+
+          return (
+            <div
+              key={index}
+              style={{
+                position: "absolute",
+                width: "8px",
+                height: "8px",
+                background: "#ff6b6b",
+                borderRadius: "50%",
+                top: `${y - 4}px`,
+                left: `${x - 4}px`,
+                boxShadow: "0 0 8px rgba(255, 107, 107, 0.8)",
+                animation: "pulse 1s infinite",
+                zIndex: 3,
+              }}
+            />
+          );
+        })}
 
         {/* Progress Indicator */}
         <div
