@@ -135,31 +135,35 @@ const CISubPage = ({
             </p>
           </div>
 
-          {/* Lottie Animation Container */}
-          {lottieUrl && (
+          {/* Interactive Diagram Container */}
+          {(customDiagram || lottieUrl) && (
             <div className="fade-in mb-16">
-              <div
-                className="rounded-lg p-8 border"
-                style={{
-                  backgroundColor: "rgba(10, 10, 10, 0.8)",
-                  borderColor: "rgba(0, 255, 255, 0.2)",
-                  boxShadow: "0 8px 32px rgba(0, 255, 255, 0.1)",
-                }}
-              >
+              {customDiagram ? (
+                customDiagram
+              ) : (
                 <div
-                  className="w-full h-64 flex items-center justify-center text-cyan-400"
-                  style={{ minHeight: "300px" }}
+                  className="rounded-lg p-8 border"
+                  style={{
+                    backgroundColor: "rgba(10, 10, 10, 0.8)",
+                    borderColor: "rgba(0, 255, 255, 0.2)",
+                    boxShadow: "0 8px 32px rgba(0, 255, 255, 0.1)",
+                  }}
                 >
-                  {/* Placeholder for Lottie animation */}
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 border-2 border-cyan-400 rounded-full animate-pulse"></div>
-                    <p className="text-sm">Interactive Diagram Loading...</p>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Lottie URL: {lottieUrl}
-                    </p>
+                  <div
+                    className="w-full h-64 flex items-center justify-center text-cyan-400"
+                    style={{ minHeight: "300px" }}
+                  >
+                    {/* Placeholder for Lottie animation */}
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 border-2 border-cyan-400 rounded-full animate-pulse"></div>
+                      <p className="text-sm">Interactive Diagram Loading...</p>
+                      <p className="text-xs text-gray-500 mt-2">
+                        Lottie URL: {lottieUrl}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
 
