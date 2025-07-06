@@ -7,7 +7,7 @@ const DeploymentPage = () => {
       slug="deployment"
       heading="Integration Ready"
       lead="Vigilum integrates seamlessly with existing institutional frameworks. Our deployment process is designed for minimal disruption while maximizing structural insight generation from day one."
-      lottieUrl="/animations/integration-flow.json"
+      customDiagram={<IntegrationDiagram />}
       bodyHtml={`
         <h2>Deployment Architecture</h2>
         <p>Vigilum operates as a <strong>structural analysis layer</strong> that integrates with existing legal and compliance systems without requiring infrastructure replacement.</p>
