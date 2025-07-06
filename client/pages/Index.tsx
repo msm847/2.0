@@ -186,7 +186,7 @@ export default function Index() {
                       className="flex items-center w-full px-4 py-2 text-gray-300 hover:bg-black hover:bg-opacity-30 transition-colors duration-150 text-left"
                     >
                       <Brain className="mr-3 h-4 w-4" />
-                      MODULES
+                      ENGINES
                     </button>
                     <button
                       onClick={() => handleNavigation("#demo")}
