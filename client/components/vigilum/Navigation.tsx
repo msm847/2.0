@@ -110,7 +110,7 @@ const Navigation = () => {
                     : "500",
               }}
             >
-              CLAVIS
+              SPE
             </button>
             <span className="mx-6 text-gray-600 text-xs">·</span>
             <button
