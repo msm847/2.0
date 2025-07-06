@@ -141,24 +141,24 @@ const IntegrationDiagram = () => {
           <circle
             cx={vigilumCore.x}
             cy={vigilumCore.y}
-            r="25"
+            r="50"
             fill="rgba(0, 255, 255, 0.2)"
             stroke="#00ffff"
             strokeWidth="3"
           >
             <animate
               attributeName="r"
-              values="25;28;25"
+              values="50;56;50"
               dur="2s"
               repeatCount="indefinite"
             />
           </circle>
           <text
             x={vigilumCore.x}
-            y={vigilumCore.y - 3}
+            y={vigilumCore.y - 6}
             textAnchor="middle"
             fill="#00ffff"
-            fontSize="10"
+            fontSize="16"
             fontFamily="monospace"
             fontWeight="bold"
           >
@@ -166,10 +166,10 @@ const IntegrationDiagram = () => {
           </text>
           <text
             x={vigilumCore.x}
-            y={vigilumCore.y + 8}
+            y={vigilumCore.y + 12}
             textAnchor="middle"
             fill="#00ffff"
-            fontSize="8"
+            fontSize="14"
             fontFamily="monospace"
           >
             CORE
