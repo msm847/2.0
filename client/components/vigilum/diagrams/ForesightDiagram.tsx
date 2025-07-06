@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 interface Threat {
-  id: number;
+  id: string;
+  label: string;
   x: number;
   y: number;
   angle: number;
@@ -14,9 +15,11 @@ const ForesightDiagram = () => {
   const [allThreats, setAllThreats] = useState<Threat[]>([]);
 
   useEffect(() => {
-    // Pre-generate threat positions
+    // Generate random number of threats between 3-6
+    const numThreats = Math.floor(Math.random() * 4) + 3; // 3 to 6
     const threats: Threat[] = [];
-    for (let i = 0; i < 8; i++) {
+
+    for (let i = 0; i < numThreats; i++) {
       const angle = Math.random() * 2 * Math.PI;
       const radius = Math.random() * 100;
       const centerX = 125;
@@ -25,7 +28,8 @@ const ForesightDiagram = () => {
       const y = centerY + Math.sin(angle) * radius;
 
       threats.push({
-        id: Date.now() + Math.random() + i,
+        id: `threat-${i}`,
+        label: `L00${i + 1}`,
         x: x - 4,
         y: y - 4,
         angle: angle,
@@ -39,15 +43,7 @@ const ForesightDiagram = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setScanProgress((prev) => {
-        const newProgress = (prev + 6) % 401; // 3x faster (was +2, now +6)
-
-        // Reset detection when cycle restarts
-        if (newProgress === 0) {
-          setAllThreats((prevThreats) =>
-            prevThreats.map((threat) => ({ ...threat, detected: false })),
-          );
-        }
-
+        const newProgress = (prev + 6) % 361; // Full 360 degree cycle
         return newProgress;
       });
     }, 100);
@@ -55,22 +51,37 @@ const ForesightDiagram = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Update threat detection based on current scan progress
+  // Reset all threats to undetected when scan cycle completes
   useEffect(() => {
-    const beamAngle = (scanProgress * 0.9 * Math.PI) / 180;
-    const normalizedBeamAngle =
-      ((beamAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+    if (scanProgress === 0) {
+      setAllThreats((prevThreats) =>
+        prevThreats.map((threat) => ({ ...threat, detected: false })),
+      );
+    }
+  }, [scanProgress]);
+
+  // Check for threat detection
+  useEffect(() => {
+    const currentBeamAngle = (scanProgress * Math.PI) / 180; // Convert to radians
 
     setAllThreats((prevThreats) =>
       prevThreats.map((threat) => {
-        if (threat.detected) return threat; // Already detected, keep it visible
+        // If already detected, keep it detected
+        if (threat.detected) return threat;
 
-        const normalizedThreatAngle =
-          ((threat.angle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-        const angleDiff = Math.abs(normalizedBeamAngle - normalizedThreatAngle);
-        const isNearBeam = angleDiff < 0.26 || angleDiff > 2 * Math.PI - 0.26; // 0.26 radians ≈ 15 degrees
+        // Calculate angular difference between beam and threat
+        let angleDiff = Math.abs(currentBeamAngle - threat.angle);
+        if (angleDiff > Math.PI) {
+          angleDiff = 2 * Math.PI - angleDiff; // Handle wraparound
+        }
 
-        return isNearBeam ? { ...threat, detected: true } : threat;
+        // Detect if beam is within 15 degrees (0.26 radians) of threat
+        const detectionRange = 0.26;
+        if (angleDiff <= detectionRange) {
+          return { ...threat, detected: true };
+        }
+
+        return threat;
       }),
     );
   }, [scanProgress]);
