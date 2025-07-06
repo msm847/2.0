@@ -28,6 +28,9 @@ const CISubPage = ({
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
