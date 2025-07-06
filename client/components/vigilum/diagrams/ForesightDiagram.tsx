@@ -34,7 +34,9 @@ const ForesightDiagram = () => {
       });
     }
     setAllThreats(threats);
+  }, []);
 
+  useEffect(() => {
     const interval = setInterval(() => {
       setScanProgress((prev) => {
         const newProgress = (prev + 6) % 401; // 3x faster (was +2, now +6)
@@ -52,6 +54,26 @@ const ForesightDiagram = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Update threat detection based on current scan progress
+  useEffect(() => {
+    const beamAngle = (scanProgress * 0.9 * Math.PI) / 180;
+    const normalizedBeamAngle =
+      ((beamAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+    setAllThreats((prevThreats) =>
+      prevThreats.map((threat) => {
+        if (threat.detected) return threat; // Already detected, keep it visible
+
+        const normalizedThreatAngle =
+          ((threat.angle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+        const angleDiff = Math.abs(normalizedBeamAngle - normalizedThreatAngle);
+        const isNearBeam = angleDiff < 0.26 || angleDiff > 2 * Math.PI - 0.26; // 0.26 radians ≈ 15 degrees
+
+        return isNearBeam ? { ...threat, detected: true } : threat;
+      }),
+    );
+  }, [scanProgress]);
 
   return (
     <div
