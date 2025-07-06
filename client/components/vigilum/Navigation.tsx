@@ -37,7 +37,7 @@ const Navigation = () => {
               onClick={() => handleNavigation("#modules")}
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
             >
-              Modules
+              Engines
             </button>
             <button
               onClick={() => handleNavigation("#demo")}
@@ -56,6 +56,12 @@ const Navigation = () => {
               className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
             >
               Methodology
+            </button>
+            <button
+              onClick={() => handleNavigation("#newsletter")}
+              className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider"
+            >
+              See Together
             </button>
           </div>
 
@@ -79,7 +85,7 @@ const Navigation = () => {
                 onClick={() => handleNavigation("#modules")}
                 className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
-                Modules
+                Engines
               </button>
               <button
                 onClick={() => handleNavigation("#demo")}
@@ -98,6 +104,12 @@ const Navigation = () => {
                 className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
               >
                 Methodology
+              </button>
+              <button
+                onClick={() => handleNavigation("#newsletter")}
+                className="text-gray-300 hover:text-white transition-colors font-mono text-sm uppercase tracking-wider text-left"
+              >
+                See Together
               </button>
             </div>
           </div>
