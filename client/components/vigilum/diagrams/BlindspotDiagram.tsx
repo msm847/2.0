@@ -79,19 +79,19 @@ const BlindspotDiagram = () => {
             key={index}
             style={{
               position: "absolute",
-              width: "40px",
-              height: "40px",
+              width: "50px",
+              height: "50px",
               background:
                 animationStep === index
                   ? "rgba(255, 0, 0, 0.3)"
                   : "rgba(255, 255, 255, 0.05)",
               border:
                 animationStep === index
-                  ? "2px solid #ff0000"
-                  : "1px solid rgba(255, 255, 255, 0.2)",
+                  ? "3px solid #ff0000"
+                  : "2px solid rgba(255, 255, 255, 0.2)",
               borderRadius: "50%",
-              top: index === 0 || index === 1 ? "-20px" : "100px",
-              left: index === 0 || index === 3 ? "-20px" : "100px",
+              top: index === 0 || index === 1 ? "-25px" : "155px",
+              left: index === 0 || index === 3 ? "-25px" : "155px",
               transition: "all 0.5s ease",
               display: "flex",
               alignItems: "center",
@@ -101,9 +101,10 @@ const BlindspotDiagram = () => {
             <div
               style={{
                 color: animationStep === index ? "#ff0000" : "#ffffff",
-                fontSize: "8px",
+                fontSize: "14px",
                 fontFamily: "monospace",
                 transition: "color 0.5s ease",
+                fontWeight: "bold",
               }}
             >
               ?
