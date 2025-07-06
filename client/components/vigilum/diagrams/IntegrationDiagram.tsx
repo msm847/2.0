@@ -41,7 +41,7 @@ const IntegrationDiagram = () => {
         overflow: "hidden",
       }}
     >
-      <svg width="250" height="200" style={{ position: "absolute" }}>
+      <svg width="300" height="250" style={{ position: "absolute" }}>
         {/* Connection Lines */}
         {systems.map((system, index) => {
           const connected = isSystemConnected(index);
