@@ -7,7 +7,7 @@ const SystemPage = () => {
       slug="system"
       heading="Seven AI Engines"
       lead="Vigilum operates through seven specialized AI engines, each designed to analyze different aspects of institutional structure and behavior. Together, they form a comprehensive structural foresight system."
-      lottieUrl="/animations/seven-engines.json"
+      customDiagram={<SevenEnginesDiagram />}
       bodyHtml={`
         <h2>Engine Architecture</h2>
         <p>Each engine specializes in distinct analytical domains while maintaining <strong>semantic interoperability</strong> for comprehensive institutional assessment.</p>
