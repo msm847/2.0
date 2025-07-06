@@ -140,7 +140,7 @@ const BlindspotDiagram = () => {
       <div
         style={{
           position: "absolute",
-          bottom: "20px",
+          bottom: "-10px",
           left: "50%",
           transform: "translateX(-50%)",
           color: "#ff6b6b",
