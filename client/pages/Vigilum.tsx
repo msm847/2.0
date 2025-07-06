@@ -51,7 +51,9 @@ const VigilumPage = () => {
       <div id="about">
         <AboutSection />
       </div>
-      <Newsletter />
+      <div id="newsletter">
+        <Newsletter />
+      </div>
     </div>
   );
 };
