@@ -43,7 +43,7 @@ const VigilumPage = () => {
         <ModuleGrid />
       </div>
       <div id="about">
-        <AboutSection />
+        <CoreIntelligence />
       </div>
       <div id="demo">
         <SemanticPermutationEngine />
