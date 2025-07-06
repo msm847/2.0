@@ -47,6 +47,18 @@ const App = () => (
           />
           <Route path="/module/veris" element={<VERISModulePage />} />
           <Route path="/module/sentium" element={<SENTIUMModulePage />} />
+          <Route path="/core-intelligence/problem" element={<ProblemPage />} />
+          <Route
+            path="/core-intelligence/solution"
+            element={<SolutionPage />}
+          />
+          <Route path="/core-intelligence/method" element={<MethodPage />} />
+          <Route path="/core-intelligence/system" element={<SystemPage />} />
+          <Route path="/core-intelligence/impact" element={<ImpactPage />} />
+          <Route
+            path="/core-intelligence/deployment"
+            element={<DeploymentPage />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
