@@ -78,11 +78,30 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-xl font-bold text-white tracking-tight">
-              VIGILUM.AI
-            </span>
+          {/* Return Button */}
+          <Link
+            to="/"
+            className="flex items-center px-3 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
+            style={{
+              backgroundColor: "rgba(16, 44, 34, 0.5)",
+              borderColor: "rgba(34, 68, 54, 0.6)",
+              color: "#9ca3af",
+              boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.05)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(34, 68, 54, 0.7)";
+              e.currentTarget.style.color = "#34d399";
+              e.currentTarget.style.boxShadow =
+                "0 0 10px rgba(52, 211, 153, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(16, 44, 34, 0.5)";
+              e.currentTarget.style.color = "#9ca3af";
+              e.currentTarget.style.boxShadow =
+                "inset 0 0 0 1px rgba(52, 211, 153, 0.05)";
+            }}
+          >
+            RETURN
           </Link>
 
           {/* Desktop Navigation - Centered */}
