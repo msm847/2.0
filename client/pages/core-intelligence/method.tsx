@@ -7,7 +7,7 @@ const MethodPage = () => {
       slug="method"
       heading="Matrix Mechanics"
       lead="Our methodology decomposes legal structures into semantic vectors, maps institutional behavior patterns, and simulates override pathway activation through non-commutative sequence analysis."
-      lottieUrl="/animations/matrix-decomposition.json"
+      customDiagram={<MatrixDiagram />}
       bodyHtml={`
         <h2>Semantic Decomposition</h2>
         <p>Legal text undergoes <strong>semantic vectorization</strong> to extract latent institutional behavior patterns. Each clause becomes a mathematical object with quantified risk properties.</p>
