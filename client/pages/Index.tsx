@@ -471,10 +471,6 @@ export default function Index() {
                   Simulate Multi-Clause Behavior
                 </Button>
               </Link>
-              <p className="text-sm text-gray-500 mt-4 font-mono">
-                ϕ(c��…cₙ) ⇨ ⊗(sequence logic) ⇨ G(override graph) ⇨ τ(typology
-                projection) ⇨ Λ(pattern flag)
-              </p>
             </div>
 
             {/* Vigilum Modules */}
