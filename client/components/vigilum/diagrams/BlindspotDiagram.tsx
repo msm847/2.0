@@ -46,10 +46,10 @@ const BlindspotDiagram = () => {
       {/* Central Institution */}
       <div
         style={{
-          width: "120px",
-          height: "120px",
+          width: "180px",
+          height: "180px",
           background: "rgba(0, 255, 255, 0.1)",
-          border: "2px solid #00ffff",
+          border: "3px solid #00ffff",
           borderRadius: "50%",
           display: "flex",
           alignItems: "center",
@@ -61,12 +61,15 @@ const BlindspotDiagram = () => {
         <div
           style={{
             color: "#00ffff",
-            fontSize: "12px",
+            fontSize: "14px",
             fontFamily: "monospace",
             textAlign: "center",
             textTransform: "uppercase",
+            lineHeight: "1.2",
           }}
         >
+          Traditional
+          <br />
           Institution
         </div>
 
