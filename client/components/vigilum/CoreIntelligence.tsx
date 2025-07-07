@@ -413,9 +413,6 @@ const StructuralInterpretationMode = () => {
                 top: `${circle.position.y}%`,
                 width: "60px",
                 height: "60px",
-                backgroundColor: "rgba(255, 255, 255, 0.05)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderRadius: "50%",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
@@ -424,37 +421,239 @@ const StructuralInterpretationMode = () => {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              {/* Circle specific animations */}
-              {circle.animationType === "orbital" && (
-                <>
-                  <div
-                    className="orbital-1"
-                    style={{
-                      position: "absolute",
-                      width: "20px",
-                      height: "20px",
-                      border: "1px solid rgba(255, 255, 255, 0.3)",
-                      borderRadius: "50%",
-                      top: "10px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                    }}
+              {/* Circle-specific SVG animations */}
+              <svg width="60" height="60" style={{ position: "absolute" }}>
+                {circle.animationType === "pulse" && (
+                  // Constraint Simulation: Breathing cage
+                  <>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="rgba(255, 255, 255, 0.05)"
+                      stroke="rgba(255, 255, 255, 0.1)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      className="cage-line"
+                      cx="30"
+                      cy="30"
+                      r="20"
+                      fill="none"
+                      stroke="rgba(255, 255, 255, 0.3)"
+                      strokeWidth="1"
+                      strokeDasharray="8,4"
+                      strokeDashoffset="0"
+                    />
+                  </>
+                )}
+
+                {circle.animationType === "orbital" && (
+                  // Sequence Dependency: Counter-rotating orbitals
+                  <>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="rgba(255, 255, 255, 0.05)"
+                      stroke="rgba(255, 255, 255, 0.1)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      className="orbital-1"
+                      cx="30"
+                      cy="18"
+                      r="6"
+                      fill="none"
+                      stroke="rgba(255, 255, 255, 0.4)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      className="orbital-2"
+                      cx="30"
+                      cy="42"
+                      r="6"
+                      fill="none"
+                      stroke="rgba(255, 255, 255, 0.4)"
+                      strokeWidth="1"
+                    />
+                  </>
+                )}
+
+                {circle.animationType === "flicker" && (
+                  // Discretion Encoding: Unstable perimeter
+                  <>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="rgba(255, 255, 255, 0.05)"
+                      stroke="rgba(255, 255, 255, 0.1)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      className="perimeter"
+                      cx="30"
+                      cy="30"
+                      r="22"
+                      fill="none"
+                      stroke="rgba(255, 100, 100, 0.6)"
+                      strokeWidth="1"
+                      strokeDasharray="2,2"
+                    />
+                  </>
+                )}
+
+                {circle.animationType === "override" && (
+                  // Override Pathways: Arc intersection
+                  <>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="rgba(255, 255, 255, 0.05)"
+                      stroke="rgba(255, 255, 255, 0.1)"
+                      strokeWidth="1"
+                    />
+                    <path
+                      className="override-arc"
+                      d="M 15 30 Q 30 15 45 30"
+                      fill="none"
+                      stroke="rgba(255, 200, 100, 0.7)"
+                      strokeWidth="2"
+                    />
+                    <circle
+                      className="pulse-point"
+                      cx="30"
+                      cy="22"
+                      r="2"
+                      fill="rgba(255, 200, 100, 0.8)"
+                    />
+                  </>
+                )}
+
+                {circle.animationType === "projection" && (
+                  // Typological Projection: Four quadrants
+                  <>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="rgba(255, 255, 255, 0.05)"
+                      stroke="rgba(255, 255, 255, 0.1)"
+                      strokeWidth="1"
+                    />
+                    <rect
+                      className="quad-1"
+                      x="12"
+                      y="12"
+                      width="8"
+                      height="8"
+                      fill="rgba(255, 100, 100, 0.3)"
+                    />
+                    <rect
+                      className="quad-2"
+                      x="40"
+                      y="12"
+                      width="8"
+                      height="8"
+                      fill="rgba(100, 255, 100, 0.3)"
+                    />
+                    <rect
+                      className="quad-3"
+                      x="12"
+                      y="40"
+                      width="8"
+                      height="8"
+                      fill="rgba(100, 100, 255, 0.3)"
+                    />
+                    <rect
+                      className="quad-4"
+                      x="40"
+                      y="40"
+                      width="8"
+                      height="8"
+                      fill="rgba(255, 255, 100, 0.3)"
+                    />
+                  </>
+                )}
+
+                {circle.animationType === "overlap" && (
+                  // Cross-Document Logic: Venn diagram
+                  <>
+                    <circle
+                      className="circle-a"
+                      cx="25"
+                      cy="25"
+                      r="12"
+                      fill="rgba(255, 100, 100, 0.2)"
+                      stroke="rgba(255, 100, 100, 0.4)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      className="circle-b"
+                      cx="35"
+                      cy="25"
+                      r="12"
+                      fill="rgba(100, 255, 100, 0.2)"
+                      stroke="rgba(100, 255, 100, 0.4)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      className="circle-c"
+                      cx="30"
+                      cy="35"
+                      r="12"
+                      fill="rgba(100, 100, 255, 0.2)"
+                      stroke="rgba(100, 100, 255, 0.4)"
+                      strokeWidth="1"
+                    />
+                  </>
+                )}
+
+                {circle.animationType === "collapse" && (
+                  // Structural Integrity Loss: Jittery circle
+                  <>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="rgba(255, 255, 255, 0.05)"
+                      stroke="rgba(255, 255, 255, 0.1)"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="18"
+                      fill="none"
+                      stroke="rgba(255, 150, 150, 0.4)"
+                      strokeWidth="1"
+                      strokeDasharray="4,2"
+                    />
+                  </>
+                )}
+
+                {/* Default fallback */}
+                {![
+                  "pulse",
+                  "orbital",
+                  "flicker",
+                  "override",
+                  "projection",
+                  "overlap",
+                  "collapse",
+                ].includes(circle.animationType) && (
+                  <circle
+                    cx="30"
+                    cy="30"
+                    r="25"
+                    fill="rgba(255, 255, 255, 0.05)"
+                    stroke="rgba(255, 255, 255, 0.1)"
+                    strokeWidth="1"
                   />
-                  <div
-                    className="orbital-2"
-                    style={{
-                      position: "absolute",
-                      width: "20px",
-                      height: "20px",
-                      border: "1px solid rgba(255, 255, 255, 0.3)",
-                      borderRadius: "50%",
-                      bottom: "10px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                    }}
-                  />
-                </>
-              )}
+                )}
+              </svg>
 
               {/* Hover text */}
               {hoveredCircle === circle.id && (
