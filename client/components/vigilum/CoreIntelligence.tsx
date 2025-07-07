@@ -1002,19 +1002,8 @@ const StructuralInterpretationMode = () => {
         >
           {/* Left Column: Threshold Declaration */}
           <div style={{ justifySelf: "end", maxWidth: "320px" }}>
-            <h2
-              className="font-mono text-xl mb-6"
-              style={{
-                color: "#C9D2DC",
-                fontWeight: "400",
-                letterSpacing: "0.02em",
-                lineHeight: "1.4",
-              }}
-            >
-              STRUCTURAL INTERPRETATION MODE
-            </h2>
             <div
-              className="font-mono text-sm mb-4"
+              className="font-mono text-sm mb-6"
               style={{
                 color: "#9AA4B0",
                 fontWeight: "400",
