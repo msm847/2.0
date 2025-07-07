@@ -319,23 +319,41 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "flicker":
-        // DISCRETION ENCODING: Hide axis but keep dot visible
+        // DISCRETION ENCODING: Hide axis, keep dot visible, restore pulsating ripple
         const coordinateGrid = element.querySelector(".coordinate-grid");
         const axisDot = element.querySelector(".axis-dot");
+        const rippleCenter = element.querySelector(".ripple-center");
 
-        if (coordinateGrid && axisDot) {
+        if (coordinateGrid && axisDot && rippleCenter) {
+          // Hide grid
           gsap.to(coordinateGrid, {
             opacity: 0,
             duration: 0.3,
             ease: "cubic.inOut",
           });
-          // Keep dot visible during hover
+          // Keep dot visible and slightly enlarged
           gsap.to(axisDot, {
             scale: 1.2,
             opacity: 1,
             duration: 0.3,
             ease: "cubic.inOut",
           });
+          // Restore original pulsating ripple effect
+          gsap.fromTo(
+            rippleCenter,
+            {
+              scale: 0,
+              opacity: 0.6,
+            },
+            {
+              scale: 0.6,
+              opacity: 0,
+              duration: 0.5,
+              ease: "sine.out",
+              repeat: -1,
+              repeatDelay: 0.4,
+            },
+          );
         }
         break;
 
