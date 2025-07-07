@@ -713,7 +713,7 @@ const StructuralInterpretationMode = () => {
         gsap.to(circle, { rotation: 0, duration: 1, ease: "power2.out" });
       });
 
-      // Sequential collapse: Constraint → Sequence �� Discretion → Override → Typological → Cross-document → Integrity
+      // Sequential collapse: Constraint → Sequence → Discretion → Override → Typological → Cross-document → Integrity
       const collapseOrder = [
         "constraint",
         "sequence",
@@ -1631,20 +1631,22 @@ const StructuralInterpretationMode = () => {
               <br />
               <span style={{ color: "#8A9199", fontSize: "11px" }}>
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
-                  "constraint" && "Appears restrictive, structurally inert"}
+                  "constraint" &&
+                  "Simulates legality while preserving override."}
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
-                  "sequence" && "Clause order alters legal outcome"}
+                  "sequence" && "Clause order alters structural output."}
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
-                  "discretion" && "Authority routed into undefined thresholds"}
+                  "discretion" && "Authority embedded in undefined thresholds."}
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
-                  "override" && "Nullification embedded in downstream chains"}
+                  "override" &&
+                  "Nullification chains embedded across references."}
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
                   "typological" &&
-                  "Clause as vector across structural risk space"}
+                  "Clause projected across DG, CI, RT, SB vectors."}
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
-                  "crossdocument" && "Meaning emerges across legal strata"}
+                  "crossdocument" && "Meaning collapses across legal strata."}
                 {circleData.find((c) => c.id === hoveredCircle)?.id ===
-                  "integrity" && "Clause logic collapses into semantic noise"}
+                  "integrity" && "Clause logic collapses into semantic noise."}
               </span>
             </div>
           </div>
