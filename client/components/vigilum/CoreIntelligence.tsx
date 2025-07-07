@@ -1380,47 +1380,60 @@ const StructuralInterpretationMode = () => {
                     )}
 
                     {circle.animationType === "overlap" && (
-                      // Cross-Document Logic: Three convergent circles
+                      // Cross-Document Logic: Overlapping circles with intersection geometry
                       <>
+                        {/* Simple circle (hidden on hover) */}
                         <circle
-                          className="circle-a"
-                          cx="26"
-                          cy="26"
-                          r="10"
-                          fill="rgba(52, 65, 77, 0.2)"
-                          stroke="rgba(52, 65, 77, 0.4)"
-                          strokeWidth="1"
-                        />
-                        <circle
-                          className="circle-b"
-                          cx="34"
-                          cy="26"
-                          r="10"
-                          fill="rgba(52, 65, 77, 0.2)"
-                          stroke="rgba(52, 65, 77, 0.4)"
-                          strokeWidth="1"
-                        />
-                        <circle
-                          className="circle-c"
-                          cx="30"
-                          cy="34"
-                          r="10"
-                          fill="rgba(52, 65, 77, 0.2)"
-                          stroke="rgba(52, 65, 77, 0.4)"
-                          strokeWidth="1"
-                        />
-                        {/* Unified ring (hidden initially) */}
-                        <circle
-                          className="unified-ring"
+                          className="simple-circle"
                           cx="30"
                           cy="30"
-                          r="18"
-                          fill="none"
-                          stroke="rgba(123, 163, 186, 0.8)"
-                          strokeWidth="2"
-                          opacity="0"
-                          style={{ transformOrigin: "30px 30px" }}
+                          r="25"
+                          fill="rgba(52, 65, 77, 0.1)"
+                          stroke="rgba(52, 65, 77, 0.4)"
+                          strokeWidth="1"
                         />
+                        {/* Overlapping circles (shown on hover) */}
+                        <g
+                          className="intersection-geometry"
+                          style={{ opacity: 0 }}
+                        >
+                          <circle
+                            className="circle-a"
+                            cx="22"
+                            cy="25"
+                            r="12"
+                            fill="rgba(52, 65, 77, 0.15)"
+                            stroke="rgba(123, 163, 186, 0.6)"
+                            strokeWidth="1.5"
+                          />
+                          <circle
+                            className="circle-b"
+                            cx="38"
+                            cy="25"
+                            r="12"
+                            fill="rgba(52, 65, 77, 0.15)"
+                            stroke="rgba(123, 163, 186, 0.6)"
+                            strokeWidth="1.5"
+                          />
+                          <circle
+                            className="circle-c"
+                            cx="30"
+                            cy="38"
+                            r="12"
+                            fill="rgba(52, 65, 77, 0.15)"
+                            stroke="rgba(123, 163, 186, 0.6)"
+                            strokeWidth="1.5"
+                          />
+                          {/* Intersection highlight */}
+                          <circle
+                            cx="30"
+                            cy="30"
+                            r="6"
+                            fill="rgba(123, 163, 186, 0.3)"
+                            stroke="rgba(123, 163, 186, 0.8)"
+                            strokeWidth="1"
+                          />
+                        </g>
                       </>
                     )}
 
