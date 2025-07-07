@@ -1495,47 +1495,44 @@ const StructuralInterpretationMode = () => {
                     )}
 
                     {circle.animationType === "collapse" && (
-                      // Structural Integrity Loss: Fracture and spiral collapse
+                      // Structural Integrity Loss: Circle that breaks into 8 lines on hover
                       <>
-                        {/* Fragments */}
-                        {Array.from({ length: 8 }, (_, i) => {
-                          const angle = i * 45 * (Math.PI / 180);
-                          const radius = 22;
-                          const x = 30 + radius * Math.cos(angle);
-                          const y = 30 + radius * Math.sin(angle);
-                          return (
-                            <path
-                              key={i}
-                              className="collapse-fragment"
-                              d={`M ${x} ${y} A ${radius} ${radius} 0 0 1 ${x + 8} ${y + 2}`}
-                              fill="none"
-                              stroke="rgba(66, 85, 100, 0.6)"
-                              strokeWidth="1.5"
-                            />
-                          );
-                        })}
-                        {/* Collapse spiral */}
-                        <path
-                          className="collapse-spiral"
-                          d="M 30 30 Q 35 25 40 30 Q 35 35 30 30 Q 25 25 20 30"
-                          fill="none"
-                          stroke="rgba(193, 118, 118, 0.4)"
-                          strokeWidth="1"
-                          opacity="0"
-                          style={{ transformOrigin: "30px 30px" }}
-                        />
-                        {/* Reformed ring */}
+                        {/* Initial circle */}
                         <circle
-                          className="reformed-ring"
+                          className="integrity-circle"
                           cx="30"
                           cy="30"
-                          r="20"
+                          r="22"
                           fill="none"
-                          stroke="rgba(46, 46, 46, 0.6)"
+                          stroke="rgba(66, 85, 100, 0.6)"
                           strokeWidth="1.5"
-                          opacity="0"
-                          style={{ transformOrigin: "30px 30px" }}
                         />
+                        {/* 8 break lines (hidden initially, shown on hover) */}
+                        <g className="break-lines" style={{ opacity: 0 }}>
+                          {Array.from({ length: 8 }, (_, i) => {
+                            const angle = i * 45 * (Math.PI / 180);
+                            const innerRadius = 18;
+                            const outerRadius = 26;
+                            const x1 = 30 + innerRadius * Math.cos(angle);
+                            const y1 = 30 + innerRadius * Math.sin(angle);
+                            const x2 = 30 + outerRadius * Math.cos(angle);
+                            const y2 = 30 + outerRadius * Math.sin(angle);
+                            return (
+                              <line
+                                key={i}
+                                className="collapse-fragment"
+                                x1={x1}
+                                y1={y1}
+                                x2={x2}
+                                y2={y2}
+                                stroke="rgba(193, 118, 118, 0.8)"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                style={{ transformOrigin: "30px 30px" }}
+                              />
+                            );
+                          })}
+                        </g>
                       </>
                     )}
 
