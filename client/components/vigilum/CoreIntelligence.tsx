@@ -116,8 +116,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "override",
       title: "Override Pathways",
-      definition:
-        "Some clauses nullify others silently through reference, exemption, or procedural precedence.",
+      definition: "Nullification embedded in downstream chains",
       rule: "Control is overwritten not by breach — but by structural exemption chains.",
       example:
         "Clause 2.1: 'Contracting shall occur through public process.' Clause 2.9: 'This requirement may be waived under Article 9.' → Three-hop override. Fully legal. Structurally exposed.",
