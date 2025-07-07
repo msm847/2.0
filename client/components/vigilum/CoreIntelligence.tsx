@@ -112,14 +112,29 @@ const StructuralInterpretationMode = () => {
 
     if (!circleId) return;
 
-    // Dim other circles
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    // Halt all animations and dim other circles
     const circles =
       interpretiveZoneRef.current?.querySelectorAll(".circle-node");
     circles?.forEach((circle) => {
       if (circle.id !== `circle-${circleId}`) {
-        gsap.to(circle, { opacity: 0.3, duration: 0.3 });
+        // Pause animations and dim
+        gsap.killTweensOf(circle);
+        gsap.to(circle, { opacity: 0.3, scale: 0.95, duration: 0.3 });
       } else {
-        gsap.to(circle, { scale: 1.15, duration: 0.3 });
+        // Halt this circle's animation and expand
+        gsap.killTweensOf(circle);
+        gsap.to(circle, { scale: 1.2, duration: 0.3, ease: "back.out(1.7)" });
+
+        // Trigger specific hover animations based on type
+        const circleData = circleData.find((c) => c.id === circleId);
+        if (circleData) {
+          triggerHoverAnimation(circle, circleData.animationType);
+        }
       }
     });
   };
@@ -127,12 +142,141 @@ const StructuralInterpretationMode = () => {
   const handleCircleLeave = () => {
     setHoveredCircle(null);
 
-    // Restore all circles
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    // Restore all circles and restart idle animations
     const circles =
       interpretiveZoneRef.current?.querySelectorAll(".circle-node");
     circles?.forEach((circle) => {
       gsap.to(circle, { opacity: 1, scale: 1, duration: 0.3 });
+
+      // Restart idle animations
+      const circleId = circle.id.replace("circle-", "");
+      const circleDataItem = circleData.find((c) => c.id === circleId);
+      if (circleDataItem) {
+        restartIdleAnimation(circle, circleDataItem.animationType);
+      }
     });
+  };
+
+  const triggerHoverAnimation = (element: Element, animationType: string) => {
+    switch (animationType) {
+      case "pulse":
+        // Cage opens and snaps closed
+        const cageLine = element.querySelector(".cage-line");
+        if (cageLine) {
+          gsap.to(cageLine, {
+            strokeDashoffset: 20,
+            duration: 0.5,
+            yoyo: true,
+            repeat: 1,
+            ease: "power2.inOut",
+          });
+        }
+        break;
+      case "orbital":
+        // Stop rotation and reorder orbitals
+        const orbital1 = element.querySelector(".orbital-1");
+        const orbital2 = element.querySelector(".orbital-2");
+        if (orbital1 && orbital2) {
+          gsap.killTweensOf([orbital1, orbital2]);
+          gsap.to(orbital1, { y: 12, duration: 0.4 });
+          gsap.to(orbital2, { y: -12, duration: 0.4 });
+        }
+        break;
+      case "flicker":
+        // Ripple effect from center
+        gsap.fromTo(
+          element.querySelector(".perimeter"),
+          { scale: 0.5, opacity: 1 },
+          { scale: 1.2, opacity: 0, duration: 0.6, ease: "power2.out" },
+        );
+        break;
+      case "override":
+        // Show directional nullification line
+        const overrideArc = element.querySelector(".override-arc");
+        if (overrideArc) {
+          gsap.to(overrideArc, {
+            strokeWidth: 4,
+            stroke: "rgba(255, 100, 100, 1)",
+            duration: 0.3,
+          });
+        }
+        break;
+      case "projection":
+        // Project beam outward
+        const quad1 = element.querySelector(".quad-1");
+        if (quad1) {
+          gsap.to(
+            [".quad-1", ".quad-2", ".quad-3", ".quad-4"].map((q) =>
+              element.querySelector(q),
+            ),
+            {
+              scale: 1.3,
+              opacity: 0.8,
+              duration: 0.4,
+              stagger: 0.1,
+            },
+          );
+        }
+        break;
+      case "overlap":
+        // Venn circles blur then focus
+        const circles = [".circle-a", ".circle-b", ".circle-c"].map((q) =>
+          element.querySelector(q),
+        );
+        gsap.to(circles, {
+          filter: "blur(2px)",
+          duration: 0.2,
+          yoyo: true,
+          repeat: 1,
+        });
+        break;
+      case "collapse":
+        // Fractal folding animation
+        gsap.to(element, {
+          scale: 0.8,
+          rotation: 15,
+          duration: 0.4,
+          yoyo: true,
+          repeat: 1,
+          ease: "power2.inOut",
+        });
+        break;
+    }
+  };
+
+  const restartIdleAnimation = (element: Element, animationType: string) => {
+    // Restart the original idle animations based on type
+    switch (animationType) {
+      case "pulse":
+        gsap.to(element, {
+          scale: 1.08,
+          duration: 2,
+          ease: "power2.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+        break;
+      case "orbital":
+        gsap.to(element.querySelector(".orbital-1"), {
+          rotation: 360,
+          duration: 4,
+          ease: "none",
+          repeat: -1,
+        });
+        gsap.to(element.querySelector(".orbital-2"), {
+          rotation: -360,
+          duration: 3,
+          ease: "none",
+          repeat: -1,
+        });
+        break;
+      // Add other cases as needed
+    }
   };
 
   const handleCircleClick = (circle: CircleData) => {
