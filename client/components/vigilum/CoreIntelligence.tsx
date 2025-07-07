@@ -45,6 +45,7 @@ const StructuralInterpretationMode = () => {
   );
   const [fieldStabilized, setFieldStabilized] = useState(false);
   const [isCollapsing, setIsCollapsing] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const navigate = useNavigate();
 
   const circleData: CircleData[] = [
