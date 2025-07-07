@@ -530,20 +530,17 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "collapse":
-        const fragments = element.querySelectorAll(".collapse-fragment");
-        const spiral = element.querySelector(".collapse-spiral");
-        const reformed = element.querySelector(".reformed-ring");
+        const integrityCircle = element.querySelector(".integrity-circle");
+        const breakLines = element.querySelector(".break-lines");
 
-        if (fragments.length > 0 && spiral && reformed) {
-          gsap.killTweensOf([fragments, spiral, reformed]);
-          gsap.to(fragments, {
-            rotation: 0,
-            scale: 1,
-            opacity: 0.6,
-            duration: 0.4,
+        if (integrityCircle && breakLines) {
+          gsap.killTweensOf([integrityCircle, breakLines]);
+          gsap.to(integrityCircle, {
+            opacity: 1,
+            duration: 0.3,
             ease: "cubic.inOut",
           });
-          gsap.to([spiral, reformed], {
+          gsap.to(breakLines, {
             opacity: 0,
             duration: 0.3,
             ease: "cubic.inOut",
