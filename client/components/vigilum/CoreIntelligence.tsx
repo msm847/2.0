@@ -39,6 +39,12 @@ const StructuralInterpretationMode = () => {
   const [showCTA, setShowCTA] = useState(false);
   const [showTypologyOverlay, setShowTypologyOverlay] = useState(false);
   const [centralGlyph, setCentralGlyph] = useState(0);
+  const [clickedCircles, setClickedCircles] = useState<Set<string>>(new Set());
+  const [logicClassesEngaged, setLogicClassesEngaged] = useState<Set<string>>(
+    new Set(),
+  );
+  const [fieldStabilized, setFieldStabilized] = useState(false);
+  const [isCollapsing, setIsCollapsing] = useState(false);
   const navigate = useNavigate();
 
   const circleData: CircleData[] = [
