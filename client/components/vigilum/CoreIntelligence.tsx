@@ -1068,8 +1068,10 @@ const StructuralInterpretationMode = () => {
                             : circle.gravity >= 0.5
                               ? `0px 3px 8px rgba(0, 0, 0, 0.28), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Discretion
                               : `0px 3px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)`, // Sequence
-                // Ambient shadow oscillation animation
-                animation: "shadowWander 8s ease-in-out infinite",
+                // Ambient shadow oscillation animation (disabled for reduced motion)
+                animation: prefersReducedMotion
+                  ? "none"
+                  : "shadowWander 8s ease-in-out infinite",
               }}
             >
               {/* Circle-specific SVG animations */}
