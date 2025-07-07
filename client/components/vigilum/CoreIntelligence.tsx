@@ -691,6 +691,17 @@ const StructuralInterpretationMode = () => {
                 justifyContent: "center",
                 transition: "all 0.3s ease",
                 transform: "translate(-50%, -50%)",
+                zIndex:
+                  circle.gravity === 1.0 ? 10 : Math.floor(circle.gravity * 5),
+                filter:
+                  circle.gravity > 0.7
+                    ? "none"
+                    : `blur(${(1 - circle.gravity) * 0.5}px)`,
+                opacity: clickedCircles.has(circle.id)
+                  ? Math.min(1, 0.6 + clickedCircles.size * 0.1)
+                  : fieldStabilized && !clickedCircles.has(circle.id)
+                    ? 0.4
+                    : 1,
               }}
             >
               {/* Circle-specific SVG animations */}
