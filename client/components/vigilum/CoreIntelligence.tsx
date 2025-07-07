@@ -974,6 +974,21 @@ const StructuralInterpretationMode = () => {
       }}
     >
       <div className="container mx-auto px-4 py-20">
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2
+            className="font-mono text-3xl mb-8"
+            style={{
+              color: "#C9D2DC",
+              fontWeight: "400",
+              letterSpacing: "0.02em",
+              lineHeight: "1.4",
+            }}
+          >
+            STRUCTURAL INTERPRETATION MODE
+          </h2>
+        </div>
+
         {/* Cognitive Recompiler Interface */}
         <div
           style={{
@@ -981,7 +996,7 @@ const StructuralInterpretationMode = () => {
             gridTemplateColumns: "1fr 400px 1fr",
             gap: "60px",
             alignItems: "center",
-            minHeight: "70vh",
+            minHeight: "60vh",
             marginBottom: "40px",
           }}
         >
