@@ -394,8 +394,16 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "projection":
-        // TYPOLOGICAL PROJECTION: No hover changes (letters always visible, line positioned right)
-        // Beam and labels remain static as per specification
+        // TYPOLOGICAL PROJECTION: Show projection beam on hover
+        const beam = element.querySelector(".projection-beam");
+
+        if (beam) {
+          gsap.to(beam, {
+            opacity: 0.8,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+        }
         break;
 
       case "overlap":
