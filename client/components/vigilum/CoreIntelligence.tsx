@@ -52,8 +52,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "constraint",
       title: "Constraint Simulation",
-      definition:
-        "Appears restrictive, structurally inert",
+      definition: "Appears restrictive, structurally inert",
       rule: "A constraint is real only if it binds across actors and time without dependent trigger.",
       example:
         "Clause: 'All deviations shall be reviewed within a reasonable timeframe.' — No timeframe, no escalation rule, no breach definition. Structurally open. Appears restrictive. Actually null.",
@@ -76,8 +75,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "sequence",
       title: "Sequence Dependency",
-      definition:
-        "Clause order alters legal outcome",
+      definition: "Clause order alters legal outcome",
       rule: "Structural output depends on clause order. Reversing order can transform legality into exposure.",
       example:
         "Clause 3.2: 'No contract shall be awarded without public tender.' Clause 3.5: 'In emergencies, tender may be bypassed.' — B following A = restriction nullified.",
@@ -97,9 +95,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "discretion",
       title: "Discretion Encoding",
-      definition:
-        "Authority routed into undefined thresholds",
-        "Legal texts often encode zones of human override. Vigilum scores such embedded discretion.",
+      definition: "Authority routed into undefined thresholds",
       rule: "Discretion embedded without parameters encodes pre-structured collapse.",
       example:
         "'Unless deemed unnecessary by the Minister.' → Appears functional. Actually routes authority to a non-verifiable override. No logic path to escalate refusal.",
@@ -1638,7 +1634,8 @@ const StructuralInterpretationMode = () => {
                 lineHeight: "1.5",
               }}
             >
-              You are now aligned with clause-level cognition.<br/>
+              You are now aligned with clause-level cognition.
+              <br />
               The simulation field will unlock.
             </div>
             <button
