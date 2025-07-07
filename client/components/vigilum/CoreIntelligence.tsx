@@ -536,7 +536,17 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "projection":
-        // TYPOLOGICAL PROJECTION: No reset needed (letters always visible)
+        // TYPOLOGICAL PROJECTION: Hide projection beam when hover ends
+        const beam = element.querySelector(".projection-beam");
+
+        if (beam) {
+          gsap.killTweensOf(beam);
+          gsap.to(beam, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+        }
         break;
 
       case "overlap":
