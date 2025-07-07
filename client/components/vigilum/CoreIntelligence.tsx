@@ -249,16 +249,17 @@ const StructuralInterpretationMode = () => {
     ).matches;
     if (prefersReducedMotion) return;
 
-    // Restore all circles and restart idle animations
+    // Reset hover animations and restore all circles
     const circles =
       interpretiveZoneRef.current?.querySelectorAll(".circle-node");
     circles?.forEach((circle) => {
       gsap.to(circle, { opacity: 1, scale: 1, duration: 0.3 });
 
-      // Restart idle animations
+      // Reset specific hover animations
       const circleId = circle.id.replace("circle-", "");
       const circleDataItem = circleData.find((c) => c.id === circleId);
       if (circleDataItem) {
+        resetHoverAnimation(circle, circleDataItem.animationType);
         restartIdleAnimation(circle, circleDataItem.animationType);
       }
     });
