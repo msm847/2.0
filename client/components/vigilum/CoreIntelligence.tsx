@@ -505,19 +505,7 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "projection":
-        const beam = element.querySelector(".projection-beam");
-        const labels = element.querySelectorAll(".axis-label");
-
-        if (beam && labels) {
-          gsap.killTweensOf([beam, labels]);
-          gsap.to(beam, {
-            opacity: 0,
-            scaleX: 1,
-            duration: 0.3,
-            ease: "cubic.inOut",
-          });
-          gsap.to(labels, { opacity: 0, duration: 0.3, ease: "cubic.inOut" });
-        }
+        // TYPOLOGICAL PROJECTION: No reset needed (letters always visible)
         break;
 
       case "overlap":
