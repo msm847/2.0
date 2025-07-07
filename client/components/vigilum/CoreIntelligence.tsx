@@ -464,10 +464,22 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "flicker":
-        const rippleCenter = element.querySelector(".ripple-center");
-        if (rippleCenter) {
-          gsap.killTweensOf(rippleCenter);
-          gsap.set(rippleCenter, { opacity: 0, scale: 0 });
+        const coordinateGrid = element.querySelector(".coordinate-grid");
+        const axisDot = element.querySelector(".axis-dot");
+
+        if (coordinateGrid && axisDot) {
+          gsap.killTweensOf([coordinateGrid, axisDot]);
+          gsap.to(coordinateGrid, {
+            opacity: 0.4,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+          gsap.to(axisDot, {
+            scale: 1,
+            opacity: 0.8,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
         }
         break;
 
