@@ -1140,18 +1140,18 @@ const StructuralInterpretationMode = () => {
                     <circle
                       className="circle-a"
                       cx="26"
-                      cy="24"
-                      r="12"
-                      fill="rgba(255, 100, 100, 0.2)"
-                      stroke="rgba(255, 100, 100, 0.4)"
+                      cy="26"
+                      r="10"
+                      fill="rgba(52, 65, 77, 0.2)"
+                      stroke="rgba(52, 65, 77, 0.4)"
                       strokeWidth="1"
                     />
                     <circle
                       className="circle-b"
-                      cx="35"
-                      cy="25"
-                      r="12"
-                      fill="rgba(100, 255, 100, 0.2)"
+                      cx="34"
+                      cy="26"
+                      r="10"
+                      fill="rgba(52, 65, 77, 0.2)"
                       stroke="rgba(100, 255, 100, 0.4)"
                       strokeWidth="1"
                     />
