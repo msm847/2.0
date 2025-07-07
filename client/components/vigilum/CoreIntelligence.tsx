@@ -1229,7 +1229,7 @@ const StructuralInterpretationMode = () => {
                     )}
 
                     {circle.animationType === "flicker" && (
-                      // Discretion Encoding: Ripple emanation from center
+                      // Discretion Encoding: Dot on xy-grid coordinate system
                       <>
                         <circle
                           cx="30"
@@ -1239,6 +1239,70 @@ const StructuralInterpretationMode = () => {
                           stroke="rgba(41, 48, 56, 0.2)"
                           strokeWidth="1"
                         />
+                        {/* XY-Grid coordinate system */}
+                        <g className="coordinate-grid" style={{ opacity: 0.4 }}>
+                          {/* Vertical grid lines */}
+                          <line
+                            x1="15"
+                            y1="10"
+                            x2="15"
+                            y2="50"
+                            stroke="rgba(94, 137, 160, 0.3)"
+                            strokeWidth="0.5"
+                          />
+                          <line
+                            x1="30"
+                            y1="10"
+                            x2="30"
+                            y2="50"
+                            stroke="rgba(94, 137, 160, 0.4)"
+                            strokeWidth="0.8"
+                          />
+                          <line
+                            x1="45"
+                            y1="10"
+                            x2="45"
+                            y2="50"
+                            stroke="rgba(94, 137, 160, 0.3)"
+                            strokeWidth="0.5"
+                          />
+                          {/* Horizontal grid lines */}
+                          <line
+                            x1="10"
+                            y1="15"
+                            x2="50"
+                            y2="15"
+                            stroke="rgba(94, 137, 160, 0.3)"
+                            strokeWidth="0.5"
+                          />
+                          <line
+                            x1="10"
+                            y1="30"
+                            x2="50"
+                            y2="30"
+                            stroke="rgba(94, 137, 160, 0.4)"
+                            strokeWidth="0.8"
+                          />
+                          <line
+                            x1="10"
+                            y1="45"
+                            x2="50"
+                            y2="45"
+                            stroke="rgba(94, 137, 160, 0.3)"
+                            strokeWidth="0.5"
+                          />
+                        </g>
+                        {/* Dot on axis - always visible */}
+                        <circle
+                          className="axis-dot"
+                          cx="30"
+                          cy="30"
+                          r="3"
+                          fill="rgba(94, 137, 160, 0.8)"
+                          stroke="rgba(94, 137, 160, 1)"
+                          strokeWidth="1"
+                        />
+                        {/* Ripple effect (for hover animation) */}
                         <circle
                           className="ripple-center"
                           cx="30"
@@ -1249,14 +1313,6 @@ const StructuralInterpretationMode = () => {
                           strokeWidth="1.5"
                           opacity="0"
                           style={{ transformOrigin: "30px 30px" }}
-                        />
-                        {/* Subtle center pulse */}
-                        <circle
-                          cx="30"
-                          cy="30"
-                          r="2"
-                          fill="rgba(94, 137, 160, 0.4)"
-                          opacity="0.6"
                         />
                       </>
                     )}
