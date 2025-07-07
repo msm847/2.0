@@ -1323,26 +1323,26 @@ const StructuralInterpretationMode = () => {
                             strokeWidth="0.5"
                           />
                         </g>
-                        {/* Projection beam */}
+                        {/* Projection beam - positioned 5px right, no contact with letters */}
                         <line
                           className="projection-beam"
                           x1="30"
                           y1="30"
-                          x2="45"
+                          x2="40"
                           y2="15"
                           stroke="rgba(136, 178, 206, 0.6)"
                           strokeWidth="2"
-                          opacity="0"
+                          opacity="0.6"
                           style={{ transformOrigin: "30px 30px" }}
                         />
-                        {/* Axis labels */}
+                        {/* Axis labels - always visible */}
                         <text
                           className="axis-label"
                           x="52"
                           y="32"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
-                          opacity="0"
+                          opacity="0.7"
                         >
                           DG
                         </text>
@@ -1352,7 +1352,7 @@ const StructuralInterpretationMode = () => {
                           y="8"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
-                          opacity="0"
+                          opacity="0.7"
                         >
                           RT
                         </text>
@@ -1362,7 +1362,7 @@ const StructuralInterpretationMode = () => {
                           y="32"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
-                          opacity="0"
+                          opacity="0.7"
                         >
                           CI
                         </text>
@@ -1372,7 +1372,7 @@ const StructuralInterpretationMode = () => {
                           y="55"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
-                          opacity="0"
+                          opacity="0.7"
                         >
                           SB
                         </text>
