@@ -1066,41 +1066,6 @@ const StructuralInterpretationMode = () => {
 
           {/* Center: Interactive Node Field */}
           <div style={{ position: "relative", justifySelf: "center" }}>
-            {/* Central Glyph - resolves as interactions increase */}
-            <div
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: "40px",
-                height: "40px",
-                opacity: centralGlyph,
-                transition: "opacity 0.8s ease-out",
-                pointerEvents: "none",
-                zIndex: 5,
-              }}
-            >
-              <svg width="40" height="40">
-                <text
-                  x="20"
-                  y="26"
-                  textAnchor="middle"
-                  fontSize="24"
-                  fill="#C9D2DC"
-                  fontFamily="monospace"
-                >
-                  {logicClassesEngaged.size >= 5
-                    ? "φ"
-                    : logicClassesEngaged.size >= 3
-                      ? "⊗"
-                      : logicClassesEngaged.size >= 1
-                        ? "•"
-                        : "·"}
-                </text>
-              </svg>
-            </div>
-
             <div
               ref={interpretiveZoneRef}
               className="interpretive-zone"
