@@ -161,8 +161,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "crossdocument",
       title: "Cross-Document Logic",
-      definition:
-        "Risk is not in one text. It emerges from clause interaction across law, contract, policy.",
+      definition: "Meaning emerges across legal strata",
       rule: "No document exists alone. Clause meaning is defined by adjacent legal architecture.",
       example:
         "Contract Clause: 'Subject to Public Procurement Law' → Procurement Law: 'Exceptions apply during natural disaster' → PPP Manual: 'Fiscal crises are equivalent to disaster' → Full procedural override hidden across three texts.",
