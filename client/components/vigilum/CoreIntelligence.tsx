@@ -984,25 +984,34 @@ const StructuralInterpretationMode = () => {
                 )}
 
                 {circle.animationType === "flicker" && (
-                  // Discretion Encoding: Unstable perimeter
+                  // Discretion Encoding: Ripple emanation from center
                   <>
                     <circle
                       cx="30"
                       cy="30"
                       r="25"
-                      fill="rgba(255, 255, 255, 0.05)"
-                      stroke="rgba(255, 255, 255, 0.1)"
+                      fill="rgba(41, 48, 56, 0.1)"
+                      stroke="rgba(41, 48, 56, 0.2)"
                       strokeWidth="1"
                     />
                     <circle
-                      className="perimeter"
+                      className="ripple-center"
                       cx="30"
                       cy="30"
-                      r="22"
+                      r="15"
                       fill="none"
-                      stroke="rgba(255, 100, 100, 0.6)"
-                      strokeWidth="1"
-                      strokeDasharray="2,2"
+                      stroke="rgba(94, 137, 160, 0.6)"
+                      strokeWidth="1.5"
+                      opacity="0"
+                      style={{ transformOrigin: "30px 30px" }}
+                    />
+                    {/* Subtle center pulse */}
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="2"
+                      fill="rgba(94, 137, 160, 0.4)"
+                      opacity="0.6"
                     />
                   </>
                 )}
