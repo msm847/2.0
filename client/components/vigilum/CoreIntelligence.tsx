@@ -419,14 +419,6 @@ const StructuralInterpretationMode = () => {
     setSelectedCircle(null);
   };
 
-  const handleCircleHover = (circleId: string) => {
-    setHoveredCircle(circleId);
-  };
-
-  const handleCircleLeave = () => {
-    setHoveredCircle(null);
-  };
-
   const handleCTAClick = () => {
     // Procedural exit sequence - structural collapse
     setIsCollapsing(true);
