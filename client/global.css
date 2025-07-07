@@ -440,6 +440,13 @@
   will-change: box-shadow, transform;
 }
 
+/* Accessibility - disable animation for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .circle-node {
+    animation: none !important;
+  }
+}
+
 /* Mobile optimization - reduce shadow complexity */
 @media (max-width: 1024px) {
   .circle-node {
