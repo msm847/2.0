@@ -966,6 +966,7 @@ const StructuralInterpretationMode = () => {
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
 
