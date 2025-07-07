@@ -409,22 +409,20 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "overlap":
-        // CROSS-DOCUMENT LOGIC: Hide simple circle, show intersection geometry
-        const simpleCircle = element.querySelector(".simple-circle");
-        const intersectionGeometry = element.querySelector(
-          ".intersection-geometry",
-        );
+        // CROSS-DOCUMENT LOGIC: Hide Venn diagram, show intersection-only
+        const vennDiagram = element.querySelector(".venn-diagram");
+        const intersectionOnly = element.querySelector(".intersection-only");
 
-        if (simpleCircle && intersectionGeometry) {
+        if (vennDiagram && intersectionOnly) {
           gsap
             .timeline()
-            .to(simpleCircle, {
+            .to(vennDiagram, {
               opacity: 0,
               duration: 0.3,
               ease: "cubic.inOut",
             })
             .to(
-              intersectionGeometry,
+              intersectionOnly,
               {
                 opacity: 1,
                 duration: 0.4,
