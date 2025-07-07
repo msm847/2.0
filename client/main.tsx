@@ -26,6 +26,22 @@ import ContactPage from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
+// Global error handler for development
+if (import.meta.env.DEV) {
+  window.addEventListener("unhandledrejection", (event) => {
+    if (
+      event.reason?.name === "AbortError" ||
+      event.reason?.message?.includes("aborted")
+    ) {
+      console.warn(
+        "Fetch request was aborted (likely due to component unmounting or navigation)",
+        event.reason,
+      );
+      event.preventDefault(); // Prevent the error from being logged as uncaught
+    }
+  });
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
