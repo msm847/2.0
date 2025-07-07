@@ -1098,9 +1098,17 @@ const StructuralInterpretationMode = () => {
                 width: "400px",
                 height: "400px",
                 position: "relative",
-                background: "linear-gradient(135deg, #0b1e16 0%, #224436 100%)",
+                background:
+                  logicClassesEngaged.size >= 3
+                    ? "linear-gradient(135deg, #0a1d15 0%, #1f3f31 100%)"
+                    : "linear-gradient(135deg, #0b1e16 0%, #224436 100%)",
                 borderRadius: "8px",
-                border: "1px solid rgba(0, 255, 204, 0.1)",
+                border:
+                  logicClassesEngaged.size >= 3
+                    ? "1px solid rgba(0, 255, 204, 0.2)"
+                    : "1px solid rgba(0, 255, 204, 0.1)",
+                transition:
+                  "background 0.8s ease-out, border-color 0.8s ease-out",
               }}
             >
               {circleData.map((circle) => (
