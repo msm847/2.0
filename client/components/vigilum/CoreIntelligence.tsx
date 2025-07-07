@@ -771,7 +771,7 @@ const StructuralInterpretationMode = () => {
 
     const prefersReducedMotionValue = mediaQuery.matches;
 
-    if (!prefersReducedMotion && interpretiveZoneRef.current) {
+    if (!prefersReducedMotionValue && interpretiveZoneRef.current) {
       // Initialize sophisticated circle animations
       circleData.forEach((circle) => {
         const element = document.getElementById(`circle-${circle.id}`);
