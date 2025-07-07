@@ -131,9 +131,9 @@ const StructuralInterpretationMode = () => {
         gsap.to(circle, { scale: 1.2, duration: 0.3, ease: "back.out(1.7)" });
 
         // Trigger specific hover animations based on type
-        const circleData = circleData.find((c) => c.id === circleId);
-        if (circleData) {
-          triggerHoverAnimation(circle, circleData.animationType);
+        const circleDataItem = circleData.find((c) => c.id === circleId);
+        if (circleDataItem) {
+          triggerHoverAnimation(circle, circleDataItem.animationType);
         }
       }
     });
