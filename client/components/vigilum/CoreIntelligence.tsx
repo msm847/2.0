@@ -985,7 +985,7 @@ const StructuralInterpretationMode = () => {
             marginBottom: "40px",
           }}
         >
-          {/* Left Column: Primary Logic Statement */}
+          {/* Left Column: Threshold Declaration */}
           <div style={{ justifySelf: "end", maxWidth: "320px" }}>
             <h2
               className="font-mono text-xl mb-6"
@@ -1006,23 +1006,57 @@ const StructuralInterpretationMode = () => {
                 lineHeight: "1.5",
               }}
             >
-              Pre-simulation recompiler for clause-level cognition
+              Pre-simulation logic field
             </div>
             <div
-              className="font-mono text-xs"
+              className="font-mono text-xs mb-6"
               style={{
                 color: "#7A8794",
                 fontWeight: "400",
                 lineHeight: "1.6",
               }}
             >
-              You are entering a logic field.
+              You are entering the cognition layer.
               <br />
-              The following interface is not descriptive. It is structural.
+              Vigilum does not display corruption.
               <br />
-              These seven units are not icons. They are semantic operators —
-              each one a self-contained diagnostic mechanism that defines how
-              systems reroute legality.
+              It renders legality as a machine — a sequence of clause operators
+              that simulate compliance while nullifying constraint.
+            </div>
+            <div
+              className="font-mono text-xs mb-4"
+              style={{
+                color: "#6B7684",
+                fontWeight: "400",
+                lineHeight: "1.6",
+              }}
+            >
+              These seven units are not icons.
+              <br />
+              They are semantic operators — minimal logic gates used to
+              precondition your interpretive system before simulation.
+              <br />
+              Each one expresses a failure condition: a way the law survives
+              formally while collapsing structurally.
+            </div>
+            <div
+              className="font-mono text-xs"
+              style={{
+                color: "#5A6470",
+                fontWeight: "400",
+                lineHeight: "1.6",
+              }}
+            >
+              This is not an explainer.
+              <br />
+              It is a compiler — a final re-alignment layer.
+              <br />
+              Hover to see logic.
+              <br />
+              Click to enter structure.
+              <br />
+              Once three operators are understood, Vigilum will unlock
+              simulation.
             </div>
           </div>
 
