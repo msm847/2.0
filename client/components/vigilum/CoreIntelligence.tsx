@@ -272,8 +272,7 @@ const StructuralInterpretationMode = () => {
         if (cageSegments.length > 0) {
           // Retract one segment (simulate breach)
           const targetSegment = cageSegments[6] || cageSegments[0];
-          gsap
-            .timeline()
+          gsap.timeline()
             .to(targetSegment, {
               opacity: 0,
               duration: 0.4,
@@ -305,8 +304,7 @@ const StructuralInterpretationMode = () => {
           });
 
           // Flip arrow
-          gsap
-            .timeline()
+          gsap.timeline()
             .to(arrow, {
               opacity: 0,
               duration: 0.25,
@@ -340,7 +338,7 @@ const StructuralInterpretationMode = () => {
               ease: "sine.out",
               repeat: -1,
               repeatDelay: 0.4,
-            },
+            }
           );
         }
         break;
@@ -352,32 +350,23 @@ const StructuralInterpretationMode = () => {
         const intersection = element.querySelector(".intersection-point");
 
         if (overrideArc && intersection) {
-          gsap
-            .timeline()
+          gsap.timeline()
             .to(overrideArc, {
               opacity: 0.8,
               duration: 0.3,
               ease: "cubic.inOut",
             })
-            .to(
-              overrideArc,
-              {
-                attr: { d: "M 15 30 Q 30 10 45 30" },
-                duration: 0.6,
-                ease: "cubic.inOut",
-              },
-              0.1,
-            )
-            .to(
-              intersection,
-              {
-                opacity: 0.6,
-                scale: 1.5,
-                duration: 0.3,
-                ease: "cubic.inOut",
-              },
-              0.4,
-            );
+            .to(overrideArc, {
+              attr: { d: "M 15 30 Q 30 10 45 30" },
+              duration: 0.6,
+              ease: "cubic.inOut",
+            }, 0.1)
+            .to(intersection, {
+              opacity: 0.6,
+              scale: 1.5,
+              duration: 0.3,
+              ease: "cubic.inOut",
+            }, 0.4);
         }
         break;
 
@@ -387,24 +376,19 @@ const StructuralInterpretationMode = () => {
         const labels = element.querySelectorAll(".axis-label");
 
         if (beam) {
-          gsap
-            .timeline()
+          gsap.timeline()
             .to(beam, {
               opacity: 0.8,
               scaleX: 1.5,
               duration: 0.4,
               ease: "cubic.inOut",
             })
-            .to(
-              labels,
-              {
-                opacity: 0.7,
-                duration: 0.3,
-                ease: "cubic.inOut",
-                stagger: 0.1,
-              },
-              0.2,
-            );
+            .to(labels, {
+              opacity: 0.7,
+              duration: 0.3,
+              ease: "cubic.inOut",
+              stagger: 0.1,
+            }, 0.2);
         }
         break;
 
@@ -415,34 +399,25 @@ const StructuralInterpretationMode = () => {
         );
         const unifiedRing = element.querySelector(".unified-ring");
 
-        if (circles.every((c) => c) && unifiedRing) {
-          gsap
-            .timeline()
+        if (circles.every(c => c) && unifiedRing) {
+          gsap.timeline()
             .to(circles, {
               x: 0,
               y: 0,
               duration: 0.6,
               ease: "cubic.inOut",
             })
-            .to(
-              circles,
-              {
-                opacity: 0,
-                duration: 0.2,
-                ease: "cubic.inOut",
-              },
-              0.4,
-            )
-            .to(
-              unifiedRing,
-              {
-                opacity: 0.8,
-                scale: 1,
-                duration: 0.3,
-                ease: "cubic.inOut",
-              },
-              0.5,
-            )
+            .to(circles, {
+              opacity: 0,
+              duration: 0.2,
+              ease: "cubic.inOut",
+            }, 0.4)
+            .to(unifiedRing, {
+              opacity: 0.8,
+              scale: 1,
+              duration: 0.3,
+              ease: "cubic.inOut",
+            }, 0.5)
             .to(unifiedRing, {
               scale: 1.1,
               duration: 0.3,
@@ -460,8 +435,7 @@ const StructuralInterpretationMode = () => {
         const reformed = element.querySelector(".reformed-ring");
 
         if (fragments.length > 0 && spiral && reformed) {
-          gsap
-            .timeline()
+          gsap.timeline()
             .to(fragments, {
               rotation: 180,
               scale: 0.7,
@@ -470,16 +444,12 @@ const StructuralInterpretationMode = () => {
               ease: "cubic.inOut",
               stagger: 0.1,
             })
-            .to(
-              spiral,
-              {
-                opacity: 0.4,
-                rotation: 360,
-                duration: 0.8,
-                ease: "cubic.inOut",
-              },
-              0.2,
-            )
+            .to(spiral, {
+              opacity: 0.4,
+              rotation: 360,
+              duration: 0.8,
+              ease: "cubic.inOut",
+            }, 0.2)
             .to([fragments, spiral], {
               opacity: 0,
               duration: 0.2,
@@ -918,7 +888,7 @@ const StructuralInterpretationMode = () => {
                     />
                     {/* 24 radial cage segments */}
                     {Array.from({ length: 24 }, (_, i) => {
-                      const angle = i * 15 * (Math.PI / 180);
+                      const angle = (i * 15) * (Math.PI / 180);
                       const x1 = 30 + 18 * Math.cos(angle);
                       const y1 = 30 + 18 * Math.sin(angle);
                       const x2 = 30 + 22 * Math.cos(angle);
@@ -1049,34 +1019,40 @@ const StructuralInterpretationMode = () => {
                 )}
 
                 {circle.animationType === "projection" && (
-                  // Typological Projection: Four quadrants
+                  // Typological Projection: Vector projection with axis labels
                   <>
                     <circle
                       cx="30"
                       cy="30"
                       r="25"
-                      fill="rgba(255, 255, 255, 0.05)"
-                      stroke="rgba(255, 255, 255, 0.1)"
+                      fill="rgba(32, 36, 43, 0.1)"
+                      stroke="rgba(32, 36, 43, 0.2)"
                       strokeWidth="1"
                     />
-                    <rect
-                      className="quad-1"
-                      x="12"
-                      y="12"
-                      width="8"
-                      height="8"
-                      fill="rgba(255, 100, 100, 0.3)"
+                    {/* Axis markers */}
+                    <g opacity="0.3">
+                      <line x1="10" y1="30" x2="50" y2="30" stroke="rgba(64, 74, 82, 0.4)" strokeWidth="0.5" />
+                      <line x1="30" y1="10" x2="30" y2="50" stroke="rgba(64, 74, 82, 0.4)" strokeWidth="0.5" />
+                    </g>
+                    {/* Projection beam */}
+                    <line
+                      className="projection-beam"
+                      x1="30"
+                      y1="30"
+                      x2="45"
+                      y2="15"
+                      stroke="rgba(136, 178, 206, 0.6)"
+                      strokeWidth="2"
+                      opacity="0"
+                      style={{ transformOrigin: "30px 30px" }}
                     />
-                    <rect
-                      className="quad-2"
-                      x="40"
-                      y="12"
-                      width="8"
-                      height="8"
-                      fill="rgba(100, 255, 100, 0.3)"
-                    />
-                    <rect
-                      className="quad-3"
+                    {/* Axis labels */}
+                    <text className="axis-label" x="52" y="32" fontSize="6" fill="rgba(124, 139, 155, 0.7)" opacity="0">DG</text>
+                    <text className="axis-label" x="28" y="8" fontSize="6" fill="rgba(124, 139, 155, 0.7)" opacity="0">RT</text>
+                    <text className="axis-label" x="8" y="32" fontSize="6" fill="rgba(124, 139, 155, 0.7)" opacity="0">CI</text>
+                    <text className="axis-label" x="28" y="55" fontSize="6" fill="rgba(124, 139, 155, 0.7)" opacity="0">SB</text>
+                  </>
+                )}
                       x="12"
                       y="40"
                       width="8"
