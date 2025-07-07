@@ -139,8 +139,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "typological",
       title: "Typological Projection",
-      definition:
-        "Each clause is embedded in a multidimensional risk space: DG, RT, CI, SB.",
+      definition: "Clause as vector across structural risk space",
       rule: "Clauses are not types. They are vectors with structural behavior across systems.",
       example:
         "Clause: 'Payments indexed to inflation, adjusted quarterly by operator's internal metric.' → High RT: risk transferred to private actor → Moderate DG: adjustment clause unbounded",
