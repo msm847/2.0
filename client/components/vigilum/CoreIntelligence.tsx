@@ -1072,7 +1072,15 @@ const StructuralInterpretationMode = () => {
                   }}
                 >
                   {/* Circle-specific SVG animations */}
-                  <svg width="60" height="60" style={{ position: "absolute" }}>
+                  <svg
+                    width="60"
+                    height="60"
+                    style={{
+                      position: "absolute",
+                      overflow: "hidden",
+                      contain: "layout paint style",
+                    }}
+                  >
                     {circle.animationType === "pulse" && (
                       // Constraint Simulation: Cage with retractable segments
                       <>
