@@ -52,8 +52,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "constraint",
       title: "Constraint Simulation",
-      definition:
-        "Rules may perform restriction while preserving override. Vigilum detects simulated constraint.",
+      definition: "Appears restrictive, structurally inert",
       rule: "A constraint is real only if it binds across actors and time without dependent trigger.",
       example:
         "Clause: 'All deviations shall be reviewed within a reasonable timeframe.' — No timeframe, no escalation rule, no breach definition. Structurally open. Appears restrictive. Actually null.",
