@@ -1342,7 +1342,7 @@ const StructuralInterpretationMode = () => {
                             strokeWidth="0.5"
                           />
                         </g>
-                        {/* Projection beam - positioned 5px right, no contact with letters */}
+                        {/* Projection beam - hidden until hover */}
                         <line
                           className="projection-beam"
                           x1="30"
@@ -1351,47 +1351,51 @@ const StructuralInterpretationMode = () => {
                           y2="15"
                           stroke="rgba(136, 178, 206, 0.6)"
                           strokeWidth="2"
-                          opacity="0.6"
+                          opacity="0"
                           style={{ transformOrigin: "30px 30px" }}
                         />
-                        {/* Axis labels - always visible */}
+                        {/* Axis labels - always visible, centered symmetrically */}
                         <text
                           className="axis-label"
                           x="52"
-                          y="32"
+                          y="34"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
                           opacity="0.7"
+                          textAnchor="middle"
                         >
                           DG
                         </text>
                         <text
                           className="axis-label"
-                          x="28"
+                          x="30"
                           y="8"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
                           opacity="0.7"
+                          textAnchor="middle"
                         >
                           RT
                         </text>
                         <text
                           className="axis-label"
                           x="8"
-                          y="32"
+                          y="34"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
                           opacity="0.7"
+                          textAnchor="middle"
                         >
                           CI
                         </text>
                         <text
                           className="axis-label"
-                          x="28"
+                          x="30"
                           y="55"
                           fontSize="6"
                           fill="rgba(124, 139, 155, 0.7)"
                           opacity="0.7"
+                          textAnchor="middle"
                         >
                           SB
                         </text>
