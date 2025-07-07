@@ -23,6 +23,8 @@ const StructuralInterpretationMode = () => {
   const [selectedCircle, setSelectedCircle] = useState<CircleData | null>(null);
   const [interactionCount, setInteractionCount] = useState(0);
   const [showCTA, setShowCTA] = useState(false);
+  const [showTypologyOverlay, setShowTypologyOverlay] = useState(false);
+  const [centralGlyph, setCentralGlyph] = useState(0);
   const navigate = useNavigate();
 
   const circleData: CircleData[] = [
