@@ -717,9 +717,9 @@ const StructuralInterpretationMode = () => {
             height: "500px",
             margin: "0 auto",
             position: "relative",
-            background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)",
+            background: "linear-gradient(135deg, #0b1e16 0%, #224436 100%)",
             borderRadius: "12px",
-            border: "1px solid rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(0, 255, 204, 0.15)",
           }}
         >
           {circleData.map((circle) => (
