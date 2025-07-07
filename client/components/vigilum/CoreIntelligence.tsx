@@ -1086,7 +1086,13 @@ const StructuralInterpretationMode = () => {
                   fill="#C9D2DC"
                   fontFamily="monospace"
                 >
-                  φ
+                  {logicClassesEngaged.size >= 5
+                    ? "φ"
+                    : logicClassesEngaged.size >= 3
+                      ? "⊗"
+                      : logicClassesEngaged.size >= 1
+                        ? "•"
+                        : "·"}
                 </text>
               </svg>
             </div>
