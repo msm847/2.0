@@ -183,8 +183,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "integrity",
       title: "Structural Integrity Loss",
-      definition:
-        "Systems collapse when clause interactions loop, contradict, or flatten meaning.",
+      definition: "Clause logic collapses into semantic noise",
       rule: "When all clause logic collapses into contradiction or recursion, structural meaning dissolves. Form survives. Constraint does not.",
       example:
         "Clause 4.1: 'Subject to provisions of Clause 7.1' → Clause 7.1: 'Implemented as per Clause 4.1' → Circular recursion = no executable state. Appears legal. Systemically incoherent.",
