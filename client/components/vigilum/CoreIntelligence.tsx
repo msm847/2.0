@@ -1152,40 +1152,74 @@ const StructuralInterpretationMode = () => {
                       cy="26"
                       r="10"
                       fill="rgba(52, 65, 77, 0.2)"
-                      stroke="rgba(100, 255, 100, 0.4)"
+                      stroke="rgba(52, 65, 77, 0.4)"
                       strokeWidth="1"
                     />
                     <circle
                       className="circle-c"
                       cx="30"
-                      cy="35"
-                      r="12"
-                      fill="rgba(100, 100, 255, 0.2)"
-                      stroke="rgba(100, 100, 255, 0.4)"
+                      cy="34"
+                      r="10"
+                      fill="rgba(52, 65, 77, 0.2)"
+                      stroke="rgba(52, 65, 77, 0.4)"
                       strokeWidth="1"
+                    />
+                    {/* Unified ring (hidden initially) */}
+                    <circle
+                      className="unified-ring"
+                      cx="30"
+                      cy="30"
+                      r="18"
+                      fill="none"
+                      stroke="rgba(123, 163, 186, 0.8)"
+                      strokeWidth="2"
+                      opacity="0"
+                      style={{ transformOrigin: "30px 30px" }}
                     />
                   </>
                 )}
 
                 {circle.animationType === "collapse" && (
-                  // Structural Integrity Loss: Jittery circle
+                  // Structural Integrity Loss: Fracture and spiral collapse
                   <>
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="25"
-                      fill="rgba(255, 255, 255, 0.05)"
-                      stroke="rgba(255, 255, 255, 0.1)"
-                      strokeWidth="1"
-                    />
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="18"
+                    {/* Fragments */}
+                    {Array.from({ length: 8 }, (_, i) => {
+                      const angle = i * 45 * (Math.PI / 180);
+                      const radius = 22;
+                      const x = 30 + radius * Math.cos(angle);
+                      const y = 30 + radius * Math.sin(angle);
+                      return (
+                        <path
+                          key={i}
+                          className="collapse-fragment"
+                          d={`M ${x} ${y} A ${radius} ${radius} 0 0 1 ${x + 8} ${y + 2}`}
+                          fill="none"
+                          stroke="rgba(66, 85, 100, 0.6)"
+                          strokeWidth="1.5"
+                        />
+                      );
+                    })}
+                    {/* Collapse spiral */}
+                    <path
+                      className="collapse-spiral"
+                      d="M 30 30 Q 35 25 40 30 Q 35 35 30 30 Q 25 25 20 30"
                       fill="none"
-                      stroke="rgba(255, 150, 150, 0.4)"
+                      stroke="rgba(193, 118, 118, 0.4)"
                       strokeWidth="1"
-                      strokeDasharray="4,2"
+                      opacity="0"
+                      style={{ transformOrigin: "30px 30px" }}
+                    />
+                    {/* Reformed ring */}
+                    <circle
+                      className="reformed-ring"
+                      cx="30"
+                      cy="30"
+                      r="20"
+                      fill="none"
+                      stroke="rgba(46, 46, 46, 0.6)"
+                      strokeWidth="1.5"
+                      opacity="0"
+                      style={{ transformOrigin: "30px 30px" }}
                     />
                   </>
                 )}
