@@ -1758,11 +1758,11 @@ const StructuralInterpretationMode = () => {
               {selectedCircle.title}
             </h3>
 
-            {/* Declarative Rule */}
+            {/* Structural Logic */}
             <div style={{ marginBottom: "20px" }}>
               <div
                 style={{
-                  color: "#00ffff",
+                  color: "#C9D2DC",
                   fontSize: "12px",
                   fontWeight: "600",
                   marginBottom: "8px",
@@ -1770,17 +1770,30 @@ const StructuralInterpretationMode = () => {
                   letterSpacing: "0.1em",
                 }}
               >
-                DECLARATIVE RULE
+                STRUCTURAL LOGIC
               </div>
               <div
                 style={{
                   color: "#f2f2f2",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   lineHeight: "1.4",
                   fontFamily: "monospace",
                 }}
               >
-                {selectedCircle.rule}
+                {selectedCircle.id === "constraint" &&
+                  'Clause 3.2 states that "approval must be granted," yet Clause 3.4 allows discretion. Constraint is formal — not functional.'}
+                {selectedCircle.id === "sequence" &&
+                  "Clause 4.1 precedes 4.5: legal meaning is preserved. Reverse order collapses enforceability. Vigilum tracks sequence chains."}
+                {selectedCircle.id === "discretion" &&
+                  '"Where appropriate" or "as needed" clauses route control into unbounded fields. These clauses cannot be escalated.'}
+                {selectedCircle.id === "override" &&
+                  "Clause 6.3 → 9.2 → 2.1: every link appears valid. Together, they collapse the original restriction via legal path."}
+                {selectedCircle.id === "typological" &&
+                  '"Subject to review" projects ϕ(c) = [0.81 CI, 0.67 DG]. Legal text remains static. Its meaning shifts structurally.'}
+                {selectedCircle.id === "crossdocument" &&
+                  "Procurement Law defers to Presidential Decree, which defers to Budget Memo. Risk shifts invisibly between documents."}
+                {selectedCircle.id === "integrity" &&
+                  "Clause 3.1 defers to Clause 5.1, which loops back to 3.1. Circular reference = systemic failure masked as legality."}
               </div>
             </div>
 
