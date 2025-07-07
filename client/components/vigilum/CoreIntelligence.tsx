@@ -385,10 +385,32 @@ const StructuralInterpretationMode = () => {
 
   const handleCircleClick = (circle: CircleData) => {
     setSelectedCircle(circle);
+
+    // Update structural memory trace
+    const newClickedCircles = new Set(clickedCircles);
+    newClickedCircles.add(circle.id);
+    setClickedCircles(newClickedCircles);
+
+    const newLogicClasses = new Set(logicClassesEngaged);
+    newLogicClasses.add(circle.logicClass);
+    setLogicClassesEngaged(newLogicClasses);
+
     setInteractionCount((prev) => prev + 1);
 
-    // Show CTA after 2-3 interactions
-    if (interactionCount >= 1) {
+    // Central glyph begins resolving after 2-3 interactions
+    if (newLogicClasses.size >= 2) {
+      setCentralGlyph(Math.min(newLogicClasses.size * 0.3, 0.8));
+    }
+
+    // Field gravitational stabilization after 3+ logic classes
+    if (newLogicClasses.size >= 3) {
+      setFieldStabilized(true);
+      setShowCTA(true);
+    }
+
+    // Full semantic map rendered when all 7 clicked
+    if (newClickedCircles.size === 7) {
+      setCentralGlyph(1.0);
       setShowCTA(true);
     }
   };
