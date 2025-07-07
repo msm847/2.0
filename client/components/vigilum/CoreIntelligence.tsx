@@ -107,7 +107,7 @@ const StructuralInterpretationMode = () => {
         clauseA:
           "The Contracting Authority may waive documentation requirements in exceptional cases.",
         analysis:
-          "No definition of 'exceptional' �� No oversight of waiver • No log requirement",
+          "No definition of 'exceptional' • No oversight of waiver • No log requirement",
         output: "Discretional override without parameterization",
         dgScore: 0.92,
         sbScore: 1.0,
@@ -319,24 +319,23 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "flicker":
-        // DISCRETION ENCODING: Ripple from center, dissipates at 60% radius
-        const rippleCenter = element.querySelector(".ripple-center");
-        if (rippleCenter) {
-          gsap.fromTo(
-            rippleCenter,
-            {
-              scale: 0,
-              opacity: 0.6,
-            },
-            {
-              scale: 0.6,
-              opacity: 0,
-              duration: 0.5,
-              ease: "sine.out",
-              repeat: -1,
-              repeatDelay: 0.4,
-            },
-          );
+        // DISCRETION ENCODING: Hide axis but keep dot visible
+        const coordinateGrid = element.querySelector(".coordinate-grid");
+        const axisDot = element.querySelector(".axis-dot");
+
+        if (coordinateGrid && axisDot) {
+          gsap.to(coordinateGrid, {
+            opacity: 0,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+          // Keep dot visible during hover
+          gsap.to(axisDot, {
+            scale: 1.2,
+            opacity: 1,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
         }
         break;
 
