@@ -381,47 +381,29 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "overlap":
-        // CROSS-DOCUMENT LOGIC: Three circles converge into unified ring
-        const circles = [".circle-a", ".circle-b", ".circle-c"].map((q) =>
-          element.querySelector(q),
+        // CROSS-DOCUMENT LOGIC: Hide simple circle, show intersection geometry
+        const simpleCircle = element.querySelector(".simple-circle");
+        const intersectionGeometry = element.querySelector(
+          ".intersection-geometry",
         );
-        const unifiedRing = element.querySelector(".unified-ring");
 
-        if (circles.every((c) => c) && unifiedRing) {
+        if (simpleCircle && intersectionGeometry) {
           gsap
             .timeline()
-            .to(circles, {
-              x: 0,
-              y: 0,
-              duration: 0.6,
+            .to(simpleCircle, {
+              opacity: 0,
+              duration: 0.3,
               ease: "cubic.inOut",
             })
             .to(
-              circles,
+              intersectionGeometry,
               {
-                opacity: 0,
-                duration: 0.2,
+                opacity: 1,
+                duration: 0.4,
                 ease: "cubic.inOut",
               },
-              0.4,
-            )
-            .to(
-              unifiedRing,
-              {
-                opacity: 0.8,
-                scale: 1,
-                duration: 0.3,
-                ease: "cubic.inOut",
-              },
-              0.5,
-            )
-            .to(unifiedRing, {
-              scale: 1.1,
-              duration: 0.3,
-              ease: "cubic.inOut",
-              yoyo: true,
-              repeat: 1,
-            });
+              0.1,
+            );
         }
         break;
 
