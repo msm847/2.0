@@ -204,7 +204,7 @@ const StructuralInterpretationMode = () => {
         clauseD:
           "Recurring transactions are defined by disbursement automation triggers.",
         analysis:
-          "Loop forms: disbursement → automation → recurring → waiver → disbursement",
+          "Loop forms: disbursement → automation → recurring �� waiver → disbursement",
         output:
           "Circular reference collapse - Vigilum marks as semantic decoherence",
       },
@@ -491,6 +491,142 @@ const StructuralInterpretationMode = () => {
               duration: 0.4,
               ease: "cubic.inOut",
             });
+        }
+        break;
+    }
+  };
+
+  const resetHoverAnimation = (element: Element, animationType: string) => {
+    // Reset all hover animations back to base state
+    switch (animationType) {
+      case "pulse":
+        const cageSegments = element.querySelectorAll(".cage-segment");
+        gsap.killTweensOf(cageSegments);
+        gsap.to(cageSegments, {
+          opacity: 1,
+          duration: 0.3,
+          ease: "cubic.inOut",
+        });
+        break;
+
+      case "orbital":
+        const orbital1 = element.querySelector(".orbital-1");
+        const orbital2 = element.querySelector(".orbital-2");
+        const arrow = element.querySelector(".sequence-arrow");
+
+        if (orbital1 && orbital2 && arrow) {
+          gsap.killTweensOf([orbital1, orbital2, arrow]);
+          gsap.to(arrow, {
+            opacity: 0.6,
+            scaleX: 1,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+        }
+        break;
+
+      case "flicker":
+        const rippleCenter = element.querySelector(".ripple-center");
+        if (rippleCenter) {
+          gsap.killTweensOf(rippleCenter);
+          gsap.set(rippleCenter, { opacity: 0, scale: 0 });
+        }
+        break;
+
+      case "override":
+        const overrideArc = element.querySelector(".override-arc");
+        const intersection = element.querySelector(".intersection-point");
+
+        if (overrideArc && intersection) {
+          gsap.killTweensOf([overrideArc, intersection]);
+          gsap.to(overrideArc, {
+            opacity: 0.4,
+            attr: { d: "M 20 30 Q 30 20 40 30" },
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+          gsap.to(intersection, {
+            opacity: 0,
+            scale: 1,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+        }
+        break;
+
+      case "projection":
+        const beam = element.querySelector(".projection-beam");
+        const labels = element.querySelectorAll(".axis-label");
+
+        if (beam && labels) {
+          gsap.killTweensOf([beam, labels]);
+          gsap.to(beam, {
+            opacity: 0,
+            scaleX: 1,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+          gsap.to(labels, { opacity: 0, duration: 0.3, ease: "cubic.inOut" });
+        }
+        break;
+
+      case "overlap":
+        const circles = [".circle-a", ".circle-b", ".circle-c"].map((q) =>
+          element.querySelector(q),
+        );
+        const unifiedRing = element.querySelector(".unified-ring");
+
+        if (circles.every((c) => c) && unifiedRing) {
+          gsap.killTweensOf([...circles, unifiedRing]);
+          gsap.to(circles[0], {
+            x: -4,
+            y: -4,
+            opacity: 1,
+            duration: 0.5,
+            ease: "cubic.inOut",
+          });
+          gsap.to(circles[1], {
+            x: 4,
+            y: -4,
+            opacity: 1,
+            duration: 0.5,
+            ease: "cubic.inOut",
+          });
+          gsap.to(circles[2], {
+            x: 0,
+            y: 4,
+            opacity: 1,
+            duration: 0.5,
+            ease: "cubic.inOut",
+          });
+          gsap.to(unifiedRing, {
+            opacity: 0,
+            scale: 0,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
+        }
+        break;
+
+      case "collapse":
+        const fragments = element.querySelectorAll(".collapse-fragment");
+        const spiral = element.querySelector(".collapse-spiral");
+        const reformed = element.querySelector(".reformed-ring");
+
+        if (fragments.length > 0 && spiral && reformed) {
+          gsap.killTweensOf([fragments, spiral, reformed]);
+          gsap.to(fragments, {
+            rotation: 0,
+            scale: 1,
+            opacity: 0.6,
+            duration: 0.4,
+            ease: "cubic.inOut",
+          });
+          gsap.to([spiral, reformed], {
+            opacity: 0,
+            duration: 0.3,
+            ease: "cubic.inOut",
+          });
         }
         break;
     }
