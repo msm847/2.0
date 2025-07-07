@@ -107,7 +107,7 @@ const StructuralInterpretationMode = () => {
         clauseA:
           "The Contracting Authority may waive documentation requirements in exceptional cases.",
         analysis:
-          "No definition of 'exceptional' • No oversight of waiver • No log requirement",
+          "No definition of 'exceptional' �� No oversight of waiver • No log requirement",
         output: "Discretional override without parameterization",
         dgScore: 0.92,
         sbScore: 1.0,
@@ -377,30 +377,8 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "projection":
-        // TYPOLOGICAL PROJECTION: Beam projects to axis with labels
-        const beam = element.querySelector(".projection-beam");
-        const labels = element.querySelectorAll(".axis-label");
-
-        if (beam) {
-          gsap
-            .timeline()
-            .to(beam, {
-              opacity: 0.8,
-              scaleX: 1.5,
-              duration: 0.4,
-              ease: "cubic.inOut",
-            })
-            .to(
-              labels,
-              {
-                opacity: 0.7,
-                duration: 0.3,
-                ease: "cubic.inOut",
-                stagger: 0.1,
-              },
-              0.2,
-            );
-        }
+        // TYPOLOGICAL PROJECTION: No hover changes (letters always visible, line positioned right)
+        // Beam and labels remain static as per specification
         break;
 
       case "overlap":
