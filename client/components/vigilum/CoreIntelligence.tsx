@@ -1618,53 +1618,54 @@ const StructuralInterpretationMode = () => {
 
         {/* CTA */}
         {showCTA && (
-          <div className="text-center mt-16">
+          <div style={{ textAlign: "center", marginTop: "60px" }}>
             <div
+              className="font-mono text-xs"
               style={{
-                color: "#00ffff",
-                fontSize: "14px",
-                fontFamily: "monospace",
-                marginBottom: "12px",
+                color: "#C9D2DC",
+                marginBottom: "16px",
+                letterSpacing: "0.02em",
               }}
             >
-              Structural Interpretation Mode: Active
+              Interpretive schema accepted. Output can now be rendered.
             </div>
             <div
+              className="font-mono text-xs"
               style={{
-                color: "#a0a0a0",
-                fontSize: "12px",
-                marginBottom: "20px",
+                color: "#8A9199",
+                marginBottom: "24px",
+                lineHeight: "1.5",
               }}
             >
-              You are now aligned with Vigilum's logic resolution.
+              You are now aligned with clause-level cognition.
+              <br />
+              The simulation field will unlock.
             </div>
             <button
               onClick={handleCTAClick}
               style={{
-                background: "rgba(0, 255, 255, 0.1)",
-                border: "1px solid #00ffff",
-                borderRadius: "8px",
-                padding: "12px 24px",
-                color: "#00ffff",
+                background: "rgba(201, 210, 220, 0.05)",
+                border: "1px solid rgba(201, 210, 220, 0.2)",
+                borderRadius: "4px",
+                padding: "16px 32px",
+                color: "#C9D2DC",
                 fontFamily: "monospace",
-                fontSize: "14px",
-                fontWeight: "500",
+                fontSize: "12px",
+                fontWeight: "400",
                 cursor: "pointer",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
+                letterSpacing: "0.08em",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(0, 255, 255, 0.2)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 20px rgba(0, 255, 255, 0.3)";
+                e.currentTarget.style.background = "rgba(201, 210, 220, 0.08)";
+                e.currentTarget.style.borderColor = "rgba(201, 210, 220, 0.3)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "rgba(0, 255, 255, 0.1)";
-                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.background = "rgba(201, 210, 220, 0.05)";
+                e.currentTarget.style.borderColor = "rgba(201, 210, 220, 0.2)";
               }}
             >
-              → ENTER STRUCTURAL PROCESSING ENVIRONMENT
+              [ ENTER STRUCTURAL PROCESSING ENVIRONMENT ]
             </button>
           </div>
         )}
