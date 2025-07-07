@@ -408,43 +408,27 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "collapse":
-        // STRUCTURAL INTEGRITY LOSS: Fracture into spiral, then false reformation
-        const fragments = element.querySelectorAll(".collapse-fragment");
-        const spiral = element.querySelector(".collapse-spiral");
-        const reformed = element.querySelector(".reformed-ring");
+        // STRUCTURAL INTEGRITY LOSS: Hide circle, show 8 break lines
+        const integrityCircle = element.querySelector(".integrity-circle");
+        const breakLines = element.querySelector(".break-lines");
 
-        if (fragments.length > 0 && spiral && reformed) {
+        if (integrityCircle && breakLines) {
           gsap
             .timeline()
-            .to(fragments, {
-              rotation: 180,
-              scale: 0.7,
-              opacity: 0.3,
-              duration: 0.8,
+            .to(integrityCircle, {
+              opacity: 0,
+              duration: 0.3,
               ease: "cubic.inOut",
-              stagger: 0.1,
             })
             .to(
-              spiral,
+              breakLines,
               {
-                opacity: 0.4,
-                rotation: 360,
-                duration: 0.8,
+                opacity: 1,
+                duration: 0.5,
                 ease: "cubic.inOut",
               },
               0.2,
-            )
-            .to([fragments, spiral], {
-              opacity: 0,
-              duration: 0.2,
-              ease: "cubic.inOut",
-            })
-            .to(reformed, {
-              opacity: 0.6,
-              scale: 1,
-              duration: 0.4,
-              ease: "cubic.inOut",
-            });
+            );
         }
         break;
     }
