@@ -1135,12 +1135,12 @@ const StructuralInterpretationMode = () => {
                 )}
 
                 {circle.animationType === "overlap" && (
-                  // Cross-Document Logic: Venn diagram
+                  // Cross-Document Logic: Three convergent circles
                   <>
                     <circle
                       className="circle-a"
-                      cx="25"
-                      cy="25"
+                      cx="26"
+                      cy="24"
                       r="12"
                       fill="rgba(255, 100, 100, 0.2)"
                       stroke="rgba(255, 100, 100, 0.4)"
