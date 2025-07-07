@@ -1425,57 +1425,73 @@ const StructuralInterpretationMode = () => {
                     )}
 
                     {circle.animationType === "overlap" && (
-                      // Cross-Document Logic: Overlapping circles with intersection geometry
+                      // Cross-Document Logic: 3-circle Venn diagram with intersection on hover
                       <>
-                        {/* Simple circle (hidden on hover) */}
-                        <circle
-                          className="simple-circle"
-                          cx="30"
-                          cy="30"
-                          r="25"
-                          fill="rgba(52, 65, 77, 0.1)"
-                          stroke="rgba(52, 65, 77, 0.4)"
-                          strokeWidth="1"
-                        />
-                        {/* Overlapping circles (shown on hover) */}
-                        <g
-                          className="intersection-geometry"
-                          style={{ opacity: 0 }}
-                        >
+                        {/* 3-circle Venn diagram (visible initially) */}
+                        <g className="venn-diagram" style={{ opacity: 1 }}>
                           <circle
-                            className="circle-a"
-                            cx="22"
-                            cy="25"
-                            r="12"
-                            fill="rgba(52, 65, 77, 0.15)"
-                            stroke="rgba(123, 163, 186, 0.6)"
-                            strokeWidth="1.5"
+                            className="venn-circle-a"
+                            cx="24"
+                            cy="24"
+                            r="11"
+                            fill="rgba(52, 65, 77, 0.2)"
+                            stroke="rgba(52, 65, 77, 0.6)"
+                            strokeWidth="1"
                           />
                           <circle
-                            className="circle-b"
-                            cx="38"
-                            cy="25"
-                            r="12"
-                            fill="rgba(52, 65, 77, 0.15)"
-                            stroke="rgba(123, 163, 186, 0.6)"
-                            strokeWidth="1.5"
+                            className="venn-circle-b"
+                            cx="36"
+                            cy="24"
+                            r="11"
+                            fill="rgba(52, 65, 77, 0.2)"
+                            stroke="rgba(52, 65, 77, 0.6)"
+                            strokeWidth="1"
                           />
                           <circle
-                            className="circle-c"
+                            className="venn-circle-c"
                             cx="30"
-                            cy="38"
-                            r="12"
-                            fill="rgba(52, 65, 77, 0.15)"
-                            stroke="rgba(123, 163, 186, 0.6)"
-                            strokeWidth="1.5"
+                            cy="36"
+                            r="11"
+                            fill="rgba(52, 65, 77, 0.2)"
+                            stroke="rgba(52, 65, 77, 0.6)"
+                            strokeWidth="1"
                           />
-                          {/* Intersection highlight */}
-                          <circle
-                            cx="30"
-                            cy="30"
-                            r="6"
-                            fill="rgba(123, 163, 186, 0.3)"
+                        </g>
+                        {/* Intersection overlap shape (shown on hover) */}
+                        <g className="intersection-only" style={{ opacity: 0 }}>
+                          {/* Central intersection area */}
+                          <path
+                            d="M 30 28
+                               A 11 11 0 0 1 32.5 30.5
+                               A 11 11 0 0 1 27.5 30.5
+                               A 11 11 0 0 1 30 28 Z"
+                            fill="rgba(123, 163, 186, 0.5)"
                             stroke="rgba(123, 163, 186, 0.8)"
+                            strokeWidth="1.5"
+                          />
+                          {/* Pairwise intersection areas */}
+                          <path
+                            d="M 28 26
+                               A 11 11 0 0 1 32 26
+                               A 11 11 0 0 0 28 26 Z"
+                            fill="rgba(123, 163, 186, 0.3)"
+                            stroke="rgba(123, 163, 186, 0.6)"
+                            strokeWidth="1"
+                          />
+                          <path
+                            d="M 26.5 29
+                               A 11 11 0 0 1 30 33
+                               A 11 11 0 0 0 26.5 29 Z"
+                            fill="rgba(123, 163, 186, 0.3)"
+                            stroke="rgba(123, 163, 186, 0.6)"
+                            strokeWidth="1"
+                          />
+                          <path
+                            d="M 33.5 29
+                               A 11 11 0 0 0 30 33
+                               A 11 11 0 0 1 33.5 29 Z"
+                            fill="rgba(123, 163, 186, 0.3)"
+                            stroke="rgba(123, 163, 186, 0.6)"
                             strokeWidth="1"
                           />
                         </g>
