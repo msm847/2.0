@@ -683,7 +683,7 @@ const StructuralInterpretationMode = () => {
       ref={sectionRef}
       id="structural-interpretation"
       style={{
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "#0b1e16",
         minHeight: "100vh",
         position: "relative",
       }}
