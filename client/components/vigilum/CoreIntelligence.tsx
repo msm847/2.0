@@ -982,15 +982,16 @@ const StructuralInterpretationMode = () => {
     >
       <div className="container mx-auto px-4 py-20">
         {/* Cognitive Recompiler Interface */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 400px 1fr",
-          gap: "60px",
-          alignItems: "center",
-          minHeight: "70vh",
-          marginBottom: "40px"
-        }}>
-
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 400px 1fr",
+            gap: "60px",
+            alignItems: "center",
+            minHeight: "70vh",
+            marginBottom: "40px",
+          }}
+        >
           {/* Left Column: Primary Logic Statement */}
           <div style={{ justifySelf: "end", maxWidth: "320px" }}>
             <h2
@@ -1022,9 +1023,13 @@ const StructuralInterpretationMode = () => {
                 lineHeight: "1.6",
               }}
             >
-              You are entering a logic field.<br/>
-              The following interface is not descriptive. It is structural.<br/>
-              These seven units are not icons. They are semantic operators — each one a self-contained diagnostic mechanism that defines how systems reroute legality.
+              You are entering a logic field.
+              <br />
+              The following interface is not descriptive. It is structural.
+              <br />
+              These seven units are not icons. They are semantic operators —
+              each one a self-contained diagnostic mechanism that defines how
+              systems reroute legality.
             </div>
           </div>
 
@@ -1071,448 +1076,545 @@ const StructuralInterpretationMode = () => {
                 border: "1px solid rgba(0, 255, 204, 0.1)",
               }}
             >
-          {circleData.map((circle) => (
-            <div
-              key={circle.id}
-              id={`circle-${circle.id}`}
-              className="circle-node"
-              onMouseEnter={() => handleCircleHover(circle.id)}
-              onMouseLeave={handleCircleLeave}
-              onClick={() => handleCircleClick(circle)}
-              style={{
-                position: "absolute",
-                left: `${circle.position.x}%`,
-                top: `${circle.position.y}%`,
-                width: "60px",
-                height: "60px",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                transition:
-                  hoveredCircle === circle.id
-                    ? "box-shadow 0.3s ease-out, all 0.3s ease"
-                    : "all 0.3s ease",
-                transform: "translate(-50%, -50%)",
-                zIndex:
-                  circle.gravity === 1.0 ? 10 : Math.floor(circle.gravity * 5),
-                filter: hoveredCircle
-                  ? hoveredCircle === circle.id
-                    ? "none"
-                    : "blur(2px)"
-                  : circle.gravity > 0.7
-                    ? "none"
-                    : `blur(${(1 - circle.gravity) * 0.5}px)`,
-                opacity: clickedCircles.has(circle.id)
-                  ? Math.min(1, 0.6 + clickedCircles.size * 0.1)
-                  : fieldStabilized && !clickedCircles.has(circle.id)
-                    ? 0.4
-                    : 1,
-                // Semantic shadow system with gravity-based variations
-                boxShadow:
-                  hoveredCircle === circle.id
-                    ? // Hover state: elevated semantic focus
-                      `0px 8px 20px rgba(0, 0, 0, 0.5), inset 0px 0px 3px rgba(255, 255, 255, 0.08)`
-                    : // Idle state: gravity-based depth variations
-                      circle.gravity === 1.0
-                      ? `0px 2px 16px rgba(0, 0, 0, 0.45), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Structural Integrity Loss
-                      : circle.gravity >= 0.8
-                        ? `0px 4px 12px rgba(0, 0, 0, 0.4), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Override/Typological
-                        : circle.gravity >= 0.7
-                          ? `0px 5px 14px rgba(0, 0, 0, 0.35), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Cross-Document
-                          : circle.gravity >= 0.6
-                            ? `0px 4px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Constraint
-                            : circle.gravity >= 0.5
-                              ? `0px 3px 8px rgba(0, 0, 0, 0.28), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Discretion
-                              : `0px 3px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)`, // Sequence
-                // Ambient shadow oscillation animation (disabled for reduced motion)
-                animation: prefersReducedMotion
-                  ? "none"
-                  : "shadowWander 8s ease-in-out infinite",
-              }}
-            >
-              {/* Circle-specific SVG animations */}
-              <svg width="60" height="60" style={{ position: "absolute" }}>
-                {circle.animationType === "pulse" && (
-                  // Constraint Simulation: Cage with retractable segments
-                  <>
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="25"
-                      fill="rgba(32, 36, 43, 0.1)"
-                      stroke="rgba(32, 36, 43, 0.2)"
-                      strokeWidth="1.2"
-                    />
-                    {/* 24 radial cage segments */}
-                    {Array.from({ length: 24 }, (_, i) => {
-                      const angle = i * 15 * (Math.PI / 180);
-                      const x1 = 30 + 18 * Math.cos(angle);
-                      const y1 = 30 + 18 * Math.sin(angle);
-                      const x2 = 30 + 22 * Math.cos(angle);
-                      const y2 = 30 + 22 * Math.sin(angle);
-                      return (
-                        <line
-                          key={i}
-                          className="cage-segment"
-                          x1={x1}
-                          y1={y1}
-                          x2={x2}
-                          y2={y2}
-                          stroke="rgba(46, 51, 60, 0.8)"
-                          strokeWidth="1.2"
-                        />
-                      );
-                    })}
-                  </>
-                )}
-
-                {circle.animationType === "orbital" && (
-                  // Sequence Dependency: Orbital nodes with directional arrow
-                  <>
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="25"
-                      fill="rgba(32, 36, 43, 0.1)"
-                      stroke="rgba(32, 36, 43, 0.2)"
-                      strokeWidth="1"
-                    />
-                    <g style={{ transformOrigin: "30px 30px" }}>
-                      <circle
-                        className="orbital-1"
-                        cx="30"
-                        cy="12"
-                        r="3"
-                        fill="rgba(153, 170, 184, 0.8)"
-                        stroke="rgba(108, 129, 149, 0.6)"
-                        strokeWidth="1"
-                      />
-                      <circle
-                        className="orbital-2"
-                        cx="30"
-                        cy="48"
-                        r="3"
-                        fill="rgba(153, 170, 184, 0.6)"
-                        stroke="rgba(108, 129, 149, 0.4)"
-                        strokeWidth="1"
-                      />
-                      {/* Directional arrow */}
-                      <path
-                        className="sequence-arrow"
-                        d="M 22 30 L 28 30 M 26 28 L 28 30 L 26 32"
-                        fill="none"
-                        stroke="rgba(108, 129, 149, 0.6)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        opacity="0.6"
-                      />
-                    </g>
-                  </>
-                )}
-
-                {circle.animationType === "flicker" && (
-                  // Discretion Encoding: Ripple emanation from center
-                  <>
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="25"
-                      fill="rgba(41, 48, 56, 0.1)"
-                      stroke="rgba(41, 48, 56, 0.2)"
-                      strokeWidth="1"
-                    />
-                    <circle
-                      className="ripple-center"
-                      cx="30"
-                      cy="30"
-                      r="15"
-                      fill="none"
-                      stroke="rgba(94, 137, 160, 0.6)"
-                      strokeWidth="1.5"
-                      opacity="0"
-                      style={{ transformOrigin: "30px 30px" }}
-                    />
-                    {/* Subtle center pulse */}
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="2"
-                      fill="rgba(94, 137, 160, 0.4)"
-                      opacity="0.6"
-                    />
-                  </>
-                )}
-
-                {circle.animationType === "override" && (
-                  // Override Pathways: Arc intersection with ring
-                  <>
-                    <circle
-                      className="base-ring"
-                      cx="30"
-                      cy="30"
-                      r="25"
-                      fill="rgba(34, 38, 46, 0.1)"
-                      stroke="rgba(34, 38, 46, 0.2)"
-                      strokeWidth="1"
-                    />
-                    <path
-                      className="override-arc"
-                      d="M 20 30 Q 30 20 40 30"
-                      fill="none"
-                      stroke="rgba(113, 142, 164, 0.6)"
-                      strokeWidth="1.5"
-                      opacity="0.4"
-                    />
-                    <circle
-                      className="intersection-point"
-                      cx="30"
-                      cy="25"
-                      r="1.5"
-                      fill="rgba(209, 116, 116, 0.6)"
-                      opacity="0"
-                      style={{ transformOrigin: "30px 25px" }}
-                    />
-                  </>
-                )}
-
-                {circle.animationType === "projection" && (
-                  // Typological Projection: Vector projection with axis labels
-                  <>
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="25"
-                      fill="rgba(32, 36, 43, 0.1)"
-                      stroke="rgba(32, 36, 43, 0.2)"
-                      strokeWidth="1"
-                    />
-                    {/* Axis markers */}
-                    <g opacity="0.3">
-                      <line
-                        x1="10"
-                        y1="30"
-                        x2="50"
-                        y2="30"
-                        stroke="rgba(64, 74, 82, 0.4)"
-                        strokeWidth="0.5"
-                      />
-                      <line
-                        x1="30"
-                        y1="10"
-                        x2="30"
-                        y2="50"
-                        stroke="rgba(64, 74, 82, 0.4)"
-                        strokeWidth="0.5"
-                      />
-                    </g>
-                    {/* Projection beam */}
-                    <line
-                      className="projection-beam"
-                      x1="30"
-                      y1="30"
-                      x2="45"
-                      y2="15"
-                      stroke="rgba(136, 178, 206, 0.6)"
-                      strokeWidth="2"
-                      opacity="0"
-                      style={{ transformOrigin: "30px 30px" }}
-                    />
-                    {/* Axis labels */}
-                    <text
-                      className="axis-label"
-                      x="52"
-                      y="32"
-                      fontSize="6"
-                      fill="rgba(124, 139, 155, 0.7)"
-                      opacity="0"
-                    >
-                      DG
-                    </text>
-                    <text
-                      className="axis-label"
-                      x="28"
-                      y="8"
-                      fontSize="6"
-                      fill="rgba(124, 139, 155, 0.7)"
-                      opacity="0"
-                    >
-                      RT
-                    </text>
-                    <text
-                      className="axis-label"
-                      x="8"
-                      y="32"
-                      fontSize="6"
-                      fill="rgba(124, 139, 155, 0.7)"
-                      opacity="0"
-                    >
-                      CI
-                    </text>
-                    <text
-                      className="axis-label"
-                      x="28"
-                      y="55"
-                      fontSize="6"
-                      fill="rgba(124, 139, 155, 0.7)"
-                      opacity="0"
-                    >
-                      SB
-                    </text>
-                  </>
-                )}
-
-                {circle.animationType === "overlap" && (
-                  // Cross-Document Logic: Three convergent circles
-                  <>
-                    <circle
-                      className="circle-a"
-                      cx="26"
-                      cy="26"
-                      r="10"
-                      fill="rgba(52, 65, 77, 0.2)"
-                      stroke="rgba(52, 65, 77, 0.4)"
-                      strokeWidth="1"
-                    />
-                    <circle
-                      className="circle-b"
-                      cx="34"
-                      cy="26"
-                      r="10"
-                      fill="rgba(52, 65, 77, 0.2)"
-                      stroke="rgba(52, 65, 77, 0.4)"
-                      strokeWidth="1"
-                    />
-                    <circle
-                      className="circle-c"
-                      cx="30"
-                      cy="34"
-                      r="10"
-                      fill="rgba(52, 65, 77, 0.2)"
-                      stroke="rgba(52, 65, 77, 0.4)"
-                      strokeWidth="1"
-                    />
-                    {/* Unified ring (hidden initially) */}
-                    <circle
-                      className="unified-ring"
-                      cx="30"
-                      cy="30"
-                      r="18"
-                      fill="none"
-                      stroke="rgba(123, 163, 186, 0.8)"
-                      strokeWidth="2"
-                      opacity="0"
-                      style={{ transformOrigin: "30px 30px" }}
-                    />
-                  </>
-                )}
-
-                {circle.animationType === "collapse" && (
-                  // Structural Integrity Loss: Fracture and spiral collapse
-                  <>
-                    {/* Fragments */}
-                    {Array.from({ length: 8 }, (_, i) => {
-                      const angle = i * 45 * (Math.PI / 180);
-                      const radius = 22;
-                      const x = 30 + radius * Math.cos(angle);
-                      const y = 30 + radius * Math.sin(angle);
-                      return (
-                        <path
-                          key={i}
-                          className="collapse-fragment"
-                          d={`M ${x} ${y} A ${radius} ${radius} 0 0 1 ${x + 8} ${y + 2}`}
-                          fill="none"
-                          stroke="rgba(66, 85, 100, 0.6)"
-                          strokeWidth="1.5"
-                        />
-                      );
-                    })}
-                    {/* Collapse spiral */}
-                    <path
-                      className="collapse-spiral"
-                      d="M 30 30 Q 35 25 40 30 Q 35 35 30 30 Q 25 25 20 30"
-                      fill="none"
-                      stroke="rgba(193, 118, 118, 0.4)"
-                      strokeWidth="1"
-                      opacity="0"
-                      style={{ transformOrigin: "30px 30px" }}
-                    />
-                    {/* Reformed ring */}
-                    <circle
-                      className="reformed-ring"
-                      cx="30"
-                      cy="30"
-                      r="20"
-                      fill="none"
-                      stroke="rgba(46, 46, 46, 0.6)"
-                      strokeWidth="1.5"
-                      opacity="0"
-                      style={{ transformOrigin: "30px 30px" }}
-                    />
-                  </>
-                )}
-
-                {/* Default fallback */}
-                {![
-                  "pulse",
-                  "orbital",
-                  "flicker",
-                  "override",
-                  "projection",
-                  "overlap",
-                  "collapse",
-                ].includes(circle.animationType) && (
-                  <circle
-                    cx="30"
-                    cy="30"
-                    r="25"
-                    fill="rgba(255, 255, 255, 0.05)"
-                    stroke="rgba(255, 255, 255, 0.1)"
-                    strokeWidth="1"
-                  />
-                )}
-              </svg>
-
-              {/* Hover text */}
-              {hoveredCircle === circle.id && (
+              {circleData.map((circle) => (
                 <div
+                  key={circle.id}
+                  id={`circle-${circle.id}`}
+                  className="circle-node"
+                  onMouseEnter={() => handleCircleHover(circle.id)}
+                  onMouseLeave={handleCircleLeave}
+                  onClick={() => handleCircleClick(circle)}
                   style={{
                     position: "absolute",
-                    left: "70px",
-                    top: "-20px",
-                    background: "rgba(0, 0, 0, 0.9)",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    borderRadius: "8px",
-                    padding: "12px 16px",
-                    minWidth: "250px",
-                    zIndex: 10,
+                    left: `${circle.position.x}%`,
+                    top: `${circle.position.y}%`,
+                    width: "60px",
+                    height: "60px",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition:
+                      hoveredCircle === circle.id
+                        ? "box-shadow 0.3s ease-out, all 0.3s ease"
+                        : "all 0.3s ease",
+                    transform: "translate(-50%, -50%)",
+                    zIndex:
+                      circle.gravity === 1.0
+                        ? 10
+                        : Math.floor(circle.gravity * 5),
+                    filter: hoveredCircle
+                      ? hoveredCircle === circle.id
+                        ? "none"
+                        : "blur(2px)"
+                      : circle.gravity > 0.7
+                        ? "none"
+                        : `blur(${(1 - circle.gravity) * 0.5}px)`,
+                    opacity: clickedCircles.has(circle.id)
+                      ? Math.min(1, 0.6 + clickedCircles.size * 0.1)
+                      : fieldStabilized && !clickedCircles.has(circle.id)
+                        ? 0.4
+                        : 1,
+                    // Semantic shadow system with gravity-based variations
+                    boxShadow:
+                      hoveredCircle === circle.id
+                        ? // Hover state: elevated semantic focus
+                          `0px 8px 20px rgba(0, 0, 0, 0.5), inset 0px 0px 3px rgba(255, 255, 255, 0.08)`
+                        : // Idle state: gravity-based depth variations
+                          circle.gravity === 1.0
+                          ? `0px 2px 16px rgba(0, 0, 0, 0.45), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Structural Integrity Loss
+                          : circle.gravity >= 0.8
+                            ? `0px 4px 12px rgba(0, 0, 0, 0.4), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Override/Typological
+                            : circle.gravity >= 0.7
+                              ? `0px 5px 14px rgba(0, 0, 0, 0.35), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Cross-Document
+                              : circle.gravity >= 0.6
+                                ? `0px 4px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Constraint
+                                : circle.gravity >= 0.5
+                                  ? `0px 3px 8px rgba(0, 0, 0, 0.28), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Discretion
+                                  : `0px 3px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)`, // Sequence
+                    // Ambient shadow oscillation animation (disabled for reduced motion)
+                    animation: prefersReducedMotion
+                      ? "none"
+                      : "shadowWander 8s ease-in-out infinite",
                   }}
                 >
-                  <div
-                    style={{
-                      color: "#f2f2f2",
-                      fontSize: "14px",
-                      fontWeight: "600",
-                      marginBottom: "4px",
-                      fontFamily: "monospace",
-                    }}
-                  >
-                    {circle.title}
-                  </div>
-                  <div
-                    style={{
-                      color: "#a0a0a0",
-                      fontSize: "12px",
-                      lineHeight: "1.4",
-                    }}
-                  >
-                    {circle.definition}
-                  </div>
+                  {/* Circle-specific SVG animations */}
+                  <svg width="60" height="60" style={{ position: "absolute" }}>
+                    {circle.animationType === "pulse" && (
+                      // Constraint Simulation: Cage with retractable segments
+                      <>
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="25"
+                          fill="rgba(32, 36, 43, 0.1)"
+                          stroke="rgba(32, 36, 43, 0.2)"
+                          strokeWidth="1.2"
+                        />
+                        {/* 24 radial cage segments */}
+                        {Array.from({ length: 24 }, (_, i) => {
+                          const angle = i * 15 * (Math.PI / 180);
+                          const x1 = 30 + 18 * Math.cos(angle);
+                          const y1 = 30 + 18 * Math.sin(angle);
+                          const x2 = 30 + 22 * Math.cos(angle);
+                          const y2 = 30 + 22 * Math.sin(angle);
+                          return (
+                            <line
+                              key={i}
+                              className="cage-segment"
+                              x1={x1}
+                              y1={y1}
+                              x2={x2}
+                              y2={y2}
+                              stroke="rgba(46, 51, 60, 0.8)"
+                              strokeWidth="1.2"
+                            />
+                          );
+                        })}
+                      </>
+                    )}
+
+                    {circle.animationType === "orbital" && (
+                      // Sequence Dependency: Orbital nodes with directional arrow
+                      <>
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="25"
+                          fill="rgba(32, 36, 43, 0.1)"
+                          stroke="rgba(32, 36, 43, 0.2)"
+                          strokeWidth="1"
+                        />
+                        <g style={{ transformOrigin: "30px 30px" }}>
+                          <circle
+                            className="orbital-1"
+                            cx="30"
+                            cy="12"
+                            r="3"
+                            fill="rgba(153, 170, 184, 0.8)"
+                            stroke="rgba(108, 129, 149, 0.6)"
+                            strokeWidth="1"
+                          />
+                          <circle
+                            className="orbital-2"
+                            cx="30"
+                            cy="48"
+                            r="3"
+                            fill="rgba(153, 170, 184, 0.6)"
+                            stroke="rgba(108, 129, 149, 0.4)"
+                            strokeWidth="1"
+                          />
+                          {/* Directional arrow */}
+                          <path
+                            className="sequence-arrow"
+                            d="M 22 30 L 28 30 M 26 28 L 28 30 L 26 32"
+                            fill="none"
+                            stroke="rgba(108, 129, 149, 0.6)"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            opacity="0.6"
+                          />
+                        </g>
+                      </>
+                    )}
+
+                    {circle.animationType === "flicker" && (
+                      // Discretion Encoding: Ripple emanation from center
+                      <>
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="25"
+                          fill="rgba(41, 48, 56, 0.1)"
+                          stroke="rgba(41, 48, 56, 0.2)"
+                          strokeWidth="1"
+                        />
+                        <circle
+                          className="ripple-center"
+                          cx="30"
+                          cy="30"
+                          r="15"
+                          fill="none"
+                          stroke="rgba(94, 137, 160, 0.6)"
+                          strokeWidth="1.5"
+                          opacity="0"
+                          style={{ transformOrigin: "30px 30px" }}
+                        />
+                        {/* Subtle center pulse */}
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="2"
+                          fill="rgba(94, 137, 160, 0.4)"
+                          opacity="0.6"
+                        />
+                      </>
+                    )}
+
+                    {circle.animationType === "override" && (
+                      // Override Pathways: Arc intersection with ring
+                      <>
+                        <circle
+                          className="base-ring"
+                          cx="30"
+                          cy="30"
+                          r="25"
+                          fill="rgba(34, 38, 46, 0.1)"
+                          stroke="rgba(34, 38, 46, 0.2)"
+                          strokeWidth="1"
+                        />
+                        <path
+                          className="override-arc"
+                          d="M 20 30 Q 30 20 40 30"
+                          fill="none"
+                          stroke="rgba(113, 142, 164, 0.6)"
+                          strokeWidth="1.5"
+                          opacity="0.4"
+                        />
+                        <circle
+                          className="intersection-point"
+                          cx="30"
+                          cy="25"
+                          r="1.5"
+                          fill="rgba(209, 116, 116, 0.6)"
+                          opacity="0"
+                          style={{ transformOrigin: "30px 25px" }}
+                        />
+                      </>
+                    )}
+
+                    {circle.animationType === "projection" && (
+                      // Typological Projection: Vector projection with axis labels
+                      <>
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="25"
+                          fill="rgba(32, 36, 43, 0.1)"
+                          stroke="rgba(32, 36, 43, 0.2)"
+                          strokeWidth="1"
+                        />
+                        {/* Axis markers */}
+                        <g opacity="0.3">
+                          <line
+                            x1="10"
+                            y1="30"
+                            x2="50"
+                            y2="30"
+                            stroke="rgba(64, 74, 82, 0.4)"
+                            strokeWidth="0.5"
+                          />
+                          <line
+                            x1="30"
+                            y1="10"
+                            x2="30"
+                            y2="50"
+                            stroke="rgba(64, 74, 82, 0.4)"
+                            strokeWidth="0.5"
+                          />
+                        </g>
+                        {/* Projection beam */}
+                        <line
+                          className="projection-beam"
+                          x1="30"
+                          y1="30"
+                          x2="45"
+                          y2="15"
+                          stroke="rgba(136, 178, 206, 0.6)"
+                          strokeWidth="2"
+                          opacity="0"
+                          style={{ transformOrigin: "30px 30px" }}
+                        />
+                        {/* Axis labels */}
+                        <text
+                          className="axis-label"
+                          x="52"
+                          y="32"
+                          fontSize="6"
+                          fill="rgba(124, 139, 155, 0.7)"
+                          opacity="0"
+                        >
+                          DG
+                        </text>
+                        <text
+                          className="axis-label"
+                          x="28"
+                          y="8"
+                          fontSize="6"
+                          fill="rgba(124, 139, 155, 0.7)"
+                          opacity="0"
+                        >
+                          RT
+                        </text>
+                        <text
+                          className="axis-label"
+                          x="8"
+                          y="32"
+                          fontSize="6"
+                          fill="rgba(124, 139, 155, 0.7)"
+                          opacity="0"
+                        >
+                          CI
+                        </text>
+                        <text
+                          className="axis-label"
+                          x="28"
+                          y="55"
+                          fontSize="6"
+                          fill="rgba(124, 139, 155, 0.7)"
+                          opacity="0"
+                        >
+                          SB
+                        </text>
+                      </>
+                    )}
+
+                    {circle.animationType === "overlap" && (
+                      // Cross-Document Logic: Three convergent circles
+                      <>
+                        <circle
+                          className="circle-a"
+                          cx="26"
+                          cy="26"
+                          r="10"
+                          fill="rgba(52, 65, 77, 0.2)"
+                          stroke="rgba(52, 65, 77, 0.4)"
+                          strokeWidth="1"
+                        />
+                        <circle
+                          className="circle-b"
+                          cx="34"
+                          cy="26"
+                          r="10"
+                          fill="rgba(52, 65, 77, 0.2)"
+                          stroke="rgba(52, 65, 77, 0.4)"
+                          strokeWidth="1"
+                        />
+                        <circle
+                          className="circle-c"
+                          cx="30"
+                          cy="34"
+                          r="10"
+                          fill="rgba(52, 65, 77, 0.2)"
+                          stroke="rgba(52, 65, 77, 0.4)"
+                          strokeWidth="1"
+                        />
+                        {/* Unified ring (hidden initially) */}
+                        <circle
+                          className="unified-ring"
+                          cx="30"
+                          cy="30"
+                          r="18"
+                          fill="none"
+                          stroke="rgba(123, 163, 186, 0.8)"
+                          strokeWidth="2"
+                          opacity="0"
+                          style={{ transformOrigin: "30px 30px" }}
+                        />
+                      </>
+                    )}
+
+                    {circle.animationType === "collapse" && (
+                      // Structural Integrity Loss: Fracture and spiral collapse
+                      <>
+                        {/* Fragments */}
+                        {Array.from({ length: 8 }, (_, i) => {
+                          const angle = i * 45 * (Math.PI / 180);
+                          const radius = 22;
+                          const x = 30 + radius * Math.cos(angle);
+                          const y = 30 + radius * Math.sin(angle);
+                          return (
+                            <path
+                              key={i}
+                              className="collapse-fragment"
+                              d={`M ${x} ${y} A ${radius} ${radius} 0 0 1 ${x + 8} ${y + 2}`}
+                              fill="none"
+                              stroke="rgba(66, 85, 100, 0.6)"
+                              strokeWidth="1.5"
+                            />
+                          );
+                        })}
+                        {/* Collapse spiral */}
+                        <path
+                          className="collapse-spiral"
+                          d="M 30 30 Q 35 25 40 30 Q 35 35 30 30 Q 25 25 20 30"
+                          fill="none"
+                          stroke="rgba(193, 118, 118, 0.4)"
+                          strokeWidth="1"
+                          opacity="0"
+                          style={{ transformOrigin: "30px 30px" }}
+                        />
+                        {/* Reformed ring */}
+                        <circle
+                          className="reformed-ring"
+                          cx="30"
+                          cy="30"
+                          r="20"
+                          fill="none"
+                          stroke="rgba(46, 46, 46, 0.6)"
+                          strokeWidth="1.5"
+                          opacity="0"
+                          style={{ transformOrigin: "30px 30px" }}
+                        />
+                      </>
+                    )}
+
+                    {/* Default fallback */}
+                    {![
+                      "pulse",
+                      "orbital",
+                      "flicker",
+                      "override",
+                      "projection",
+                      "overlap",
+                      "collapse",
+                    ].includes(circle.animationType) && (
+                      <circle
+                        cx="30"
+                        cy="30"
+                        r="25"
+                        fill="rgba(255, 255, 255, 0.05)"
+                        stroke="rgba(255, 255, 255, 0.1)"
+                        strokeWidth="1"
+                      />
+                    )}
+                  </svg>
+
+                  {/* Hover text */}
+                  {hoveredCircle === circle.id && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        left: "70px",
+                        top: "-20px",
+                        background: "rgba(0, 0, 0, 0.9)",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        borderRadius: "8px",
+                        padding: "12px 16px",
+                        minWidth: "250px",
+                        zIndex: 10,
+                      }}
+                    >
+                      <div
+                        style={{
+                          color: "#f2f2f2",
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          marginBottom: "4px",
+                          fontFamily: "monospace",
+                        }}
+                      >
+                        {circle.title}
+                      </div>
+                      <div
+                        style={{
+                          color: "#a0a0a0",
+                          fontSize: "12px",
+                          lineHeight: "1.4",
+                        }}
+                      >
+                        {circle.definition}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Right Column: Operator Theory Preview */}
+          <div style={{ justifySelf: "start", maxWidth: "320px" }}>
+            <div
+              className="font-mono text-xs"
+              style={{
+                color: "#7A8794",
+                fontWeight: "400",
+                lineHeight: "1.6",
+                marginBottom: "20px",
+              }}
+            >
+              Vigilum does not display corruption.
+              <br />
+              It simulates the logic that produces it — through clauses that
+              appear valid but collapse under structured interaction.
+            </div>
+            <div
+              className="font-mono text-xs"
+              style={{
+                color: "#6B7684",
+                fontWeight: "400",
+                lineHeight: "1.6",
+                marginBottom: "16px",
+              }}
+            >
+              This interface performs the minimal induction necessary to engage
+              with Vigilum's simulation layer.
+              <br />
+              Meaning here is not seen. It is compiled.
+            </div>
+            {logicClassesEngaged.size >= 2 && (
+              <div
+                className="font-mono text-xs"
+                style={{
+                  color: "#8A9199",
+                  fontWeight: "400",
+                  lineHeight: "1.6",
+                  opacity: 0.8,
+                }}
+              >
+                Interpretive alignment: {logicClassesEngaged.size}/7
+                <br />
+                Central glyph resolving...
+              </div>
+            )}
+          </div>
         </div>
+
+        {/* Semantic Hover Reinforcement */}
+        {hoveredCircle && (
+          <div
+            style={{
+              position: "fixed",
+              bottom: "40px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              background: "rgba(11, 30, 22, 0.95)",
+              border: "1px solid rgba(0, 255, 204, 0.2)",
+              borderRadius: "6px",
+              padding: "12px 20px",
+              zIndex: 1000,
+            }}
+          >
+            <div
+              className="font-mono text-xs"
+              style={{
+                color: "#C9D2DC",
+                textAlign: "center",
+                lineHeight: "1.4",
+              }}
+            >
+              {circleData.find((c) => c.id === hoveredCircle)?.title}
+              <br />
+              <span style={{ color: "#8A9199", fontSize: "11px" }}>
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "constraint" && "Appears restrictive, structurally inert"}
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "sequence" && "Clause order alters legal outcome"}
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "discretion" && "Authority routed into undefined thresholds"}
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "override" && "Nullification embedded in downstream chains"}
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "typological" &&
+                  "Clause as vector across structural risk space"}
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "crossdocument" && "Meaning emerges across legal strata"}
+                {circleData.find((c) => c.id === hoveredCircle)?.id ===
+                  "integrity" && "Clause logic collapses into semantic noise"}
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* CTA */}
         {showCTA && (
