@@ -552,19 +552,17 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "overlap":
-        const simpleCircle = element.querySelector(".simple-circle");
-        const intersectionGeometry = element.querySelector(
-          ".intersection-geometry",
-        );
+        const vennDiagram = element.querySelector(".venn-diagram");
+        const intersectionOnly = element.querySelector(".intersection-only");
 
-        if (simpleCircle && intersectionGeometry) {
-          gsap.killTweensOf([simpleCircle, intersectionGeometry]);
-          gsap.to(simpleCircle, {
+        if (vennDiagram && intersectionOnly) {
+          gsap.killTweensOf([vennDiagram, intersectionOnly]);
+          gsap.to(vennDiagram, {
             opacity: 1,
             duration: 0.3,
             ease: "cubic.inOut",
           });
-          gsap.to(intersectionGeometry, {
+          gsap.to(intersectionOnly, {
             opacity: 0,
             duration: 0.3,
             ease: "cubic.inOut",
