@@ -1017,29 +1017,33 @@ const StructuralInterpretationMode = () => {
                 )}
 
                 {circle.animationType === "override" && (
-                  // Override Pathways: Arc intersection
+                  // Override Pathways: Arc intersection with ring
                   <>
                     <circle
+                      className="base-ring"
                       cx="30"
                       cy="30"
                       r="25"
-                      fill="rgba(255, 255, 255, 0.05)"
-                      stroke="rgba(255, 255, 255, 0.1)"
+                      fill="rgba(34, 38, 46, 0.1)"
+                      stroke="rgba(34, 38, 46, 0.2)"
                       strokeWidth="1"
                     />
                     <path
                       className="override-arc"
-                      d="M 15 30 Q 30 15 45 30"
+                      d="M 20 30 Q 30 20 40 30"
                       fill="none"
-                      stroke="rgba(255, 200, 100, 0.7)"
-                      strokeWidth="2"
+                      stroke="rgba(113, 142, 164, 0.6)"
+                      strokeWidth="1.5"
+                      opacity="0.4"
                     />
                     <circle
-                      className="pulse-point"
+                      className="intersection-point"
                       cx="30"
-                      cy="22"
-                      r="2"
-                      fill="rgba(255, 200, 100, 0.8)"
+                      cy="25"
+                      r="1.5"
+                      fill="rgba(209, 116, 116, 0.6)"
+                      opacity="0"
+                      style={{ transformOrigin: "30px 25px" }}
                     />
                   </>
                 )}
