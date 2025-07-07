@@ -1453,45 +1453,42 @@ const StructuralInterpretationMode = () => {
                             strokeWidth="1"
                           />
                         </g>
-                        {/* Triangle flower intersection shape (shown on hover) */}
+                        {/* Mathematically precise intersection shape (shown on hover) */}
                         <g className="intersection-only" style={{ opacity: 0 }}>
-                          {/* Top petal: A ∩ B intersection (circles at 24,24 and 36,24) */}
+                          {/* A ∩ B intersection (lens between circles A and B) */}
                           <path
-                            d="M 30 15
-                               A 11 11 0 0 1 33 20.5
-                               A 11 11 0 0 1 27 20.5
-                               A 11 11 0 0 1 30 15 Z"
+                            d="M 30 13.5
+                               A 11 11 0 0 1 30 34.5
+                               A 11 11 0 0 1 30 13.5 Z"
                             fill="rgba(123, 163, 186, 0.5)"
                             stroke="rgba(123, 163, 186, 0.8)"
                             strokeWidth="1.2"
                           />
-                          {/* Bottom-right petal: B ∩ C intersection (circles at 36,24 and 30,36) */}
+                          {/* B ∩ C intersection (lens between circles B and C) */}
                           <path
-                            d="M 38.5 30
-                               A 11 11 0 0 1 35 34.5
-                               A 11 11 0 0 1 32.5 31
-                               A 11 11 0 0 1 38.5 30 Z"
+                            d="M 33 30
+                               A 11 11 0 0 1 27 30
+                               A 11 11 0 0 1 33 30 Z"
                             fill="rgba(123, 163, 186, 0.5)"
                             stroke="rgba(123, 163, 186, 0.8)"
                             strokeWidth="1.2"
                           />
-                          {/* Bottom-left petal: A ∩ C intersection (circles at 24,24 and 30,36) */}
+                          {/* A ∩ C intersection (lens between circles A and C) */}
                           <path
-                            d="M 21.5 30
-                               A 11 11 0 0 1 27.5 31
-                               A 11 11 0 0 1 25 34.5
-                               A 11 11 0 0 1 21.5 30 Z"
+                            d="M 27 30
+                               A 11 11 0 0 1 33 30
+                               A 11 11 0 0 1 27 30 Z"
                             fill="rgba(123, 163, 186, 0.5)"
                             stroke="rgba(123, 163, 186, 0.8)"
                             strokeWidth="1.2"
                           />
-                          {/* Center: A ∩ B ∩ C intersection (all three circles) */}
-                          <path
-                            d="M 30 28
-                               A 8 8 0 0 1 32 30
-                               A 8 8 0 0 1 28 30
-                               A 8 8 0 0 1 30 28 Z"
-                            fill="rgba(123, 163, 186, 0.7)"
+                          {/* A ∩ B ∩ C central intersection */}
+                          <ellipse
+                            cx="30"
+                            cy="30"
+                            rx="3"
+                            ry="2"
+                            fill="rgba(123, 163, 186, 0.8)"
                             stroke="rgba(123, 163, 186, 1)"
                             strokeWidth="1.5"
                           />
