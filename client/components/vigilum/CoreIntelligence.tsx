@@ -158,22 +158,33 @@ const StructuralInterpretationMode = () => {
     ).matches;
 
     if (!prefersReducedMotion && interpretiveZoneRef.current) {
-      // Initialize circle animations
+      // Initialize sophisticated circle animations
       circleData.forEach((circle) => {
         const element = document.getElementById(`circle-${circle.id}`);
         if (!element) return;
 
         switch (circle.animationType) {
           case "pulse":
+            // Constraint Simulation: Breathing cage effect
             gsap.to(element, {
-              scale: 1.05,
+              scale: 1.08,
               duration: 2,
               ease: "power2.inOut",
               repeat: -1,
               yoyo: true,
             });
+            // Add cage line effect
+            gsap.to(element.querySelector(".cage-line"), {
+              strokeDashoffset: 0,
+              duration: 3,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+            });
             break;
+
           case "orbital":
+            // Sequence Dependency: Counter-rotating orbitals
             gsap.to(element.querySelector(".orbital-1"), {
               rotation: 360,
               duration: 4,
@@ -187,19 +198,122 @@ const StructuralInterpretationMode = () => {
               repeat: -1,
             });
             break;
+
           case "flicker":
-            gsap.to(element, {
-              opacity: 0.7,
-              duration: 0.5,
+            // Discretion Encoding: Unstable perimeter
+            gsap.to(element.querySelector(".perimeter"), {
+              opacity: 0.3,
+              duration: 0.4,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              repeatDelay: Math.random() * 2,
+            });
+            break;
+
+          case "override":
+            // Override Pathways: Arc intersection with pulse
+            gsap.to(element.querySelector(".override-arc"), {
+              rotation: 45,
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+            });
+            gsap.to(element.querySelector(".pulse-point"), {
+              scale: 1.5,
+              opacity: 0.8,
+              duration: 1,
               ease: "power2.inOut",
               repeat: -1,
               yoyo: true,
             });
             break;
-          default:
+
+          case "projection":
+            // Typological Projection: Quadrant splitting
+            gsap.to(element.querySelector(".quad-1"), {
+              x: -5,
+              y: -5,
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+            });
+            gsap.to(element.querySelector(".quad-2"), {
+              x: 5,
+              y: -5,
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              delay: 0.5,
+            });
+            gsap.to(element.querySelector(".quad-3"), {
+              x: -5,
+              y: 5,
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              delay: 1,
+            });
+            gsap.to(element.querySelector(".quad-4"), {
+              x: 5,
+              y: 5,
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              delay: 1.5,
+            });
+            break;
+
+          case "overlap":
+            // Cross-Document Logic: Venn diagram breathing
+            gsap.to(element.querySelector(".circle-a"), {
+              scale: 1.1,
+              duration: 2.5,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+            });
+            gsap.to(element.querySelector(".circle-b"), {
+              scale: 1.05,
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              delay: 0.5,
+            });
+            gsap.to(element.querySelector(".circle-c"), {
+              scale: 1.08,
+              duration: 1.8,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              delay: 1,
+            });
+            break;
+
+          case "collapse":
+            // Structural Integrity Loss: Subtle jitter with fractal potential
             gsap.to(element, {
-              y: "+=5",
-              duration: 3,
+              x: "+=2",
+              y: "+=1",
+              duration: 0.1,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+              repeatDelay: Math.random() * 5,
+            });
+            break;
+
+          default:
+            // Ambient drift
+            gsap.to(element, {
+              y: "+=3",
+              duration: 4,
               ease: "power2.inOut",
               repeat: -1,
               yoyo: true,
@@ -207,22 +321,33 @@ const StructuralInterpretationMode = () => {
         }
       });
 
-      // Entrance animation
+      // Entrance animation with stagger
       gsap.fromTo(
         ".circle-node",
-        { opacity: 0, scale: 0.5 },
+        { opacity: 0, scale: 0.3, y: 20 },
         {
           opacity: 1,
           scale: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power2.out",
+          y: 0,
+          duration: 1.2,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 75%",
+            toggleActions: "play none none reverse",
           },
         },
       );
+
+      // Ambient field drift
+      gsap.to(".interpretive-zone", {
+        backgroundPosition: "100px 100px",
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+        yoyo: true,
+      });
     }
 
     return () => {
