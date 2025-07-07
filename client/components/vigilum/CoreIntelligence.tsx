@@ -211,10 +211,8 @@ const StructuralInterpretationMode = () => {
     },
   ];
 
-  const handleCircleHover = (circleId: string | null) => {
+  const handleCircleHover = (circleId: string) => {
     setHoveredCircle(circleId);
-
-    if (!circleId) return;
 
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
