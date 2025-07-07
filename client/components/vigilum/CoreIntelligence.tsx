@@ -484,20 +484,25 @@ const StructuralInterpretationMode = () => {
       case "flicker":
         const coordinateGrid = element.querySelector(".coordinate-grid");
         const axisDot = element.querySelector(".axis-dot");
+        const rippleCenter = element.querySelector(".ripple-center");
 
-        if (coordinateGrid && axisDot) {
-          gsap.killTweensOf([coordinateGrid, axisDot]);
+        if (coordinateGrid && axisDot && rippleCenter) {
+          gsap.killTweensOf([coordinateGrid, axisDot, rippleCenter]);
+          // Restore grid
           gsap.to(coordinateGrid, {
             opacity: 0.4,
             duration: 0.3,
             ease: "cubic.inOut",
           });
+          // Reset dot to normal size
           gsap.to(axisDot, {
             scale: 1,
             opacity: 0.8,
             duration: 0.3,
             ease: "cubic.inOut",
           });
+          // Stop ripple animation
+          gsap.set(rippleCenter, { opacity: 0, scale: 0 });
         }
         break;
 
