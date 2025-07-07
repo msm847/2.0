@@ -14,6 +14,20 @@ interface CircleData {
   example: string;
   animationType: string;
   position: { x: number; y: number };
+  gravity: number;
+  clausePairing: {
+    clauseA: string;
+    clauseB?: string;
+    clauseC?: string;
+    clauseD?: string;
+    analysis: string;
+    output: string;
+    dgScore?: number;
+    ciScore?: number;
+    rtScore?: number;
+    sbScore?: number;
+  };
+  logicClass: string;
 }
 
 const StructuralInterpretationMode = () => {
