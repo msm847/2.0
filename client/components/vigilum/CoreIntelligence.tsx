@@ -53,11 +53,24 @@ const StructuralInterpretationMode = () => {
       title: "Constraint Simulation",
       definition:
         "Rules may perform restriction while preserving override. Vigilum detects simulated constraint.",
-      rule: "A constraint is real only if it binds across actors and time without dependent trigger. Otherwise, it simulates legality.",
+      rule: "A constraint is real only if it binds across actors and time without dependent trigger.",
       example:
         "Clause: 'All deviations shall be reviewed within a reasonable timeframe.' — No timeframe, no escalation rule, no breach definition. Structurally open. Appears restrictive. Actually null.",
       animationType: "pulse",
       position: { x: 20, y: 25 },
+      gravity: 0.6,
+      logicClass: "Simulation",
+      clausePairing: {
+        clauseA:
+          "The supplier must submit audited financial statements before disbursement.",
+        clauseB:
+          "Except where prior approval has been granted by the oversight committee.",
+        analysis:
+          "The clause performs constraint (submission required) but contains a pre-installed escape path via internal exception.",
+        output: "Simulated boundary",
+        dgScore: 0.86,
+        ciScore: 0.91,
+      },
     },
     {
       id: "sequence",
@@ -69,6 +82,16 @@ const StructuralInterpretationMode = () => {
         "Clause 3.2: 'No contract shall be awarded without public tender.' Clause 3.5: 'In emergencies, tender may be bypassed.' — B following A = restriction nullified.",
       animationType: "orbital",
       position: { x: 75, y: 15 },
+      gravity: 0.4,
+      logicClass: "Sequence",
+      clausePairing: {
+        clauseA: "Any sole-source procedure must be justified in advance.",
+        clauseB:
+          "Emergency cases may be regularized post hoc by internal memo.",
+        analysis:
+          "Scenario 1: A → B = strong constraint, later overridden. Scenario 2: B → A = emergency creates pre-justification, clause A becomes moot.",
+        output: "Meaning reversed by order",
+      },
     },
     {
       id: "discretion",
@@ -80,6 +103,17 @@ const StructuralInterpretationMode = () => {
         "'Unless deemed unnecessary by the Minister.' → Appears functional. Actually routes authority to a non-verifiable override. No logic path to escalate refusal.",
       animationType: "flicker",
       position: { x: 15, y: 70 },
+      gravity: 0.5,
+      logicClass: "Discretion",
+      clausePairing: {
+        clauseA:
+          "The Contracting Authority may waive documentation requirements in exceptional cases.",
+        analysis:
+          "No definition of 'exceptional' • No oversight of waiver • No log requirement",
+        output: "Discretional override without parameterization",
+        dgScore: 0.92,
+        sbScore: 1.0,
+      },
     },
     {
       id: "override",
@@ -91,6 +125,19 @@ const StructuralInterpretationMode = () => {
         "Clause 2.1: 'Contracting shall occur through public process.' Clause 2.9: 'This requirement may be waived under Article 9.' → Three-hop override. Fully legal. Structurally exposed.",
       animationType: "override",
       position: { x: 80, y: 65 },
+      gravity: 0.8,
+      logicClass: "Override",
+      clausePairing: {
+        clauseA: "Tender process must remain open for 30 calendar days.",
+        clauseB: "This period may be shortened in accordance with Decree 14.",
+        clauseC:
+          "Shortened periods permissible when aligned with project timelines.",
+        clauseD: "Timelines are defined internally by executing entity.",
+        analysis:
+          "Four-level override trace. Appears compliant — actually nullifies original constraint.",
+        output: "Structured override path detected",
+        ciScore: 0.96,
+      },
     },
     {
       id: "typological",
@@ -102,6 +149,18 @@ const StructuralInterpretationMode = () => {
         "Clause: 'Payments indexed to inflation, adjusted quarterly by operator's internal metric.' → High RT: risk transferred to private actor → Moderate DG: adjustment clause unbounded",
       animationType: "projection",
       position: { x: 50, y: 45 },
+      gravity: 0.8,
+      logicClass: "Typology",
+      clausePairing: {
+        clauseA:
+          "Price adjustments shall reflect regional inflation indexes, as calculated by the operator.",
+        analysis:
+          "RT (Risk Transfer) = 0.93 → Index chosen by vendor • DG = 0.71 → Adjustment frequency undefined • CI = 0.67 → Performance language used, no benchmarking",
+        output: "High-risk vector along RT + DG",
+        rtScore: 0.93,
+        dgScore: 0.71,
+        ciScore: 0.67,
+      },
     },
     {
       id: "crossdocument",
@@ -113,6 +172,18 @@ const StructuralInterpretationMode = () => {
         "Contract Clause: 'Subject to Public Procurement Law' → Procurement Law: 'Exceptions apply during natural disaster' → PPP Manual: 'Fiscal crises are equivalent to disaster' → Full procedural override hidden across three texts.",
       animationType: "overlap",
       position: { x: 25, y: 50 },
+      gravity: 0.7,
+      logicClass: "Bridge",
+      clausePairing: {
+        clauseA: "Termination is subject to national PPP regulations.",
+        clauseB: "Projects may be terminated in cases of non-performance.",
+        clauseC: "Performance lapses defined via quarterly assessments.",
+        clauseD:
+          "Quarterly assessments to be determined by project team discretion.",
+        analysis:
+          "Clause validity deferred across three documents — final condition determined by actor discretion",
+        output: "Cross-document override with embedded DG",
+      },
     },
     {
       id: "integrity",
@@ -124,6 +195,19 @@ const StructuralInterpretationMode = () => {
         "Clause 4.1: 'Subject to provisions of Clause 7.1' → Clause 7.1: 'Implemented as per Clause 4.1' → Circular recursion = no executable state. Appears legal. Systemically incoherent.",
       animationType: "collapse",
       position: { x: 70, y: 80 },
+      gravity: 1.0,
+      logicClass: "Collapse",
+      clausePairing: {
+        clauseA: "The Oversight Authority shall validate all disbursements.",
+        clauseB: "Disbursement can be automated if validation has occurred.",
+        clauseC: "Validation may be waived for recurring transactions.",
+        clauseD:
+          "Recurring transactions are defined by disbursement automation triggers.",
+        analysis:
+          "Loop forms: disbursement → automation → recurring → waiver → disbursement",
+        output:
+          "Circular reference collapse - Vigilum marks as semantic decoherence",
+      },
     },
   ];
 
