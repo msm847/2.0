@@ -759,9 +759,17 @@ const StructuralInterpretationMode = () => {
   };
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    // Set up reduced motion preference detection
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    const prefersReducedMotionValue = mediaQuery.matches;
 
     if (!prefersReducedMotion && interpretiveZoneRef.current) {
       // Initialize sophisticated circle animations
