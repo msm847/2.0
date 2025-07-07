@@ -906,27 +906,36 @@ const StructuralInterpretationMode = () => {
               {/* Circle-specific SVG animations */}
               <svg width="60" height="60" style={{ position: "absolute" }}>
                 {circle.animationType === "pulse" && (
-                  // Constraint Simulation: Breathing cage
+                  // Constraint Simulation: Cage with retractable segments
                   <>
                     <circle
                       cx="30"
                       cy="30"
                       r="25"
-                      fill="rgba(255, 255, 255, 0.05)"
-                      stroke="rgba(255, 255, 255, 0.1)"
-                      strokeWidth="1"
+                      fill="rgba(32, 36, 43, 0.1)"
+                      stroke="rgba(32, 36, 43, 0.2)"
+                      strokeWidth="1.2"
                     />
-                    <circle
-                      className="cage-line"
-                      cx="30"
-                      cy="30"
-                      r="20"
-                      fill="none"
-                      stroke="rgba(255, 255, 255, 0.3)"
-                      strokeWidth="1"
-                      strokeDasharray="8,4"
-                      strokeDashoffset="0"
-                    />
+                    {/* 24 radial cage segments */}
+                    {Array.from({ length: 24 }, (_, i) => {
+                      const angle = i * 15 * (Math.PI / 180);
+                      const x1 = 30 + 18 * Math.cos(angle);
+                      const y1 = 30 + 18 * Math.sin(angle);
+                      const x2 = 30 + 22 * Math.cos(angle);
+                      const y2 = 30 + 22 * Math.sin(angle);
+                      return (
+                        <line
+                          key={i}
+                          className="cage-segment"
+                          x1={x1}
+                          y1={y1}
+                          x2={x2}
+                          y2={y2}
+                          stroke="rgba(46, 51, 60, 0.8)"
+                          strokeWidth="1.2"
+                        />
+                      );
+                    })}
                   </>
                 )}
 
