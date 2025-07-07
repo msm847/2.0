@@ -420,8 +420,61 @@ const StructuralInterpretationMode = () => {
   };
 
   const handleCTAClick = () => {
-    // Navigate to SPE interface
-    navigate("/vigilum#demo");
+    // Procedural exit sequence - structural collapse
+    setIsCollapsing(true);
+
+    // Central glyph fully resolves with φ(c) flash
+    setCentralGlyph(1.0);
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!prefersReducedMotion) {
+      // Field slows and nodes lock in orbit
+      const circles =
+        interpretiveZoneRef.current?.querySelectorAll(".circle-node");
+      circles?.forEach((circle) => {
+        gsap.killTweensOf(circle);
+        gsap.to(circle, { rotation: 0, duration: 1, ease: "power2.out" });
+      });
+
+      // Sequential collapse: Constraint → Sequence → Discretion → Override → Typological → Cross-document → Integrity
+      const collapseOrder = [
+        "constraint",
+        "sequence",
+        "discretion",
+        "override",
+        "typological",
+        "crossdocument",
+        "integrity",
+      ];
+
+      collapseOrder.forEach((circleId, index) => {
+        setTimeout(() => {
+          const element = document.getElementById(`circle-${circleId}`);
+          if (element) {
+            gsap.to(element, {
+              scale: 0,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power2.in",
+            });
+          }
+        }, index * 200);
+      });
+
+      // Final collapse and fade to SPE
+      setTimeout(
+        () => {
+          navigate("/vigilum#demo");
+        },
+        collapseOrder.length * 200 + 1000,
+      );
+    } else {
+      // Immediate transition for reduced motion
+      setTimeout(() => navigate("/vigilum#demo"), 500);
+    }
   };
 
   useEffect(() => {
