@@ -1214,15 +1214,16 @@ const StructuralInterpretationMode = () => {
                             stroke="rgba(108, 129, 149, 0.4)"
                             strokeWidth="1"
                           />
-                          {/* Directional arrow */}
+                          {/* Directional arrow - 150% scale permanent */}
                           <path
                             className="sequence-arrow"
-                            d="M 22 30 L 28 30 M 26 28 L 28 30 L 26 32"
+                            d="M 19 30 L 28 30 M 25 27 L 28 30 L 25 33"
                             fill="none"
-                            stroke="rgba(108, 129, 149, 0.6)"
-                            strokeWidth="1.5"
+                            stroke="rgba(108, 129, 149, 0.8)"
+                            strokeWidth="2.25"
                             strokeLinecap="round"
-                            opacity="0.6"
+                            opacity="0.8"
+                            style={{ transformOrigin: "23.5px 30px" }}
                           />
                         </g>
                       </>
