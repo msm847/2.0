@@ -1022,7 +1022,10 @@ const StructuralInterpretationMode = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                transition: "all 0.3s ease",
+                transition:
+                  hoveredCircle === circle.id
+                    ? "box-shadow 0.3s ease-out, all 0.3s ease"
+                    : "all 0.3s ease",
                 transform: "translate(-50%, -50%)",
                 zIndex:
                   circle.gravity === 1.0 ? 10 : Math.floor(circle.gravity * 5),
@@ -1038,6 +1041,25 @@ const StructuralInterpretationMode = () => {
                   : fieldStabilized && !clickedCircles.has(circle.id)
                     ? 0.4
                     : 1,
+                // Semantic shadow system with gravity-based variations
+                boxShadow:
+                  hoveredCircle === circle.id
+                    ? // Hover state: elevated semantic focus
+                      `0px 8px 20px rgba(0, 0, 0, 0.5), inset 0px 0px 3px rgba(255, 255, 255, 0.08)`
+                    : // Idle state: gravity-based depth variations
+                      circle.gravity === 1.0
+                      ? `0px 2px 16px rgba(0, 0, 0, 0.45), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Structural Integrity Loss
+                      : circle.gravity >= 0.8
+                        ? `0px 4px 12px rgba(0, 0, 0, 0.4), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Override/Typological
+                        : circle.gravity >= 0.7
+                          ? `0px 5px 14px rgba(0, 0, 0, 0.35), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Cross-Document
+                          : circle.gravity >= 0.6
+                            ? `0px 4px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Constraint
+                            : circle.gravity >= 0.5
+                              ? `0px 3px 8px rgba(0, 0, 0, 0.28), inset 0px 0px 2px rgba(255, 255, 255, 0.05)` // Discretion
+                              : `0px 3px 10px rgba(0, 0, 0, 0.3), inset 0px 0px 2px rgba(255, 255, 255, 0.05)`, // Sequence
+                // Ambient shadow oscillation animation
+                animation: "shadowWander 8s ease-in-out infinite",
               }}
             >
               {/* Circle-specific SVG animations */}
