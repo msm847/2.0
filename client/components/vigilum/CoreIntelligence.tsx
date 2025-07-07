@@ -267,86 +267,231 @@ const StructuralInterpretationMode = () => {
   const triggerHoverAnimation = (element: Element, animationType: string) => {
     switch (animationType) {
       case "pulse":
-        // Cage opens and snaps closed
-        const cageLine = element.querySelector(".cage-line");
-        if (cageLine) {
-          gsap.to(cageLine, {
-            strokeDashoffset: 20,
-            duration: 0.5,
-            yoyo: true,
-            repeat: 1,
-            ease: "power2.inOut",
-          });
+        // CONSTRAINT SIMULATION: Cage bar retracts, creating gap, then reseals
+        const cageSegments = element.querySelectorAll(".cage-segment");
+        if (cageSegments.length > 0) {
+          // Retract one segment (simulate breach)
+          const targetSegment = cageSegments[6] || cageSegments[0];
+          gsap
+            .timeline()
+            .to(targetSegment, {
+              opacity: 0,
+              duration: 0.4,
+              ease: "cubic.inOut",
+            })
+            .to(targetSegment, {
+              opacity: 1,
+              duration: 0.4,
+              ease: "cubic.inOut",
+              delay: 0.2,
+            });
         }
         break;
+
       case "orbital":
-        // Stop rotation and reorder orbitals
+        // SEQUENCE DEPENDENCY: Reverse rotation and flip directional arrow
         const orbital1 = element.querySelector(".orbital-1");
         const orbital2 = element.querySelector(".orbital-2");
-        if (orbital1 && orbital2) {
+        const arrow = element.querySelector(".sequence-arrow");
+
+        if (orbital1 && orbital2 && arrow) {
           gsap.killTweensOf([orbital1, orbital2]);
-          gsap.to(orbital1, { y: 12, duration: 0.4 });
-          gsap.to(orbital2, { y: -12, duration: 0.4 });
-        }
-        break;
-      case "flicker":
-        // Ripple effect from center
-        gsap.fromTo(
-          element.querySelector(".perimeter"),
-          { scale: 0.5, opacity: 1 },
-          { scale: 1.2, opacity: 0, duration: 0.6, ease: "power2.out" },
-        );
-        break;
-      case "override":
-        // Show directional nullification line
-        const overrideArc = element.querySelector(".override-arc");
-        if (overrideArc) {
-          gsap.to(overrideArc, {
-            strokeWidth: 4,
-            stroke: "rgba(255, 100, 100, 1)",
-            duration: 0.3,
+
+          // Reverse rotation direction
+          gsap.to([orbital1, orbital2], {
+            rotation: "-=120",
+            duration: 0.6,
+            ease: "cubic.inOut",
           });
+
+          // Flip arrow
+          gsap
+            .timeline()
+            .to(arrow, {
+              opacity: 0,
+              duration: 0.25,
+              ease: "cubic.inOut",
+            })
+            .set(arrow, {
+              scaleX: -1,
+            })
+            .to(arrow, {
+              opacity: 0.6,
+              duration: 0.25,
+              ease: "cubic.inOut",
+            });
         }
         break;
-      case "projection":
-        // Project beam outward
-        const quad1 = element.querySelector(".quad-1");
-        if (quad1) {
-          gsap.to(
-            [".quad-1", ".quad-2", ".quad-3", ".quad-4"].map((q) =>
-              element.querySelector(q),
-            ),
+
+      case "flicker":
+        // DISCRETION ENCODING: Ripple from center, dissipates at 60% radius
+        const rippleCenter = element.querySelector(".ripple-center");
+        if (rippleCenter) {
+          gsap.fromTo(
+            rippleCenter,
             {
-              scale: 1.3,
-              opacity: 0.8,
-              duration: 0.4,
-              stagger: 0.1,
+              scale: 0,
+              opacity: 0.6,
+            },
+            {
+              scale: 0.6,
+              opacity: 0,
+              duration: 0.5,
+              ease: "sine.out",
+              repeat: -1,
+              repeatDelay: 0.4,
             },
           );
         }
         break;
+
+      case "override":
+        // OVERRIDE PATHWAYS: Arc moves outward to intersect ring
+        const overrideArc = element.querySelector(".override-arc");
+        const ring = element.querySelector(".base-ring");
+        const intersection = element.querySelector(".intersection-point");
+
+        if (overrideArc && intersection) {
+          gsap
+            .timeline()
+            .to(overrideArc, {
+              opacity: 0.8,
+              duration: 0.3,
+              ease: "cubic.inOut",
+            })
+            .to(
+              overrideArc,
+              {
+                attr: { d: "M 15 30 Q 30 10 45 30" },
+                duration: 0.6,
+                ease: "cubic.inOut",
+              },
+              0.1,
+            )
+            .to(
+              intersection,
+              {
+                opacity: 0.6,
+                scale: 1.5,
+                duration: 0.3,
+                ease: "cubic.inOut",
+              },
+              0.4,
+            );
+        }
+        break;
+
+      case "projection":
+        // TYPOLOGICAL PROJECTION: Beam projects to axis with labels
+        const beam = element.querySelector(".projection-beam");
+        const labels = element.querySelectorAll(".axis-label");
+
+        if (beam) {
+          gsap
+            .timeline()
+            .to(beam, {
+              opacity: 0.8,
+              scaleX: 1.5,
+              duration: 0.4,
+              ease: "cubic.inOut",
+            })
+            .to(
+              labels,
+              {
+                opacity: 0.7,
+                duration: 0.3,
+                ease: "cubic.inOut",
+                stagger: 0.1,
+              },
+              0.2,
+            );
+        }
+        break;
+
       case "overlap":
-        // Venn circles blur then focus
+        // CROSS-DOCUMENT LOGIC: Three circles converge into unified ring
         const circles = [".circle-a", ".circle-b", ".circle-c"].map((q) =>
           element.querySelector(q),
         );
-        gsap.to(circles, {
-          filter: "blur(2px)",
-          duration: 0.2,
-          yoyo: true,
-          repeat: 1,
-        });
+        const unifiedRing = element.querySelector(".unified-ring");
+
+        if (circles.every((c) => c) && unifiedRing) {
+          gsap
+            .timeline()
+            .to(circles, {
+              x: 0,
+              y: 0,
+              duration: 0.6,
+              ease: "cubic.inOut",
+            })
+            .to(
+              circles,
+              {
+                opacity: 0,
+                duration: 0.2,
+                ease: "cubic.inOut",
+              },
+              0.4,
+            )
+            .to(
+              unifiedRing,
+              {
+                opacity: 0.8,
+                scale: 1,
+                duration: 0.3,
+                ease: "cubic.inOut",
+              },
+              0.5,
+            )
+            .to(unifiedRing, {
+              scale: 1.1,
+              duration: 0.3,
+              ease: "cubic.inOut",
+              yoyo: true,
+              repeat: 1,
+            });
+        }
         break;
+
       case "collapse":
-        // Fractal folding animation
-        gsap.to(element, {
-          scale: 0.8,
-          rotation: 15,
-          duration: 0.4,
-          yoyo: true,
-          repeat: 1,
-          ease: "power2.inOut",
-        });
+        // STRUCTURAL INTEGRITY LOSS: Fracture into spiral, then false reformation
+        const fragments = element.querySelectorAll(".collapse-fragment");
+        const spiral = element.querySelector(".collapse-spiral");
+        const reformed = element.querySelector(".reformed-ring");
+
+        if (fragments.length > 0 && spiral && reformed) {
+          gsap
+            .timeline()
+            .to(fragments, {
+              rotation: 180,
+              scale: 0.7,
+              opacity: 0.3,
+              duration: 0.8,
+              ease: "cubic.inOut",
+              stagger: 0.1,
+            })
+            .to(
+              spiral,
+              {
+                opacity: 0.4,
+                rotation: 360,
+                duration: 0.8,
+                ease: "cubic.inOut",
+              },
+              0.2,
+            )
+            .to([fragments, spiral], {
+              opacity: 0,
+              duration: 0.2,
+              ease: "cubic.inOut",
+            })
+            .to(reformed, {
+              opacity: 0.6,
+              scale: 1,
+              duration: 0.4,
+              ease: "cubic.inOut",
+            });
+        }
         break;
     }
   };
