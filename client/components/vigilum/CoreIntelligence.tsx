@@ -1453,34 +1453,46 @@ const StructuralInterpretationMode = () => {
                             strokeWidth="1"
                           />
                         </g>
-                        {/* All intersection areas (shown on hover) */}
+                        {/* Triangle flower intersection shape (shown on hover) */}
                         <g className="intersection-only" style={{ opacity: 0 }}>
-                          {/* A ∩ B (top intersection) */}
+                          {/* Top petal: A ∩ B intersection (circles at 24,24 and 36,24) */}
                           <path
-                            d="M 27 21 A 11 11 0 0 1 33 21 A 11 11 0 0 1 27 21 Z"
-                            fill="rgba(123, 163, 186, 0.4)"
-                            stroke="rgba(123, 163, 186, 0.7)"
-                            strokeWidth="1"
+                            d="M 30 15
+                               A 11 11 0 0 1 33 20.5
+                               A 11 11 0 0 1 27 20.5
+                               A 11 11 0 0 1 30 15 Z"
+                            fill="rgba(123, 163, 186, 0.5)"
+                            stroke="rgba(123, 163, 186, 0.8)"
+                            strokeWidth="1.2"
                           />
-                          {/* B ∩ C (bottom-right intersection) */}
+                          {/* Bottom-right petal: B ∩ C intersection (circles at 36,24 and 30,36) */}
                           <path
-                            d="M 33 27 A 11 11 0 0 1 36 33 A 11 11 0 0 1 30 33 A 11 11 0 0 1 33 27 Z"
-                            fill="rgba(123, 163, 186, 0.4)"
-                            stroke="rgba(123, 163, 186, 0.7)"
-                            strokeWidth="1"
+                            d="M 38.5 30
+                               A 11 11 0 0 1 35 34.5
+                               A 11 11 0 0 1 32.5 31
+                               A 11 11 0 0 1 38.5 30 Z"
+                            fill="rgba(123, 163, 186, 0.5)"
+                            stroke="rgba(123, 163, 186, 0.8)"
+                            strokeWidth="1.2"
                           />
-                          {/* A ∩ C (bottom-left intersection) */}
+                          {/* Bottom-left petal: A ∩ C intersection (circles at 24,24 and 30,36) */}
                           <path
-                            d="M 27 27 A 11 11 0 0 1 30 33 A 11 11 0 0 1 24 33 A 11 11 0 0 1 27 27 Z"
-                            fill="rgba(123, 163, 186, 0.4)"
-                            stroke="rgba(123, 163, 186, 0.7)"
-                            strokeWidth="1"
+                            d="M 21.5 30
+                               A 11 11 0 0 1 27.5 31
+                               A 11 11 0 0 1 25 34.5
+                               A 11 11 0 0 1 21.5 30 Z"
+                            fill="rgba(123, 163, 186, 0.5)"
+                            stroke="rgba(123, 163, 186, 0.8)"
+                            strokeWidth="1.2"
                           />
-                          {/* A ∩ B ∩ C (center intersection) */}
+                          {/* Center: A ∩ B ∩ C intersection (all three circles) */}
                           <path
-                            d="M 30 27 A 11 11 0 0 1 32 29 A 11 11 0 0 1 28 29 A 11 11 0 0 1 30 27 Z"
+                            d="M 30 28
+                               A 8 8 0 0 1 32 30
+                               A 8 8 0 0 1 28 30
+                               A 8 8 0 0 1 30 28 Z"
                             fill="rgba(123, 163, 186, 0.7)"
-                            stroke="rgba(123, 163, 186, 0.9)"
+                            stroke="rgba(123, 163, 186, 1)"
                             strokeWidth="1.5"
                           />
                         </g>
