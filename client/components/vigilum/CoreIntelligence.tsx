@@ -483,8 +483,10 @@ const StructuralInterpretationMode = () => {
         if (orbital1 && orbital2 && arrow) {
           gsap.killTweensOf([orbital1, orbital2, arrow]);
           gsap.to(arrow, {
-            opacity: 0.6,
+            opacity: 0.8,
             scaleX: 1,
+            x: 0,
+            attr: { d: "M 19 30 L 28 30 M 25 27 L 28 30 L 25 33" },
             duration: 0.3,
             ease: "cubic.inOut",
           });
