@@ -941,7 +941,7 @@ const StructuralInterpretationMode = () => {
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2
-            className="font-mono text-3xl mb-8"
+            className="font-mono text-5xl mb-8"
             style={{
               color: "#C9D2DC",
               fontWeight: "400",
