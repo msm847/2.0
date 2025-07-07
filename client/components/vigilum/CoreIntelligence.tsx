@@ -1118,58 +1118,393 @@ const StructuralInterpretationMode = () => {
             <h3
               style={{
                 color: "#f2f2f2",
-                fontSize: "24px",
+                fontSize: "20px",
                 fontWeight: "600",
-                marginBottom: "16px",
+                marginBottom: "20px",
                 fontFamily: "monospace",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
               }}
             >
               {selectedCircle.title}
             </h3>
 
-            <div style={{ marginBottom: "24px" }}>
+            {/* Declarative Rule */}
+            <div style={{ marginBottom: "20px" }}>
               <div
                 style={{
                   color: "#00ffff",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: "600",
                   marginBottom: "8px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
                 }}
               >
-                FORMAL RULE
+                DECLARATIVE RULE
               </div>
               <div
                 style={{
                   color: "#f2f2f2",
                   fontSize: "14px",
-                  lineHeight: "1.5",
+                  lineHeight: "1.4",
+                  fontFamily: "monospace",
                 }}
               >
                 {selectedCircle.rule}
               </div>
             </div>
 
-            <div style={{ marginBottom: "24px" }}>
+            {/* Clause Simulation */}
+            <div style={{ marginBottom: "20px" }}>
               <div
                 style={{
                   color: "#00ffff",
-                  fontSize: "14px",
+                  fontSize: "12px",
                   fontWeight: "600",
                   marginBottom: "8px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
                 }}
               >
-                STRUCTURAL EXAMPLE
+                CLAUSE SIMULATION
               </div>
               <div
                 style={{
-                  color: "#a0a0a0",
+                  color: "#f2f2f2",
                   fontSize: "13px",
-                  lineHeight: "1.5",
+                  lineHeight: "1.4",
+                  marginBottom: "8px",
                 }}
               >
-                {selectedCircle.example}
+                <strong>A:</strong> {selectedCircle.clausePairing.clauseA}
+              </div>
+              {selectedCircle.clausePairing.clauseB && (
+                <div
+                  style={{
+                    color: "#f2f2f2",
+                    fontSize: "13px",
+                    lineHeight: "1.4",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <strong>B:</strong> {selectedCircle.clausePairing.clauseB}
+                </div>
+              )}
+              {selectedCircle.clausePairing.clauseC && (
+                <div
+                  style={{
+                    color: "#f2f2f2",
+                    fontSize: "13px",
+                    lineHeight: "1.4",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <strong>C:</strong> {selectedCircle.clausePairing.clauseC}
+                </div>
+              )}
+              {selectedCircle.clausePairing.clauseD && (
+                <div
+                  style={{
+                    color: "#f2f2f2",
+                    fontSize: "13px",
+                    lineHeight: "1.4",
+                    marginBottom: "8px",
+                  }}
+                >
+                  <strong>D:</strong> {selectedCircle.clausePairing.clauseD}
+                </div>
+              )}
+              <div
+                style={{
+                  color: "#a0a0a0",
+                  fontSize: "12px",
+                  lineHeight: "1.4",
+                  marginTop: "12px",
+                }}
+              >
+                → {selectedCircle.clausePairing.output}
               </div>
             </div>
+
+            {/* Structural Diagram */}
+            <div style={{ marginBottom: "20px" }}>
+              <div
+                style={{
+                  color: "#00ffff",
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  marginBottom: "12px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                STRUCTURAL DIAGRAM
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "80px",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "4px",
+                  backgroundColor: "rgba(0, 0, 0, 0.3)",
+                }}
+              >
+                <svg width="200" height="60" style={{ overflow: "visible" }}>
+                  {selectedCircle.animationType === "override" && (
+                    // Override arc diagram
+                    <>
+                      <path
+                        d="M 40 30 Q 100 10 160 30"
+                        fill="none"
+                        stroke="rgba(255, 200, 100, 0.8)"
+                        strokeWidth="2"
+                        strokeDasharray="4,2"
+                      />
+                      <circle
+                        cx="100"
+                        cy="20"
+                        r="3"
+                        fill="rgba(255, 200, 100, 1)"
+                      />
+                      <text
+                        x="100"
+                        y="50"
+                        textAnchor="middle"
+                        fill="#a0a0a0"
+                        fontSize="10"
+                      >
+                        Override Path
+                      </text>
+                    </>
+                  )}
+                  {selectedCircle.animationType === "projection" && (
+                    // φ-space vector beam
+                    <>
+                      <line
+                        x1="100"
+                        y1="30"
+                        x2="60"
+                        y2="10"
+                        stroke="rgba(255, 100, 100, 0.8)"
+                        strokeWidth="2"
+                      />
+                      <line
+                        x1="100"
+                        y1="30"
+                        x2="140"
+                        y2="10"
+                        stroke="rgba(100, 255, 100, 0.8)"
+                        strokeWidth="2"
+                      />
+                      <line
+                        x1="100"
+                        y1="30"
+                        x2="60"
+                        y2="50"
+                        stroke="rgba(100, 100, 255, 0.8)"
+                        strokeWidth="2"
+                      />
+                      <line
+                        x1="100"
+                        y1="30"
+                        x2="140"
+                        y2="50"
+                        stroke="rgba(255, 255, 100, 0.8)"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx="100"
+                        cy="30"
+                        r="4"
+                        fill="rgba(255, 255, 255, 0.8)"
+                      />
+                      <text
+                        x="100"
+                        y="55"
+                        textAnchor="middle"
+                        fill="#a0a0a0"
+                        fontSize="10"
+                      >
+                        φ-space Vector
+                      </text>
+                    </>
+                  )}
+                  {selectedCircle.animationType === "overlap" && (
+                    // Cross-document path
+                    <>
+                      <rect
+                        x="20"
+                        y="15"
+                        width="40"
+                        height="30"
+                        fill="none"
+                        stroke="rgba(255, 100, 100, 0.6)"
+                        strokeWidth="1"
+                      />
+                      <rect
+                        x="80"
+                        y="15"
+                        width="40"
+                        height="30"
+                        fill="none"
+                        stroke="rgba(100, 255, 100, 0.6)"
+                        strokeWidth="1"
+                      />
+                      <rect
+                        x="140"
+                        y="15"
+                        width="40"
+                        height="30"
+                        fill="none"
+                        stroke="rgba(100, 100, 255, 0.6)"
+                        strokeWidth="1"
+                      />
+                      <path
+                        d="M 60 30 L 80 30 M 120 30 L 140 30"
+                        stroke="rgba(255, 255, 255, 0.5)"
+                        strokeWidth="1"
+                      />
+                      <text
+                        x="100"
+                        y="55"
+                        textAnchor="middle"
+                        fill="#a0a0a0"
+                        fontSize="10"
+                      >
+                        Cross-Document Path
+                      </text>
+                    </>
+                  )}
+                  {selectedCircle.animationType === "collapse" && (
+                    // Recursive collapse
+                    <>
+                      <circle
+                        cx="100"
+                        cy="30"
+                        r="20"
+                        fill="none"
+                        stroke="rgba(255, 150, 150, 0.6)"
+                        strokeWidth="2"
+                        strokeDasharray="8,4"
+                      />
+                      <circle
+                        cx="100"
+                        cy="30"
+                        r="12"
+                        fill="none"
+                        stroke="rgba(255, 150, 150, 0.8)"
+                        strokeWidth="1"
+                        strokeDasharray="4,2"
+                      />
+                      <circle
+                        cx="100"
+                        cy="30"
+                        r="6"
+                        fill="none"
+                        stroke="rgba(255, 150, 150, 1)"
+                        strokeWidth="1"
+                      />
+                      <text
+                        x="100"
+                        y="55"
+                        textAnchor="middle"
+                        fill="#a0a0a0"
+                        fontSize="10"
+                      >
+                        Recursive Collapse
+                      </text>
+                    </>
+                  )}
+                  {!["override", "projection", "overlap", "collapse"].includes(
+                    selectedCircle.animationType,
+                  ) && (
+                    // Default structural pattern
+                    <>
+                      <circle
+                        cx="100"
+                        cy="30"
+                        r="15"
+                        fill="none"
+                        stroke="rgba(255, 255, 255, 0.6)"
+                        strokeWidth="2"
+                      />
+                      <circle
+                        cx="100"
+                        cy="30"
+                        r="3"
+                        fill="rgba(255, 255, 255, 0.8)"
+                      />
+                      <text
+                        x="100"
+                        y="55"
+                        textAnchor="middle"
+                        fill="#a0a0a0"
+                        fontSize="10"
+                      >
+                        Structural Pattern
+                      </text>
+                    </>
+                  )}
+                </svg>
+              </div>
+            </div>
+
+            {/* Risk Scores */}
+            {(selectedCircle.clausePairing.dgScore ||
+              selectedCircle.clausePairing.ciScore ||
+              selectedCircle.clausePairing.rtScore) && (
+              <div style={{ marginBottom: "20px" }}>
+                <div
+                  style={{
+                    color: "#00ffff",
+                    fontSize: "12px",
+                    fontWeight: "600",
+                    marginBottom: "8px",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                  }}
+                >
+                  RISK VECTORIZATION
+                </div>
+                <div style={{ display: "flex", gap: "16px", fontSize: "12px" }}>
+                  {selectedCircle.clausePairing.dgScore && (
+                    <span style={{ color: "#f2f2f2" }}>
+                      DG:{" "}
+                      <span style={{ color: "#ff6b6b" }}>
+                        {selectedCircle.clausePairing.dgScore}
+                      </span>
+                    </span>
+                  )}
+                  {selectedCircle.clausePairing.ciScore && (
+                    <span style={{ color: "#f2f2f2" }}>
+                      CI:{" "}
+                      <span style={{ color: "#4ecdc4" }}>
+                        {selectedCircle.clausePairing.ciScore}
+                      </span>
+                    </span>
+                  )}
+                  {selectedCircle.clausePairing.rtScore && (
+                    <span style={{ color: "#f2f2f2" }}>
+                      RT:{" "}
+                      <span style={{ color: "#45b7d1" }}>
+                        {selectedCircle.clausePairing.rtScore}
+                      </span>
+                    </span>
+                  )}
+                  {selectedCircle.clausePairing.sbScore && (
+                    <span style={{ color: "#f2f2f2" }}>
+                      SB:{" "}
+                      <span style={{ color: "#ffa726" }}>
+                        {selectedCircle.clausePairing.sbScore}
+                      </span>
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
 
             <button
               onClick={handleModalClose}
