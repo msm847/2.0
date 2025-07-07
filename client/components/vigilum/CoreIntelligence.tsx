@@ -299,7 +299,7 @@ const StructuralInterpretationMode = () => {
             ease: "cubic.inOut",
           });
 
-          // Flip arrow
+          // Flip arrow and move closer to center
           gsap
             .timeline()
             .to(arrow, {
@@ -308,10 +308,12 @@ const StructuralInterpretationMode = () => {
               ease: "cubic.inOut",
             })
             .set(arrow, {
+              attr: { d: "M 32 30 L 41 30 M 39 27 L 41 30 L 39 33" },
               scaleX: -1,
+              x: -6,
             })
             .to(arrow, {
-              opacity: 0.6,
+              opacity: 0.8,
               duration: 0.25,
               ease: "cubic.inOut",
             });
