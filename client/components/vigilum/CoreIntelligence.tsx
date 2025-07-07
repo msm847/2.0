@@ -1453,15 +1453,33 @@ const StructuralInterpretationMode = () => {
                             strokeWidth="1"
                           />
                         </g>
-                        {/* Central intersection only (shown on hover) */}
+                        {/* All intersection areas (shown on hover) */}
                         <g className="intersection-only" style={{ opacity: 0 }}>
-                          {/* True intersection of all 3 circles */}
+                          {/* A ∩ B (top intersection) */}
                           <path
-                            d="M 30 29
-                               A 11 11 0 0 1 31.5 30.5
-                               A 11 11 0 0 1 28.5 30.5
-                               A 11 11 0 0 1 30 29 Z"
-                            fill="rgba(123, 163, 186, 0.6)"
+                            d="M 27 21 A 11 11 0 0 1 33 21 A 11 11 0 0 1 27 21 Z"
+                            fill="rgba(123, 163, 186, 0.4)"
+                            stroke="rgba(123, 163, 186, 0.7)"
+                            strokeWidth="1"
+                          />
+                          {/* B ∩ C (bottom-right intersection) */}
+                          <path
+                            d="M 33 27 A 11 11 0 0 1 36 33 A 11 11 0 0 1 30 33 A 11 11 0 0 1 33 27 Z"
+                            fill="rgba(123, 163, 186, 0.4)"
+                            stroke="rgba(123, 163, 186, 0.7)"
+                            strokeWidth="1"
+                          />
+                          {/* A ∩ C (bottom-left intersection) */}
+                          <path
+                            d="M 27 27 A 11 11 0 0 1 30 33 A 11 11 0 0 1 24 33 A 11 11 0 0 1 27 27 Z"
+                            fill="rgba(123, 163, 186, 0.4)"
+                            stroke="rgba(123, 163, 186, 0.7)"
+                            strokeWidth="1"
+                          />
+                          {/* A ∩ B ∩ C (center intersection) */}
+                          <path
+                            d="M 30 27 A 11 11 0 0 1 32 29 A 11 11 0 0 1 28 29 A 11 11 0 0 1 30 27 Z"
+                            fill="rgba(123, 163, 186, 0.7)"
                             stroke="rgba(123, 163, 186, 0.9)"
                             strokeWidth="1.5"
                           />
