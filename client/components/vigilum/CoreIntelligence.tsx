@@ -981,26 +981,85 @@ const StructuralInterpretationMode = () => {
       }}
     >
       <div className="container mx-auto px-4 py-20">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2
-            className="text-4xl font-bold mb-4 font-mono tracking-tight"
-            style={{
-              color: "#f2f2f2",
-              textShadow: "0 0 20px rgba(255, 255, 255, 0.1)",
-            }}
-          >
-            STRUCTURAL INTERPRETATION MODE
-          </h2>
-          <p
-            className="text-xl font-light max-w-3xl mx-auto"
-            style={{ color: "#a0a0a0" }}
-          >
-            Seven semantic units. One cognitive recompiler.
-          </p>
-        </div>
+        {/* Cognitive Recompiler Interface */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 400px 1fr",
+          gap: "60px",
+          alignItems: "center",
+          minHeight: "70vh",
+          marginBottom: "40px"
+        }}>
 
-        {/* Interpretive Zone */}
+          {/* Left Column: Primary Logic Statement */}
+          <div style={{ justifySelf: "end", maxWidth: "320px" }}>
+            <h2
+              className="font-mono text-xl mb-6"
+              style={{
+                color: "#C9D2DC",
+                fontWeight: "400",
+                letterSpacing: "0.02em",
+                lineHeight: "1.4",
+              }}
+            >
+              STRUCTURAL INTERPRETATION MODE
+            </h2>
+            <div
+              className="font-mono text-sm mb-4"
+              style={{
+                color: "#9AA4B0",
+                fontWeight: "400",
+                lineHeight: "1.5",
+              }}
+            >
+              Pre-simulation recompiler for clause-level cognition
+            </div>
+            <div
+              className="font-mono text-xs"
+              style={{
+                color: "#7A8794",
+                fontWeight: "400",
+                lineHeight: "1.6",
+              }}
+            >
+              You are entering a logic field.<br/>
+              The following interface is not descriptive. It is structural.<br/>
+              These seven units are not icons. They are semantic operators — each one a self-contained diagnostic mechanism that defines how systems reroute legality.
+            </div>
+          </div>
+
+          {/* Center: Interactive Node Field */}
+          <div style={{ position: "relative", justifySelf: "center" }}>
+            {/* Central Glyph - resolves as interactions increase */}
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "40px",
+                height: "40px",
+                opacity: centralGlyph,
+                transition: "opacity 0.8s ease-out",
+                pointerEvents: "none",
+                zIndex: 5,
+              }}
+            >
+              <svg width="40" height="40">
+                <text
+                  x="20"
+                  y="26"
+                  textAnchor="middle"
+                  fontSize="24"
+                  fill="#C9D2DC"
+                  fontFamily="monospace"
+                >
+                  φ
+                </text>
+              </svg>
+            </div>
+
+            {/* Interpretive Zone */}
         <div
           ref={interpretiveZoneRef}
           className="interpretive-zone"
