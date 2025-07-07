@@ -1059,20 +1059,18 @@ const StructuralInterpretationMode = () => {
               </svg>
             </div>
 
-            {/* Interpretive Zone */}
-        <div
-          ref={interpretiveZoneRef}
-          className="interpretive-zone"
-          style={{
-            width: "70%",
-            height: "500px",
-            margin: "0 auto",
-            position: "relative",
-            background: "linear-gradient(135deg, #0b1e16 0%, #224436 100%)",
-            borderRadius: "12px",
-            border: "1px solid rgba(0, 255, 204, 0.15)",
-          }}
-        >
+            <div
+              ref={interpretiveZoneRef}
+              className="interpretive-zone"
+              style={{
+                width: "400px",
+                height: "400px",
+                position: "relative",
+                background: "linear-gradient(135deg, #0b1e16 0%, #224436 100%)",
+                borderRadius: "8px",
+                border: "1px solid rgba(0, 255, 204, 0.1)",
+              }}
+            >
           {circleData.map((circle) => (
             <div
               key={circle.id}
