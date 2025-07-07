@@ -940,34 +940,46 @@ const StructuralInterpretationMode = () => {
                 )}
 
                 {circle.animationType === "orbital" && (
-                  // Sequence Dependency: Counter-rotating orbitals
+                  // Sequence Dependency: Orbital nodes with directional arrow
                   <>
                     <circle
                       cx="30"
                       cy="30"
                       r="25"
-                      fill="rgba(255, 255, 255, 0.05)"
-                      stroke="rgba(255, 255, 255, 0.1)"
+                      fill="rgba(32, 36, 43, 0.1)"
+                      stroke="rgba(32, 36, 43, 0.2)"
                       strokeWidth="1"
                     />
-                    <circle
-                      className="orbital-1"
-                      cx="30"
-                      cy="18"
-                      r="6"
-                      fill="none"
-                      stroke="rgba(255, 255, 255, 0.4)"
-                      strokeWidth="1"
-                    />
-                    <circle
-                      className="orbital-2"
-                      cx="30"
-                      cy="42"
-                      r="6"
-                      fill="none"
-                      stroke="rgba(255, 255, 255, 0.4)"
-                      strokeWidth="1"
-                    />
+                    <g style={{ transformOrigin: "30px 30px" }}>
+                      <circle
+                        className="orbital-1"
+                        cx="30"
+                        cy="12"
+                        r="3"
+                        fill="rgba(153, 170, 184, 0.8)"
+                        stroke="rgba(108, 129, 149, 0.6)"
+                        strokeWidth="1"
+                      />
+                      <circle
+                        className="orbital-2"
+                        cx="30"
+                        cy="48"
+                        r="3"
+                        fill="rgba(153, 170, 184, 0.6)"
+                        stroke="rgba(108, 129, 149, 0.4)"
+                        strokeWidth="1"
+                      />
+                      {/* Directional arrow */}
+                      <path
+                        className="sequence-arrow"
+                        d="M 22 30 L 28 30 M 26 28 L 28 30 L 26 32"
+                        fill="none"
+                        stroke="rgba(108, 129, 149, 0.6)"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        opacity="0.6"
+                      />
+                    </g>
                   </>
                 )}
 
