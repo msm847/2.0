@@ -509,37 +509,20 @@ const StructuralInterpretationMode = () => {
         break;
 
       case "overlap":
-        const circles = [".circle-a", ".circle-b", ".circle-c"].map((q) =>
-          element.querySelector(q),
+        const simpleCircle = element.querySelector(".simple-circle");
+        const intersectionGeometry = element.querySelector(
+          ".intersection-geometry",
         );
-        const unifiedRing = element.querySelector(".unified-ring");
 
-        if (circles.every((c) => c) && unifiedRing) {
-          gsap.killTweensOf([...circles, unifiedRing]);
-          gsap.to(circles[0], {
-            x: -4,
-            y: -4,
+        if (simpleCircle && intersectionGeometry) {
+          gsap.killTweensOf([simpleCircle, intersectionGeometry]);
+          gsap.to(simpleCircle, {
             opacity: 1,
-            duration: 0.5,
+            duration: 0.3,
             ease: "cubic.inOut",
           });
-          gsap.to(circles[1], {
-            x: 4,
-            y: -4,
-            opacity: 1,
-            duration: 0.5,
-            ease: "cubic.inOut",
-          });
-          gsap.to(circles[2], {
-            x: 0,
-            y: 4,
-            opacity: 1,
-            duration: 0.5,
-            ease: "cubic.inOut",
-          });
-          gsap.to(unifiedRing, {
+          gsap.to(intersectionGeometry, {
             opacity: 0,
-            scale: 0,
             duration: 0.3,
             ease: "cubic.inOut",
           });
