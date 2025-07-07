@@ -713,7 +713,7 @@ const StructuralInterpretationMode = () => {
         gsap.to(circle, { rotation: 0, duration: 1, ease: "power2.out" });
       });
 
-      // Sequential collapse: Constraint → Sequence → Discretion → Override → Typological → Cross-document → Integrity
+      // Sequential collapse: Constraint → Sequence �� Discretion → Override → Typological → Cross-document → Integrity
       const collapseOrder = [
         "constraint",
         "sequence",
@@ -1549,7 +1549,7 @@ const StructuralInterpretationMode = () => {
             </div>
           </div>
 
-          {/* Right Column: Operator Theory Preview */}
+          {/* Right Column: Clause Dynamics Primer */}
           <div style={{ justifySelf: "start", maxWidth: "320px" }}>
             <div
               className="font-mono text-xs"
@@ -1557,13 +1557,16 @@ const StructuralInterpretationMode = () => {
                 color: "#7A8794",
                 fontWeight: "400",
                 lineHeight: "1.6",
-                marginBottom: "20px",
+                marginBottom: "24px",
               }}
             >
-              Vigilum does not display corruption.
+              Clauses in governance systems behave non-linearly.
               <br />
-              It simulates the logic that produces it — through clauses that
-              appear valid but collapse under structured interaction.
+              They reference, override, nullify, and collapse each other based
+              on order, scope, and embedded discretion.
+              <br />
+              Vigilum interprets these as logic units projected into a
+              multidimensional risk space.
             </div>
             <div
               className="font-mono text-xs"
@@ -1571,27 +1574,31 @@ const StructuralInterpretationMode = () => {
                 color: "#6B7684",
                 fontWeight: "400",
                 lineHeight: "1.6",
-                marginBottom: "16px",
+                marginBottom: "20px",
               }}
             >
-              This interface performs the minimal induction necessary to engage
-              with Vigilum's simulation layer.
+              These seven nodes are the minimal vocabulary of that language.
               <br />
-              Meaning here is not seen. It is compiled.
+              Each operator defines a structural failure pattern.
+              <br />
+              They do not explain risk. They instantiate it.
             </div>
-            {logicClassesEngaged.size >= 2 && (
+            {logicClassesEngaged.size >= 1 && (
               <div
                 className="font-mono text-xs"
                 style={{
                   color: "#8A9199",
                   fontWeight: "400",
                   lineHeight: "1.6",
-                  opacity: 0.8,
+                  opacity: logicClassesEngaged.size >= 3 ? 1 : 0.7,
+                  transition: "opacity 0.5s ease-out",
                 }}
               >
-                Interpretive alignment: {logicClassesEngaged.size}/7
+                Semantic alignment: {logicClassesEngaged.size}/7
                 <br />
-                Central glyph resolving...
+                {logicClassesEngaged.size >= 3
+                  ? "Interpretive schema realigned. Simulation unlocking..."
+                  : "Central glyph resolving..."}
               </div>
             )}
           </div>
