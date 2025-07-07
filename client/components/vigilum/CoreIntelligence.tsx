@@ -1161,7 +1161,7 @@ const StructuralInterpretationMode = () => {
                     )}
 
                     {circle.animationType === "flicker" && (
-                      // Discretion Encoding: Dot on xy-grid coordinate system
+                      // Discretion Encoding: Dot on xy-grid with pulsating ripple overlay
                       <>
                         <circle
                           cx="30"
@@ -1224,17 +1224,7 @@ const StructuralInterpretationMode = () => {
                             strokeWidth="0.5"
                           />
                         </g>
-                        {/* Dot on axis - always visible */}
-                        <circle
-                          className="axis-dot"
-                          cx="30"
-                          cy="30"
-                          r="3"
-                          fill="rgba(94, 137, 160, 0.8)"
-                          stroke="rgba(94, 137, 160, 1)"
-                          strokeWidth="1"
-                        />
-                        {/* Ripple effect (for hover animation) */}
+                        {/* Pulsating ripple effect - restored from original */}
                         <circle
                           className="ripple-center"
                           cx="30"
@@ -1245,6 +1235,24 @@ const StructuralInterpretationMode = () => {
                           strokeWidth="1.5"
                           opacity="0"
                           style={{ transformOrigin: "30px 30px" }}
+                        />
+                        {/* Dot on axis - always visible, overlaid on top */}
+                        <circle
+                          className="axis-dot"
+                          cx="30"
+                          cy="30"
+                          r="3"
+                          fill="rgba(94, 137, 160, 0.8)"
+                          stroke="rgba(94, 137, 160, 1)"
+                          strokeWidth="1"
+                        />
+                        {/* Subtle center pulse - restored from original */}
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="2"
+                          fill="rgba(94, 137, 160, 0.4)"
+                          opacity="0.6"
                         />
                       </>
                     )}
