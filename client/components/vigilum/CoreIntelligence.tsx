@@ -75,8 +75,7 @@ const StructuralInterpretationMode = () => {
     {
       id: "sequence",
       title: "Sequence Dependency",
-      definition:
-        "Clause order is not neutral. A → B ≠ B → A. Sequence determines structural output.",
+      definition: "Clause order alters legal outcome",
       rule: "Structural output depends on clause order. Reversing order can transform legality into exposure.",
       example:
         "Clause 3.2: 'No contract shall be awarded without public tender.' Clause 3.5: 'In emergencies, tender may be bypassed.' — B following A = restriction nullified.",
