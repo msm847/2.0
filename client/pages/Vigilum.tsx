@@ -6,7 +6,7 @@ import ModuleGrid from "@/components/vigilum/ModuleGrid";
 import CoreIntelligence from "@/components/vigilum/CoreIntelligence";
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
 import UseCases from "@/components/vigilum/UseCases";
-import Newsletter from "@/components/vigilum/Newsletter";
+import TeamContact from "@/components/vigilum/TeamContact";
 
 const VigilumPage = () => {
   const location = useLocation();
