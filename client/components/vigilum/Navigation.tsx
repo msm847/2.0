@@ -60,7 +60,7 @@ const Navigation = () => {
   };
 
   const getSeeTogetherStyles = (isActive: boolean) => {
-    const baseStyles = getButtonStyles("newsletter", isActive);
+    const baseStyles = getButtonStyles("team", isActive);
     const pulseAnimation = seeTogetherHovered ? "animate-pulse" : "";
     const bounceAnimation = seeTogetherHovered ? "animate-bounce" : "";
     const strongerGlow = "hover:shadow-[0_0_12px_rgba(255,255,255,0.2)]";
