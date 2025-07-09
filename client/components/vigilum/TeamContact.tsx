@@ -269,18 +269,12 @@ const TeamContact = () => {
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700 mb-4">
+              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700">
                 <Mail className="w-3 h-3 text-green-400" />
                 <span className="text-xs text-green-300 font-mono uppercase tracking-wider">
                   Get In Touch
                 </span>
               </div>
-              <h2
-                id="contact-heading"
-                className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight"
-              >
-                CONTACT
-              </h2>
             </div>
 
             {/* Target Audiences */}
