@@ -203,12 +203,12 @@ const Navigation = () => {
                 LIBRARY
               </button>
               <button
-                onClick={() => handleNavigation("#newsletter")}
-                className={`${getSeeTogetherStyles(activeSection === "newsletter")} text-left whitespace-nowrap`}
+                onClick={() => handleNavigation("#team")}
+                className={`${getSeeTogetherStyles(activeSection === "team")} text-left whitespace-nowrap`}
                 onMouseEnter={() => setSeeTogetherHovered(true)}
                 onMouseLeave={() => setSeeTogetherHovered(false)}
               >
-                See together
+                TEAM
               </button>
             </div>
           </div>
