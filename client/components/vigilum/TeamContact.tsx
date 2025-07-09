@@ -1,0 +1,466 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Shield,
+  Building,
+  Bot,
+  ArrowRight,
+  CheckCircle,
+  User,
+  Target,
+  Eye,
+  BookOpen,
+  Mail,
+  Send,
+} from "lucide-react";
+
+const TeamContact = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const targetAudiences = [
+    {
+      id: "auditor",
+      title: "Institutional Auditors",
+      icon: Shield,
+      description:
+        "Risk assessment professionals analyzing governance structures",
+    },
+    {
+      id: "donor",
+      title: "Development Organizations",
+      icon: Building,
+      description: "Funding bodies requiring governance risk assessment",
+    },
+    {
+      id: "civic",
+      title: "Civic AI Developers",
+      icon: Bot,
+      description: "Technology teams building governance intelligence systems",
+    },
+  ];
+
+  const corePrinciples = [
+    {
+      title: "Preemption over Reaction",
+      description:
+        "Identify structural risks before they manifest, not after damage is done.",
+      icon: Target,
+    },
+    {
+      title: "Transparency in Analysis",
+      description:
+        "Explainable AI that shows how conclusions are reached, not black box predictions.",
+      icon: Eye,
+    },
+    {
+      title: "Civic Collaboration",
+      description:
+        "Working with journalists, whistleblowers, and civic actors to strengthen accountability.",
+      icon: User,
+    },
+  ];
+
+  const researchFoundation = [
+    "MARS-REERS thesis research (Columbia University, 2023)",
+    "Vigilum Codex v0.1 – Initial risk pattern compendium",
+    "Quantum logic applications in legal clause analysis",
+    "Mathematical semantic weighting methodologies",
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setEmail("");
+    }, 3000);
+  };
+
+  return (
+    <div style={{ backgroundColor: "#0B1E16" }}>
+      {/* TEAM SECTION */}
+      <section className="py-20" aria-labelledby="team-heading">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700 mb-4">
+                <User className="w-3 h-3 text-green-400" />
+                <span className="text-xs text-green-300 font-mono uppercase tracking-wider">
+                  Origins & Vision
+                </span>
+              </div>
+              <h2
+                id="team-heading"
+                className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight"
+              >
+                TEAM
+              </h2>
+            </div>
+
+            {/* Founder's Note */}
+            <div className="mb-16">
+              <div
+                className="rounded-lg p-8 border"
+                style={{
+                  backgroundColor: "rgba(12, 35, 28, 0.85)",
+                  borderColor: "rgba(0,255,204,0.06)",
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                }}
+              >
+                <h3 className="text-2xl font-bold text-green-400 font-mono mb-6">
+                  Founder's Note
+                </h3>
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    During my research in the MARS-REERS program at Columbia
+                    University, I discovered a fundamental gap in how we
+                    approach corruption. We often react to scandals rather than
+                    predict them. Traditional tools detect issues after rules
+                    are broken, but what if we could identify the structural
+                    flaws that enable corruption before any funds are spent or
+                    contracts signed?
+                  </p>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    Vigilum emerged from this insight. Our mission is to render
+                    institutional structure legible before it breaks, to
+                    spotlight design flaws that breed corruption so they can be
+                    fixed in time. This isn't just detection — this is
+                    preemption.
+                  </p>
+                  <p className="text-green-400 font-mono text-sm">
+                    — Adam Kovarskas, Founder
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Grid Section: Origin Story & Vision Statement */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              {/* Origin Story */}
+              <div
+                className="rounded-lg p-8 border"
+                style={{
+                  backgroundColor: "rgba(12, 35, 28, 0.85)",
+                  borderColor: "rgba(0,255,204,0.06)",
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                }}
+              >
+                <h3 className="text-xl font-bold text-green-400 font-mono mb-4">
+                  Origin Story
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  Vigilum began as a research thesis in the MARS-REERS program
+                  at Columbia University, exploring quantum logic in legal
+                  clauses. The findings crystallized into the Vigilum Codex — an
+                  evolving compendium of risk patterns. Through analysis of
+                  real-world cases like the ill-fated Vilnius National Stadium
+                  project and energy contracts at Ignitis, we discovered how
+                  sequences of legal clauses can create escape logic and
+                  procedural dead-ends while remaining formally compliant.
+                </p>
+                <p className="text-gray-300 leading-relaxed text-sm mt-4">
+                  What started as academic research evolved into a platform with
+                  the potential to transform how institutions approach
+                  governance risk — from reactive compliance to proactive
+                  structural intelligence.
+                </p>
+              </div>
+
+              {/* Vision Statement */}
+              <div
+                className="rounded-lg p-8 border"
+                style={{
+                  backgroundColor: "rgba(12, 35, 28, 0.85)",
+                  borderColor: "rgba(0,255,204,0.06)",
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                }}
+              >
+                <h3 className="text-xl font-bold text-green-400 font-mono mb-4">
+                  Vision Statement
+                </h3>
+                <blockquote className="text-green-300 font-mono text-lg leading-relaxed mb-4 border-l-2 border-green-400 pl-4">
+                  "Vigilum aims to empower societies with structural
+                  transparency — where laws and contracts carry traceable logic,
+                  and loopholes have nowhere to hide."
+                </blockquote>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  We believe in augmenting human oversight with AI to achieve
+                  accountability by design, transforming governance from
+                  reactive to predictive.
+                </p>
+              </div>
+            </div>
+
+            {/* Core Principles */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
+                Core Principles
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {corePrinciples.map((principle, index) => {
+                  const Icon = principle.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="rounded-lg p-6 border text-center"
+                      style={{
+                        backgroundColor: "rgba(12, 35, 28, 0.85)",
+                        borderColor: "rgba(0,255,204,0.06)",
+                        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                      }}
+                    >
+                      <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
+                        {principle.title}
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {principle.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Research Foundation */}
+            <div
+              className="rounded-lg p-8 border"
+              style={{
+                backgroundColor: "rgba(12, 35, 28, 0.85)",
+                borderColor: "rgba(0,255,204,0.06)",
+                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+              }}
+            >
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-green-400 font-mono">
+                  Research Foundation
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {researchFoundation.map((item, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-gray-300 text-sm leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section
+        className="py-20 border-t border-gray-800"
+        aria-labelledby="contact-heading"
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700 mb-4">
+                <Mail className="w-3 h-3 text-green-400" />
+                <span className="text-xs text-green-300 font-mono uppercase tracking-wider">
+                  Get In Touch
+                </span>
+              </div>
+              <h2
+                id="contact-heading"
+                className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight"
+              >
+                CONTACT
+              </h2>
+            </div>
+
+            {/* Target Audiences */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {targetAudiences.map((audience) => {
+                const Icon = audience.icon;
+                return (
+                  <div
+                    key={audience.id}
+                    className="rounded-lg p-6 transition-all duration-300 border"
+                    style={{
+                      backgroundColor: "rgba(12, 35, 28, 0.85)",
+                      borderColor: "rgba(0,255,204,0.06)",
+                      boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(34, 197, 94, 0.5)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(0,255,204,0.06)";
+                    }}
+                  >
+                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-green-400 font-mono mb-3">
+                      {audience.title}
+                    </h3>
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                      {audience.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Contact Info & Newsletter */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Contact Information */}
+              <div
+                className="rounded-lg p-8 border"
+                style={{
+                  backgroundColor: "rgba(12, 35, 28, 0.85)",
+                  borderColor: "rgba(0,255,204,0.06)",
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                }}
+              >
+                <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
+                  Direct Contact
+                </h3>
+                <div className="flex items-center space-x-3 mb-4">
+                  <Mail className="w-5 h-5 text-green-400" />
+                  <a
+                    href="mailto:info@vigilum.com"
+                    className="text-gray-300 hover:text-green-400 transition-colors font-mono"
+                    aria-label="Send email to Vigilum"
+                  >
+                    info@vigilum.com
+                  </a>
+                </div>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  For institutional partnerships, technical integration, or
+                  research collaboration inquiries.
+                </p>
+              </div>
+
+              {/* Newsletter Subscription */}
+              <div
+                className="rounded-lg p-8 border"
+                style={{
+                  backgroundColor: "#102c22",
+                  borderColor: "rgba(0,255,204,0.06)",
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                }}
+              >
+                {!isSubmitted ? (
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                    aria-labelledby="newsletter-form"
+                  >
+                    <div>
+                      <h3
+                        id="newsletter-form"
+                        className="text-xl font-bold text-white font-mono mb-2"
+                      >
+                        Stay Updated
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-4">
+                        Methodology advances, case studies, structural analysis
+                        techniques
+                      </p>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email-input"
+                        className="block text-sm font-bold text-gray-300 font-mono mb-2"
+                      >
+                        Email address
+                      </label>
+                      <input
+                        id="email-input"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="your.email@organization.com"
+                        className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-gray-300 font-mono text-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                        required
+                        aria-describedby="email-help"
+                      />
+                      <p id="email-help" className="text-xs text-gray-500 mt-1">
+                        No spam. Unsubscribe anytime.
+                      </p>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={!email.trim()}
+                      className="w-full bg-green-600 hover:bg-green-500 text-white font-mono py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      aria-label="Subscribe to Vigilum newsletter"
+                    >
+                      Subscribe
+                      <Send className="ml-2 w-4 h-4" />
+                    </Button>
+                  </form>
+                ) : (
+                  <div
+                    className="text-center py-8"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-green-400 font-mono mb-2">
+                      SUBSCRIPTION CONFIRMED
+                    </h3>
+                    <p className="text-sm text-gray-400">
+                      You'll receive updates on structural intelligence
+                      methodologies
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Vigilum AI",
+            description:
+              "Structural governance intelligence platform for institutional risk detection",
+            url: "https://vigilum.com",
+            founder: {
+              "@type": "Person",
+              name: "Adam Kovarskas",
+              alumniOf: "Columbia University",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              email: "info@vigilum.com",
+              contactType: "General Inquiries",
+            },
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "US",
+            },
+          }),
+        }}
+      />
+    </div>
+  );
+};
+
+export default TeamContact;
