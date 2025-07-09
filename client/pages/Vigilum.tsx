@@ -51,8 +51,8 @@ const VigilumPage = () => {
       <div id="cases">
         <UseCases />
       </div>
-      <div id="newsletter">
-        <Newsletter />
+      <div id="team">
+        <TeamContact />
       </div>
     </div>
   );
