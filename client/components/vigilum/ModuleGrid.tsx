@@ -181,13 +181,6 @@ const ModuleGrid = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-mono tracking-tight">
             SEMANTIC INTELLIGENCE ENGINES
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Not corruption detection —{" "}
-            <span className="text-yellow-400 font-medium">
-              corruption prediction
-            </span>
-            .
-          </p>
         </div>
 
         {/* Module Grid - 2x4 responsive layout */}
