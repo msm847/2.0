@@ -126,7 +126,7 @@ export default function Index() {
             id="spline-animation-background"
           >
             <iframe
-              src="https://my.spline.design/particleshand-Ii78meWYbJO8msIhUppyXUUG/"
+              src="https://my.spline.design/particleshand-Ii78meWYbJO8msIhUppyXUUG/?controls=false&autoRotate=false"
               frameBorder="0"
               width="100%"
               height="100%"
