@@ -147,13 +147,6 @@ const TeamContact = () => {
   }, [audiencesLastInteractionTime, audiencesIsDragging, audiencesIsAnimating]);
 
   useEffect(() => {
-    if (
-      audiencesAutoScrollDisabled ||
-      audiencesIsDragging ||
-      audiencesIsAnimating
-    )
-      return;
-
     const animate = () => {
       setAudiencesScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
       audiencesAnimationRef.current = requestAnimationFrame(animate);
@@ -166,14 +159,12 @@ const TeamContact = () => {
         cancelAnimationFrame(audiencesAnimationRef.current);
       }
     };
-  }, [audiencesAutoScrollDisabled, audiencesIsDragging, audiencesIsAnimating]);
+  }, []);
 
-  // Continuous auto-scroll animation with infinite loop reset
+  // Perpetual auto-scroll animation
   useEffect(() => {
-    if (autoScrollDisabled || isPaused || isDragging || isAnimating) return;
-
     const animate = () => {
-      setScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps - goes to infinity!
+      setScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -184,14 +175,7 @@ const TeamContact = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [
-    autoScrollDisabled,
-    isPaused,
-    isDragging,
-    isAnimating,
-    totalCards,
-    cardWidth,
-  ]);
+  }, []);
 
   const smoothScrollTo = (targetPosition, duration = 600) => {
     setIsAnimating(true);
@@ -603,11 +587,8 @@ const TeamContact = () => {
                   <div
                     className="scrolling-principles"
                     style={{
-                      transform: `translateX(${scrollPosition % (totalCards * cardWidth)}px)`,
-                      transition:
-                        isDragging || isAnimating
-                          ? "none"
-                          : "transform 0.1s linear",
+                      transform: `translateX(${scrollPosition}px)`,
+                      transition: "none",
                     }}
                   >
                     {/* Render enough copies to fill screen + buffer */}
@@ -713,11 +694,8 @@ const TeamContact = () => {
                   <div
                     className="target-audiences-scroll"
                     style={{
-                      transform: `translateX(${audiencesScrollPosition % (targetAudiences.length * cardWidth)}px)`,
-                      transition:
-                        audiencesIsDragging || audiencesIsAnimating
-                          ? "none"
-                          : "transform 0.1s linear",
+                      transform: `translateX(${audiencesScrollPosition}px)`,
+                      transition: "none",
                       display: "flex",
                       willChange: "transform",
                     }}
