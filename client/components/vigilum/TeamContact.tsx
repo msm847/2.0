@@ -128,24 +128,6 @@ const TeamContact = () => {
     return () => clearInterval(interval);
   }, [lastInteractionTime, isDragging, isAnimating]);
 
-  // Target Audiences Auto-scroll and Interaction Effects
-  useEffect(() => {
-    if (audiencesIsDragging || audiencesIsAnimating) return;
-
-    const checkInactivity = () => {
-      const now = Date.now();
-      const timeSinceLastInteraction = now - audiencesLastInteractionTime;
-
-      if (timeSinceLastInteraction >= 3000) {
-        // 3 seconds
-        setAudiencesAutoScrollDisabled(false);
-      }
-    };
-
-    const interval = setInterval(checkInactivity, 100);
-    return () => clearInterval(interval);
-  }, [audiencesLastInteractionTime, audiencesIsDragging, audiencesIsAnimating]);
-
   useEffect(() => {
     const animate = () => {
       setAudiencesScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
