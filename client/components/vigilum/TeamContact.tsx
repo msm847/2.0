@@ -386,8 +386,8 @@ const TeamContact = () => {
                 </h3>
                 <blockquote className="text-green-300 font-mono text-lg leading-relaxed mb-4 border-l-2 border-green-400 pl-4">
                   "Vigilum aims to empower societies with structural
-                  transparency — where laws and contracts carry traceable logic,
-                  and loopholes have nowhere to hide."
+                  transparency ��� where laws and contracts carry traceable
+                  logic, and loopholes have nowhere to hide."
                 </blockquote>
                 <p className="text-gray-300 leading-relaxed text-sm">
                   We believe in augmenting human oversight with AI to achieve
@@ -424,11 +424,12 @@ const TeamContact = () => {
                 </button>
 
                 <div
-                  className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+                  className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
                   onMouseDown={handleMouseDown}
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
+                  style={{ userSelect: "none", touchAction: "pan-x" }}
                 >
                   <div
                     className="scrolling-principles"
