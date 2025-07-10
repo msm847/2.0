@@ -86,24 +86,6 @@ const TeamContact = () => {
   const cardWidth = 352; // 320px card + 32px margin
   const totalCards = corePrinciples.length;
 
-  const scrollLeft = () => {
-    setScrollPosition((prev) => {
-      const newPos = prev - cardWidth;
-      return newPos <= -(totalCards * cardWidth) ? 0 : newPos;
-    });
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 2000);
-  };
-
-  const scrollRight = () => {
-    setScrollPosition((prev) => {
-      const newPos = prev + cardWidth;
-      return newPos >= 0 ? -(totalCards * cardWidth - cardWidth) : newPos;
-    });
-    setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 2000);
-  };
-
   const handleMouseDown = (e) => {
     e.preventDefault();
     setIsDragging(true);
@@ -131,20 +113,8 @@ const TeamContact = () => {
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mouseup", handleMouseUp);
 
-    // Snap to nearest card
-    const nearestCard = Math.round(scrollPosition / cardWidth) * cardWidth;
-    let finalPosition = nearestCard;
-
-    // Ensure within bounds for infinite scroll
-    if (finalPosition > 0) {
-      finalPosition = -(totalCards * cardWidth - cardWidth);
-    }
-    if (finalPosition <= -(totalCards * cardWidth)) {
-      finalPosition = 0;
-    }
-
-    setScrollPosition(finalPosition);
-    setTimeout(() => setIsPaused(false), 1000);
+    // Resume auto-scroll after brief pause - NO POSITION RESET
+    setTimeout(() => setIsPaused(false), 500);
   };
 
   const handleTouchStart = (e) => {
