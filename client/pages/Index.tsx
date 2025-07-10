@@ -233,30 +233,6 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Primary Engagement */}
-            <div className="text-center mb-10 -mt-12">
-              <Link to="/vigilum#demo">
-                <Button
-                  size="lg"
-                  className="text-white font-mono px-8 py-4 text-lg transition-all duration-200"
-                  style={{
-                    backgroundColor: "#004E45",
-                    border: "1px solid #003B34",
-                    boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.05)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "#006B60";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = "#004E45";
-                  }}
-                >
-                  <Upload className="mr-2 h-5 w-5" />
-                  Simulate Multi-Clause Behavior
-                </Button>
-              </Link>
-            </div>
-
             {/* Vigilum Modules */}
             <div className="mb-12 text-center mt-8">
               <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3 relative">
