@@ -184,32 +184,38 @@ const TeamContact = () => {
 
   const handleMouseDown = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setIsDragging(true);
     setDragStart(e.clientX);
     setDragStartPosition(scrollPosition);
-    setAutoScrollDisabled(true); // Permanently disable auto-scroll
+    updateInteractionTime();
 
-    // Add global mouse event listeners
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    // Create handlers with current context
+    const globalMouseMove = (moveEvent) => {
+      moveEvent.preventDefault();
+      const diff = moveEvent.clientX - e.clientX;
+      setScrollPosition(scrollPosition + diff);
+      setDragStart(moveEvent.clientX);
+      setDragStartPosition(scrollPosition + diff);
+    };
+
+    const globalMouseUp = () => {
+      setIsDragging(false);
+      document.removeEventListener("mousemove", globalMouseMove);
+      document.removeEventListener("mouseup", globalMouseUp);
+      updateInteractionTime();
+    };
+
+    document.addEventListener("mousemove", globalMouseMove);
+    document.addEventListener("mouseup", globalMouseUp);
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const diff = e.clientX - dragStart;
-    setScrollPosition(dragStartPosition + diff); // Allow infinite scrolling in both directions
+    // This is for fallback - main handling is in global handlers
   };
 
   const handleMouseUp = (e) => {
-    if (!isDragging) return;
-    setIsDragging(false);
-
-    // Remove global mouse event listeners
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
-
-    // Auto-scroll remains permanently disabled
+    // This is for fallback - main handling is in global handlers
   };
 
   const handleTouchStart = (e) => {
