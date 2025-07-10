@@ -176,6 +176,12 @@ const TeamContact = () => {
     smoothScrollTo(scrollPosition - cardWidth); // Move right (negative direction)
   };
 
+  const updateInteractionTime = () => {
+    setLastInteractionTime(Date.now());
+    setAutoScrollDisabled(true);
+    setIsPaused(true);
+  };
+
   const handleMouseDown = (e) => {
     e.preventDefault();
     setIsDragging(true);
