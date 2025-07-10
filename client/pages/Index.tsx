@@ -150,20 +150,34 @@ export default function Index() {
           {/* Content overlay */}
           {/* System Identity - Centered in middle of page */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <p
-              className="text-2xl md:text-3xl italic text-center -mt-20 drop-shadow-2xl font-mono"
-              style={{
-                color: "#48FFB2",
-                fontFamily: "IBM Plex Mono, 'Suisse Int'l Mono', monospace",
-              }}
-            >
-              Truth is not a stable referent, but a function of observation
-              logic —<br className="hidden sm:block" />
-              <span className="sm:inline block">
-                {" "}
-                a structurally encoded uncertainty...
-              </span>
-            </p>
+            <div className="text-center -mt-20 drop-shadow-2xl max-w-4xl px-4">
+              {/* Header: ϕ(c) active */}
+              <h1
+                className="text-xl font-mono font-medium mb-2"
+                style={{
+                  color: "#48FFB2",
+                  fontFamily: "IBM Plex Mono, 'Suisse Int'l Mono', monospace",
+                }}
+              >
+                ϕ(c) active
+              </h1>
+
+              {/* Subline: Truth sentence */}
+              <p
+                className="italic font-mono"
+                style={{
+                  color: "#8FC2B0",
+                  fontFamily: "IBM Plex Mono, 'Suisse Int'l Mono', monospace",
+                  fontSize: "0.85em",
+                  letterSpacing: "0.02em",
+                  maxWidth: "800px",
+                  margin: "0 auto",
+                }}
+              >
+                Truth is not a stable referent, but a function of observation
+                logic — a structurally encoded uncertainty.
+              </p>
+            </div>
           </div>
 
           {/* Vigilum Modules - Bottom Navigation */}
