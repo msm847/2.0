@@ -217,14 +217,18 @@ export default function Index() {
 
             {/* Spline 3D Brain Animation */}
             <div className="relative mb-20 px-4" id="spline-brain-container">
-              <div className="relative w-full h-96 md:h-[600px] rounded-2xl overflow-hidden">
-                <Spline
-                  scene="https://prod.spline.design/adL2AYtD8H0GnWtw2HEEOGVO/scene.splinecode"
+              <div className="relative w-full h-96 md:h-[600px] rounded-2xl overflow-hidden border border-gray-800/50">
+                <iframe
+                  src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/"
+                  frameBorder="0"
+                  width="100%"
+                  height="100%"
                   style={{
-                    width: "100%",
-                    height: "100%",
+                    border: "none",
                     background: "transparent",
                   }}
+                  title="AI Brain 3D Animation"
+                  loading="lazy"
                 />
 
                 {/* Optional overlay text */}
