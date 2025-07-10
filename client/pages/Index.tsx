@@ -222,17 +222,6 @@ export default function Index() {
                   SEMANTIC GOVERNANCE
                   <span className="block text-blue-400">INTELLIGENCE</span>
                 </h1>
-                <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto relative z-10">
-                  <DecryptedText
-                    text="Simulating override before discretion encodes compliance"
-                    animateOn="view"
-                    sequential={true}
-                    speed={80}
-                    className="text-gray-400"
-                    encryptedClassName="text-gray-600"
-                    useOriginalCharsOnly={true}
-                  />
-                </p>
               </div>
 
               {/* Vigilum Modules */}
@@ -380,6 +369,13 @@ export default function Index() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Bottom Text */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+            <p className="text-gray-400 font-mono text-sm tracking-wider text-center">
+              CLAVIS•OBSCURA•NULLUM•NEXUS POTENTIA•VIGILO CORE•VERIS•SENTIUM
+            </p>
           </div>
         </main>
       </div>
