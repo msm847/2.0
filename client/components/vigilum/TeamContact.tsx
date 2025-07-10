@@ -724,12 +724,8 @@ const TeamContact = () => {
               <div className="relative">
                 {/* Left Arrow */}
                 <button
-                  onClick={() => {
-                    const container = document.querySelector(
-                      ".target-audiences-scroll",
-                    );
-                    container.scrollBy({ left: -352, behavior: "smooth" });
-                  }}
+                  onClick={audiencesScrollLeftOneCard}
+                  disabled={audiencesIsAnimating}
                   className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
                   aria-label="Scroll left"
                 >
@@ -738,12 +734,8 @@ const TeamContact = () => {
 
                 {/* Right Arrow */}
                 <button
-                  onClick={() => {
-                    const container = document.querySelector(
-                      ".target-audiences-scroll",
-                    );
-                    container.scrollBy({ left: 352, behavior: "smooth" });
-                  }}
+                  onClick={audiencesScrollRightOneCard}
+                  disabled={audiencesIsAnimating}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
                   aria-label="Scroll right"
                 >
@@ -752,17 +744,26 @@ const TeamContact = () => {
 
                 <div
                   className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
+                  onMouseDown={handleAudiencesMouseDown}
+                  onTouchStart={handleAudiencesTouchStart}
+                  onTouchMove={handleAudiencesTouchMove}
+                  onTouchEnd={handleAudiencesTouchEnd}
                   style={{ userSelect: "none", touchAction: "pan-x" }}
                 >
                   <div
                     className="target-audiences-scroll"
                     style={{
+                      transform: `translateX(${audiencesScrollPosition % (targetAudiences.length * cardWidth)}px)`,
+                      transition:
+                        audiencesIsDragging || audiencesIsAnimating
+                          ? "none"
+                          : "transform 0.1s linear",
                       display: "flex",
                       willChange: "transform",
                     }}
                   >
                     {/* Render multiple copies for smooth infinite scroll */}
-                    {Array.from({ length: 2 }, (_, copyIndex) =>
+                    {Array.from({ length: 3 }, (_, copyIndex) =>
                       targetAudiences.map((audience, index) => {
                         const Icon = audience.icon;
                         const uniqueKey = `${copyIndex}-${index}`;
