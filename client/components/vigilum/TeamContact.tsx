@@ -89,12 +89,20 @@ const TeamContact = () => {
   const totalCards = corePrinciples.length;
   const animationRef = useRef(null);
 
-  // Continuous auto-scroll animation
+  // Continuous auto-scroll animation with infinite loop reset
   useEffect(() => {
     if (autoScrollDisabled || isPaused || isDragging || isAnimating) return;
 
     const animate = () => {
-      setScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
+      setScrollPosition((prev) => {
+        const newPos = prev - 0.5; // 30px per second at 60fps
+        // Reset position when we've scrolled one full cycle
+        const cycleWidth = totalCards * cardWidth;
+        if (newPos <= -cycleWidth) {
+          return 0; // Reset to start for seamless loop
+        }
+        return newPos;
+      });
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -105,7 +113,14 @@ const TeamContact = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [autoScrollDisabled, isPaused, isDragging, isAnimating]);
+  }, [
+    autoScrollDisabled,
+    isPaused,
+    isDragging,
+    isAnimating,
+    totalCards,
+    cardWidth,
+  ]);
 
   const smoothScrollTo = (targetPosition, duration = 600) => {
     setIsAnimating(true);
