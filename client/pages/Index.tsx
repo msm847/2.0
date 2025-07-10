@@ -18,7 +18,6 @@ import {
 import MatrixBackground from "../components/MatrixBackground";
 import DecryptedText from "../components/DecryptedText";
 import VigilumModulesCarousel from "../components/VigilumModulesCarousel";
-import Spline from "@splinetool/react-spline";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
