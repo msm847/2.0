@@ -128,6 +128,46 @@ const TeamContact = () => {
     return () => clearInterval(interval);
   }, [lastInteractionTime, isDragging, isAnimating]);
 
+  // Target Audiences Auto-scroll and Interaction Effects
+  useEffect(() => {
+    if (audiencesIsDragging || audiencesIsAnimating) return;
+
+    const checkInactivity = () => {
+      const now = Date.now();
+      const timeSinceLastInteraction = now - audiencesLastInteractionTime;
+
+      if (timeSinceLastInteraction >= 5000) {
+        // 5 seconds
+        setAudiencesAutoScrollDisabled(false);
+      }
+    };
+
+    const interval = setInterval(checkInactivity, 100);
+    return () => clearInterval(interval);
+  }, [audiencesLastInteractionTime, audiencesIsDragging, audiencesIsAnimating]);
+
+  useEffect(() => {
+    if (
+      audiencesAutoScrollDisabled ||
+      audiencesIsDragging ||
+      audiencesIsAnimating
+    )
+      return;
+
+    const animate = () => {
+      setAudiencesScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
+      audiencesAnimationRef.current = requestAnimationFrame(animate);
+    };
+
+    audiencesAnimationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (audiencesAnimationRef.current) {
+        cancelAnimationFrame(audiencesAnimationRef.current);
+      }
+    };
+  }, [audiencesAutoScrollDisabled, audiencesIsDragging, audiencesIsAnimating]);
+
   // Continuous auto-scroll animation with infinite loop reset
   useEffect(() => {
     if (autoScrollDisabled || isPaused || isDragging || isAnimating) return;
