@@ -118,6 +118,7 @@ const TeamContact = () => {
   };
 
   const handleTouchStart = (e) => {
+    e.preventDefault();
     setIsDragging(true);
     setDragStart(e.touches[0].clientX);
     setDragStartPosition(scrollPosition);
@@ -126,12 +127,15 @@ const TeamContact = () => {
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
+    e.preventDefault();
     const diff = e.touches[0].clientX - dragStart;
     setScrollPosition(dragStartPosition + diff);
   };
 
   const handleTouchEnd = () => {
-    handleMouseUp();
+    if (!isDragging) return;
+    setIsDragging(false);
+    setTimeout(() => setIsPaused(false), 500);
   };
 
   const targetAudiences = [
