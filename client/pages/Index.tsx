@@ -238,7 +238,7 @@ export default function Index() {
               >
                 NEXUS POTENTIA
               </Link>
-              <span className="text-gray-600">���</span>
+              <span className="text-gray-600">•</span>
               <Link
                 to="/module/vigilo-core"
                 className="hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block relative"
