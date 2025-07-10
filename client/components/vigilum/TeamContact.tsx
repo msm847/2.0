@@ -388,38 +388,38 @@ const TeamContact = () => {
                   <ChevronRight className="w-6 h-6 text-green-400/80" />
                 </button>
 
-                <div className="overflow-hidden">
+                <div
+                  className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+                  onMouseDown={handleMouseDown}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                >
                   <div
-                    className="scrolling-principles cursor-grab active:cursor-grabbing select-none"
-                    onMouseDown={handleMouseDown}
-                    onMouseLeave={handleMouseUp}
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
+                    className="scrolling-principles"
                     style={{
-                      transform: `translateX(${scrollPosition}px)`,
+                      transform: `translateX(${scrollPosition % (totalCards * cardWidth)}px)`,
                       transition:
                         isDragging || isAnimating
                           ? "none"
                           : "transform 0.1s linear",
                     }}
                   >
-                    {/* Render multiple copies for true infinite scroll */}
-                    {Array.from({ length: 5 }, (_, copyIndex) =>
+                    {/* Render enough copies to fill screen + buffer */}
+                    {Array.from({ length: 3 }, (_, copyIndex) =>
                       corePrinciples.map((principle, index) => {
                         const Icon = principle.icon;
                         const uniqueKey = `${copyIndex}-${index}`;
                         return (
                           <div
                             key={uniqueKey}
-                            className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
+                            className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4 pointer-events-none"
                             style={{
                               backgroundColor: "rgba(12, 35, 28, 0.85)",
                               borderColor: "rgba(0,255,204,0.06)",
                               boxShadow:
                                 "inset 0 0 0 1px rgba(255,255,255,0.03)",
                             }}
-                            onDragStart={(e) => e.preventDefault()}
                           >
                             <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                               <Icon className="w-6 h-6 text-white" />
