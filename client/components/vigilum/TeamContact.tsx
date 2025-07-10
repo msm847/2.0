@@ -451,7 +451,6 @@ const TeamContact = () => {
                               boxShadow:
                                 "inset 0 0 0 1px rgba(255,255,255,0.03)",
                             }}
-                            onMouseDown={(e) => e.stopPropagation()}
                             onDragStart={(e) => e.preventDefault()}
                           >
                             <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
