@@ -94,15 +94,7 @@ const TeamContact = () => {
     if (autoScrollDisabled || isPaused || isDragging || isAnimating) return;
 
     const animate = () => {
-      setScrollPosition((prev) => {
-        const newPos = prev - 0.5; // 30px per second at 60fps
-        // Reset position when we've scrolled one full cycle
-        const cycleWidth = totalCards * cardWidth;
-        if (newPos <= -cycleWidth) {
-          return 0; // Reset to start for seamless loop
-        }
-        return newPos;
-      });
+      setScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps - goes to infinity!
       animationRef.current = requestAnimationFrame(animate);
     };
 
