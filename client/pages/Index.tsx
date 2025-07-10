@@ -171,7 +171,7 @@ export default function Index() {
           {/* Spline 3D Brain Animation Background */}
           <div className="absolute inset-0 z-0" id="spline-brain-background">
             <iframe
-              src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/"
+              src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/?orbit=true&pan=false&zoom=false"
               frameBorder="0"
               width="100%"
               height="100%"
