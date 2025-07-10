@@ -91,17 +91,12 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual API endpoint
-      const formData = new FormData();
-      formData.append("demographic", selectedDemographic);
-      formData.append("message", message);
-
-      attachedFiles.forEach((file, index) => {
-        formData.append(`file_${index}`, file);
+      // Send contact form using email service
+      await sendContactForm({
+        demographic: selectedDemographic,
+        message: message,
+        files: attachedFiles,
       });
-
-      // Simulate API call for now
-      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       setIsSubmitted(true);
       setSelectedDemographic("");
