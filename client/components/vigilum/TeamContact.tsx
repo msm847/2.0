@@ -217,7 +217,19 @@ const TeamContact = () => {
     if (!isDragging) return;
     e.preventDefault();
     const diff = e.touches[0].clientX - dragStart;
-    setScrollPosition(dragStartPosition + diff);
+    const newPosition = dragStartPosition + diff;
+
+    // Handle infinite loop bounds during dragging
+    const cycleWidth = totalCards * cardWidth;
+    if (newPosition > cardWidth) {
+      setScrollPosition(newPosition - cycleWidth);
+      setDragStartPosition(dragStartPosition - cycleWidth);
+    } else if (newPosition <= -cycleWidth) {
+      setScrollPosition(newPosition + cycleWidth);
+      setDragStartPosition(dragStartPosition + cycleWidth);
+    } else {
+      setScrollPosition(newPosition);
+    }
   };
 
   const handleTouchEnd = () => {
