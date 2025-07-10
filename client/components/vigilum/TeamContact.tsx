@@ -91,6 +91,25 @@ const TeamContact = () => {
   const totalCards = corePrinciples.length;
   const animationRef = useRef(null);
 
+  // Check for inactivity and resume auto-scroll after 5 seconds
+  useEffect(() => {
+    if (isDragging || isAnimating) return;
+
+    const checkInactivity = () => {
+      const now = Date.now();
+      const timeSinceLastInteraction = now - lastInteractionTime;
+
+      if (timeSinceLastInteraction >= 5000) {
+        // 5 seconds
+        setAutoScrollDisabled(false);
+        setIsPaused(false);
+      }
+    };
+
+    const interval = setInterval(checkInactivity, 100);
+    return () => clearInterval(interval);
+  }, [lastInteractionTime, isDragging, isAnimating]);
+
   // Continuous auto-scroll animation with infinite loop reset
   useEffect(() => {
     if (autoScrollDisabled || isPaused || isDragging || isAnimating) return;
