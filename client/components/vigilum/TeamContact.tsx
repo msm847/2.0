@@ -266,6 +266,41 @@ const TeamContact = () => {
       icon: Bot,
       description: "Technology teams building governance intelligence systems",
     },
+    {
+      id: "students",
+      title: "Students & Researchers",
+      icon: GraduationCap,
+      description:
+        "Academic researchers studying governance patterns and structural risk detection",
+    },
+    {
+      id: "professors",
+      title: "Academic Faculty",
+      icon: Users,
+      description:
+        "Professors in public policy, law, and governance seeking research collaboration",
+    },
+    {
+      id: "regulators",
+      title: "Regulatory Agencies",
+      icon: Scale,
+      description:
+        "Government oversight bodies requiring pre-award structural intelligence",
+    },
+    {
+      id: "analysts",
+      title: "ESG & Compliance Analysts",
+      icon: FileSearch,
+      description:
+        "Investment firms screening for institutional exposure and political risk",
+    },
+    {
+      id: "ifi",
+      title: "International Finance",
+      icon: Landmark,
+      description:
+        "World Bank, EBRD, and multilateral institutions conducting integrity assessments",
+    },
   ];
 
   const researchFoundation = [
