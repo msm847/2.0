@@ -187,19 +187,7 @@ const TeamContact = () => {
     if (!isDragging) return;
     e.preventDefault();
     const diff = e.clientX - dragStart;
-    const newPosition = dragStartPosition + diff;
-
-    // Handle infinite loop bounds during dragging
-    const cycleWidth = totalCards * cardWidth;
-    if (newPosition > cardWidth) {
-      setScrollPosition(newPosition - cycleWidth);
-      setDragStartPosition(dragStartPosition - cycleWidth);
-    } else if (newPosition <= -cycleWidth) {
-      setScrollPosition(newPosition + cycleWidth);
-      setDragStartPosition(dragStartPosition + cycleWidth);
-    } else {
-      setScrollPosition(newPosition);
-    }
+    setScrollPosition(dragStartPosition + diff); // Allow infinite scrolling in both directions
   };
 
   const handleMouseUp = (e) => {
