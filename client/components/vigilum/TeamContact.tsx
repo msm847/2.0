@@ -31,6 +31,8 @@ const TeamContact = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(0);
   const [dragStartPosition, setDragStartPosition] = useState(0);
+  const [autoScrollDisabled, setAutoScrollDisabled] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const corePrinciples = [
     {
