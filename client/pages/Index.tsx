@@ -169,10 +169,7 @@ export default function Index() {
         {/* Main Section with Brain Background */}
         <main className="relative min-h-screen">
           {/* Spline 3D Brain Animation Background */}
-          <div
-            className="absolute inset-0 z-0 pointer-events-none"
-            id="spline-brain-background"
-          >
+          <div className="absolute inset-0 z-0" id="spline-brain-background">
             <iframe
               src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/"
               frameBorder="0"
@@ -181,7 +178,6 @@ export default function Index() {
               style={{
                 border: "none",
                 background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
-                pointerEvents: "none",
               }}
               title="AI Brain 3D Animation"
               loading="lazy"
