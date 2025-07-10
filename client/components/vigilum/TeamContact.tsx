@@ -587,12 +587,6 @@ const TeamContact = () => {
                 </div>
               </div>
             </div>
-            <style jsx={true}>{`
-              .scrolling-principles {
-                display: flex;
-                will-change: transform;
-              }
-            `}</style>
 
             {/* Research Foundation */}
             <div
@@ -697,12 +691,6 @@ const TeamContact = () => {
                 </div>
               </div>
             </div>
-            <style jsx={true}>{`
-              .target-audiences-scroll {
-                display: flex;
-                will-change: transform;
-              }
-            `}</style>
 
             {/* Contact Info & Newsletter */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
