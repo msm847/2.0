@@ -385,27 +385,6 @@ const TeamContact = () => {
                 display: flex;
                 will-change: transform;
               }
-
-              .scrolling-principles:not(.dragging) {
-                animation: ${isPaused
-                  ? "none"
-                  : "scroll-infinite 120s linear infinite"};
-              }
-
-              @keyframes scroll-infinite {
-                from {
-                  transform: translateX(0);
-                }
-                to {
-                  transform: translateX(-${totalCards * cardWidth}px);
-                }
-              }
-
-              @media (max-width: 768px) {
-                .scrolling-principles:not(.dragging) {
-                  animation-duration: 80s;
-                }
-              }
             `}</style>
 
             {/* Research Foundation */}
