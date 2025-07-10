@@ -227,8 +227,8 @@ export default function Index() {
           </div>
 
           {/* Vigilum Modules - Bottom Navigation */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3 text-center">
+          <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10">
+            <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3 text-center whitespace-nowrap">
               <Link
                 to="/module/clavis"
                 className="hover:text-blue-400 transition-all duration-300 hover:scale-110 inline-block relative"
