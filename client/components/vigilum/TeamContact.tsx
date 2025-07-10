@@ -85,6 +85,25 @@ const TeamContact = () => {
 
   const cardWidth = 352; // 320px card + 32px margin
   const totalCards = corePrinciples.length;
+  const animationRef = useRef(null);
+
+  // Continuous auto-scroll animation
+  useEffect(() => {
+    if (isPaused || isDragging) return;
+
+    const animate = () => {
+      setScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPaused, isDragging]);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
