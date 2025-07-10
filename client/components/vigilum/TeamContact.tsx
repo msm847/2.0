@@ -169,10 +169,12 @@ const TeamContact = () => {
   };
 
   const scrollLeftOneCard = () => {
+    updateInteractionTime();
     smoothScrollTo(scrollPosition + cardWidth); // Move left (positive direction)
   };
 
   const scrollRightOneCard = () => {
+    updateInteractionTime();
     smoothScrollTo(scrollPosition - cardWidth); // Move right (negative direction)
   };
 
