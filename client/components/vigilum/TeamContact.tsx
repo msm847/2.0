@@ -117,8 +117,8 @@ const TeamContact = () => {
       const now = Date.now();
       const timeSinceLastInteraction = now - lastInteractionTime;
 
-      if (timeSinceLastInteraction >= 5000) {
-        // 5 seconds
+      if (timeSinceLastInteraction >= 3000) {
+        // 3 seconds
         setAutoScrollDisabled(false);
         setIsPaused(false);
       }
@@ -136,8 +136,8 @@ const TeamContact = () => {
       const now = Date.now();
       const timeSinceLastInteraction = now - audiencesLastInteractionTime;
 
-      if (timeSinceLastInteraction >= 5000) {
-        // 5 seconds
+      if (timeSinceLastInteraction >= 3000) {
+        // 3 seconds
         setAudiencesAutoScrollDisabled(false);
       }
     };
