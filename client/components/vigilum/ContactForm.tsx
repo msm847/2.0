@@ -135,8 +135,7 @@ const ContactForm = () => {
               GET IN TOUCH
             </h1>
             <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              Tell us about your structural governance intelligence needs. We'll
-              respond within 24 hours.
+              Tell us about your structural governance intelligence needs.
             </p>
           </div>
 
