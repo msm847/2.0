@@ -19,6 +19,8 @@ import {
   Gavel,
   Globe,
   Brain,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 const TeamContact = () => {
