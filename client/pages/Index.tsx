@@ -29,31 +29,6 @@ export default function Index() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Simulate clause logic progression
-  useEffect(() => {
-    const phases = [0, 1, 2, 3];
-    let currentIndex = 0;
-
-    const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % phases.length;
-      setCurrentPhase(phases[currentIndex]);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Track collective interaction (can be used for future behaviors)
-  useEffect(() => {
-    if (hoveredBoxes.size === 4 && !epistemicCollapseTriggered) {
-      setEpistemicCollapseTriggered(true);
-      // Future collective behaviors can be added here
-    }
-  }, [hoveredBoxes, epistemicCollapseTriggered]);
-
-  const handleBoxHover = (index) => {
-    setHoveredBoxes((prev) => new Set([...prev, index]));
-  };
-
   const handleNavigation = (hash: string) => {
     if (hash === "#newsletter") {
       navigate("/vigilum");
