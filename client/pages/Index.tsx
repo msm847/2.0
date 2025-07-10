@@ -150,10 +150,20 @@ export default function Index() {
           {/* Content overlay */}
           {/* System Identity - Centered in middle of page */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-100 drop-shadow-2xl text-center -mt-20">
-              SEMANTIC GOVERNANCE
-              <span className="block text-blue-400">INTELLIGENCE</span>
-            </h1>
+            <p
+              className="text-2xl md:text-3xl italic text-center -mt-20 drop-shadow-2xl font-mono"
+              style={{
+                color: "#48FFB2",
+                fontFamily: "IBM Plex Mono, 'Suisse Int'l Mono', monospace",
+              }}
+            >
+              Truth is not a stable referent, but a function of observation
+              logic —<br className="hidden sm:block" />
+              <span className="sm:inline block">
+                {" "}
+                a structurally encoded uncertainty...
+              </span>
+            </p>
           </div>
 
           {/* Vigilum Modules - Bottom Navigation */}
