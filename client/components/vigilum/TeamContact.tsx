@@ -41,6 +41,19 @@ const TeamContact = () => {
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
   const inactivityTimeoutRef = useRef(null);
 
+  // Target Audiences Carousel State
+  const [audiencesScrollPosition, setAudiencesScrollPosition] = useState(0);
+  const [audiencesAutoScrollDisabled, setAudiencesAutoScrollDisabled] =
+    useState(false);
+  const [audiencesIsDragging, setAudiencesIsDragging] = useState(false);
+  const [audiencesDragStart, setAudiencesDragStart] = useState(0);
+  const [audiencesDragStartPosition, setAudiencesDragStartPosition] =
+    useState(0);
+  const [audiencesIsAnimating, setAudiencesIsAnimating] = useState(false);
+  const [audiencesLastInteractionTime, setAudiencesLastInteractionTime] =
+    useState(Date.now());
+  const audiencesAnimationRef = useRef(null);
+
   const corePrinciples = [
     {
       title: "Preemption over Reaction",
