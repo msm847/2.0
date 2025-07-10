@@ -552,6 +552,8 @@ const TeamContact = () => {
                     style={{
                       transform: `translateX(${scrollPosition}px)`,
                       transition: "none",
+                      display: "flex",
+                      willChange: "transform",
                     }}
                   >
                     {/* Render enough copies to fill screen + buffer */}
