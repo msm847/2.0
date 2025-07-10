@@ -310,18 +310,17 @@ const TeamContact = () => {
                     onTouchEnd={handleTouchEnd}
                     style={{
                       transform: `translateX(${scrollPosition}px)`,
-                      transition: isDragging
-                        ? "none"
-                        : "transform 0.3s ease-out",
+                      transition: isDragging ? "none" : "transform 0.1s linear",
                     }}
                   >
-                    {/* Render principles twice for infinite scroll */}
-                    {[...corePrinciples, ...corePrinciples].map(
-                      (principle, index) => {
+                    {/* Render multiple copies for true infinite scroll */}
+                    {Array.from({ length: 5 }, (_, copyIndex) =>
+                      corePrinciples.map((principle, index) => {
                         const Icon = principle.icon;
+                        const uniqueKey = `${copyIndex}-${index}`;
                         return (
                           <div
-                            key={index}
+                            key={uniqueKey}
                             className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
                             style={{
                               backgroundColor: "rgba(12, 35, 28, 0.85)",
@@ -343,7 +342,7 @@ const TeamContact = () => {
                             </p>
                           </div>
                         );
-                      },
+                      }),
                     )}
                   </div>
                 </div>
@@ -352,10 +351,10 @@ const TeamContact = () => {
                 <div className="mt-6 relative">
                   <div className="h-1 bg-gray-700/30 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-green-500/60 rounded-full transition-all duration-300"
+                      className="h-full bg-green-500/60 rounded-full transition-all duration-100"
                       style={{
                         width: `${100 / corePrinciples.length}%`,
-                        transform: `translateX(${(Math.abs(scrollPosition) / (totalCards * cardWidth)) * corePrinciples.length * 100}%)`,
+                        transform: `translateX(${((scrollPosition % (totalCards * cardWidth)) / cardWidth) * (100 / corePrinciples.length)}%)`,
                       }}
                     />
                   </div>
