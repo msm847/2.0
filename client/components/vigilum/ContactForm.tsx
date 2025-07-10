@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { sendContactForm } from "@/lib/emailService";
 import {
   Shield,
   Building,
