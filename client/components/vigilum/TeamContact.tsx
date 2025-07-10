@@ -592,26 +592,6 @@ const TeamContact = () => {
                 Core Principles
               </h3>
               <div className="relative">
-                {/* Left Arrow */}
-                <button
-                  onClick={scrollLeftOneCard}
-                  disabled={isAnimating}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
-                  aria-label="Scroll left"
-                >
-                  <ChevronLeft className="w-6 h-6 text-green-400/80" />
-                </button>
-
-                {/* Right Arrow */}
-                <button
-                  onClick={scrollRightOneCard}
-                  disabled={isAnimating}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
-                  aria-label="Scroll right"
-                >
-                  <ChevronRight className="w-6 h-6 text-green-400/80" />
-                </button>
-
                 <div
                   className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
                   onMouseDown={handleMouseDown}
@@ -722,26 +702,6 @@ const TeamContact = () => {
             {/* Target Audiences */}
             <div className="mb-16">
               <div className="relative">
-                {/* Left Arrow */}
-                <button
-                  onClick={audiencesScrollLeftOneCard}
-                  disabled={audiencesIsAnimating}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
-                  aria-label="Scroll left"
-                >
-                  <ChevronLeft className="w-6 h-6 text-green-400/80" />
-                </button>
-
-                {/* Right Arrow */}
-                <button
-                  onClick={audiencesScrollRightOneCard}
-                  disabled={audiencesIsAnimating}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
-                  aria-label="Scroll right"
-                >
-                  <ChevronRight className="w-6 h-6 text-green-400/80" />
-                </button>
-
                 <div
                   className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
                   onMouseDown={handleAudiencesMouseDown}
