@@ -231,11 +231,9 @@ export default function Index() {
                   />
                 </p>
               </div>
-            </div>
-          </div>
 
-            {/* Vigilum Modules */}
-            <div className="mb-12 text-center mt-8">
+              {/* Vigilum Modules */}
+              <div className="mb-12 text-center mt-8">
               <div className="text-gray-300 font-mono text-sm tracking-wider space-x-3 relative">
                 <Link
                   to="/module/clavis"
