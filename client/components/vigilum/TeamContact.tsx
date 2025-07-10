@@ -91,7 +91,7 @@ const TeamContact = () => {
 
   // Continuous auto-scroll animation
   useEffect(() => {
-    if (isPaused || isDragging) return;
+    if (autoScrollDisabled || isPaused || isDragging || isAnimating) return;
 
     const animate = () => {
       setScrollPosition((prev) => prev - 0.5); // 30px per second at 60fps
@@ -105,7 +105,7 @@ const TeamContact = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isPaused, isDragging]);
+  }, [autoScrollDisabled, isPaused, isDragging, isAnimating]);
 
   const handleMouseDown = (e) => {
     e.preventDefault();
