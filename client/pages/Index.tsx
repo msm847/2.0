@@ -20,13 +20,7 @@ import DecryptedText from "../components/DecryptedText";
 import VigilumModulesCarousel from "../components/VigilumModulesCarousel";
 
 export default function Index() {
-  const [messageFromServer, setMessageFromServer] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const timer = setTimeout(fetchHello, 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleNavigation = (hash: string) => {
     if (hash === "#newsletter") {
@@ -39,47 +33,6 @@ export default function Index() {
       }, 100);
     } else {
       navigate(`/vigilum${hash}`);
-    }
-  };
-
-  const fetchHello = async () => {
-    try {
-      const baseUrl = window.location.origin;
-      const apiUrl = `${baseUrl}/api/demo`;
-
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3000);
-
-      const response = await fetch(apiUrl, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = (await response.json()) as DemoResponse;
-      setMessageFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-
-      if (error instanceof Error) {
-        if (error.name === "AbortError") {
-          setMessageFromServer("Request timeout - server unavailable");
-        } else if (error.message.includes("fetch")) {
-          setMessageFromServer("Network error - cannot reach server");
-        } else {
-          setMessageFromServer("API connection unavailable");
-        }
-      } else {
-        setMessageFromServer("Unknown error occurred");
-      }
     }
   };
 
