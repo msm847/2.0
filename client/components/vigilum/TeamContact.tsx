@@ -237,33 +237,64 @@ const TeamContact = () => {
               <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
                 Core Principles
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {corePrinciples.map((principle, index) => {
-                  const Icon = principle.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="rounded-lg p-6 border text-center"
-                      style={{
-                        backgroundColor: "rgba(12, 35, 28, 0.85)",
-                        borderColor: "rgba(0,255,204,0.06)",
-                        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                      }}
-                    >
-                      <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
-                        {principle.title}
-                      </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        {principle.description}
-                      </p>
-                    </div>
-                  );
-                })}
+              <div className="relative overflow-hidden">
+                <div className="scrolling-principles">
+                  {/* Render principles twice for infinite scroll */}
+                  {[...corePrinciples, ...corePrinciples].map(
+                    (principle, index) => {
+                      const Icon = principle.icon;
+                      return (
+                        <div
+                          key={index}
+                          className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
+                          style={{
+                            backgroundColor: "rgba(12, 35, 28, 0.85)",
+                            borderColor: "rgba(0,255,204,0.06)",
+                            boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                          }}
+                        >
+                          <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
+                            {principle.title}
+                          </h4>
+                          <p className="text-gray-300 text-sm leading-relaxed">
+                            {principle.description}
+                          </p>
+                        </div>
+                      );
+                    },
+                  )}
+                </div>
               </div>
             </div>
+            <style jsx>{`
+              .scrolling-principles {
+                display: flex;
+                animation: scroll-left 120s linear infinite;
+                will-change: transform;
+              }
+
+              @keyframes scroll-left {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+
+              .scrolling-principles:hover {
+                animation-play-state: paused;
+              }
+
+              @media (max-width: 768px) {
+                .scrolling-principles {
+                  animation-duration: 80s;
+                }
+              }
+            `}</style>
 
             {/* Research Foundation */}
             <div
