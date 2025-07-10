@@ -107,12 +107,48 @@ const TeamContact = () => {
     };
   }, [autoScrollDisabled, isPaused, isDragging, isAnimating]);
 
+  const smoothScrollTo = (targetPosition, duration = 600) => {
+    setIsAnimating(true);
+    const startPosition = scrollPosition;
+    const distance = targetPosition - startPosition;
+    const startTime = performance.now();
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth acceleration/deceleration
+      const easeInOutQuart =
+        progress < 0.5
+          ? 8 * progress * progress * progress * progress
+          : 1 - 8 * --progress * progress * progress * progress;
+
+      setScrollPosition(startPosition + distance * easeInOutQuart);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setIsAnimating(false);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
+
+  const scrollLeftOneCard = () => {
+    smoothScrollTo(scrollPosition + cardWidth);
+  };
+
+  const scrollRightOneCard = () => {
+    smoothScrollTo(scrollPosition - cardWidth);
+  };
+
   const handleMouseDown = (e) => {
     e.preventDefault();
     setIsDragging(true);
     setDragStart(e.clientX);
     setDragStartPosition(scrollPosition);
-    setIsPaused(true);
+    setAutoScrollDisabled(true); // Permanently disable auto-scroll
 
     // Add global mouse event listeners
     document.addEventListener("mousemove", handleMouseMove);
@@ -134,8 +170,7 @@ const TeamContact = () => {
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mouseup", handleMouseUp);
 
-    // Resume auto-scroll after brief pause - NO POSITION RESET
-    setTimeout(() => setIsPaused(false), 500);
+    // Auto-scroll remains permanently disabled
   };
 
   const handleTouchStart = (e) => {
