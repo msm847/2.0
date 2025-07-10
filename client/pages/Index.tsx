@@ -175,7 +175,8 @@ export default function Index() {
                 }}
               >
                 Truth is not a stable referent, but a function of observation
-                logic — a structurally encoded uncertainty.
+                logic
+                <br />— a structurally encoded uncertainty.
               </p>
             </div>
           </div>
