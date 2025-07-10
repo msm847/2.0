@@ -126,13 +126,15 @@ export default function Index() {
             id="spline-animation-background"
           >
             <iframe
-              src="https://my.spline.design/particleshand-Ii78meWYbJO8msIhUppyXUUG/?controls=false&autoRotate=false"
+              src="https://my.spline.design/particleshand-Ii78meWYbJO8msIhUppyXUUG/?controls=false&orbit=false&pan=false&zoom=false"
               frameBorder="0"
               width="100%"
               height="100%"
               style={{
                 border: "none",
                 background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                pointerEvents: "none",
+                userSelect: "none",
               }}
               title="Particles Hand 3D Animation"
               loading="lazy"
