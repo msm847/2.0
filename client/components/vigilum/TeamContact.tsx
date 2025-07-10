@@ -35,6 +35,71 @@ const TeamContact = () => {
   const cardWidth = 352; // 320px card + 32px margin
   const totalCards = corePrinciples.length;
 
+  const scrollLeft = () => {
+    setScrollPosition((prev) => {
+      const newPos = prev - cardWidth;
+      return newPos <= -(totalCards * cardWidth) ? 0 : newPos;
+    });
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 2000);
+  };
+
+  const scrollRight = () => {
+    setScrollPosition((prev) => {
+      const newPos = prev + cardWidth;
+      return newPos >= 0 ? -(totalCards * cardWidth - cardWidth) : newPos;
+    });
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 2000);
+  };
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    setDragStartPosition(scrollPosition);
+    setIsPaused(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const diff = e.clientX - dragStart;
+    setScrollPosition(dragStartPosition + diff);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    // Snap to nearest card
+    const nearestCard = Math.round(scrollPosition / cardWidth) * cardWidth;
+    let finalPosition = nearestCard;
+
+    // Ensure within bounds
+    if (finalPosition > 0)
+      finalPosition = -(totalCards * cardWidth - cardWidth);
+    if (finalPosition <= -(totalCards * cardWidth)) finalPosition = 0;
+
+    setScrollPosition(finalPosition);
+    setTimeout(() => setIsPaused(false), 1000);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setDragStart(e.touches[0].clientX);
+    setDragStartPosition(scrollPosition);
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const diff = e.touches[0].clientX - dragStart;
+    setScrollPosition(dragStartPosition + diff);
+  };
+
+  const handleTouchEnd = () => {
+    handleMouseUp();
+  };
+
   const targetAudiences = [
     {
       id: "auditor",
