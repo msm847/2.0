@@ -182,16 +182,6 @@ const ModuleGrid = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-mono tracking-tight">
             SEMANTIC INTELLIGENCE ENGINES
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            <DecryptedText
-              text="simulating override before discretion encodes compliance"
-              animateOn="view"
-              sequential={true}
-              speed={30}
-              className="text-green-400"
-              encryptedClassName="text-gray-400"
-            />
-          </p>
         </div>
 
         {/* Module Grid - 2x4 responsive layout */}
