@@ -54,6 +54,7 @@ const VigilumPage = () => {
       <div id="team">
         <TeamContact />
       </div>
+      <div id="bottom" style={{ height: "1px" }}></div>
     </div>
   );
 };
