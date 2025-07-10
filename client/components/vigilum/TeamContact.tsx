@@ -12,6 +12,13 @@ import {
   BookOpen,
   Mail,
   Send,
+  Zap,
+  Network,
+  Search,
+  Clock,
+  Gavel,
+  Globe,
+  Brain,
 } from "lucide-react";
 
 const TeamContact = () => {
