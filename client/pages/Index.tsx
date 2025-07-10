@@ -44,10 +44,10 @@ export default function Index() {
     >
       <MatrixBackground />
 
-      <div className="relative z-10">
+      <div className="relative z-50">
         {/* Header */}
         <header
-          className="container mx-auto px-4 py-3"
+          className="container mx-auto px-4 py-3 relative z-50"
           style={{
             backgroundColor: "#050F0C",
             opacity: "0.95",
