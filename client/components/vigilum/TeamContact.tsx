@@ -112,8 +112,8 @@ const TeamContact = () => {
     setIsPaused(true);
 
     // Add global mouse event listeners
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
   };
 
   const handleMouseMove = (e) => {
@@ -128,8 +128,8 @@ const TeamContact = () => {
     setIsDragging(false);
 
     // Remove global mouse event listeners
-    document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('mouseup', handleMouseUp);
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
 
     // Snap to nearest card
     const nearestCard = Math.round(scrollPosition / cardWidth) * cardWidth;
@@ -336,36 +336,55 @@ const TeamContact = () => {
                     onTouchEnd={handleTouchEnd}
                     style={{
                       transform: `translateX(${scrollPosition}px)`,
-                      transition: isDragging ? "none" : "transform 0.3s ease-out",
+                      transition: isDragging
+                        ? "none"
+                        : "transform 0.3s ease-out",
                     }}
                   >
-                  {/* Render principles twice for infinite scroll */}
-                  {[...corePrinciples, ...corePrinciples].map(
-                    (principle, index) => {
-                      const Icon = principle.icon;
-                      return (
-                        <div
-                          key={index}
-                          className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4 pointer-events-none"
-                          style={{
-                            backgroundColor: "rgba(12, 35, 28, 0.85)",
-                            borderColor: "rgba(0,255,204,0.06)",
-                            boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                          }}
-                        >
-                          <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                            <Icon className="w-6 h-6 text-white" />
+                    {/* Render principles twice for infinite scroll */}
+                    {[...corePrinciples, ...corePrinciples].map(
+                      (principle, index) => {
+                        const Icon = principle.icon;
+                        return (
+                          <div
+                            key={index}
+                            className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
+                            style={{
+                              backgroundColor: "rgba(12, 35, 28, 0.85)",
+                              borderColor: "rgba(0,255,204,0.06)",
+                              boxShadow:
+                                "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                            }}
+                            onMouseDown={(e) => e.stopPropagation()}
+                            onDragStart={(e) => e.preventDefault()}
+                          >
+                            <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                              <Icon className="w-6 h-6 text-white" />
+                            </div>
+                            <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
+                              {principle.title}
+                            </h4>
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                              {principle.description}
+                            </p>
                           </div>
-                          <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
-                            {principle.title}
-                          </h4>
-                          <p className="text-gray-300 text-sm leading-relaxed">
-                            {principle.description}
-                          </p>
-                        </div>
-                      );
-                    },
-                  )}
+                        );
+                      },
+                    )}
+                  </div>
+                </div>
+
+                {/* Custom Scrollbar */}
+                <div className="mt-6 relative">
+                  <div className="h-1 bg-gray-700/30 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-green-500/60 rounded-full transition-all duration-300"
+                      style={{
+                        width: `${100 / corePrinciples.length}%`,
+                        transform: `translateX(${(Math.abs(scrollPosition) / (totalCards * cardWidth)) * corePrinciples.length * 100}%)`,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
