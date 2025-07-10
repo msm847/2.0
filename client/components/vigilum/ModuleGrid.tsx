@@ -12,6 +12,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DecryptedText from "../ui/DecryptedText";
 
 const modules = [
   {
