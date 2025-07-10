@@ -300,13 +300,22 @@ const ContactForm = () => {
 
               {/* Submit Button */}
               <div className="flex items-center justify-between">
-                <a
-                  href="/vigilum#bottom"
-                  className="inline-flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-colors font-mono"
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.location.href = "/vigilum";
+                    setTimeout(() => {
+                      window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: "smooth",
+                      });
+                    }, 300);
+                  }}
+                  className="inline-flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-colors font-mono cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Back to Team</span>
-                </a>
+                </button>
 
                 <Button
                   type="submit"
