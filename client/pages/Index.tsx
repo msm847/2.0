@@ -120,21 +120,22 @@ export default function Index() {
 
         {/* Main Section with Brain Background */}
         <main className="relative min-h-screen">
-          {/* Spline 3D Brain Animation Background */}
-          <div className="absolute inset-0 z-0" id="spline-brain-background">
+          {/* Spline 3D Particles Hand Animation Background */}
+          <div
+            className="absolute inset-0 z-0"
+            id="spline-animation-background"
+          >
             <iframe
-              src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/?controls=orbit"
+              src="https://my.spline.design/particleshand-Ii78meWYbJO8msIhUppyXUUG/"
               frameBorder="0"
               width="100%"
               height="100%"
               style={{
                 border: "none",
                 background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
-                touchAction: "pan-y pinch-zoom",
               }}
-              title="AI Brain 3D Animation"
+              title="Particles Hand 3D Animation"
               loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
 
@@ -260,7 +261,7 @@ export default function Index() {
               >
                 NEXUS POTENTIA
               </Link>
-              <span className="text-gray-600">•</span>
+              <span className="text-gray-600">���</span>
               <Link
                 to="/module/vigilo-core"
                 className="hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block relative"
