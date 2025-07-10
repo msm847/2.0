@@ -663,7 +663,7 @@ const TeamContact = () => {
                 </div>
               </div>
             </div>
-            <style jsx>{`
+            <style jsx={true}>{`
               .scrolling-principles {
                 display: flex;
                 will-change: transform;
@@ -796,7 +796,7 @@ const TeamContact = () => {
                 </div>
               </div>
             </div>
-            <style jsx>{`
+            <style jsx={true}>{`
               .target-audiences-scroll {
                 display: flex;
                 will-change: transform;
