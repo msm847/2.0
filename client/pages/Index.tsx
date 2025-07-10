@@ -167,71 +167,72 @@ export default function Index() {
         </header>
 
         {/* Cognitive Entrypoint - Clause Logic Simulation */}
-        <main className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto">
-            {/* System Identity */}
-            <div className="text-center mb-10 relative">
-              {/* Vertical Trace Lines */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 pointer-events-none">
-                <svg className="w-full h-full" style={{ opacity: 0.03 }}>
-                  <defs>
-                    <pattern
-                      id="trace-lines"
-                      x="0"
-                      y="0"
-                      width="40"
-                      height="20"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <line
-                        x1="20"
-                        y1="0"
-                        x2="20"
-                        y2="20"
-                        stroke="#0BF5A3"
-                        strokeWidth="1"
-                        strokeDasharray="2,4"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#trace-lines)" />
-                </svg>
-              </div>
+        <main className="relative min-h-screen">
+          {/* Spline 3D Brain Animation Background */}
+          <div className="absolute inset-0" id="spline-brain-background">
+            <iframe
+              src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/"
+              frameBorder="0"
+              width="100%"
+              height="100%"
+              style={{
+                border: "none",
+                background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+              }}
+              title="AI Brain 3D Animation"
+              loading="lazy"
+            />
+          </div>
 
-              <h1 className="text-5xl font-bold tracking-tighter mb-6 text-gray-100 relative z-10">
-                SEMANTIC GOVERNANCE
-                <span className="block text-blue-400">INTELLIGENCE</span>
-              </h1>
-              <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto relative z-10">
-                <DecryptedText
-                  text="Simulating override before discretion encodes compliance"
-                  animateOn="view"
-                  sequential={true}
-                  speed={80}
-                  className="text-gray-400"
-                  encryptedClassName="text-gray-600"
-                  useOriginalCharsOnly={true}
-                />
-              </p>
-            </div>
+          <div className="container mx-auto px-4 py-8 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              {/* System Identity */}
+              <div className="text-center mb-10 relative">
+                {/* Vertical Trace Lines */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 pointer-events-none">
+                  <svg className="w-full h-full" style={{ opacity: 0.03 }}>
+                    <defs>
+                      <pattern
+                        id="trace-lines"
+                        x="0"
+                        y="0"
+                        width="40"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <line
+                          x1="20"
+                          y1="0"
+                          x2="20"
+                          y2="20"
+                          stroke="#0BF5A3"
+                          strokeWidth="1"
+                          strokeDasharray="2,4"
+                        />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#trace-lines)" />
+                  </svg>
+                </div>
 
-            {/* Spline 3D Brain Animation */}
-            <div className="relative mb-20 px-4" id="spline-brain-container">
-              <div className="relative w-full h-96 md:h-[600px] rounded-2xl overflow-hidden border border-gray-800/50">
-                <iframe
-                  src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/"
-                  frameBorder="0"
-                  width="100%"
-                  height="100%"
-                  style={{
-                    border: "none",
-                    background: "transparent",
-                  }}
-                  title="AI Brain 3D Animation"
-                  loading="lazy"
-                />
+                <h1 className="text-5xl font-bold tracking-tighter mb-6 text-gray-100 relative z-10">
+                  SEMANTIC GOVERNANCE
+                  <span className="block text-blue-400">INTELLIGENCE</span>
+                </h1>
+                <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto relative z-10">
+                  <DecryptedText
+                    text="Simulating override before discretion encodes compliance"
+                    animateOn="view"
+                    sequential={true}
+                    speed={80}
+                    className="text-gray-400"
+                    encryptedClassName="text-gray-600"
+                    useOriginalCharsOnly={true}
+                  />
+                </p>
               </div>
             </div>
+          </div>
 
             {/* Vigilum Modules */}
             <div className="mb-12 text-center mt-8">
