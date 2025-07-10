@@ -148,27 +148,11 @@ const TeamContact = () => {
   };
 
   const scrollLeftOneCard = () => {
-    let targetPosition = scrollPosition + cardWidth;
-    const cycleWidth = totalCards * cardWidth;
-
-    // Handle bounds for infinite scroll
-    if (targetPosition > cardWidth) {
-      targetPosition = targetPosition - cycleWidth;
-    }
-
-    smoothScrollTo(targetPosition);
+    smoothScrollTo(scrollPosition + cardWidth); // Move left (positive direction)
   };
 
   const scrollRightOneCard = () => {
-    let targetPosition = scrollPosition - cardWidth;
-    const cycleWidth = totalCards * cardWidth;
-
-    // Handle bounds for infinite scroll
-    if (targetPosition <= -cycleWidth) {
-      targetPosition = targetPosition + cycleWidth;
-    }
-
-    smoothScrollTo(targetPosition);
+    smoothScrollTo(scrollPosition - cardWidth); // Move right (negative direction)
   };
 
   const handleMouseDown = (e) => {
