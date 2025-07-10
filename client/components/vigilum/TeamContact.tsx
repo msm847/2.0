@@ -178,7 +178,7 @@ const TeamContact = () => {
     setIsDragging(true);
     setDragStart(e.touches[0].clientX);
     setDragStartPosition(scrollPosition);
-    setIsPaused(true);
+    setAutoScrollDisabled(true); // Permanently disable auto-scroll
   };
 
   const handleTouchMove = (e) => {
@@ -191,7 +191,7 @@ const TeamContact = () => {
   const handleTouchEnd = () => {
     if (!isDragging) return;
     setIsDragging(false);
-    setTimeout(() => setIsPaused(false), 500);
+    // Auto-scroll remains permanently disabled
   };
 
   const targetAudiences = [
