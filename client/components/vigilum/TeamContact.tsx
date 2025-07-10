@@ -373,7 +373,7 @@ const TeamContact = () => {
                       className="h-full bg-green-500/60 rounded-full transition-all duration-100"
                       style={{
                         width: `${100 / corePrinciples.length}%`,
-                        transform: `translateX(${((scrollPosition % (totalCards * cardWidth)) / cardWidth) * (100 / corePrinciples.length)}%)`,
+                        transform: `translateX(${((-scrollPosition % (totalCards * cardWidth)) / (totalCards * cardWidth)) * 100}%)`,
                       }}
                     />
                   </div>
