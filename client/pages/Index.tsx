@@ -65,8 +65,8 @@ export default function Index() {
                   <Button
                     className="text-white hover:bg-opacity-80 font-mono border border-gray-600"
                     style={{
-                      background:
-                        "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                      backgroundColor: "#050F0C",
+                      opacity: "0.95",
                     }}
                   >
                     HOME
@@ -77,8 +77,8 @@ export default function Index() {
                 <div
                   className="absolute right-0 mt-2 min-w-max border border-gray-600 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
                   style={{
-                    background:
-                      "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                    backgroundColor: "#050F0C",
+                    opacity: "0.95",
                   }}
                 >
                   <div className="py-1">
