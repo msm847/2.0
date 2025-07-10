@@ -571,40 +571,87 @@ const TeamContact = () => {
             </div>
 
             {/* Target Audiences */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {targetAudiences.map((audience) => {
-                const Icon = audience.icon;
-                return (
+            <div className="mb-16">
+              <div className="relative">
+                {/* Left Arrow */}
+                <button
+                  onClick={() => {
+                    const container = document.querySelector(
+                      ".target-audiences-scroll",
+                    );
+                    container.scrollBy({ left: -352, behavior: "smooth" });
+                  }}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-6 h-6 text-green-400/80" />
+                </button>
+
+                {/* Right Arrow */}
+                <button
+                  onClick={() => {
+                    const container = document.querySelector(
+                      ".target-audiences-scroll",
+                    );
+                    container.scrollBy({ left: 352, behavior: "smooth" });
+                  }}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-6 h-6 text-green-400/80" />
+                </button>
+
+                <div
+                  className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
+                  style={{ userSelect: "none", touchAction: "pan-x" }}
+                >
                   <div
-                    key={audience.id}
-                    className="rounded-lg p-6 transition-all duration-300 border"
+                    className="target-audiences-scroll"
                     style={{
-                      backgroundColor: "rgba(12, 35, 28, 0.85)",
-                      borderColor: "rgba(0,255,204,0.06)",
-                      boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor =
-                        "rgba(34, 197, 94, 0.5)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor =
-                        "rgba(0,255,204,0.06)";
+                      display: "flex",
+                      willChange: "transform",
                     }}
                   >
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-green-400 font-mono mb-3">
-                      {audience.title}
-                    </h3>
-                    <p className="text-sm text-gray-300 leading-relaxed">
-                      {audience.description}
-                    </p>
+                    {/* Render multiple copies for smooth infinite scroll */}
+                    {Array.from({ length: 2 }, (_, copyIndex) =>
+                      targetAudiences.map((audience, index) => {
+                        const Icon = audience.icon;
+                        const uniqueKey = `${copyIndex}-${index}`;
+                        return (
+                          <div
+                            key={uniqueKey}
+                            className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
+                            style={{
+                              backgroundColor: "rgba(12, 35, 28, 0.85)",
+                              borderColor: "rgba(0,255,204,0.06)",
+                              boxShadow:
+                                "inset 0 0 0 1px rgba(255,255,255,0.03)",
+                            }}
+                            onDragStart={(e) => e.preventDefault()}
+                          >
+                            <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                              <Icon className="w-6 h-6 text-white" />
+                            </div>
+                            <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
+                              {audience.title}
+                            </h4>
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                              {audience.description}
+                            </p>
+                          </div>
+                        );
+                      }),
+                    )}
                   </div>
-                );
-              })}
+                </div>
+              </div>
             </div>
+            <style jsx>{`
+              .target-audiences-scroll {
+                display: flex;
+                will-change: transform;
+              }
+            `}</style>
 
             {/* Contact Info & Newsletter */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
