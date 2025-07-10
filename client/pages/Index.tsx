@@ -230,18 +230,6 @@ export default function Index() {
                   title="AI Brain 3D Animation"
                   loading="lazy"
                 />
-
-                {/* Optional overlay text */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white/80 mb-4 font-mono tracking-tight">
-                      AI BRAIN INTELLIGENCE
-                    </h2>
-                    <p className="text-lg text-gray-300/70 font-mono">
-                      Neural governance pattern recognition
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 
