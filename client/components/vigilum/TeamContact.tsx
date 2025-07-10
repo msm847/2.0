@@ -112,8 +112,8 @@ const TeamContact = () => {
     setIsPaused(true);
 
     // Add global mouse event listeners
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
   };
 
   const handleMouseMove = (e) => {
@@ -128,8 +128,8 @@ const TeamContact = () => {
     setIsDragging(false);
 
     // Remove global mouse event listeners
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
 
     // Snap to nearest card
     const nearestCard = Math.round(scrollPosition / cardWidth) * cardWidth;
@@ -325,39 +325,20 @@ const TeamContact = () => {
               <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
                 Core Principles
               </h3>
-              <div className="relative overflow-hidden">
-                {/* Left Arrow */}
-                <button
-                  onClick={scrollLeft}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-green-600/80 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200 backdrop-blur-sm"
-                  aria-label="Scroll left"
-                >
-                  <ChevronLeft className="w-6 h-6 text-white" />
-                </button>
-
-                {/* Right Arrow */}
-                <button
-                  onClick={scrollRight}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-green-600/80 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200 backdrop-blur-sm"
-                  aria-label="Scroll right"
-                >
-                  <ChevronRight className="w-6 h-6 text-white" />
-                </button>
-
-                <div
-                  className="scrolling-principles cursor-grab active:cursor-grabbing select-none"
-                  onMouseDown={handleMouseDown}
-                  onMouseMove={handleMouseMove}
-                  onMouseUp={handleMouseUp}
-                  onMouseLeave={handleMouseUp}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                  style={{
-                    transform: `translateX(${scrollPosition}px)`,
-                    transition: isDragging ? "none" : "transform 0.3s ease-out",
-                  }}
-                >
+              <div className="relative">
+                <div className="overflow-hidden">
+                  <div
+                    className="scrolling-principles cursor-grab active:cursor-grabbing select-none"
+                    onMouseDown={handleMouseDown}
+                    onMouseLeave={handleMouseUp}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    style={{
+                      transform: `translateX(${scrollPosition}px)`,
+                      transition: isDragging ? "none" : "transform 0.3s ease-out",
+                    }}
+                  >
                   {/* Render principles twice for infinite scroll */}
                   {[...corePrinciples, ...corePrinciples].map(
                     (principle, index) => {
