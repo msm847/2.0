@@ -21,6 +21,11 @@ import {
   Brain,
   ChevronLeft,
   ChevronRight,
+  GraduationCap,
+  Users,
+  Scale,
+  FileSearch,
+  Landmark,
 } from "lucide-react";
 
 const TeamContact = () => {
