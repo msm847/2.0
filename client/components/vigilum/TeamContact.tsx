@@ -121,7 +121,12 @@ const TeamContact = () => {
       const easeInOutQuart =
         progress < 0.5
           ? 8 * progress * progress * progress * progress
-          : 1 - 8 * --progress * progress * progress * progress;
+          : 1 -
+            8 *
+              (progress - 1) *
+              (progress - 1) *
+              (progress - 1) *
+              (progress - 1);
 
       setScrollPosition(startPosition + distance * easeInOutQuart);
 
