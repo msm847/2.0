@@ -22,10 +22,6 @@ import Spline from "@splinetool/react-spline";
 
 export default function Index() {
   const [messageFromServer, setMessageFromServer] = useState("");
-  const [currentPhase, setCurrentPhase] = useState(0);
-  const [hoveredBoxes, setHoveredBoxes] = useState(new Set());
-  const [epistemicCollapseTriggered, setEpistemicCollapseTriggered] =
-    useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
