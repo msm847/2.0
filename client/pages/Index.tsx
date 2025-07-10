@@ -144,7 +144,7 @@ export default function Index() {
           {/* Content overlay */}
           {/* System Identity - Centered in middle of page */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-100 drop-shadow-2xl text-center -mt-8">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-100 drop-shadow-2xl text-center -mt-20">
               SEMANTIC GOVERNANCE
               <span className="block text-blue-400">INTELLIGENCE</span>
             </h1>
