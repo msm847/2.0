@@ -173,57 +173,6 @@ const TeamContact = () => {
     },
   ];
 
-  const corePrinciples = [
-    {
-      title: "Preemption over Reaction",
-      description:
-        "Identify structural risks before they manifest, not after damage is done.",
-      icon: Target,
-    },
-    {
-      title: "Transparency in Analysis",
-      description:
-        "Explainable AI that shows how conclusions are reached, not black box predictions.",
-      icon: Eye,
-    },
-    {
-      title: "Civic Collaboration",
-      description:
-        "Working with journalists, whistleblowers, and civic actors to strengthen accountability.",
-      icon: User,
-    },
-    {
-      title: "Structural Intelligence",
-      description:
-        "Detect design-level vulnerabilities within compliance frameworks before they calcify.",
-      icon: Brain,
-    },
-    {
-      title: "Real-time Detection",
-      description:
-        "Convert institutional data into actionable risk signals before execution, not after loss.",
-      icon: Zap,
-    },
-    {
-      title: "Legal Architecture Analysis",
-      description:
-        "Parse contract language to expose embedded risk configurations and asymmetric clauses.",
-      icon: Gavel,
-    },
-    {
-      title: "Political Network Mapping",
-      description:
-        "Trace relational proximity and influence patterns across institutional actors using graph AI.",
-      icon: Network,
-    },
-    {
-      title: "System-wide Integration",
-      description:
-        "Modular signal engines that operate independently but integrate through unified risk logic.",
-      icon: Globe,
-    },
-  ];
-
   const researchFoundation = [
     "MARS-REERS thesis research (Columbia University, 2023)",
     "Vigilum Codex v0.1 – Initial risk pattern compendium",
