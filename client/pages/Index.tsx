@@ -272,179 +272,28 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Glass-Logic Semantic Containers */}
-            <div className="relative mb-20 px-4" id="glass-logic-containers">
-              {/* Live Canvas-Rendered Symbolic Glitch Background */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <LetterGlitch
-                  glitchColors={[
-                    "#0A0E14",
-                    "#1a2332",
-                    "#2b4539",
-                    "#61dca3",
-                    "#61b3dc",
-                  ]}
-                  glitchSpeed={80}
-                  centerVignette={false}
-                  outerVignette={true}
-                  smooth={true}
-                  className="w-full h-full"
+            {/* Spline 3D Brain Animation */}
+            <div className="relative mb-20 px-4" id="spline-brain-container">
+              <div className="relative w-full h-96 md:h-[600px] rounded-2xl overflow-hidden">
+                <Spline
+                  scene="https://prod.spline.design/adL2AYtD8H0GnWtw2HEEOGVO/scene.splinecode"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    background: "transparent",
+                  }}
                 />
-              </div>
 
-              {/* Glass Container Grid */}
-              <div className="relative p-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                  {clausePhases.map((phase, index) => {
-                    // Glass-Logic Typological Mapping
-                    const getGlassTypology = (index) => {
-                      switch (index) {
-                        case 0: // Legality is Structure (CI)
-                          return {
-                            className: "glass-clause-ci",
-                            accentColor: "#3A56D8",
-                            glyph: "ϕ",
-                            typology: "CI",
-                            floatDelay: "0s",
-                          };
-                        case 1: // Discretion is Formatted (DG)
-                          return {
-                            className: "glass-clause-dg",
-                            accentColor: "#F85E00",
-                            glyph: "Δ",
-                            typology: "DG",
-                            floatDelay: "1.5s",
-                          };
-                        case 2: // Meaning is Positional (OD)
-                          return {
-                            className: "glass-clause-od",
-                            accentColor: "#F4C900",
-                            glyph: "⊗",
-                            typology: "OD",
-                            floatDelay: "3s",
-                          };
-                        case 3: // See Together. Break the Illusion. (SC)
-                          return {
-                            className: "glass-clause-sc",
-                            accentColor: "#FF1B4C",
-                            glyph: "λ",
-                            typology: "SC",
-                            floatDelay: "4.5s",
-                          };
-                        default:
-                          return {
-                            className: "glass-clause-default",
-                            accentColor: "#FFFFFF",
-                            glyph: "○",
-                            typology: "DEFAULT",
-                            floatDelay: "0s",
-                          };
-                      }
-                    };
-
-                    const glassData = getGlassTypology(index);
-
-                    return (
-                      <div
-                        key={index}
-                        className={`glass-logic-container ${glassData.className} ${
-                          currentPhase === index ? "logic-active" : ""
-                        }`}
-                        data-typology={glassData.typology}
-                        style={{
-                          "--accent-color": glassData.accentColor,
-                          "--float-delay": glassData.floatDelay,
-                          position: "relative",
-                          background: "rgba(255, 255, 255, 0.05)",
-                          backdropFilter: "blur(12px)",
-                          border: "1px solid rgba(255, 255, 255, 0.15)",
-                          borderLeft: `3px solid ${glassData.accentColor}`,
-                          borderRadius: "16px",
-                          padding: "2rem",
-                          transition:
-                            "transform 0.3s ease, box-shadow 0.3s ease",
-                          transformStyle: "preserve-3d",
-                          willChange: "transform",
-                          animation: `glass-float 6s ease-in-out infinite`,
-                          animationDelay: glassData.floatDelay,
-                        }}
-                        onMouseEnter={() => handleBoxHover(index)}
-                      >
-                        {/* Glass Reflectivity Edge */}
-                        <div
-                          className="absolute top-0 left-0 right-0 h-px"
-                          style={{
-                            background:
-                              "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)",
-                          }}
-                        />
-
-                        {/* Inner Glass Glow */}
-                        <div
-                          className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 glass-inner-glow"
-                          style={{
-                            boxShadow: `inset 0 0 20px ${glassData.accentColor}20`,
-                          }}
-                        />
-
-                        {/* Content */}
-                        <div
-                          className={
-                            index === 3
-                              ? "absolute inset-0 flex flex-col items-center justify-center text-center z-10"
-                              : "relative z-10"
-                          }
-                        >
-                          <h3 className="text-lg font-bold uppercase tracking-wider mb-3 text-white">
-                            {phase.title}
-                          </h3>
-                          <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
-                            {index === 3 ? (
-                              <span className="font-bold text-white">
-                                {phase.description}
-                              </span>
-                            ) : (
-                              phase.description
-                            )}
-                          </p>
-                        </div>
-
-                        {/* Faint Typology Glyph */}
-                        <div
-                          className="absolute bottom-4 right-4 text-white transition-opacity duration-300 glass-glyph"
-                          style={{
-                            fontSize: "1.8rem",
-                            opacity: "0.1",
-                            fontFamily: "serif",
-                            fontWeight: "300",
-                          }}
-                        >
-                          {glassData.glyph}
-                        </div>
-
-                        {/* Arrow for mobile */}
-                        {index < 3 && (
-                          <ArrowRight className="w-4 h-4 text-gray-400 mx-auto mt-4 md:hidden opacity-50" />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Ambient System Activity Indicators */}
-                <div className="absolute top-4 right-4 flex space-x-2">
-                  <div
-                    className="w-2 h-2 rounded-full bg-green-400 animate-pulse"
-                    style={{ animationDelay: "0s" }}
-                  />
-                  <div
-                    className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"
-                    style={{ animationDelay: "0.5s" }}
-                  />
-                  <div
-                    className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"
-                    style={{ animationDelay: "1s" }}
-                  />
+                {/* Optional overlay text */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="text-center">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white/80 mb-4 font-mono tracking-tight">
+                      AI BRAIN INTELLIGENCE
+                    </h2>
+                    <p className="text-lg text-gray-300/70 font-mono">
+                      Neural governance pattern recognition
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
