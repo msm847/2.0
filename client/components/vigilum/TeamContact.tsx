@@ -299,6 +299,102 @@ const TeamContact = () => {
     updateInteractionTime();
   };
 
+  // Target Audiences Interaction Handlers
+  const updateAudiencesInteractionTime = () => {
+    setAudiencesLastInteractionTime(Date.now());
+    setAudiencesAutoScrollDisabled(true);
+  };
+
+  const audiencesSmoothScrollTo = (targetPosition, duration = 600) => {
+    setAudiencesIsAnimating(true);
+    const startPosition = audiencesScrollPosition;
+    const distance = targetPosition - startPosition;
+    const startTime = performance.now();
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      const easeInOutQuart =
+        progress < 0.5
+          ? 8 * progress * progress * progress * progress
+          : 1 -
+            8 *
+              (progress - 1) *
+              (progress - 1) *
+              (progress - 1) *
+              (progress - 1);
+
+      setAudiencesScrollPosition(startPosition + distance * easeInOutQuart);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setAudiencesIsAnimating(false);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  };
+
+  const audiencesScrollLeftOneCard = () => {
+    updateAudiencesInteractionTime();
+    audiencesSmoothScrollTo(audiencesScrollPosition + cardWidth);
+  };
+
+  const audiencesScrollRightOneCard = () => {
+    updateAudiencesInteractionTime();
+    audiencesSmoothScrollTo(audiencesScrollPosition - cardWidth);
+  };
+
+  const handleAudiencesMouseDown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setAudiencesIsDragging(true);
+    setAudiencesDragStart(e.clientX);
+    setAudiencesDragStartPosition(audiencesScrollPosition);
+    updateAudiencesInteractionTime();
+
+    const globalMouseMove = (moveEvent) => {
+      moveEvent.preventDefault();
+      const diff = moveEvent.clientX - e.clientX;
+      setAudiencesScrollPosition(audiencesScrollPosition + diff);
+      setAudiencesDragStart(moveEvent.clientX);
+      setAudiencesDragStartPosition(audiencesScrollPosition + diff);
+    };
+
+    const globalMouseUp = () => {
+      setAudiencesIsDragging(false);
+      document.removeEventListener("mousemove", globalMouseMove);
+      document.removeEventListener("mouseup", globalMouseUp);
+      updateAudiencesInteractionTime();
+    };
+
+    document.addEventListener("mousemove", globalMouseMove);
+    document.addEventListener("mouseup", globalMouseUp);
+  };
+
+  const handleAudiencesTouchStart = (e) => {
+    e.preventDefault();
+    setAudiencesIsDragging(true);
+    setAudiencesDragStart(e.touches[0].clientX);
+    setAudiencesDragStartPosition(audiencesScrollPosition);
+    updateAudiencesInteractionTime();
+  };
+
+  const handleAudiencesTouchMove = (e) => {
+    if (!audiencesIsDragging) return;
+    e.preventDefault();
+    const diff = e.touches[0].clientX - audiencesDragStart;
+    setAudiencesScrollPosition(audiencesDragStartPosition + diff);
+  };
+
+  const handleAudiencesTouchEnd = () => {
+    if (!audiencesIsDragging) return;
+    setAudiencesIsDragging(false);
+    updateAudiencesInteractionTime();
+  };
+
   const targetAudiences = [
     {
       id: "auditor",
