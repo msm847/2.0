@@ -827,10 +827,19 @@ const TeamContact = () => {
                     info@vigilum.com
                   </a>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
                   For institutional partnerships, technical integration, or
                   research collaboration inquiries.
                 </p>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-mono px-6 py-3 rounded-lg transition-colors"
+                  aria-label="Open contact form"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Get in Touch</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
 
               {/* Newsletter Subscription */}
