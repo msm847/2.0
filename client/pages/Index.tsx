@@ -178,6 +178,7 @@ export default function Index() {
               style={{
                 border: "none",
                 background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+                touchAction: "none",
               }}
               title="AI Brain 3D Animation"
               loading="lazy"
