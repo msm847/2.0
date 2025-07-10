@@ -156,10 +156,10 @@ export default function Index() {
                 className="text-xl font-mono font-medium mb-2"
                 style={{
                   color: "#48FFB2",
-                  fontFamily: "IBM Plex Mono, 'Suisse Int'l Mono', monospace",
+                  fontFamily: "IBM Plex Mono, JetBrains Mono, monospace",
                 }}
               >
-                ϕ(c) active
+                ϕ(c, 𝓔) = ∑ αᵢeᵢ + ∇𝓔
               </h1>
 
               {/* Subline: Truth sentence */}
