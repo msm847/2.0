@@ -364,24 +364,27 @@ const TeamContact = () => {
             <style jsx>{`
               .scrolling-principles {
                 display: flex;
-                animation: ${isPaused
-                  ? "none"
-                  : "scroll-left 30s linear infinite"};
                 will-change: transform;
               }
 
-              @keyframes scroll-left {
-                0% {
+              .scrolling-principles:not(.dragging) {
+                animation: ${isPaused
+                  ? "none"
+                  : "scroll-infinite 120s linear infinite"};
+              }
+
+              @keyframes scroll-infinite {
+                from {
                   transform: translateX(0);
                 }
-                100% {
-                  transform: translateX(-50%);
+                to {
+                  transform: translateX(-${totalCards * cardWidth}px);
                 }
               }
 
               @media (max-width: 768px) {
-                .scrolling-principles {
-                  animation-duration: 20s;
+                .scrolling-principles:not(.dragging) {
+                  animation-duration: 80s;
                 }
               }
             `}</style>
