@@ -105,30 +105,43 @@ const TeamContact = () => {
   };
 
   const handleMouseDown = (e) => {
+    e.preventDefault();
     setIsDragging(true);
     setDragStart(e.clientX);
     setDragStartPosition(scrollPosition);
     setIsPaused(true);
+
+    // Add global mouse event listeners
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
   };
 
   const handleMouseMove = (e) => {
     if (!isDragging) return;
+    e.preventDefault();
     const diff = e.clientX - dragStart;
     setScrollPosition(dragStartPosition + diff);
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e) => {
     if (!isDragging) return;
     setIsDragging(false);
+
+    // Remove global mouse event listeners
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
 
     // Snap to nearest card
     const nearestCard = Math.round(scrollPosition / cardWidth) * cardWidth;
     let finalPosition = nearestCard;
 
-    // Ensure within bounds
-    if (finalPosition > 0)
+    // Ensure within bounds for infinite scroll
+    if (finalPosition > 0) {
       finalPosition = -(totalCards * cardWidth - cardWidth);
-    if (finalPosition <= -(totalCards * cardWidth)) finalPosition = 0;
+    }
+    if (finalPosition <= -(totalCards * cardWidth)) {
+      finalPosition = 0;
+    }
 
     setScrollPosition(finalPosition);
     setTimeout(() => setIsPaused(false), 1000);
