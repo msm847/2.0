@@ -370,13 +370,6 @@ export default function Index() {
               </div>
             </div>
           </div>
-
-          {/* Bottom Text */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <p className="text-gray-400 font-mono text-sm tracking-wider text-center">
-              CLAVIS•OBSCURA•NULLUM•NEXUS POTENTIA•VIGILO CORE•VERIS•SENTIUM
-            </p>
-          </div>
         </main>
       </div>
     </div>
