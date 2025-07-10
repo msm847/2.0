@@ -84,33 +84,6 @@ export default function Index() {
     }
   };
 
-  const clausePhases = [
-    {
-      title: "Legality is structure",
-      description: "Safety is not implied",
-      visual: "opacity-100 translate-y-0",
-      color: "text-blue-400",
-    },
-    {
-      title: "meaning is positional",
-      description: "A ⇄ B ≠ B ⇄ A",
-      visual: "opacity-100 translate-y-0 scale-110",
-      color: "text-orange-400",
-    },
-    {
-      title: "Discretion is formatted",
-      description: "Freedom is a simulation",
-      visual: "opacity-100 translate-y-0 scale-105",
-      color: "text-yellow-400",
-    },
-    {
-      title: "SEE TOGETHER",
-      description: "BREAK THE ILLUSION",
-      visual: "opacity-100 translate-y-0 scale-105 pulse",
-      color: "text-red-400",
-    },
-  ];
-
   return (
     <div
       className="min-h-screen text-gray-100 font-mono relative overflow-hidden"
