@@ -46,7 +46,13 @@ export default function Index() {
 
       <div className="relative z-10">
         {/* Header */}
-        <header className="container mx-auto px-4 py-3">
+        <header
+          className="container mx-auto px-4 py-3"
+          style={{
+            backgroundColor: "#050F0C",
+            opacity: "0.95",
+          }}
+        >
           <nav className="flex items-center justify-between">
             <div className="flex items-center">
               <span className="text-xl font-bold tracking-tight text-gray-100">
