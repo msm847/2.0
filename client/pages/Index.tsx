@@ -142,16 +142,12 @@ export default function Index() {
           </div>
 
           {/* Content overlay */}
-          <div className="container mx-auto px-4 py-8 relative z-10">
-            <div className="max-w-4xl mx-auto">
-              {/* System Identity - Positioned to appear held by hands */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-100 drop-shadow-2xl">
-                  SEMANTIC GOVERNANCE
-                  <span className="block text-blue-400">INTELLIGENCE</span>
-                </h1>
-              </div>
-            </div>
+          {/* System Identity - Centered in middle of page */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-gray-100 drop-shadow-2xl text-center">
+              SEMANTIC GOVERNANCE
+              <span className="block text-blue-400">INTELLIGENCE</span>
+            </h1>
           </div>
 
           {/* Vigilum Modules - Bottom Navigation */}
