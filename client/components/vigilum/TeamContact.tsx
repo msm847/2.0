@@ -223,20 +223,20 @@ const TeamContact = () => {
     setIsDragging(true);
     setDragStart(e.touches[0].clientX);
     setDragStartPosition(scrollPosition);
-    setAutoScrollDisabled(true); // Permanently disable auto-scroll
+    updateInteractionTime();
   };
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
     e.preventDefault();
     const diff = e.touches[0].clientX - dragStart;
-    setScrollPosition(dragStartPosition + diff); // Allow infinite scrolling in both directions
+    setScrollPosition(dragStartPosition + diff);
   };
 
   const handleTouchEnd = () => {
     if (!isDragging) return;
     setIsDragging(false);
-    // Auto-scroll remains permanently disabled
+    updateInteractionTime();
   };
 
   const targetAudiences = [
