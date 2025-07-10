@@ -356,6 +356,26 @@ const TeamContact = () => {
                 Core Principles
               </h3>
               <div className="relative">
+                {/* Left Arrow */}
+                <button
+                  onClick={scrollLeftOneCard}
+                  disabled={isAnimating}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-6 h-6 text-green-400/80" />
+                </button>
+
+                {/* Right Arrow */}
+                <button
+                  onClick={scrollRightOneCard}
+                  disabled={isAnimating}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/20 hover:bg-black/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 border border-green-500/20"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-6 h-6 text-green-400/80" />
+                </button>
+
                 <div className="overflow-hidden">
                   <div
                     className="scrolling-principles cursor-grab active:cursor-grabbing select-none"
@@ -366,7 +386,10 @@ const TeamContact = () => {
                     onTouchEnd={handleTouchEnd}
                     style={{
                       transform: `translateX(${scrollPosition}px)`,
-                      transition: isDragging ? "none" : "transform 0.1s linear",
+                      transition:
+                        isDragging || isAnimating
+                          ? "none"
+                          : "transform 0.1s linear",
                     }}
                   >
                     {/* Render multiple copies for true infinite scroll */}
@@ -400,19 +423,6 @@ const TeamContact = () => {
                         );
                       }),
                     )}
-                  </div>
-                </div>
-
-                {/* Custom Scrollbar */}
-                <div className="mt-6 relative">
-                  <div className="h-1 bg-gray-700/30 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-green-500/60 rounded-full transition-all duration-100"
-                      style={{
-                        width: `${100 / corePrinciples.length}%`,
-                        transform: `translateX(${((-scrollPosition % (totalCards * cardWidth)) / (totalCards * cardWidth)) * 100}%)`,
-                      }}
-                    />
                   </div>
                 </div>
               </div>
