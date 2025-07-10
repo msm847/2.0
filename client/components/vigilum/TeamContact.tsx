@@ -26,6 +26,14 @@ import {
 const TeamContact = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragStartPosition, setDragStartPosition] = useState(0);
+
+  const cardWidth = 352; // 320px card + 32px margin
+  const totalCards = corePrinciples.length;
 
   const targetAudiences = [
     {
