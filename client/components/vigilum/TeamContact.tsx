@@ -313,7 +313,38 @@ const TeamContact = () => {
                 Core Principles
               </h3>
               <div className="relative overflow-hidden">
-                <div className="scrolling-principles">
+                {/* Left Arrow */}
+                <button
+                  onClick={scrollLeft}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-green-600/80 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200 backdrop-blur-sm"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+
+                {/* Right Arrow */}
+                <button
+                  onClick={scrollRight}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-green-600/80 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200 backdrop-blur-sm"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+
+                <div
+                  className="scrolling-principles cursor-grab active:cursor-grabbing select-none"
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onMouseUp={handleMouseUp}
+                  onMouseLeave={handleMouseUp}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                  style={{
+                    transform: `translateX(${scrollPosition}px)`,
+                    transition: isDragging ? "none" : "transform 0.3s ease-out",
+                  }}
+                >
                   {/* Render principles twice for infinite scroll */}
                   {[...corePrinciples, ...corePrinciples].map(
                     (principle, index) => {
@@ -321,7 +352,7 @@ const TeamContact = () => {
                       return (
                         <div
                           key={index}
-                          className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
+                          className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4 pointer-events-none"
                           style={{
                             backgroundColor: "rgba(12, 35, 28, 0.85)",
                             borderColor: "rgba(0,255,204,0.06)",
@@ -347,7 +378,9 @@ const TeamContact = () => {
             <style jsx>{`
               .scrolling-principles {
                 display: flex;
-                animation: scroll-left 120s linear infinite;
+                animation: ${isPaused
+                  ? "none"
+                  : "scroll-left 30s linear infinite"};
                 will-change: transform;
               }
 
@@ -360,13 +393,9 @@ const TeamContact = () => {
                 }
               }
 
-              .scrolling-principles:hover {
-                animation-play-state: paused;
-              }
-
               @media (max-width: 768px) {
                 .scrolling-principles {
-                  animation-duration: 80s;
+                  animation-duration: 20s;
                 }
               }
             `}</style>
