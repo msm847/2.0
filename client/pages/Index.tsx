@@ -221,10 +221,11 @@ export default function Index() {
               </div>
             </div>
           </div>
-
-
-
-              <Link
+        </main>
+      </div>
+    </div>
+  );
+}
                 to="/module/obscura"
                 className="hover:text-red-400 transition-all duration-300 hover:scale-110 inline-block relative"
                 style={{
