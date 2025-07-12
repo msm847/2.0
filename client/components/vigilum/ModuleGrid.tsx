@@ -176,12 +176,13 @@ const ModuleGrid = () => {
   const [hoveredModule, setHoveredModule] = useState<string | null>(null);
 
   return (
-    <div className="py-20 px-4" style={{ backgroundColor: "#0B1E16" }}>
+    <div className="py-20 px-4" style={{ backgroundColor: "#0E261D" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 mt-8">
           <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-white mb-8 font-mono tracking-tight uppercase"
+            className="text-4xl lg:text-5xl font-bold mb-8 font-mono tracking-tight uppercase"
+            style={{ color: "#B8D0C9" }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
