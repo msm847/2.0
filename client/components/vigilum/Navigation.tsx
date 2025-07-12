@@ -104,56 +104,81 @@ const Navigation = () => {
             RETURN
           </Link>
 
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2">
-            <button
-              onClick={() => handleNavigation("#modules")}
-              className={getButtonStyles(
-                "modules",
-                activeSection === "modules",
-              )}
-            >
-              ENGINES
-            </button>
-            <span className="mx-6 text-gray-600 text-xs">·</span>
-            <button
-              onClick={() => handleNavigation("#about")}
-              className={getButtonStyles("about", activeSection === "about")}
-            >
-              METHODOLOGY
-            </button>
-            <span className="mx-6 text-gray-600 text-xs">·</span>
-            <button
-              onClick={() => handleNavigation("#demo")}
-              className={getButtonStyles(
-                "demo",
-                activeSection === "demo" || activeSection === "clavis",
-              )}
-              style={{
-                fontWeight:
-                  activeSection === "demo" || activeSection === "clavis"
-                    ? "600"
-                    : "500",
-              }}
-            >
-              SPE
-            </button>
-            <span className="mx-6 text-gray-600 text-xs">·</span>
-            <button
-              onClick={() => handleNavigation("#cases")}
-              className={getButtonStyles("cases", activeSection === "cases")}
-            >
-              LIBRARY
-            </button>
-            <span className="mx-6 text-gray-600 text-xs">·</span>
-            <button
-              onClick={() => handleNavigation("#team")}
-              className={`${getSeeTogetherStyles(activeSection === "team")} whitespace-nowrap`}
-              onMouseEnter={() => setSeeTogetherHovered(true)}
-              onMouseLeave={() => setSeeTogetherHovered(false)}
-            >
-              TEAM
-            </button>
+          {/* Scrollable Navigation Button - Right Side */}
+          <div className="hidden md:block absolute right-4">
+            <div className="relative group">
+              <button
+                className="px-4 py-2 text-gray-300 hover:text-white font-mono text-sm transition-colors duration-200 border border-gray-600 rounded"
+                style={{
+                  backgroundColor: "rgba(5, 15, 12, 0.95)",
+                }}
+              >
+                NAVIGATE
+                <span className="ml-2">↓</span>
+              </button>
+
+              {/* Scrollable Dropdown */}
+              <div
+                className="absolute right-0 mt-2 w-48 max-h-64 overflow-y-auto border border-gray-600 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
+                style={{
+                  backgroundColor: "rgba(5, 15, 12, 0.95)",
+                  backdropFilter: "blur(10px)",
+                }}
+              >
+                <div className="py-2">
+                  <button
+                    onClick={() => handleNavigation("#modules")}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                      activeSection === "modules"
+                        ? "text-green-400 bg-green-400/10"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                    }`}
+                  >
+                    ENGINES
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("#about")}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                      activeSection === "about"
+                        ? "text-green-400 bg-green-400/10"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                    }`}
+                  >
+                    METHODOLOGY
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("#demo")}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                      activeSection === "demo" || activeSection === "clavis"
+                        ? "text-green-400 bg-green-400/10"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                    }`}
+                  >
+                    SPE
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("#cases")}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                      activeSection === "cases"
+                        ? "text-green-400 bg-green-400/10"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                    }`}
+                  >
+                    LIBRARY
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("#team")}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                      activeSection === "team"
+                        ? "text-green-400 bg-green-400/10"
+                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                    }`}
+                  >
+                    TEAM
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
