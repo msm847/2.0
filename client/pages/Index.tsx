@@ -56,26 +56,15 @@ export default function Index() {
       `}</style>
       <MatrixBackground />
 
-      <div className="relative z-50">
-        {/* Header */}
-        <header
-          className="container mx-auto px-4 py-3 relative z-50"
-          style={{
-            backgroundColor: "#050F0C",
-            opacity: "0.95",
-          }}
-        >
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center">
-              <span className="text-xl font-bold tracking-tight text-gray-100">
-                VIGILUM.AI
-              </span>
-            </div>
-          </nav>
-        </header>
+      {/* Floating VIGILUM.AI Logo */}
+      <div className="absolute top-6 left-6 z-50">
+        <span className="text-xl font-bold tracking-tight text-gray-100">
+          VIGILUM.AI
+        </span>
+      </div>
 
-        {/* Main Section with Brain Background */}
-        <main className="relative min-h-screen">
+      {/* Main Section with Brain Background - Full Page */}
+      <main className="relative min-h-screen">
           {/* Spline 3D Particles Hand Animation Background */}
           <div
             className="absolute inset-0 z-0"
