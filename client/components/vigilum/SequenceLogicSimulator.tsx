@@ -1,20 +1,29 @@
-import React, { useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useCallback, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 interface ClauseData {
   id: string;
-  label: string;
-  ϕ: { [key: string]: number };
-  override: string[];
-  color: string;
-  icon: string;
+  name: string;
+  ϕ_base: { [key: string]: number };
+  visual: string;
+  sound: string;
+  description: string;
 }
 
 interface EnvironmentModifier {
   id: string;
   label: string;
-  Δϕ: { [key: string]: number };
-  specialOverride: string[];
+  effects: {
+    RT_boost?: number;
+    CI_boost?: number;
+    SB_reduction?: number;
+    SB_boost?: number;
+    overrideActivation?: string[];
+    inversion?: boolean;
+    timingTriggers?: boolean;
+    visualInjection: string;
+  };
+  textOverlay: string;
 }
 
 interface RealityPanel {
@@ -35,58 +44,77 @@ interface RealityPanel {
   outcome: string;
 }
 
-const clauseBank: ClauseData[] = [
+const liveClauseChips: ClauseData[] = [
   {
     id: "C3.2",
-    label: "Emergency Procurement Trigger",
-    ϕ: { DG: 0.88, CI: 0.64 },
-    override: ["C5.1"],
-    color: "#DB4F4F",
-    icon: "⚠️",
+    name: "Emergency Procurement",
+    ϕ_base: { DG: 0.88, CI: 0.64 },
+    visual: "GlitchRed + PulseGlowEdge",
+    sound: "mid-bass rupture",
+    description:
+      "Legally permits immediate bypass of procurement logic if urgency is declared.",
   },
   {
     id: "C5.1",
-    label: "Re-Tendering Exception",
-    ϕ: { CI: 0.79, SB: 0.4 },
-    override: [],
-    color: "#9F77C9",
-    icon: "🔄",
+    name: "Scope-Based Extension",
+    ϕ_base: { CI: 0.79, SB: 0.4 },
+    visual: "GhostViolet + DelayBlur",
+    sound: "soft null click",
+    description:
+      "Allows extending a contract without retendering if deemed 'within scope.'",
   },
   {
     id: "C2.7",
-    label: "Notification Delay",
-    ϕ: { SB: 0.78, CI: 0.21 },
-    override: ["oversight_window"],
-    color: "#E1D16D",
-    icon: "⏱️",
+    name: "Notification Delay",
+    ϕ_base: { SB: 0.78, CI: 0.21 },
+    visual: "ObscuraFog + FadeOpacity",
+    sound: "perceptual hiss",
+    description:
+      "Legally suspends publication deadlines in special review periods.",
   },
 ];
 
-const environmentModifiers: EnvironmentModifier[] = [
+const environmentModulators: EnvironmentModifier[] = [
   {
-    id: "env1",
-    label: "Election Year Compression",
-    Δϕ: { RT: 0.2, CI: 0.1 },
-    specialOverride: ["C3.2_all"],
+    id: "env_election_year",
+    label: "Election Year Modifier",
+    effects: {
+      RT_boost: 0.24,
+      CI_boost: 0.18,
+      overrideActivation: ["C3.2 → C5.1"],
+      visualInjection: "ScreenTint → AmberCollapse",
+    },
+    textOverlay: "Public urgency reframes normal constraints.",
   },
   {
-    id: "env2",
-    label: "Foreign Loan Conditions",
-    Δϕ: { SB: -0.2, RT: 0.15 },
-    specialOverride: ["invert_override"],
+    id: "env_foreign_loan",
+    label: "Foreign Sovereign Funding",
+    effects: {
+      SB_reduction: 0.3,
+      inversion: true,
+      visualInjection: "ReverseGradient + InstitutionalShiftMap",
+    },
+    textOverlay:
+      "Conditionality simulates legality. Overrides become invisible.",
   },
   {
-    id: "env3",
-    label: "Emergency Timetable",
-    Δϕ: { DG: 0.3 },
-    specialOverride: ["passive_C5.1"],
+    id: "env_timeline_compression",
+    label: "Crisis-Driven Deadline Override",
+    effects: {
+      CI_boost: 0.4,
+      SB_boost: 0.15,
+      timingTriggers: true,
+      visualInjection: "ShimmerGlass + EscalationHeatMap",
+    },
+    textOverlay:
+      "Delay nullifies accountability. The clause is triggered before perception can form.",
   },
 ];
 
 const realityPanels: RealityPanel[] = [
   {
-    id: "RealityA",
-    title: "Reality A",
+    id: "World_A",
+    title: "World A",
     sequence: ["C3.2", "C5.1", "C2.7"],
     ϕ: { DG: 0.81, CI: 0.77, SB: 0.43 },
     actors: {
@@ -99,11 +127,11 @@ const realityPanels: RealityPanel[] = [
       blur_lines: true,
       glitch_effect: true,
     },
-    outcome: "Simulated Legality",
+    outcome: "Simulated Constraint",
   },
   {
-    id: "RealityB",
-    title: "Reality B",
+    id: "World_B",
+    title: "World B",
     sequence: ["C5.1", "C2.7", "C3.2"],
     ϕ: { DG: 0.52, CI: 0.22, SB: 0.18 },
     actors: {
@@ -116,11 +144,11 @@ const realityPanels: RealityPanel[] = [
       blur_lines: false,
       glitch_effect: false,
     },
-    outcome: "Public Scandal",
+    outcome: "Public Disillusionment",
   },
   {
-    id: "RealityC",
-    title: "Reality C",
+    id: "World_C",
+    title: "World C",
     sequence: ["C2.7", "C3.2", "C5.1"],
     ϕ: { DG: 0.74, CI: 0.41, SB: 0.62 },
     actors: {
@@ -133,7 +161,7 @@ const realityPanels: RealityPanel[] = [
       blur_lines: false,
       glitch_effect: true,
     },
-    outcome: "Disillusionment",
+    outcome: "Controlled Disclosure",
   },
 ];
 
