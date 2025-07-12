@@ -193,6 +193,32 @@ export default function Index() {
                 logic
                 <br />— a structurally encoded uncertainty.
               </p>
+
+              {/* CTA Button */}
+              <div className="mt-8">
+                <Link
+                  to="/vigilum"
+                  className="inline-block px-8 py-3 font-mono font-medium text-lg transition-all duration-300 hover:scale-105"
+                  style={{
+                    color: "#9DE6C6",
+                    border: "2px solid transparent",
+                    background: "transparent",
+                    borderImage: "linear-gradient(45deg, #17B58F, #9DE6C6) 1",
+                    textShadow: "0 0 8px #17B58F40",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.boxShadow =
+                      "0 0 20px #17B58F60, inset 0 0 20px #17B58F20";
+                    e.target.style.textShadow = "0 0 12px #17B58F80";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.boxShadow = "none";
+                    e.target.style.textShadow = "0 0 8px #17B58F40";
+                  }}
+                >
+                  ENTER STRUCTURE
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -298,7 +324,7 @@ export default function Index() {
               >
                 VIGILO CORE
               </Link>
-              <span className="text-gray-600">•</span>
+              <span className="text-gray-600">���</span>
               <Link
                 to="/module/veris"
                 className="hover:text-yellow-400 transition-all duration-300 hover:scale-110 inline-block relative"
