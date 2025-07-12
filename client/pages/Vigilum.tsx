@@ -47,7 +47,7 @@ const VigilumPage = () => {
       </div>
       <LegalStructuralSimulator />
       <div id="about">
-        <CoreIntelligence />
+        <SequenceLogicSimulator />
       </div>
       <div id="demo">
         <SemanticPermutationEngine />
