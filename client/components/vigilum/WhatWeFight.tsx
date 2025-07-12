@@ -43,11 +43,14 @@ const tiers: Tier[] = [
   },
 ];
 
-const TierComponent: React.FC<{ tier: Tier; index: number }> = ({ tier, index }) => {
+const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
+  tier,
+  index,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     threshold: 0.2,
-    margin: "-10% 0px -10% 0px"
+    margin: "-10% 0px -10% 0px",
   });
 
   return (
@@ -62,12 +65,14 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({ tier, index })
         delay: index * 0.15,
       }}
       style={{
-        boxShadow: tier.highlightColor && isInView
-          ? `0 0 30px ${tier.highlightColor}20, 0 0 10px ${tier.highlightColor}10`
-          : "none",
-        backgroundColor: tier.highlightColor && isInView
-          ? `${tier.highlightColor}05`
-          : "transparent",
+        boxShadow:
+          tier.highlightColor && isInView
+            ? `0 0 30px ${tier.highlightColor}20, 0 0 10px ${tier.highlightColor}10`
+            : "none",
+        backgroundColor:
+          tier.highlightColor && isInView
+            ? `${tier.highlightColor}05`
+            : "transparent",
       }}
     >
       {/* Tier Title */}
@@ -129,28 +134,30 @@ const WhatWeFight: React.FC = () => {
 
   const isTier4InView = useInView(tier4Ref, {
     threshold: 0.3,
-    margin: "-20% 0px -20% 0px"
+    margin: "-20% 0px -20% 0px",
   });
 
   const isInViewFinal = useInView(finalStatementRef, {
     threshold: 0.3,
-    margin: "0px 0px -20% 0px"
+    margin: "0px 0px -20% 0px",
   });
 
   return (
     <section
       ref={containerRef}
       className="min-h-screen pt-20 pb-20 pl-12 pr-12 transition-colors duration-1000"
-      style={{
-        backgroundColor: isTier4InView ? "#0D1510" : "#151A13",
-        "--color-bg-base": "#151A13",
-        "--color-text-primary": "#DAD7C7",
-        "--color-highlight-rt": "#E27E3C",
-        "--color-highlight-ci": "#DB4F4F",
-        "--color-highlight-sb": "#9F77C9",
-        "--color-structural-glow": "#17B58F",
-        "--color-final-quote": "#E1D16D",
-      } as React.CSSProperties}
+      style={
+        {
+          backgroundColor: isTier4InView ? "#0D1510" : "#151A13",
+          "--color-bg-base": "#151A13",
+          "--color-text-primary": "#DAD7C7",
+          "--color-highlight-rt": "#E27E3C",
+          "--color-highlight-ci": "#DB4F4F",
+          "--color-highlight-sb": "#9F77C9",
+          "--color-structural-glow": "#17B58F",
+          "--color-final-quote": "#E1D16D",
+        } as React.CSSProperties
+      }
     >
       <div className="max-w-screen-xl mx-auto">
         {/* Section Title */}
@@ -171,10 +178,7 @@ const WhatWeFight: React.FC = () => {
         {/* Tier Pyramid */}
         <div className="flex flex-col gap-12">
           {tiers.map((tier, index) => (
-            <div
-              key={tier.id}
-              ref={tier.id === 4 ? tier4Ref : undefined}
-            >
+            <div key={tier.id} ref={tier.id === 4 ? tier4Ref : undefined}>
               <TierComponent tier={tier} index={index} />
             </div>
           ))}
@@ -202,7 +206,7 @@ const WhatWeFight: React.FC = () => {
           </motion.p>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
