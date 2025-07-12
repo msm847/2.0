@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 interface Tier {
   id: number;
@@ -43,47 +43,115 @@ const tiers: Tier[] = [
   },
 ];
 
-const WhatWeFight: React.FC = () => {
-  const [visibleTiers, setVisibleTiers] = useState<number[]>([]);
-  const [showFinalStatement, setShowFinalStatement] = useState(false);
-  const [backgroundDark, setBackgroundDark] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
+const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
+  tier,
+  index,
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    threshold: 0.3,
+    margin: "-20% 0px -20% 0px",
   });
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((progress) => {
-      // Tier visibility logic
-      if (progress > 0.1 && !visibleTiers.includes(1)) {
-        setVisibleTiers([1]);
+  return (
+    <motion.div
+      ref={ref}
+      className="relative"
+      initial={{ opacity: 0, y: 100 }}
+      animate={
+        isInView
+          ? { opacity: 1, y: 0, scale: 1 }
+          : { opacity: 0, y: 100, scale: 0.9 }
       }
-      if (progress > 0.3 && !visibleTiers.includes(2)) {
-        setVisibleTiers([1, 2]);
-      }
-      if (progress > 0.5 && !visibleTiers.includes(3)) {
-        setVisibleTiers([1, 2, 3]);
-      }
-      if (progress > 0.7 && !visibleTiers.includes(4)) {
-        setVisibleTiers([1, 2, 3, 4]);
-        setBackgroundDark(true);
-      }
-      if (progress > 0.8) {
-        setShowFinalStatement(true);
-      }
-    });
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: index * 0.1,
+      }}
+      style={{
+        boxShadow: tier.highlightColor
+          ? `0 0 30px ${tier.highlightColor}20`
+          : "none",
+      }}
+    >
+      {/* Tier Title */}
+      <p
+        className="text-sm uppercase tracking-wider mb-3"
+        style={{
+          color: "#DAD7C7",
+          fontFamily: "Inter, sans-serif",
+        }}
+      >
+        {tier.title}
+      </p>
 
-    return () => unsubscribe();
-  }, [scrollYProgress, visibleTiers]);
+      {/* Tier Header */}
+      <h2
+        className="text-4xl font-semibold mb-6"
+        style={{
+          color: "#DAD7C7",
+          fontFamily: "Inter, sans-serif",
+        }}
+      >
+        {tier.header}
+      </h2>
+
+      {/* Description */}
+      <p
+        className="text-lg leading-relaxed max-w-3xl"
+        style={{
+          color: "#B7B4AC",
+          fontFamily: "Inter, sans-serif",
+          lineHeight: 1.6,
+        }}
+      >
+        {tier.description}
+      </p>
+
+      {/* Highlight Border */}
+      {tier.highlightColor && (
+        <motion.div
+          className="absolute inset-0 rounded-lg border-2 opacity-20"
+          style={{
+            borderColor: tier.highlightColor,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: isInView ? 0.2 : 0,
+          }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        />
+      )}
+    </motion.div>
+  );
+};
+
+const WhatWeFight: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const finalStatementRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
+
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 0.7, 1],
+    ["#151A13", "#151A13", "#0D1510"],
+  );
+
+  const isInViewFinal = useInView(finalStatementRef, {
+    threshold: 0.5,
+    margin: "0px 0px -10% 0px",
+  });
 
   return (
-    <section
+    <motion.section
       ref={containerRef}
-      className="min-h-screen pt-20 pb-20 pl-12 pr-12 transition-all duration-700"
+      className="min-h-screen pt-20 pb-20 pl-12 pr-12"
       style={
         {
-          backgroundColor: backgroundDark ? "#0D1510" : "#151A13",
+          backgroundColor,
           "--color-bg-base": "#151A13",
           "--color-text-primary": "#DAD7C7",
           "--color-highlight-rt": "#E27E3C",
@@ -103,8 +171,9 @@ const WhatWeFight: React.FC = () => {
             fontFamily: "Inter, sans-serif",
           }}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-20%" }}
         >
           WHAT WE FIGHT
         </motion.h1>
@@ -112,87 +181,20 @@ const WhatWeFight: React.FC = () => {
         {/* Tier Pyramid */}
         <div className="flex flex-col gap-12">
           {tiers.map((tier, index) => (
-            <motion.div
-              key={tier.id}
-              className="relative"
-              initial={{ opacity: 0, y: 100 }}
-              animate={{
-                opacity: visibleTiers.includes(tier.id) ? 1 : 0,
-                y: visibleTiers.includes(tier.id) ? 0 : 100,
-                scale: visibleTiers.includes(tier.id) ? 1 : 0.9,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: "easeInOut",
-                delay: index * 0.2,
-              }}
-              style={{
-                boxShadow: tier.highlightColor
-                  ? `0 0 30px ${tier.highlightColor}20`
-                  : "none",
-              }}
-            >
-              {/* Tier Title */}
-              <p
-                className="text-sm uppercase tracking-wider mb-3"
-                style={{
-                  color: "#DAD7C7",
-                  fontFamily: "Inter, sans-serif",
-                }}
-              >
-                {tier.title}
-              </p>
-
-              {/* Tier Header */}
-              <h2
-                className="text-4xl font-semibold mb-6"
-                style={{
-                  color: "#DAD7C7",
-                  fontFamily: "Inter, sans-serif",
-                }}
-              >
-                {tier.header}
-              </h2>
-
-              {/* Description */}
-              <p
-                className="text-lg leading-relaxed max-w-3xl"
-                style={{
-                  color: "#B7B4AC",
-                  fontFamily: "Inter, sans-serif",
-                  lineHeight: 1.6,
-                }}
-              >
-                {tier.description}
-              </p>
-
-              {/* Highlight Border */}
-              {tier.highlightColor && (
-                <motion.div
-                  className="absolute inset-0 rounded-lg border-2 opacity-20"
-                  style={{
-                    borderColor: tier.highlightColor,
-                  }}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: visibleTiers.includes(tier.id) ? 0.2 : 0,
-                  }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                />
-              )}
-            </motion.div>
+            <TierComponent key={tier.id} tier={tier} index={index} />
           ))}
         </div>
 
         {/* Final Statement */}
         <motion.div
-          className="sticky bottom-1/3 text-center pt-16"
+          ref={finalStatementRef}
+          className="text-center pt-16 mt-16"
           initial={{ opacity: 0, y: 50 }}
           animate={{
-            opacity: showFinalStatement ? 1 : 0,
-            y: showFinalStatement ? 0 : 50,
+            opacity: isInViewFinal ? 1 : 0,
+            y: isInViewFinal ? 0 : 50,
           }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
           <motion.p
             className="text-2xl font-semibold tracking-tight"
@@ -208,7 +210,7 @@ const WhatWeFight: React.FC = () => {
           </motion.p>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
