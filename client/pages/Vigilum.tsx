@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
+import WhatWeFight from "@/components/vigilum/WhatWeFight";
 import ModuleGrid from "@/components/vigilum/ModuleGrid";
 import CoreIntelligence from "@/components/vigilum/CoreIntelligence";
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
@@ -39,6 +40,7 @@ const VigilumPage = () => {
     >
       <Navigation />
       <Hero />
+      <WhatWeFight />
       <div id="modules">
         <ModuleGrid />
       </div>
