@@ -231,38 +231,16 @@ const LegalStructuralSimulator: React.FC = () => {
                 It is a legal-structural simulation engine in UI form.
               </span>
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-400">
-              <div>
-                <h4 className="text-green-400 font-mono mb-2">
-                  SYSTEM CONSTRAINTS
-                </h4>
-                <ul className="space-y-1">
-                  <li>• Total clause modules: 6</li>
-                  <li>• Environment operators: 3</li>
-                  <li>• Max sequence per run: 3 clauses + 1 environment</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-green-400 font-mono mb-2">
-                  SIMULATION OUTPUTS
-                </h4>
-                <ul className="space-y-1">
-                  <li>• Risk vector projection ϕ(c)</li>
-                  <li>• Override graph Ω(c₁ → c₂ → c₃)</li>
-                  <li>• Structural outcome classification</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left: Available Clauses */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Left: Available Clauses - Scrollable */}
           <div>
             <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
               AVAILABLE CLAUSES
             </h3>
-            <div className="space-y-4">
+            <div className="h-96 overflow-y-auto space-y-4 pr-2">
               {availableClauses.map((clause) => (
                 <motion.div
                   key={clause.id}
@@ -307,201 +285,216 @@ const LegalStructuralSimulator: React.FC = () => {
             </div>
           </div>
 
-          {/* Center: Staging Field */}
+          {/* Right: Environment Operators */}
           <div>
             <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
-              CLAUSE STAGING FIELD
+              ENVIRONMENT OPERATOR
             </h3>
-
-            {/* Staging Slots */}
-            <div className="space-y-4 mb-8">
-              {[0, 1, 2].map((slotIndex) => (
-                <div
-                  key={slotIndex}
-                  className="h-24 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center"
+            <div className="space-y-4">
+              {environmentOperators.map((env) => (
+                <motion.button
+                  key={env.id}
+                  onClick={() =>
+                    setActiveEnvironment(
+                      activeEnvironment === env.id ? null : env.id,
+                    )
+                  }
+                  className={`w-full text-left p-4 rounded-lg border transition-all ${
+                    activeEnvironment === env.id
+                      ? "border-green-400 bg-green-400/10 text-white"
+                      : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
+                  }`}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
                 >
-                  {selectedClauses[slotIndex] ? (
-                    <motion.div
-                      className="w-full h-full p-3 bg-gray-800 rounded border border-gray-600 cursor-pointer"
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      onClick={() => removeClause(slotIndex)}
-                    >
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs font-mono text-gray-400">
-                          {selectedClauses[slotIndex]!.id}
-                        </span>
-                        <div className="flex items-center space-x-2">
-                          <div
-                            className="w-2 h-2 rounded-full"
-                            style={{
-                              backgroundColor:
-                                selectedClauses[slotIndex]!.color,
-                            }}
-                          />
-                          <span className="text-xs text-red-400">✕</span>
-                        </div>
+                  <div className="flex items-center space-x-4">
+                    <span className="text-2xl">{env.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-medium text-lg">{env.name}</div>
+                      <div className="text-sm text-gray-400 mt-1">
+                        {env.description}
                       </div>
-                      <div className="text-sm text-white">
-                        {selectedClauses[slotIndex]!.title}
+                      <div className="text-xs text-green-400 mt-2">
+                        {env.specialEffects}
                       </div>
-                    </motion.div>
-                  ) : (
-                    <span className="text-gray-500 text-sm">
-                      Slot {slotIndex + 1} - Click clause to add
-                    </span>
-                  )}
-                </div>
+                    </div>
+                  </div>
+                </motion.button>
               ))}
             </div>
+          </div>
+        </div>
 
-            {/* Environment Operators */}
-            <div className="mb-8">
-              <h4 className="text-lg font-bold text-green-400 font-mono mb-4">
-                ENVIRONMENT OPERATOR
-              </h4>
-              <div className="space-y-2">
-                {environmentOperators.map((env) => (
-                  <motion.button
-                    key={env.id}
-                    onClick={() =>
-                      setActiveEnvironment(
-                        activeEnvironment === env.id ? null : env.id,
-                      )
-                    }
-                    className={`w-full text-left p-3 rounded border transition-all ${
-                      activeEnvironment === env.id
-                        ? "border-green-400 bg-green-400/10 text-white"
-                        : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
-                    }`}
-                    whileHover={{ scale: 1.01 }}
-                    whileTap={{ scale: 0.99 }}
+        {/* Center: Staging Field */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <h3 className="text-xl font-bold text-green-400 font-mono mb-6 text-center">
+            CLAUSE STAGING FIELD
+          </h3>
+
+          {/* Staging Slots */}
+          <div className="space-y-4 mb-8">
+            {[0, 1, 2].map((slotIndex) => (
+              <div
+                key={slotIndex}
+                className="h-24 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center"
+              >
+                {selectedClauses[slotIndex] ? (
+                  <motion.div
+                    className="w-full h-full p-3 bg-gray-800 rounded border border-gray-600 cursor-pointer"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    onClick={() => removeClause(slotIndex)}
                   >
-                    <div className="flex items-center space-x-3">
-                      <span className="text-lg">{env.icon}</span>
-                      <div>
-                        <div className="font-medium">{env.name}</div>
-                        <div className="text-xs text-gray-400">
-                          {env.description}
-                        </div>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs font-mono text-gray-400">
+                        {selectedClauses[slotIndex]!.id}
+                      </span>
+                      <div className="flex items-center space-x-2">
+                        <div
+                          className="w-2 h-2 rounded-full"
+                          style={{
+                            backgroundColor: selectedClauses[slotIndex]!.color,
+                          }}
+                        />
+                        <span className="text-xs text-red-400">✕</span>
                       </div>
                     </div>
-                  </motion.button>
-                ))}
+                    <div className="text-sm text-white">
+                      {selectedClauses[slotIndex]!.title}
+                    </div>
+                  </motion.div>
+                ) : (
+                  <span className="text-gray-500 text-sm">
+                    Slot {slotIndex + 1} - Click clause to add
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Simulate Button */}
+          <motion.button
+            onClick={simulateSequence}
+            disabled={selectedClauses.every((c) => c === null) || isSimulating}
+            className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-mono font-bold rounded-lg transition-colors"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            {isSimulating ? "SIMULATING..." : "SIMULATE SEQUENCE"}
+          </motion.button>
+        </div>
+
+        {/* Bottom: Full-Width Simulation Output */}
+        <div className="w-full">
+          <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
+            SIMULATION OUTPUT
+          </h3>
+
+          <AnimatePresence>
+            {simulationResult && (
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 50 }}
+                className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+              >
+                {/* Vector Projection */}
+                <div className="p-6 rounded-lg border border-gray-600 bg-gray-800/50">
+                  <h4 className="text-green-400 font-mono mb-4 text-lg">
+                    VECTOR PROJECTION ϕ(c,𝓔)
+                  </h4>
+                  <div className="space-y-4">
+                    {Object.entries(simulationResult.vector).map(
+                      ([key, value]) => (
+                        <div key={key}>
+                          <div className="flex justify-between text-sm mb-2">
+                            <span className="text-gray-300 font-mono">
+                              {key}
+                            </span>
+                            <span className="text-white font-bold">
+                              {(value as number).toFixed(3)}
+                            </span>
+                          </div>
+                          <div className="w-full bg-gray-700 rounded-full h-3">
+                            <motion.div
+                              className="bg-green-400 h-3 rounded-full"
+                              initial={{ width: 0 }}
+                              animate={{
+                                width: `${(value as number) * 100}%`,
+                              }}
+                              transition={{ duration: 1, delay: 0.2 }}
+                            />
+                          </div>
+                        </div>
+                      ),
+                    )}
+                  </div>
+                </div>
+
+                {/* Structural Outcome */}
+                <div className="p-6 rounded-lg border border-gray-600 bg-gray-800/50">
+                  <h4 className="text-green-400 font-mono mb-4 text-lg">
+                    STRUCTURAL OUTCOME
+                  </h4>
+                  <div className="bg-yellow-400/20 border border-yellow-400 rounded-lg px-4 py-6 text-center">
+                    <span className="text-yellow-400 font-mono font-bold text-xl">
+                      {simulationResult.outcome}
+                    </span>
+                  </div>
+                  <div className="mt-4 text-gray-300 text-sm">
+                    Classification based on dominant risk vector component
+                  </div>
+                </div>
+
+                {/* Loophole Profile */}
+                {simulationResult.loopholeProfile && (
+                  <div className="p-6 rounded-lg border border-gray-600 bg-gray-800/50">
+                    <h4 className="text-green-400 font-mono mb-4 text-lg">
+                      LOOPHOLE PROFILE
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="text-white font-medium text-lg">
+                        {simulationResult.loopholeProfile.class}
+                      </div>
+                      <div className="text-gray-300 text-sm leading-relaxed">
+                        {simulationResult.loopholeProfile.description}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {!simulationResult && !isSimulating && (
+            <div className="text-center text-gray-500 py-16">
+              <div className="text-6xl mb-6">⚡</div>
+              <div className="text-xl font-mono">
+                Configure sequence and simulate to see results
+              </div>
+              <div className="text-sm text-gray-400 mt-2">
+                Add clauses to staging field and select environment operator
               </div>
             </div>
+          )}
 
-            {/* Simulate Button */}
-            <motion.button
-              onClick={simulateSequence}
-              disabled={
-                selectedClauses.every((c) => c === null) || isSimulating
-              }
-              className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-mono font-bold rounded-lg transition-colors"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {isSimulating ? "SIMULATING..." : "SIMULATE SEQUENCE"}
-            </motion.button>
-          </div>
-
-          {/* Right: Output Panel */}
-          <div>
-            <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
-              SIMULATION OUTPUT
-            </h3>
-
-            <AnimatePresence>
-              {simulationResult && (
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  className="space-y-6"
-                >
-                  {/* Vector Projection */}
-                  <div className="p-4 rounded-lg border border-gray-600 bg-gray-800/50">
-                    <h4 className="text-green-400 font-mono mb-3">
-                      VECTOR PROJECTION ϕ(c,𝓔)
-                    </h4>
-                    <div className="space-y-2">
-                      {Object.entries(simulationResult.vector).map(
-                        ([key, value]) => (
-                          <div key={key}>
-                            <div className="flex justify-between text-sm mb-1">
-                              <span className="text-gray-300">{key}</span>
-                              <span className="text-white">
-                                {(value as number).toFixed(2)}
-                              </span>
-                            </div>
-                            <div className="w-full bg-gray-700 rounded-full h-2">
-                              <motion.div
-                                className="bg-green-400 h-2 rounded-full"
-                                initial={{ width: 0 }}
-                                animate={{
-                                  width: `${(value as number) * 100}%`,
-                                }}
-                                transition={{ duration: 1, delay: 0.2 }}
-                              />
-                            </div>
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Structural Outcome */}
-                  <div className="p-4 rounded-lg border border-gray-600 bg-gray-800/50">
-                    <h4 className="text-green-400 font-mono mb-3">
-                      STRUCTURAL OUTCOME
-                    </h4>
-                    <div className="bg-yellow-400/20 border border-yellow-400 rounded px-3 py-2">
-                      <span className="text-yellow-400 font-mono font-bold">
-                        {simulationResult.outcome}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Loophole Profile */}
-                  {simulationResult.loopholeProfile && (
-                    <div className="p-4 rounded-lg border border-gray-600 bg-gray-800/50">
-                      <h4 className="text-green-400 font-mono mb-3">
-                        LOOPHOLE PROFILE
-                      </h4>
-                      <div className="space-y-2">
-                        <div className="text-white font-medium">
-                          {simulationResult.loopholeProfile.class}
-                        </div>
-                        <div className="text-gray-300 text-sm">
-                          {simulationResult.loopholeProfile.description}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {!simulationResult && !isSimulating && (
-              <div className="text-center text-gray-500 py-12">
-                <div className="text-4xl mb-4">⚡</div>
-                <div>Configure sequence and simulate to see results</div>
+          {isSimulating && (
+            <div className="text-center text-green-400 py-16">
+              <motion.div
+                className="text-6xl mb-6"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                ⚙️
+              </motion.div>
+              <div className="font-mono text-xl">
+                Processing legal sequence...
               </div>
-            )}
-
-            {isSimulating && (
-              <div className="text-center text-green-400 py-12">
-                <motion.div
-                  className="text-4xl mb-4"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                >
-                  ⚙️
-                </motion.div>
-                <div className="font-mono">Processing legal sequence...</div>
+              <div className="text-sm text-gray-400 mt-2">
+                Analyzing clause interactions and environmental modifiers
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
