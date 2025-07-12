@@ -153,10 +153,13 @@ export default function Index() {
             <div className="text-center -mt-20 drop-shadow-2xl max-w-4xl px-4">
               {/* Header: ϕ(c) active */}
               <h1
-                className="text-xl font-mono font-medium mb-2"
+                className="text-xl font-mono font-medium mb-2 animate-pulse"
                 style={{
                   color: "#17B58F",
                   fontFamily: "IBM Plex Mono, JetBrains Mono, monospace",
+                  textShadow:
+                    "0 0 10px #17B58F, 0 0 20px #17B58F40, 0 0 30px #17B58F20",
+                  animation: "pulse-glow 3s ease-in-out infinite",
                 }}
               >
                 ϕ(c, 𝓔) = ∑ αᵢeᵢ + ∇𝓔
