@@ -179,9 +179,14 @@ const ModuleGrid = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 mt-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 font-mono tracking-tight">
-            SEMANTIC INTELLIGENCE ENGINES
-          </h2>
+          <motion.h2
+            className="text-4xl lg:text-5xl font-bold text-white mb-8 font-mono tracking-tight"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Core Modules Overview
+          </motion.h2>
         </div>
 
         {/* Module Grid - 2x4 responsive layout */}
