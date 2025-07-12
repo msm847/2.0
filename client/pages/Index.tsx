@@ -155,7 +155,7 @@ export default function Index() {
               <h1
                 className="text-xl font-mono font-medium mb-2"
                 style={{
-                  color: "#48FFB2",
+                  color: "#17B58F",
                   fontFamily: "IBM Plex Mono, JetBrains Mono, monospace",
                 }}
               >
@@ -166,7 +166,7 @@ export default function Index() {
               <p
                 className="italic font-mono"
                 style={{
-                  color: "#8FC2B0",
+                  color: "#9DE6C6",
                   fontFamily: "IBM Plex Mono, 'Suisse Int'l Mono', monospace",
                   fontSize: "0.85em",
                   letterSpacing: "0.02em",
@@ -263,7 +263,7 @@ export default function Index() {
               >
                 NEXUS POTENTIA
               </Link>
-              <span className="text-gray-600">•</span>
+              <span className="text-gray-600">���</span>
               <Link
                 to="/module/vigilo-core"
                 className="hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block relative"
