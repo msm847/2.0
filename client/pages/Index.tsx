@@ -223,26 +223,7 @@ export default function Index() {
           </div>
 
 
-              <Link
-                to="/module/clavis"
-                className="hover:text-blue-400 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #60a5fa, 0 0 25px #60a5fa40";
-                  e.target.style.filter = "drop-shadow(0 0 8px #60a5fa60)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                CLAVIS
-              </Link>
-              <span className="text-gray-600">•</span>
+
               <Link
                 to="/module/obscura"
                 className="hover:text-red-400 transition-all duration-300 hover:scale-110 inline-block relative"
