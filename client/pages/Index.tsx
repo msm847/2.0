@@ -163,7 +163,7 @@ export default function Index() {
           {/* System Identity - Centered in middle of page */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="text-center -mt-20 drop-shadow-2xl max-w-4xl px-4">
-              {/* Header: ϕ(c) active */}
+              {/* Header: Mathematical Expression */}
               <h1
                 className="text-xl font-mono font-medium mb-2 animate-pulse"
                 style={{
@@ -219,131 +219,6 @@ export default function Index() {
                   ENTER STRUCTURE
                 </Link>
               </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
-  );
-}
-                to="/module/obscura"
-                className="hover:text-red-400 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #f87171, 0 0 25px #f8717140";
-                  e.target.style.filter = "drop-shadow(0 0 8px #f8717160)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                OBSCURA
-              </Link>
-              <span className="text-gray-600">•</span>
-              <Link
-                to="/module/nullum"
-                className="hover:text-gray-300 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #9ca3af, 0 0 25px #9ca3af40";
-                  e.target.style.filter = "drop-shadow(0 0 8px #9ca3af60)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                NULLUM
-              </Link>
-              <span className="text-gray-600">•</span>
-              <Link
-                to="/module/nexus-potentia"
-                className="hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #a78bfa, 0 0 25px #a78bfa40";
-                  e.target.style.filter = "drop-shadow(0 0 8px #a78bfa60)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                NEXUS POTENTIA
-              </Link>
-              <span className="text-gray-600">���</span>
-              <Link
-                to="/module/vigilo-core"
-                className="hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #34d399, 0 0 25px #34d39940";
-                  e.target.style.filter = "drop-shadow(0 0 8px #34d39960)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                VIGILO CORE
-              </Link>
-              <span className="text-gray-600">���</span>
-              <Link
-                to="/module/veris"
-                className="hover:text-yellow-400 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #fbbf24, 0 0 25px #fbbf2440";
-                  e.target.style.filter = "drop-shadow(0 0 8px #fbbf2460)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                VERIS
-              </Link>
-              <span className="text-gray-600">•</span>
-              <Link
-                to="/module/sentium"
-                className="hover:text-cyan-400 transition-all duration-300 hover:scale-110 inline-block relative"
-                style={{
-                  textShadow: "none",
-                  filter: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.textShadow =
-                    "0 0 15px #22d3ee, 0 0 25px #22d3ee40";
-                  e.target.style.filter = "drop-shadow(0 0 8px #22d3ee60)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.textShadow = "none";
-                  e.target.style.filter = "none";
-                }}
-              >
-                SENTIUM
-              </Link>
             </div>
           </div>
         </main>
