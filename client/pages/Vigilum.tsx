@@ -4,6 +4,7 @@ import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import WhatWeFight from "@/components/vigilum/WhatWeFight";
 import ModuleGrid from "@/components/vigilum/ModuleGrid";
+import LegalStructuralSimulator from "@/components/vigilum/LegalStructuralSimulator";
 import CoreIntelligence from "@/components/vigilum/CoreIntelligence";
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
 import UseCases from "@/components/vigilum/UseCases";
@@ -44,6 +45,7 @@ const VigilumPage = () => {
       <div id="modules">
         <ModuleGrid />
       </div>
+      <LegalStructuralSimulator />
       <div id="about">
         <CoreIntelligence />
       </div>
