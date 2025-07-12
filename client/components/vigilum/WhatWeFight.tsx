@@ -43,35 +43,31 @@ const tiers: Tier[] = [
   },
 ];
 
-const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
-  tier,
-  index,
-}) => {
+const TierComponent: React.FC<{ tier: Tier; index: number }> = ({ tier, index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    threshold: 0.3,
-    margin: "-20% 0px -20% 0px",
+    threshold: 0.2,
+    margin: "-10% 0px -10% 0px"
   });
 
   return (
     <motion.div
       ref={ref}
-      className="relative"
-      initial={{ opacity: 0, y: 100 }}
-      animate={
-        isInView
-          ? { opacity: 1, y: 0, scale: 1 }
-          : { opacity: 0, y: 100, scale: 0.9 }
-      }
+      className="relative p-6 rounded-lg"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut",
-        delay: index * 0.1,
+        delay: index * 0.15,
       }}
       style={{
-        boxShadow: tier.highlightColor
-          ? `0 0 30px ${tier.highlightColor}20`
+        boxShadow: tier.highlightColor && isInView
+          ? `0 0 30px ${tier.highlightColor}20, 0 0 10px ${tier.highlightColor}10`
           : "none",
+        backgroundColor: tier.highlightColor && isInView
+          ? `${tier.highlightColor}05`
+          : "transparent",
       }}
     >
       {/* Tier Title */}
@@ -128,39 +124,33 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
 
 const WhatWeFight: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const finalStatementRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"],
+  const finalStatementRef = useRef<HTMLParagraphElement>(null);
+  const tier4Ref = useRef<HTMLDivElement>(null);
+
+  const isTier4InView = useInView(tier4Ref, {
+    threshold: 0.3,
+    margin: "-20% 0px -20% 0px"
   });
 
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0, 0.7, 1],
-    ["#151A13", "#151A13", "#0D1510"],
-  );
-
   const isInViewFinal = useInView(finalStatementRef, {
-    threshold: 0.5,
-    margin: "0px 0px -10% 0px",
+    threshold: 0.3,
+    margin: "0px 0px -20% 0px"
   });
 
   return (
-    <motion.section
+    <section
       ref={containerRef}
-      className="min-h-screen pt-20 pb-20 pl-12 pr-12"
-      style={
-        {
-          backgroundColor,
-          "--color-bg-base": "#151A13",
-          "--color-text-primary": "#DAD7C7",
-          "--color-highlight-rt": "#E27E3C",
-          "--color-highlight-ci": "#DB4F4F",
-          "--color-highlight-sb": "#9F77C9",
-          "--color-structural-glow": "#17B58F",
-          "--color-final-quote": "#E1D16D",
-        } as React.CSSProperties
-      }
+      className="min-h-screen pt-20 pb-20 pl-12 pr-12 transition-colors duration-1000"
+      style={{
+        backgroundColor: isTier4InView ? "#0D1510" : "#151A13",
+        "--color-bg-base": "#151A13",
+        "--color-text-primary": "#DAD7C7",
+        "--color-highlight-rt": "#E27E3C",
+        "--color-highlight-ci": "#DB4F4F",
+        "--color-highlight-sb": "#9F77C9",
+        "--color-structural-glow": "#17B58F",
+        "--color-final-quote": "#E1D16D",
+      } as React.CSSProperties}
     >
       <div className="max-w-screen-xl mx-auto">
         {/* Section Title */}
@@ -170,9 +160,9 @@ const WhatWeFight: React.FC = () => {
             color: "#DAD7C7",
             fontFamily: "Inter, sans-serif",
           }}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-20%" }}
         >
           WHAT WE FIGHT
@@ -181,34 +171,36 @@ const WhatWeFight: React.FC = () => {
         {/* Tier Pyramid */}
         <div className="flex flex-col gap-12">
           {tiers.map((tier, index) => (
-            <TierComponent key={tier.id} tier={tier} index={index} />
+            <div
+              key={tier.id}
+              ref={tier.id === 4 ? tier4Ref : undefined}
+            >
+              <TierComponent tier={tier} index={index} />
+            </div>
           ))}
         </div>
 
         {/* Final Statement */}
-        <motion.div
-          ref={finalStatementRef}
-          className="text-center pt-16 mt-16"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{
-            opacity: isInViewFinal ? 1 : 0,
-            y: isInViewFinal ? 0 : 50,
-          }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
+        <div className="text-center pt-12 mt-8">
           <motion.p
+            ref={finalStatementRef}
             className="text-2xl font-semibold tracking-tight"
             style={{
               color: "#E1D16D",
               fontFamily: "Inter, sans-serif",
             }}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: isInViewFinal ? 1 : 0,
+            }}
+            transition={{ duration: 1, delay: 0.3 }}
             whileHover={{
               textShadow: "0 0 20px #E1D16D60",
             }}
           >
             "This system isn't broken. It's working as simulated."
           </motion.p>
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );
