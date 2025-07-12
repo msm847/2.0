@@ -347,36 +347,7 @@ const SequenceLogicSimulator: React.FC = () => {
         scrollSnapAlign: "start",
       }}
     >
-      {/* Immersive Intro */}
       <div className="container mx-auto px-4 py-16 relative z-10">
-        <motion.div
-          className="text-center mb-12"
-          variants={stutterVariants}
-          animate={headerControls}
-          initial="initial"
-        >
-          <h1
-            className="font-mono font-semibold tracking-tight mb-6"
-            style={{
-              fontSize: "48px",
-              color: "#DAD7C7",
-              fontFamily: "Inter, monospace",
-            }}
-          >
-            SEQUENCES DO NOT FOLLOW MEANING. THEY PRODUCE IT.
-          </h1>
-          <motion.p
-            className="text-lg mb-8"
-            style={{ color: "#9DE6C6" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            Observe how three identical legal clauses produce divergent
-            realities when rearranged under pressure.
-          </motion.p>
-        </motion.div>
-
         {/* Environment Modulators */}
         <div className="flex justify-center space-x-4 mb-12">
           {environmentModulators.map((env) => (
