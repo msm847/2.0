@@ -42,6 +42,18 @@ export default function Index() {
         background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
       }}
     >
+      <style>{`
+        @keyframes pulse-glow {
+          0%, 100% {
+            text-shadow: 0 0 10px #17B58F, 0 0 20px #17B58F40, 0 0 30px #17B58F20;
+            opacity: 1;
+          }
+          50% {
+            text-shadow: 0 0 20px #17B58F, 0 0 30px #17B58F60, 0 0 40px #17B58F40;
+            opacity: 0.8;
+          }
+        }
+      `}</style>
       <MatrixBackground />
 
       <div className="relative z-50">
