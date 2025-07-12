@@ -234,7 +234,7 @@ const LegalStructuralSimulator: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Left: Available Clauses - Scrollable */}
           <div>
             <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
@@ -285,6 +285,68 @@ const LegalStructuralSimulator: React.FC = () => {
             </div>
           </div>
 
+          {/* Center: Staging Field */}
+          <div>
+            <h3 className="text-xl font-bold text-green-400 font-mono mb-6 text-center">
+              CLAUSE STAGING FIELD
+            </h3>
+
+            {/* Staging Slots */}
+            <div className="space-y-4 mb-8">
+              {[0, 1, 2].map((slotIndex) => (
+                <div
+                  key={slotIndex}
+                  className="h-24 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center"
+                >
+                  {selectedClauses[slotIndex] ? (
+                    <motion.div
+                      className="w-full h-full p-3 bg-gray-800 rounded border border-gray-600 cursor-pointer"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      onClick={() => removeClause(slotIndex)}
+                    >
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-mono text-gray-400">
+                          {selectedClauses[slotIndex]!.id}
+                        </span>
+                        <div className="flex items-center space-x-2">
+                          <div
+                            className="w-2 h-2 rounded-full"
+                            style={{
+                              backgroundColor:
+                                selectedClauses[slotIndex]!.color,
+                            }}
+                          />
+                          <span className="text-xs text-red-400">✕</span>
+                        </div>
+                      </div>
+                      <div className="text-sm text-white">
+                        {selectedClauses[slotIndex]!.title}
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <span className="text-gray-500 text-sm">
+                      Slot {slotIndex + 1} - Click clause to add
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Simulate Button */}
+            <motion.button
+              onClick={simulateSequence}
+              disabled={
+                selectedClauses.every((c) => c === null) || isSimulating
+              }
+              className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-mono font-bold rounded-lg transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {isSimulating ? "SIMULATING..." : "SIMULATE SEQUENCE"}
+            </motion.button>
+          </div>
+
           {/* Right: Environment Operators */}
           <div>
             <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
@@ -323,65 +385,6 @@ const LegalStructuralSimulator: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Center: Staging Field */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <h3 className="text-xl font-bold text-green-400 font-mono mb-6 text-center">
-            CLAUSE STAGING FIELD
-          </h3>
-
-          {/* Staging Slots */}
-          <div className="space-y-4 mb-8">
-            {[0, 1, 2].map((slotIndex) => (
-              <div
-                key={slotIndex}
-                className="h-24 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center"
-              >
-                {selectedClauses[slotIndex] ? (
-                  <motion.div
-                    className="w-full h-full p-3 bg-gray-800 rounded border border-gray-600 cursor-pointer"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    onClick={() => removeClause(slotIndex)}
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-mono text-gray-400">
-                        {selectedClauses[slotIndex]!.id}
-                      </span>
-                      <div className="flex items-center space-x-2">
-                        <div
-                          className="w-2 h-2 rounded-full"
-                          style={{
-                            backgroundColor: selectedClauses[slotIndex]!.color,
-                          }}
-                        />
-                        <span className="text-xs text-red-400">✕</span>
-                      </div>
-                    </div>
-                    <div className="text-sm text-white">
-                      {selectedClauses[slotIndex]!.title}
-                    </div>
-                  </motion.div>
-                ) : (
-                  <span className="text-gray-500 text-sm">
-                    Slot {slotIndex + 1} - Click clause to add
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Simulate Button */}
-          <motion.button
-            onClick={simulateSequence}
-            disabled={selectedClauses.every((c) => c === null) || isSimulating}
-            className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-mono font-bold rounded-lg transition-colors"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            {isSimulating ? "SIMULATING..." : "SIMULATE SEQUENCE"}
-          </motion.button>
         </div>
 
         {/* Bottom: Full-Width Simulation Output */}
