@@ -173,20 +173,88 @@ const SequenceLogicSimulator: React.FC = () => {
   );
   const [hoveredClause, setHoveredClause] = useState<string | null>(null);
   const [hoveredReality, setHoveredReality] = useState<string | null>(null);
+  const [isAutoCycling, setIsAutoCycling] = useState(false);
+  const [systemMorph, setSystemMorph] = useState(false);
+  const [sequenceTimeline, setSequenceTimeline] = useState(0);
+  const [previewOverride, setPreviewOverride] = useState<string | null>(null);
 
+  const headerControls = useAnimation();
+  const canvasControls = useAnimation();
+  const perceptionRipple = useRef<HTMLDivElement>(null);
+
+  // Stutter glitch effect for header
+  const stutterVariants = {
+    initial: { opacity: 1, x: 0, filter: "blur(0px)" },
+    glitch: {
+      opacity: [1, 0.3, 1, 0.7, 1],
+      x: [0, -2, 2, -1, 0],
+      filter: [
+        "blur(0px)",
+        "blur(1px)",
+        "blur(0px)",
+        "blur(0.5px)",
+        "blur(0px)",
+      ],
+      transition: { duration: 0.3, times: [0, 0.2, 0.4, 0.7, 1] },
+    },
+  };
+
+  // Environment system morph trigger
+  const handleEnvironmentToggle = useCallback(
+    (envId: string) => {
+      setSystemMorph(true);
+      setActiveEnvironment(activeEnvironment === envId ? null : envId);
+
+      // Flash system-wide morph
+      canvasControls.start({
+        scale: [1, 1.02, 0.98, 1],
+        filter: [
+          "brightness(1)",
+          "brightness(1.2)",
+          "brightness(0.8)",
+          "brightness(1)",
+        ],
+        transition: { duration: 0.8 },
+      });
+
+      setTimeout(() => setSystemMorph(false), 800);
+    },
+    [activeEnvironment, canvasControls],
+  );
+
+  // Drag handlers with preview override
   const handleDragStart = useCallback((clause: ClauseData) => {
     setDraggedClause(clause);
+    setPreviewOverride(`${clause.id} → preview path`);
   }, []);
 
   const handleDrop = useCallback(
-    (e: React.DragEvent) => {
+    (e: React.DragEvent, slotIndex?: number) => {
       e.preventDefault();
-      if (draggedClause && currentSequence.length < 3) {
-        setCurrentSequence((prev) => [...prev, draggedClause]);
+      if (draggedClause) {
+        if (slotIndex !== undefined) {
+          // Drop in specific slot
+          setCurrentSequence((prev) => {
+            const newSequence = [...prev];
+            newSequence[slotIndex] = draggedClause;
+            return newSequence;
+          });
+        } else if (currentSequence.length < 3) {
+          // Add to end
+          setCurrentSequence((prev) => [...prev, draggedClause]);
+        }
         setDraggedClause(null);
+        setPreviewOverride(null);
+        setSequenceTimeline((prev) => prev + 1);
+
+        // Trigger staggered horizontal collapse
+        canvasControls.start({
+          x: [-5, 5, -2, 0],
+          transition: { duration: 0.6, staggerChildren: 0.1 },
+        });
       }
     },
-    [draggedClause, currentSequence.length],
+    [draggedClause, currentSequence.length, canvasControls],
   );
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -195,15 +263,36 @@ const SequenceLogicSimulator: React.FC = () => {
 
   const removeFromSequence = useCallback((index: number) => {
     setCurrentSequence((prev) => prev.filter((_, i) => i !== index));
+    setSequenceTimeline((prev) => prev + 1);
   }, []);
 
-  const reorderSequence = useCallback((fromIndex: number, toIndex: number) => {
-    setCurrentSequence((prev) => {
-      const newSequence = [...prev];
-      const [removed] = newSequence.splice(fromIndex, 1);
-      newSequence.splice(toIndex, 0, removed);
-      return newSequence;
-    });
+  // Auto-cycling through all permutations
+  const beginFullLoop = useCallback(() => {
+    setIsAutoCycling(true);
+    const allPermutations = [
+      ["C3.2", "C5.1", "C2.7"],
+      ["C3.2", "C2.7", "C5.1"],
+      ["C5.1", "C3.2", "C2.7"],
+      ["C5.1", "C2.7", "C3.2"],
+      ["C2.7", "C3.2", "C5.1"],
+      ["C2.7", "C5.1", "C3.2"],
+    ];
+
+    let currentIndex = 0;
+    const cycleInterval = setInterval(() => {
+      const currentPerm = allPermutations[currentIndex];
+      const clauses = currentPerm.map(
+        (id) => liveClauseChips.find((c) => c.id === id)!,
+      );
+      setCurrentSequence(clauses);
+      setSequenceTimeline((prev) => prev + 1);
+
+      currentIndex++;
+      if (currentIndex >= allPermutations.length) {
+        clearInterval(cycleInterval);
+        setIsAutoCycling(false);
+      }
+    }, 2000);
   }, []);
 
   const getCurrentReality = useCallback(() => {
@@ -215,7 +304,39 @@ const SequenceLogicSimulator: React.FC = () => {
     );
   }, [currentSequence]);
 
+  const getClauseVisualEffect = (clause: ClauseData) => {
+    const effects = {
+      "GlitchRed + PulseGlowEdge": {
+        backgroundColor: "#DB4F4F20",
+        borderColor: "#DB4F4F",
+        boxShadow: "0 0 20px rgba(219, 79, 79, 0.6)",
+        animation: "pulse 2s infinite",
+      },
+      "GhostViolet + DelayBlur": {
+        backgroundColor: "#9F77C920",
+        borderColor: "#9F77C9",
+        filter: "blur(0.5px)",
+        opacity: 0.8,
+      },
+      "ObscuraFog + FadeOpacity": {
+        backgroundColor: "#E1D16D20",
+        borderColor: "#E1D16D",
+        opacity: 0.6,
+        filter: "blur(1px)",
+      },
+    };
+    return effects[clause.visual as keyof typeof effects] || {};
+  };
+
   const currentReality = getCurrentReality();
+
+  // Trigger header stutter effect periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      headerControls.start("glitch");
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [headerControls]);
 
   return (
     <section
