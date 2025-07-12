@@ -220,7 +220,7 @@ const LegalStructuralSimulator: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            LEGAL-STRUCTURAL SIMULATION ENGINE
+            CLAUSE SIMULATOR
           </motion.h2>
 
           <div className="max-w-4xl mx-auto mb-12">
