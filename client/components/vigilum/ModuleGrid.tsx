@@ -179,14 +179,14 @@ const ModuleGrid = () => {
     <div className="py-20 px-4" style={{ backgroundColor: "#0B1E16" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16 mt-16">
+        <div className="text-center mb-16 mt-8">
           <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-white mb-8 font-mono tracking-tight"
+            className="text-4xl lg:text-5xl font-bold text-white mb-8 font-mono tracking-tight uppercase"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Core Modules Overview
+            CORE MODULES OVERVIEW
           </motion.h2>
         </div>
 
