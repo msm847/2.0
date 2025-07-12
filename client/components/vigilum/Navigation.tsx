@@ -137,14 +137,14 @@ const Navigation = () => {
                     ENGINES
                   </button>
                   <button
-                    onClick={() => handleNavigation("#about")}
+                    onClick={() => handleNavigation("#clause-simulator")}
                     className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
-                      activeSection === "about"
+                      activeSection === "clause-simulator"
                         ? "text-green-400 bg-green-400/10"
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
                     }`}
                   >
-                    METHODOLOGY
+                    CLAUSE SIMULATOR
                   </button>
                   <button
                     onClick={() => handleNavigation("#demo")}
