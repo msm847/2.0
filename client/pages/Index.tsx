@@ -54,7 +54,6 @@ export default function Index() {
           }
         }
       `}</style>
-      <MatrixBackground />
 
       {/* Floating VIGILUM.AI Logo */}
       <div className="absolute top-6 left-6 z-50">
