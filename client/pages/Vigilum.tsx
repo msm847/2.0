@@ -7,6 +7,7 @@ import ModuleGrid from "@/components/vigilum/ModuleGrid";
 import LegalStructuralSimulator from "@/components/vigilum/LegalStructuralSimulator";
 
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
+import InfiniteMenu from "@/components/ui/InfiniteMenu";
 import UseCases from "@/components/vigilum/UseCases";
 import TeamContact from "@/components/vigilum/TeamContact";
 
