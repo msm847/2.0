@@ -16,37 +16,6 @@ const UseCases = () => {
 
   const cases = [
     {
-      id: "L001",
-      title:
-        "Article 32(2)(a) – Negotiated procedure without prior publication",
-      sector: "Cross-sector (example scenario in IT procurement)",
-      amount: "N/A",
-      duration: "Tender design stage (pre-tender planning)",
-      status: "High Risk",
-      riskLevel: 0.7,
-      typology: "High",
-      description:
-        "Creates a backdoor to direct contracting. By intentionally or unintentionally engineering a failed tender, an authority can award a sole-source contract while remaining formally compliant with procurement rules.",
-      originalClause:
-        '"(a) where no tenders or no suitable tenders or no requests to participate or no suitable requests to participate have been submitted in response to an open procedure or a restricted procedure, provided that the initial conditions of the contract are not substantially altered…"',
-      riskIndicators: [
-        "Open tenders fail to attract any valid bids, often due to overly narrow or impractical requirements (potentially deliberate)",
-        'After a tender is canceled for "no suitable offers," a direct award is negotiated with a preferred supplier',
-        'Repeated use of "no suitable tender" justifications, suggesting the tender failures were orchestrated to bypass competition',
-      ],
-      overridePath: [
-        "Open tender held – Contracting authority conducts an open or restricted procedure",
-        'Tender fails – No bids (or no "suitable" bids) are received, resulting in a failed competition',
-        "Clause invoked – Authority invokes Article 32(2)(a) after the failed tender",
-        "Direct award – A negotiated contract is awarded directly to a chosen supplier without a new tender",
-      ],
-      outcome:
-        'This clause creates a backdoor to direct contracting. By intentionally or unintentionally engineering a failed tender, an authority can award a sole-source contract while remaining formally compliant with procurement rules. It embeds a discretionary escape hatch (the authority\'s judgment of "no suitable tender") that can be abused to bypass open competition.',
-      detection:
-        "Vigilum flag Clause32_2a. Preventable – An AI/Oversight system can flag instances where tenders repeatedly yield no valid bids, enabling early investigation of potential manipulation. (Blatant patterns can be detected, though single instances are harder to prove as intentional.)",
-      preventable: true,
-    },
-    {
       id: "L002",
       title: "Article 32(2)(c) – Extreme urgency due to unforeseeable events",
       sector:
