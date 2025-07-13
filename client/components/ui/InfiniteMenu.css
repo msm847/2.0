@@ -39,7 +39,7 @@
 
 .action-button {
   position: absolute;
-  bottom: 30px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -56,9 +56,7 @@
 }
 
 .action-button:hover {
-  background: #17b58f;
   transform: translateX(-50%) scale(1.1);
-  box-shadow: 0 0 20px rgba(23, 181, 143, 0.6);
 }
 
 .action-button-icon {
