@@ -10,6 +10,7 @@ import {
   Calendar,
   DollarSign,
 } from "lucide-react";
+import InfiniteMenu from "@/components/ui/InfiniteMenu";
 
 const UseCases = () => {
   const [selectedCase, setSelectedCase] = useState(0);
