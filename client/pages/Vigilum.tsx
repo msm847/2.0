@@ -59,44 +59,38 @@ const VigilumPage = () => {
             {
               color: "#d4a300",
               link: "/loophole/L001",
-              title: "L001 – Emergency Procurement Shell",
-              description:
-                "Simulates urgency to bypass competition via discretionary trigger.",
+              title: "Directive 2014/24/EU – Article 32(2)(a)",
+              description: "Negotiated procedure without prior publication",
             },
             {
               color: "#b4241d",
               link: "/loophole/L002",
-              title: "L002 – Indexation Spiral",
-              description:
-                "Legally inflates public cost by pegging prices to volatile indexes.",
+              title: "Directive 2014/24/EU – Article 68(1)(b)",
+              description: "Price revision formula based on indexation",
             },
             {
               color: "#1e2b44",
               link: "/loophole/L003",
-              title: "L003 – In-House Disguise",
-              description:
-                "Simulates public-public cooperation to mask hidden subcontracting.",
+              title: "Directive 2014/24/EU – Article 12(1)",
+              description: "Public-public cooperation exemption",
             },
             {
               color: "#1e2b44",
               link: "/loophole/L004",
-              title: "L004 – One-Sided Termination",
-              description:
-                "Simulates bilateralism, grants private unilateral exit rights.",
+              title: "Directive 2014/23/EU – Article 44(1)(d)",
+              description: "Unilateral termination clause logic",
             },
             {
               color: "#d4a300",
               link: "/loophole/L005",
-              title: "L005 – Unbounded Modification",
-              description:
-                "Uses vague modification clauses to expand contract without tender.",
+              title: "Directive 2014/24/EU – Article 72(1)(c)",
+              description: "Contract modification without new procedure",
             },
             {
               color: "#5a4d7c",
               link: "/loophole/L006",
-              title: "L006 – Non-Transparent Framework",
-              description:
-                "Simulates transparency via frameworks with hidden award logic.",
+              title: "Directive 2014/24/EU – Article 33(1)",
+              description: "Framework agreement without re-opening terms",
             },
           ]}
         />
