@@ -72,17 +72,17 @@ void main() {
     ivec2 texSize = textureSize(uTex, 0);
     float imageAspect = float(texSize.x) / float(texSize.y);
     float containerAspect = 1.0;
-    
-    float scale = max(imageAspect / containerAspect, 
+
+    float scale = max(imageAspect / containerAspect,
                      containerAspect / imageAspect);
-    
+
     vec2 st = vec2(vUvs.x, 1.0 - vUvs.y);
     st = (st - 0.5) * scale + 0.5;
-    
+
     st = clamp(st, 0.0, 1.0);
-    
+
     st = st * cellSize + cellOffset;
-    
+
     outColor = texture(uTex, st);
     outColor.a *= vAlpha;
 }
@@ -799,21 +799,31 @@ class InfiniteGridMenu {
     canvas.width = this.atlasSize * cellSize;
     canvas.height = this.atlasSize * cellSize;
 
-    Promise.all(
-      this.items.map(
-        (item) =>
-          new Promise((resolve) => {
-            const img = new Image();
-            img.crossOrigin = "anonymous";
-            img.onload = () => resolve(img);
-            img.src = item.image;
-          }),
-      ),
-    ).then((images) => {
-      images.forEach((img, i) => {
+    // Handle both color and image items
+    const processItems = () => {
+      this.items.forEach((item, i) => {
         const x = (i % this.atlasSize) * cellSize;
         const y = Math.floor(i / this.atlasSize) * cellSize;
-        ctx.drawImage(img, x, y, cellSize, cellSize);
+
+        if (item.color) {
+          // Create colored square
+          ctx.fillStyle = item.color;
+          ctx.fillRect(x, y, cellSize, cellSize);
+
+          // Add subtle gradient for visual interest
+          const gradient = ctx.createRadialGradient(
+            x + cellSize / 2,
+            y + cellSize / 2,
+            0,
+            x + cellSize / 2,
+            y + cellSize / 2,
+            cellSize / 2,
+          );
+          gradient.addColorStop(0, "rgba(255, 255, 255, 0.1)");
+          gradient.addColorStop(1, "rgba(0, 0, 0, 0.2)");
+          ctx.fillStyle = gradient;
+          ctx.fillRect(x, y, cellSize, cellSize);
+        }
       });
 
       gl.bindTexture(gl.TEXTURE_2D, this.tex);
@@ -826,7 +836,41 @@ class InfiniteGridMenu {
         canvas,
       );
       gl.generateMipmap(gl.TEXTURE_2D);
-    });
+    };
+
+    // Check if items have images or colors
+    const hasImages = this.items.some((item) => item.image);
+
+    if (hasImages) {
+      // Load images if present
+      Promise.all(
+        this.items.map(
+          (item) =>
+            new Promise((resolve) => {
+              if (item.image) {
+                const img = new Image();
+                img.crossOrigin = "anonymous";
+                img.onload = () => resolve(img);
+                img.src = item.image;
+              } else {
+                resolve(null);
+              }
+            }),
+        ),
+      ).then((images) => {
+        images.forEach((img, i) => {
+          const x = (i % this.atlasSize) * cellSize;
+          const y = Math.floor(i / this.atlasSize) * cellSize;
+          if (img) {
+            ctx.drawImage(img, x, y, cellSize, cellSize);
+          }
+        });
+        processItems();
+      });
+    } else {
+      // Only process colors
+      processItems();
+    }
   }
 
   #initDiscInstances(count) {
