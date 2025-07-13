@@ -891,3 +891,44 @@
 .vigilum-scrollbar::-ms-scrollbar-thumb:hover {
   background: rgba(34, 68, 54, 0.8);
 }
+
+/* ===== MOBILE OVERFLOW PROTECTION ===== */
+/* Comprehensive mobile-safe styles to prevent horizontal scrolling and white background */
+@media (max-width: 768px) {
+  html,
+  body,
+  #root,
+  main,
+  section,
+  div,
+  article,
+  aside,
+  header,
+  footer,
+  nav {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure consistent background */
+  html,
+  body,
+  #root {
+    background-color: #050d0a !important;
+    width: 100vw !important;
+    position: relative !important;
+  }
+
+  /* Prevent content from expanding beyond viewport */
+  * {
+    max-width: 100vw !important;
+  }
+
+  /* Fix for WebKit browsers */
+  body {
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
