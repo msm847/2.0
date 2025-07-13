@@ -57,28 +57,46 @@ const VigilumPage = () => {
         <InfiniteMenu
           items={[
             {
-              image: "https://picsum.photos/300/300?grayscale",
-              link: "https://google.com/",
-              title: "Item 1",
-              description: "This is pretty cool, right?",
+              color: "#d4a300",
+              link: "/loophole/L001",
+              title: "L001 – Emergency Procurement Shell",
+              description:
+                "Simulates urgency to bypass competition via discretionary trigger.",
             },
             {
-              image: "https://picsum.photos/400/400?grayscale",
-              link: "https://google.com/",
-              title: "Item 2",
-              description: "This is pretty cool, right?",
+              color: "#b4241d",
+              link: "/loophole/L002",
+              title: "L002 – Indexation Spiral",
+              description:
+                "Legally inflates public cost by pegging prices to volatile indexes.",
             },
             {
-              image: "https://picsum.photos/500/500?grayscale",
-              link: "https://google.com/",
-              title: "Item 3",
-              description: "This is pretty cool, right?",
+              color: "#1e2b44",
+              link: "/loophole/L003",
+              title: "L003 – In-House Disguise",
+              description:
+                "Simulates public-public cooperation to mask hidden subcontracting.",
             },
             {
-              image: "https://picsum.photos/600/600?grayscale",
-              link: "https://google.com/",
-              title: "Item 4",
-              description: "This is pretty cool, right?",
+              color: "#1e2b44",
+              link: "/loophole/L004",
+              title: "L004 – One-Sided Termination",
+              description:
+                "Simulates bilateralism, grants private unilateral exit rights.",
+            },
+            {
+              color: "#d4a300",
+              link: "/loophole/L005",
+              title: "L005 – Unbounded Modification",
+              description:
+                "Uses vague modification clauses to expand contract without tender.",
+            },
+            {
+              color: "#5a4d7c",
+              link: "/loophole/L006",
+              title: "L006 – Non-Transparent Framework",
+              description:
+                "Simulates transparency via frameworks with hidden award logic.",
             },
           ]}
         />
