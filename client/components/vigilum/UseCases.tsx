@@ -39,13 +39,47 @@ const UseCases = () => {
             </p>
           </div>
 
-          <div className="text-center py-20">
-            <div className="text-gray-500 text-xl font-mono">
-              Library content is currently being updated
-            </div>
-            <div className="text-gray-400 text-sm mt-2">
-              Case studies will be available soon
-            </div>
+          <div style={{ height: "600px", position: "relative" }}>
+            <InfiniteMenu
+              items={[
+                {
+                  color: "#d4a300",
+                  link: "/loophole/L001",
+                  title: "Directive 2014/24/EU\nArticle 32(2)(a)",
+                  description: "Negotiated procedure without prior publication",
+                },
+                {
+                  color: "#b4241d",
+                  link: "/loophole/L002",
+                  title: "Directive 2014/24/EU\nArticle 68(1)(b)",
+                  description: "Price revision formula based on indexation",
+                },
+                {
+                  color: "#1e2b44",
+                  link: "/loophole/L003",
+                  title: "Directive 2014/24/EU\nArticle 12(1)",
+                  description: "Public-public cooperation exemption",
+                },
+                {
+                  color: "#1e2b44",
+                  link: "/loophole/L004",
+                  title: "Directive 2014/23/EU\nArticle 44(1)(d)",
+                  description: "Unilateral termination clause logic",
+                },
+                {
+                  color: "#d4a300",
+                  link: "/loophole/L005",
+                  title: "Directive 2014/24/EU\nArticle 72(1)(c)",
+                  description: "Contract modification without new procedure",
+                },
+                {
+                  color: "#5a4d7c",
+                  link: "/loophole/L006",
+                  title: "Directive 2014/24/EU\nArticle 33(1)",
+                  description: "Framework agreement without re-opening terms",
+                },
+              ]}
+            />
           </div>
         </div>
       </div>
