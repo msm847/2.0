@@ -18,6 +18,7 @@
   font-family: "Inter", monospace;
   pointer-events: none;
   z-index: 10;
+  white-space: pre-line;
 }
 
 .face-description {
