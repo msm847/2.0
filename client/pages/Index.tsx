@@ -14,7 +14,7 @@ import {
   Upload,
   BarChart3,
 } from "lucide-react";
-import MatrixBackground from "../components/MatrixBackground";
+
 import DecryptedText from "../components/DecryptedText";
 import VigilumModulesCarousel from "../components/VigilumModulesCarousel";
 
