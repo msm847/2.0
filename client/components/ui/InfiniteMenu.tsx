@@ -1123,6 +1123,18 @@ const defaultItems = [
   },
 ];
 
+// Helper function to convert hex to RGB
+function hexToRgb(hex: string): string {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (result) {
+    const r = parseInt(result[1], 16);
+    const g = parseInt(result[2], 16);
+    const b = parseInt(result[3], 16);
+    return `${r}, ${g}, ${b}`;
+  }
+  return "23, 181, 143"; // fallback to default green
+}
+
 export default function InfiniteMenu({ items = [] }) {
   const canvasRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
