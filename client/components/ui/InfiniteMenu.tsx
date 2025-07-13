@@ -1188,6 +1188,23 @@ export default function InfiniteMenu({ items = [] }) {
           <div
             onClick={handleButtonClick}
             className={`action-button ${isMoving ? "inactive" : "active"}`}
+            style={{
+              background: activeItem.color
+                ? `rgba(${hexToRgb(activeItem.color)}, 0.9)`
+                : "rgba(23, 181, 143, 0.9)",
+              borderColor: activeItem.color || "#17b58f",
+              boxShadow: `0 0 20px ${activeItem.color ? `rgba(${hexToRgb(activeItem.color)}, 0.6)` : "rgba(23, 181, 143, 0.6)"}`,
+            }}
+            onMouseEnter={(e) => {
+              if (activeItem.color) {
+                e.currentTarget.style.background = activeItem.color;
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (activeItem.color) {
+                e.currentTarget.style.background = `rgba(${hexToRgb(activeItem.color)}, 0.9)`;
+              }
+            }}
           >
             <p className="action-button-icon">&#x2197;</p>
           </div>
