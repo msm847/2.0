@@ -38,20 +38,14 @@ const UseCases = () => {
             </p>
           </div>
 
-          {cases.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="text-gray-500 text-xl font-mono">
-                Library content is currently being updated
-              </div>
-              <div className="text-gray-400 text-sm mt-2">
-                Case studies will be available soon
-              </div>
+          <div className="text-center py-20">
+            <div className="text-gray-500 text-xl font-mono">
+              Library content is currently being updated
             </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {/* This would contain the case selection and details when cases exist */}
+            <div className="text-gray-400 text-sm mt-2">
+              Case studies will be available soon
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
