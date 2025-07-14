@@ -474,7 +474,7 @@ const LegalStructuralSimulator: React.FC = () => {
 
                 {/* Loophole Profile */}
                 {simulationResult.loopholeProfile && (
-                  <div className="p-6 rounded-lg border border-gray-600 bg-gray-800/50">
+                  <div className="p-6 rounded-2xl border border-gray-600 bg-gray-800/50">
                     <h4 className="text-green-400 font-mono mb-4 text-lg">
                       LOOPHOLE PROFILE
                     </h4>
