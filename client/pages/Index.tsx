@@ -13,7 +13,7 @@ export default function Index() {
       }}
     >
       <iframe
-        src="https://my.spline.design/claritystream-iwkTa3Jp4cqgUSYME44CsrF9/"
+        src="https://my.spline.design/claritystream-iwkTa3Jp4cqgUSYME44CsrF9/?logo=false"
         frameBorder="0"
         width="100%"
         height="100%"
