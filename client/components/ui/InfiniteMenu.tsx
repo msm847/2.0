@@ -314,9 +314,9 @@ class IcosahedronGeometry extends Geometry {
 }
 
 class DiscGeometry extends Geometry {
-  constructor(steps = 4, radius = 1) {
+  constructor(steps = 32, radius = 1) {
     super();
-    steps = Math.max(4, steps);
+    steps = Math.max(16, steps); // Increased minimum steps for smoother edges
 
     const alpha = (2 * Math.PI) / steps;
 
