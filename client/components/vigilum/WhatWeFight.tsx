@@ -104,37 +104,6 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
         }}
       >
         {tier.description}
-      </p
-        className="text-sm uppercase tracking-wider mb-3"
-        style={{
-          color: "#DAD7C7",
-          fontFamily: "Inter, sans-serif",
-        }}
-      >
-        {tier.title}
-      </p>
-
-      {/* Tier Header */}
-      <h2
-        className="text-4xl font-semibold mb-6"
-        style={{
-          color: "#DAD7C7",
-          fontFamily: "Inter, sans-serif",
-        }}
-      >
-        {tier.header}
-      </h2>
-
-      {/* Description */}
-      <p
-        className="text-lg leading-relaxed max-w-3xl"
-        style={{
-          color: "#B7B4AC",
-          fontFamily: "Inter, sans-serif",
-          lineHeight: 1.6,
-        }}
-      >
-        {tier.description}
       </p>
 
       {/* Highlight Border */}
