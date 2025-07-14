@@ -11,6 +11,28 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
+
+    <!-- Font Preloads for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Primary Typography Stack -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- System font optimization -->
+    <style>
+      /* Optimize font loading */
+      @font-face {
+        font-family: "Alliance No2";
+        font-display: swap;
+        /* Fallback to system fonts while loading */
+        src: local("SF Pro Display"), local("Helvetica Neue"), local("Arial");
+      }
+    </style>
+
     <title>Vigilum</title>
   </head>
 
