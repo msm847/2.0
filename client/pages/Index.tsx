@@ -35,7 +35,7 @@ export default function Index() {
           style={{
             display: "inline-block",
             padding: "12px 32px",
-            fontFamily: "monospace",
+            fontFamily: "var(--font-ui)",
             fontSize: "16px",
             fontWeight: "600",
             color: "#9DE6C6",
