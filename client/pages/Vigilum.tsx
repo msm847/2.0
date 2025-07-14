@@ -34,7 +34,7 @@ const VigilumPage = () => {
 
   return (
     <div
-      className="min-h-screen text-gray-100 font-mono relative overflow-hidden"
+      className="min-h-screen text-gray-100 font-body relative overflow-hidden"
       style={{
         background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
         width: "100%",
