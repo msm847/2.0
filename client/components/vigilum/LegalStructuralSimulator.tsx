@@ -240,7 +240,30 @@ const LegalStructuralSimulator: React.FC = () => {
             <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
               AVAILABLE CLAUSES
             </h3>
-            <div className="h-96 overflow-y-auto space-y-4 pr-2">
+            <div
+              className="h-96 overflow-y-auto space-y-4 pr-2"
+              style={{
+                scrollbarWidth: "thin",
+                scrollbarColor: "#17B58F #0B1E16",
+              }}
+              css={{
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  background: "#0B1E16",
+                  borderRadius: "4px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  background: "#17B58F",
+                  borderRadius: "4px",
+                  border: "1px solid #0E261D",
+                },
+                "&::-webkit-scrollbar-thumb:hover": {
+                  background: "#9DE6C6",
+                },
+              }}
+            >
               {availableClauses.map((clause) => (
                 <motion.div
                   key={clause.id}
