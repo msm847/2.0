@@ -106,6 +106,16 @@
 
     --radius: 0.5rem;
 
+    /* Vigilum Typography System */
+    --font-display:
+      "Alliance No2", -apple-system, "SF Pro Display", "Helvetica Neue",
+      sans-serif;
+    --font-section:
+      -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+    --font-body: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+    --font-ui: "Inter", -apple-system, "Helvetica Neue", sans-serif;
+    --font-mono: "IBM Plex Mono", "SF Mono", "Monaco", "Consolas", monospace;
+
     /* Vigilum color system */
     --vigilum-bg: 217 28% 6%; /* #0F121A */
     --vigilum-label: 223 13% 69%; /* #AAB0BF */
