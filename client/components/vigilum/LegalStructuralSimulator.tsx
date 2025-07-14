@@ -384,7 +384,7 @@ const LegalStructuralSimulator: React.FC = () => {
                       activeEnvironment === env.id ? null : env.id,
                     )
                   }
-                  className={`w-full text-left p-4 rounded-lg border transition-all ${
+                  className={`w-full text-left p-4 rounded-2xl border transition-all ${
                     activeEnvironment === env.id
                       ? "border-green-400 bg-green-400/10 text-white"
                       : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
