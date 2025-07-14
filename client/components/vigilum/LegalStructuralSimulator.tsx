@@ -224,7 +224,7 @@ const LegalStructuralSimulator: React.FC = () => {
           </motion.h2>
 
           <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-body-lg text-gray-300 mb-6 leading-relaxed">
               This is not an "interface" in the conventional sense.
               <br />
               <span className="text-green-400 font-medium">
