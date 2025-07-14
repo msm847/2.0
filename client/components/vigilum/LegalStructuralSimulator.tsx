@@ -425,7 +425,7 @@ const LegalStructuralSimulator: React.FC = () => {
                 className="grid grid-cols-1 lg:grid-cols-3 gap-8"
               >
                 {/* Vector Projection */}
-                <div className="p-6 rounded-lg border border-gray-600 bg-gray-800/50">
+                <div className="p-6 rounded-2xl border border-gray-600 bg-gray-800/50">
                   <h4 className="text-green-400 font-mono mb-4 text-lg">
                     VECTOR PROJECTION ϕ(c,𝓔)
                   </h4>
