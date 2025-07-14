@@ -77,6 +77,34 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
     >
       {/* Tier Title */}
       <p
+        className="text-ui text-xs tracking-wider text-gray-400 mb-2"
+        style={{
+          color: tier.highlightColor || "#888",
+          opacity: isInView ? 1 : 0.7,
+        }}
+      >
+        {tier.title}
+      </p>
+
+      {/* Header */}
+      <h3
+        className="text-section-lg font-medium text-white mb-4"
+        style={{
+          color: isInView ? "white" : "#ccc",
+        }}
+      >
+        {tier.header}
+      </h3>
+
+      {/* Description */}
+      <p
+        className="text-body leading-relaxed"
+        style={{
+          color: isInView ? "#e5e5e5" : "#aaa",
+        }}
+      >
+        {tier.description}
+      </p
         className="text-sm uppercase tracking-wider mb-3"
         style={{
           color: "#DAD7C7",
