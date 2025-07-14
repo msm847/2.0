@@ -43,7 +43,7 @@ export default function Index() {
             border: "2px solid #17B58F",
             textDecoration: "none",
             textTransform: "uppercase",
-            letterSpacing: "0.1em",
+            letterSpacing: "0.05em",
             transition: "all 0.3s ease",
             textShadow: "0 0 8px #17B58F40",
             boxShadow: "0 0 20px #17B58F30",
