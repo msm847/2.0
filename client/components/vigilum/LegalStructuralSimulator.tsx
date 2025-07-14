@@ -362,7 +362,7 @@ const LegalStructuralSimulator: React.FC = () => {
               disabled={
                 selectedClauses.every((c) => c === null) || isSimulating
               }
-              className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-mono font-bold rounded-lg transition-colors"
+              className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-mono font-bold rounded-2xl transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
