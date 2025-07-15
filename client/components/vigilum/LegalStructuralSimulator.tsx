@@ -548,7 +548,7 @@ const LegalStructuralSimulator: React.FC = () => {
         </div>
 
         {/* Bottom: Full-Width Simulation Output */}
-        <div className="w-full">
+        <div className="w-full" style={{ marginTop: "24px" }}>
           <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
             SIMULATION OUTPUT
           </h3>
