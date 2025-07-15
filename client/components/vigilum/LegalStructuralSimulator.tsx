@@ -310,7 +310,7 @@ const LegalStructuralSimulator: React.FC = () => {
 
           {/* Center: Staging Field */}
           <div>
-            <h3 className="text-xl font-bold text-green-400 font-mono mb-6 text-center">
+            <h3 className="text-section text-green-400 font-ui mb-6 text-center uppercase tracking-wider">
               CLAUSE STAGING FIELD
             </h3>
 
