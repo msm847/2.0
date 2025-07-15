@@ -517,7 +517,7 @@ const LegalStructuralSimulator: React.FC = () => {
                           activeEnvironment === env.id ? null : env.id,
                         )
                       }
-                      className={`w-full text-left p-4 rounded-2xl border transition-all ${
+                      className={`w-full text-left p-3 rounded-2xl border transition-all ${
                         activeEnvironment === env.id
                           ? "border-green-400 bg-green-400/10 text-white"
                           : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
@@ -525,14 +525,16 @@ const LegalStructuralSimulator: React.FC = () => {
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                     >
-                      <div className="flex items-center space-x-4">
-                        <span className="text-2xl">{env.icon}</span>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-xl">{env.icon}</span>
                         <div className="flex-1">
-                          <div className="font-medium text-lg">{env.name}</div>
-                          <div className="text-sm text-gray-400 mt-1">
+                          <div className="font-medium text-base">
+                            {env.name}
+                          </div>
+                          <div className="text-xs text-gray-400 mt-1">
                             {env.description}
                           </div>
-                          <div className="text-xs text-green-400 mt-2">
+                          <div className="text-xs text-green-400 mt-1">
                             {env.specialEffects}
                           </div>
                         </div>
