@@ -232,20 +232,16 @@
   .text-body-sm,
   caption,
   .text-caption {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 1.45;
+    font: var(--body-sm);
   }
 
   /* Navigation and UI elements */
   nav,
   button,
   .btn,
-  .text-ui {
-    font-family: var(--font-ui);
-    font-weight: 500;
-    font-size: 0.95rem;
+  .text-ui,
+  .font-ui {
+    font: var(--ui);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -254,11 +250,9 @@
   code,
   pre,
   .font-mono,
-  .text-mono {
-    font-family: var(--font-mono);
-    font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 1.45;
+  .text-mono,
+  .code-block {
+    font: var(--code);
   }
 }
 
