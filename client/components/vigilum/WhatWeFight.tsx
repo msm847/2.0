@@ -159,10 +159,9 @@ const WhatWeFight: React.FC = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Section Title */}
         <motion.h1
-          className="text-center mb-16 font-semibold text-5xl uppercase tracking-tight"
+          className="text-center mb-16 text-display-xl uppercase tracking-tight"
           style={{
             color: "#DAD7C7",
-            fontFamily: "Inter, sans-serif",
           }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
