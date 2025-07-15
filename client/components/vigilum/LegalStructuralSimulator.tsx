@@ -446,7 +446,8 @@ const LegalStructuralSimulator: React.FC = () => {
               className="clause-column-footer"
               style={{
                 flexShrink: 0,
-                padding: "1rem",
+                paddingLeft: "1rem",
+                paddingRight: "1rem",
                 marginTop: "24px",
               }}
             >
