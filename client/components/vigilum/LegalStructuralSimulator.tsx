@@ -447,8 +447,7 @@ const LegalStructuralSimulator: React.FC = () => {
               style={{
                 flexShrink: 0,
                 padding: "1rem",
-                borderTop: "1px solid rgba(255,255,255,0.1)",
-                marginTop: "auto",
+                marginTop: "24px",
               }}
             >
               {/* Simulate Button */}
