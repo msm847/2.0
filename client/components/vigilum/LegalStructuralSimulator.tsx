@@ -310,7 +310,7 @@ const LegalStructuralSimulator: React.FC = () => {
                   {availableClauses.map((clause) => (
                     <motion.div
                       key={clause.id}
-                      className="p-4 rounded-2xl border border-gray-600 bg-gray-800/50 cursor-pointer hover:border-green-400/50 transition-all"
+                      className="h-24 p-3 rounded-2xl border border-gray-600 bg-gray-800/50 cursor-pointer hover:border-green-400/50 transition-all"
                       whileHover={{
                         scale: 1.02,
                         boxShadow: `0 0 20px ${clause.color}40`,
