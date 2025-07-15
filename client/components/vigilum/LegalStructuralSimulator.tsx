@@ -242,7 +242,7 @@ const LegalStructuralSimulator: React.FC = () => {
             justifyContent: "space-between",
             gap: "2rem",
             width: "100%",
-            minHeight: "600px",
+            minHeight: "600px"
           }}
         >
           {/* Left: Available Clauses - Scrollable */}
@@ -254,7 +254,7 @@ const LegalStructuralSimulator: React.FC = () => {
               flexDirection: "column",
               background: "inherit",
               borderRadius: "inherit",
-              position: "relative",
+              position: "relative"
             }}
           >
             <div
@@ -262,7 +262,7 @@ const LegalStructuralSimulator: React.FC = () => {
               style={{
                 flexShrink: 0,
                 padding: "1rem",
-                borderBottom: "1px solid rgba(255,255,255,0.1)",
+                borderBottom: "1px solid rgba(255,255,255,0.1)"
               }}
             >
               <h3 className="text-section text-green-400 font-ui uppercase tracking-wider">
@@ -275,7 +275,7 @@ const LegalStructuralSimulator: React.FC = () => {
                 flex: "1 1 auto",
                 overflow: "hidden",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "column"
               }}
             >
               <div
@@ -286,7 +286,7 @@ const LegalStructuralSimulator: React.FC = () => {
                   padding: "1rem",
                   maxHeight: "calc(100% - 80px)",
                   scrollbarWidth: "thin",
-                  scrollbarColor: "#17B58F #0B1E16",
+                  scrollbarColor: "#17B58F #0B1E16"
                 }}
                 css={{
                   "&::-webkit-scrollbar": {
@@ -307,49 +307,47 @@ const LegalStructuralSimulator: React.FC = () => {
                 }}
               >
                 <div className="space-y-3">
-                  {availableClauses.map((clause) => (
-                    <motion.div
-                      key={clause.id}
-                      className="p-4 rounded-2xl border border-gray-600 bg-gray-800/50 cursor-pointer hover:border-green-400/50 transition-all"
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: `0 0 20px ${clause.color}40`,
-                      }}
-                      onClick={() => {
-                        // Find first empty slot
-                        const emptySlot = selectedClauses.findIndex(
-                          (c) => c === null,
-                        );
-                        if (emptySlot !== -1) {
-                          selectClause(clause, emptySlot);
-                        }
-                      }}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-mono text-gray-400">
-                          {clause.id}
-                        </span>
-                        <div
-                          className="w-3 h-3 rounded-full"
-                          style={{ backgroundColor: clause.color }}
-                        />
-                      </div>
-                      <h4 className="text-sm font-medium text-white mb-2">
-                        {clause.title}
-                      </h4>
-                      <div className="text-xs text-gray-400 space-y-1">
-                        <div>
-                          DG {clause.riskVector.DG.toFixed(2)} | RT{" "}
-                          {clause.riskVector.RT.toFixed(2)} | CI{" "}
-                          {clause.riskVector.CI.toFixed(2)} | SB{" "}
-                          {clause.riskVector.SB.toFixed(2)}
-                        </div>
-                        <div className="text-green-400">
-                          {clause.overrideFlags}
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
+              {availableClauses.map((clause) => (
+                <motion.div
+                  key={clause.id}
+                  className="p-4 rounded-2xl border border-gray-600 bg-gray-800/50 cursor-pointer hover:border-green-400/50 transition-all"
+                  whileHover={{
+                    scale: 1.02,
+                    boxShadow: `0 0 20px ${clause.color}40`,
+                  }}
+                  onClick={() => {
+                    // Find first empty slot
+                    const emptySlot = selectedClauses.findIndex(
+                      (c) => c === null,
+                    );
+                    if (emptySlot !== -1) {
+                      selectClause(clause, emptySlot);
+                    }
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-mono text-gray-400">
+                      {clause.id}
+                    </span>
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: clause.color }}
+                    />
+                  </div>
+                  <h4 className="text-sm font-medium text-white mb-2">
+                    {clause.title}
+                  </h4>
+                  <div className="text-xs text-gray-400 space-y-1">
+                    <div>
+                      DG {clause.riskVector.DG.toFixed(2)} | RT{" "}
+                      {clause.riskVector.RT.toFixed(2)} | CI{" "}
+                      {clause.riskVector.CI.toFixed(2)} | SB{" "}
+                      {clause.riskVector.SB.toFixed(2)}
+                    </div>
+                    <div className="text-green-400">{clause.overrideFlags}</div>
+                  </div>
+                </motion.div>
+              ))}
                 </div>
               </div>
             </div>
@@ -364,15 +362,42 @@ const LegalStructuralSimulator: React.FC = () => {
               flexDirection: "column",
               background: "inherit",
               borderRadius: "inherit",
-              position: "relative",
+              position: "relative"
             }}
           >
-            <h3 className="text-section text-green-400 font-ui mb-6 text-center uppercase tracking-wider">
-              CLAUSE STAGING FIELD
-            </h3>
-
-            {/* Staging Slots */}
-            <div className="space-y-4 mb-8">
+            <div
+              className="clause-column-header"
+              style={{
+                flexShrink: 0,
+                padding: "1rem",
+                borderBottom: "1px solid rgba(255,255,255,0.1)"
+              }}
+            >
+              <h3 className="text-section text-green-400 font-ui text-center uppercase tracking-wider">
+                CLAUSE STAGING FIELD
+              </h3>
+            </div>
+            <div
+              className="clause-column-content"
+              style={{
+                flex: "1 1 auto",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column"
+              }}
+            >
+              <div
+                className="staging-field-content"
+                style={{
+                  padding: "1rem",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start"
+                }}
+              >
+                {/* Staging Slots */}
+                <div className="space-y-4 flex-1">
               {[0, 1, 2].map((slotIndex) => (
                 <div
                   key={slotIndex}
