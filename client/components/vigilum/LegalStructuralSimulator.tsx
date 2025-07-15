@@ -235,7 +235,7 @@ const LegalStructuralSimulator: React.FC = () => {
         </div>
 
         <div
-          className="clause-simulator-wrapper mb-12"
+          className="clause-simulator-wrapper"
           style={{
             display: "flex",
             alignItems: "stretch",
