@@ -478,7 +478,7 @@ const LegalStructuralSimulator: React.FC = () => {
                 borderBottom: "1px solid rgba(255,255,255,0.1)",
               }}
             >
-              <h3 className="text-section text-green-400 font-ui uppercase tracking-wider">
+              <h3 className="text-section text-green-400 font-ui uppercase tracking-wider text-center">
                 ENVIRONMENT OPERATOR
               </h3>
             </div>
