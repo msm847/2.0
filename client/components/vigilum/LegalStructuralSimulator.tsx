@@ -325,16 +325,16 @@ const LegalStructuralSimulator: React.FC = () => {
                         }
                       }}
                     >
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center justify-between mb-1">
                         <span className="text-xs font-mono text-gray-400">
                           {clause.id}
                         </span>
                         <div
-                          className="w-3 h-3 rounded-full"
+                          className="w-2 h-2 rounded-full"
                           style={{ backgroundColor: clause.color }}
                         />
                       </div>
-                      <h4 className="text-sm font-medium text-white mb-2">
+                      <h4 className="text-sm font-medium text-white mb-1">
                         {clause.title}
                       </h4>
                       <div className="text-xs text-gray-400 space-y-1">
