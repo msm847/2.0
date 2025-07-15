@@ -29,7 +29,7 @@ export default function Index() {
       <div
         style={{
           position: "absolute",
-          top: "50%",
+          top: "20%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           zIndex: 10,
@@ -46,6 +46,7 @@ export default function Index() {
             margin: 0,
             textShadow: "0 0 20px rgba(157, 230, 198, 0.3)",
             letterSpacing: "0.02em",
+            whiteSpace: "nowrap",
           }}
         >
           Observe. Compute. Expose.
