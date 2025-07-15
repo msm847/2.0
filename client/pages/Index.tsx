@@ -10,15 +10,47 @@ export default function Index() {
         margin: 0,
         padding: 0,
         position: "relative",
+        backgroundColor: "#0E1A17",
       }}
     >
+      {/* New Brain Animation Background */}
       <iframe
-        src="https://my.spline.design/claritystream-iwkTa3Jp4cqgUSYME44CsrF9/?controls=false&logo=false&branding=false"
+        src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/?controls=false&logo=false&branding=false"
         frameBorder="0"
         width="100%"
         height="100%"
-        style={{ border: "none" }}
+        style={{
+          border: "none",
+          backgroundColor: "#0E1A17",
+        }}
       />
+
+      {/* Observe. Compute. Expose. Text */}
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          zIndex: 10,
+          textAlign: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(2.5rem, 8vw, 4rem)",
+            fontWeight: "700",
+            lineHeight: "1.1",
+            color: "#9DE6C6",
+            margin: 0,
+            textShadow: "0 0 20px rgba(157, 230, 198, 0.3)",
+            letterSpacing: "0.02em",
+          }}
+        >
+          Observe. Compute. Expose.
+        </h1>
+      </div>
 
       {/* CTA Button */}
       <div
