@@ -436,10 +436,20 @@ const LegalStructuralSimulator: React.FC = () => {
                   )}
                 </div>
               ))}
+                </div>
+              </div>
             </div>
-
-            {/* Simulate Button */}
-            <motion.button
+            <div
+              className="clause-column-footer"
+              style={{
+                flexShrink: 0,
+                padding: "1rem",
+                borderTop: "1px solid rgba(255,255,255,0.1)",
+                marginTop: "auto"
+              }}
+            >
+              {/* Simulate Button */}
+              <motion.button
               onClick={simulateSequence}
               disabled={
                 selectedClauses.every((c) => c === null) || isSimulating
