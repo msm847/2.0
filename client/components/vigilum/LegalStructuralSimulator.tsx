@@ -100,7 +100,7 @@ const environmentOperators: EnvironmentOperator[] = [
   },
   {
     id: "loan",
-    name: "Foreign Loan Agreement Context",
+    name: "Foreign Loan Agreement",
     icon: "🌍",
     description: "International funding constraints",
     modifiers: { DG: 0, RT: 0.15, CI: 0, SB: -0.1 },
