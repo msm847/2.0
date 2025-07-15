@@ -262,16 +262,15 @@
     font-family: var(--font-display);
   }
 
-  .font-section {
-    font-family: var(--font-section);
-  }
-
   .font-body {
     font-family: var(--font-body);
   }
 
   .font-ui {
     font-family: var(--font-ui);
+    font: var(--ui);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .font-mono {
@@ -287,35 +286,23 @@
     font-family: var(--font-mono);
   }
 
-  /* Typography Scale Utilities */
+  /* Typography Scale Utilities - Using Tokens */
   .text-display-xl {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(2.8rem, 8vw, 4.2rem);
-    line-height: 1.1;
+    font: var(--h1);
     letter-spacing: -0.02em;
   }
 
   .text-display-lg {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(2rem, 6vw, 2.4rem);
-    line-height: 1.25;
+    font: var(--h2);
     letter-spacing: -0.01em;
   }
 
   .text-section-lg {
-    font-family: var(--font-section);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 4vw, 1.8rem);
-    line-height: 1.3;
+    font: var(--h3);
   }
 
   .text-section {
-    font-family: var(--font-section);
-    font-weight: 500;
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
-    line-height: 1.35;
+    font: var(--h4);
   }
 
   .text-body-lg {
