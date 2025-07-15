@@ -93,7 +93,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "election",
     name: "Election-Year Context",
-    icon: "🗳️",
+    icon: "���️",
     description: "Political pressure environment",
     modifiers: { DG: 0.1, RT: 0.2, CI: 0, SB: 0 },
     specialEffects: "makes Clause 3.2 override any clause",
@@ -508,7 +508,7 @@ const LegalStructuralSimulator: React.FC = () => {
                   justifyContent: "flex-start",
                 }}
               >
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {environmentOperators.map((env) => (
                     <motion.button
                       key={env.id}
