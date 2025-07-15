@@ -282,9 +282,10 @@ const LegalStructuralSimulator: React.FC = () => {
                 className="available-clauses-content"
                 style={{
                   overflowY: "auto",
-                  flex: 1,
+                  flex: "none",
                   padding: "1rem",
-                  maxHeight: "calc(100% - 80px)",
+                  height: "340px",
+                  maxHeight: "340px",
                   scrollbarWidth: "thin",
                   scrollbarColor: "#17B58F #0B1E16",
                 }}
