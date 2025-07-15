@@ -38,7 +38,7 @@ const AboutSection = () => {
               </h3>
               <div className="space-y-6">
                 <div>
-                  <div className="text-lg font-bold text-blue-400 font-mono mb-2">
+                  <div className="text-lg font-bold text-blue-400 font-ui mb-2">
                     01. STRUCTURAL RISK
                   </div>
                   <div className="text-sm text-gray-300 leading-relaxed">
