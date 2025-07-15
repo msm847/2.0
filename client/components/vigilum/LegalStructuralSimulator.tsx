@@ -466,7 +466,17 @@ const LegalStructuralSimulator: React.FC = () => {
           </div>
 
           {/* Right: Environment Operators */}
-          <div>
+          <div
+            className="clause-column environment-operator-column"
+            style={{
+              flex: "1 1 0",
+              display: "flex",
+              flexDirection: "column",
+              background: "inherit",
+              borderRadius: "inherit",
+              position: "relative",
+            }}
+          >
             <h3 className="text-section text-green-400 font-ui mb-6 uppercase tracking-wider">
               ENVIRONMENT OPERATOR
             </h3>
