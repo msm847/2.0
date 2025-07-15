@@ -184,10 +184,9 @@ const WhatWeFight: React.FC = () => {
         <div className="text-center pt-12 mt-8">
           <motion.p
             ref={finalStatementRef}
-            className="text-2xl font-semibold tracking-tight"
+            className="text-section-lg tracking-tight"
             style={{
               color: "#E1D16D",
-              fontFamily: "Inter, sans-serif",
             }}
             initial={{ opacity: 0 }}
             animate={{
