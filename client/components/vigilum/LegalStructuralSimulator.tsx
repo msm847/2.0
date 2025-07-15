@@ -508,8 +508,8 @@ const LegalStructuralSimulator: React.FC = () => {
                   justifyContent: "flex-start",
                 }}
               >
-                <div className="space-y-3">
-                  {environmentOperators.map((env) => (
+                <div>
+                  {environmentOperators.map((env, index) => (
                     <motion.button
                       key={env.id}
                       onClick={() =>
@@ -522,6 +522,13 @@ const LegalStructuralSimulator: React.FC = () => {
                           ? "border-green-400 bg-green-400/10 text-white"
                           : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
                       }`}
+                      style={{
+                        marginBottom:
+                          index === environmentOperators.length - 1
+                            ? "0"
+                            : "5px",
+                        marginTop: index === 0 ? "0" : "12px",
+                      }}
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                     >
