@@ -234,7 +234,17 @@ const LegalStructuralSimulator: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div
+          className="clause-simulator-wrapper mb-12"
+          style={{
+            display: "flex",
+            alignItems: "stretch",
+            justifyContent: "space-between",
+            gap: "2rem",
+            width: "100%",
+            minHeight: "600px",
+          }}
+        >
           {/* Left: Available Clauses - Scrollable */}
           <div>
             <h3 className="text-section text-green-400 font-ui mb-6 uppercase tracking-wider">
