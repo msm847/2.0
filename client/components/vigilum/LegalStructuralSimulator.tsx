@@ -93,7 +93,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "election",
     name: "Election-Year Context",
-    icon: "���️",
+    icon: "🗳️",
     description: "Political pressure environment",
     modifiers: { DG: 0.1, RT: 0.2, CI: 0, SB: 0 },
     specialEffects: "makes Clause 3.2 override any clause",
@@ -517,7 +517,7 @@ const LegalStructuralSimulator: React.FC = () => {
                           activeEnvironment === env.id ? null : env.id,
                         )
                       }
-                      className={`w-full text-left p-3 rounded-2xl border transition-all ${
+                      className={`w-full text-left h-24 p-3 rounded-2xl border transition-all ${
                         activeEnvironment === env.id
                           ? "border-green-400 bg-green-400/10 text-white"
                           : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
