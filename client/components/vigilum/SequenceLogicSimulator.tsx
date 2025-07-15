@@ -750,9 +750,8 @@ const SequenceLogicSimulator: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <p
-            className="italic mb-8"
+            className="italic mb-8 font-body"
             style={{
-              fontFamily: "Inter, serif",
               color: "#B8D0C9",
               fontSize: "16px",
               paddingTop: "64px",
