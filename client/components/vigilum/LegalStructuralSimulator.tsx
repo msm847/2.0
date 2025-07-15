@@ -400,7 +400,7 @@ const LegalStructuralSimulator: React.FC = () => {
                 }}
               >
                 {/* Staging Slots */}
-                <div className="space-y-4 flex-1">
+                <div className="space-y-4">
                   {[0, 1, 2].map((slotIndex) => (
                     <div
                       key={slotIndex}
