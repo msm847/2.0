@@ -477,10 +477,38 @@ const LegalStructuralSimulator: React.FC = () => {
               position: "relative",
             }}
           >
-            <h3 className="text-section text-green-400 font-ui mb-6 uppercase tracking-wider">
-              ENVIRONMENT OPERATOR
-            </h3>
-            <div className="space-y-4">
+            <div
+              className="clause-column-header"
+              style={{
+                flexShrink: 0,
+                padding: "1rem",
+                borderBottom: "1px solid rgba(255,255,255,0.1)"
+              }}
+            >
+              <h3 className="text-section text-green-400 font-ui uppercase tracking-wider">
+                ENVIRONMENT OPERATOR
+              </h3>
+            </div>
+            <div
+              className="clause-column-content"
+              style={{
+                flex: "1 1 auto",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column"
+              }}
+            >
+              <div
+                className="environment-operator-content"
+                style={{
+                  padding: "1rem",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start"
+                }}
+              >
+                <div className="space-y-4">
               {environmentOperators.map((env) => (
                 <motion.button
                   key={env.id}
