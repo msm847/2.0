@@ -92,7 +92,7 @@ const availableClauses: ClauseData[] = [
 const environmentOperators: EnvironmentOperator[] = [
   {
     id: "election",
-    name: "Election-Year Procurement",
+    name: "Election-Year Context",
     icon: "🗳️",
     description: "Political pressure environment",
     modifiers: { DG: 0.1, RT: 0.2, CI: 0, SB: 0 },
