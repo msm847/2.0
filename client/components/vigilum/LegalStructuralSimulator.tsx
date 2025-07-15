@@ -526,7 +526,7 @@ const LegalStructuralSimulator: React.FC = () => {
                         marginBottom:
                           index === environmentOperators.length - 1
                             ? "0"
-                            : "5px",
+                            : "4px",
                         marginTop: index === 0 ? "0" : "12px",
                       }}
                       whileHover={{ scale: 1.01 }}
