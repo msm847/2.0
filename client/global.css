@@ -1,5 +1,5 @@
 /* Vigilum Typography System - Professional font stack */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=IBM+Plex+Mono:wght@300..700&display=swap");
 
 /* SF Pro fonts - system fallbacks */
 @supports (font-family: -apple-system) {
