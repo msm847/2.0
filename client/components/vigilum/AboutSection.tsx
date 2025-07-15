@@ -9,11 +9,11 @@ const AboutSection = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-purple-900/30 px-3 py-1 rounded-full border border-purple-700 mb-4">
               <Brain className="w-3 h-3 text-purple-400" />
-              <span className="text-xs text-purple-300 font-mono uppercase tracking-wider">
+              <span className="text-xs text-purple-300 font-ui uppercase tracking-wider">
                 Interface as Philosophy
               </span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+            <h2 className="text-display-lg text-gray-100 mb-4 tracking-tight">
               METHODOLOGY
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
