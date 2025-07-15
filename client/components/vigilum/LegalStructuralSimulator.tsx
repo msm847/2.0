@@ -242,7 +242,7 @@ const LegalStructuralSimulator: React.FC = () => {
             justifyContent: "space-between",
             gap: "2rem",
             width: "100%",
-            minHeight: "600px",
+            minHeight: "600px"
           }}
         >
           {/* Left: Available Clauses - Scrollable */}
@@ -254,36 +254,59 @@ const LegalStructuralSimulator: React.FC = () => {
               flexDirection: "column",
               background: "inherit",
               borderRadius: "inherit",
-              position: "relative",
+              position: "relative"
             }}
           >
-            <h3 className="text-section text-green-400 font-ui mb-6 uppercase tracking-wider">
-              AVAILABLE CLAUSES
-            </h3>
             <div
-              className="h-96 overflow-y-auto space-y-4 pr-2"
+              className="clause-column-header"
               style={{
-                scrollbarWidth: "thin",
-                scrollbarColor: "#17B58F #0B1E16",
-              }}
-              css={{
-                "&::-webkit-scrollbar": {
-                  width: "8px",
-                },
-                "&::-webkit-scrollbar-track": {
-                  background: "#0B1E16",
-                  borderRadius: "4px",
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  background: "#17B58F",
-                  borderRadius: "4px",
-                  border: "1px solid #0E261D",
-                },
-                "&::-webkit-scrollbar-thumb:hover": {
-                  background: "#9DE6C6",
-                },
+                flexShrink: 0,
+                padding: "1rem",
+                borderBottom: "1px solid rgba(255,255,255,0.1)"
               }}
             >
+              <h3 className="text-section text-green-400 font-ui uppercase tracking-wider">
+                AVAILABLE CLAUSES
+              </h3>
+            </div>
+            <div
+              className="clause-column-content"
+              style={{
+                flex: "1 1 auto",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column"
+              }}
+            >
+              <div
+                className="available-clauses-content"
+                style={{
+                  overflowY: "auto",
+                  flex: 1,
+                  padding: "1rem",
+                  maxHeight: "calc(100% - 80px)",
+                  scrollbarWidth: "thin",
+                  scrollbarColor: "#17B58F #0B1E16"
+                }}
+                css={{
+                  "&::-webkit-scrollbar": {
+                    width: "8px",
+                  },
+                  "&::-webkit-scrollbar-track": {
+                    background: "#0B1E16",
+                    borderRadius: "4px",
+                  },
+                  "&::-webkit-scrollbar-thumb": {
+                    background: "#17B58F",
+                    borderRadius: "4px",
+                    border: "1px solid #0E261D",
+                  },
+                  "&::-webkit-scrollbar-thumb:hover": {
+                    background: "#9DE6C6",
+                  },
+                }}
+              >
+                <div className="space-y-3">
               {availableClauses.map((clause) => (
                 <motion.div
                   key={clause.id}
