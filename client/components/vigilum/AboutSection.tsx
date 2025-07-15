@@ -33,7 +33,7 @@ const AboutSection = () => {
                 boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
               }}
             >
-              <h3 className="text-2xl font-bold text-white font-mono mb-6">
+              <h3 className="text-section-lg text-white mb-6">
                 DETECTION PRINCIPLES
               </h3>
               <div className="space-y-6">
