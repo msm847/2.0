@@ -4,6 +4,7 @@ import RotatingText from "@/components/ui/RotatingText";
 import DecryptedText from "@/components/ui/DecryptedText";
 import SplitText from "@/components/ui/SplitText";
 import TrueFocus from "@/components/ui/TrueFocus";
+import FuzzyText from "@/components/ui/FuzzyText";
 
 interface Tier {
   id: number;
@@ -37,7 +38,7 @@ const tiers: Tier[] = [
   },
   {
     id: 3,
-    title: "Outcome",
+    title: "Outcome ≠ Consequence",
     header: "Closure, Containment, Misdirection",
     summary:
       "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
@@ -188,6 +189,21 @@ const TierComponent: React.FC<{
             animationDuration={1.2}
             pauseBetweenAnimations={2}
           />
+        ) : tier.id === 3 ? (
+          <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span>Outcome ≠ </span>
+            <FuzzyText
+              fontSize="inherit"
+              fontWeight={600}
+              fontFamily="inherit"
+              color="#40FFAA"
+              enableHover={true}
+              baseIntensity={0.2}
+              hoverIntensity={0.6}
+            >
+              Consequence
+            </FuzzyText>
+          </span>
         ) : [4, 5].includes(tier.id) ? (
           <span>{tier.title}</span>
         ) : (
