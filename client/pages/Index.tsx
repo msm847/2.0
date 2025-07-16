@@ -267,25 +267,6 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Loading Indicator */}
-      {isLoading && (
-        <div
-          id="loading-indicator"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "white",
-            fontSize: "1.2rem",
-            zIndex: 20,
-            fontFamily: "var(--font-body)",
-          }}
-        >
-          Loading 3D Scene...
-        </div>
-      )}
-
       <style>{`
         #enter-button:active {
           transform: scale(0.95) !important;
