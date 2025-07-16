@@ -244,10 +244,30 @@ const TierComponent: React.FC<{
       </div>
 
       {/* Expand indicator */}
-      <div className="absolute top-4 right-4 text-gray-400">
+      <div
+        className="absolute top-4 right-4 text-gray-400 cursor-pointer transition-all duration-300"
+        style={{
+          fontSize: "18px",
+          fontWeight: "bold",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = tier.highlightColor || "#ffffff";
+          e.currentTarget.style.textShadow = `0 0 10px ${tier.highlightColor || "#ffffff"}80, 0 0 20px ${tier.highlightColor || "#ffffff"}40`;
+          e.currentTarget.style.transform = "scale(1.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = "#9ca3af";
+          e.currentTarget.style.textShadow = "none";
+          e.currentTarget.style.transform = "scale(1)";
+        }}
+      >
         <motion.span
           animate={{ rotate: isExpanded ? 180 : 0 }}
           transition={{ duration: 0.3 }}
+          style={{
+            display: "inline-block",
+            fontWeight: "bold",
+          }}
         >
           ↓
         </motion.span>
