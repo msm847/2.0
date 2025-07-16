@@ -89,62 +89,81 @@ const TierComponent: React.FC<{
   return (
     <div
       ref={ref}
-      className="relative p-6 rounded-xl cursor-pointer transition-all duration-500 group"
+      className="relative p-6 rounded-2xl cursor-pointer transition-all duration-500 group overflow-hidden"
       style={{
         background: tier.highlightColor
           ? `linear-gradient(135deg,
-               rgba(255, 255, 255, 0.1) 0%,
-               rgba(255, 255, 255, 0.05) 50%,
-               ${tier.highlightColor}10 100%)`
+               rgba(255, 255, 255, 0.03) 0%,
+               rgba(255, 255, 255, 0.01) 30%,
+               ${tier.highlightColor}08 70%,
+               ${tier.highlightColor}12 100%)`
           : `linear-gradient(135deg,
-               rgba(255, 255, 255, 0.1) 0%,
-               rgba(255, 255, 255, 0.05) 100%)`,
-        backdropFilter: "blur(20px)",
-        border: tier.highlightColor
-          ? `1px solid ${tier.highlightColor}30`
-          : "1px solid rgba(255, 255, 255, 0.2)",
+               rgba(255, 255, 255, 0.03) 0%,
+               rgba(255, 255, 255, 0.01) 100%)`,
+        backdropFilter: "blur(40px) saturate(1.8)",
+        WebkitBackdropFilter: "blur(40px) saturate(1.8)",
+        border: `1px solid ${tier.highlightColor ? `${tier.highlightColor}25` : "rgba(255, 255, 255, 0.15)"}`,
+        borderTop: `1px solid ${tier.highlightColor ? `${tier.highlightColor}40` : "rgba(255, 255, 255, 0.25)"}`,
+        borderLeft: `1px solid ${tier.highlightColor ? `${tier.highlightColor}30` : "rgba(255, 255, 255, 0.2)"}`,
         boxShadow: tier.highlightColor
           ? `
-            0 8px 32px ${tier.highlightColor}15,
-            0 0 0 1px ${tier.highlightColor}20 inset,
-            0 1px 0 rgba(255, 255, 255, 0.3) inset
+            0 12px 40px ${tier.highlightColor}08,
+            0 4px 16px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 0 0 1px ${tier.highlightColor}12,
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
           `
           : `
-            0 8px 32px rgba(0, 0, 0, 0.3),
-            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-            0 1px 0 rgba(255, 255, 255, 0.2) inset
+            0 12px 40px rgba(0, 0, 0, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.12),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
           `,
-        minHeight: isExpanded ? "auto" : "120px",
+        height: isExpanded ? "auto" : "160px",
+        minHeight: "160px",
+        maxHeight: isExpanded ? "none" : "160px",
         opacity: 1,
-        transform: "translateY(0px) rotateX(0deg)",
+        transform: "translateY(0px) rotateX(0deg) rotateY(0deg)",
         transformStyle: "preserve-3d",
+        perspective: "1000px",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-4px) rotateX(2deg)";
+        e.currentTarget.style.transform =
+          "translateY(-6px) rotateX(3deg) rotateY(1deg)";
         e.currentTarget.style.boxShadow = tier.highlightColor
           ? `
-            0 20px 40px ${tier.highlightColor}20,
-            0 0 0 1px ${tier.highlightColor}30 inset,
-            0 1px 0 rgba(255, 255, 255, 0.4) inset
+            0 25px 60px ${tier.highlightColor}12,
+            0 8px 30px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25),
+            inset 0 0 0 1px ${tier.highlightColor}20,
+            inset 0 -1px 0 rgba(0, 0, 0, 0.15)
           `
           : `
-            0 20px 40px rgba(0, 0, 0, 0.4),
-            0 0 0 1px rgba(255, 255, 255, 0.2) inset,
-            0 1px 0 rgba(255, 255, 255, 0.3) inset
+            0 25px 60px rgba(0, 0, 0, 0.2),
+            0 8px 30px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.15)
           `;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0px) rotateX(0deg)";
+        e.currentTarget.style.transform =
+          "translateY(0px) rotateX(0deg) rotateY(0deg)";
         e.currentTarget.style.boxShadow = tier.highlightColor
           ? `
-            0 8px 32px ${tier.highlightColor}15,
-            0 0 0 1px ${tier.highlightColor}20 inset,
-            0 1px 0 rgba(255, 255, 255, 0.3) inset
+            0 12px 40px ${tier.highlightColor}08,
+            0 4px 16px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 0 0 1px ${tier.highlightColor}12,
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
           `
           : `
-            0 8px 32px rgba(0, 0, 0, 0.3),
-            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-            0 1px 0 rgba(255, 255, 255, 0.2) inset
+            0 12px 40px rgba(0, 0, 0, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.12),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
           `;
       }}
       onClick={onToggle}
@@ -182,19 +201,34 @@ const TierComponent: React.FC<{
       {/* Summary or Description */}
       <div>
         {isExpanded ? (
-          <div style={{ fontFamily: "monospace", fontSize: "inherit" }}>
+          <div
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "14px",
+              lineHeight: "1.6",
+              letterSpacing: "0.2px",
+              width: "100%",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+              whiteSpace: "pre-wrap",
+            }}
+          >
             <DecryptedText
               text={tier.description}
               className="text-body leading-relaxed"
               style={{
                 color: "#e5e5e5",
                 fontFamily: "inherit",
-                letterSpacing: "0",
+                letterSpacing: "inherit",
+                fontSize: "inherit",
+                lineHeight: "inherit",
+                display: "block",
+                width: "100%",
               }}
               animateOn="view"
               sequential={true}
-              speed={40}
-              maxIterations={8}
+              speed={50}
+              maxIterations={6}
               revealDirection="start"
               useOriginalCharsOnly={true}
             />
