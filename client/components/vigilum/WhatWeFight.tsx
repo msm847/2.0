@@ -111,6 +111,9 @@ const TierComponent: React.FC<{
       >
         <span className="flex items-center gap-3">
           <span>{tier.title}</span>
+          <span className="text-gray-400" style={{ fontSize: "1.2em" }}>
+            →
+          </span>
           <RotatingText
             texts={tier.header.split(", ")}
             rotationInterval={2500}
