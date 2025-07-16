@@ -190,6 +190,20 @@ export default function Index() {
           >
             Observe. Compute. Expose.
           </h1>
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1.1rem",
+              fontWeight: "400",
+              margin: "1rem 0 0 0",
+              letterSpacing: "0.5px",
+              color: "#B8D0C9",
+              opacity: 0.9,
+              lineHeight: 1.4,
+            }}
+          >
+            Truth is not fixed. It is rendered by the logic that observes it.
+          </p>
         </div>
 
         {/* Button Container - Moved 150px lower */}
