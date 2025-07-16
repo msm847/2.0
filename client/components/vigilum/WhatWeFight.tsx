@@ -40,16 +40,6 @@ const tiers: Tier[] = [
   },
   {
     id: 3,
-    title: "Outcome ≠ Consequence",
-    header: "Closure, Containment, Misdirection",
-    summary:
-      "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
-    description:
-      "The final stage is systemic adaptation. As detection methods improve, corrupt systems evolve new forms of evasion. They mutate their operational signatures, adapt their legal frameworks, and persist through institutional memory and embedded processes.",
-    highlightColor: "#40FFAA", // Evolution Bright Green
-  },
-  {
-    id: 4,
     title: "Law",
     header: "Design, Override, Simulation",
     summary:
@@ -57,6 +47,16 @@ const tiers: Tier[] = [
     description:
       "Corruption happens not when rules are broken, but when systems are designed to simulate legality while rerouting accountability. This is structural corruption. It is executed in logic, not in scandal.",
     highlightColor: "#9F77C9", // SB — Structural Blindspot
+  },
+  {
+    id: 4,
+    title: "Outcome ≠ Consequence",
+    header: "Closure, Containment, Misdirection",
+    summary:
+      "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
+    description:
+      "The final stage is systemic adaptation. As detection methods improve, corrupt systems evolve new forms of evasion. They mutate their operational signatures, adapt their legal frameworks, and persist through institutional memory and embedded processes.",
+    highlightColor: "#40FFAA", // Evolution Bright Green
   },
 ];
 
