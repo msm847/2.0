@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import RotatingText from "@/components/ui/RotatingText";
 
 interface Tier {
   id: number;
@@ -93,7 +94,21 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
           color: isInView ? "white" : "#ccc",
         }}
       >
-        {tier.header}
+        {tier.id === 1 ? (
+          <RotatingText
+            texts={["Scandal", "Outrage", "Visibility"]}
+            rotationInterval={2500}
+            splitBy="characters"
+            staggerDuration={0.05}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 400,
+            }}
+          />
+        ) : (
+          tier.header
+        )}
       </h3>
 
       {/* Description */}
