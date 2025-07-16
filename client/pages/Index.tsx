@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import GradientText from "@/components/ui/GradientText";
 
 export default function Index() {
   const navigate = useNavigate();
