@@ -53,10 +53,12 @@ const tiers: Tier[] = [
   },
 ];
 
-const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
-  tier,
-  index,
-}) => {
+const TierComponent: React.FC<{
+  tier: Tier;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}> = ({ tier, index, isExpanded, onToggle }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     threshold: 0.2,
@@ -66,7 +68,7 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
   return (
     <motion.div
       ref={ref}
-      className="relative p-6 rounded-lg"
+      className="relative p-6 rounded-lg cursor-pointer transition-all duration-300"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{
@@ -83,7 +85,9 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
           tier.highlightColor && isInView
             ? `${tier.highlightColor}05`
             : "transparent",
+        minHeight: isExpanded ? "auto" : "120px",
       }}
+      onClick={onToggle}
     >
       {/* Header */}
       <h3
