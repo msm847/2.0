@@ -106,7 +106,7 @@ export default function Index() {
   };
 
   const handleButtonClick = () => {
-    navigate("/vigilum#engines");
+    navigate("/vigilum");
   };
 
   return (
