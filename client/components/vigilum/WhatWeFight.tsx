@@ -51,6 +51,26 @@ const tiers: Tier[] = [
       "Corruption happens not when rules are broken, but when systems are designed to simulate legality while rerouting accountability. This is structural corruption. It is executed in logic, not in scandal.",
     highlightColor: "#9F77C9", // SB — Structural Blindspot
   },
+  {
+    id: 5,
+    title: "Implementation",
+    header: "Execute, Deploy, Monitor",
+    summary:
+      "Systems operationalize corruption through automated processes and algorithmic oversight.",
+    description:
+      "Once structural corruption is designed, it must be implemented through operational frameworks. This involves deploying automated systems that execute corrupt logic while maintaining plausible deniability through technical complexity and distributed responsibility.",
+    highlightColor: "#17B58F", // Implementation Green
+  },
+  {
+    id: 6,
+    title: "Evolution",
+    header: "Adapt, Mutate, Persist",
+    summary:
+      "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
+    description:
+      "The final stage is systemic adaptation. As detection methods improve, corrupt systems evolve new forms of evasion. They mutate their operational signatures, adapt their legal frameworks, and persist through institutional memory and embedded processes.",
+    highlightColor: "#40FFAA", // Evolution Bright Green
+  },
 ];
 
 const TierComponent: React.FC<{
