@@ -118,7 +118,7 @@ export default function Index() {
         position: "relative",
         overflow: "hidden",
         background:
-          "linear-gradient(180deg, #2A5A47 0%, #1E3E33 40%, #143025 100%)",
+          "linear-gradient(180deg, #25443B 0%, #1A2F29 50%, #10201C 100%)",
         fontFamily: "var(--font-body)",
       }}
     >
