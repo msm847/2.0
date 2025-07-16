@@ -140,6 +140,29 @@ export default function Index() {
           justifyContent: "center",
         }}
       >
+        {/* VIGILUM.AI Logo - Top Left */}
+        <div
+          style={{
+            position: "absolute",
+            top: "40px",
+            left: "50px",
+            zIndex: 3,
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "2.5rem",
+              fontWeight: "900",
+              margin: 0,
+              letterSpacing: "2px",
+              color: "#ffffff",
+              textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
+            }}
+          >
+            VIGILUM.AI
+          </h1>
+        </div>
         {/* Main Text - Moved to top */}
         <div
           style={{
