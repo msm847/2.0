@@ -27,16 +27,6 @@ const tiers: Tier[] = [
   },
   {
     id: 2,
-    title: "Perspective",
-    header: "Authorship, Distortion, Compression",
-    summary:
-      "Institutions only see corruption when protocol is broken. Documents filed = legality assumed.",
-    description:
-      "Institutions recognize corruption only when it deviates from protocol. If the contract is signed, the documents filed, and procedures followed — then legality is assumed. This is where simulation begins.",
-    highlightColor: "#E27E3C", // RT — Risk Transfer
-  },
-  {
-    id: 3,
     title: "Format",
     header: "Ritual, Simulation, Override",
     summary:
@@ -44,6 +34,16 @@ const tiers: Tier[] = [
     description:
       "Legality is interpreted syntactically. If a clause is signed and conforms to the rules of procurement law, then it passes. But law is not constraint — it is an operator. And it can be used to construct evasion.",
     highlightColor: "#DB4F4F", // CI — Compliance Illusion
+  },
+  {
+    id: 3,
+    title: "Perspective",
+    header: "Authorship, Distortion, Compression",
+    summary:
+      "Institutions only see corruption when protocol is broken. Documents filed = legality assumed.",
+    description:
+      "Institutions recognize corruption only when it deviates from protocol. If the contract is signed, the documents filed, and procedures followed — then legality is assumed. This is where simulation begins.",
+    highlightColor: "#E27E3C", // RT — Risk Transfer
   },
   {
     id: 4,
