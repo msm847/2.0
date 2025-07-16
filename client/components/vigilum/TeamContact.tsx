@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { gsap } from "gsap";
-import "./MagicBento.css";
+import MagicBentoTeamGrid from "./MagicBentoTeamGrid";
 import {
   Shield,
   Building,
@@ -28,7 +27,6 @@ import {
   Scale,
   FileSearch,
   Landmark,
-  ChevronDown,
 } from "lucide-react";
 
 const TeamContact = () => {
