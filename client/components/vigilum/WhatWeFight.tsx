@@ -20,24 +20,30 @@ const tiers: Tier[] = [
   },
   {
     id: 2,
-    title: "TIER 2 — FORMAT",
+    title: "Format",
     header: "Procedure, Checklist, Documentation",
+    summary:
+      "Institutions only see corruption when protocol is broken. Documents filed = legality assumed.",
     description:
       "Institutions recognize corruption only when it deviates from protocol. If the contract is signed, the documents filed, and procedures followed — then legality is assumed. This is where simulation begins.",
     highlightColor: "#E27E3C", // RT — Risk Transfer
   },
   {
     id: 3,
-    title: "TIER 3 — LAW",
+    title: "Law",
     header: "Validity, Clause, Signature",
+    summary:
+      "Legality interpreted syntactically. Signed clause = passes. Law is an operator, not constraint.",
     description:
       "Legality is interpreted syntactically. If a clause is signed and conforms to the rules of procurement law, then it passes. But law is not constraint — it is an operator. And it can be used to construct evasion.",
     highlightColor: "#DB4F4F", // CI — Compliance Illusion
   },
   {
     id: 4,
-    title: "TIER 4 — STRUCTURE",
+    title: "Structure",
     header: "Design, Override, Simulation",
+    summary:
+      "Corruption happens when systems simulate legality while rerouting accountability.",
     description:
       "Corruption happens not when rules are broken, but when systems are designed to simulate legality while rerouting accountability. This is structural corruption. It is executed in logic, not in scandal.",
     highlightColor: "#9F77C9", // SB — Structural Blindspot
