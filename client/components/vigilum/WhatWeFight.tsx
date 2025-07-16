@@ -205,32 +205,51 @@ const TierComponent: React.FC<{
           <div
             style={{
               fontFamily: "var(--font-body)",
-              fontSize: "18px",
-              lineHeight: "1.625",
+              fontSize: "16px",
+              lineHeight: "1.6",
               letterSpacing: "0",
               width: "100%",
+              height: "auto",
+              minHeight: "120px",
               marginTop: "8px",
+              overflow: "hidden",
+              position: "relative",
             }}
           >
-            <DecryptedText
-              text={tier.description}
-              className="text-body leading-relaxed"
+            <div
               style={{
-                color: "#e5e5e5",
-                fontFamily: "var(--font-body)",
-                letterSpacing: "0",
-                fontSize: "18px",
-                lineHeight: "1.625",
-                display: "block",
-                width: "100%",
+                position: "absolute",
+                top: "0",
+                left: "0",
+                right: "0",
+                bottom: "0",
+                padding: "0",
               }}
-              animateOn="view"
-              sequential={true}
-              speed={60}
-              maxIterations={5}
-              revealDirection="start"
-              useOriginalCharsOnly={true}
-            />
+            >
+              <DecryptedText
+                text={tier.description}
+                className="text-body leading-relaxed"
+                parentClassName="w-full h-full"
+                style={{
+                  color: "#e5e5e5",
+                  fontFamily: "var(--font-body)",
+                  letterSpacing: "0",
+                  fontSize: "16px",
+                  lineHeight: "1.6",
+                  display: "block",
+                  width: "100%",
+                  wordWrap: "break-word",
+                  overflowWrap: "break-word",
+                }}
+                animateOn="view"
+                sequential={true}
+                speed={40}
+                maxIterations={8}
+                revealDirection="start"
+                useOriginalCharsOnly={false}
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?"
+              />
+            </div>
           </div>
         ) : (
           <p
