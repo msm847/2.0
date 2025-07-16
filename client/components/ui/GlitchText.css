@@ -25,13 +25,13 @@
 }
 
 .glitch::before {
-  text-shadow: var(--before-shadow, 2px 0 cyan);
+  text-shadow: var(--before-shadow, 1px 0 white);
   animation: glitch-before var(--before-duration, 2s) infinite linear
     alternate-reverse;
 }
 
 .glitch::after {
-  text-shadow: var(--after-shadow, -2px 0 red);
+  text-shadow: var(--after-shadow, -1px 0 white);
   animation: glitch-after var(--after-duration, 3s) infinite linear
     alternate-reverse;
 }
