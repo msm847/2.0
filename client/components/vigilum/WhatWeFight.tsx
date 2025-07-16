@@ -16,6 +16,8 @@ const tiers: Tier[] = [
     id: 1,
     title: "Perception",
     header: "Scandal, Outrage, Visibility",
+    summary:
+      "Public sees corruption when visible through media, arrests, abuses. Surface expression, not source.",
     description:
       "The public sees corruption when it becomes visible — through media leaks, arrests, or blatant abuses. But this is not where corruption begins. This is its surface expression, not its structural source.",
   },
