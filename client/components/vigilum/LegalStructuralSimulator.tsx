@@ -215,7 +215,7 @@ const LegalStructuralSimulator: React.FC = () => {
         {/* Core Premise */}
         <div className="text-center mb-16">
           <motion.h2
-            className="text-display-xl text-white mb-8"
+            className="text-display-lg text-white mb-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
