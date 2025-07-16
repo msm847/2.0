@@ -197,7 +197,7 @@ export default function Index() {
           id="button-container"
           style={{
             position: "absolute",
-            top: "calc(50% + 150px)",
+            top: "calc(50% + 175px)",
             left: "50%",
             transform: "translateX(-50%)",
             width: "300px",
