@@ -213,17 +213,6 @@ export default function Index() {
           <button
             id="enter-button"
             onClick={handleButtonClick}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = "1";
-              e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow =
-                "0 0 20px rgba(255, 255, 255, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = "0.7";
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
             style={{
               position: "absolute",
               top: 0,
@@ -231,15 +220,15 @@ export default function Index() {
               width: "100%",
               height: "100%",
               background: "transparent",
-              border: "2px solid rgba(255,255,255,0.3)",
-              color: "white",
+              border: "none",
+              color: "transparent",
               fontSize: "18px",
               fontWeight: "bold",
               letterSpacing: "2px",
               cursor: "pointer",
               pointerEvents: "auto",
               zIndex: 10,
-              opacity: 0.7,
+              opacity: 0,
               transition: "all 0.3s ease",
               fontFamily: "var(--font-ui)",
               textTransform: "uppercase",
