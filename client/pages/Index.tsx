@@ -156,15 +156,15 @@ export default function Index() {
               fontWeight: "700",
               margin: 0,
               letterSpacing: "1px",
-              color: "#1A5D4A",
+              color: "#F8F6F4",
               textShadow: `
-                1px 1px 0 #0F2B22,
-                2px 2px 0 #0F2B22,
-                3px 3px 0 #0F2B22,
-                4px 4px 0 #0A1D16,
-                5px 5px 0 #0A1D16,
-                6px 6px 10px rgba(0, 0, 0, 0.3),
-                0 0 20px rgba(26, 93, 74, 0.3)
+                1px 1px 0 #E0DDD8,
+                2px 2px 0 #D5D1CC,
+                3px 3px 0 #C8C3BD,
+                4px 4px 0 #B8B2AB,
+                5px 5px 0 #A8A199,
+                6px 6px 10px rgba(0, 0, 0, 0.2),
+                0 0 15px rgba(248, 246, 244, 0.4)
               `,
               transform: "translateZ(0)",
             }}
