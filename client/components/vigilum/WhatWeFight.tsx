@@ -159,7 +159,7 @@ const WhatWeFight: React.FC = () => {
       <div className="max-w-screen-xl mx-auto">
         {/* Section Title */}
         <motion.h1
-          className="text-left mb-16 text-display-xl uppercase tracking-tight"
+          className="text-left mb-16 text-display-xl uppercase tracking-tight pl-6"
           style={{
             color: "#DAD7C7",
           }}
