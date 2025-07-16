@@ -228,14 +228,7 @@ export default function Index() {
           {/* 3D Glass Mirror Button */}
           <button
             id="enter-button"
-            onClick={() => {
-              const enginesSection = document.querySelector("#engines");
-              if (enginesSection) {
-                enginesSection.scrollIntoView({ behavior: "smooth" });
-              } else {
-                navigate("/vigilum#engines");
-              }
-            }}
+            onClick={handleButtonClick}
             style={{
               width: "100%",
               height: "100%",
