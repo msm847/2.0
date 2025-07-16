@@ -187,7 +187,7 @@ export default function Index() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "3rem",
-                fontWeight: "bold",
+                fontWeight: "900",
                 margin: 0,
                 letterSpacing: "2px",
               }}
