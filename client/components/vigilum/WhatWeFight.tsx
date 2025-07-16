@@ -223,27 +223,6 @@ const WhatWeFight: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Final Statement */}
-        <div className="text-center pt-12 mt-8">
-          <motion.p
-            ref={finalStatementRef}
-            className="text-section-lg tracking-tight"
-            style={{
-              color: "#E1D16D",
-            }}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: isInViewFinal ? 1 : 0,
-            }}
-            transition={{ duration: 1, delay: 0.3 }}
-            whileHover={{
-              textShadow: "0 0 20px #E1D16D60",
-            }}
-          >
-            "This system isn't broken. It's working as simulated."
-          </motion.p>
-        </div>
       </div>
     </section>
   );
