@@ -13,7 +13,7 @@ interface Tier {
 const tiers: Tier[] = [
   {
     id: 1,
-    title: "TIER 1 — PERCEPTION",
+    title: "Perception",
     header: "Scandal, Outrage, Visibility",
     description:
       "The public sees corruption when it becomes visible — through media leaks, arrests, or blatant abuses. But this is not where corruption begins. This is its surface expression, not its structural source.",
