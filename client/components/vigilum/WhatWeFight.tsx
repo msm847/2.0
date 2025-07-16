@@ -202,55 +202,18 @@ const TierComponent: React.FC<{
       {/* Summary or Description */}
       <div>
         {isExpanded ? (
-          <div
+          <p
+            className="text-body leading-relaxed"
             style={{
+              color: "#e5e5e5",
               fontFamily: "var(--font-body)",
               fontSize: "16px",
               lineHeight: "1.6",
-              letterSpacing: "0",
-              width: "100%",
-              height: "auto",
-              minHeight: "120px",
               marginTop: "8px",
-              overflow: "hidden",
-              position: "relative",
             }}
           >
-            <div
-              style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                right: "0",
-                bottom: "0",
-                padding: "0",
-              }}
-            >
-              <DecryptedText
-                text={tier.description}
-                className="text-body leading-relaxed"
-                parentClassName="w-full h-full"
-                style={{
-                  color: "#e5e5e5",
-                  fontFamily: "var(--font-body)",
-                  letterSpacing: "0",
-                  fontSize: "16px",
-                  lineHeight: "1.6",
-                  display: "block",
-                  width: "100%",
-                  wordWrap: "break-word",
-                  overflowWrap: "break-word",
-                }}
-                animateOn="view"
-                sequential={true}
-                speed={40}
-                maxIterations={8}
-                revealDirection="start"
-                useOriginalCharsOnly={false}
-                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?"
-              />
-            </div>
-          </div>
+            {tier.description}
+          </p>
         ) : (
           <p
             className="text-body leading-relaxed"
