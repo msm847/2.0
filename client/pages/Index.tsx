@@ -178,19 +178,22 @@ export default function Index() {
             zIndex: 3,
           }}
         >
-          <h1
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "3rem",
-              fontWeight: "bold",
-              margin: 0,
-              letterSpacing: "2px",
-              color: "#9DE6C6",
-              textShadow: "0 0 20px rgba(157, 230, 198, 0.3)",
-            }}
+          <GradientText
+            colors={["#9DE6C6", "#17B58F", "#40ffaa", "#17B58F", "#9DE6C6"]}
+            animationSpeed={6}
           >
-            Observe. Compute. Expose.
-          </h1>
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "3rem",
+                fontWeight: "bold",
+                margin: 0,
+                letterSpacing: "2px",
+              }}
+            >
+              Observe. Compute. Expose.
+            </h1>
+          </GradientText>
           <p
             style={{
               fontFamily: "var(--font-body)",
