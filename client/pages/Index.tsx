@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GradientText from "@/components/ui/GradientText";
+import Orb from "@/components/ui/Orb";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -123,6 +124,28 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
+      {/* Orb Background */}
+      <div
+        id="orb-background"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "600px",
+          height: "600px",
+          zIndex: 1,
+          opacity: 0.8,
+        }}
+      >
+        <Orb
+          hue={160}
+          hoverIntensity={0.3}
+          rotateOnHover={true}
+          forceHoverState={false}
+        />
+      </div>
+
       {/* Content Overlay */}
       <div
         id="content-overlay"
