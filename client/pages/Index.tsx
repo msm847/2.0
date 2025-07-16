@@ -123,37 +123,6 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-      {/* Spline Brain Animation Background - Using iframe (working approach) */}
-      <div
-        id="spline-container"
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 1,
-        }}
-      >
-        <iframe
-          src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/?controls=false&logo=false&branding=false&autoplay=true&autoRotate=false&pointer=false&hover=false"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          style={{
-            border: "none",
-            background: "transparent",
-            display: "block",
-            pointerEvents: "none",
-            userSelect: "none",
-            transform: "scale(1.2) translateX(-25%) rotateZ(15deg)",
-            transformOrigin: "center center",
-          }}
-          title="Vigilum AI Brain Animation"
-          scrolling="no"
-        />
-      </div>
-
       {/* Content Overlay */}
       <div
         id="content-overlay"
