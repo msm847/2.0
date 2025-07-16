@@ -146,7 +146,7 @@ export default function Index() {
             display: "block",
             pointerEvents: "none",
             userSelect: "none",
-            transform: "scale(1.2) translateX(-10%)",
+            transform: "scale(1.1) translateX(0%) rotateY(90deg)",
             transformOrigin: "center center",
           }}
           title="Vigilum AI Brain Animation"
