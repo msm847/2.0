@@ -225,48 +225,131 @@ export default function Index() {
             height: "50px",
           }}
         >
-          {/* Static Button */}
+          {/* 3D Glass Mirror Button */}
           <button
             id="enter-button"
-            onClick={handleButtonClick}
+            onClick={() => {
+              const enginesSection = document.querySelector("#engines");
+              if (enginesSection) {
+                enginesSection.scrollIntoView({ behavior: "smooth" });
+              } else {
+                navigate("/vigilum#engines");
+              }
+            }}
             style={{
               width: "100%",
               height: "100%",
-              background:
-                "linear-gradient(135deg, rgba(23, 181, 143, 0.8) 0%, rgba(23, 181, 143, 0.6) 100%)",
-              border: "1px solid rgba(23, 181, 143, 0.3)",
+              background: `
+                linear-gradient(135deg,
+                  rgba(255, 255, 255, 0.02) 0%,
+                  rgba(255, 255, 255, 0.01) 25%,
+                  rgba(255, 255, 255, 0.005) 50%,
+                  rgba(255, 255, 255, 0.01) 75%,
+                  rgba(255, 255, 255, 0.02) 100%)
+              `,
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+              borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
               borderRadius: "25px",
-              color: "#ffffff",
+              color: "rgba(255, 255, 255, 0.9)",
               fontSize: "16px",
-              fontWeight: "600",
-              letterSpacing: "1px",
+              fontWeight: "500",
+              letterSpacing: "1.5px",
               cursor: "pointer",
               fontFamily: "var(--font-ui)",
               textTransform: "uppercase",
-              transition: "all 0.2s ease",
-              backdropFilter: "blur(20px)",
-              boxShadow:
-                "0 4px 20px rgba(23, 181, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              backdropFilter: "blur(40px) saturate(1.8)",
+              WebkitBackdropFilter: "blur(40px) saturate(1.8)",
+              boxShadow: `
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                0 2px 8px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05)
+              `,
+              textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
+              position: "relative",
+              overflow: "hidden",
+            }}
+            onMouseMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = ((e.clientX - rect.left) / rect.width) * 100;
+              const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+              e.currentTarget.style.background = `
+                radial-gradient(circle at ${x}% ${y}%,
+                  rgba(255, 255, 255, 0.08) 0%,
+                  rgba(255, 255, 255, 0.03) 30%,
+                  rgba(255, 255, 255, 0.01) 60%,
+                  rgba(255, 255, 255, 0.005) 100%),
+                linear-gradient(135deg,
+                  rgba(255, 255, 255, 0.02) 0%,
+                  rgba(255, 255, 255, 0.005) 50%,
+                  rgba(255, 255, 255, 0.02) 100%)
+              `;
+
+              e.currentTarget.style.transform = `
+                perspective(1000px)
+                rotateX(${(y - 50) * 0.1}deg)
+                rotateY(${(x - 50) * 0.1}deg)
+                translateZ(2px)
+              `;
+
+              e.currentTarget.style.boxShadow = `
+                0 12px 40px rgba(0, 0, 0, 0.15),
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+                0 0 20px rgba(255, 255, 255, 0.1)
+              `;
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background =
-                "linear-gradient(135deg, rgba(23, 181, 143, 0.9) 0%, rgba(23, 181, 143, 0.7) 100%)";
-              e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow =
-                "0 6px 25px rgba(23, 181, 143, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)";
+              e.currentTarget.style.borderTop =
+                "1px solid rgba(255, 255, 255, 0.3)";
+              e.currentTarget.style.borderLeft =
+                "1px solid rgba(255, 255, 255, 0.25)";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background =
-                "linear-gradient(135deg, rgba(23, 181, 143, 0.8) 0%, rgba(23, 181, 143, 0.6) 100%)";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 4px 20px rgba(23, 181, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.background = `
+                linear-gradient(135deg,
+                  rgba(255, 255, 255, 0.02) 0%,
+                  rgba(255, 255, 255, 0.01) 25%,
+                  rgba(255, 255, 255, 0.005) 50%,
+                  rgba(255, 255, 255, 0.01) 75%,
+                  rgba(255, 255, 255, 0.02) 100%)
+              `;
+              e.currentTarget.style.transform =
+                "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+              e.currentTarget.style.boxShadow = `
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                0 2px 8px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.05)
+              `;
+              e.currentTarget.style.borderTop =
+                "1px solid rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.borderLeft =
+                "1px solid rgba(255, 255, 255, 0.15)";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)";
             }}
             onMouseDown={(e) => {
-              e.currentTarget.style.transform = "translateY(1px)";
+              e.currentTarget.style.transform =
+                "perspective(1000px) scale(0.98) translateZ(-2px)";
             }}
             onMouseUp={(e) => {
-              e.currentTarget.style.transform = "translateY(-1px)";
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = ((e.clientX - rect.left) / rect.width) * 100;
+              const y = ((e.clientY - rect.top) / rect.height) * 100;
+              e.currentTarget.style.transform = `
+                perspective(1000px)
+                rotateX(${(y - 50) * 0.1}deg)
+                rotateY(${(x - 50) * 0.1}deg)
+                translateZ(2px)
+              `;
             }}
           >
             ENTER SIMULATION
