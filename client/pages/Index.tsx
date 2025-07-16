@@ -153,12 +153,20 @@ export default function Index() {
             style={{
               fontFamily: "var(--font-ui)",
               fontSize: "1.1rem",
-              fontWeight: "600",
+              fontWeight: "700",
               margin: 0,
               letterSpacing: "1px",
-              color: "#ffffff",
-              textShadow: "0 1px 2px rgba(0, 0, 0, 0.2)",
-              opacity: "0.95",
+              color: "#1A5D4A",
+              textShadow: `
+                1px 1px 0 #0F2B22,
+                2px 2px 0 #0F2B22,
+                3px 3px 0 #0F2B22,
+                4px 4px 0 #0A1D16,
+                5px 5px 0 #0A1D16,
+                6px 6px 10px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(26, 93, 74, 0.3)
+              `,
+              transform: "translateZ(0)",
             }}
           >
             VIGILUM.AI
