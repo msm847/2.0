@@ -171,14 +171,14 @@ const TierComponent: React.FC<{
             animationDuration={1.2}
             pauseBetweenAnimations={2}
           />
-        ) : tier.id === 3 ? (
+        ) : tier.id === 4 ? (
           <span style={{ display: "flex", alignItems: "baseline", gap: "6px" }}>
             <span>Outcome ≠ </span>
             <GlitchText speed={0.6} enableShadows={true} enableOnHover={true}>
               Consequence
             </GlitchText>
           </span>
-        ) : tier.id === 4 ? (
+        ) : tier.id === 3 ? (
           <span>{tier.title}</span>
         ) : (
           <span className="flex items-center gap-3">
