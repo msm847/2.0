@@ -194,20 +194,23 @@ export default function Index() {
               Observe. Compute. Expose.
             </h1>
           </GradientText>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "1.1rem",
-              fontWeight: "400",
-              margin: "1rem 0 0 0",
-              letterSpacing: "0.5px",
-              color: "#B8D0C9",
-              opacity: 0.9,
-              lineHeight: 1.4,
-            }}
+          <GradientText
+            colors={["#B8D0C9", "#9DE6C6", "#17B58F", "#9DE6C6", "#B8D0C9"]}
+            animationSpeed={8}
           >
-            Truth is not fixed. It is rendered by the logic that observes it.
-          </p>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "1.1rem",
+                fontWeight: "400",
+                margin: "1rem 0 0 0",
+                letterSpacing: "0.5px",
+                lineHeight: 1.4,
+              }}
+            >
+              Truth is not fixed. It is rendered by the logic that observes it.
+            </p>
+          </GradientText>
         </div>
 
         {/* Button Container - Moved 150px lower */}
