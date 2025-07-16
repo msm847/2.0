@@ -190,16 +190,16 @@ const TierComponent: React.FC<{
             pauseBetweenAnimations={2}
           />
         ) : tier.id === 3 ? (
-          <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <span style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
             <span>Outcome ≠ </span>
             <FuzzyText
-              fontSize="inherit"
-              fontWeight={600}
-              fontFamily="inherit"
+              fontSize="1.8rem"
+              fontWeight={500}
+              fontFamily="var(--font-display)"
               color="#40FFAA"
               enableHover={true}
-              baseIntensity={0.2}
-              hoverIntensity={0.6}
+              baseIntensity={0.15}
+              hoverIntensity={0.4}
             >
               Consequence
             </FuzzyText>
