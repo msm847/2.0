@@ -37,13 +37,13 @@ const tiers: Tier[] = [
   },
   {
     id: 3,
-    title: "Perspective",
-    header: "Authorship, Distortion, Compression",
+    title: "Outcome",
+    header: "Closure, Containment, Misdirection",
     summary:
-      "Institutions only see corruption when protocol is broken. Documents filed = legality assumed.",
+      "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
     description:
-      "Institutions recognize corruption only when it deviates from protocol. If the contract is signed, the documents filed, and procedures followed — then legality is assumed. This is where simulation begins.",
-    highlightColor: "#E27E3C", // RT — Risk Transfer
+      "The final stage is systemic adaptation. As detection methods improve, corrupt systems evolve new forms of evasion. They mutate their operational signatures, adapt their legal frameworks, and persist through institutional memory and embedded processes.",
+    highlightColor: "#40FFAA", // Evolution Bright Green
   },
   {
     id: 4,
