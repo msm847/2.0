@@ -151,13 +151,14 @@ export default function Index() {
         >
           <h1
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "2.5rem",
-              fontWeight: "900",
+              fontFamily: "var(--font-ui)",
+              fontSize: "1.1rem",
+              fontWeight: "600",
               margin: 0,
-              letterSpacing: "2px",
+              letterSpacing: "1px",
               color: "#ffffff",
-              textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
+              textShadow: "0 1px 2px rgba(0, 0, 0, 0.2)",
+              opacity: "0.95",
             }}
           >
             VIGILUM.AI
