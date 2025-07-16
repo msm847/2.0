@@ -56,26 +56,6 @@ const tiers: Tier[] = [
       "Corruption happens not when rules are broken, but when systems are designed to simulate legality while rerouting accountability. This is structural corruption. It is executed in logic, not in scandal.",
     highlightColor: "#9F77C9", // SB — Structural Blindspot
   },
-  {
-    id: 5,
-    title: "Consequence",
-    header: "Execute, Deploy, Monitor",
-    summary:
-      "Systems operationalize corruption through automated processes and algorithmic oversight.",
-    description:
-      "Once structural corruption is designed, it must be implemented through operational frameworks. This involves deploying automated systems that execute corrupt logic while maintaining plausible deniability through technical complexity and distributed responsibility.",
-    highlightColor: "#17B58F", // Implementation Green
-  },
-  {
-    id: 6,
-    title: "Perspective",
-    header: "Authorship, Distortion, Compression",
-    summary:
-      "Institutions only see corruption when protocol is broken. Documents filed = legality assumed.",
-    description:
-      "Institutions recognize corruption only when it deviates from protocol. If the contract is signed, the documents filed, and procedures followed — then legality is assumed. This is where simulation begins.",
-    highlightColor: "#E27E3C", // RT — Risk Transfer
-  },
 ];
 
 const TierComponent: React.FC<{
@@ -189,7 +169,7 @@ const TierComponent: React.FC<{
             animationDuration={1.2}
             pauseBetweenAnimations={2}
           />
-        ) : [3, 4, 5].includes(tier.id) ? (
+        ) : [3, 4].includes(tier.id) ? (
           <span>{tier.title}</span>
         ) : (
           <span className="flex items-center gap-3">
