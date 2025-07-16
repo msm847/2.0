@@ -76,17 +76,6 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
             : "transparent",
       }}
     >
-      {/* Tier Title */}
-      <p
-        className="text-ui text-xs tracking-wider text-gray-400 mb-2"
-        style={{
-          color: tier.highlightColor || "#888",
-          opacity: isInView ? 1 : 0.7,
-        }}
-      >
-        {tier.title}
-      </p>
-
       {/* Header */}
       <h3
         className="text-section-lg font-medium text-white mb-4"
@@ -95,19 +84,33 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
         }}
       >
         {tier.id === 1 ? (
-          <RotatingText
-            texts={["Scandal", "Outrage", "Visibility"]}
-            rotationInterval={2500}
-            splitBy="characters"
-            staggerDuration={0.05}
-            transition={{
-              type: "spring",
-              damping: 20,
-              stiffness: 400,
-            }}
-          />
+          <span className="flex items-center gap-3">
+            <span>{tier.title}</span>
+            <RotatingText
+              texts={["Scandal", "Outrage", "Visibility"]}
+              rotationInterval={2500}
+              splitBy="characters"
+              staggerDuration={0.05}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 400,
+              }}
+            />
+          </span>
         ) : (
-          tier.header
+          <>
+            <p
+              className="text-ui text-xs tracking-wider text-gray-400 mb-2"
+              style={{
+                color: tier.highlightColor || "#888",
+                opacity: isInView ? 1 : 0.7,
+              }}
+            >
+              {tier.title}
+            </p>
+            {tier.header}
+          </>
         )}
       </h3>
 
