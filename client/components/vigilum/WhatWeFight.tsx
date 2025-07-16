@@ -35,7 +35,7 @@ const tiers: Tier[] = [
   },
   {
     id: 3,
-    title: "Law",
+    title: "Format",
     header: "Validity, Clause, Signature",
     summary:
       "Legality interpreted syntactically. Signed clause = passes. Law is an operator, not constraint.",
@@ -45,7 +45,7 @@ const tiers: Tier[] = [
   },
   {
     id: 4,
-    title: "Structure",
+    title: "Law",
     header: "Design, Override, Simulation",
     summary:
       "Corruption happens when systems simulate legality while rerouting accountability.",
@@ -55,7 +55,7 @@ const tiers: Tier[] = [
   },
   {
     id: 5,
-    title: "Implementation",
+    title: "Consequence",
     header: "Execute, Deploy, Monitor",
     summary:
       "Systems operationalize corruption through automated processes and algorithmic oversight.",
@@ -65,7 +65,7 @@ const tiers: Tier[] = [
   },
   {
     id: 6,
-    title: "Evolution",
+    title: "Outcome",
     header: "Adapt, Mutate, Persist",
     summary:
       "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
