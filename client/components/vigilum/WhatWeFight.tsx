@@ -189,22 +189,7 @@ const TierComponent: React.FC<{
             animationDuration={1.2}
             pauseBetweenAnimations={2}
           />
-        ) : tier.id === 3 ? (
-          <span style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-            <span>Outcome ≠ </span>
-            <FuzzyText
-              fontSize="1.8rem"
-              fontWeight={500}
-              fontFamily="var(--font-display)"
-              color="#40FFAA"
-              enableHover={true}
-              baseIntensity={0.15}
-              hoverIntensity={0.4}
-            >
-              Consequence
-            </FuzzyText>
-          </span>
-        ) : [4, 5].includes(tier.id) ? (
+        ) : [3, 4, 5].includes(tier.id) ? (
           <span>{tier.title}</span>
         ) : (
           <span className="flex items-center gap-3">
