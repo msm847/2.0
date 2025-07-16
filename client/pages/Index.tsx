@@ -121,7 +121,7 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-      {/* Spline Canvas Container */}
+      {/* Spline Brain Animation Background - Using iframe (working approach) */}
       <div
         id="spline-container"
         style={{
@@ -133,15 +133,17 @@ export default function Index() {
           zIndex: 1,
         }}
       >
-        <canvas
-          ref={canvasRef}
-          id="canvas3d"
+        <iframe
+          src="https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/?controls=false&logo=false&branding=false"
+          frameBorder="0"
+          width="100%"
+          height="100%"
           style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
+            border: "none",
             background: "transparent",
+            display: "block",
           }}
+          title="Vigilum AI Brain Animation"
         />
       </div>
 
