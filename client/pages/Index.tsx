@@ -1,51 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Index() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
   const [animationPlayed, setAnimationPlayed] = useState(false);
-  const splineAppRef = useRef<any>(null);
-  const particlesRef = useRef<any[]>([]);
 
   useEffect(() => {
-    initializeApp();
+    // Set up animation trigger after component mounts
+    setupAnimationTrigger();
   }, []);
-
-  const initializeApp = async () => {
-    try {
-      // Dynamically import Spline runtime
-      const { Application } = await import(
-        "https://unpkg.com/@splinetool/runtime@1.0.62/build/runtime.js"
-      );
-
-      if (!canvasRef.current) return;
-
-      // Create Spline application
-      splineAppRef.current = new Application(canvasRef.current);
-
-      // Load the scene
-      await splineAppRef.current.load(
-        "https://my.spline.design/particleaibrain-adL2AYtD8H0GnWtw2HEEOGVO/scene.splinecode",
-      );
-
-      setIsLoading(false);
-
-      // Find brain particles
-      const brainParticles =
-        splineAppRef.current.findObjectByName("BrainParticles");
-      if (brainParticles && brainParticles.emitter) {
-        particlesRef.current = brainParticles.emitter.particles || [];
-      }
-
-      // Set up animation trigger
-      setupAnimationTrigger();
-    } catch (error) {
-      console.error("Error loading Spline scene:", error);
-      setIsLoading(false);
-    }
-  };
 
   const setupAnimationTrigger = () => {
     const triggerAnimation = () => {
@@ -61,7 +24,10 @@ export default function Index() {
 
   const playParticleToButtonAnimation = async () => {
     try {
-      const { gsap } = await import("https://unpkg.com/gsap@3.12.5/index.js");
+      // Import GSAP dynamically
+      const gsap = await import("https://unpkg.com/gsap@3.12.5/index.js").then(
+        (module) => module.gsap,
+      );
 
       const particleTextContainer = document.getElementById(
         "particle-text-container",
@@ -80,13 +46,14 @@ export default function Index() {
         span.textContent = letter === " " ? "\u00A0" : letter;
         span.style.cssText = `
           position: absolute;
-          color: #00ffff;
+          color: #17B58F;
           font-size: 18px;
           font-weight: bold;
           letter-spacing: 2px;
           opacity: 0;
           transform: scale(0);
-          text-shadow: 0 0 10px #00ffff;
+          text-shadow: 0 0 10px #17B58F;
+          font-family: var(--font-ui);
         `;
         particleTextContainer.appendChild(span);
         textElements.push(span);
@@ -107,29 +74,6 @@ export default function Index() {
       // Create timeline
       const timeline = gsap.timeline();
 
-      // Animate particles if available
-      if (particlesRef.current.length > 0) {
-        const selectedParticles = particlesRef.current.filter(
-          (_, index) => index % 2 === 0,
-        );
-
-        selectedParticles.forEach((particle) => {
-          if (particle.position) {
-            timeline.to(
-              particle.position,
-              {
-                x: (Math.random() - 0.5) * 2,
-                y: -2,
-                z: 0,
-                duration: 4,
-                ease: "power2.inOut",
-              },
-              0,
-            );
-          }
-        });
-      }
-
       // Animate text appearance
       timeline.to(
         textElements,
@@ -140,20 +84,20 @@ export default function Index() {
           stagger: 0.1,
           ease: "back.out(1.7)",
         },
-        3.5,
+        0.5,
       );
 
       // Add pulsing effect
       timeline.to(
         textElements,
         {
-          textShadow: "0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff",
-          duration: 0.5,
+          textShadow: "0 0 20px #17B58F, 0 0 30px #17B58F, 0 0 40px #17B58F",
+          duration: 1,
           yoyo: true,
           repeat: -1,
           ease: "power2.inOut",
         },
-        4,
+        1,
       );
     } catch (error) {
       console.error("Error in particle animation:", error);
