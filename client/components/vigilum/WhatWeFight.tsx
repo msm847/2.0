@@ -112,15 +112,31 @@ const TierComponent: React.FC<{
         </span>
       </h3>
 
-      {/* Description */}
-      <p
-        className="text-body leading-relaxed"
-        style={{
-          color: isInView ? "#e5e5e5" : "#aaa",
-        }}
+      {/* Summary or Description */}
+      <motion.div
+        initial={false}
+        animate={{ height: isExpanded ? "auto" : "auto" }}
+        transition={{ duration: 0.3 }}
       >
-        {tier.description}
-      </p>
+        <p
+          className="text-body leading-relaxed"
+          style={{
+            color: isInView ? "#e5e5e5" : "#aaa",
+          }}
+        >
+          {isExpanded ? tier.description : tier.summary}
+        </p>
+      </motion.div>
+
+      {/* Expand indicator */}
+      <div className="absolute top-4 right-4 text-gray-400">
+        <motion.span
+          animate={{ rotate: isExpanded ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          ↓
+        </motion.span>
+      </div>
 
       {/* Highlight Border */}
       {tier.highlightColor && (
