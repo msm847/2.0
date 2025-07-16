@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import RotatingText from "@/components/ui/RotatingText";
 import DecryptedText from "@/components/ui/DecryptedText";
 import SplitText from "@/components/ui/SplitText";
+import TrueFocus from "@/components/ui/TrueFocus";
 
 interface Tier {
   id: number;
@@ -16,7 +17,7 @@ interface Tier {
 const tiers: Tier[] = [
   {
     id: 1,
-    title: "Perception",
+    title: "Perception Perspective",
     header: "Scandal, Outrage, Visibility",
     summary:
       "Public sees corruption when visible through media, arrests, abuses. Surface expression, not source.",
@@ -177,7 +178,17 @@ const TierComponent: React.FC<{
           color: isInView ? "white" : "#ccc",
         }}
       >
-        {[1, 4, 5].includes(tier.id) ? (
+        {tier.id === 1 ? (
+          <TrueFocus
+            sentence={tier.title}
+            manualMode={false}
+            blurAmount={3}
+            borderColor="#9DE6C6"
+            glowColor="rgba(157, 230, 198, 0.6)"
+            animationDuration={1.2}
+            pauseBetweenAnimations={2}
+          />
+        ) : [4, 5].includes(tier.id) ? (
           <span>{tier.title}</span>
         ) : (
           <span className="flex items-center gap-3">
