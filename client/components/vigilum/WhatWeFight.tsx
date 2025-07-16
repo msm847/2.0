@@ -55,7 +55,8 @@ const tiers: Tier[] = [
     id: 5,
     title: "Implementation",
     header: "Execute, Deploy, Monitor",
-    summary: "Systems operationalize corruption through automated processes and algorithmic oversight.",
+    summary:
+      "Systems operationalize corruption through automated processes and algorithmic oversight.",
     description:
       "Once structural corruption is designed, it must be implemented through operational frameworks. This involves deploying automated systems that execute corrupt logic while maintaining plausible deniability through technical complexity and distributed responsibility.",
     highlightColor: "#17B58F", // Implementation Green
@@ -64,7 +65,8 @@ const tiers: Tier[] = [
     id: 6,
     title: "Evolution",
     header: "Adapt, Mutate, Persist",
-    summary: "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
+    summary:
+      "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
     description:
       "The final stage is systemic adaptation. As detection methods improve, corrupt systems evolve new forms of evasion. They mutate their operational signatures, adapt their legal frameworks, and persist through institutional memory and embedded processes.",
     highlightColor: "#40FFAA", // Evolution Bright Green
@@ -88,14 +90,12 @@ const TierComponent: React.FC<{
       ref={ref}
       className="relative p-6 rounded-lg cursor-pointer transition-all duration-300"
       style={{
-        boxShadow:
-          tier.highlightColor
-            ? `0 0 30px ${tier.highlightColor}20, 0 0 10px ${tier.highlightColor}10`
-            : "none",
-        backgroundColor:
-          tier.highlightColor
-            ? `${tier.highlightColor}05`
-            : "transparent",
+        boxShadow: tier.highlightColor
+          ? `0 0 30px ${tier.highlightColor}20, 0 0 10px ${tier.highlightColor}10`
+          : "none",
+        backgroundColor: tier.highlightColor
+          ? `${tier.highlightColor}05`
+          : "transparent",
         minHeight: isExpanded ? "auto" : "120px",
         opacity: 1,
       }}
@@ -152,19 +152,14 @@ const TierComponent: React.FC<{
 
       {/* Highlight Border */}
       {tier.highlightColor && (
-        <motion.div
+        <div
           className="absolute inset-0 rounded-lg border-2 opacity-20"
           style={{
             borderColor: tier.highlightColor,
           }}
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: isInView ? 0.2 : 0,
-          }}
-          transition={{ duration: 0.5, delay: 0.3 }}
         />
       )}
-    </motion.div>
+    </div>
   );
 };
 
