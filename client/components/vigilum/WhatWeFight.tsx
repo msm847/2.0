@@ -168,7 +168,7 @@ const WhatWeFight: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-20%" }}
         >
-          WHAT WE FIGHT
+          What we're fighting
         </motion.h1>
 
         {/* Tier Pyramid */}
