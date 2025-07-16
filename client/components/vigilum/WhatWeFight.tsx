@@ -66,7 +66,7 @@ const tiers: Tier[] = [
   {
     id: 6,
     title: "Outcome",
-    header: "Adapt, Mutate, Persist",
+    header: "Closure, Containment, Misdirection",
     summary:
       "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
     description:
