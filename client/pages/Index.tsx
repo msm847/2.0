@@ -164,13 +164,17 @@ export default function Index() {
           justifyContent: "center",
         }}
       >
-        {/* Main Text */}
+        {/* Main Text - Moved to top */}
         <div
           style={{
+            position: "absolute",
+            top: "15%",
+            left: "50%",
+            transform: "translateX(-50%)",
             textAlign: "center",
             color: "white",
-            marginBottom: "2rem",
             pointerEvents: "none",
+            zIndex: 3,
           }}
         >
           <h1
@@ -178,7 +182,7 @@ export default function Index() {
               fontFamily: "var(--font-display)",
               fontSize: "3rem",
               fontWeight: "bold",
-              margin: "0 0 1rem 0",
+              margin: 0,
               letterSpacing: "2px",
               color: "#9DE6C6",
               textShadow: "0 0 20px rgba(157, 230, 198, 0.3)",
@@ -186,27 +190,18 @@ export default function Index() {
           >
             Observe. Compute. Expose.
           </h1>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "1.2rem",
-              opacity: 0.8,
-              margin: 0,
-              color: "#B8D0C9",
-            }}
-          >
-            Vigilum AI Corruption Detection System
-          </p>
         </div>
 
-        {/* Button Container */}
+        {/* Button Container - Moved 150px lower */}
         <div
           id="button-container"
           style={{
-            position: "relative",
+            position: "absolute",
+            top: "calc(50% + 150px)",
+            left: "50%",
+            transform: "translateX(-50%)",
             width: "300px",
             height: "60px",
-            marginTop: "3rem",
           }}
         >
           {/* Clickable Button */}
