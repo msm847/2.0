@@ -121,7 +121,7 @@ const TierComponent: React.FC<{
             inset 0 -1px 0 rgba(0, 0, 0, 0.1)
           `,
         height: isExpanded ? "auto" : "160px",
-        minHeight: "160px",
+        minHeight: isExpanded ? "auto" : "160px",
         maxHeight: isExpanded ? "none" : "160px",
         opacity: 1,
         transform: "translateY(0px) rotateX(0deg) rotateY(0deg)",
@@ -208,10 +208,7 @@ const TierComponent: React.FC<{
               lineHeight: "1.625",
               letterSpacing: "0",
               width: "100%",
-              height: "auto",
-              minHeight: "60px",
-              position: "relative",
-              overflow: "hidden",
+              marginTop: "8px",
             }}
           >
             <DecryptedText
@@ -225,10 +222,6 @@ const TierComponent: React.FC<{
                 lineHeight: "1.625",
                 display: "block",
                 width: "100%",
-                position: "absolute",
-                top: "0",
-                left: "0",
-                right: "0",
               }}
               animateOn="view"
               sequential={true}
