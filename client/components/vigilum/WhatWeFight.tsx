@@ -5,10 +5,12 @@ import DecryptedText from "@/components/ui/DecryptedText";
 import SplitText from "@/components/ui/SplitText";
 import TrueFocus from "@/components/ui/TrueFocus";
 import FuzzyText from "@/components/ui/FuzzyText";
+import GlitchText from "@/components/ui/GlitchText";
 
 interface Tier {
   id: number;
   title: string;
+  titleComponent?: React.ReactNode;
   header: string;
   summary: string;
   description: string;
@@ -38,7 +40,20 @@ const tiers: Tier[] = [
   },
   {
     id: 3,
-    title: "Outcome ≠ Consequence",
+    title: "Outcome ≠",
+    titleComponent: (
+      <span style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
+        <span>Outcome ≠ </span>
+        <GlitchText
+          speed={0.8}
+          enableShadows={true}
+          enableOnHover={true}
+          className="glitch-consequence"
+        >
+          Consequence
+        </GlitchText>
+      </span>
+    ),
     header: "Closure, Containment, Misdirection",
     summary:
       "Corrupt systems evolve to counter detection, becoming more sophisticated over time.",
@@ -170,7 +185,7 @@ const TierComponent: React.FC<{
             pauseBetweenAnimations={2}
           />
         ) : [3, 4].includes(tier.id) ? (
-          <span>{tier.title}</span>
+          tier.titleComponent || <span>{tier.title}</span>
         ) : (
           <span className="flex items-center gap-3">
             <span>{tier.title}</span>
