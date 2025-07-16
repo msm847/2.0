@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import RotatingText from "@/components/ui/RotatingText";
+import DecryptedText from "@/components/ui/DecryptedText";
 
 interface Tier {
   id: number;
@@ -126,14 +127,29 @@ const TierComponent: React.FC<{
 
       {/* Summary or Description */}
       <div>
-        <p
-          className="text-body leading-relaxed"
-          style={{
-            color: isInView ? "#e5e5e5" : "#aaa",
-          }}
-        >
-          {isExpanded ? tier.description : tier.summary}
-        </p>
+        {isExpanded ? (
+          <DecryptedText
+            text={tier.description}
+            className="text-body leading-relaxed"
+            style={{
+              color: "#e5e5e5",
+            }}
+            animateOn="view"
+            sequential={true}
+            speed={30}
+            maxIterations={15}
+            revealDirection="start"
+          />
+        ) : (
+          <p
+            className="text-body leading-relaxed"
+            style={{
+              color: isInView ? "#e5e5e5" : "#aaa",
+            }}
+          >
+            {tier.summary}
+          </p>
+        )}
       </div>
 
       {/* Expand indicator */}
