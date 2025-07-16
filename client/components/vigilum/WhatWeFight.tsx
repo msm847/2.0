@@ -109,23 +109,27 @@ const TierComponent: React.FC<{
           color: isInView ? "white" : "#ccc",
         }}
       >
-        <span className="flex items-center gap-3">
+        {[1, 4, 5].includes(tier.id) ? (
           <span>{tier.title}</span>
-          <span className="text-gray-400" style={{ fontSize: "1.2em" }}>
-            →
+        ) : (
+          <span className="flex items-center gap-3">
+            <span>{tier.title}</span>
+            <span className="text-gray-400" style={{ fontSize: "1.2em" }}>
+              →
+            </span>
+            <RotatingText
+              texts={tier.header.split(", ")}
+              rotationInterval={2500}
+              splitBy="characters"
+              staggerDuration={0.05}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 400,
+              }}
+            />
           </span>
-          <RotatingText
-            texts={tier.header.split(", ")}
-            rotationInterval={2500}
-            splitBy="characters"
-            staggerDuration={0.05}
-            transition={{
-              type: "spring",
-              damping: 20,
-              stiffness: 400,
-            }}
-          />
-        </span>
+        )}
       </h3>
 
       {/* Summary or Description */}
