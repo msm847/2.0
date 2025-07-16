@@ -270,6 +270,8 @@ export default function Index() {
               textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
               position: "relative",
               overflow: "hidden",
+              pointerEvents: "auto",
+              zIndex: 1000,
             }}
             onMouseMove={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
