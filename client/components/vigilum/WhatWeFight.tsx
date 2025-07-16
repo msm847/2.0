@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import RotatingText from "@/components/ui/RotatingText";
 import DecryptedText from "@/components/ui/DecryptedText";
+import SplitText from "@/components/ui/SplitText";
 
 interface Tier {
   id: number;
@@ -304,18 +305,26 @@ const WhatWeFight: React.FC = () => {
     >
       <div className="max-w-screen-xl mx-auto">
         {/* Section Title */}
-        <motion.h1
-          className="text-left mb-16 text-display-xl tracking-tight pl-6"
+        <div
+          className="mb-16 pl-6"
           style={{
             color: "#DAD7C7",
           }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-20%" }}
         >
-          What We Fight
-        </motion.h1>
+          <SplitText
+            text="What We Fight"
+            className="text-left text-display-xl tracking-tight"
+            splitType="chars"
+            delay={50}
+            duration={0.8}
+            ease="power2.out"
+            from={{ opacity: 0, y: 60, rotationX: -90 }}
+            to={{ opacity: 1, y: 0, rotationX: 0 }}
+            textAlign="left"
+            threshold={0.2}
+            rootMargin="-50px"
+          />
+        </div>
 
         {/* Tier Pyramid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
