@@ -109,7 +109,17 @@ const TierComponent: React.FC<{ tier: Tier; index: number }> = ({
             >
               {tier.title}
             </p>
-            {tier.header}
+            <RotatingText
+              texts={tier.header.split(", ")}
+              rotationInterval={2500}
+              splitBy="characters"
+              staggerDuration={0.05}
+              transition={{
+                type: "spring",
+                damping: 20,
+                stiffness: 400,
+              }}
+            />
           </>
         )}
       </h3>
