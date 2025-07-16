@@ -213,62 +213,64 @@ export default function Index() {
           </GradientText>
         </div>
 
-        {/* Button Container - Moved 150px lower */}
+        {/* Button Container - Static Button */}
         <div
           id="button-container"
           style={{
             position: "absolute",
-            top: "calc(50% + 175px)",
+            top: "calc(50% + 220px)",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "300px",
-            height: "60px",
+            width: "220px",
+            height: "50px",
           }}
         >
-          {/* Clickable Button */}
+          {/* Static Button */}
           <button
             id="enter-button"
             onClick={handleButtonClick}
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
               width: "100%",
               height: "100%",
-              background: "transparent",
-              border: "none",
-              color: "transparent",
-              fontSize: "18px",
-              fontWeight: "bold",
-              letterSpacing: "2px",
+              background:
+                "linear-gradient(135deg, rgba(23, 181, 143, 0.8) 0%, rgba(23, 181, 143, 0.6) 100%)",
+              border: "1px solid rgba(23, 181, 143, 0.3)",
+              borderRadius: "25px",
+              color: "#ffffff",
+              fontSize: "16px",
+              fontWeight: "600",
+              letterSpacing: "1px",
               cursor: "pointer",
-              pointerEvents: "auto",
-              zIndex: 10,
-              opacity: 0,
-              transition: "all 0.3s ease",
               fontFamily: "var(--font-ui)",
               textTransform: "uppercase",
+              transition: "all 0.2s ease",
+              backdropFilter: "blur(20px)",
+              boxShadow:
+                "0 4px 20px rgba(23, 181, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background =
+                "linear-gradient(135deg, rgba(23, 181, 143, 0.9) 0%, rgba(23, 181, 143, 0.7) 100%)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow =
+                "0 6px 25px rgba(23, 181, 143, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background =
+                "linear-gradient(135deg, rgba(23, 181, 143, 0.8) 0%, rgba(23, 181, 143, 0.6) 100%)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 20px rgba(23, 181, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)";
+            }}
+            onMouseDown={(e) => {
+              e.currentTarget.style.transform = "translateY(1px)";
+            }}
+            onMouseUp={(e) => {
+              e.currentTarget.style.transform = "translateY(-1px)";
             }}
           >
             ENTER SIMULATION
           </button>
-
-          {/* Particle Text Container */}
-          <div
-            id="particle-text-container"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              pointerEvents: "none",
-              zIndex: 5,
-            }}
-          />
         </div>
       </div>
 
