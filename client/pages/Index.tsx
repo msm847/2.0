@@ -106,6 +106,7 @@ export default function Index() {
   };
 
   const handleButtonClick = () => {
+    console.log("Button clicked - navigating to /vigilum");
     navigate("/vigilum");
   };
 
@@ -228,7 +229,12 @@ export default function Index() {
           {/* 3D Glass Mirror Button */}
           <button
             id="enter-button"
-            onClick={handleButtonClick}
+            onClick={(e) => {
+              console.log("Button click event triggered");
+              e.preventDefault();
+              e.stopPropagation();
+              handleButtonClick();
+            }}
             style={{
               width: "100%",
               height: "100%",
