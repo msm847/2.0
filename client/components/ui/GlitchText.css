@@ -5,16 +5,15 @@
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
+  z-index: 1;
 }
 
 .glitch.enable-on-hover {
   cursor: pointer;
 }
 
-.glitch.enable-on-hover:hover::before,
-.glitch.enable-on-hover:hover::after,
-.glitch:not(.enable-on-hover)::before,
-.glitch:not(.enable-on-hover)::after {
+.glitch::before,
+.glitch::after {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -22,18 +21,17 @@
   width: 100%;
   height: 100%;
   background: transparent;
+  z-index: -1;
 }
 
-.glitch.enable-on-hover:hover::before,
-.glitch:not(.enable-on-hover)::before {
-  text-shadow: var(--before-shadow, 5px 0 cyan);
+.glitch::before {
+  text-shadow: var(--before-shadow, 2px 0 cyan);
   animation: glitch-before var(--before-duration, 2s) infinite linear
     alternate-reverse;
 }
 
-.glitch.enable-on-hover:hover::after,
-.glitch:not(.enable-on-hover)::after {
-  text-shadow: var(--after-shadow, -5px 0 red);
+.glitch::after {
+  text-shadow: var(--after-shadow, -2px 0 red);
   animation: glitch-after var(--after-duration, 3s) infinite linear
     alternate-reverse;
 }
