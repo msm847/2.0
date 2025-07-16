@@ -205,10 +205,21 @@ const WhatWeFight: React.FC = () => {
         </motion.h1>
 
         {/* Tier Pyramid */}
-        <div className="flex flex-col gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {tiers.map((tier, index) => (
             <div key={tier.id} ref={tier.id === 4 ? tier4Ref : undefined}>
-              <TierComponent tier={tier} index={index} />
+              <TierComponent
+                tier={tier}
+                index={index}
+                isExpanded={expandedTiers.includes(tier.id)}
+                onToggle={() => {
+                  setExpandedTiers((prev) =>
+                    prev.includes(tier.id)
+                      ? prev.filter((id) => id !== tier.id)
+                      : [...prev, tier.id],
+                  );
+                }}
+              />
             </div>
           ))}
         </div>
