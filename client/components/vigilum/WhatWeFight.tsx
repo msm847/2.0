@@ -203,14 +203,15 @@ const TierComponent: React.FC<{
         {isExpanded ? (
           <div
             style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "14px",
-              lineHeight: "1.6",
-              letterSpacing: "0.2px",
+              fontFamily: "var(--font-body)",
+              fontSize: "18px",
+              lineHeight: "1.625",
+              letterSpacing: "0",
               width: "100%",
-              wordWrap: "break-word",
-              overflowWrap: "break-word",
-              whiteSpace: "pre-wrap",
+              height: "auto",
+              minHeight: "60px",
+              position: "relative",
+              overflow: "hidden",
             }}
           >
             <DecryptedText
@@ -218,17 +219,21 @@ const TierComponent: React.FC<{
               className="text-body leading-relaxed"
               style={{
                 color: "#e5e5e5",
-                fontFamily: "inherit",
-                letterSpacing: "inherit",
-                fontSize: "inherit",
-                lineHeight: "inherit",
+                fontFamily: "var(--font-body)",
+                letterSpacing: "0",
+                fontSize: "18px",
+                lineHeight: "1.625",
                 display: "block",
                 width: "100%",
+                position: "absolute",
+                top: "0",
+                left: "0",
+                right: "0",
               }}
               animateOn="view"
               sequential={true}
-              speed={50}
-              maxIterations={6}
+              speed={60}
+              maxIterations={5}
               revealDirection="start"
               useOriginalCharsOnly={true}
             />
