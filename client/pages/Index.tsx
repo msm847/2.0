@@ -18,8 +18,8 @@ export default function Index() {
       }
     };
 
-    // Trigger after 3 seconds
-    setTimeout(triggerAnimation, 3000);
+    // Trigger after 1 second
+    setTimeout(triggerAnimation, 1000);
   };
 
   const playParticleToButtonAnimation = async () => {
