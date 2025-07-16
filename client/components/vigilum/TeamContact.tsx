@@ -109,24 +109,6 @@ const TeamContact = () => {
   const cardWidth = 352; // 320px card + 32px margin
   const totalCards = corePrinciples.length;
   const animationRef = useRef(null);
-            ease: "power2.out",
-          });
-        };
-
-        card.addEventListener("mousemove", handleMouseMove);
-        card.addEventListener("mouseleave", handleMouseLeave);
-
-        return () => {
-          card.removeEventListener("mousemove", handleMouseMove);
-          card.removeEventListener("mouseleave", handleMouseLeave);
-        };
-      });
-    }, [expandedCard]);
-
-    return (
-      <div className="mb-16">
-        <div className="card-grid" ref={gridRef}>
-          {teamSections.map((section) => (
             <div
               key={section.id}
               className={`card magic-team-card card--border-glow ${expandedCard === section.id ? "expanded" : ""}`}
