@@ -36,7 +36,7 @@ const tiers: Tier[] = [
   {
     id: 3,
     title: "Format",
-    header: "Validity, Clause, Signature",
+    header: "Ritual, Simulation, Override",
     summary:
       "Legality interpreted syntactically. Signed clause = passes. Law is an operator, not constraint.",
     description:
