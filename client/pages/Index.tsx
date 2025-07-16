@@ -158,8 +158,11 @@ export default function Index() {
               letterSpacing: "1px",
               color: "#F8F6F4",
               textShadow: `
-                0 1px 2px rgba(0, 0, 0, 0.15),
-                0 2px 4px rgba(0, 0, 0, 0.1)
+                0 1px 1px rgba(0, 0, 0, 0.2),
+                0 2px 2px rgba(0, 0, 0, 0.15),
+                0 3px 4px rgba(0, 0, 0, 0.12),
+                0 4px 6px rgba(0, 0, 0, 0.08),
+                0 6px 12px rgba(0, 0, 0, 0.05)
               `,
               transform: "translateZ(0)",
             }}
