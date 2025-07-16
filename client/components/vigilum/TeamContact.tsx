@@ -110,8 +110,7 @@ const TeamContact = () => {
   const totalCards = corePrinciples.length;
   const animationRef = useRef(null);
 
-  // MagicBento Team Grid Component
-  const MagicBentoTeamGrid = () => {
+  // MagicBento Team Grid Component - moved to separate file
     const gridRef = useRef(null);
     const [expandedCard, setExpandedCard] = useState(null);
 
