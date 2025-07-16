@@ -218,14 +218,6 @@ const TeamContact = () => {
     document.addEventListener("mouseup", globalMouseUp);
   };
 
-  const handleMouseMove = (e) => {
-    // This is for fallback - main handling is in global handlers
-  };
-
-  const handleMouseUp = (e) => {
-    // This is for fallback - main handling is in global handlers
-  };
-
   const handleTouchStart = (e) => {
     e.preventDefault();
     setIsDragging(true);
@@ -236,7 +228,6 @@ const TeamContact = () => {
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
-    e.preventDefault();
     const diff = e.touches[0].clientX - dragStart;
     setScrollPosition(dragStartPosition + diff);
   };
@@ -245,12 +236,6 @@ const TeamContact = () => {
     if (!isDragging) return;
     setIsDragging(false);
     updateInteractionTime();
-  };
-
-  // Target Audiences Interaction Handlers
-  const updateAudiencesInteractionTime = () => {
-    setAudiencesLastInteractionTime(Date.now());
-    setAudiencesAutoScrollDisabled(true);
   };
 
   const audiencesSmoothScrollTo = (targetPosition, duration = 600) => {
@@ -263,6 +248,7 @@ const TeamContact = () => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
+      // Easing function for smooth acceleration/deceleration
       const easeInOutQuart =
         progress < 0.5
           ? 8 * progress * progress * progress * progress
@@ -303,6 +289,7 @@ const TeamContact = () => {
     setAudiencesDragStartPosition(audiencesScrollPosition);
     updateAudiencesInteractionTime();
 
+    // Create handlers with current context
     const globalMouseMove = (moveEvent) => {
       moveEvent.preventDefault();
       const diff = moveEvent.clientX - e.clientX;
@@ -332,7 +319,6 @@ const TeamContact = () => {
 
   const handleAudiencesTouchMove = (e) => {
     if (!audiencesIsDragging) return;
-    e.preventDefault();
     const diff = e.touches[0].clientX - audiencesDragStart;
     setAudiencesScrollPosition(audiencesDragStartPosition + diff);
   };
@@ -341,6 +327,11 @@ const TeamContact = () => {
     if (!audiencesIsDragging) return;
     setAudiencesIsDragging(false);
     updateAudiencesInteractionTime();
+  };
+
+  const updateAudiencesInteractionTime = () => {
+    setAudiencesLastInteractionTime(Date.now());
+    setAudiencesAutoScrollDisabled(true);
   };
 
   const targetAudiences = [
@@ -443,100 +434,6 @@ const TeamContact = () => {
             {/* Interactive Team Grid - 2x2 Layout */}
             <MagicBentoTeamGrid />
 
-            {/* Keep Research Foundation - Original Section */}
-            <div className="mb-16" style={{ display: "none" }}>
-              <div
-                className="rounded-lg p-8 border"
-                style={{
-                  backgroundColor: "rgba(12, 35, 28, 0.85)",
-                  borderColor: "rgba(0,255,204,0.06)",
-                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                }}
-              >
-                <h3 className="text-2xl font-bold text-green-400 font-mono mb-6">
-                  Founder's Note
-                </h3>
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    During my research in the MARS-REERS program at Columbia
-                    University, I discovered a fundamental gap in how we
-                    approach corruption. We often react to scandals rather than
-                    predict them. Traditional tools detect issues after rules
-                    are broken, but what if we could identify the structural
-                    flaws that enable corruption before any funds are spent or
-                    contracts signed?
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    Vigilum emerged from this insight. Our mission is to render
-                    institutional structure legible before it breaks, to
-                    spotlight design flaws that breed corruption so they can be
-                    fixed in time. This isn't just detection — this is
-                    preemption.
-                  </p>
-                  <p className="text-green-400 font-mono text-sm">
-                    — Adam Kovarskas, Founder
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Grid Section: Origin Story & Vision Statement */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-              {/* Origin Story */}
-              <div
-                className="rounded-lg p-8 border"
-                style={{
-                  backgroundColor: "rgba(12, 35, 28, 0.85)",
-                  borderColor: "rgba(0,255,204,0.06)",
-                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                }}
-              >
-                <h3 className="text-xl font-bold text-green-400 font-mono mb-4">
-                  Origin Story
-                </h3>
-                <p className="text-gray-300 leading-relaxed text-sm">
-                  Vigilum began as a research thesis in the MARS-REERS program
-                  at Columbia University, exploring quantum logic in legal
-                  clauses. The findings crystallized into the Vigilum Codex — an
-                  evolving compendium of risk patterns. Through analysis of
-                  real-world cases like the ill-fated Vilnius National Stadium
-                  project and energy contracts at Ignitis, we discovered how
-                  sequences of legal clauses can create escape logic and
-                  procedural dead-ends while remaining formally compliant.
-                </p>
-                <p className="text-gray-300 leading-relaxed text-sm mt-4">
-                  What started as academic research evolved into a platform with
-                  the potential to transform how institutions approach
-                  governance risk — from reactive compliance to proactive
-                  structural intelligence.
-                </p>
-              </div>
-
-              {/* Vision Statement */}
-              <div
-                className="rounded-lg p-8 border"
-                style={{
-                  backgroundColor: "rgba(12, 35, 28, 0.85)",
-                  borderColor: "rgba(0,255,204,0.06)",
-                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                }}
-              >
-                <h3 className="text-xl font-bold text-green-400 font-mono mb-4">
-                  Vision Statement
-                </h3>
-                <blockquote className="text-green-300 font-mono text-lg leading-relaxed mb-4 border-l-2 border-green-400 pl-4">
-                  "Vigilum aims to empower societies with structural
-                  transparency ��� where laws and contracts carry traceable
-                  logic, and loopholes have nowhere to hide."
-                </blockquote>
-                <p className="text-gray-300 leading-relaxed text-sm">
-                  We believe in augmenting human oversight with AI to achieve
-                  accountability by design, transforming governance from
-                  reactive to predictive.
-                </p>
-              </div>
-            </div>
-
             {/* Core Principles */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
@@ -621,7 +518,6 @@ const TeamContact = () => {
                   </div>
                 ))}
               </div>
-            </div>
             </div>
           </div>
         </div>
