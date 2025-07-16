@@ -128,18 +128,23 @@ const TierComponent: React.FC<{
       {/* Summary or Description */}
       <div>
         {isExpanded ? (
-          <DecryptedText
-            text={tier.description}
-            className="text-body leading-relaxed"
-            style={{
-              color: "#e5e5e5",
-            }}
-            animateOn="view"
-            sequential={true}
-            speed={30}
-            maxIterations={15}
-            revealDirection="start"
-          />
+          <div style={{ fontFamily: "monospace", fontSize: "inherit" }}>
+            <DecryptedText
+              text={tier.description}
+              className="text-body leading-relaxed"
+              style={{
+                color: "#e5e5e5",
+                fontFamily: "inherit",
+                letterSpacing: "0",
+              }}
+              animateOn="view"
+              sequential={true}
+              speed={40}
+              maxIterations={8}
+              revealDirection="start"
+              useOriginalCharsOnly={true}
+            />
+          </div>
         ) : (
           <p
             className="text-body leading-relaxed"
