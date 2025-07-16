@@ -26,7 +26,7 @@ const tiers: Tier[] = [
   {
     id: 2,
     title: "Perspective",
-    header: "authorship, distortion, compression",
+    header: "Authorship, Distortion, Compression",
     summary:
       "Institutions only see corruption when protocol is broken. Documents filed = legality assumed.",
     description:
