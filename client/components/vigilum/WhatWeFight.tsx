@@ -160,6 +160,7 @@ const WhatWeFight: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const finalStatementRef = useRef<HTMLParagraphElement>(null);
   const tier4Ref = useRef<HTMLDivElement>(null);
+  const [expandedTiers, setExpandedTiers] = useState<number[]>([]);
 
   const isTier4InView = useInView(tier4Ref, {
     threshold: 0.3,
