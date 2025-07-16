@@ -6,6 +6,7 @@ interface Tier {
   id: number;
   title: string;
   header: string;
+  summary: string;
   description: string;
   highlightColor?: string;
 }
