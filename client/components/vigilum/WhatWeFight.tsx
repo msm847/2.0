@@ -96,45 +96,20 @@ const TierComponent: React.FC<{
           color: isInView ? "white" : "#ccc",
         }}
       >
-        {tier.id === 1 ? (
-          <span className="flex items-center gap-3">
-            <span>{tier.title}</span>
-            <RotatingText
-              texts={["Scandal", "Outrage", "Visibility"]}
-              rotationInterval={2500}
-              splitBy="characters"
-              staggerDuration={0.05}
-              transition={{
-                type: "spring",
-                damping: 20,
-                stiffness: 400,
-              }}
-            />
-          </span>
-        ) : (
-          <>
-            <p
-              className="text-ui text-xs tracking-wider text-gray-400 mb-2"
-              style={{
-                color: tier.highlightColor || "#888",
-                opacity: isInView ? 1 : 0.7,
-              }}
-            >
-              {tier.title}
-            </p>
-            <RotatingText
-              texts={tier.header.split(", ")}
-              rotationInterval={2500}
-              splitBy="characters"
-              staggerDuration={0.05}
-              transition={{
-                type: "spring",
-                damping: 20,
-                stiffness: 400,
-              }}
-            />
-          </>
-        )}
+        <span className="flex items-center gap-3">
+          <span>{tier.title}</span>
+          <RotatingText
+            texts={tier.header.split(", ")}
+            rotationInterval={2500}
+            splitBy="characters"
+            staggerDuration={0.05}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 400,
+            }}
+          />
+        </span>
       </h3>
 
       {/* Description */}
