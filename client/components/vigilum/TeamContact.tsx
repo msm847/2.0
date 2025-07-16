@@ -633,8 +633,11 @@ const TeamContact = () => {
               </h2>
             </div>
 
-            {/* Founder's Note */}
-            <div className="mb-16">
+            {/* Interactive Team Grid - 2x2 Layout */}
+            <MagicBentoTeamGrid />
+
+            {/* Keep Research Foundation - Original Section */}
+            <div className="mb-16" style={{ display: "none" }}>
               <div
                 className="rounded-lg p-8 border"
                 style={{
