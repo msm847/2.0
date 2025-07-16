@@ -89,16 +89,63 @@ const TierComponent: React.FC<{
   return (
     <div
       ref={ref}
-      className="relative p-6 rounded-lg cursor-pointer transition-all duration-300"
+      className="relative p-6 rounded-xl cursor-pointer transition-all duration-500 group"
       style={{
+        background: tier.highlightColor
+          ? `linear-gradient(135deg,
+               rgba(255, 255, 255, 0.1) 0%,
+               rgba(255, 255, 255, 0.05) 50%,
+               ${tier.highlightColor}10 100%)`
+          : `linear-gradient(135deg,
+               rgba(255, 255, 255, 0.1) 0%,
+               rgba(255, 255, 255, 0.05) 100%)`,
+        backdropFilter: "blur(20px)",
+        border: tier.highlightColor
+          ? `1px solid ${tier.highlightColor}30`
+          : "1px solid rgba(255, 255, 255, 0.2)",
         boxShadow: tier.highlightColor
-          ? `0 0 30px ${tier.highlightColor}20, 0 0 10px ${tier.highlightColor}10`
-          : "none",
-        backgroundColor: tier.highlightColor
-          ? `${tier.highlightColor}05`
-          : "transparent",
+          ? `
+            0 8px 32px ${tier.highlightColor}15,
+            0 0 0 1px ${tier.highlightColor}20 inset,
+            0 1px 0 rgba(255, 255, 255, 0.3) inset
+          `
+          : `
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+            0 1px 0 rgba(255, 255, 255, 0.2) inset
+          `,
         minHeight: isExpanded ? "auto" : "120px",
         opacity: 1,
+        transform: "translateY(0px) rotateX(0deg)",
+        transformStyle: "preserve-3d",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-4px) rotateX(2deg)";
+        e.currentTarget.style.boxShadow = tier.highlightColor
+          ? `
+            0 20px 40px ${tier.highlightColor}20,
+            0 0 0 1px ${tier.highlightColor}30 inset,
+            0 1px 0 rgba(255, 255, 255, 0.4) inset
+          `
+          : `
+            0 20px 40px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+            0 1px 0 rgba(255, 255, 255, 0.3) inset
+          `;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "translateY(0px) rotateX(0deg)";
+        e.currentTarget.style.boxShadow = tier.highlightColor
+          ? `
+            0 8px 32px ${tier.highlightColor}15,
+            0 0 0 1px ${tier.highlightColor}20 inset,
+            0 1px 0 rgba(255, 255, 255, 0.3) inset
+          `
+          : `
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+            0 1px 0 rgba(255, 255, 255, 0.2) inset
+          `;
       }}
       onClick={onToggle}
     >
