@@ -83,6 +83,12 @@ const App = () => (
             element={<DeploymentPage />}
           />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/collaboration" element={<Collaboration />} />
+          <Route path="/automation" element={<Automation />} />
+          <Route path="/integration" element={<Integration />} />
+          <Route path="/security" element={<Security />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
