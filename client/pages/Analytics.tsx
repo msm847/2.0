@@ -6,29 +6,26 @@ const Analytics = () => {
 
   const handleReturn = () => {
     navigate("/vigilum");
-    // Wait longer for navigation to complete, then scroll to team section
+    // Wait for navigation to complete, then jump instantly to team section
     setTimeout(() => {
       const scrollToTeam = () => {
         const teamSection = document.getElementById("team-heading");
         if (teamSection) {
-          teamSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          teamSection.scrollIntoView({ behavior: "instant", block: "start" });
         } else {
           // Try again if element not found
-          setTimeout(scrollToTeam, 100);
+          setTimeout(scrollToTeam, 50);
         }
       };
       scrollToTeam();
-    }, 300);
+    }, 100);
   };
 
   return (
     <div style={{ backgroundColor: "#0B1E16", minHeight: "100vh" }}>
       {/* Return Button */}
       <div className="fixed top-6 left-6 z-50">
-        <button
-          onClick={handleReturn}
-          className="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-mono px-4 py-2 rounded-lg transition-colors"
-        >
+        <button onClick={handleReturn} className="glass-return-btn">
           <ArrowLeft className="w-4 h-4" />
           <span>Return</span>
         </button>
