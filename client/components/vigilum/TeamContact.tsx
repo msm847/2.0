@@ -473,6 +473,15 @@ const TeamContact = () => {
         </div>
       </section>
 
+      {/* MAGIC BENTO SECTION */}
+      <section className="py-20 border-t border-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <MagicBento />
+          </div>
+        </div>
+      </section>
+
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
