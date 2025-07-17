@@ -666,9 +666,6 @@ const MagicBento = ({
                 el.addEventListener("click", handleClick);
               }}
             >
-              <div className="card__header">
-                <div className="card__label">{card.label}</div>
-              </div>
               <div className="card__content">
                 <h2 className="card__title">{card.title}</h2>
                 <p className="card__description">{card.description}</p>
