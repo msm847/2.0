@@ -432,9 +432,6 @@ const TeamContact = () => {
                 TEAM
               </h2>
             </div>
-
-            {/* Interactive Team Grid - 2x2 Layout */}
-            <MagicBentoTeamGrid />
           </div>
         </div>
       </section>
