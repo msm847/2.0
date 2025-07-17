@@ -434,63 +434,6 @@ const TeamContact = () => {
             {/* Interactive Team Grid - 2x2 Layout */}
             <MagicBentoTeamGrid />
 
-            {/* Core Principles */}
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold text-green-400 font-mono mb-8 text-center">
-                Core Principles
-              </h3>
-              <div className="relative">
-                <div
-                  className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
-                  onMouseDown={handleMouseDown}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                  style={{ userSelect: "none", touchAction: "pan-x" }}
-                >
-                  <div
-                    className="scrolling-principles"
-                    style={{
-                      transform: `translateX(${scrollPosition}px)`,
-                      transition: "none",
-                      display: "flex",
-                      willChange: "transform",
-                    }}
-                  >
-                    {/* Render enough copies to fill screen + buffer */}
-                    {Array.from({ length: 3 }, (_, copyIndex) =>
-                      corePrinciples.map((principle, index) => {
-                        const Icon = principle.icon;
-                        const uniqueKey = `${copyIndex}-${index}`;
-                        return (
-                          <div
-                            key={uniqueKey}
-                            className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4 pointer-events-none"
-                            style={{
-                              backgroundColor: "rgba(12, 35, 28, 0.85)",
-                              borderColor: "rgba(0,255,204,0.06)",
-                              boxShadow:
-                                "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                            }}
-                          >
-                            <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                              <Icon className="w-6 h-6 text-white" />
-                            </div>
-                            <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
-                              {principle.title}
-                            </h4>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                              {principle.description}
-                            </p>
-                          </div>
-                        );
-                      }),
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Research Foundation */}
             <div
               className="rounded-lg p-8 border"
