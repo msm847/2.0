@@ -12,31 +12,37 @@ const cardData = [
     color: "#060010",
     title: "Analytics",
     description: "Track user behavior",
+    url: "/analytics",
   },
   {
     color: "#060010",
     title: "Dashboard",
     description: "Centralized data view",
+    url: "/dashboard",
   },
   {
     color: "#060010",
     title: "Collaboration",
     description: "Work together seamlessly",
+    url: "/collaboration",
   },
   {
     color: "#060010",
     title: "Automation",
     description: "Streamline workflows",
+    url: "/automation",
   },
   {
     color: "#060010",
     title: "Integration",
     description: "Connect favorite tools",
+    url: "/integration",
   },
   {
     color: "#060010",
     title: "Security",
     description: "Enterprise-grade protection",
+    url: "/security",
   },
 ];
 
