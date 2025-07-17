@@ -433,35 +433,6 @@ const TeamContact = () => {
 
             {/* Interactive Team Grid - 2x2 Layout */}
             <MagicBentoTeamGrid />
-
-            {/* Research Foundation */}
-            <div
-              className="rounded-lg p-8 border"
-              style={{
-                backgroundColor: "rgba(12, 35, 28, 0.85)",
-                borderColor: "rgba(0,255,204,0.06)",
-                boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-              }}
-            >
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-green-400 font-mono">
-                  Research Foundation
-                </h3>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {researchFoundation.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm leading-relaxed">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
