@@ -215,6 +215,41 @@
   user-select: none;
 }
 
+/* Learn More Button Styling */
+.card__footer {
+  position: absolute;
+  bottom: 1.25em;
+  right: 1.25em;
+  z-index: 10;
+}
+
+.learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(132, 0, 255, 0.8);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(132, 0, 255, 1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.learn-more-btn:hover {
+  background: rgba(132, 0, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(132, 0, 255, 0.3);
+}
+
+.learn-more-btn:active {
+  transform: translateY(0);
+}
+
 /* Contact grid layout */
 .contact-card-grid {
   display: grid;
