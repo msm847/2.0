@@ -479,8 +479,8 @@ const GlobalSpotlight = ({
 };
 
 const BentoCardGrid = ({ children, gridRef }) => (
-  <div className="card-grid bento-section" ref={gridRef}>
-    {children}
+  <div className="bento-section" ref={gridRef}>
+    <div className="card-grid">{children}</div>
   </div>
 );
 
