@@ -130,6 +130,7 @@ const Analytics = () => {
               </li>
             </ul>
           </div>
+          )}
         </div>
       </div>
     </div>
