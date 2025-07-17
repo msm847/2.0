@@ -139,7 +139,7 @@ const MagicBentoContactGrid: React.FC<MagicBentoContactGridProps> = ({
             className={`card magic-team-card card--border-glow ${
               expandedCard === section.id ? "expanded" : ""
             } ${section.span === "full" ? "full-width" : ""}`}
-            onClick={() => handleCardClick(section.id)}
+            onClick={(e) => handleCardClick(e, section.id)}
             style={{
               "--glow-color": "0, 255, 204",
             }}
