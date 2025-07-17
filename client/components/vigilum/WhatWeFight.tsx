@@ -124,6 +124,9 @@ const TierComponent: React.FC<{
         className="text-section-lg font-medium text-white mb-4"
         style={{
           color: isInView ? "white" : "#ccc",
+          minHeight: "1.5em",
+          display: "flex",
+          alignItems: "baseline",
         }}
       >
         {tier.id === 1 ? (
@@ -146,19 +149,26 @@ const TierComponent: React.FC<{
         ) : tier.id === 3 ? (
           <span>{tier.title}</span>
         ) : (
-          <span className="flex items-center">
+          <span className="flex items-baseline">
             <span>{tier.title}</span>
             <span className="text-rotate-space"> </span>
             <PerformantRotatingText
               texts={tier.header.split(", ")}
               rotationInterval={2500}
+              paused={isHovered}
             />
           </span>
         )}
       </h3>
 
       {/* Summary or Description */}
-      <div>
+      <div
+        style={{
+          minHeight: "4.8em",
+          display: "flex",
+          alignItems: "flex-start",
+        }}
+      >
         {isExpanded ? (
           <p
             className="text-body leading-relaxed"
@@ -167,7 +177,7 @@ const TierComponent: React.FC<{
               fontFamily: "var(--font-body)",
               fontSize: "16px",
               lineHeight: "1.6",
-              marginTop: "8px",
+              marginTop: "0",
             }}
           >
             {tier.description}
@@ -177,6 +187,8 @@ const TierComponent: React.FC<{
             className="text-body leading-relaxed"
             style={{
               color: isInView ? "#e5e5e5" : "#aaa",
+              lineHeight: "1.6",
+              marginTop: "0",
             }}
           >
             {tier.summary}
