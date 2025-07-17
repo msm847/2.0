@@ -85,11 +85,9 @@
 }
 
 .card__title {
+  font: var(--h3);
   color: white;
-  font-size: 1.25rem;
-  font-weight: 500;
   margin-bottom: 1rem;
-  line-height: 1.4;
 }
 
 .card__description {
