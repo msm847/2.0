@@ -6,13 +6,19 @@ const Analytics = () => {
 
   const handleReturn = () => {
     navigate("/");
-    // Wait for navigation to complete, then scroll to team section
+    // Wait longer for navigation to complete, then scroll to team section
     setTimeout(() => {
-      const teamSection = document.getElementById("team-heading");
-      if (teamSection) {
-        teamSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+      const scrollToTeam = () => {
+        const teamSection = document.getElementById("team-heading");
+        if (teamSection) {
+          teamSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // Try again if element not found
+          setTimeout(scrollToTeam, 100);
+        }
+      };
+      scrollToTeam();
+    }, 300);
   };
 
   return (
