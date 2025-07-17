@@ -23,6 +23,12 @@ import SystemPage from "./pages/core-intelligence/system";
 import ImpactPage from "./pages/core-intelligence/impact";
 import DeploymentPage from "./pages/core-intelligence/deployment";
 import ContactPage from "./pages/Contact";
+import Analytics from "./pages/Analytics";
+import Dashboard from "./pages/Dashboard";
+import Collaboration from "./pages/Collaboration";
+import Automation from "./pages/Automation";
+import Integration from "./pages/Integration";
+import Security from "./pages/Security";
 
 const queryClient = new QueryClient();
 
