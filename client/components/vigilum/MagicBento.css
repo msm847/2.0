@@ -217,7 +217,9 @@
 
   .card {
     padding: 1.5rem;
+    height: 160px;
     min-height: 160px;
+    max-height: 160px;
   }
 
   .card__title {
