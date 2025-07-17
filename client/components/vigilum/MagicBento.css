@@ -215,7 +215,7 @@
   user-select: none;
 }
 
-/* Learn More Button Styling */
+/* Explore Button Styling */
 .card__footer {
   position: absolute;
   bottom: 1.25em;
@@ -223,7 +223,7 @@
   z-index: 10;
 }
 
-.learn-more-btn {
+.explore-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
@@ -240,13 +240,13 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-.learn-more-btn:hover {
+.explore-btn:hover {
   background: rgba(132, 0, 255, 1);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(132, 0, 255, 0.3);
 }
 
-.learn-more-btn:active {
+.explore-btn:active {
   transform: translateY(0);
 }
 
