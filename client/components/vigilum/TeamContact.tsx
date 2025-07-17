@@ -438,185 +438,36 @@ const TeamContact = () => {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* SHAPE YOUR SIMULATION SECTION */}
       <section
         className="py-20 border-t border-gray-800"
-        aria-labelledby="contact-heading"
+        aria-labelledby="simulation-heading"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Target Audiences */}
-            <div className="mb-16">
-              <div className="relative">
-                <div
-                  className="overflow-hidden cursor-grab active:cursor-grabbing select-none py-4"
-                  onMouseDown={handleAudiencesMouseDown}
-                  onTouchStart={handleAudiencesTouchStart}
-                  onTouchMove={handleAudiencesTouchMove}
-                  onTouchEnd={handleAudiencesTouchEnd}
-                  style={{ userSelect: "none", touchAction: "pan-x" }}
-                >
-                  <div
-                    className="target-audiences-scroll"
-                    style={{
-                      transform: `translateX(${audiencesScrollPosition}px)`,
-                      transition: "none",
-                      display: "flex",
-                      willChange: "transform",
-                    }}
-                  >
-                    {/* Render multiple copies for smooth infinite scroll */}
-                    {Array.from({ length: 3 }, (_, copyIndex) =>
-                      targetAudiences.map((audience, index) => {
-                        const Icon = audience.icon;
-                        const uniqueKey = `${copyIndex}-${index}`;
-                        return (
-                          <div
-                            key={uniqueKey}
-                            className="flex-shrink-0 w-80 rounded-lg p-6 border text-center mx-4"
-                            style={{
-                              backgroundColor: "rgba(12, 35, 28, 0.85)",
-                              borderColor: "rgba(0,255,204,0.06)",
-                              boxShadow:
-                                "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                            }}
-                            onDragStart={(e) => e.preventDefault()}
-                          >
-                            <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                              <Icon className="w-6 h-6 text-white" />
-                            </div>
-                            <h4 className="text-lg font-bold text-green-400 font-mono mb-3">
-                              {audience.title}
-                            </h4>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                              {audience.description}
-                            </p>
-                          </div>
-                        );
-                      }),
-                    )}
-                  </div>
-                </div>
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700 mb-4">
+                <Mail className="w-3 h-3 text-green-400" />
+                <span className="text-xs text-green-300 font-mono uppercase tracking-wider">
+                  Connect & Engage
+                </span>
               </div>
+              <h2
+                id="simulation-heading"
+                className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight"
+              >
+                SHAPE YOUR SIMULATION
+              </h2>
             </div>
 
-            {/* Contact Info & Newsletter */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Contact Information */}
-              <div
-                className="rounded-lg p-8 border"
-                style={{
-                  backgroundColor: "rgba(12, 35, 28, 0.85)",
-                  borderColor: "rgba(0,255,204,0.06)",
-                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                }}
-              >
-                <h3 className="text-xl font-bold text-green-400 font-mono mb-6">
-                  Direct Contact
-                </h3>
-                <div className="flex items-center space-x-3 mb-4">
-                  <Mail className="w-5 h-5 text-green-400" />
-                  <a
-                    href="mailto:info@vigilum.com"
-                    className="text-gray-300 hover:text-green-400 transition-colors font-mono"
-                    aria-label="Send email to Vigilum"
-                  >
-                    info@vigilum.com
-                  </a>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  For institutional partnerships, technical integration, or
-                  research collaboration inquiries.
-                </p>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-mono px-6 py-3 rounded-lg transition-colors"
-                  aria-label="Open contact form"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>Get in Touch</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-
-              {/* Newsletter Subscription */}
-              <div
-                className="rounded-lg p-8 border"
-                style={{
-                  backgroundColor: "#102c22",
-                  borderColor: "rgba(0,255,204,0.06)",
-                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.03)",
-                }}
-              >
-                {!isSubmitted ? (
-                  <form
-                    onSubmit={handleSubmit}
-                    className="space-y-6"
-                    aria-labelledby="newsletter-form"
-                  >
-                    <div>
-                      <h3
-                        id="newsletter-form"
-                        className="text-xl font-bold text-white font-mono mb-2"
-                      >
-                        Stay Updated
-                      </h3>
-                      <p className="text-sm text-gray-400 mb-4">
-                        Methodology advances, case studies, structural analysis
-                        techniques
-                      </p>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="email-input"
-                        className="block text-sm font-bold text-gray-300 font-mono mb-2"
-                      >
-                        Email address
-                      </label>
-                      <input
-                        id="email-input"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="your.email@organization.com"
-                        className="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-gray-300 font-mono text-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                        required
-                        aria-describedby="email-help"
-                      />
-                      <p id="email-help" className="text-xs text-gray-500 mt-1">
-                        No spam. Unsubscribe anytime.
-                      </p>
-                    </div>
-
-                    <Button
-                      type="submit"
-                      disabled={!email.trim()}
-                      className="w-full bg-green-600 hover:bg-green-500 text-white font-mono py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                      aria-label="Subscribe to Vigilum newsletter"
-                    >
-                      Subscribe
-                      <Send className="ml-2 w-4 h-4" />
-                    </Button>
-                  </form>
-                ) : (
-                  <div
-                    className="text-center py-8"
-                    role="status"
-                    aria-live="polite"
-                  >
-                    <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-green-400 font-mono mb-2">
-                      SUBSCRIPTION CONFIRMED
-                    </h3>
-                    <p className="text-sm text-gray-400">
-                      You'll receive updates on structural intelligence
-                      methodologies
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+            {/* Interactive Contact Grid */}
+            <MagicBentoContactGrid
+              email={email}
+              setEmail={setEmail}
+              isSubmitted={isSubmitted}
+              handleSubmit={handleSubmit}
+            />
           </div>
         </div>
       </section>
