@@ -180,7 +180,6 @@ const MagicBentoTeamGrid = () => {
             }}
           >
             <div className="card__header">
-              <div className="card__label">{section.label}</div>
               <ChevronDown className="card__expand-icon w-5 h-5" />
             </div>
             <div className="card__content">
