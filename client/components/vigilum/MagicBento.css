@@ -92,9 +92,10 @@
 }
 
 .card__description {
-  color: rgb(209, 213, 219);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-top: auto;
 }
 
 .card__content {
