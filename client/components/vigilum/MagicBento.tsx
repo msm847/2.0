@@ -558,10 +558,10 @@ const MagicBento = ({
                   <div className="card__footer">
                     <a
                       href={card.url}
-                      className="learn-more-btn"
+                      className="explore-btn"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Learn More →
+                      Explore
                     </a>
                   </div>
                 </div>
