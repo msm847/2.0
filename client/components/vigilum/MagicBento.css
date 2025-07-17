@@ -245,8 +245,12 @@
   grid-column: 1 / -1;
 }
 
-.contact-card-grid .card.expanded {
+.contact-card-grid .card.expanded.full-width {
   grid-column: 1 / -1;
+}
+
+.contact-card-grid .card.expanded:not(.full-width) {
+  grid-column: span 1;
 }
 
 /* Actors grid styling */
