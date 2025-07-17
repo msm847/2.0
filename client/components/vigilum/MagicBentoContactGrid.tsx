@@ -124,7 +124,9 @@ const MagicBentoContactGrid: React.FC<MagicBentoContactGridProps> = ({
     },
   ];
 
-  const handleCardClick = (cardId) => {
+  const handleCardClick = (e, cardId) => {
+    e.preventDefault();
+    e.stopPropagation();
     setExpandedCard(expandedCard === cardId ? null : cardId);
   };
 
