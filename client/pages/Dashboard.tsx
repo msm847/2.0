@@ -1,8 +1,18 @@
 import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const handleReturn = () => {
-    window.location.href = "/#team";
+    navigate("/");
+    // Wait for navigation to complete, then scroll to team section
+    setTimeout(() => {
+      const teamSection = document.getElementById("team-heading");
+      if (teamSection) {
+        teamSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
 
   return (
