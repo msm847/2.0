@@ -537,7 +537,7 @@ const MagicBento = ({
             style: {
               backgroundColor: card.color,
               "--glow-color": glowColor,
-            },
+            } as React.CSSProperties,
           };
 
           if (enableStars) {
