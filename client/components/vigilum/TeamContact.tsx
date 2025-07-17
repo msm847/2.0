@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import MagicBentoTeamGrid from "./MagicBentoTeamGrid";
+import MagicBentoContactGrid from "./MagicBentoContactGrid";
 import {
   Shield,
   Building,
