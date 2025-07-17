@@ -245,6 +245,10 @@
   grid-column: 1 / -1;
 }
 
+.contact-card-grid .full-width .card__content {
+  text-align: center;
+}
+
 .contact-card-grid .card.expanded.full-width {
   grid-column: 1 / -1;
 }
