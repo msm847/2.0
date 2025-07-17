@@ -319,9 +319,13 @@ const WhatWeFight: React.FC = () => {
         </div>
 
         {/* Tier Pyramid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {tiers.map((tier, index) => (
-            <div key={tier.id} ref={tier.id === 4 ? tier4Ref : undefined}>
+            <div
+              key={tier.id}
+              ref={tier.id === 4 ? tier4Ref : undefined}
+              className="flex"
+            >
               <TierComponent
                 tier={tier}
                 index={index}
