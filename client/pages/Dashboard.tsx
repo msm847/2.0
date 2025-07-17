@@ -5,7 +5,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const handleReturn = () => {
-    navigate("/");
+    navigate("/vigilum");
     // Wait longer for navigation to complete, then scroll to team section
     setTimeout(() => {
       const scrollToTeam = () => {
