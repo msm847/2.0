@@ -66,9 +66,10 @@
 
 .card__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  height: 24px;
 }
 
 .card__label {
