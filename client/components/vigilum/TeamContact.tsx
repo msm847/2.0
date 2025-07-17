@@ -436,40 +436,6 @@ const TeamContact = () => {
         </div>
       </section>
 
-      {/* SHAPE YOUR SIMULATION SECTION */}
-      <section
-        className="py-20 border-t border-gray-800"
-        aria-labelledby="simulation-heading"
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700 mb-4">
-                <Mail className="w-3 h-3 text-green-400" />
-                <span className="text-xs text-green-300 font-mono uppercase tracking-wider">
-                  Connect & Engage
-                </span>
-              </div>
-              <h2
-                id="simulation-heading"
-                className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight"
-              >
-                SHAPE YOUR SIMULATION
-              </h2>
-            </div>
-
-            {/* Interactive Contact Grid */}
-            <MagicBentoContactGrid
-              email={email}
-              setEmail={setEmail}
-              isSubmitted={isSubmitted}
-              handleSubmit={handleSubmit}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* MAGIC BENTO SECTION */}
       <section className="py-20 border-t border-gray-800">
         <div className="container mx-auto px-4">
