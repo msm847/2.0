@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import RotatingText from "@/components/ui/RotatingText";
+import PerformantRotatingText from "@/components/ui/PerformantRotatingText";
 import DecryptedText from "@/components/ui/DecryptedText";
 import SplitText from "@/components/ui/SplitText";
 import TrueFocus from "@/components/ui/TrueFocus";
