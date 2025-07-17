@@ -1,8 +1,15 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Analytics = () => {
   const navigate = useNavigate();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Immediately show the page, then load content
+    setIsLoaded(true);
+  }, []);
 
   const handleReturn = () => {
     navigate("/vigilum");
