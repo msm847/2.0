@@ -67,6 +67,7 @@ const TierComponent: React.FC<{
   onToggle: () => void;
 }> = ({ tier, index, isExpanded, onToggle }) => {
   const ref = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
   const isInView = useInView(ref, {
     threshold: 0.2,
     margin: "-10% 0px -10% 0px",
@@ -114,44 +115,8 @@ const TierComponent: React.FC<{
         transformStyle: "preserve-3d",
         perspective: "1000px",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform =
-          "translateY(-6px) rotateX(3deg) rotateY(1deg)";
-        e.currentTarget.style.boxShadow = tier.highlightColor
-          ? `
-            0 25px 60px ${tier.highlightColor}12,
-            0 8px 30px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.25),
-            inset 0 0 0 1px ${tier.highlightColor}20,
-            inset 0 -1px 0 rgba(0, 0, 0, 0.15)
-          `
-          : `
-            0 25px 60px rgba(0, 0, 0, 0.2),
-            0 8px 30px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.15)
-          `;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform =
-          "translateY(0px) rotateX(0deg) rotateY(0deg)";
-        e.currentTarget.style.boxShadow = tier.highlightColor
-          ? `
-            0 12px 40px ${tier.highlightColor}08,
-            0 4px 16px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15),
-            inset 0 0 0 1px ${tier.highlightColor}12,
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-          `
-          : `
-            0 12px 40px rgba(0, 0, 0, 0.15),
-            0 4px 16px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.12),
-            inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-          `;
-      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onClick={onToggle}
     >
       {/* Header */}
