@@ -41,6 +41,7 @@ const Analytics = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 pt-20">
         <div className="max-w-4xl mx-auto">
+          {/* Always show header immediately */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-gray-100 mb-6 font-mono tracking-tight">
               ANALYTICS
@@ -50,6 +51,17 @@ const Analytics = () => {
               patterns
             </p>
           </div>
+
+          {/* Loading state or content */}
+          {!isLoaded ? (
+            <div className="animate-pulse">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div className="h-48 bg-gray-800 rounded-lg"></div>
+                <div className="h-48 bg-gray-800 rounded-lg"></div>
+              </div>
+              <div className="h-64 bg-gray-800 rounded-lg"></div>
+            </div>
+          ) : (
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <div
