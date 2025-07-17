@@ -235,6 +235,81 @@
     font: var(--body-sm);
   }
 
+  /* Glass Return Button Styling */
+  .glass-return-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.025em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+
+    /* Apple-style glass morphism */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* 3D glass effect */
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.4) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.2) inset;
+
+    /* Text styling */
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+    /* Subtle glow */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-return-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+  }
+
+  .glass-return-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px) scale(1.02);
+
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      0 2px 0 rgba(255, 255, 255, 0.5) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.3) inset,
+      0 0 20px rgba(34, 197, 94, 0.2);
+
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .glass-return-btn:active {
+    transform: translateY(-1px) scale(1.01);
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.4) inset;
+  }
+
   /* Navigation and UI elements */
   nav,
   button,
