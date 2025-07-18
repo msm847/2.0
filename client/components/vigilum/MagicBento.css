@@ -198,8 +198,8 @@
 
 .particle-container:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.2),
-    0 0 30px var(--purple-glow);
+    0 4px 20px rgba(43, 74, 61, 0.2),
+    0 0 30px var(--green-glow);
 }
 
 /* Global spotlight styles */
@@ -280,7 +280,7 @@
     0 12px 40px rgba(0, 0, 0, 0.15),
     0 2px 0 rgba(255, 255, 255, 0.5) inset,
     0 -1px 0 rgba(0, 0, 0, 0.3) inset,
-    0 0 20px rgba(132, 0, 255, 0.2);
+    0 0 20px rgba(64, 255, 170, 0.2);
 
   color: rgba(255, 255, 255, 1);
 }
