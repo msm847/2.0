@@ -136,7 +136,7 @@ export default function Index() {
         id="orb-background"
         style={{
           position: "absolute",
-          top: "65%",
+          top: "60%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           width: "600px",
