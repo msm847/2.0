@@ -80,7 +80,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Return Button */}
           <Link
-            to="/"
+            to="/vigilum#team"
             className="flex items-center px-3 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
             style={{
               backgroundColor: "rgba(16, 44, 34, 0.5)",
