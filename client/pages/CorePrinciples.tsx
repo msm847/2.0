@@ -45,7 +45,7 @@ const UserIcon = () => (
   </svg>
 );
 
-const GearIcon = () => (
+const StructuralIcon = () => (
   <svg
     width="40"
     height="40"
@@ -54,8 +54,15 @@ const GearIcon = () => (
     stroke="currentColor"
     strokeWidth="2"
   >
-    <circle cx="12" cy="12" r="3" />
-    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m15.5-6.5l-4.24 4.24m-12.02 0l4.24 4.24m12.02-12.02l-4.24 4.24m-12.02 0l4.24 4.24" />
+    <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" />
+    <polygon points="12,7 18,10.5 18,13.5 12,17 6,13.5 6,10.5" />
+    <circle cx="12" cy="12" r="2" />
+    <line x1="12" y1="2" x2="12" y2="7" />
+    <line x1="12" y1="17" x2="12" y2="22" />
+    <line x1="2" y1="8.5" x2="6" y2="10.5" />
+    <line x1="18" y1="10.5" x2="22" y2="8.5" />
+    <line x1="2" y1="15.5" x2="6" y2="13.5" />
+    <line x1="18" y1="13.5" x2="22" y2="15.5" />
   </svg>
 );
 
