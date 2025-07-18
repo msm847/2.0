@@ -154,7 +154,7 @@ const principles = [
     title: "Structural Intelligence",
     description:
       "Detect design-level vulnerabilities within compliance frameworks before they calcify.",
-    icon: <GearIcon />,
+    icon: <StructuralIcon />,
   },
   {
     id: 5,
