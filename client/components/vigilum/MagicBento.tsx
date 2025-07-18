@@ -159,8 +159,8 @@ const ParticleCard: React.FC<ParticleCardProps> = ({
       const y = e.clientY - rect.top;
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      const rotateX = (y - centerY) / 10;
-      const rotateY = (centerX - x) / 10;
+      const rotateX = (y - centerY) / 25;
+      const rotateY = (centerX - x) / 25;
 
       gsap.to(card, {
         rotationX: rotateX,
