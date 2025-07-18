@@ -555,8 +555,10 @@ const MagicBento = ({
               "--glow-color": glowColor,
               ...(card.isContact
                 ? {
-                    marginRight: "200px",
+                    marginRight: "24px",
                     padding: "27px 0 27px 27px",
+                    gridColumn: "span 2",
+                    width: "calc(200% + 0.5em)",
                   }
                 : {}),
             } as React.CSSProperties,
