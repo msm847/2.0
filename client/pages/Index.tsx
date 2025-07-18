@@ -442,15 +442,8 @@ export default function Index() {
           style={{
             width: "100%",
             height: "100%",
-            background: `
-              linear-gradient(135deg,
-                rgba(255, 255, 255, 0.02) 0%,
-                rgba(255, 255, 255, 0.01) 25%,
-                rgba(255, 255, 255, 0.005) 50%,
-                rgba(255, 255, 255, 0.01) 75%,
-                rgba(255, 255, 255, 0.02) 100%)
-            `,
-            border: "1px solid rgba(255, 255, 255, 0.08)",
+            background: "transparent",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
             borderTop: "1px solid rgba(255, 255, 255, 0.2)",
             borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
             borderRadius: "20px",
