@@ -208,7 +208,7 @@ const principles = [
     id: 9,
     title: "Institutional Integrity Assurance",
     description:
-      "Strengthen public trust by ensuring governance frameworks operate with genuine accountability and transparency.",
+      "Strengthen public trust through genuine accountability and transparent governance frameworks.",
     icon: <MatrixIcon />,
   },
 ];
