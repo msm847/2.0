@@ -66,7 +66,7 @@ const cardData = [
     color: "#10201C",
     title: "Direct Contact",
     description: "info@vigilum.com",
-    url: "mailto:info@vigilum.com",
+    url: "/contact-form",
     isContact: true,
   },
 ];
