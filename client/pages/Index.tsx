@@ -227,6 +227,7 @@ export default function Index() {
                 fontWeight: "900",
                 margin: 0,
                 letterSpacing: "2px",
+                whiteSpace: "nowrap",
               }}
             >
               Semantic Foresight Intelligence
