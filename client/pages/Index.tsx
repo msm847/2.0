@@ -421,6 +421,90 @@ export default function Index() {
         </button>
       </div>
 
+      {/* Team Button Container - For second orb */}
+      <div
+        id="team-button-container"
+        style={{
+          position: "absolute",
+          top: "75%",
+          left: "65%",
+          transform: "translate(-50%, -50%)",
+          width: "160px",
+          height: "40px",
+          zIndex: 10,
+          pointerEvents: "auto",
+        }}
+      >
+        <button
+          id="team-button"
+          onClick={(e) => {
+            console.log("Team button clicked - navigating to team section");
+            e.preventDefault();
+            e.stopPropagation();
+            const teamSection = document.getElementById("team-section");
+            if (teamSection) {
+              teamSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          style={{
+            width: "100%",
+            height: "100%",
+            background: `
+              linear-gradient(135deg,
+                rgba(255, 255, 255, 0.02) 0%,
+                rgba(255, 255, 255, 0.01) 25%,
+                rgba(255, 255, 255, 0.005) 50%,
+                rgba(255, 255, 255, 0.01) 75%,
+                rgba(255, 255, 255, 0.02) 100%)
+            `,
+            border: "1px solid rgba(255, 255, 255, 0.08)",
+            borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+            borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
+            borderRadius: "20px",
+            color: "rgba(255, 255, 255, 0.9)",
+            fontSize: "14px",
+            fontWeight: "500",
+            letterSpacing: "1.5px",
+            cursor: "pointer",
+            fontFamily: "var(--font-ui)",
+            textTransform: "uppercase",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            backdropFilter: "blur(40px) saturate(1.8)",
+            WebkitBackdropFilter: "blur(40px) saturate(1.8)",
+            boxShadow: `
+              0 6px 24px rgba(0, 0, 0, 0.1),
+              0 2px 6px rgba(0, 0, 0, 0.05),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.05)
+            `,
+            textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
+            position: "relative",
+            overflow: "hidden",
+            pointerEvents: "auto",
+            zIndex: 1000,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderTop =
+              "1px solid rgba(255, 255, 255, 0.3)";
+            e.currentTarget.style.borderLeft =
+              "1px solid rgba(255, 255, 255, 0.25)";
+            e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+            e.currentTarget.style.transform = "scale(1.05)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderTop =
+              "1px solid rgba(255, 255, 255, 0.2)";
+            e.currentTarget.style.borderLeft =
+              "1px solid rgba(255, 255, 255, 0.15)";
+            e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)";
+            e.currentTarget.style.transform = "scale(1)";
+          }}
+        >
+          TEAM
+        </button>
+      </div>
+
       <style>{`
         #enter-button:active {
           transform: scale(0.95) !important;
