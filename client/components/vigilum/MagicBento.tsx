@@ -609,6 +609,7 @@ const MagicBento = ({
                         }}
                       >
                         For institutional partnerships, technical integration,
+                        <br />
                         or research collaboration inquiries
                       </p>
                       <div className="card__footer">
