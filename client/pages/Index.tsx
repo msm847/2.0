@@ -431,13 +431,10 @@ export default function Index() {
         <button
           id="team-button"
           onClick={(e) => {
-            console.log("Team button clicked - navigating to team section");
+            console.log("Team button clicked - navigating to team page");
             e.preventDefault();
             e.stopPropagation();
-            const teamSection = document.getElementById("team-section");
-            if (teamSection) {
-              teamSection.scrollIntoView({ behavior: "smooth" });
-            }
+            navigate("/vigilum#team");
           }}
           style={{
             width: "100%",
