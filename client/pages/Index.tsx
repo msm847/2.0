@@ -282,7 +282,7 @@ export default function Index() {
         style={{
           position: "absolute",
           top: "55%",
-          left: "30%",
+          left: "40%",
           transform: "translate(-50%, -50%)",
           width: "220px",
           height: "50px",
