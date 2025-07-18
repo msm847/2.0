@@ -60,12 +60,6 @@ const cardData = [
     url: "mailto:info@vigilum.com",
     isContact: true,
   },
-  {
-    color: "#10201C",
-    title: "Security",
-    description: "Enterprise-grade protection",
-    url: "/security",
-  },
 ];
 
 const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
