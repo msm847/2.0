@@ -184,6 +184,13 @@ const principles = [
       "Modular signal engines that operate independently but integrate through unified risk logic.",
     icon: <GlobeIcon />,
   },
+  {
+    id: 9,
+    title: "Compliance Architecture Decoding",
+    description:
+      "Detect when legal frameworks simulate control while structurally enabling extraction and exposure.",
+    icon: <MatrixIcon />,
+  },
 ];
 
 const CorePrinciples: React.FC = () => {
