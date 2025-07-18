@@ -127,6 +127,26 @@ const GlobeIcon = () => (
   </svg>
 );
 
+const MatrixIcon = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M7 7h2v2H7zM11 7h2v2h-2zM15 7h2v2h-2z" />
+    <path d="M7 11h2v2H7zM11 11h2v2h-2zM15 11h2v2h-2z" />
+    <path d="M7 15h2v2H7zM11 15h2v2h-2zM15 15h2v2h-2z" />
+    <line x1="3" y1="9" x2="21" y2="9" />
+    <line x1="3" y1="13" x2="21" y2="13" />
+    <line x1="9" y1="3" x2="9" y2="21" />
+    <line x1="15" y1="3" x2="15" y2="21" />
+  </svg>
+);
+
 const principles = [
   {
     id: 1,
