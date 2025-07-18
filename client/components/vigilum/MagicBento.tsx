@@ -559,6 +559,9 @@ const MagicBento = ({
                     padding: "27px 0 27px 27px",
                     gridColumn: "span 2",
                     width: "calc(200% + 0.5em)",
+                    gridRow: "span 1",
+                    height: "200px",
+                    maxHeight: "200px",
                   }
                 : {}),
             } as React.CSSProperties,
