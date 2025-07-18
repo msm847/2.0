@@ -34,9 +34,10 @@ const cardData = [
   },
   {
     color: "#10201C",
-    title: "Integration",
-    description: "Connect favorite tools",
-    url: "/integration",
+    title: "Direct Contact",
+    description: "info@vigilum.com",
+    url: "mailto:info@vigilum.com",
+    isContact: true,
   },
   {
     color: "#10201C",
