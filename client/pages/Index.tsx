@@ -254,6 +254,7 @@ export default function Index() {
             width: "220px",
             height: "50px",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         >
           {/* 3D Glass Mirror Button */}
