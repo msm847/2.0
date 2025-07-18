@@ -31,8 +31,8 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#10201C",
-    title: "Analytics",
-    description: "Track user behavior",
+    title: "Core Principles",
+    description: "",
     url: "/analytics",
   },
   {
