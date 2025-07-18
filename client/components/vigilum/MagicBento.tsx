@@ -39,7 +39,7 @@ const cardData = [
     color: "#10201C",
     title: "Actors",
     description: "",
-    url: "/dashboard",
+    url: "/actors",
   },
   {
     color: "#10201C",
