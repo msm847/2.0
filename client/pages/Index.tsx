@@ -243,7 +243,6 @@ export default function Index() {
             </p>
           </GradientText>
         </div>
-
       </div>
 
       {/* Button Container - Static Button - Outside content overlay */}
