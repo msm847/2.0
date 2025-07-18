@@ -248,11 +248,12 @@ export default function Index() {
           id="button-container"
           style={{
             position: "absolute",
-            top: "calc(50% + 220px)",
+            top: "50%",
             left: "50%",
-            transform: "translateX(-50%)",
+            transform: "translate(-50%, -50%)",
             width: "220px",
             height: "50px",
+            zIndex: 10,
           }}
         >
           {/* 3D Glass Mirror Button */}
