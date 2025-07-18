@@ -90,6 +90,7 @@ const App = () => (
           <Route path="/automation" element={<Automation />} />
           <Route path="/integration" element={<Integration />} />
           <Route path="/security" element={<Security />} />
+          <Route path="/core-principles" element={<CorePrinciples />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
