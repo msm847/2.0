@@ -376,7 +376,6 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                         style={{ display: "flex", alignItems: "center" }}
                       >
                         <span style={{ fontWeight: "500" }}>{card.title}</span>
-                        <EmailIcon />
                       </h2>
                       <p
                         className="card__description"
@@ -385,9 +384,12 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                           fontWeight: "600",
                           fontSize: "14px",
                           marginBottom: "8px",
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
                         {card.description}
+                        <EmailIcon />
                       </p>
                       <p
                         style={{
@@ -621,7 +623,6 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                       style={{ display: "flex", alignItems: "center" }}
                     >
                       <span style={{ fontWeight: "500" }}>{card.title}</span>
-                      <EmailIcon />
                     </h2>
                     <p
                       className="card__description"
@@ -630,9 +631,12 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                         fontWeight: "600",
                         fontSize: "14px",
                         marginBottom: "8px",
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
                       {card.description}
+                      <EmailIcon />
                     </p>
                     <p
                       style={{
