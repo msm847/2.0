@@ -21,7 +21,7 @@ const VigilumPage = () => {
         if (element) {
           setTimeout(() => {
             element.scrollIntoView({
-              behavior: "smooth",
+              behavior: "instant",
               block: "start",
             });
           }, 100);
