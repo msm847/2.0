@@ -244,22 +244,24 @@ export default function Index() {
           </GradientText>
         </div>
 
-        {/* Button Container - Static Button */}
-        <div
-          id="button-container"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "220px",
-            height: "50px",
-            zIndex: 10,
-            pointerEvents: "auto",
-          }}
-        >
-          {/* 3D Glass Mirror Button */}
-          <button
+      </div>
+
+      {/* Button Container - Static Button - Outside content overlay */}
+      <div
+        id="button-container"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "220px",
+          height: "50px",
+          zIndex: 10,
+          pointerEvents: "auto",
+        }}
+      >
+        {/* 3D Glass Mirror Button */}
+        <button
             id="enter-button"
             onClick={(e) => {
               console.log("Button click event triggered");
