@@ -470,21 +470,77 @@ export default function Index() {
             pointerEvents: "auto",
             zIndex: 1000,
           }}
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+            e.currentTarget.style.background = `
+              radial-gradient(circle at ${x}% ${y}%,
+                rgba(255, 255, 255, 0.08) 0%,
+                rgba(255, 255, 255, 0.03) 30%,
+                rgba(255, 255, 255, 0.01) 60%,
+                rgba(255, 255, 255, 0.005) 100%),
+              linear-gradient(135deg,
+                rgba(255, 255, 255, 0.02) 0%,
+                rgba(255, 255, 255, 0.005) 50%,
+                rgba(255, 255, 255, 0.02) 100%)
+            `;
+
+            e.currentTarget.style.transform = `
+              perspective(1000px)
+              rotateX(${(y - 50) * 0.1}deg)
+              rotateY(${(x - 50) * 0.1}deg)
+              translateZ(2px)
+            `;
+
+            e.currentTarget.style.boxShadow = `
+              0 12px 40px rgba(0, 0, 0, 0.15),
+              0 4px 16px rgba(0, 0, 0, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+              0 0 20px rgba(255, 255, 255, 0.1)
+            `;
+          }}
           onMouseEnter={(e) => {
             e.currentTarget.style.borderTop =
               "1px solid rgba(255, 255, 255, 0.3)";
             e.currentTarget.style.borderLeft =
               "1px solid rgba(255, 255, 255, 0.25)";
             e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
-            e.currentTarget.style.transform = "scale(1.05)";
           }}
           onMouseLeave={(e) => {
+            e.currentTarget.style.background = "transparent";
+            e.currentTarget.style.transform =
+              "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+            e.currentTarget.style.boxShadow = `
+              0 8px 32px rgba(0, 0, 0, 0.1),
+              0 2px 8px rgba(0, 0, 0, 0.05),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.05)
+            `;
             e.currentTarget.style.borderTop =
               "1px solid rgba(255, 255, 255, 0.2)";
             e.currentTarget.style.borderLeft =
               "1px solid rgba(255, 255, 255, 0.15)";
             e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)";
-            e.currentTarget.style.transform = "scale(1)";
+          }}
+          onMouseDown={(e) => {
+            e.currentTarget.style.transform =
+              "perspective(1000px) scale(0.98) translateZ(-2px)";
+          }}
+          onMouseUp={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            e.currentTarget.style.transform = `
+              perspective(1000px)
+              rotateX(${(y - 50) * 0.1}deg)
+              rotateY(${(x - 50) * 0.1}deg)
+              translateZ(2px)
+            `;
           }}
         >
           TEAM
