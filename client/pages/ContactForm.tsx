@@ -197,54 +197,97 @@ const ContactForm: React.FC = () => {
         >
           <form onSubmit={handleSubmit}>
             {/* Actor Type Selection */}
-            <div style={{ marginBottom: "24px" }}>
+            <div style={{ marginBottom: "32px" }}>
               <label
-                htmlFor="actorType"
                 style={{
                   display: "block",
                   fontSize: "16px",
                   fontWeight: "600",
                   color: "#40FFAA",
-                  marginBottom: "8px",
+                  marginBottom: "16px",
                 }}
               >
                 Actor Type *
               </label>
-              <select
-                id="actorType"
-                name="actorType"
-                value={formData.actorType}
-                onChange={handleInputChange}
+              <div
                 style={{
-                  width: "100%",
-                  padding: "12px 16px",
-                  borderRadius: "12px",
-                  border: `2px solid ${errors.actorType ? "#ef4444" : "rgba(64, 255, 170, 0.3)"}`,
-                  backgroundColor: "rgba(16, 32, 28, 0.8)",
-                  color: "#DAD7C7",
-                  fontSize: "14px",
-                  outline: "none",
-                  transition: "all 0.3s ease",
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = "rgba(64, 255, 170, 0.6)";
-                  e.target.style.boxShadow =
-                    "0 0 0 3px rgba(64, 255, 170, 0.1)";
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = errors.actorType
-                    ? "#ef4444"
-                    : "rgba(64, 255, 170, 0.3)";
-                  e.target.style.boxShadow = "none";
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "12px",
+                  marginBottom: "8px",
                 }}
               >
-                <option value="">Select your actor type</option>
                 {actorTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
+                  <div
+                    key={type}
+                    onClick={() => {
+                      setFormData((prev) => ({ ...prev, actorType: type }));
+                      if (errors.actorType) {
+                        setErrors((prev) => ({ ...prev, actorType: "" }));
+                      }
+                    }}
+                    style={{
+                      background:
+                        formData.actorType === type
+                          ? "linear-gradient(135deg, rgba(64, 255, 170, 0.2) 0%, rgba(64, 255, 170, 0.1) 100%)"
+                          : "linear-gradient(135deg, rgba(16, 32, 28, 0.9) 0%, rgba(12, 25, 22, 0.9) 100%)",
+                      backdropFilter: "blur(20px) saturate(1.8)",
+                      border: `2px solid ${
+                        formData.actorType === type
+                          ? "rgba(64, 255, 170, 0.6)"
+                          : errors.actorType
+                            ? "#ef4444"
+                            : "rgba(64, 255, 170, 0.2)"
+                      }`,
+                      borderRadius: "12px",
+                      padding: "16px 12px",
+                      textAlign: "center",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                      boxShadow:
+                        formData.actorType === type
+                          ? "0 8px 25px rgba(64, 255, 170, 0.2)"
+                          : "0 4px 12px rgba(0, 0, 0, 0.2)",
+                      transform:
+                        formData.actorType === type
+                          ? "translateY(-2px)"
+                          : "translateY(0px)",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (formData.actorType !== type) {
+                        e.currentTarget.style.borderColor =
+                          "rgba(64, 255, 170, 0.4)";
+                        e.currentTarget.style.transform = "translateY(-1px)";
+                        e.currentTarget.style.boxShadow =
+                          "0 6px 20px rgba(64, 255, 170, 0.1)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (formData.actorType !== type) {
+                        e.currentTarget.style.borderColor = errors.actorType
+                          ? "#ef4444"
+                          : "rgba(64, 255, 170, 0.2)";
+                        e.currentTarget.style.transform = "translateY(0px)";
+                        e.currentTarget.style.boxShadow =
+                          "0 4px 12px rgba(0, 0, 0, 0.2)";
+                      }
+                    }}
+                  >
+                    <h4
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color:
+                          formData.actorType === type ? "#40FFAA" : "#9DE6C6",
+                        marginBottom: "4px",
+                        lineHeight: "1.3",
+                      }}
+                    >
+                      {type}
+                    </h4>
+                  </div>
                 ))}
-              </select>
+              </div>
               {errors.actorType && (
                 <p
                   style={{
