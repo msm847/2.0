@@ -19,12 +19,13 @@ const VigilumPage = () => {
       if (location.hash) {
         const element = document.getElementById(location.hash.substring(1));
         if (element) {
-          setTimeout(() => {
+          // Use requestAnimationFrame to ensure DOM is ready
+          requestAnimationFrame(() => {
             element.scrollIntoView({
               behavior: "instant",
               block: "start",
             });
-          }, 100);
+          });
         }
       }
     };
