@@ -845,6 +845,50 @@ const MagicBento = ({
                       </a>
                     </div>
                   </>
+                ) : card.isVision ? (
+                  <>
+                    <h2
+                      className="card__title"
+                      style={{
+                        fontSize: "20px",
+                        marginBottom: "12px",
+                        color: "#9DE6C6",
+                      }}
+                    >
+                      {card.title}
+                    </h2>
+                    <p
+                      style={{
+                        fontSize: "13px",
+                        lineHeight: "1.5",
+                        color: "#E5E5E5",
+                        marginBottom: "12px",
+                        fontWeight: "500",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      "{card.description}"
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "12px",
+                        lineHeight: "1.4",
+                        color: "#B0BEC5",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {card.secondaryDescription}
+                    </p>
+                    <div className="card__footer">
+                      <a
+                        href={card.url}
+                        className="explore-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Explore
+                      </a>
+                    </div>
+                  </>
                 ) : (
                   <>
                     <h2 className="card__title">{card.title}</h2>
