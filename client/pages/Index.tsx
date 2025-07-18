@@ -434,7 +434,10 @@ export default function Index() {
             console.log("Team button clicked - navigating to team page");
             e.preventDefault();
             e.stopPropagation();
-            navigate("/vigilum#team");
+            navigate("/vigilum", { replace: false });
+            setTimeout(() => {
+              window.location.hash = "team";
+            }, 100);
           }}
           style={{
             width: "100%",
