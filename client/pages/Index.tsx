@@ -159,8 +159,8 @@ export default function Index() {
         id="orb-background-team"
         style={{
           position: "absolute",
-          top: "68%",
-          left: "68%",
+          top: "75%",
+          left: "65%",
           transform: "translate(-50%, -50%)",
           width: "396px",
           height: "396px",
