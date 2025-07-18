@@ -129,7 +129,7 @@ export default function Index() {
         colorStops={["#25443B", "#40FFAA", "#10201C"]}
         amplitude={1.2}
         blend={0.4}
-        speed={0.8}
+        speed={0.56}
       />
       {/* Orb Background */}
       <div
