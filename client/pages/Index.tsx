@@ -148,7 +148,7 @@ export default function Index() {
       >
         <Orb
           hue={160}
-          hoverIntensity={0.2}
+          hoverIntensity={1.5}
           rotateOnHover={true}
           forceHoverState={false}
         />
