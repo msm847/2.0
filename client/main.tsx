@@ -29,6 +29,7 @@ import Collaboration from "./pages/Collaboration";
 import Automation from "./pages/Automation";
 import Integration from "./pages/Integration";
 import Security from "./pages/Security";
+import CorePrinciples from "./pages/CorePrinciples";
 
 const queryClient = new QueryClient();
 
