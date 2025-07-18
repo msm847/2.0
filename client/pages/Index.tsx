@@ -154,6 +154,29 @@ export default function Index() {
         />
       </div>
 
+      {/* Second Orb - Team */}
+      <div
+        id="orb-background-team"
+        style={{
+          position: "absolute",
+          top: "75%",
+          left: "65%",
+          transform: "translate(-50%, -50%)",
+          width: "360px",
+          height: "360px",
+          zIndex: 5,
+          opacity: 0.6,
+          pointerEvents: "auto",
+        }}
+      >
+        <Orb
+          hue={160}
+          hoverIntensity={0.2}
+          rotateOnHover={true}
+          forceHoverState={false}
+        />
+      </div>
+
       {/* Content Overlay */}
       <div
         id="content-overlay"
