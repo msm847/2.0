@@ -192,7 +192,7 @@ const ModuleGrid = () => {
         </div>
 
         {/* Module Grid - 2x4 responsive layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-0 mb-8">
           {modules.map((module) => {
             const IconComponent = module.icon;
             const isHovered = hoveredModule === module.id;
@@ -201,13 +201,29 @@ const ModuleGrid = () => {
             return (
               <div
                 key={module.id}
-                className={`relative group transition-all duration-500 ease-out ${
+                className={`relative group transition-all duration-300 ease-out ${
                   isHovered && !isPhantom
-                    ? "scale-105 z-10"
+                    ? "scale-110 z-20"
                     : isHovered && isPhantom
-                      ? "scale-102"
+                      ? "scale-105 z-10"
                       : ""
                 }`}
+                style={{
+                  transform:
+                    isHovered && !isPhantom
+                      ? "scale(1.1) translateZ(20px)"
+                      : isHovered && isPhantom
+                        ? "scale(1.05) translateZ(10px)"
+                        : "scale(1) translateZ(0px)",
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px",
+                  boxShadow:
+                    isHovered && !isPhantom
+                      ? "0 20px 40px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.2)"
+                      : isHovered && isPhantom
+                        ? "0 10px 20px rgba(0,0,0,0.2)"
+                        : "none",
+                }}
                 onMouseEnter={() => setHoveredModule(module.id)}
                 onMouseLeave={() => setHoveredModule(null)}
               >
