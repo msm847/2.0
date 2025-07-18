@@ -783,8 +783,9 @@ const MagicBento = ({
                         opacity: 0.9,
                       }}
                     >
-                      For institutional partnerships, technical integration, or
-                      research collaboration inquiries
+                      For institutional partnerships, technical integration,
+                      <br />
+                      or research collaboration inquiries
                     </p>
                     <div className="card__footer">
                       <a
