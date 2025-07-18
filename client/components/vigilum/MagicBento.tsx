@@ -749,17 +749,62 @@ const MagicBento = ({
               }}
             >
               <div className="card__content">
-                <h2 className="card__title">{card.title}</h2>
-                <p className="card__description">{card.description}</p>
-                <div className="card__footer">
-                  <a
-                    href={card.url}
-                    className="explore-btn"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Explore
-                  </a>
-                </div>
+                {card.isContact ? (
+                  <>
+                    <h2
+                      className="card__title"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      {card.title}
+                      <EmailIcon />
+                    </h2>
+                    <p
+                      className="card__description"
+                      style={{
+                        color: "#40FFAA",
+                        fontWeight: "600",
+                        fontSize: "14px",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      {card.description}
+                    </p>
+                    <p
+                      style={{
+                        color: "#9DE6C6",
+                        fontSize: "12px",
+                        lineHeight: "1.4",
+                        opacity: 0.9,
+                      }}
+                    >
+                      For institutional partnerships, technical integration, or
+                      research collaboration inquiries
+                    </p>
+                    <div className="card__footer">
+                      <a
+                        href={card.url}
+                        className="explore-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Contact Forum
+                      </a>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="card__title">{card.title}</h2>
+                    <p className="card__description">{card.description}</p>
+                    <div className="card__footer">
+                      <a
+                        href={card.url}
+                        className="explore-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Explore
+                      </a>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           );
