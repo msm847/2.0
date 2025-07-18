@@ -949,6 +949,61 @@ const MagicBento = ({
                       </a>
                     </div>
                   </>
+                ) : card.isFounder ? (
+                  <>
+                    <h2
+                      className="card__title"
+                      style={{
+                        fontSize: "18px",
+                        marginBottom: "10px",
+                        color: "#40FFAA",
+                      }}
+                    >
+                      {card.title}
+                    </h2>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        lineHeight: "1.4",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {card.description}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "11px",
+                        lineHeight: "1.4",
+                        color: "#D0D0D0",
+                        marginBottom: "8px",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {card.secondaryDescription}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "10px",
+                        lineHeight: "1.3",
+                        color: "#9DE6C6",
+                        fontWeight: "500",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {card.signature}
+                    </p>
+                    <div className="card__footer">
+                      <a
+                        href={card.url}
+                        className="explore-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Explore
+                      </a>
+                    </div>
+                  </>
                 ) : (
                   <>
                     <h2 className="card__title">{card.title}</h2>
