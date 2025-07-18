@@ -43,9 +43,13 @@ const cardData = [
   },
   {
     color: "#10201C",
-    title: "Collaboration",
-    description: "Work together seamlessly",
-    url: "/collaboration",
+    title: "Vision Statement",
+    description:
+      "Vigilum aims to empower societies with structural transparency where laws and contracts carry traceable logic, and loopholes have nowhere to hide.",
+    secondaryDescription:
+      "We believe in augmenting human oversight with AI to achieve accountability by design, transforming governance from reactive to predictive.",
+    url: "/vision",
+    isVision: true,
   },
   {
     color: "#10201C",
