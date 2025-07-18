@@ -257,7 +257,7 @@ export default function Index() {
         id="button-container"
         style={{
           position: "absolute",
-          top: "65%",
+          top: "60%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           width: "220px",
