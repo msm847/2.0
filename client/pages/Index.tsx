@@ -120,11 +120,17 @@ export default function Index() {
         height: "100vh",
         position: "relative",
         overflow: "hidden",
-        background:
-          "linear-gradient(180deg, #25443B 0%, #1A2F29 50%, #10201C 100%)",
+        backgroundColor: "#10201C",
         fontFamily: "var(--font-body)",
       }}
     >
+      {/* Aurora Background */}
+      <Aurora
+        colorStops={["#25443B", "#40FFAA", "#10201C"]}
+        amplitude={1.2}
+        blend={0.4}
+        speed={0.8}
+      />
       {/* Orb Background */}
       <div
         id="orb-background"
