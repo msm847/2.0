@@ -53,9 +53,14 @@ const cardData = [
   },
   {
     color: "#10201C",
-    title: "Automation",
-    description: "Streamline workflows",
-    url: "/automation",
+    title: "Founder's Note",
+    description:
+      "During my research in the MARS-REERS program at Columbia University, I discovered a fundamental gap in how we approach corruption. We often react to scandals rather than predict them. Traditional tools detect issues after rules are broken, but what if we could identify the structural flaws that enable corruption before any funds are spent or contracts signed?",
+    secondaryDescription:
+      "Vigilum emerged from this insight. Our mission is to render institutional structure legible before it breaks, to spotlight design flaws that breed corruption so they can be fixed in time. This isn't just detection — this is preemption.",
+    signature: "— Adam Kovarskas, Founder",
+    url: "/founder",
+    isFounder: true,
   },
   {
     color: "#10201C",
