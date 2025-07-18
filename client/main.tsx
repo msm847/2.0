@@ -31,6 +31,7 @@ import Integration from "./pages/Integration";
 import Security from "./pages/Security";
 import CorePrinciples from "./pages/CorePrinciples";
 import Actors from "./pages/Actors";
+import ContactForm from "./pages/ContactForm";
 
 const queryClient = new QueryClient();
 
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/security" element={<Security />} />
           <Route path="/core-principles" element={<CorePrinciples />} />
           <Route path="/actors" element={<Actors />} />
+          <Route path="/contact-form" element={<ContactForm />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
