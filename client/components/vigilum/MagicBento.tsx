@@ -346,12 +346,11 @@ const MagicBento: React.FC<MagicBentoProps> = ({
             style: {
               ...(isDirectContactCard(card)
                 ? {
-                    width: "calc(200% + 11px)",
-                    gridRow: "span 1",
+                    gridColumn: "span 2",
+                    width: "100%",
                     height: "200px",
                     maxHeight: "200px",
                     minHeight: "200px",
-                    marginRight: "24px",
                   }
                 : {}),
             } as React.CSSProperties,
