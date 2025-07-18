@@ -33,7 +33,7 @@ const cardData = [
     color: "#10201C",
     title: "Core Principles",
     description: "",
-    url: "/analytics",
+    url: "/core-principles",
   },
   {
     color: "#10201C",
