@@ -4,7 +4,7 @@ import "./MagicBento.css";
 
 const EmailIcon = () => (
   <svg
-    width="32"
+    width="24"
     height="16"
     viewBox="0 0 24 24"
     fill="none"
