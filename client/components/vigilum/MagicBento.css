@@ -151,8 +151,8 @@
   padding: 6px;
   background: radial-gradient(
     var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.8)) 0%,
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.4)) 30%,
+    rgba(64, 255, 170, calc(var(--glow-intensity) * 0.8)) 0%,
+    rgba(64, 255, 170, calc(var(--glow-intensity) * 0.4)) 30%,
     transparent 60%
   );
   border-radius: inherit;
@@ -175,8 +175,8 @@
 
 .card--border-glow:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.4),
-    0 0 30px var(--purple-glow);
+    0 4px 20px rgba(43, 74, 61, 0.4),
+    0 0 30px var(--green-glow);
 }
 
 .particle-container {
