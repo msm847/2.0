@@ -2,20 +2,13 @@ import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Triangle, Vec3 } from "ogl";
 import "./Orb.css";
 
-interface OrbProps {
-  hue?: number;
-  hoverIntensity?: number;
-  rotateOnHover?: boolean;
-  forceHoverState?: boolean;
-}
-
 export default function Orb({
   hue = 0,
   hoverIntensity = 0.2,
   rotateOnHover = true,
   forceHoverState = false,
-}: OrbProps) {
-  const ctnDom = useRef<HTMLDivElement>(null);
+}) {
+  const ctnDom = useRef(null);
 
   const vert = /* glsl */ `
     precision highp float;
@@ -228,7 +221,7 @@ export default function Orb({
     let currentRot = 0;
     const rotationSpeed = 0.3;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -254,8 +247,8 @@ export default function Orb({
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseleave", handleMouseLeave);
 
-    let rafId: number;
-    const update = (t: number) => {
+    let rafId;
+    const update = (t) => {
       rafId = requestAnimationFrame(update);
       const dt = (t - lastTime) * 0.001;
       lastTime = t;
