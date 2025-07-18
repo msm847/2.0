@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GradientText from "@/components/ui/GradientText";
 import Orb from "@/components/ui/Orb";
+import Aurora from "@/components/ui/Aurora";
 
 export default function Index() {
   const navigate = useNavigate();
