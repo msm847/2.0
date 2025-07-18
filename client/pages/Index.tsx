@@ -229,7 +229,7 @@ export default function Index() {
                 letterSpacing: "2px",
               }}
             >
-              Observe. Compute. Expose.
+              Semantic Foresight Intelligence
             </h1>
           </GradientText>
           <GradientText
