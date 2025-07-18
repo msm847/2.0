@@ -30,6 +30,7 @@ import Automation from "./pages/Automation";
 import Integration from "./pages/Integration";
 import Security from "./pages/Security";
 import CorePrinciples from "./pages/CorePrinciples";
+import Actors from "./pages/Actors";
 
 const queryClient = new QueryClient();
 
@@ -91,6 +92,7 @@ const App = () => (
           <Route path="/integration" element={<Integration />} />
           <Route path="/security" element={<Security />} />
           <Route path="/core-principles" element={<CorePrinciples />} />
+          <Route path="/actors" element={<Actors />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
