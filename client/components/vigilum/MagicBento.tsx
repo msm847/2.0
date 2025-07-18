@@ -37,8 +37,8 @@ const cardData = [
   },
   {
     color: "#10201C",
-    title: "Dashboard",
-    description: "Centralized data view",
+    title: "Actors",
+    description: "",
     url: "/dashboard",
   },
   {
