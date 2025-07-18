@@ -206,9 +206,9 @@ const principles = [
   },
   {
     id: 9,
-    title: "Compliance Architecture Decoding",
+    title: "Institutional Integrity Assurance",
     description:
-      "Detect when legal frameworks simulate control while structurally enabling extraction and exposure.",
+      "Strengthen public trust by ensuring governance frameworks operate with genuine accountability and transparency.",
     icon: <MatrixIcon />,
   },
 ];
