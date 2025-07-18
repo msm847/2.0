@@ -134,8 +134,9 @@ export default function Index() {
           transform: "translate(-50%, -50%)",
           width: "400px",
           height: "400px",
-          zIndex: 1,
+          zIndex: 5,
           opacity: 0.6,
+          pointerEvents: "auto",
         }}
       >
         <Orb
