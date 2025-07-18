@@ -446,7 +446,7 @@ export default function Index() {
             border: "1px solid rgba(255, 255, 255, 0.15)",
             borderTop: "1px solid rgba(255, 255, 255, 0.2)",
             borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
-            borderRadius: "20px",
+            borderRadius: "25px",
             color: "rgba(255, 255, 255, 0.9)",
             fontSize: "14px",
             fontWeight: "500",
