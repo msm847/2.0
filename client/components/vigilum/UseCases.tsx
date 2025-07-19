@@ -29,7 +29,12 @@ const UseCases = () => {
                 Structural Retrospectives
               </span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+            <motion.h2
+              className="text-display-lg text-white mb-8"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               Library
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">

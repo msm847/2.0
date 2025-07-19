@@ -91,7 +91,7 @@ const ModulesGrid = () => {
   }, []);
 
   return (
-    <div className="py-20" style={{ backgroundColor: "#0B1E16" }}>
+    <div className="py-20" style={{ backgroundColor: '#0B1E16' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -102,7 +102,12 @@ const ModulesGrid = () => {
                 Module Architecture
               </span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+            <motion.h2
+              className="text-display-lg text-white mb-8"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               SEMANTIC INTELLIGENCE MODULES
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
