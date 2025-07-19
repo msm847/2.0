@@ -174,7 +174,7 @@ const Navigation = () => {
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
                     }`}
                   >
-                    TEAM
+                    MISSION & PARTNERS
                   </button>
                 </div>
               </div>
@@ -233,7 +233,7 @@ const Navigation = () => {
                 onMouseEnter={() => setSeeTogetherHovered(true)}
                 onMouseLeave={() => setSeeTogetherHovered(false)}
               >
-                TEAM
+                MISSION & PARTNERS
               </button>
             </div>
           </div>
