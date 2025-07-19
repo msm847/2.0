@@ -419,22 +419,15 @@ const TeamContact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-green-900/30 px-3 py-1 rounded-full border border-green-700 mb-4">
-                <User className="w-3 h-3 text-green-400" />
-                <span className="text-xs text-green-300 font-mono uppercase tracking-wider">
-                  Origins & Vision
-                </span>
-              </div>
-              <motion.h2
-                id="team-heading"
-                className="text-display-lg text-white mb-8"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                MISSION & PARTNERS
-              </motion.h2>
+            <div
+              className="text-center mb-16 pb-8 text-white font-display"
+              style={{
+                fontSize: "48px",
+                lineHeight: "60px",
+                fontWeight: "400",
+              }}
+            >
+              MISSION & PARTNERS
             </div>
 
             {/* MagicBento Grid */}
