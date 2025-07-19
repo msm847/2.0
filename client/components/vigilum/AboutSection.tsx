@@ -13,9 +13,14 @@ const AboutSection = () => {
                 Interface as Philosophy
               </span>
             </div>
-            <h2 className="text-display-lg text-gray-100 mb-4 tracking-tight">
+            <motion.h2
+              className="text-display-lg text-white mb-8"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               METHODOLOGY
-            </h2>
+            </motion.h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Vigilum operates through semantic analysis of legal structure.
               This interface renders the matrix mechanics, typology geometry,
