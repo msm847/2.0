@@ -128,7 +128,7 @@ const Navigation = () => {
                 <div className="py-2">
                   <button
                     onClick={() => handleNavigation("#modules")}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
                       activeSection === "modules"
                         ? "text-green-400 bg-green-400/10"
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
@@ -138,7 +138,7 @@ const Navigation = () => {
                   </button>
                   <button
                     onClick={() => handleNavigation("#clause-simulator")}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
                       activeSection === "clause-simulator"
                         ? "text-green-400 bg-green-400/10"
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
@@ -148,7 +148,7 @@ const Navigation = () => {
                   </button>
                   <button
                     onClick={() => handleNavigation("#demo")}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
                       activeSection === "demo" || activeSection === "clavis"
                         ? "text-green-400 bg-green-400/10"
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
@@ -158,7 +158,7 @@ const Navigation = () => {
                   </button>
                   <button
                     onClick={() => handleNavigation("#cases")}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
                       activeSection === "cases"
                         ? "text-green-400 bg-green-400/10"
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
@@ -168,7 +168,7 @@ const Navigation = () => {
                   </button>
                   <button
                     onClick={() => handleNavigation("#team")}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors duration-150 ${
+                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
                       activeSection === "team"
                         ? "text-green-400 bg-green-400/10"
                         : "text-gray-300 hover:text-white hover:bg-gray-800/50"
