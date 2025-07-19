@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import MagicBentoTeamGrid from "./MagicBentoTeamGrid";
 import MagicBentoContactGrid from "./MagicBentoContactGrid";
@@ -425,12 +426,15 @@ const TeamContact = () => {
                   Origins & Vision
                 </span>
               </div>
-              <h2
+              <motion.h2
                 id="team-heading"
-                className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight"
+                className="text-display-lg text-white mb-8"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
               >
-                TEAM
-              </h2>
+                MISSION & PARTNERS
+              </motion.h2>
             </div>
 
             {/* MagicBento Grid */}
