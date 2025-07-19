@@ -81,7 +81,7 @@ const Navigation = () => {
           {/* Return Button */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center px-3 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
+            className="flex items-center px-3 py-2 rounded border font-display text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
             style={{
               backgroundColor: "rgba(16, 44, 34, 0.5)",
               borderColor: "rgba(34, 68, 54, 0.6)",
@@ -108,7 +108,7 @@ const Navigation = () => {
           <div className="hidden md:block absolute right-4">
             <div className="relative group">
               <button
-                className="px-4 py-2 text-gray-300 hover:text-white font-mono text-sm transition-colors duration-200 border border-gray-600 rounded"
+                className="px-4 py-2 text-gray-300 hover:text-white font-display text-sm transition-colors duration-200 border border-gray-600 rounded"
                 style={{
                   backgroundColor: "rgba(5, 15, 12, 0.95)",
                 }}
