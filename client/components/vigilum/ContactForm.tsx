@@ -314,7 +314,7 @@ const ContactForm = () => {
                   className="inline-flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-colors font-mono cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  <span>Back to Team</span>
+                  <span>Back to Mission & Partners</span>
                 </button>
 
                 <Button
