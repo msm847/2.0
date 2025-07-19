@@ -261,8 +261,8 @@ const WhatWeFight: React.FC = () => {
       className="min-h-screen pt-32 pb-20 pl-12 pr-12 transition-colors duration-1000"
       style={
         {
-          backgroundColor: isTier4InView ? "#0D1510" : "#151A13",
-          "--color-bg-base": "#151A13",
+          backgroundColor: isTier4InView ? "#0E261D" : "#0E261D",
+          "--color-bg-base": "#0E261D",
           "--color-text-primary": "#DAD7C7",
           "--color-highlight-rt": "#E27E3C",
           "--color-highlight-ci": "#DB4F4F",
