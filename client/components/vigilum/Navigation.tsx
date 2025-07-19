@@ -48,7 +48,7 @@ const Navigation = () => {
 
   const getButtonStyles = (section: string, isActive: boolean) => {
     const baseStyles =
-      "font-ui text-sm uppercase tracking-[0.05em] font-medium transition-all duration-300 ease-out relative";
+      "font-display text-sm uppercase tracking-[0.05em] font-medium transition-all duration-300 ease-out relative";
     const hoverStyles = "hover:text-white";
     const glowStyles = "hover:shadow-[0_0_6px_rgba(255,255,255,0.12)]";
 
