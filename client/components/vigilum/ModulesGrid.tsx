@@ -92,7 +92,7 @@ const ModulesGrid = () => {
   }, []);
 
   return (
-    <div className="py-20" style={{ backgroundColor: '#0B1E16' }}>
+    <div className="py-20" style={{ backgroundColor: "#0B1E16" }}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -110,7 +110,7 @@ const ModulesGrid = () => {
               transition={{ duration: 0.8 }}
             >
               SEMANTIC INTELLIGENCE MODULES
-            </h2>
+            </motion.h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Modular risk detection machine. Each module simulates specific
               failure behaviors in legal structure.
