@@ -419,16 +419,19 @@ const TeamContact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <div
+            <motion.div
               className="text-center mb-16 pb-8 text-white font-display"
               style={{
                 fontSize: "48px",
                 lineHeight: "60px",
                 fontWeight: "400",
               }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
               MISSION & PARTNERS
-            </div>
+            </motion.div>
 
             {/* MagicBento Grid */}
             <MagicBento
