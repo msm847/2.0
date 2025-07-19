@@ -176,7 +176,7 @@ const ModuleGrid = () => {
   const [hoveredModule, setHoveredModule] = useState<string | null>(null);
 
   return (
-    <div className="py-20 px-4" style={{ backgroundColor: "#0E261D" }}>
+    <div className="py-20 px-4" style={{ backgroundColor: "#151A13" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 mt-8">
