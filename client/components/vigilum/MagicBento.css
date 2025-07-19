@@ -230,6 +230,7 @@
   padding: 8px 16px;
   border-radius: 12px;
   font: var(--body-lg);
+  font-size: 0.95625rem;
   font-weight: 400;
   text-decoration: none;
   letter-spacing: 0.025em;
