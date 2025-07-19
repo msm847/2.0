@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Settings,
@@ -393,9 +394,14 @@ const SemanticPermutationEngine = () => {
               Semantic Permutation Engine
             </span>
           </div>
-          <h2 className="text-4xl font-bold text-gray-100 mb-4 font-mono tracking-tight">
+          <motion.h2
+            className="text-display-lg text-white mb-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             VIGILUM SPE
-          </h2>
+          </motion.h2>
           <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
             Execute semantic permutations on five atomic operators. Each
             sequence transforms the 6-layer governance tensor through
