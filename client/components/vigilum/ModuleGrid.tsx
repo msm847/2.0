@@ -181,8 +181,7 @@ const ModuleGrid = () => {
         {/* Header */}
         <div className="text-center mb-16 mt-8">
           <motion.h2
-            className="text-display-lg mb-8 tracking-tight uppercase"
-            style={{ color: "#B8D0C9" }}
+            className="text-display-lg text-white mb-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

@@ -940,17 +940,17 @@ const StructuralInterpretationMode = () => {
       <div className="container mx-auto px-4 py-20">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2
-            className="font-mono text-5xl mb-8"
+          <motion.h2
+            className="text-display-lg text-white mb-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             style={{
-              color: "#C9D2DC",
-              fontWeight: "400",
-              letterSpacing: "0.02em",
-              lineHeight: "1.4",
+              textAlign: "center",
             }}
           >
             STRUCTURAL INTERPRETATION MODE
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Cognitive Recompiler Interface */}
