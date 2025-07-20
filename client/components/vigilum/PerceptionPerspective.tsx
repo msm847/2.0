@@ -20,23 +20,22 @@ const ClickableTrueFocus = ({
   const wordRefs = useRef([]);
   const [focusRect, setFocusRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
 
+  // Disable automatic animation - only respond to clicks
   useEffect(() => {
-    if (!manualMode) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % words.length);
-      }, (animationDuration + pauseBetweenAnimations) * 1000);
+    // No automatic animation
+  }, []);
 
-      return () => clearInterval(interval);
+  useEffect(() => {
+    // Only show focus frame when a section is actively selected
+    const activeWordIndex = activeSection === 'perception' ? 0 : activeSection === 'perspective' ? 1 : -1;
+
+    if (activeWordIndex === -1 || !wordRefs.current[activeWordIndex] || !containerRef.current) {
+      setFocusRect({ x: 0, y: 0, width: 0, height: 0 });
+      return;
     }
-  }, [manualMode, animationDuration, pauseBetweenAnimations, words.length]);
-
-  useEffect(() => {
-    if (currentIndex === null || currentIndex === -1) return;
-
-    if (!wordRefs.current[currentIndex] || !containerRef.current) return;
 
     const parentRect = containerRef.current.getBoundingClientRect();
-    const activeRect = wordRefs.current[currentIndex].getBoundingClientRect();
+    const activeRect = wordRefs.current[activeWordIndex].getBoundingClientRect();
 
     setFocusRect({
       x: activeRect.left - parentRect.left,
@@ -44,19 +43,15 @@ const ClickableTrueFocus = ({
       width: activeRect.width,
       height: activeRect.height,
     });
-  }, [currentIndex, words.length]);
+  }, [activeSection]);
 
+  // Disable mouse hover effects - only respond to clicks
   const handleMouseEnter = (index) => {
-    if (manualMode) {
-      setLastActiveIndex(index);
-      setCurrentIndex(index);
-    }
+    // No hover effects
   };
 
   const handleMouseLeave = () => {
-    if (manualMode) {
-      setCurrentIndex(lastActiveIndex);
-    }
+    // No hover effects
   };
 
   const handleWordClick = (index) => {
@@ -66,33 +61,22 @@ const ClickableTrueFocus = ({
   return (
     <div className="focus-container" ref={containerRef}>
       {words.map((word, index) => {
-        const isActive = index === currentIndex;
         const isSelectedSection = (index === 0 && activeSection === 'perception') ||
                                  (index === 1 && activeSection === 'perspective');
         return (
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
-            className={`focus-word ${manualMode ? "manual" : ""} ${isActive && !manualMode ? "active" : ""
-              }`}
+            className="focus-word manual"
             style={{
-              filter: isSelectedSection ? 'blur(0px)' :
-                manualMode
-                  ? isActive
-                    ? `blur(0px)`
-                    : `blur(${blurAmount}px)`
-                  : isActive
-                    ? `blur(0px)`
-                    : `blur(${blurAmount}px)`,
+              filter: isSelectedSection ? 'blur(0px)' : `blur(${blurAmount}px)`,
               "--border-color": borderColor,
               "--glow-color": glowColor,
               transition: `filter ${animationDuration}s ease, color 0.6s ease`,
               cursor: 'pointer',
-              opacity: isSelectedSection ? 1 : (manualMode ? 0.7 : 1),
+              opacity: isSelectedSection ? 1 : 0.7,
               color: isSelectedSection ? borderColor : 'inherit',
             }}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
             onClick={() => handleWordClick(index)}
           >
             {word}
@@ -107,7 +91,7 @@ const ClickableTrueFocus = ({
           y: focusRect.y,
           width: focusRect.width,
           height: focusRect.height,
-          opacity: currentIndex >= 0 ? 1 : 0,
+          opacity: activeSection ? 1 : 0,
         }}
         transition={{
           duration: animationDuration,
@@ -127,7 +111,7 @@ const ClickableTrueFocus = ({
 };
 
 const PerceptionPerspective = () => {
-  const [activeSection, setActiveSection] = useState(null); // null, 'perception', or 'perspective'
+  const [activeSection, setActiveSection] = useState('perception'); // Start with perception selected
 
   // Theme configurations
   const themes = {
