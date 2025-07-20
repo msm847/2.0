@@ -113,7 +113,7 @@ const ClickableTrueFocus = ({
           y: focusRect.y,
           width: focusRect.width,
           height: focusRect.height,
-          opacity: activeSection ? 1 : 0,
+          opacity: activeSection ? 0.4 : 0,
         }}
         transition={{
           duration: animationDuration,
