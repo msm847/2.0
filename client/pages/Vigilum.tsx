@@ -49,9 +49,6 @@ const VigilumPage = () => {
       <div id="modules">
         <ModuleGrid />
       </div>
-      <div id="team">
-        <TeamContact />
-      </div>
       <div id="demo">
         <SemanticPermutationEngine />
       </div>
@@ -62,6 +59,9 @@ const VigilumPage = () => {
 
       <div id="cases">
         <UseCases />
+      </div>
+      <div id="team">
+        <TeamContact />
       </div>
       <div id="bottom" style={{ height: "1px" }}></div>
     </div>
