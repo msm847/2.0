@@ -139,7 +139,7 @@ const Navigation = () => {
                   fontWeight: "500",
                   letterSpacing: "1.5px",
                   textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                  padding: "12px 24px",
+                  padding: "8px 16px",
                   cursor: "pointer",
                   position: "relative",
                   overflow: "hidden",
