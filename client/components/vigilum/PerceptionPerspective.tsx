@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import SplitText from "@/components/ui/SplitText";
 import "./TrueFocus.css";
 
 const ClickableTrueFocus = ({
@@ -208,12 +209,23 @@ const PerceptionPerspective = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p
+            <div
               className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000"
-              style={{ color: currentTheme.textColor, whiteSpace: 'pre-line' }}
+              style={{ color: currentTheme.textColor }}
             >
-              {currentContent.description}
-            </p>
+              <SplitText
+                text={currentContent.description}
+                delay={50}
+                duration={0.8}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 30 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.2}
+                rootMargin="-50px"
+                textAlign="center"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
