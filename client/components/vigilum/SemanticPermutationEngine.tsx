@@ -384,7 +384,7 @@ const SemanticPermutationEngine = () => {
   };
 
   return (
-    <div className="py-20 px-4" style={{ backgroundColor: "#0B1E16" }}>
+    <div className="py-20 px-4" style={{ backgroundColor: "#1A2B1F" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
