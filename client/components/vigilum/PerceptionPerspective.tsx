@@ -207,7 +207,7 @@ const PerceptionPerspective = () => {
           >
             <p
               className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000"
-              style={{ color: currentTheme.textColor }}
+              style={{ color: currentTheme.textColor, whiteSpace: 'pre-line' }}
             >
               {currentContent.description}
             </p>
