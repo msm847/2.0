@@ -79,7 +79,8 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Return Button */}
-          <button
+          <div className="absolute left-4">
+            <button
             onClick={() => navigate("/")}
             className="flex items-center font-display text-sm uppercase tracking-wider transition-all duration-300"
             style={{
@@ -118,6 +119,7 @@ const Navigation = () => {
           >
             RETURN
           </button>
+          </div>
 
           {/* Scrollable Navigation Button - Right Side */}
           <div className="hidden md:block absolute right-4">
