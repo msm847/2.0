@@ -116,18 +116,18 @@ const PerceptionPerspective = () => {
   // Theme configurations
   const themes = {
     perception: {
-      backgroundColor: "#0A1D16", // Dark green theme
+      backgroundColor: "#04110D", // Surface Black Green
       borderColor: "#17B58F",
       glowColor: "rgba(23, 181, 143, 0.6)",
       accentColor: "#34D399",
-      textColor: "#F0FDF4"
+      textColor: "#E5F3ED" // Off-white green, sharp against black
     },
     perspective: {
-      backgroundColor: "#11251C", // Dark green theme
+      backgroundColor: "#1B352A", // Structured Green Depth
       borderColor: "#5F8BBF",
       glowColor: "rgba(95, 139, 191, 0.6)",
       accentColor: "#60A5FA",
-      textColor: "#E0F2FE"
+      textColor: "#F1FBF5" // Slightly cleaner white to increase cognitive edge
     },
     default: {
       backgroundColor: "#0D1510",
