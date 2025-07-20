@@ -215,7 +215,7 @@ const PerceptionPerspective = () => {
             >
               <SplitText
                 text={currentContent.description}
-                delay={50}
+                delay={70}
                 duration={0.8}
                 ease="power3.out"
                 splitType="chars"
