@@ -14,10 +14,6 @@ import {
 import InfiniteMenu from "@/components/ui/InfiniteMenu";
 
 const UseCases = () => {
-  const [selectedCase, setSelectedCase] = useState(0);
-
-  const cases = [];
-
   return (
     <div className="py-20" style={{ backgroundColor: "#0B1E16" }}>
       <div className="container mx-auto px-4">
@@ -36,7 +32,7 @@ const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Library
+              Structural Retrospectives
             </motion.h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Structural analysis of EU procurement directive clauses revealing
