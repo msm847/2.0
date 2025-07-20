@@ -128,8 +128,8 @@ const PerceptionPerspective = () => {
     },
     perspective: {
       backgroundColor: "#1B352A", // Structured Green Depth
-      borderColor: "#04110D", // Black to match perception background
-      glowColor: "rgba(4, 17, 13, 0.6)", // Black with opacity to match perception background
+      borderColor: "#E5F3ED", // Same white as perception TrueFocus box
+      glowColor: "rgba(229, 243, 237, 0.6)", // Same white with opacity as perception
       accentColor: "#60A5FA",
       textColor: "#F1FBF5" // Slightly cleaner white to increase cognitive edge
     },
