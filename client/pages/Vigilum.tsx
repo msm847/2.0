@@ -9,6 +9,7 @@ import LegalStructuralSimulator from "@/components/vigilum/LegalStructuralSimula
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
 import UseCases from "@/components/vigilum/UseCases";
 import TeamContact from "@/components/vigilum/TeamContact";
+import Partners from "@/components/vigilum/Partners";
 
 const VigilumPage = () => {
   const location = useLocation();
