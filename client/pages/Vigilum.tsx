@@ -52,12 +52,12 @@ const VigilumPage = () => {
       <div id="team">
         <TeamContact />
       </div>
-      <div id="clause-simulator">
-        <LegalStructuralSimulator />
-      </div>
-
       <div id="demo">
         <SemanticPermutationEngine />
+      </div>
+
+      <div id="clause-simulator">
+        <LegalStructuralSimulator />
       </div>
 
       <div id="cases">
