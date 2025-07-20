@@ -117,10 +117,10 @@ const PerceptionPerspective = () => {
   const themes = {
     perception: {
       backgroundColor: "#0A1D16", // Dark green theme
-      borderColor: "#8B5FBF",
-      glowColor: "rgba(139, 95, 191, 0.6)",
-      accentColor: "#C084FC",
-      textColor: "#F3E8FF"
+      borderColor: "#17B58F",
+      glowColor: "rgba(23, 181, 143, 0.6)",
+      accentColor: "#34D399",
+      textColor: "#F0FDF4"
     },
     perspective: {
       backgroundColor: "#1B2D3D", // Blue theme
