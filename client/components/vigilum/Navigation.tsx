@@ -173,51 +173,156 @@ const Navigation = () => {
                 <div className="py-2">
                   <button
                     onClick={() => handleNavigation("#modules")}
-                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
-                      activeSection === "modules"
-                        ? "text-green-400 bg-green-400/10"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                    }`}
+                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background: activeSection === "modules" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "15px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color: activeSection === "modules" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                      e.currentTarget.style.background = activeSection === "modules" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color = activeSection === "modules" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)";
+                    }}
                   >
                     ENGINES
                   </button>
                   <button
                     onClick={() => handleNavigation("#clause-simulator")}
-                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
-                      activeSection === "clause-simulator"
-                        ? "text-green-400 bg-green-400/10"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                    }`}
+                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background: activeSection === "clause-simulator" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "15px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color: activeSection === "clause-simulator" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                      e.currentTarget.style.background = activeSection === "clause-simulator" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color = activeSection === "clause-simulator" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)";
+                    }}
                   >
                     CLAUSE SIMULATOR
                   </button>
                   <button
                     onClick={() => handleNavigation("#demo")}
-                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
-                      activeSection === "demo" || activeSection === "clavis"
-                        ? "text-green-400 bg-green-400/10"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                    }`}
+                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background: (activeSection === "demo" || activeSection === "clavis") ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "15px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color: (activeSection === "demo" || activeSection === "clavis") ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                      e.currentTarget.style.background = (activeSection === "demo" || activeSection === "clavis") ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color = (activeSection === "demo" || activeSection === "clavis") ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)";
+                    }}
                   >
                     SPE
                   </button>
                   <button
                     onClick={() => handleNavigation("#cases")}
-                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
-                      activeSection === "cases"
-                        ? "text-green-400 bg-green-400/10"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                    }`}
+                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background: activeSection === "cases" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "15px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color: activeSection === "cases" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                      e.currentTarget.style.background = activeSection === "cases" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color = activeSection === "cases" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)";
+                    }}
                   >
                     LIBRARY
                   </button>
                   <button
                     onClick={() => handleNavigation("#team")}
-                    className={`w-full text-left px-4 py-2 text-sm font-display transition-colors duration-150 ${
-                      activeSection === "team"
-                        ? "text-green-400 bg-green-400/10"
-                        : "text-gray-300 hover:text-white hover:bg-gray-800/50"
-                    }`}
+                    className="w-full text-left text-sm font-display transition-all duration-300"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background: activeSection === "team" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "15px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color: activeSection === "team" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                      e.currentTarget.style.background = activeSection === "team" ? "rgba(74, 222, 128, 0.1)" : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color = activeSection === "team" ? "rgba(74, 222, 128, 1)" : "rgba(255, 255, 255, 0.8)";
+                    }}
                   >
                     MISSION & PARTNERS
                   </button>
