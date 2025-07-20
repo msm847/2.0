@@ -199,8 +199,6 @@ const PerceptionPerspective = () => {
     <section
       className="min-h-screen pt-32 pb-20 pl-12 pr-12"
       style={{
-        backgroundColor: currentTheme.backgroundColor,
-        transition: "background-color 1000ms ease",
         border: "none",
         outline: "none",
         boxShadow: "none",
