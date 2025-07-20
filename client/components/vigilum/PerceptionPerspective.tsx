@@ -215,14 +215,14 @@ const PerceptionPerspective = () => {
             >
               <SplitText
                 text={currentContent.description}
-                delay={70}
-                duration={0.8}
+                delay={100}
+                duration={0.6}
                 ease="power3.out"
                 splitType="chars"
-                from={{ opacity: 0, y: 30 }}
+                from={{ opacity: 0, y: 40 }}
                 to={{ opacity: 1, y: 0 }}
-                threshold={0.2}
-                rootMargin="-50px"
+                threshold={0.1}
+                rootMargin="-100px"
                 textAlign="center"
               />
             </div>
