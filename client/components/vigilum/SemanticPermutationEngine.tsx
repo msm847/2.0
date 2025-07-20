@@ -388,19 +388,13 @@ const SemanticPermutationEngine = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-blue-900/30 px-3 py-1 rounded-full border border-blue-700 mb-4">
-            <Settings className="w-3 h-3 text-blue-400" />
-            <span className="text-xs text-blue-300 font-mono uppercase tracking-wider">
-              Semantic Permutation Engine
-            </span>
-          </div>
           <motion.h2
             className="text-display-lg text-white mb-8"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            VIGILUM SPE
+            Semantic Permutation Engine
           </motion.h2>
           <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
             Execute semantic permutations on five atomic operators. Each
