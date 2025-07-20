@@ -143,22 +143,12 @@ const PerceptionPerspective = () => {
     perception: {
       title: "PERCEPTION",
       description: "How we see shapes what we understand. Cognitive frameworks determine which patterns emerge from institutional complexity.",
-      details: [
-        "Visual processing of regulatory structures",
-        "Pattern recognition in legal architectures",
-        "Cognitive bias detection systems",
-        "Institutional blind spot mapping"
-      ]
+      details: []
     },
     perspective: {
       title: "PERSPECTIVE",
       description: "Where we stand determines what we see. Analytical positioning reveals different structural vulnerabilities.",
-      details: [
-        "Multi-dimensional analysis frameworks",
-        "Stakeholder viewpoint simulation",
-        "Temporal perspective shifting",
-        "Cross-jurisdictional perspective mapping"
-      ]
+      details: []
     },
     default: {
       title: "PERCEPTION PERSPECTIVE",
@@ -221,35 +211,6 @@ const PerceptionPerspective = () => {
             >
               {currentContent.description}
             </p>
-
-            {currentContent.details.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                {currentContent.details.map((detail, index) => (
-                  <motion.div
-                    key={index}
-                    className="p-6 rounded-lg border transition-all duration-1000"
-                    style={{
-                      backgroundColor: `${currentTheme.borderColor}20`,
-                      borderColor: currentTheme.borderColor,
-                      color: currentTheme.textColor
-                    }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                  >
-                    <div
-                      className="font-mono text-sm mb-2"
-                      style={{ color: currentTheme.accentColor }}
-                    >
-                      {String(index + 1).padStart(2, '0')}.
-                    </div>
-                    <div className="text-sm leading-relaxed">
-                      {detail}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            )}
           </motion.div>
         </div>
       </div>
