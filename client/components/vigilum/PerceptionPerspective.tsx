@@ -197,8 +197,14 @@ const PerceptionPerspective = () => {
 
   return (
     <section
-      className="min-h-screen pt-32 pb-20 pl-12 pr-12 transition-all duration-1000"
-      style={{ backgroundColor: currentTheme.backgroundColor }}
+      className="min-h-screen pt-32 pb-20 pl-12 pr-12"
+      style={{
+        backgroundColor: currentTheme.backgroundColor,
+        transition: "background-color 1000ms ease",
+        border: "none",
+        outline: "none",
+        boxShadow: "none"
+      }}
     >
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
