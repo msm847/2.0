@@ -203,7 +203,9 @@ const PerceptionPerspective = () => {
         transition: "background-color 1000ms ease",
         border: "none",
         outline: "none",
-        boxShadow: "none"
+        boxShadow: "none",
+        overflow: "hidden",
+        position: "relative"
       }}
     >
       <div className="max-w-screen-xl mx-auto">
