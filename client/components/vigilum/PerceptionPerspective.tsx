@@ -123,7 +123,7 @@ const PerceptionPerspective = () => {
       textColor: "#F0FDF4"
     },
     perspective: {
-      backgroundColor: "#1B2D3D", // Blue theme
+      backgroundColor: "#11251C", // Dark green theme
       borderColor: "#5F8BBF",
       glowColor: "rgba(95, 139, 191, 0.6)",
       accentColor: "#60A5FA",
@@ -147,7 +147,7 @@ const PerceptionPerspective = () => {
     },
     perspective: {
       title: "PERSPECTIVE",
-      description: "Where we stand determines what we see. Analytical positioning reveals different structural vulnerabilities.",
+      description: "What is legible is not always true.\nPerspective reflects the system, not the facts.",
       details: []
     },
     default: {
