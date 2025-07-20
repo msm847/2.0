@@ -81,24 +81,39 @@ const Navigation = () => {
           {/* Return Button */}
           <button
             onClick={() => navigate("/")}
-            className="flex items-center px-3 py-2 rounded border font-display text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
+            className="flex items-center font-display text-sm uppercase tracking-wider transition-all duration-300"
             style={{
-              backgroundColor: "rgba(16, 44, 34, 0.5)",
-              borderColor: "rgba(34, 68, 54, 0.6)",
-              color: "#9ca3af",
-              boxShadow: "inset 0 0 0 1px rgba(52, 211, 153, 0.05)",
+              backdropFilter: "blur(20px) saturate(180%)",
+              background: "rgba(255, 255, 255, 0.05)",
+              borderColor: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "25px",
+              borderWidth: "1px",
+              boxShadow:
+                "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+              color: "rgba(255, 255, 255, 0.8)",
+              fontWeight: "500",
+              letterSpacing: "1.5px",
+              textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+              padding: "12px 24px",
+              cursor: "pointer",
+              position: "relative",
+              overflow: "hidden",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(34, 68, 54, 0.7)";
-              e.currentTarget.style.color = "#34d399";
+              e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
               e.currentTarget.style.boxShadow =
-                "0 0 10px rgba(52, 211, 153, 0.2)";
+                "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(16, 44, 34, 0.5)";
-              e.currentTarget.style.color = "#9ca3af";
+              e.currentTarget.style.transform = "translateY(0px) scale(1)";
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               e.currentTarget.style.boxShadow =
-                "inset 0 0 0 1px rgba(52, 211, 153, 0.05)";
+                "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)";
             }}
           >
             RETURN
@@ -108,9 +123,39 @@ const Navigation = () => {
           <div className="hidden md:block absolute right-4">
             <div className="relative group">
               <button
-                className="px-4 py-2 text-gray-300 hover:text-white font-display text-sm transition-colors duration-200 border border-gray-600 rounded"
+                className="font-display text-sm uppercase tracking-wider transition-all duration-300"
                 style={{
-                  backgroundColor: "rgba(5, 15, 12, 0.95)",
+                  backdropFilter: "blur(20px) saturate(180%)",
+                  background: "rgba(255, 255, 255, 0.05)",
+                  borderColor: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "25px",
+                  borderWidth: "1px",
+                  boxShadow:
+                    "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                  color: "rgba(255, 255, 255, 0.8)",
+                  fontWeight: "500",
+                  letterSpacing: "1.5px",
+                  textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                  padding: "12px 24px",
+                  cursor: "pointer",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                  e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset";
+                  e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+                  e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                  e.currentTarget.style.boxShadow =
+                    "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
+                  e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)";
                 }}
               >
                 NAVIGATE
