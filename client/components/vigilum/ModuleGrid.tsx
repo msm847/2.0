@@ -186,7 +186,7 @@ const ModuleGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            CORE MODULES OVERVIEW
+            CORE MODULES
           </motion.h2>
         </div>
 
