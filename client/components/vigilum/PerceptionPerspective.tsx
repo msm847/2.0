@@ -278,17 +278,23 @@ const PerceptionPerspective = () => {
                       overflow: "hidden",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
-                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                      e.currentTarget.style.transform =
+                        "translateY(-2px) scale(1.02)";
+                      e.currentTarget.style.background =
+                        "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(255, 255, 255, 0.2)";
                       e.currentTarget.style.boxShadow =
                         "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset";
                       e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
-                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
-                      e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.transform =
+                        "translateY(0px) scale(1)";
+                      e.currentTarget.style.background =
+                        "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(255, 255, 255, 0.1)";
                       e.currentTarget.style.boxShadow =
                         "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
                       e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)";
