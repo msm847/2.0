@@ -31,18 +31,6 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#10201C",
-    title: "Core Principles",
-    description: "",
-    url: "/core-principles",
-  },
-  {
-    color: "#10201C",
-    title: "Actors",
-    description: "",
-    url: "/actors",
-  },
-  {
-    color: "#10201C",
     title: "Vision Statement",
     description:
       "Vigilum aims to empower societies with structural transparency where laws and contracts carry traceable logic, and loopholes have nowhere to hide.",
