@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./TrueFocus.css";
 
-const TrueFocus = ({
+const ClickableTrueFocus = ({
   sentence = "True Focus",
   manualMode = false,
   blurAmount = 5,
@@ -10,6 +10,8 @@ const TrueFocus = ({
   glowColor = "rgba(0, 255, 0, 0.6)",
   animationDuration = 0.5,
   pauseBetweenAnimations = 1,
+  onWordClick = () => {},
+  activeSection = null,
 }) => {
   const words = sentence.split(" ");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,10 +59,16 @@ const TrueFocus = ({
     }
   };
 
+  const handleWordClick = (index) => {
+    onWordClick(index);
+  };
+
   return (
     <div className="focus-container" ref={containerRef}>
       {words.map((word, index) => {
         const isActive = index === currentIndex;
+        const isSelectedSection = (index === 0 && activeSection === 'perception') ||
+                                 (index === 1 && activeSection === 'perspective');
         return (
           <span
             key={index}
@@ -68,7 +76,7 @@ const TrueFocus = ({
             className={`focus-word ${manualMode ? "manual" : ""} ${isActive && !manualMode ? "active" : ""
               }`}
             style={{
-              filter:
+              filter: isSelectedSection ? 'blur(0px)' :
                 manualMode
                   ? isActive
                     ? `blur(0px)`
@@ -78,10 +86,14 @@ const TrueFocus = ({
                     : `blur(${blurAmount}px)`,
               "--border-color": borderColor,
               "--glow-color": glowColor,
-              transition: `filter ${animationDuration}s ease`,
+              transition: `filter ${animationDuration}s ease, color 0.6s ease`,
+              cursor: 'pointer',
+              opacity: isSelectedSection ? 1 : (manualMode ? 0.7 : 1),
+              color: isSelectedSection ? borderColor : 'inherit',
             }}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleWordClick(index)}
           >
             {word}
           </span>
