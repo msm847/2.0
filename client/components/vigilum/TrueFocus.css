@@ -1,0 +1,73 @@
+.focus-container {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.focus-word {
+  display: inline-block;
+  margin-right: 0.3em;
+  transition: filter 0.5s ease;
+  font-weight: inherit;
+  color: inherit;
+  position: relative;
+  z-index: 5;
+}
+
+.focus-word:last-child {
+  margin-right: 0;
+}
+
+.focus-word.manual {
+  cursor: pointer;
+}
+
+.focus-frame {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--border-color, #00ff00);
+  box-shadow: 0 0 8px var(--glow-color, rgba(0, 255, 0, 0.6));
+}
+
+.corner.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 4px;
+}
+
+.corner.top-right {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 4px;
+}
+
+.corner.bottom-left {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+}
+
+.corner.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 4px;
+}
