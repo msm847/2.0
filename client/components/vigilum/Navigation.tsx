@@ -87,7 +87,7 @@ const Navigation = () => {
               backdropFilter: "blur(20px) saturate(180%)",
               background: "rgba(255, 255, 255, 0.05)",
               borderColor: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "25px",
+              borderRadius: "8px",
               borderWidth: "1px",
               boxShadow:
                 "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
@@ -130,7 +130,7 @@ const Navigation = () => {
                   backdropFilter: "blur(20px) saturate(180%)",
                   background: "rgba(255, 255, 255, 0.05)",
                   borderColor: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: "25px",
+                  borderRadius: "8px",
                   borderWidth: "1px",
                   boxShadow:
                     "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
