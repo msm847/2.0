@@ -249,6 +249,54 @@ const PerceptionPerspective = () => {
                 textAlign="center"
               />
             </div>
+
+            {activeSection === "perspective" && (
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                {["Cultural", "Economic", "Social"].map((label, index) => (
+                  <button
+                    key={label}
+                    className="glass-button"
+                    style={{
+                      display: "inline-block",
+                      backdropFilter: "blur(40px) saturate(1.8)",
+                      backgroundImage:
+                        "linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 25%, rgba(255, 255, 255, 0.004) 50%, rgba(255, 255, 255, 0.01) 75%, rgba(255, 255, 255, 0.02) 100%)",
+                      borderColor:
+                        "rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.15)",
+                      borderRadius: "25px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px 0px, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.05) 0px -1px 0px 0px inset",
+                      color: "rgba(255, 255, 255, 0.9)",
+                      fontFamily: "Inter, system-ui, sans-serif",
+                      fontWeight: "500",
+                      letterSpacing: "1.5px",
+                      lineHeight: "22.4px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      transitionDuration: "0.3s",
+                      transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                      padding: "12px 24px",
+                      cursor: "pointer",
+                      position: "relative",
+                      overflow: "hidden",
+                      backgroundColor: "rgba(0, 0, 0, 0)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(0, 0, 0, 0.1) 0px 4px 12px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px 0px, rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.05) 0px -1px 0px 0px inset";
+                    }}
+                  >
+                    {label.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            )}
           </motion.div>
         </div>
       </div>
