@@ -142,7 +142,7 @@ const PerceptionPerspective = () => {
   const content = {
     perception: {
       title: "PERCEPTION",
-      description: "What is visible is not always actionable. Perception without structure leads nowhere.",
+      description: "What is visible is not always actionable.\nPerception without structure leads nowhere.",
       details: []
     },
     perspective: {
