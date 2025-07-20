@@ -75,7 +75,10 @@ const ClickableTrueFocus = ({
               transition: `filter ${animationDuration}s ease, color 0.6s ease`,
               cursor: 'pointer',
               opacity: isSelectedSection ? 1 : 0.7,
-              color: isSelectedSection ? borderColor : 'inherit',
+              color: isSelectedSection ?
+                (index === 0 ? '#E5F3ED' : '#F1FBF5') : // Use specific text colors for each word
+                'inherit',
+              fontWeight: isSelectedSection ? '600' : 'inherit', // Semibold when selected
             }}
             onClick={() => handleWordClick(index)}
           >
