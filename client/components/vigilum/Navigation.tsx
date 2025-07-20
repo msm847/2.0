@@ -164,10 +164,11 @@ const Navigation = () => {
 
               {/* Scrollable Dropdown */}
               <div
-                className="absolute right-0 mt-2 w-48 max-h-64 overflow-y-auto border border-gray-600 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
+                className="absolute right-0 mt-2 w-48 max-h-64 overflow-y-auto rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
                 style={{
-                  backgroundColor: "rgba(5, 15, 12, 0.95)",
+                  backgroundColor: "transparent",
                   backdropFilter: "blur(10px)",
+                  border: "none",
                 }}
               >
                 <div className="py-2">
