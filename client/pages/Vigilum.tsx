@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import PerceptionPerspective from "@/components/vigilum/PerceptionPerspective";
-import WhatWeFight from "@/components/vigilum/WhatWeFight";
 import ModuleGrid from "@/components/vigilum/ModuleGrid";
 import LegalStructuralSimulator from "@/components/vigilum/LegalStructuralSimulator";
 
@@ -47,7 +46,6 @@ const VigilumPage = () => {
       <Navigation />
       <Hero />
       <PerceptionPerspective />
-      <WhatWeFight />
       <div id="modules">
         <ModuleGrid />
       </div>
