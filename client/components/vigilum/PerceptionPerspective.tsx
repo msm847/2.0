@@ -116,7 +116,7 @@ const PerceptionPerspective = () => {
   // Theme configurations
   const themes = {
     perception: {
-      backgroundColor: "#2D1B3D", // Purple theme
+      backgroundColor: "#0A1D16", // Dark green theme
       borderColor: "#8B5FBF",
       glowColor: "rgba(139, 95, 191, 0.6)",
       accentColor: "#C084FC",
@@ -142,7 +142,7 @@ const PerceptionPerspective = () => {
   const content = {
     perception: {
       title: "PERCEPTION",
-      description: "How we see shapes what we understand. Cognitive frameworks determine which patterns emerge from institutional complexity.",
+      description: "What is visible is not always actionable. Perception without structure leads nowhere.",
       details: []
     },
     perspective: {
