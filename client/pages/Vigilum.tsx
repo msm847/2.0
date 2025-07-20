@@ -46,6 +46,9 @@ const VigilumPage = () => {
       <Navigation />
       <Hero />
       <PerceptionPerspective />
+      <div id="team">
+        <TeamContact />
+      </div>
       <div id="modules">
         <ModuleGrid />
       </div>
@@ -59,9 +62,6 @@ const VigilumPage = () => {
 
       <div id="cases">
         <UseCases />
-      </div>
-      <div id="team">
-        <TeamContact />
       </div>
       <div id="bottom" style={{ height: "1px" }}></div>
     </div>
