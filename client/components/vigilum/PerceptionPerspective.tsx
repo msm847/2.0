@@ -19,7 +19,12 @@ const ClickableTrueFocus = ({
   const [lastActiveIndex, setLastActiveIndex] = useState(null);
   const containerRef = useRef(null);
   const wordRefs = useRef([]);
-  const [focusRect, setFocusRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
+  const [focusRect, setFocusRect] = useState({
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+  });
 
   // Disable automatic animation - only respond to clicks
   useEffect(() => {
@@ -28,15 +33,25 @@ const ClickableTrueFocus = ({
 
   useEffect(() => {
     // Only show focus frame when a section is actively selected
-    const activeWordIndex = activeSection === 'perception' ? 0 : activeSection === 'perspective' ? 1 : -1;
+    const activeWordIndex =
+      activeSection === "perception"
+        ? 0
+        : activeSection === "perspective"
+          ? 1
+          : -1;
 
-    if (activeWordIndex === -1 || !wordRefs.current[activeWordIndex] || !containerRef.current) {
+    if (
+      activeWordIndex === -1 ||
+      !wordRefs.current[activeWordIndex] ||
+      !containerRef.current
+    ) {
       setFocusRect({ x: 0, y: 0, width: 0, height: 0 });
       return;
     }
 
     const parentRect = containerRef.current.getBoundingClientRect();
-    const activeRect = wordRefs.current[activeWordIndex].getBoundingClientRect();
+    const activeRect =
+      wordRefs.current[activeWordIndex].getBoundingClientRect();
 
     setFocusRect({
       x: activeRect.left - parentRect.left,
@@ -62,24 +77,27 @@ const ClickableTrueFocus = ({
   return (
     <div className="focus-container" ref={containerRef}>
       {words.map((word, index) => {
-        const isSelectedSection = (index === 0 && activeSection === 'perception') ||
-                                 (index === 1 && activeSection === 'perspective');
+        const isSelectedSection =
+          (index === 0 && activeSection === "perception") ||
+          (index === 1 && activeSection === "perspective");
         return (
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
             className="focus-word manual"
             style={{
-              filter: isSelectedSection ? 'blur(0px)' : `blur(${blurAmount}px)`,
+              filter: isSelectedSection ? "blur(0px)" : `blur(${blurAmount}px)`,
               "--border-color": borderColor,
               "--glow-color": glowColor,
               transition: `filter ${animationDuration}s ease, color 0.6s ease`,
-              cursor: 'pointer',
+              cursor: "pointer",
               opacity: isSelectedSection ? 1 : 0.7,
-              color: isSelectedSection ?
-                (index === 0 ? '#E5F3ED' : '#F1FBF5') : // Use specific text colors for each word
-                'inherit',
-              fontWeight: isSelectedSection ? '600' : 'inherit', // Semibold when selected
+              color: isSelectedSection
+                ? index === 0
+                  ? "#E5F3ED"
+                  : "#F1FBF5" // Use specific text colors for each word
+                : "inherit",
+              fontWeight: isSelectedSection ? "600" : "inherit", // Semibold when selected
             }}
             onClick={() => handleWordClick(index)}
           >
@@ -115,7 +133,7 @@ const ClickableTrueFocus = ({
 };
 
 const PerceptionPerspective = () => {
-  const [activeSection, setActiveSection] = useState('perception'); // Start with perception selected
+  const [activeSection, setActiveSection] = useState("perception"); // Start with perception selected
 
   // Theme configurations
   const themes = {
@@ -124,51 +142,56 @@ const PerceptionPerspective = () => {
       borderColor: "#E5F3ED", // Same as text color
       glowColor: "rgba(229, 243, 237, 0.6)", // Same as text color with opacity
       accentColor: "#34D399",
-      textColor: "#E5F3ED" // Off-white green, sharp against black
+      textColor: "#E5F3ED", // Off-white green, sharp against black
     },
     perspective: {
       backgroundColor: "#1B352A", // Structured Green Depth
       borderColor: "#E5F3ED", // Same white as perception TrueFocus box
       glowColor: "rgba(229, 243, 237, 0.6)", // Same white with opacity as perception
       accentColor: "#60A5FA",
-      textColor: "#F1FBF5" // Slightly cleaner white to increase cognitive edge
+      textColor: "#F1FBF5", // Slightly cleaner white to increase cognitive edge
     },
     default: {
       backgroundColor: "#0D1510",
       borderColor: "#17B58F",
       glowColor: "rgba(23, 181, 143, 0.6)",
       accentColor: "#17B58F",
-      textColor: "#F5F5F5"
-    }
+      textColor: "#F5F5F5",
+    },
   };
 
   // Content for each section
   const content = {
     perception: {
       title: "PERCEPTION",
-      description: "What is visible is not always actionable.\nPerception without structure leads nowhere.",
-      details: []
+      description:
+        "What is visible is not always actionable.\nPerception without structure leads nowhere.",
+      details: [],
     },
     perspective: {
       title: "PERSPECTIVE",
-      description: "What is legible is not always true.\nPerspective reflects the system, not the facts.",
-      details: []
+      description:
+        "What is legible is not always true.\nPerspective reflects the system, not the facts.",
+      details: [],
     },
     default: {
       title: "PERCEPTION PERSPECTIVE",
-      description: "Understanding begins with recognizing the lens through which we observe institutional structures and their embedded vulnerabilities.",
-      details: []
-    }
+      description:
+        "Understanding begins with recognizing the lens through which we observe institutional structures and their embedded vulnerabilities.",
+      details: [],
+    },
   };
 
   const currentTheme = activeSection ? themes[activeSection] : themes.default;
-  const currentContent = activeSection ? content[activeSection] : content.default;
+  const currentContent = activeSection
+    ? content[activeSection]
+    : content.default;
 
   const handleWordClick = (wordIndex) => {
     if (wordIndex === 0) {
-      setActiveSection(activeSection === 'perception' ? null : 'perception');
+      setActiveSection(activeSection === "perception" ? null : "perception");
     } else if (wordIndex === 1) {
-      setActiveSection(activeSection === 'perspective' ? null : 'perspective');
+      setActiveSection(activeSection === "perspective" ? null : "perspective");
     }
   };
 
@@ -186,7 +209,7 @@ const PerceptionPerspective = () => {
               lineHeight: "1.25",
               fontWeight: "600",
               fontFamily: "var(--font-display)",
-              color: currentTheme.textColor
+              color: currentTheme.textColor,
             }}
           >
             <ClickableTrueFocus
