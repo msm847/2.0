@@ -46,11 +46,11 @@ const VigilumPage = () => {
       <Navigation />
       <Hero />
       <PerceptionPerspective />
-      <div id="team">
-        <TeamContact />
-      </div>
       <div id="modules">
         <ModuleGrid />
+      </div>
+      <div id="team">
+        <TeamContact />
       </div>
       <div id="clause-simulator">
         <LegalStructuralSimulator />
