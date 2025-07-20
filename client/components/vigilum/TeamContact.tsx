@@ -413,7 +413,7 @@ const TeamContact = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#0B1E16" }}>
+    <div style={{ backgroundColor: "#0D1A0F" }}>
       {/* TEAM SECTION */}
       <section className="py-20" aria-labelledby="team-heading">
         <div className="container mx-auto px-4">
@@ -424,13 +424,13 @@ const TeamContact = () => {
               style={{
                 fontSize: "48px",
                 lineHeight: "60px",
-                fontWeight: "400",
+                fontWeight: "400"
               }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              MISSION & PARTNERS
+              MISSION
             </motion.div>
 
             {/* MagicBento Grid */}
