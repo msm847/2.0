@@ -21,6 +21,7 @@ interface ClauseData {
 interface EnvironmentOperator {
   id: string;
   name: string;
+  weight: number;
   icon: string;
   description: string;
   modifiers: {
