@@ -125,28 +125,39 @@ const structuralInputs: StructuralInput[] = [
 const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E1",
-    name: "Vector Path Inversion",
-    weight: 0.34,
+    name: "Systemic Liquidity Squeeze",
+    weight: 0.47,
     description:
-      "Inverts directionality between inputs. Early-stage actions echo in late outcomes and vice versa.",
+      "Constrains available cashflow and accelerates funding bottlenecks. Delays, splits, and fragmented authorizations intensify; hidden deficits become more likely.",
     transformEffect:
-      "Temporal causality reversal affects all module interactions",
+      "Amplifies the impact of Latency Differential, Revenue Path Splitting, and Quantization Gate Fragmentation",
   },
   {
     id: "E2",
-    name: "Constraint Masking",
-    weight: 0.41,
+    name: "Recursive Authority Coupling",
+    weight: 0.53,
     description:
-      'Conceals mutual thresholds; modules become "blind" to each other\'s logic.',
-    transformEffect: "Information isolation between selected modules",
+      "Decision boundaries blur, creating feedback loops across modules. Responsibility, compliance, and oversight become mutually dependent and harder to unwind.",
+    transformEffect:
+      "Entangles Incentive-Driven Compliance and Persistence Injection, increasing recursion and persistence of ambiguous authority",
   },
   {
     id: "E3",
-    name: "Temporal Normalization Collapse",
-    weight: 0.38,
+    name: "Audit Signal Degradation",
+    weight: 0.42,
     description:
-      "Flattens process sequencing, forcing all modules to resolve simultaneously.",
-    transformEffect: "Sequential processing becomes parallel execution",
+      "Weakens all transparency and monitoring channels. Flow paths, triggers, and module effects become harder to distinguish, raising detection thresholds and audit risk.",
+    transformEffect:
+      "Obscures flows in Revenue Path Splitting and Quantization Gate Fragmentation",
+  },
+  {
+    id: "E4",
+    name: "Exogenous Override Event",
+    weight: 0.51,
+    description:
+      "Imposes sudden external requirements, policy constraints, or donor logic on all modules. Internal logic adapts or is bypassed to meet outside demands.",
+    transformEffect:
+      "Distorts External Logic Overwrite and any module with conditional triggers",
   },
 ];
 
