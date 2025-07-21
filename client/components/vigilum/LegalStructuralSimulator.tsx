@@ -363,7 +363,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 {structuralInputs.map((input) => (
                   <motion.div
                     key={input.id}
-                    className="p-4 rounded-lg border border-gray-600 cursor-pointer hover:border-green-400/50 transition-all group"
+                    className="p-3 rounded-lg border border-gray-600 cursor-pointer hover:border-green-400/50 transition-all group"
                     style={{ backgroundColor: "#1f2e28", borderColor: "rgba(255,255,255,0.1)" }}
                     whileHover={{ scale: 1.02, backgroundColor: "#2a3a32" }}
                     onClick={() => {
@@ -372,26 +372,18 @@ const StructuralCognitionChamber: React.FC = () => {
                         selectInput(input, emptySlot);
                       }
                     }}
-                    title={`Tags: ${input.tags.join(', ')}`}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-sm font-mono text-white" style={{ color: "#eae2cc" }}>
+                      <h4 className="text-sm font-mono text-white flex-1 pr-2" style={{ color: "#eae2cc" }}>
                         {input.title}
                       </h4>
-                      <span className="text-xs font-mono text-gray-400">
+                      <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
                         w = {input.weight.toFixed(2)}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-400 leading-relaxed mb-2">
+                    <p className="text-xs text-gray-400 leading-relaxed">
                       {input.description}
                     </p>
-                    <div className="flex flex-wrap gap-1">
-                      {input.tags.map(tag => (
-                        <span key={tag} className="text-xs bg-green-900/30 text-green-400 px-2 py-1 rounded">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
                   </motion.div>
                 ))}
               </div>
