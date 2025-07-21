@@ -486,7 +486,7 @@ const LegalStructuralSimulator: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {isSimulating ? "SIMULATING..." : "SIMULATE SEQUENCE"}
+                  {isSimulating ? "PROCESSING..." : "EXECUTE COGNITION"}
                 </motion.button>
               </div>
             </div>
