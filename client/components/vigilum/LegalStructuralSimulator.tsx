@@ -313,14 +313,9 @@ const StructuralCognitionChamber: React.FC = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
-          <motion.h3
-            className="text-heading-md text-white mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <h3 className="text-heading-md text-white mb-4">
             STRUCTURAL COGNITION CHAMBER
-          </motion.h3>
+          </h3>
 
           {/* Epistemic Statement */}
           <div className="mb-6">
