@@ -413,7 +413,7 @@ const TeamContact = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#0D1A0F" }}>
+    <div style={{ backgroundColor: "#231F18" }}>
       {/* TEAM SECTION */}
       <section className="py-20" aria-labelledby="team-heading">
         <div className="container mx-auto px-4">
