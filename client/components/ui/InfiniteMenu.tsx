@@ -1186,29 +1186,6 @@ export default function InfiniteMenu({ items = [] }) {
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <canvas id="infinite-grid-menu-canvas" ref={canvasRef} />
 
-      {/* Number overlays for each sphere */}
-      {items.map((item, index) => (
-        <div
-          key={index}
-          className="sphere-number"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "white",
-            fontSize: "24px",
-            fontWeight: "bold",
-            fontFamily: "Inter, monospace",
-            pointerEvents: "none",
-            zIndex: 5,
-            textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
-          }}
-        >
-          {index + 1}
-        </div>
-      ))}
-
       {activeItem && (
         <>
           <h2 className={`face-title ${isMoving ? "inactive" : "active"}`}>
