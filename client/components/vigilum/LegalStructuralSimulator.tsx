@@ -43,7 +43,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S1",
     title: "Revenue Path Splitting",
-    weight: 0.46,
+    weight: 0.60,
     description:
       "Simulates multi-stage, opaquely routed funding flows. Triggers cross-discipline risk thresholds.",
     tags: ["#multi-stage", "#opacity", "#cross-discipline"],
@@ -57,7 +57,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S2",
     title: "Incentive-Driven Compliance",
-    weight: 0.52,
+    weight: 0.54,
     description:
       "Obedience logic only triggers on downstream reward. Models performance-tied compliance elasticity.",
     tags: ["#incentive", "#compliance", "#elasticity"],
@@ -70,7 +70,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S3",
     title: "Persistence Injection",
-    weight: 0.49,
+    weight: 0.71,
     description:
       "Scenario repeats or loops system behavior without explicit re-authorization. Tests for undetected inertia.",
     tags: ["#persistence", "#inertia", "#loop"],
@@ -83,7 +83,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S4",
     title: "Latency Differential",
-    weight: 0.44,
+    weight: 0.49,
     description:
       "Systemic delays intentionally decouple resource release and recognition. Surfaces hidden liquidity and power shifts.",
     tags: ["#latency", "#liquidity", "#power-shift"],
@@ -96,7 +96,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S5",
     title: "External Logic Overwrite",
-    weight: 0.58,
+    weight: 0.68,
     description:
       "Foreign or donor logic dominates internal decision vectors. Probes dependency and agency displacement.",
     tags: ["#dependency", "#agency", "#external"],
@@ -109,7 +109,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S6",
     title: "Quantization Gate Fragmentation",
-    weight: 0.36,
+    weight: 0.44,
     description:
       "Splits authorizations into subunits to bypass scrutiny. Examines distributed threshold evasion.",
     tags: ["#fragmentation", "#threshold", "#distributed"],
@@ -126,7 +126,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E1",
     name: "Systemic Liquidity Squeeze",
-    weight: 0.47,
+    weight: 0.64,
     description:
       "Constrains available cashflow and accelerates funding bottlenecks. Delays, splits, and fragmented authorizations intensify; hidden deficits become more likely.",
     transformEffect:
@@ -135,7 +135,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E2",
     name: "Recursive Authority Coupling",
-    weight: 0.53,
+    weight: 0.67,
     description:
       "Decision boundaries blur, creating feedback loops across modules. Responsibility, compliance, and oversight become mutually dependent and harder to unwind.",
     transformEffect:
@@ -144,7 +144,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E3",
     name: "Audit Signal Degradation",
-    weight: 0.42,
+    weight: 0.60,
     description:
       "Weakens all transparency and monitoring channels. Flow paths, triggers, and module effects become harder to distinguish, raising detection thresholds and audit risk.",
     transformEffect:
@@ -153,7 +153,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E4",
     name: "Exogenous Override Event",
-    weight: 0.51,
+    weight: 0.72,
     description:
       "Imposes sudden external requirements, policy constraints, or donor logic on all modules. Internal logic adapts or is bypassed to meet outside demands.",
     transformEffect:
