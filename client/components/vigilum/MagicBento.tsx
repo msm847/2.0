@@ -50,13 +50,6 @@ const cardData = [
     url: "/core-principles",
     isFounder: true,
   },
-  {
-    color: "#10201C",
-    title: "Direct Contact",
-    description: "info@vigilum.com",
-    url: "/contact-form",
-    isContact: true,
-  },
 ];
 
 interface ParticleCardProps {
