@@ -335,7 +335,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Structural Input Library
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Select up to 3 scenario modules — each a fictionalized economic logic fragment shaping system behavior.
+                Assemble up to three synthetic logic fragments — each introduces a new axis of economic friction, dependency, or recursion...
               </p>
             </div>
 
@@ -393,7 +393,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Input Sequencer
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Sequence changes emergent outcome.
+                Order is not cosmetic: each position reshapes the simulation's internal vector landscape and output structure.
               </p>
               <div className="text-sm text-gray-500 mt-2">
                 Σw = {getTotalWeight().toFixed(2)}
