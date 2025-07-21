@@ -543,7 +543,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 exit={{ opacity: 0, y: 50 }}
                 className="max-w-6xl mx-auto"
               >
-                <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
+                <div className="p-10 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
                   <div className="flex items-center justify-between mb-6">
                     <h4 className="text-green-400 font-mono text-lg">SIMULATION OUTPUT</h4>
                     {simulationHistory.length > 1 && (
