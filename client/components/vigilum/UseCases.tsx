@@ -39,39 +39,39 @@ const UseCases = () => {
             <InfiniteMenu
               items={[
                 {
-                  color: "#d4a300",
+                  color: "#2A2A2A",
                   link: "/loophole/L001",
-                  title: "Directive 2014/24/EU\nArticle 32(2)(a)",
+                  title: "1. Directive 2014/24/EU\nArticle 32(2)(a)",
                   description: "Negotiated procedure without prior publication",
                 },
                 {
-                  color: "#b4241d",
+                  color: "#404040",
                   link: "/loophole/L002",
-                  title: "Directive 2014/24/EU\nArticle 68(1)(b)",
+                  title: "2. Directive 2014/24/EU\nArticle 68(1)(b)",
                   description: "Price revision formula based on indexation",
                 },
                 {
-                  color: "#1e2b44",
+                  color: "#5A5A5A",
                   link: "/loophole/L003",
-                  title: "Directive 2014/24/EU\nArticle 12(1)",
+                  title: "3. Directive 2014/24/EU\nArticle 12(1)",
                   description: "Public-public cooperation exemption",
                 },
                 {
-                  color: "#1e2b44",
+                  color: "#707070",
                   link: "/loophole/L004",
-                  title: "Directive 2014/23/EU\nArticle 44(1)(d)",
+                  title: "4. Directive 2014/23/EU\nArticle 44(1)(d)",
                   description: "Unilateral termination clause logic",
                 },
                 {
-                  color: "#d4a300",
+                  color: "#8A8A8A",
                   link: "/loophole/L005",
-                  title: "Directive 2014/24/EU\nArticle 72(1)(c)",
+                  title: "5. Directive 2014/24/EU\nArticle 72(1)(c)",
                   description: "Contract modification without new procedure",
                 },
                 {
-                  color: "#5a4d7c",
+                  color: "#A0A0A0",
                   link: "/loophole/L006",
-                  title: "Directive 2014/24/EU\nArticle 33(1)",
+                  title: "6. Directive 2014/24/EU\nArticle 33(1)",
                   description: "Framework agreement without re-opening terms",
                 },
               ]}
