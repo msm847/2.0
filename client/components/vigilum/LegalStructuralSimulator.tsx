@@ -255,17 +255,15 @@ const LegalStructuralSimulator: React.FC = () => {
     <section className="pt-20 px-4" style={{ backgroundColor: "#081A0E" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Core Premise */}
-        <div className="text-center mb-16">
-          <motion.h2
-            className="text-display-lg text-white mb-8"
-            initial={{ opacity: 0, y: 50 }}
+        <div className="text-center mb-8">
+          <motion.h3
+            className="text-heading-md text-white mb-4"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             STRUCTURAL COGNITION CHAMBER
-          </motion.h2>
-
-
+          </motion.h3>
         </div>
 
         <div
