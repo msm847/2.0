@@ -535,43 +535,39 @@ const LegalStructuralSimulator: React.FC = () => {
                   justifyContent: "flex-start",
                 }}
               >
-                <div>
+                <div className="space-y-4">
+                  <p className="text-xs text-gray-400 mb-4">Select up to 2 operators</p>
                   {environmentOperators.map((env, index) => (
                     <motion.button
                       key={env.id}
-                      onClick={() =>
-                        setActiveEnvironment(
-                          activeEnvironment === env.id ? null : env.id,
-                        )
-                      }
-                      className={`w-full text-left h-24 p-3 rounded-2xl border transition-all ${
-                        activeEnvironment === env.id
+                      onClick={() => toggleEnvironment(env.id)}
+                      className={`w-full text-left p-4 rounded-lg border transition-all ${
+                        activeEnvironments.includes(env.id)
                           ? "border-green-400 bg-green-400/10 text-white"
                           : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
                       }`}
                       style={{
-                        marginBottom:
-                          index === environmentOperators.length - 1
-                            ? "0"
-                            : "4px",
-                        marginTop: index === 0 ? "0" : "12px",
+                        background: activeEnvironments.includes(env.id)
+                          ? "linear-gradient(135deg, #2a3a32, #1f2e28)"
+                          : "#202d29",
+                        borderColor: activeEnvironments.includes(env.id) ? "#d4c69b" : "rgba(255,255,255,0.1)"
                       }}
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.99 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      disabled={!activeEnvironments.includes(env.id) && activeEnvironments.length >= 2}
                     >
-                      <div className="flex items-center space-x-3">
-                        <span className="text-xl">{env.icon}</span>
-                        <div className="flex-1">
-                          <div className="font-medium text-base">
-                            <p>{env.name}</p>
-                          </div>
-                          <div className="text-xs text-gray-400 mt-1">
-                            {env.description}
-                          </div>
-                          <div className="text-xs text-green-400 mt-1">
-                            {env.specialEffects}
-                          </div>
+                      <div className="flex flex-col">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-mono text-sm" style={{ color: "#cab27f" }}>
+                            {env.name}
+                          </h4>
+                          <span className="text-xs font-mono text-gray-400">
+                            w = {env.weight.toFixed(2)}
+                          </span>
                         </div>
+                        <p className="text-xs text-gray-400 leading-relaxed">
+                          {env.specialEffects}
+                        </p>
                       </div>
                     </motion.button>
                   ))}
