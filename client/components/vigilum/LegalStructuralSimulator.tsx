@@ -513,7 +513,7 @@ const LegalStructuralSimulator: React.FC = () => {
               }}
             >
               <h3 className="text-section text-green-400 font-ui uppercase tracking-wider text-center">
-                ENVIRONMENT OPERATOR
+                ENVIRONMENT OPS
               </h3>
             </div>
             <div
