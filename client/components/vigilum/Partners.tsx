@@ -28,6 +28,7 @@ const Partners = () => {
   const [position, setPosition] = useState("");
   const [message, setMessage] = useState("");
   const [attachedFiles, setAttachedFiles] = useState([]);
+  const [scrollIntensity, setScrollIntensity] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
