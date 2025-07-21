@@ -169,245 +169,315 @@ const Navigation = () => {
                 <span className="ml-2">↓</span>
               </button>
 
-              {/* Scrollable Dropdown */}
+              {/* Navigation Dropdown - No Scrolling */}
               <div
-                className="absolute right-0 mt-2 w-48 max-h-64 overflow-y-auto rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
+                className="absolute right-0 mt-2 w-56 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
                 style={{
                   backgroundColor: "transparent",
                   backdropFilter: "blur(10px)",
                   border: "none",
                 }}
               >
-                <div className="py-2">
+                <div className="py-3">
                   <button
                     onClick={() => handleNavigation("#modules")}
-                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
                       background:
                         activeSection === "modules"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)",
                       borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "15px",
+                      borderRadius: "12px",
                       borderWidth: "1px",
                       boxShadow:
                         "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                       color:
                         activeSection === "modules"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)",
                       fontWeight: "500",
                       letterSpacing: "1.2px",
                       textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      padding: "8px 16px",
+                      padding: "10px 16px",
                       cursor: "pointer",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(-1px) scale(1.01)";
                       e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                        "rgba(34, 197, 94, 0.2)";
+                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
                       e.currentTarget.style.background =
                         activeSection === "modules"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)";
                       e.currentTarget.style.color =
                         activeSection === "modules"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
                     }}
                   >
-                    ENGINES
+                    CORE MODULES
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("#demo")}
+                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background:
+                        activeSection === "demo" || activeSection === "clavis"
+                          ? "rgba(34, 197, 94, 0.15)"
+                          : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "12px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color:
+                        activeSection === "demo" || activeSection === "clavis"
+                          ? "rgba(34, 197, 94, 1)"
+                          : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "10px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background =
+                        "rgba(34, 197, 94, 0.2)";
+                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform =
+                        "translateY(0px) scale(1)";
+                      e.currentTarget.style.background =
+                        activeSection === "demo" || activeSection === "clavis"
+                          ? "rgba(34, 197, 94, 0.15)"
+                          : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color =
+                        activeSection === "demo" || activeSection === "clavis"
+                          ? "rgba(34, 197, 94, 1)"
+                          : "rgba(255, 255, 255, 0.8)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
+                    }}
+                  >
+                    SEMANTIC PERMUTATION ENGINE
                   </button>
                   <button
                     onClick={() => handleNavigation("#clause-simulator")}
-                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
                       background:
                         activeSection === "clause-simulator"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)",
                       borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "15px",
+                      borderRadius: "12px",
                       borderWidth: "1px",
                       boxShadow:
                         "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                       color:
                         activeSection === "clause-simulator"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)",
                       fontWeight: "500",
                       letterSpacing: "1.2px",
                       textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      padding: "8px 16px",
+                      padding: "10px 16px",
                       cursor: "pointer",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(-1px) scale(1.01)";
                       e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                        "rgba(34, 197, 94, 0.2)";
+                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
                       e.currentTarget.style.background =
                         activeSection === "clause-simulator"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)";
                       e.currentTarget.style.color =
                         activeSection === "clause-simulator"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
                     }}
                   >
                     CLAUSE SIMULATOR
                   </button>
                   <button
-                    onClick={() => handleNavigation("#demo")}
-                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
-                    style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
-                      background:
-                        activeSection === "demo" || activeSection === "clavis"
-                          ? "rgba(74, 222, 128, 0.1)"
-                          : "rgba(255, 255, 255, 0.05)",
-                      borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "15px",
-                      borderWidth: "1px",
-                      boxShadow:
-                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-                      color:
-                        activeSection === "demo" || activeSection === "clavis"
-                          ? "rgba(74, 222, 128, 1)"
-                          : "rgba(255, 255, 255, 0.8)",
-                      fontWeight: "500",
-                      letterSpacing: "1.2px",
-                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      padding: "8px 16px",
-                      cursor: "pointer",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform =
-                        "translateY(-1px) scale(1.01)";
-                      e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform =
-                        "translateY(0px) scale(1)";
-                      e.currentTarget.style.background =
-                        activeSection === "demo" || activeSection === "clavis"
-                          ? "rgba(74, 222, 128, 0.1)"
-                          : "rgba(255, 255, 255, 0.05)";
-                      e.currentTarget.style.color =
-                        activeSection === "demo" || activeSection === "clavis"
-                          ? "rgba(74, 222, 128, 1)"
-                          : "rgba(255, 255, 255, 0.8)";
-                    }}
-                  >
-                    SPE
-                  </button>
-                  <button
                     onClick={() => handleNavigation("#cases")}
-                    className="w-full text-left text-sm font-display transition-all duration-300 mb-2"
+                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
                       background:
                         activeSection === "cases"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)",
                       borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "15px",
+                      borderRadius: "12px",
                       borderWidth: "1px",
                       boxShadow:
                         "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                       color:
                         activeSection === "cases"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)",
                       fontWeight: "500",
                       letterSpacing: "1.2px",
                       textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      padding: "8px 16px",
+                      padding: "10px 16px",
                       cursor: "pointer",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(-1px) scale(1.01)";
                       e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                        "rgba(34, 197, 94, 0.2)";
+                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
                       e.currentTarget.style.background =
                         activeSection === "cases"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)";
                       e.currentTarget.style.color =
                         activeSection === "cases"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
                     }}
                   >
-                    LIBRARY
+                    STRUCTURAL RETROSPECTIVES
                   </button>
                   <button
                     onClick={() => handleNavigation("#team")}
-                    className="w-full text-left text-sm font-display transition-all duration-300"
+                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
                       background:
                         activeSection === "team"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)",
                       borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "15px",
+                      borderRadius: "12px",
                       borderWidth: "1px",
                       boxShadow:
                         "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                       color:
                         activeSection === "team"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)",
                       fontWeight: "500",
                       letterSpacing: "1.2px",
                       textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      padding: "8px 16px",
+                      padding: "10px 16px",
                       cursor: "pointer",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(-1px) scale(1.01)";
                       e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                        "rgba(34, 197, 94, 0.2)";
+                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
                       e.currentTarget.style.background =
                         activeSection === "team"
-                          ? "rgba(74, 222, 128, 0.1)"
+                          ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)";
                       e.currentTarget.style.color =
                         activeSection === "team"
-                          ? "rgba(74, 222, 128, 1)"
+                          ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
                     }}
                   >
-                    MISSION & PARTNERS
+                    MISSION
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("#partners")}
+                    className="w-full text-left text-sm font-display transition-all duration-200"
+                    style={{
+                      backdropFilter: "blur(20px) saturate(180%)",
+                      background:
+                        activeSection === "partners"
+                          ? "rgba(34, 197, 94, 0.15)"
+                          : "rgba(255, 255, 255, 0.05)",
+                      borderColor: "rgba(255, 255, 255, 0.1)",
+                      borderRadius: "12px",
+                      borderWidth: "1px",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                      color:
+                        activeSection === "partners"
+                          ? "rgba(34, 197, 94, 1)"
+                          : "rgba(255, 255, 255, 0.8)",
+                      fontWeight: "500",
+                      letterSpacing: "1.2px",
+                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                      padding: "10px 16px",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "translateY(-1px) scale(1.01)";
+                      e.currentTarget.style.background =
+                        "rgba(34, 197, 94, 0.2)";
+                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform =
+                        "translateY(0px) scale(1)";
+                      e.currentTarget.style.background =
+                        activeSection === "partners"
+                          ? "rgba(34, 197, 94, 0.15)"
+                          : "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.color =
+                        activeSection === "partners"
+                          ? "rgba(34, 197, 94, 1)"
+                          : "rgba(255, 255, 255, 0.8)";
+                      e.currentTarget.style.boxShadow =
+                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
+                    }}
+                  >
+                    PARTNERS
                   </button>
                 </div>
               </div>
