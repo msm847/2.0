@@ -44,74 +44,81 @@ const structuralInputs: StructuralInput[] = [
     id: "S1",
     title: "Revenue Path Splitting",
     weight: 0.46,
-    description: "Simulates multi-stage, opaquely routed funding flows. Triggers cross-discipline risk thresholds.",
+    description:
+      "Simulates multi-stage, opaquely routed funding flows. Triggers cross-discipline risk thresholds.",
     tags: ["#multi-stage", "#opacity", "#cross-discipline"],
     professionalInsight: {
       economist: "Creates liquidity fragmentation across temporal boundaries",
       auditor: "Trail becomes discontinuous at routing junctions",
-      engineer: "Parallel pathways enable load balancing but reduce traceability"
-    }
+      engineer:
+        "Parallel pathways enable load balancing but reduce traceability",
+    },
   },
   {
     id: "S2",
     title: "Incentive-Driven Compliance",
     weight: 0.52,
-    description: "Obedience logic only triggers on downstream reward. Models performance-tied compliance elasticity.",
+    description:
+      "Obedience logic only triggers on downstream reward. Models performance-tied compliance elasticity.",
     tags: ["#incentive", "#compliance", "#elasticity"],
     professionalInsight: {
       economist: "Behavior becomes reward-dependent rather than rule-dependent",
       auditor: "Compliance gaps emerge during reward delays",
-      engineer: "System state depends on feedback loop timing"
-    }
+      engineer: "System state depends on feedback loop timing",
+    },
   },
   {
     id: "S3",
     title: "Persistence Injection",
     weight: 0.49,
-    description: "Scenario repeats or loops system behavior without explicit re-authorization. Tests for undetected inertia.",
+    description:
+      "Scenario repeats or loops system behavior without explicit re-authorization. Tests for undetected inertia.",
     tags: ["#persistence", "#inertia", "#loop"],
     professionalInsight: {
       economist: "Creates momentum beyond initial resource allocation",
       auditor: "Authorization chain becomes unclear after first cycle",
-      engineer: "Self-sustaining processes reduce external control"
-    }
+      engineer: "Self-sustaining processes reduce external control",
+    },
   },
   {
     id: "S4",
     title: "Latency Differential",
     weight: 0.44,
-    description: "Systemic delays intentionally decouple resource release and recognition. Surfaces hidden liquidity and power shifts.",
+    description:
+      "Systemic delays intentionally decouple resource release and recognition. Surfaces hidden liquidity and power shifts.",
     tags: ["#latency", "#liquidity", "#power-shift"],
     professionalInsight: {
       economist: "Temporal arbitrage opportunities emerge from timing gaps",
       auditor: "Recognition lag creates accountability windows",
-      engineer: "Asynchronous processing enables state manipulation"
-    }
+      engineer: "Asynchronous processing enables state manipulation",
+    },
   },
   {
     id: "S5",
     title: "External Logic Overwrite",
     weight: 0.58,
-    description: "Foreign or donor logic dominates internal decision vectors. Probes dependency and agency displacement.",
+    description:
+      "Foreign or donor logic dominates internal decision vectors. Probes dependency and agency displacement.",
     tags: ["#dependency", "#agency", "#external"],
     professionalInsight: {
       economist: "Decision autonomy transfers to external stakeholders",
       auditor: "Authority chain becomes externally determined",
-      engineer: "Control system architecture inverts"
-    }
+      engineer: "Control system architecture inverts",
+    },
   },
   {
     id: "S6",
     title: "Quantization Gate Fragmentation",
     weight: 0.36,
-    description: "Splits authorizations into subunits to bypass scrutiny. Examines distributed threshold evasion.",
+    description:
+      "Splits authorizations into subunits to bypass scrutiny. Examines distributed threshold evasion.",
     tags: ["#fragmentation", "#threshold", "#distributed"],
     professionalInsight: {
       economist: "Atomic transactions fall below oversight resolution",
       auditor: "Individual approvals seem reasonable, aggregate does not",
-      engineer: "Distributed logic prevents holistic system visibility"
-    }
-  }
+      engineer: "Distributed logic prevents holistic system visibility",
+    },
+  },
 ];
 
 // Environment Operators data
@@ -120,23 +127,27 @@ const environmentOperators: EnvironmentOperator[] = [
     id: "E1",
     name: "Vector Path Inversion",
     weight: 0.34,
-    description: "Inverts directionality between inputs. Early-stage actions echo in late outcomes and vice versa.",
-    transformEffect: "Temporal causality reversal affects all module interactions"
+    description:
+      "Inverts directionality between inputs. Early-stage actions echo in late outcomes and vice versa.",
+    transformEffect:
+      "Temporal causality reversal affects all module interactions",
   },
   {
     id: "E2",
     name: "Constraint Masking",
     weight: 0.41,
-    description: "Conceals mutual thresholds; modules become \"blind\" to each other's logic.",
-    transformEffect: "Information isolation between selected modules"
+    description:
+      'Conceals mutual thresholds; modules become "blind" to each other\'s logic.',
+    transformEffect: "Information isolation between selected modules",
   },
   {
     id: "E3",
     name: "Temporal Normalization Collapse",
     weight: 0.38,
-    description: "Flattens process sequencing, forcing all modules to resolve simultaneously.",
-    transformEffect: "Sequential processing becomes parallel execution"
-  }
+    description:
+      "Flattens process sequencing, forcing all modules to resolve simultaneously.",
+    transformEffect: "Sequential processing becomes parallel execution",
+  },
 ];
 
 // Example scenarios for loader
@@ -144,42 +155,49 @@ const exampleScenarios = [
   {
     inputs: ["S1", "S3", "S5"],
     operators: ["E2", "E3"],
-    name: "Distributed Persistence with External Override"
+    name: "Distributed Persistence with External Override",
   },
   {
     inputs: ["S2", "S4", "S6"],
     operators: ["E1"],
-    name: "Fragmented Incentive Cascade"
+    name: "Fragmented Incentive Cascade",
   },
   {
     inputs: ["S1", "S4", "S5"],
     operators: ["E2"],
-    name: "Temporal Displacement Network"
-  }
+    name: "Temporal Displacement Network",
+  },
 ];
 
 const StructuralCognitionChamber: React.FC = () => {
-  const [selectedInputs, setSelectedInputs] = useState<(StructuralInput | null)[]>([null, null, null]);
+  const [selectedInputs, setSelectedInputs] = useState<
+    (StructuralInput | null)[]
+  >([null, null, null]);
   const [selectedOperators, setSelectedOperators] = useState<string[]>([]);
-  const [simulationResult, setSimulationResult] = useState<SimulationResult | null>(null);
-  const [simulationHistory, setSimulationHistory] = useState<SimulationResult[]>([]);
+  const [simulationResult, setSimulationResult] =
+    useState<SimulationResult | null>(null);
+  const [simulationHistory, setSimulationHistory] = useState<
+    SimulationResult[]
+  >([]);
   const [isSimulating, setIsSimulating] = useState(false);
-  const [professionalView, setProfessionalView] = useState<'economist' | 'auditor' | 'engineer'>('economist');
+  const [professionalView, setProfessionalView] = useState<
+    "economist" | "auditor" | "engineer"
+  >("economist");
   const [showComparison, setShowComparison] = useState(false);
   const [ellipsisCount, setEllipsisCount] = useState(0);
 
   // Animated ellipsis effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setEllipsisCount(prev => prev === 3 ? 0 : prev + 1);
+      setEllipsisCount((prev) => (prev === 3 ? 0 : prev + 1));
     }, 500);
     return () => clearInterval(interval);
   }, []);
 
   const selectInput = (input: StructuralInput, slotIndex: number) => {
     // Check if this input is already selected in any slot
-    const isAlreadySelected = selectedInputs.some(selectedInput =>
-      selectedInput && selectedInput.id === input.id
+    const isAlreadySelected = selectedInputs.some(
+      (selectedInput) => selectedInput && selectedInput.id === input.id,
     );
 
     if (!isAlreadySelected) {
@@ -197,7 +215,7 @@ const StructuralCognitionChamber: React.FC = () => {
 
   const toggleOperator = (operatorId: string) => {
     if (selectedOperators.includes(operatorId)) {
-      setSelectedOperators(selectedOperators.filter(id => id !== operatorId));
+      setSelectedOperators(selectedOperators.filter((id) => id !== operatorId));
     } else if (selectedOperators.length < 2) {
       setSelectedOperators([...selectedOperators, operatorId]);
     }
@@ -207,8 +225,12 @@ const StructuralCognitionChamber: React.FC = () => {
     setIsSimulating(true);
 
     setTimeout(() => {
-      const validInputs = selectedInputs.filter(input => input !== null) as StructuralInput[];
-      const operators = environmentOperators.filter(op => selectedOperators.includes(op.id));
+      const validInputs = selectedInputs.filter(
+        (input) => input !== null,
+      ) as StructuralInput[];
+      const operators = environmentOperators.filter((op) =>
+        selectedOperators.includes(op.id),
+      );
 
       // Mathematical computation
       let phi = 0;
@@ -220,24 +242,27 @@ const StructuralCognitionChamber: React.FC = () => {
         let interactionCoeff = 1.0;
 
         // Apply environmental transformations
-        operators.forEach(op => {
+        operators.forEach((op) => {
           if (i === 0) {
             positionalModifier *= 1.0;
           } else {
-            positionalModifier *= (1 + op.weight * 0.3);
+            positionalModifier *= 1 + op.weight * 0.3;
           }
         });
 
         // Interaction coefficients
         validInputs.forEach((otherInput, j) => {
           if (i !== j) {
-            interactionCoeff += Math.abs(input.weight - otherInput.weight) * 0.1;
+            interactionCoeff +=
+              Math.abs(input.weight - otherInput.weight) * 0.1;
           }
         });
 
         const contribution = weight * positionalModifier * interactionCoeff;
         phi += contribution;
-        computationDetails.push(`(${weight.toFixed(2)} × ${positionalModifier.toFixed(2)} × ${interactionCoeff.toFixed(2)})`);
+        computationDetails.push(
+          `(${weight.toFixed(2)} × ${positionalModifier.toFixed(2)} × ${interactionCoeff.toFixed(2)})`,
+        );
       });
 
       // Generate configuration outcomes
@@ -246,7 +271,7 @@ const StructuralCognitionChamber: React.FC = () => {
         "Temporal Displacement Network with External Override",
         "Multi-Vector Persistence Under Constraint Masking",
         "Incentive-Driven Threshold Evasion Pattern",
-        "Latency-Amplified Authority Displacement"
+        "Latency-Amplified Authority Displacement",
       ];
 
       const fractureVectors = [
@@ -254,37 +279,43 @@ const StructuralCognitionChamber: React.FC = () => {
         "CI + SB through temporal inversion",
         "RT + OD via fragmentation cascade",
         "DG + CI through persistence loop",
-        "SB + RT via external override"
+        "SB + RT via external override",
       ];
 
       const result: SimulationResult = {
         phi: phi,
-        configurationName: configurations[Math.floor(phi * 5) % configurations.length],
-        fractureVector: fractureVectors[Math.floor(phi * 5) % fractureVectors.length],
+        configurationName:
+          configurations[Math.floor(phi * 5) % configurations.length],
+        fractureVector:
+          fractureVectors[Math.floor(phi * 5) % fractureVectors.length],
         typologyDrift: Math.floor(phi * 25) % 30,
-        overrideChainDepth: Math.floor(phi * 3) % 5 + 1,
-        detectionProbability: phi > 1.5 ? "Recognition possible only via cross-field audit" : "Detectable through standard review",
+        overrideChainDepth: (Math.floor(phi * 3) % 5) + 1,
+        detectionProbability:
+          phi > 1.5
+            ? "Recognition possible only via cross-field audit"
+            : "Detectable through standard review",
         computationDetails: computationDetails,
         professionalDiagnostics: {
-          economist: `System simulates temporal dependency inversion — ${phi > 1.0 ? 'late volatility becomes early instability' : 'stable equilibrium maintained'}.`,
-          auditor: `Module fragmentation ${phi > 1.2 ? 'reduces visibility below minimum audit resolution' : 'remains within acceptable monitoring thresholds'}.`,
-          engineer: `Distributed thresholds create ${phi > 1.1 ? 'sharded logic; no single node signals full risk' : 'manageable system complexity'}.`
-        }
+          economist: `System simulates temporal dependency inversion — ${phi > 1.0 ? "late volatility becomes early instability" : "stable equilibrium maintained"}.`,
+          auditor: `Module fragmentation ${phi > 1.2 ? "reduces visibility below minimum audit resolution" : "remains within acceptable monitoring thresholds"}.`,
+          engineer: `Distributed thresholds create ${phi > 1.1 ? "sharded logic; no single node signals full risk" : "manageable system complexity"}.`,
+        },
       };
 
       setSimulationResult(result);
-      setSimulationHistory(prev => [result, ...prev].slice(0, 5));
+      setSimulationHistory((prev) => [result, ...prev].slice(0, 5));
       setIsSimulating(false);
     }, 2000);
   };
 
   const loadExampleScenario = () => {
-    const scenario = exampleScenarios[Math.floor(Math.random() * exampleScenarios.length)];
+    const scenario =
+      exampleScenarios[Math.floor(Math.random() * exampleScenarios.length)];
 
     // Load inputs
     const newInputs: (StructuralInput | null)[] = [null, null, null];
     scenario.inputs.forEach((inputId, index) => {
-      const input = structuralInputs.find(s => s.id === inputId);
+      const input = structuralInputs.find((s) => s.id === inputId);
       if (input && index < 3) {
         newInputs[index] = input;
       }
@@ -309,7 +340,10 @@ const StructuralCognitionChamber: React.FC = () => {
   };
 
   return (
-    <section className="pt-20 px-4 pb-16" style={{ backgroundColor: "#102B21" }}>
+    <section
+      className="pt-20 px-4 pb-16"
+      style={{ backgroundColor: "#102B21" }}
+    >
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
@@ -320,8 +354,10 @@ const StructuralCognitionChamber: React.FC = () => {
           {/* Epistemic Statement */}
           <div className="mb-6">
             <p className="text-gray-400 text-sm font-mono leading-relaxed">
-              This simulation does not reveal intention or error.<br/>
-              It renders structural consequence — a logic state in the space between law and reality.
+              This simulation does not reveal intention or error.
+              <br />
+              It renders structural consequence — a logic state in the space
+              between law and reality.
             </p>
           </div>
         </div>
@@ -335,16 +371,19 @@ const StructuralCognitionChamber: React.FC = () => {
                 Structural Input
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Assemble up to three synthetic logic fragments:<br/>
-                each introduces a new axis of economic friction, dependency, or recursion...
+                Assemble up to three synthetic logic fragments:
+                <br />
+                each introduces a new axis of economic friction, dependency, or
+                recursion...
               </p>
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
               <div className="space-y-3">
                 {structuralInputs.map((input) => {
-                  const isAlreadySelected = selectedInputs.some(selectedInput =>
-                    selectedInput && selectedInput.id === input.id
+                  const isAlreadySelected = selectedInputs.some(
+                    (selectedInput) =>
+                      selectedInput && selectedInput.id === input.id,
                   );
 
                   return (
@@ -356,31 +395,44 @@ const StructuralCognitionChamber: React.FC = () => {
                           : "border-gray-600 cursor-pointer hover:border-green-400/50"
                       }`}
                       style={{
-                        backgroundColor: isAlreadySelected ? "#2a4a32" : "#1f2e28",
-                        borderColor: isAlreadySelected ? "#d4c69b" : "rgba(255,255,255,0.1)"
+                        backgroundColor: isAlreadySelected
+                          ? "#2a4a32"
+                          : "#1f2e28",
+                        borderColor: isAlreadySelected
+                          ? "#d4c69b"
+                          : "rgba(255,255,255,0.1)",
                       }}
-                      whileHover={!isAlreadySelected ? { scale: 1.02, backgroundColor: "#2a3a32" } : {}}
+                      whileHover={
+                        !isAlreadySelected
+                          ? { scale: 1.02, backgroundColor: "#2a3a32" }
+                          : {}
+                      }
                       onClick={() => {
                         if (!isAlreadySelected) {
-                          const emptySlot = selectedInputs.findIndex(s => s === null);
+                          const emptySlot = selectedInputs.findIndex(
+                            (s) => s === null,
+                          );
                           if (emptySlot !== -1) {
                             selectInput(input, emptySlot);
                           }
                         }
                       }}
                     >
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-sm font-mono text-white flex-1 pr-2" style={{ color: "#eae2cc" }}>
-                        {input.title}
-                      </h4>
-                      <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
-                        w = {input.weight.toFixed(2)}
-                      </span>
-                    </div>
-                    <p className="text-xs text-gray-400 leading-relaxed">
-                      {input.description}
-                    </p>
-                  </motion.div>
+                      <div className="flex items-center justify-between mb-2">
+                        <h4
+                          className="text-sm font-mono text-white flex-1 pr-2"
+                          style={{ color: "#eae2cc" }}
+                        >
+                          {input.title}
+                        </h4>
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
+                          w = {input.weight.toFixed(2)}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        {input.description}
+                      </p>
+                    </motion.div>
                   );
                 })}
               </div>
@@ -394,7 +446,8 @@ const StructuralCognitionChamber: React.FC = () => {
                 Input Sequencer
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Order is not cosmetic: each position reshapes the simulation's internal vector landscape...
+                Order is not cosmetic: each position reshapes the simulation's
+                internal vector landscape...
               </p>
               <div className="text-sm text-gray-500 mt-2">
                 Σw = {getTotalWeight().toFixed(2)}
@@ -409,13 +462,15 @@ const StructuralCognitionChamber: React.FC = () => {
                     className="min-h-[80px] border-2 border-dashed border-gray-600 rounded-lg p-4 flex items-center justify-center relative"
                     style={{
                       backgroundColor: input ? "#1f2e28" : "transparent",
-                      borderColor: input ? "#d4c69b" : "rgba(255,255,255,0.1)"
+                      borderColor: input ? "#d4c69b" : "rgba(255,255,255,0.1)",
                     }}
                   >
                     {input ? (
                       <div className="w-full">
                         <div className="flex items-center justify-between mb-2">
-                          <h5 className="text-sm font-mono text-white">{input.title}</h5>
+                          <h5 className="text-sm font-mono text-white">
+                            {input.title}
+                          </h5>
                           <button
                             onClick={() => removeInput(index)}
                             className="text-red-400 hover:text-red-300 text-xs"
@@ -428,7 +483,9 @@ const StructuralCognitionChamber: React.FC = () => {
                         </div>
                       </div>
                     ) : (
-                      <span className="text-gray-500 text-sm">Position {index + 1}</span>
+                      <span className="text-gray-500 text-sm">
+                        Position {index + 1}
+                      </span>
                     )}
                   </div>
                 ))}
@@ -438,7 +495,9 @@ const StructuralCognitionChamber: React.FC = () => {
               <div className="flex gap-3">
                 <motion.button
                   onClick={executeSimulation}
-                  disabled={selectedInputs.every(s => s === null) || isSimulating}
+                  disabled={
+                    selectedInputs.every((s) => s === null) || isSimulating
+                  }
                   className="flex-1 py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -446,7 +505,9 @@ const StructuralCognitionChamber: React.FC = () => {
                   {isSimulating ? "PROCESSING..." : "EXECUTE SIMULATION"}
                 </motion.button>
 
-                {(selectedInputs.some(s => s !== null) || selectedOperators.length > 0 || simulationResult) && (
+                {(selectedInputs.some((s) => s !== null) ||
+                  selectedOperators.length > 0 ||
+                  simulationResult) && (
                   <motion.button
                     onClick={resetSimulation}
                     className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
@@ -477,13 +538,17 @@ const StructuralCognitionChamber: React.FC = () => {
                 Environment Operators
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Superimpose up to two systemic constraints. Each operator alters internal alignments, forcing logics to compete, overlap, or dissolve.
+                Superimpose up to two systemic constraints. Each operator alters
+                internal alignments, forcing logics to compete, overlap, or
+                dissolve.
               </p>
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
               <div className="space-y-4">
-                <p className="text-xs text-gray-400 mb-4">Select up to 2 operators</p>
+                <p className="text-xs text-gray-400 mb-4">
+                  Select up to 2 operators
+                </p>
                 {environmentOperators.map((operator) => (
                   <motion.button
                     key={operator.id}
@@ -546,7 +611,9 @@ const StructuralCognitionChamber: React.FC = () => {
               >
                 <div className="p-10 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
                   <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-green-400 font-mono text-lg">SIMULATION OUTPUT</h4>
+                    <h4 className="text-green-400 font-mono text-lg">
+                      SIMULATION OUTPUT
+                    </h4>
                     {simulationHistory.length > 1 && (
                       <button
                         onClick={() => setShowComparison(!showComparison)}
@@ -559,7 +626,9 @@ const StructuralCognitionChamber: React.FC = () => {
 
                   {/* Mathematical Trace */}
                   <div className="mb-8">
-                    <h5 className="text-green-400 font-mono mb-4 text-md">MATHEMATICAL TRACE</h5>
+                    <h5 className="text-green-400 font-mono mb-4 text-md">
+                      MATHEMATICAL TRACE
+                    </h5>
                     <div
                       className="p-6 rounded-lg font-mono text-lg leading-relaxed"
                       style={{
@@ -572,10 +641,12 @@ const StructuralCognitionChamber: React.FC = () => {
                         ϕ(inputs, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
                       </div>
                       <div className="mb-4">
-                        ϕ = {simulationResult.computationDetails.join(" + ")} = {simulationResult.phi.toFixed(2)}
+                        ϕ = {simulationResult.computationDetails.join(" + ")} ={" "}
+                        {simulationResult.phi.toFixed(2)}
                       </div>
                       <div className="text-sm text-gray-400">
-                        Where environment and position have modified original weights.
+                        Where environment and position have modified original
+                        weights.
                       </div>
                     </div>
                   </div>
@@ -583,32 +654,58 @@ const StructuralCognitionChamber: React.FC = () => {
                   {/* Structural Outcome */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div>
-                      <h5 className="text-green-400 font-mono mb-4 text-md">STRUCTURAL OUTCOME</h5>
-                      <div className="space-y-3 font-mono" style={{ color: "#cab27f" }}>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">
+                        STRUCTURAL OUTCOME
+                      </h5>
+                      <div
+                        className="space-y-3 font-mono"
+                        style={{ color: "#cab27f" }}
+                      >
                         <div className="text-lg">
-                          <span className="text-gray-400">Configuration Identified:</span><br/>
-                          "{simulationResult.configurationName}"
+                          <span className="text-gray-400">
+                            Configuration Identified:
+                          </span>
+                          <br />"{simulationResult.configurationName}"
                         </div>
                         <div className="text-lg">
-                          <span className="text-gray-400">Fracture Vector:</span><br/>
+                          <span className="text-gray-400">
+                            Fracture Vector:
+                          </span>
+                          <br />
                           {simulationResult.fractureVector}
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <h5 className="text-green-400 font-mono mb-4 text-md">EMERGENT RISK INDICES</h5>
-                      <div className="space-y-3 font-mono text-sm" style={{ color: "#cab27f" }}>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">
+                        EMERGENT RISK INDICES
+                      </h5>
+                      <div
+                        className="space-y-3 font-mono text-sm"
+                        style={{ color: "#cab27f" }}
+                      >
                         <div>
-                          <span className="text-gray-400">Typology Drift (Δv):</span><br/>
-                          {simulationResult.typologyDrift}° off compliance baseline
+                          <span className="text-gray-400">
+                            Typology Drift (Δv):
+                          </span>
+                          <br />
+                          {simulationResult.typologyDrift}° off compliance
+                          baseline
                         </div>
                         <div>
-                          <span className="text-gray-400">Override Chain Depth (Ω):</span><br/>
-                          {simulationResult.overrideChainDepth} recursive redirections detected
+                          <span className="text-gray-400">
+                            Override Chain Depth (Ω):
+                          </span>
+                          <br />
+                          {simulationResult.overrideChainDepth} recursive
+                          redirections detected
                         </div>
                         <div>
-                          <span className="text-gray-400">Detection Probability (ρ):</span><br/>
+                          <span className="text-gray-400">
+                            Detection Probability (ρ):
+                          </span>
+                          <br />
                           {simulationResult.detectionProbability}
                         </div>
                       </div>
@@ -618,21 +715,26 @@ const StructuralCognitionChamber: React.FC = () => {
                   {/* Professional Diagnostics */}
                   <div>
                     <div className="flex items-center gap-4 mb-4">
-                      <h5 className="text-green-400 font-mono text-md">PROFESSIONAL DIAGNOSTICS</h5>
+                      <h5 className="text-green-400 font-mono text-md">
+                        PROFESSIONAL DIAGNOSTICS
+                      </h5>
                       <div className="flex gap-2">
-                        {(['economist', 'auditor', 'engineer'] as const).map((profession) => (
-                          <button
-                            key={profession}
-                            onClick={() => setProfessionalView(profession)}
-                            className={`px-3 py-1 text-xs rounded ${
-                              professionalView === profession
-                                ? 'bg-green-600 text-white'
-                                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                            } transition-colors`}
-                          >
-                            {profession.charAt(0).toUpperCase() + profession.slice(1)}
-                          </button>
-                        ))}
+                        {(["economist", "auditor", "engineer"] as const).map(
+                          (profession) => (
+                            <button
+                              key={profession}
+                              onClick={() => setProfessionalView(profession)}
+                              className={`px-3 py-1 text-xs rounded ${
+                                professionalView === profession
+                                  ? "bg-green-600 text-white"
+                                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                              } transition-colors`}
+                            >
+                              {profession.charAt(0).toUpperCase() +
+                                profession.slice(1)}
+                            </button>
+                          ),
+                        )}
                       </div>
                     </div>
 
@@ -645,10 +747,21 @@ const StructuralCognitionChamber: React.FC = () => {
                       }}
                     >
                       <div className="mb-2">
-                        <span className="text-gray-400">View As {professionalView.charAt(0).toUpperCase() + professionalView.slice(1)}:</span>
+                        <span className="text-gray-400">
+                          View As{" "}
+                          {professionalView.charAt(0).toUpperCase() +
+                            professionalView.slice(1)}
+                          :
+                        </span>
                       </div>
                       <div>
-                        "{simulationResult.professionalDiagnostics[professionalView]}"
+                        "
+                        {
+                          simulationResult.professionalDiagnostics[
+                            professionalView
+                          ]
+                        }
+                        "
                       </div>
                     </div>
                   </div>
@@ -656,18 +769,28 @@ const StructuralCognitionChamber: React.FC = () => {
                   {/* Comparison Panel */}
                   {showComparison && simulationHistory.length > 1 && (
                     <div className="mt-8 pt-8 border-t border-gray-600">
-                      <h5 className="text-green-400 font-mono mb-4 text-md">SIMULATION COMPARISON</h5>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">
+                        SIMULATION COMPARISON
+                      </h5>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {simulationHistory.slice(0, 2).map((result, index) => (
-                          <div key={index} className="p-4 bg-gray-800/50 rounded-lg">
+                          <div
+                            key={index}
+                            className="p-4 bg-gray-800/50 rounded-lg"
+                          >
                             <div className="text-sm font-mono text-gray-400 mb-2">
-                              Simulation {index === 0 ? 'Current' : 'Previous'}
+                              Simulation {index === 0 ? "Current" : "Previous"}
                             </div>
-                            <div className="text-xs font-mono space-y-1" style={{ color: "#cab27f" }}>
+                            <div
+                              className="text-xs font-mono space-y-1"
+                              style={{ color: "#cab27f" }}
+                            >
                               <div>ϕ = {result.phi.toFixed(2)}</div>
                               <div>Drift: {result.typologyDrift}��</div>
                               <div>Depth: {result.overrideChainDepth}</div>
-                              <div className="text-gray-400">{result.configurationName}</div>
+                              <div className="text-gray-400">
+                                {result.configurationName}
+                              </div>
                             </div>
                           </div>
                         ))}
@@ -709,8 +832,6 @@ const StructuralCognitionChamber: React.FC = () => {
             </div>
           )}
         </div>
-
-
       </div>
     </section>
   );
