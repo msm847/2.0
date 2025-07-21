@@ -34,6 +34,17 @@ const Partners = () => {
   const [error, setError] = useState("");
   const fileInputRef = useRef(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const intensity = Math.min(scrollY * 0.001, 0.5); // Cap at 0.5 for subtle effect
+      setScrollIntensity(intensity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
     const maxSize = 20 * 1024 * 1024; // 20MB in bytes
