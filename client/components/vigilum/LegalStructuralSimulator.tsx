@@ -165,7 +165,6 @@ const StructuralCognitionChamber: React.FC = () => {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | null>(null);
   const [simulationHistory, setSimulationHistory] = useState<SimulationResult[]>([]);
   const [isSimulating, setIsSimulating] = useState(false);
-  const [showHints, setShowHints] = useState(true);
   const [professionalView, setProfessionalView] = useState<'economist' | 'auditor' | 'engineer'>('economist');
   const [showComparison, setShowComparison] = useState(false);
   const [ellipsisCount, setEllipsisCount] = useState(0);
