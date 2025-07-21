@@ -679,16 +679,18 @@ const StructuralCognitionChamber: React.FC = () => {
           </AnimatePresence>
 
           {!simulationResult && !isSimulating && (
-            <div className="text-center text-gray-500 py-16">
-              <div
-                className="text-2xl font-mono mb-4"
-                style={{ color: "#cab27f" }}
-              >
-                ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
-              </div>
-              <div className="text-lg font-mono text-gray-400">
-                Simulation inactive — structural input incomplete
-                {".".repeat(ellipsisCount)}
+            <div className="max-w-6xl mx-auto">
+              <div className="p-10 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800 text-center">
+                <div
+                  className="text-2xl font-mono mb-4"
+                  style={{ color: "#cab27f" }}
+                >
+                  ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+                </div>
+                <div className="text-lg font-mono text-gray-400">
+                  Simulation inactive — structural input incomplete
+                  {".".repeat(ellipsisCount)}
+                </div>
               </div>
             </div>
           )}
