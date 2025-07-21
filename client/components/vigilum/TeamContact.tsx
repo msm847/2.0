@@ -470,7 +470,7 @@ const TeamContact = () => {
             </div>
 
             {/* Additional Mission Boxes */}
-            <div className="flex flex-col gap-6 mt-16 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 max-w-6xl mx-auto">
               {/* Students & Researchers Box */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
