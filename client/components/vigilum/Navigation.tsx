@@ -530,7 +530,7 @@ const Navigation = () => {
                       : "500",
                 }}
               >
-                SEMANTIC PERMUTATION ENGINE
+                SPE
               </button>
               <button
                 onClick={() => handleNavigation("#clause-simulator")}
