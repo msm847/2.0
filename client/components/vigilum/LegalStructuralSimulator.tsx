@@ -503,9 +503,6 @@ const StructuralCognitionChamber: React.FC = () => {
                       borderColor: selectedOperators.includes(operator.id)
                         ? "#d4c69b"
                         : "rgba(255,255,255,0.1)",
-                      height: "120px",
-                      minHeight: "120px",
-                      maxHeight: "120px"
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -514,24 +511,22 @@ const StructuralCognitionChamber: React.FC = () => {
                       selectedOperators.length >= 2
                     }
                   >
-                    <div className="flex flex-col h-full justify-between">
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <h4
-                            className="font-mono text-sm flex-1 pr-2"
-                            style={{ color: "#cab27f" }}
-                          >
-                            {operator.name}
-                          </h4>
-                          <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
-                            w = {operator.weight.toFixed(2)}
-                          </span>
-                        </div>
-                        <p className="text-xs text-gray-400 leading-relaxed mb-2">
-                          {operator.description}
-                        </p>
+                    <div className="flex flex-col space-y-2">
+                      <div className="flex items-center justify-between">
+                        <h4
+                          className="font-mono text-sm flex-1 pr-2"
+                          style={{ color: "#cab27f" }}
+                        >
+                          {operator.name}
+                        </h4>
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
+                          w = {operator.weight.toFixed(2)}
+                        </span>
                       </div>
-                      <div className="text-xs text-green-400/70 mt-auto">
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        {operator.description}
+                      </p>
+                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50">
                         {operator.transformEffect}
                       </div>
                     </div>
