@@ -709,13 +709,7 @@ const StructuralCognitionChamber: React.FC = () => {
           )}
         </div>
 
-        {/* Epistemic Footer */}
-        <div className="text-center py-8 border-t border-gray-600 mt-16">
-          <p className="text-gray-400 text-sm font-mono leading-relaxed">
-            This simulation does not reveal intention or error.<br/>
-            It renders structural consequence — a logic state in the space between law and reality.
-          </p>
-        </div>
+
       </div>
     </section>
   );
