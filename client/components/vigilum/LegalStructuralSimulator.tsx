@@ -131,9 +131,7 @@ const LegalStructuralSimulator: React.FC = () => {
   const [selectedClauses, setSelectedClauses] = useState<(ClauseData | null)[]>(
     [null, null, null],
   );
-  const [activeEnvironment, setActiveEnvironment] = useState<string | null>(
-    null,
-  );
+  const [activeEnvironments, setActiveEnvironments] = useState<string[]>([]);
   const [simulationResult, setSimulationResult] = useState<any>(null);
   const [isSimulating, setIsSimulating] = useState(false);
 
