@@ -354,10 +354,9 @@ const StructuralCognitionChamber: React.FC = () => {
           {/* Epistemic Statement */}
           <div className="mb-6">
             <p className="text-gray-400 text-sm font-mono leading-relaxed">
-              This simulation does not reveal intention or error.
+              This is a logic environment.
               <br />
-              It renders structural consequence — a logic state in the space
-              between law and reality.
+              Structural consequence: the space between law and reality.
             </p>
           </div>
         </div>
