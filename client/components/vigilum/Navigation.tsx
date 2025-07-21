@@ -179,7 +179,7 @@ const Navigation = () => {
 
               {/* Navigation Dropdown - No Scrolling */}
               <div
-                className="absolute right-0 mt-2 w-56 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
+                className="absolute right-0 mt-2 w-fit rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform group-hover:translate-y-0 translate-y-2 z-50"
                 style={{
                   backgroundColor: "transparent",
                   backdropFilter: "blur(10px)",
