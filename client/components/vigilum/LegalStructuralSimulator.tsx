@@ -255,7 +255,7 @@ const LegalStructuralSimulator: React.FC = () => {
     <section className="pt-20 px-4" style={{ backgroundColor: "#081A0E" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Core Premise */}
-        <div className="text-center mb-8">
+        <div className="text-left mb-8">
           <motion.h3
             className="text-heading-md text-white mb-4"
             initial={{ opacity: 0, y: 30 }}
