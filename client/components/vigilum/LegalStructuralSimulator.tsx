@@ -164,7 +164,6 @@ const StructuralCognitionChamber: React.FC = () => {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | null>(null);
   const [simulationHistory, setSimulationHistory] = useState<SimulationResult[]>([]);
   const [isSimulating, setIsSimulating] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(true);
   const [showHints, setShowHints] = useState(true);
   const [professionalView, setProfessionalView] = useState<'economist' | 'auditor' | 'engineer'>('economist');
   const [showComparison, setShowComparison] = useState(false);
@@ -177,14 +176,6 @@ const StructuralCognitionChamber: React.FC = () => {
     }, 500);
     return () => clearInterval(interval);
   }, []);
-
-  // Auto-hide welcome message
-  useEffect(() => {
-    if (showWelcome) {
-      const timer = setTimeout(() => setShowWelcome(false), 8000);
-      return () => clearTimeout(timer);
-    }
-  }, [showWelcome]);
 
   const selectInput = (input: StructuralInput, slotIndex: number) => {
     const newSelected = [...selectedInputs];
@@ -240,7 +231,7 @@ const StructuralCognitionChamber: React.FC = () => {
 
         const contribution = weight * positionalModifier * interactionCoeff;
         phi += contribution;
-        computationDetails.push(`(${weight.toFixed(2)} × ${positionalModifier.toFixed(2)} �� ${interactionCoeff.toFixed(2)})`);
+        computationDetails.push(`(${weight.toFixed(2)} × ${positionalModifier.toFixed(2)} × ${interactionCoeff.toFixed(2)})`);
       });
 
       // Generate configuration outcomes
@@ -283,7 +274,7 @@ const StructuralCognitionChamber: React.FC = () => {
 
   const loadExampleScenario = () => {
     const scenario = exampleScenarios[Math.floor(Math.random() * exampleScenarios.length)];
-    
+
     // Load inputs
     const newInputs: (StructuralInput | null)[] = [null, null, null];
     scenario.inputs.forEach((inputId, index) => {
@@ -292,10 +283,10 @@ const StructuralCognitionChamber: React.FC = () => {
         newInputs[index] = input;
       }
     });
-    
+
     setSelectedInputs(newInputs);
     setSelectedOperators(scenario.operators);
-    
+
     // Auto-execute
     setTimeout(() => executeSimulation(), 500);
   };
@@ -399,7 +390,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Select up to 3 scenario modules — each a fictionalized economic logic fragment shaping system behavior.
               </p>
             </div>
-            
+
             <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
               <div className="space-y-3">
                 {structuralInputs.map((input) => (
@@ -453,7 +444,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Σw = {getTotalWeight().toFixed(2)}
               </div>
             </div>
-            
+
             <div className="flex-1 p-4">
               <div className="space-y-4 mb-6">
                 {selectedInputs.map((input, index) => (
@@ -498,7 +489,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 >
                   {isSimulating ? "PROCESSING..." : "EXECUTE SIMULATION"}
                 </motion.button>
-                
+
                 {(selectedInputs.some(s => s !== null) || selectedOperators.length > 0 || simulationResult) && (
                   <motion.button
                     onClick={resetSimulation}
@@ -533,7 +524,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Select up to 2. Each transforms module interactions — structurally, not visually.
               </p>
             </div>
-            
+
             <div className="flex-1 p-4">
               <div className="space-y-4">
                 <p className="text-xs text-gray-400 mb-4">Select up to 2 operators</p>
@@ -688,7 +679,7 @@ const StructuralCognitionChamber: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div
                       className="p-4 rounded-lg font-mono text-sm leading-relaxed"
                       style={{
