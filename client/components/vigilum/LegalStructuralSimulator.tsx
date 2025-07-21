@@ -147,6 +147,14 @@ const LegalStructuralSimulator: React.FC = () => {
     setSelectedClauses(newSelected);
   };
 
+  const toggleEnvironment = (envId: string) => {
+    if (activeEnvironments.includes(envId)) {
+      setActiveEnvironments(activeEnvironments.filter(id => id !== envId));
+    } else if (activeEnvironments.length < 2) {
+      setActiveEnvironments([...activeEnvironments, envId]);
+    }
+  };
+
   const simulateSequence = () => {
     setIsSimulating(true);
 
