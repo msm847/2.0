@@ -383,7 +383,7 @@ const StructuralCognitionChamber: React.FC = () => {
           <div className="flex-1 flex flex-col">
             <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
               <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
-                Structural Input
+                Structural Motifs
               </h4>
               <p className="text-gray-400 text-sm mt-2">
                 Assemble up to three synthetic logic fragments:
@@ -458,7 +458,7 @@ const StructuralCognitionChamber: React.FC = () => {
           <div className="flex-1 flex flex-col">
             <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
               <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
-                Input Sequencer
+                Logic Configuration
               </h4>
               <p className="text-gray-400 text-sm mt-2">
                 Order is not cosmetic: each position reshapes the simulation's
