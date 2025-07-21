@@ -3,26 +3,18 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { sendContactForm } from "@/lib/emailService";
 import {
-  Shield,
-  Building,
-  Bot,
-  GraduationCap,
-  Users,
-  Scale,
-  FileSearch,
-  Landmark,
-  User,
   Mail,
   Upload,
   X,
   CheckCircle,
   AlertCircle,
   Briefcase,
+  Users,
+  Building,
 } from "lucide-react";
 
 const Partners = () => {
-  // Executive Contact Form State
-  const [isFormVisible, setIsFormVisible] = useState(false);
+  // Contact Form State
   const [fullName, setFullName] = useState("");
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
@@ -61,91 +53,71 @@ const Partners = () => {
     });
 
     if (invalidFiles.length > 0) {
-      setError(`Files too large (max 20MB): ${invalidFiles.join(", ")}`);
-      setTimeout(() => setError(""), 5000);
+      setError(
+        `File(s) too large: ${invalidFiles.join(", ")}. Maximum size is 20MB per file.`
+      );
+      return;
     }
 
-    if (validFiles.length > 0) {
-      setAttachedFiles((prev) => [...prev, ...validFiles]);
-    }
-
-    // Reset file input
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
+    setAttachedFiles([...attachedFiles, ...validFiles]);
+    setError("");
   };
 
-  const removeFile = (index) => {
-    setAttachedFiles((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  const formatFileSize = (bytes) => {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const sizes = ["Bytes", "KB", "MB"];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+  const removeFile = (indexToRemove) => {
+    setAttachedFiles(attachedFiles.filter((_, index) => index !== indexToRemove));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     setError("");
 
-    if (!fullName.trim() || !company.trim() || !position.trim()) {
-      setError("Please fill in all required fields");
-      return;
-    }
-
-    if (!message.trim()) {
-      setError("Please enter a message");
-      return;
-    }
-
-    setIsSubmitting(true);
-
     try {
-      // Send executive contact form using email service
+      // Send contact form using email service
       await sendContactForm({
-        type: "executive",
         fullName,
         company,
         position,
         message,
-        files: attachedFiles,
+        attachedFiles,
       });
 
       setIsSubmitted(true);
-      setFullName("");
-      setCompany("");
-      setPosition("");
-      setMessage("");
-      setAttachedFiles([]);
-      setIsFormVisible(false);
-
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (err) {
-      setError("Failed to send message. Please try again.");
+      resetForm();
+    } catch (error) {
+      console.error("Error sending form:", error);
+      setError("Failed to send message. Please try again or contact us directly.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const resetForm = () => {
-    setIsFormVisible(false);
-    setError("");
+    setIsSubmitted(false);
     setFullName("");
     setCompany("");
     setPosition("");
     setMessage("");
     setAttachedFiles([]);
+    setError("");
   };
+
+  // Auto-reset success message after 5 seconds
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted]);
 
   return (
     <div
       style={{
         backgroundColor: "#1C2722", // Fallback background
-        background: `linear-gradient(90deg,
-          rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%,
+        background: `linear-gradient(90deg, 
+          rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%, 
           rgba(52, 79, 64, ${1 - scrollIntensity * 0.2}) 100%)`,
         transition: "background 0.2s ease-out",
       }}
@@ -153,20 +125,44 @@ const Partners = () => {
       {/* PARTNERS SECTION */}
       <section className="py-20" aria-labelledby="partners-heading">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {/* Section Header */}
             <motion.div
-              className="text-center mb-16 pb-8 text-white font-display"
-              style={{
-                fontSize: "48px",
-                lineHeight: "60px",
-                fontWeight: "400",
-              }}
+              className="text-center mb-12"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              PARTNERS
+              <h2
+                className="text-white font-display mb-6"
+                style={{
+                  fontSize: "48px",
+                  lineHeight: "60px",
+                  fontWeight: "400",
+                }}
+              >
+                PARTNERS
+              </h2>
+              <div className="max-w-2xl mx-auto">
+                <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                  Strategic partnerships and enterprise integration for institutions requiring
+                  structural analysis at scale.
+                </p>
+                <div className="flex items-center justify-center space-x-8 text-sm text-green-400">
+                  <div className="flex items-center space-x-2">
+                    <Building className="w-4 h-4" />
+                    <span>Enterprise Solutions</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-4 h-4" />
+                    <span>Strategic Partnerships</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Mail className="w-4 h-4" />
+                    <span>info@vigilum.com</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             {/* Success Message */}
@@ -179,357 +175,169 @@ const Partners = () => {
               >
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-green-300 font-mono">
-                  Executive contact request sent successfully! We'll get back to
-                  you soon.
+                  Partnership inquiry sent successfully! We'll get back to you soon.
                 </span>
               </motion.div>
             )}
 
-            {/* Partners Grid */}
-            <div style={{ height: "600px", position: "relative" }}>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Core Principles Box */}
-                <motion.div
-                  className="group cursor-pointer"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  style={{
-                    background: "rgba(16, 32, 28, 0.95)",
-                    borderRadius: "12px",
-                    border: "1px solid rgba(0,255,204,0.08)",
-                    boxShadow:
-                      "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                    backdropFilter: "blur(10px)",
-                    height: "260px",
-                    transition: "all 0.15s ease",
-                  }}
-                >
-                  <div className="p-8 h-full flex flex-col justify-between">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="rounded-lg"
+              style={{
+                background: "rgba(16, 32, 28, 0.95)",
+                border: "1px solid rgba(0,255,204,0.15)",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+                backdropFilter: "blur(10px)",
+              }}
+            >
+              <div className="p-8">
+                <div className="flex items-center space-x-3 mb-6">
+                  <Briefcase className="w-6 h-6 text-green-400" />
+                  <h3 className="text-2xl font-bold text-white font-display">
+                    Partnership Inquiry
+                  </h3>
+                </div>
+
+                {/* Error Message */}
+                {error && (
+                  <div className="mb-6 p-4 bg-red-900/30 border border-red-700 rounded-lg flex items-center space-x-3">
+                    <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <span className="text-red-300 font-mono text-sm">{error}</span>
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Required Fields */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <div className="flex items-center space-x-2 mb-4">
-                        <Shield className="w-6 h-6 text-green-400" />
-                        <h3 className="text-2xl font-semibold text-white font-display">
-                          Core Principles
-                        </h3>
-                      </div>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        Foundational guidelines that drive our structural
-                        intelligence approach
-                      </p>
-                      <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
-                        <Mail className="w-4 h-4 mr-2" />
-                        &nbsp;
-                      </p>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
                     </div>
-                    <div className="mt-auto">
-                      <button
-                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
-                        onClick={() =>
-                          (window.location.href = "/core-principles")
-                        }
-                      >
-                        Explore
-                      </button>
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Company/Institution *
+                      </label>
+                      <input
+                        type="text"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
                     </div>
                   </div>
-                </motion.div>
 
-                {/* Actors Box */}
-                <motion.div
-                  className="group cursor-pointer"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  style={{
-                    background: "rgba(16, 32, 28, 0.95)",
-                    borderRadius: "12px",
-                    border: "1px solid rgba(0,255,204,0.08)",
-                    boxShadow:
-                      "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                    backdropFilter: "blur(10px)",
-                    height: "260px",
-                    transition: "all 0.15s ease",
-                  }}
-                >
-                  <div className="p-8 h-full flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center space-x-2 mb-4">
-                        <Users className="w-6 h-6 text-green-400" />
-                        <h3 className="text-2xl font-semibold text-white font-display">
-                          Actors
-                        </h3>
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Position/Title *
+                    </label>
+                    <input
+                      type="text"
+                      value={position}
+                      onChange={(e) => setPosition(e.target.value)}
+                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Partnership Details *
+                    </label>
+                    <div className="relative">
+                      <textarea
+                        value={message}
+                        onChange={(e) => {
+                          if (e.target.value.length <= 4000) {
+                            setMessage(e.target.value);
+                          }
+                        }}
+                        placeholder="Describe your partnership opportunity, integration requirements, or strategic collaboration needs..."
+                        rows={6}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
+                      <div className="absolute bottom-3 right-3 text-xs text-gray-500">
+                        {message.length}/4000
                       </div>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        Key stakeholders and institutional players in governance
-                        intelligence
-                      </p>
-                      <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
-                        <Mail className="w-4 h-4 mr-2" />
-                        &nbsp;
-                      </p>
-                    </div>
-                    <div className="mt-auto">
-                      <button
-                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
-                        onClick={() => (window.location.href = "/actors")}
-                      >
-                        Explore
-                      </button>
                     </div>
                   </div>
-                </motion.div>
 
-                {/* Executive Contact Box */}
-                <motion.div
-                  className="group cursor-pointer"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  style={{
-                    background: "rgba(16, 32, 28, 0.95)",
-                    borderRadius: "12px",
-                    border: "1px solid rgba(0,255,204,0.08)",
-                    boxShadow:
-                      "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                    backdropFilter: "blur(10px)",
-                    height: "260px",
-                    transition: "all 0.15s ease",
-                  }}
-                >
-                  <div className="p-8 h-full flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center space-x-2 mb-4">
-                        <Briefcase className="w-6 h-6 text-green-400" />
-                        <h3 className="text-2xl font-semibold text-white font-display">
-                          Executive Contact
-                        </h3>
-                      </div>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        Direct communication channel for strategic partnerships
-                        and enterprise integration
+                  {/* File Upload */}
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Attachments (Optional)
+                    </label>
+                    <div
+                      className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center cursor-pointer hover:border-green-500 transition-colors"
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                      <p className="text-gray-400 text-sm">
+                        Click to upload files or drag and drop
                       </p>
-                      <p className="text-green-400 text-sm font-mono mb-6 flex items-center">
-                        <Mail className="w-4 h-4 mr-2" />
-                        info@vigilum.com
+                      <p className="text-gray-500 text-xs mt-1">
+                        Max 20MB per file
                       </p>
                     </div>
-                    <div className="mt-auto">
-                      <button
-                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
-                        onClick={() => setIsFormVisible(true)}
-                      >
-                        Contact
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      className="hidden"
+                      onChange={handleFileUpload}
+                      accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+                    />
 
-            {/* Executive Contact Form Modal */}
-            {isFormVisible && (
-              <motion.div
-                className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                onClick={(e) => {
-                  if (e.target === e.currentTarget) resetForm();
-                }}
-              >
-                <motion.div
-                  className="bg-gray-900 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #0B1E16 0%, #081912 100%)",
-                    border: "1px solid rgba(0,255,204,0.15)",
-                    boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
-                  }}
-                >
-                  <div className="p-8">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center space-x-3">
-                        <Briefcase className="w-6 h-6 text-green-400" />
-                        <h2 className="text-2xl font-bold text-white font-display">
-                          Executive Contact
-                        </h2>
-                      </div>
-                      <button
-                        onClick={resetForm}
-                        className="text-gray-400 hover:text-white transition-colors"
-                      >
-                        <X className="w-6 h-6" />
-                      </button>
-                    </div>
-
-                    {/* Error Message */}
-                    {error && (
-                      <div className="mb-6 p-4 bg-red-900/30 border border-red-700 rounded-lg flex items-center space-x-3">
-                        <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-                        <span className="text-red-300 font-mono text-sm">
-                          {error}
-                        </span>
+                    {/* Attached Files */}
+                    {attachedFiles.length > 0 && (
+                      <div className="mt-4 space-y-2">
+                        {attachedFiles.map((file, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between p-2 bg-gray-800 rounded border border-gray-600"
+                          >
+                            <span className="text-white text-sm truncate">
+                              {file.name}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(index)}
+                              className="text-red-400 hover:text-red-300 transition-colors"
+                            >
+                              <X className="w-4 h-4" />
+                            </button>
+                          </div>
+                        ))}
                       </div>
                     )}
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Required Fields */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-sm font-medium text-green-400 mb-2">
-                            Full Name *
-                          </label>
-                          <input
-                            type="text"
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
-                            className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                            required
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-green-400 mb-2">
-                            Company/Institution *
-                          </label>
-                          <input
-                            type="text"
-                            value={company}
-                            onChange={(e) => setCompany(e.target.value)}
-                            className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-green-400 mb-2">
-                          Position/Title *
-                        </label>
-                        <input
-                          type="text"
-                          value={position}
-                          onChange={(e) => setPosition(e.target.value)}
-                          className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                          required
-                        />
-                      </div>
-
-                      {/* Message */}
-                      <div>
-                        <label className="block text-sm font-medium text-green-400 mb-2">
-                          Message *
-                        </label>
-                        <div className="relative">
-                          <textarea
-                            value={message}
-                            onChange={(e) => {
-                              if (e.target.value.length <= 4000) {
-                                setMessage(e.target.value);
-                              }
-                            }}
-                            placeholder="Describe your partnership opportunity, integration requirements, or strategic collaboration needs..."
-                            rows={6}
-                            className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
-                            required
-                          />
-                          <div className="absolute bottom-3 right-3 text-xs text-gray-500">
-                            {message.length}/4000
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* File Upload */}
-                      <div>
-                        <label className="block text-sm font-medium text-green-400 mb-2">
-                          Attachments (Optional)
-                        </label>
-                        <div
-                          className="border-2 border-dashed border-gray-600 rounded-lg p-4 text-center cursor-pointer hover:border-green-500 transition-colors"
-                          onClick={() => fileInputRef.current?.click()}
-                        >
-                          <Upload className="w-6 h-6 text-gray-400 mx-auto mb-2" />
-                          <p className="text-gray-400 text-sm">
-                            Click to upload files (max 20MB each)
-                          </p>
-                          <input
-                            ref={fileInputRef}
-                            type="file"
-                            multiple
-                            onChange={handleFileUpload}
-                            className="hidden"
-                            accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png"
-                          />
-                        </div>
-
-                        {/* Attached Files */}
-                        {attachedFiles.length > 0 && (
-                          <div className="mt-4 space-y-2">
-                            {attachedFiles.map((file, index) => (
-                              <div
-                                key={index}
-                                className="flex items-center justify-between p-3 bg-gray-800 rounded-lg border border-gray-600"
-                              >
-                                <div className="flex items-center space-x-3">
-                                  <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                                    <Upload className="w-4 h-4 text-white" />
-                                  </div>
-                                  <div>
-                                    <p className="text-white text-sm">
-                                      {file.name}
-                                    </p>
-                                    <p className="text-gray-400 text-xs">
-                                      {formatFileSize(file.size)}
-                                    </p>
-                                  </div>
-                                </div>
-                                <button
-                                  type="button"
-                                  onClick={() => removeFile(index)}
-                                  className="text-gray-400 hover:text-red-400 transition-colors"
-                                >
-                                  <X className="w-4 h-4" />
-                                </button>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Submit Button */}
-                      <div className="flex justify-end space-x-4 pt-4">
-                        <button
-                          type="button"
-                          onClick={resetForm}
-                          className="px-6 py-3 text-gray-400 hover:text-white transition-colors"
-                        >
-                          Cancel
-                        </button>
-                        <Button
-                          type="submit"
-                          disabled={
-                            isSubmitting ||
-                            !fullName.trim() ||
-                            !company.trim() ||
-                            !position.trim() ||
-                            !message.trim()
-                          }
-                          className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                          {isSubmitting ? "Sending..." : "Send Message"}
-                        </Button>
-                      </div>
-                    </form>
                   </div>
-                </motion.div>
-              </motion.div>
-            )}
+
+                  {/* Submit Button */}
+                  <div className="flex justify-end">
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Partnership Inquiry"}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
