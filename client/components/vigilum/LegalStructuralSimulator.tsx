@@ -353,10 +353,14 @@ const LegalStructuralSimulator: React.FC = () => {
                   {availableClauses.map((clause) => (
                     <motion.div
                       key={clause.id}
-                      className="h-24 p-3 rounded-2xl border border-gray-600 bg-gray-800/50 cursor-pointer hover:border-green-400/50 transition-all"
+                      className="p-4 rounded-lg border border-gray-600 cursor-pointer hover:border-green-400/50 transition-all"
+                      style={{
+                        backgroundColor: "#1f2e28",
+                        borderColor: "rgba(255,255,255,0.1)",
+                      }}
                       whileHover={{
                         scale: 1.02,
-                        boxShadow: `0 0 20px ${clause.color}40`,
+                        backgroundColor: "#2a3a32",
                       }}
                       onClick={() => {
                         // Find first empty slot
@@ -368,29 +372,17 @@ const LegalStructuralSimulator: React.FC = () => {
                         }
                       }}
                     >
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs font-mono text-gray-400">
-                          {clause.id}
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="text-lg font-mono text-white" style={{ color: "#eae2cc" }}>
+                          {clause.title}
+                        </h4>
+                        <span className="text-sm font-mono text-gray-400">
+                          w = {clause.weight.toFixed(2)}
                         </span>
-                        <div
-                          className="w-2 h-2 rounded-full"
-                          style={{ backgroundColor: clause.color }}
-                        />
                       </div>
-                      <h4 className="text-sm font-medium text-white mb-1">
-                        {clause.title}
-                      </h4>
-                      <div className="text-xs text-gray-400 space-y-1">
-                        <div>
-                          DG {clause.riskVector.DG.toFixed(2)} | RT{" "}
-                          {clause.riskVector.RT.toFixed(2)} | CI{" "}
-                          {clause.riskVector.CI.toFixed(2)} | SB{" "}
-                          {clause.riskVector.SB.toFixed(2)}
-                        </div>
-                        <div className="text-green-400">
-                          {clause.overrideFlags}
-                        </div>
-                      </div>
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        {clause.description}
+                      </p>
                     </motion.div>
                   ))}
                 </div>
