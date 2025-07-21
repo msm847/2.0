@@ -15,7 +15,7 @@ import InfiniteMenu from "@/components/ui/InfiniteMenu";
 
 const UseCases = () => {
   return (
-    <div className="py-20" style={{ backgroundColor: "#2E3D34" }}>
+    <div className="py-20" style={{ backgroundColor: "#24352E" }}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
