@@ -46,7 +46,9 @@ const VigilumPage = () => {
     >
       <Navigation />
       <Hero />
-      <PerceptionPerspective />
+      <div id="perception-perspective">
+        <PerceptionPerspective />
+      </div>
       <div id="modules">
         <ModuleGrid />
       </div>
