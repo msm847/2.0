@@ -472,19 +472,31 @@ const LegalStructuralSimulator: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Simulate Button - positioned below slot 3 with natural spacing */}
-                <motion.button
-                  onClick={simulateSequence}
-                  disabled={
-                    selectedClauses.every((c) => c === null) || isSimulating
-                  }
-                  className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
-                  style={{ marginTop: "40px" }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {isSimulating ? "PROCESSING..." : "EXECUTE COGNITION"}
-                </motion.button>
+                {/* Action Buttons - positioned below slot 3 with natural spacing */}
+                <div className="flex gap-3" style={{ marginTop: "40px" }}>
+                  <motion.button
+                    onClick={simulateSequence}
+                    disabled={
+                      selectedClauses.every((c) => c === null) || isSimulating
+                    }
+                    className="flex-1 py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {isSimulating ? "PROCESSING..." : "EXECUTE COGNITION"}
+                  </motion.button>
+
+                  {(selectedClauses.some(c => c !== null) || activeEnvironments.length > 0 || simulationResult) && (
+                    <motion.button
+                      onClick={resetSimulation}
+                      className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      RESET
+                    </motion.button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
