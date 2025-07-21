@@ -627,6 +627,18 @@ const LegalStructuralSimulator: React.FC = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Reset Button */}
+                <div className="flex justify-center mt-8">
+                  <motion.button
+                    onClick={resetSimulation}
+                    className="px-8 py-3 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-xl transition-colors border border-gray-500"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    RESET SIMULATION
+                  </motion.button>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
