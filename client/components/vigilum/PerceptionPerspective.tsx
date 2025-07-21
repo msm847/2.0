@@ -297,7 +297,8 @@ const PerceptionPerspective = () => {
                         letterSpacing: "1.5px",
                         textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
                         transitionDuration: "0.3s",
-                        transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                        transitionTimingFunction:
+                          "cubic-bezier(0.4, 0, 0.2, 1)",
                         padding: "12px 24px",
                         cursor: "pointer",
                         position: "relative",
@@ -321,7 +322,8 @@ const PerceptionPerspective = () => {
                           "rgba(255, 255, 255, 0.1)";
                         e.currentTarget.style.boxShadow =
                           "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
-                        e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)";
+                        e.currentTarget.style.color =
+                          "rgba(255, 255, 255, 0.8)";
                       }}
                     >
                       {label.toUpperCase()}
