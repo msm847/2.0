@@ -305,39 +305,6 @@ const StructuralCognitionChamber: React.FC = () => {
   return (
     <section className="pt-20 px-4" style={{ backgroundColor: "#102B21" }}>
       <div className="container mx-auto max-w-7xl">
-        {/* Welcome Overlay */}
-        <AnimatePresence>
-          {showWelcome && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-              onClick={() => setShowWelcome(false)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-gray-900 rounded-lg p-8 max-w-lg mx-4 border border-green-400/20"
-              >
-                <h3 className="text-xl font-display text-white mb-4">Welcome to the Structural Cognition Chamber</h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  Construct, stage, and simulate a synthetic economic environment.<br/>
-                  Each input is a logic fragment — not a contract, but a scenario.<br/>
-                  Simulation reveals what emerges when structure and pressure interact.
-                </p>
-                <button
-                  onClick={() => setShowWelcome(false)}
-                  className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
-                >
-                  Begin
-                </button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         {/* Header */}
         <div className="text-left mb-8">
           <motion.h3
