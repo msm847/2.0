@@ -42,6 +42,7 @@ const TeamContact = () => {
   const [dragStartPosition, setDragStartPosition] = useState(0);
   const [autoScrollDisabled, setAutoScrollDisabled] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [scrollDepth, setScrollDepth] = useState(0);
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
   const inactivityTimeoutRef = useRef(null);
 
