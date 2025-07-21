@@ -426,7 +426,12 @@ const TeamContact = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#1C211B" }}>
+    <div style={{
+      background: `linear-gradient(120deg,
+        rgba(28, 33, 27, ${1 - scrollDepth * 0.2}) 0%,
+        rgba(40, 58, 47, ${1 - scrollDepth * 0.1}) 100%)`,
+      transition: "background 0.2s ease-out"
+    }}>
       {/* TEAM SECTION */}
       <section className="py-20" aria-labelledby="team-heading">
         <div className="container mx-auto px-4">
