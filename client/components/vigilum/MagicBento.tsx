@@ -472,7 +472,6 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                           lineHeight: "13px",
                           color: "#9DE6C6",
                           fontWeight: "500",
-                          fontStyle: "italic",
                         }}
                       >
                         {card.signature}
