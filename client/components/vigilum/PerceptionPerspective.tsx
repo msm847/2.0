@@ -268,7 +268,7 @@ const PerceptionPerspective = () => {
                     style={{
                       display: "inline-block",
                       backdropFilter: "blur(20px) saturate(180%)",
-                      background: "rgba(255, 255, 255, 0.05)",
+                      background: "transparent",
                       borderColor: "rgba(255, 255, 255, 0.1)",
                       borderRadius: "25px",
                       borderWidth: "1px",
