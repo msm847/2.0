@@ -512,7 +512,7 @@ const Navigation = () => {
                 onClick={() => handleNavigation("#perception-perspective")}
                 className={`${getButtonStyles("perception-perspective", activeSection === "perception-perspective")} text-left`}
               >
-                REALITY
+                reality
               </button>
               <button
                 onClick={() => handleNavigation("#modules")}
