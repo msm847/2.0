@@ -130,7 +130,7 @@ const environmentOperators: EnvironmentOperator[] = [
     description:
       "Constrains available cashflow and accelerates funding bottlenecks. Delays, splits, and fragmented authorizations intensify; hidden deficits become more likely.",
     transformEffect:
-      "Amplifies the impact of Latency Differential, Revenue Path Splitting, and Quantization Gate Fragmentation",
+      "Amplifies the impact of Latency Differential, Revenue Path Splitting, and Segmented Authorization Drift",
   },
   {
     id: "E2",
@@ -148,7 +148,7 @@ const environmentOperators: EnvironmentOperator[] = [
     description:
       "Weakens all transparency and monitoring channels. Flow paths, triggers, and module effects become harder to distinguish, raising detection thresholds and audit risk.",
     transformEffect:
-      "Obscures flows in Revenue Path Splitting and Quantization Gate Fragmentation",
+      "Obscures flows in Revenue Path Splitting and Segmented Authorization Drift",
   },
   {
     id: "E4",
