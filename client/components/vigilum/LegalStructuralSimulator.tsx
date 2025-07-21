@@ -37,6 +37,7 @@ const availableClauses: ClauseData[] = [
   {
     id: "E1",
     title: "Deferred Allocation Logic",
+    weight: 0.42,
     riskVector: { DG: 0.42, RT: 0.2, CI: 0.15, SB: 0.18 },
     overrideFlags: "delays deployment",
     typology: "RT",
@@ -46,6 +47,7 @@ const availableClauses: ClauseData[] = [
   {
     id: "E2",
     title: "Threshold Conditionality",
+    weight: 0.37,
     riskVector: { DG: 0.37, RT: 0.25, CI: 0.12, SB: 0.21 },
     overrideFlags: "metric gated",
     typology: "CI",
@@ -55,6 +57,7 @@ const availableClauses: ClauseData[] = [
   {
     id: "E3",
     title: "Donor-Tied Budgeting",
+    weight: 0.53,
     riskVector: { DG: 0.53, RT: 0.18, CI: 0.22, SB: 0.15 },
     overrideFlags: "external alignment",
     typology: "DG",
@@ -64,6 +67,7 @@ const availableClauses: ClauseData[] = [
   {
     id: "E4",
     title: "Multi-Level Disbursement",
+    weight: 0.48,
     riskVector: { DG: 0.48, RT: 0.16, CI: 0.19, SB: 0.23 },
     overrideFlags: "layer approval",
     typology: "SB",
@@ -73,6 +77,7 @@ const availableClauses: ClauseData[] = [
   {
     id: "E5",
     title: "Performance-Gated Release",
+    weight: 0.45,
     riskVector: { DG: 0.45, RT: 0.21, CI: 0.17, SB: 0.19 },
     overrideFlags: "KPI triggered",
     typology: "RT",
@@ -82,6 +87,7 @@ const availableClauses: ClauseData[] = [
   {
     id: "E6",
     title: "Asset-Backed Procurement",
+    weight: 0.51,
     riskVector: { DG: 0.51, RT: 0.14, CI: 0.24, SB: 0.16 },
     overrideFlags: "asset offset",
     typology: "CI",
