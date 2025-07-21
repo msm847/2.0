@@ -354,11 +354,25 @@ const StructuralCognitionChamber: React.FC = () => {
 
           {/* Epistemic Statement */}
           <div className="mb-6">
-            <p className="text-gray-400 text-sm font-mono leading-relaxed">
-              This is a logic environment.
+            <div className="text-gray-400 text-sm font-mono leading-relaxed">
+              <SplitText
+                text="This is a logic environment."
+                className="text-gray-400 text-sm font-mono"
+                delay={50}
+                duration={0.8}
+                splitType="chars"
+                textAlign="left"
+              />
               <br />
-              Structural consequence: the space between law and reality.
-            </p>
+              <SplitText
+                text="Structural consequence: the space between law and reality."
+                className="text-gray-400 text-sm font-mono"
+                delay={80}
+                duration={0.8}
+                splitType="chars"
+                textAlign="left"
+              />
+            </div>
           </div>
         </div>
 
