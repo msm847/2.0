@@ -1188,18 +1188,6 @@ export default function InfiniteMenu({ items = [] }) {
 
       {activeItem && (
         <>
-          {/* Number display for active sphere */}
-          <div className={`sphere-number ${isMoving ? "inactive" : "active"}`}
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            {activeItem.number || "?"}
-          </div>
-
           <h2 className={`face-title ${isMoving ? "inactive" : "active"}`}>
             {activeItem.title}
           </h2>
