@@ -261,55 +261,73 @@ const PerceptionPerspective = () => {
 
             {activeSection === "perspective" && (
               <div className="flex flex-wrap justify-center gap-4 mt-8">
-                {["Cultural", "Economic", "Social"].map((label, index) => (
-                  <button
-                    key={label}
-                    className="glass-button"
-                    style={{
-                      display: "inline-block",
-                      backdropFilter: "blur(20px) saturate(180%)",
-                      background: "transparent",
-                      borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "25px",
-                      borderWidth: "1px",
-                      boxShadow:
-                        "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-                      color: "rgba(255, 255, 255, 0.8)",
-                      fontFamily: "var(--font-display)",
-                      fontWeight: "500",
-                      letterSpacing: "1.5px",
-                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      transitionDuration: "0.3s",
-                      transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-                      padding: "12px 24px",
-                      cursor: "pointer",
-                      position: "relative",
-                      overflow: "hidden",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform =
-                        "translateY(-2px) scale(1.02)";
-                      e.currentTarget.style.background = "transparent";
-                      e.currentTarget.style.borderColor =
-                        "rgba(255, 255, 255, 0.2)";
-                      e.currentTarget.style.boxShadow =
-                        "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform =
-                        "translateY(0px) scale(1)";
-                      e.currentTarget.style.background = "transparent";
-                      e.currentTarget.style.borderColor =
-                        "rgba(255, 255, 255, 0.1)";
-                      e.currentTarget.style.boxShadow =
-                        "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
-                      e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)";
-                    }}
-                  >
-                    {label.toUpperCase()}
-                  </button>
-                ))}
+                {["Cultural", "Economic", "Social"].map((label, index) => {
+                  // Define specific gradients for each button
+                  const getButtonBackground = (buttonLabel) => {
+                    switch (buttonLabel) {
+                      case "Cultural":
+                        return "linear-gradient(135deg, #1a2e27, #2b4a3b, #486e60)";
+                      case "Economic":
+                        return "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)";
+                      case "Social":
+                        return "linear-gradient(135deg, #261f1e, #543d38, #8b5c57)";
+                      default:
+                        return "transparent";
+                    }
+                  };
+
+                  const buttonBackground = getButtonBackground(label);
+
+                  return (
+                    <button
+                      key={label}
+                      className="glass-button"
+                      style={{
+                        display: "inline-block",
+                        backdropFilter: "blur(20px) saturate(180%)",
+                        background: buttonBackground,
+                        borderColor: "rgba(255, 255, 255, 0.1)",
+                        borderRadius: "25px",
+                        borderWidth: "1px",
+                        boxShadow:
+                          "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                        color: "rgba(255, 255, 255, 0.8)",
+                        fontFamily: "var(--font-display)",
+                        fontWeight: "500",
+                        letterSpacing: "1.5px",
+                        textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                        transitionDuration: "0.3s",
+                        transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                        padding: "12px 24px",
+                        cursor: "pointer",
+                        position: "relative",
+                        overflow: "hidden",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform =
+                          "translateY(-2px) scale(1.02)";
+                        e.currentTarget.style.background = buttonBackground;
+                        e.currentTarget.style.borderColor =
+                          "rgba(255, 255, 255, 0.2)";
+                        e.currentTarget.style.boxShadow =
+                          "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset";
+                        e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform =
+                          "translateY(0px) scale(1)";
+                        e.currentTarget.style.background = buttonBackground;
+                        e.currentTarget.style.borderColor =
+                          "rgba(255, 255, 255, 0.1)";
+                        e.currentTarget.style.boxShadow =
+                          "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
+                        e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)";
+                      }}
+                    >
+                      {label.toUpperCase()}
+                    </button>
+                  );
+                })}
               </div>
             )}
           </motion.div>
