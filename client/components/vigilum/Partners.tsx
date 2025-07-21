@@ -129,7 +129,7 @@ const Partners = () => {
   };
 
   return (
-    <div style={{ 
+    <div style={{
       backgroundColor: "#081912", // Slightly darker than Mission section
       background: "linear-gradient(135deg, #081912 0%, #0A1D16 100%)"
     }}>
@@ -154,7 +154,7 @@ const Partners = () => {
 
             {/* Success Message */}
             {isSubmitted && (
-              <motion.div 
+              <motion.div
                 className="mb-8 p-4 bg-green-900/30 border border-green-700 rounded-lg flex items-center justify-center space-x-3"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ const Partners = () => {
 
             {/* Partners Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              
+
               {/* Core Principles Box */}
               <motion.div
                 className="group cursor-pointer"
@@ -197,7 +197,7 @@ const Partners = () => {
                     </p>
                   </div>
                   <div className="mt-auto">
-                    <button 
+                    <button
                       className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
                       onClick={() => window.location.href = "/core-principles"}
                     >
@@ -234,7 +234,7 @@ const Partners = () => {
                     </p>
                   </div>
                   <div className="mt-auto">
-                    <button 
+                    <button
                       className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
                       onClick={() => window.location.href = "/actors"}
                     >
@@ -269,12 +269,16 @@ const Partners = () => {
                         Executive Contact
                       </h3>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
                       Direct communication channel for strategic partnerships and enterprise integration
+                    </p>
+                    <p className="text-green-400 text-sm font-mono mb-6 flex items-center">
+                      <Mail className="w-4 h-4 mr-2" />
+                      info@vigilum.com
                     </p>
                   </div>
                   <div className="mt-auto">
-                    <button 
+                    <button
                       className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
                       onClick={() => setIsFormVisible(true)}
                     >
