@@ -467,14 +467,14 @@ const LegalStructuralSimulator: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Simulate Button - exactly 24px below slot 3 */}
+                {/* Simulate Button - positioned below slot 3 with natural spacing */}
                 <motion.button
                   onClick={simulateSequence}
                   disabled={
                     selectedClauses.every((c) => c === null) || isSimulating
                   }
                   className="w-full py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
-                  style={{ marginTop: "24px" }}
+                  style={{ marginTop: "40px" }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
