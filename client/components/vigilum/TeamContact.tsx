@@ -454,7 +454,7 @@ const TeamContact = () => {
             </motion.div>
 
             {/* MagicBento Grid */}
-            <div style={{ height: "600px", position: "relative" }}>
+            <div style={{ height: "450px", position: "relative" }}>
               <MagicBento
                 textAutoHide={true}
                 enableStars={true}
