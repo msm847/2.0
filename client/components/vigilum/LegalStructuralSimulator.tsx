@@ -655,12 +655,11 @@ const LegalStructuralSimulator: React.FC = () => {
 
           {!simulationResult && !isSimulating && (
             <div className="text-center text-gray-500 py-16">
-              <div className="text-6xl mb-6">⚡</div>
-              <div className="text-xl font-mono">
-                Configure sequence and simulate to see results
+              <div className="text-2xl font-mono mb-4" style={{ color: "#cab27f" }}>
+                ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
               </div>
-              <div className="text-sm text-gray-400 mt-2">
-                Add clauses to staging field and select environment operator
+              <div className="text-lg font-mono text-gray-400">
+                Simulation inactive — structural input incomplete{".".repeat(ellipsisCount)}
               </div>
             </div>
           )}
