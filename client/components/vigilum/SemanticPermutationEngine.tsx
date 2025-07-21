@@ -384,7 +384,12 @@ const SemanticPermutationEngine = () => {
   };
 
   return (
-    <div className="py-20 px-4" style={{ backgroundColor: "#1A2B1F" }}>
+    <div
+      className="py-20 px-4"
+      style={{
+        background: "linear-gradient(90deg, #1F2A1C 0%, #324732 100%)",
+        backgroundColor: "#2F3B29" // Fallback for non-gradient support
+      }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
