@@ -124,23 +124,17 @@
 
 @media (min-width: 1024px) {
   .card-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card:nth-child(1) {
-    grid-column: span 2;
-    min-height: 280px;
+    grid-column: span 1;
+    min-height: 360px;
   }
 
   .card:nth-child(2) {
-    grid-column: span 2;
-    min-height: 320px;
-  }
-
-  .card:nth-child(3) {
     grid-column: span 1;
-    grid-row: 1 / span 2;
-    min-height: 340px;
+    min-height: 360px;
   }
 }
 
