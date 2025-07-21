@@ -165,18 +165,23 @@ const environmentOperators: EnvironmentOperator[] = [
 const exampleScenarios = [
   {
     inputs: ["S1", "S3", "S5"],
-    operators: ["E2", "E3"],
-    name: "Distributed Persistence with External Override",
+    operators: ["E2", "E4"],
+    name: "Recursive Persistence with Exogenous Override",
   },
   {
     inputs: ["S2", "S4", "S6"],
-    operators: ["E1"],
-    name: "Fragmented Incentive Cascade",
+    operators: ["E1", "E3"],
+    name: "Liquidity-Constrained Fragmentation Network",
   },
   {
     inputs: ["S1", "S4", "S5"],
-    operators: ["E2"],
-    name: "Temporal Displacement Network",
+    operators: ["E2", "E3"],
+    name: "Authority-Coupled Signal Degradation",
+  },
+  {
+    inputs: ["S2", "S3", "S6"],
+    operators: ["E1", "E4"],
+    name: "Exogenous Liquidity Persistence Loop",
   },
 ];
 
