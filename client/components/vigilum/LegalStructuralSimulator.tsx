@@ -43,7 +43,7 @@ const structuralInputs: StructuralInput[] = [
   {
     id: "S1",
     title: "Revenue Path Splitting",
-    weight: 0.60,
+    weight: 0.6,
     description:
       "Simulates multi-stage, opaquely routed funding flows. Triggers cross-discipline risk thresholds.",
     tags: ["#multi-stage", "#opacity", "#cross-discipline"],
@@ -144,7 +144,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E3",
     name: "Audit Signal Degradation",
-    weight: 0.60,
+    weight: 0.6,
     description:
       "Weakens all transparency and monitoring channels. Flow paths, triggers, and module effects become harder to distinguish, raising detection thresholds and audit risk.",
     transformEffect:
