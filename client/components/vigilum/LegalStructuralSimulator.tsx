@@ -306,7 +306,7 @@ const StructuralCognitionChamber: React.FC = () => {
     <section className="pt-20 px-4" style={{ backgroundColor: "#102B21" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="mb-8">
           <motion.h3
             className="text-heading-md text-white mb-4"
             initial={{ opacity: 0, y: 30 }}
@@ -668,7 +668,7 @@ const StructuralCognitionChamber: React.FC = () => {
                             </div>
                             <div className="text-xs font-mono space-y-1" style={{ color: "#cab27f" }}>
                               <div>ϕ = {result.phi.toFixed(2)}</div>
-                              <div>Drift: {result.typologyDrift}°</div>
+                              <div>Drift: {result.typologyDrift}��</div>
                               <div>Depth: {result.overrideChainDepth}</div>
                               <div className="text-gray-400">{result.configurationName}</div>
                             </div>
