@@ -61,30 +61,83 @@ in vec2 vUvs;
 in float vAlpha;
 flat in int vInstanceId;
 
+// Simple number rendering function
+float renderNumber(vec2 uv, int number) {
+    // Center the UV coordinates
+    uv = (uv - 0.5) * 4.0; // Scale up for visibility
+
+    // Simple digit patterns using distance fields
+    float d = 999.0;
+
+    if (number == 1) {
+        // Render "1" - simple vertical line
+        d = min(d, abs(uv.x) - 0.1);
+    }
+    else if (number == 2) {
+        // Render "2" - simplified shape
+        if (uv.y > 0.3) d = min(d, abs(uv.x + 0.3) - 0.3);
+        else if (uv.y > -0.3) d = min(d, abs(uv.x - 0.3) - 0.3);
+        else d = min(d, abs(uv.x + 0.3) - 0.3);
+        d = min(d, abs(uv.y - 0.6) - 0.1);
+        d = min(d, abs(uv.y) - 0.1);
+        d = min(d, abs(uv.y + 0.6) - 0.1);
+    }
+    else if (number == 3) {
+        // Render "3" - simplified
+        d = min(d, abs(uv.x - 0.3) - 0.3);
+        d = min(d, abs(uv.y - 0.6) - 0.1);
+        d = min(d, abs(uv.y) - 0.1);
+        d = min(d, abs(uv.y + 0.6) - 0.1);
+    }
+    else if (number == 4) {
+        // Render "4" - simplified
+        if (uv.y > 0.0) d = min(d, abs(uv.x + 0.3) - 0.1);
+        d = min(d, abs(uv.x - 0.3) - 0.1);
+        d = min(d, abs(uv.y) - 0.1);
+    }
+    else if (number == 5) {
+        // Render "5" - simplified
+        d = min(d, abs(uv.x + 0.3) - 0.3);
+        d = min(d, abs(uv.y - 0.6) - 0.1);
+        d = min(d, abs(uv.y) - 0.1);
+        d = min(d, abs(uv.y + 0.6) - 0.1);
+        if (uv.y > 0.0) d = min(d, abs(uv.x + 0.6) - 0.1);
+        else d = min(d, abs(uv.x - 0.6) - 0.1);
+    }
+    else if (number == 6) {
+        // Render "6" - simplified
+        d = min(d, abs(uv.x + 0.3) - 0.3);
+        d = min(d, abs(uv.y - 0.6) - 0.1);
+        d = min(d, abs(uv.y) - 0.1);
+        d = min(d, abs(uv.y + 0.6) - 0.1);
+        if (uv.y < 0.0) d = min(d, abs(uv.x - 0.3) - 0.3);
+    }
+
+    return 1.0 - smoothstep(0.0, 0.1, d);
+}
+
 void main() {
     int itemIndex = vInstanceId % uItemCount;
-    int cellsPerRow = uAtlasSize;
-    int cellX = itemIndex % cellsPerRow;
-    int cellY = itemIndex / cellsPerRow;
-    vec2 cellSize = vec2(1.0) / vec2(float(cellsPerRow));
-    vec2 cellOffset = vec2(float(cellX), float(cellY)) * cellSize;
+    int number = (itemIndex % 6) + 1; // Numbers 1-6
 
-    ivec2 texSize = textureSize(uTex, 0);
-    float imageAspect = float(texSize.x) / float(texSize.y);
-    float containerAspect = 1.0;
+    // Render the number
+    float numberMask = renderNumber(vUvs, number);
 
-    float scale = max(imageAspect / containerAspect,
-                     containerAspect / imageAspect);
+    // Base color from grey scale based on item index
+    vec3 greyColors[6];
+    greyColors[0] = vec3(0.16, 0.16, 0.16); // #2A2A2A
+    greyColors[1] = vec3(0.25, 0.25, 0.25); // #404040
+    greyColors[2] = vec3(0.35, 0.35, 0.35); // #5A5A5A
+    greyColors[3] = vec3(0.44, 0.44, 0.44); // #707070
+    greyColors[4] = vec3(0.54, 0.54, 0.54); // #8A8A8A
+    greyColors[5] = vec3(0.63, 0.63, 0.63); // #A0A0A0
 
-    vec2 st = vec2(vUvs.x, 1.0 - vUvs.y);
-    st = (st - 0.5) * scale + 0.5;
+    vec3 baseColor = greyColors[itemIndex % 6];
 
-    st = clamp(st, 0.0, 1.0);
+    // Mix number color (white) with base color
+    vec3 finalColor = mix(baseColor, vec3(1.0), numberMask);
 
-    st = st * cellSize + cellOffset;
-
-    outColor = texture(uTex, st);
-    outColor.a *= vAlpha;
+    outColor = vec4(finalColor, vAlpha);
 }
 `;
 
