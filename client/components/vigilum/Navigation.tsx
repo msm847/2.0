@@ -536,7 +536,7 @@ const Navigation = () => {
                 onClick={() => handleNavigation("#cases")}
                 className={`${getButtonStyles("cases", activeSection === "cases")} text-left`}
               >
-                STRUCTURAL RETROSPECTIVES
+                RETROSPECTIVES
               </button>
               <button
                 onClick={() => handleNavigation("#team")}
