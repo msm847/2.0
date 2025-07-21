@@ -424,7 +424,7 @@ const TeamContact = () => {
               style={{
                 fontSize: "48px",
                 lineHeight: "60px",
-                fontWeight: "400"
+                fontWeight: "400",
               }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}

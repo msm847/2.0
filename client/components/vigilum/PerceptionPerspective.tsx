@@ -206,7 +206,7 @@ const PerceptionPerspective = () => {
         boxShadow: "none",
         overflow: "hidden",
         position: "relative",
-        zIndex: 1
+        zIndex: 1,
       }}
     >
       <div className="max-w-screen-xl mx-auto">
@@ -289,8 +289,7 @@ const PerceptionPerspective = () => {
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(-2px) scale(1.02)";
-                      e.currentTarget.style.background =
-                        "transparent";
+                      e.currentTarget.style.background = "transparent";
                       e.currentTarget.style.borderColor =
                         "rgba(255, 255, 255, 0.2)";
                       e.currentTarget.style.boxShadow =
@@ -300,8 +299,7 @@ const PerceptionPerspective = () => {
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
-                      e.currentTarget.style.background =
-                        "transparent";
+                      e.currentTarget.style.background = "transparent";
                       e.currentTarget.style.borderColor =
                         "rgba(255, 255, 255, 0.1)";
                       e.currentTarget.style.boxShadow =

@@ -129,10 +129,12 @@ const Partners = () => {
   };
 
   return (
-    <div style={{
-      backgroundColor: "#081912", // Slightly darker than Mission section
-      background: "linear-gradient(135deg, #081912 0%, #0A1D16 100%)"
-    }}>
+    <div
+      style={{
+        backgroundColor: "#081912", // Slightly darker than Mission section
+        background: "linear-gradient(135deg, #081912 0%, #0A1D16 100%)",
+      }}
+    >
       {/* PARTNERS SECTION */}
       <section className="py-20" aria-labelledby="partners-heading">
         <div className="container mx-auto px-4">
@@ -143,7 +145,7 @@ const Partners = () => {
               style={{
                 fontSize: "48px",
                 lineHeight: "60px",
-                fontWeight: "400"
+                fontWeight: "400",
               }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +164,8 @@ const Partners = () => {
               >
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-green-300 font-mono">
-                  Executive contact request sent successfully! We'll get back to you soon.
+                  Executive contact request sent successfully! We'll get back to
+                  you soon.
                 </span>
               </motion.div>
             )}
@@ -170,138 +173,145 @@ const Partners = () => {
             {/* Partners Grid */}
             <div style={{ height: "600px", position: "relative" }}>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-              {/* Core Principles Box */}
-              <motion.div
-                className="group cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                style={{
-                  background: "rgba(16, 32, 28, 0.95)",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(0,255,204,0.08)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                  backdropFilter: "blur(10px)",
-                  height: "260px",
-                  transition: "all 0.15s ease"
-                }}
-              >
-                <div className="p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <Shield className="w-6 h-6 text-green-400" />
-                      <h3 className="text-2xl font-semibold text-white font-display">
-                        Core Principles
-                      </h3>
+                {/* Core Principles Box */}
+                <motion.div
+                  className="group cursor-pointer"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: "rgba(16, 32, 28, 0.95)",
+                    borderRadius: "12px",
+                    border: "1px solid rgba(0,255,204,0.08)",
+                    boxShadow:
+                      "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
+                    backdropFilter: "blur(10px)",
+                    height: "260px",
+                    transition: "all 0.15s ease",
+                  }}
+                >
+                  <div className="p-8 h-full flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center space-x-2 mb-4">
+                        <Shield className="w-6 h-6 text-green-400" />
+                        <h3 className="text-2xl font-semibold text-white font-display">
+                          Core Principles
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        Foundational guidelines that drive our structural
+                        intelligence approach
+                      </p>
+                      <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
+                        <Mail className="w-4 h-4 mr-2" />
+                        &nbsp;
+                      </p>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                      Foundational guidelines that drive our structural intelligence approach
-                    </p>
-                    <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
-                      <Mail className="w-4 h-4 mr-2" />
-                      &nbsp;
-                    </p>
-                  </div>
-                  <div className="mt-auto">
-                    <button
-                      className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
-                      onClick={() => window.location.href = "/core-principles"}
-                    >
-                      Explore
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Actors Box */}
-              <motion.div
-                className="group cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                style={{
-                  background: "rgba(16, 32, 28, 0.95)",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(0,255,204,0.08)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                  backdropFilter: "blur(10px)",
-                  height: "260px",
-                  transition: "all 0.15s ease"
-                }}
-              >
-                <div className="p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <Users className="w-6 h-6 text-green-400" />
-                      <h3 className="text-2xl font-semibold text-white font-display">
-                        Actors
-                      </h3>
+                    <div className="mt-auto">
+                      <button
+                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
+                        onClick={() =>
+                          (window.location.href = "/core-principles")
+                        }
+                      >
+                        Explore
+                      </button>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                      Key stakeholders and institutional players in governance intelligence
-                    </p>
-                    <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
-                      <Mail className="w-4 h-4 mr-2" />
-                      &nbsp;
-                    </p>
                   </div>
-                  <div className="mt-auto">
-                    <button
-                      className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
-                      onClick={() => window.location.href = "/actors"}
-                    >
-                      Explore
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
 
-              {/* Executive Contact Box */}
-              <motion.div
-                className="group cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                style={{
-                  background: "rgba(16, 32, 28, 0.95)",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(0,255,204,0.08)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                  backdropFilter: "blur(10px)",
-                  height: "260px",
-                  transition: "all 0.15s ease"
-                }}
-              >
-                <div className="p-8 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <Briefcase className="w-6 h-6 text-green-400" />
-                      <h3 className="text-2xl font-semibold text-white font-display">
-                        Executive Contact
-                      </h3>
+                {/* Actors Box */}
+                <motion.div
+                  className="group cursor-pointer"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: "rgba(16, 32, 28, 0.95)",
+                    borderRadius: "12px",
+                    border: "1px solid rgba(0,255,204,0.08)",
+                    boxShadow:
+                      "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
+                    backdropFilter: "blur(10px)",
+                    height: "260px",
+                    transition: "all 0.15s ease",
+                  }}
+                >
+                  <div className="p-8 h-full flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center space-x-2 mb-4">
+                        <Users className="w-6 h-6 text-green-400" />
+                        <h3 className="text-2xl font-semibold text-white font-display">
+                          Actors
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        Key stakeholders and institutional players in governance
+                        intelligence
+                      </p>
+                      <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
+                        <Mail className="w-4 h-4 mr-2" />
+                        &nbsp;
+                      </p>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                      Direct communication channel for strategic partnerships and enterprise integration
-                    </p>
-                    <p className="text-green-400 text-sm font-mono mb-6 flex items-center">
-                      <Mail className="w-4 h-4 mr-2" />
-                      info@vigilum.com
-                    </p>
+                    <div className="mt-auto">
+                      <button
+                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
+                        onClick={() => (window.location.href = "/actors")}
+                      >
+                        Explore
+                      </button>
+                    </div>
                   </div>
-                  <div className="mt-auto">
-                    <button
-                      className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
-                      onClick={() => setIsFormVisible(true)}
-                    >
-                      Contact
-                    </button>
+                </motion.div>
+
+                {/* Executive Contact Box */}
+                <motion.div
+                  className="group cursor-pointer"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  style={{
+                    background: "rgba(16, 32, 28, 0.95)",
+                    borderRadius: "12px",
+                    border: "1px solid rgba(0,255,204,0.08)",
+                    boxShadow:
+                      "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
+                    backdropFilter: "blur(10px)",
+                    height: "260px",
+                    transition: "all 0.15s ease",
+                  }}
+                >
+                  <div className="p-8 h-full flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center space-x-2 mb-4">
+                        <Briefcase className="w-6 h-6 text-green-400" />
+                        <h3 className="text-2xl font-semibold text-white font-display">
+                          Executive Contact
+                        </h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        Direct communication channel for strategic partnerships
+                        and enterprise integration
+                      </p>
+                      <p className="text-green-400 text-sm font-mono mb-6 flex items-center">
+                        <Mail className="w-4 h-4 mr-2" />
+                        info@vigilum.com
+                      </p>
+                    </div>
+                    <div className="mt-auto">
+                      <button
+                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-green-400 bg-green-900/20 border border-green-700 rounded-lg hover:bg-green-900/40 transition-all duration-200"
+                        onClick={() => setIsFormVisible(true)}
+                      >
+                        Contact
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
               </div>
             </div>
 
@@ -322,9 +332,10 @@ const Partners = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                   style={{
-                    background: "linear-gradient(135deg, #0B1E16 0%, #081912 100%)",
+                    background:
+                      "linear-gradient(135deg, #0B1E16 0%, #081912 100%)",
                     border: "1px solid rgba(0,255,204,0.15)",
-                    boxShadow: "0 20px 60px rgba(0,0,0,0.6)"
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
                   }}
                 >
                   <div className="p-8">
@@ -347,7 +358,9 @@ const Partners = () => {
                     {error && (
                       <div className="mb-6 p-4 bg-red-900/30 border border-red-700 rounded-lg flex items-center space-x-3">
                         <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-                        <span className="text-red-300 font-mono text-sm">{error}</span>
+                        <span className="text-red-300 font-mono text-sm">
+                          {error}
+                        </span>
                       </div>
                     )}
 
@@ -427,7 +440,9 @@ const Partners = () => {
                           onClick={() => fileInputRef.current?.click()}
                         >
                           <Upload className="w-6 h-6 text-gray-400 mx-auto mb-2" />
-                          <p className="text-gray-400 text-sm">Click to upload files (max 20MB each)</p>
+                          <p className="text-gray-400 text-sm">
+                            Click to upload files (max 20MB each)
+                          </p>
                           <input
                             ref={fileInputRef}
                             type="file"
@@ -451,8 +466,12 @@ const Partners = () => {
                                     <Upload className="w-4 h-4 text-white" />
                                   </div>
                                   <div>
-                                    <p className="text-white text-sm">{file.name}</p>
-                                    <p className="text-gray-400 text-xs">{formatFileSize(file.size)}</p>
+                                    <p className="text-white text-sm">
+                                      {file.name}
+                                    </p>
+                                    <p className="text-gray-400 text-xs">
+                                      {formatFileSize(file.size)}
+                                    </p>
                                   </div>
                                 </div>
                                 <button
@@ -479,7 +498,13 @@ const Partners = () => {
                         </button>
                         <Button
                           type="submit"
-                          disabled={isSubmitting || !fullName.trim() || !company.trim() || !position.trim() || !message.trim()}
+                          disabled={
+                            isSubmitting ||
+                            !fullName.trim() ||
+                            !company.trim() ||
+                            !position.trim() ||
+                            !message.trim()
+                          }
                           className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {isSubmitting ? "Sending..." : "Send Message"}
