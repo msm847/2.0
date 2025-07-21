@@ -587,7 +587,7 @@ const LegalStructuralSimulator: React.FC = () => {
         </div>
 
         {/* Bottom: Full-Width Simulation Output */}
-        <div className="w-full" style={{ transform: "translateY(-100px)" }}>
+        <div className="w-full" style={{ transform: "translateY(-60px)" }}>
 
           <AnimatePresence>
             {simulationResult && (
@@ -597,42 +597,45 @@ const LegalStructuralSimulator: React.FC = () => {
                 exit={{ opacity: 0, y: 50 }}
                 className="max-w-4xl mx-auto"
               >
-                {/* Mathematical Output */}
-                <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800 mb-6">
-                  <h4 className="text-green-400 font-mono mb-6 text-lg">
-                    MATHEMATICAL OUTPUT
-                  </h4>
-                  <div
-                    className="p-6 rounded-lg font-mono text-lg leading-relaxed"
-                    style={{
-                      backgroundColor: "#0e1e1a",
-                      color: "#cab27f",
-                      border: "1px solid rgba(202, 178, 127, 0.3)"
-                    }}
-                  >
-                    <div className="mb-4">
-                      ϕ = {simulationResult.computationDetails.join(" + ")} + ΣM<sub>ij</sub> = {simulationResult.phi.toFixed(2)}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      Where environment and position have modified original weights.
+                {/* Combined Output Box */}
+                <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
+                  {/* Mathematical Output Section */}
+                  <div className="mb-8">
+                    <h4 className="text-green-400 font-mono mb-6 text-lg">
+                      MATHEMATICAL OUTPUT
+                    </h4>
+                    <div
+                      className="p-6 rounded-lg font-mono text-lg leading-relaxed"
+                      style={{
+                        backgroundColor: "#0e1e1a",
+                        color: "#cab27f",
+                        border: "1px solid rgba(202, 178, 127, 0.3)"
+                      }}
+                    >
+                      <div className="mb-4">
+                        ϕ = {simulationResult.computationDetails.join(" + ")} + ΣM<sub>ij</sub> = {simulationResult.phi.toFixed(2)}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Where environment and position have modified original weights.
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Structural Interpretation */}
-                <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
-                  <h4 className="text-green-400 font-mono mb-6 text-lg">
-                    STRUCTURAL INTERPRETATION
-                  </h4>
-                  <div
-                    className="space-y-3 font-mono"
-                    style={{ color: "#cab27f" }}
-                  >
-                    <div className="text-lg">
-                      <span className="text-gray-400">Structural Outcome:</span> {simulationResult.structuralOutcome}
-                    </div>
-                    <div className="text-lg">
-                      <span className="text-gray-400">Fracture Vector:</span> {simulationResult.fractureVector} (interacting via P2 inversion)
+                  {/* Structural Interpretation Section */}
+                  <div>
+                    <h4 className="text-green-400 font-mono mb-6 text-lg">
+                      STRUCTURAL INTERPRETATION
+                    </h4>
+                    <div
+                      className="space-y-3 font-mono"
+                      style={{ color: "#cab27f" }}
+                    >
+                      <div className="text-lg">
+                        <span className="text-gray-400">Structural Outcome:</span> {simulationResult.structuralOutcome}
+                      </div>
+                      <div className="text-lg">
+                        <span className="text-gray-400">Fracture Vector:</span> {simulationResult.fractureVector} (interacting via P2 inversion)
+                      </div>
                     </div>
                   </div>
                 </div>
