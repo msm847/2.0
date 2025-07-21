@@ -145,6 +145,18 @@ const TeamContact = () => {
     };
   }, []);
 
+  // Scroll depth effect for gradient
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const depth = Math.min(scrollY * 0.002, 0.3); // Cap at 0.3 for subtle effect
+      setScrollDepth(depth);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const smoothScrollTo = (targetPosition, duration = 600) => {
     setIsAnimating(true);
     const startPosition = scrollPosition;
