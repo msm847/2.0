@@ -155,46 +155,71 @@ const LegalStructuralSimulator: React.FC = () => {
       const validClauses = selectedClauses.filter(
         (clause) => clause !== null,
       ) as ClauseData[];
-      const env = environmentOperators.find((e) => e.id === activeEnvironment);
+      const envs = activeEnvironments.map(id =>
+        environmentOperators.find(op => op.id === id)
+      ).filter(Boolean) as EnvironmentOperator[];
 
-      // Calculate vector composition
-      let totalVector = { DG: 0, RT: 0, CI: 0, SB: 0 };
+      // New mathematical computation: ϕ(c₁, c₂, c₃; 𝓔₁, 𝓔₂) = Σ [ wᵢ * Pᵢ(𝓔) * Mᵢⱼ ]
+      let phi = 0;
+      let computationDetails: string[] = [];
 
-      validClauses.forEach((clause) => {
-        totalVector.DG += clause.riskVector.DG + (env?.modifiers.DG || 0);
-        totalVector.RT += clause.riskVector.RT + (env?.modifiers.RT || 0);
-        totalVector.CI += clause.riskVector.CI + (env?.modifiers.CI || 0);
-        totalVector.SB += clause.riskVector.SB + (env?.modifiers.SB || 0);
+      validClauses.forEach((clause, i) => {
+        // Base weight
+        let weight = clause.weight;
+
+        // Apply positional environmental modifiers P_i(E)
+        let positionalModifier = 1.0;
+        envs.forEach((env, envIndex) => {
+          // Position 1 receives uncompressed logic, others get modified
+          if (i === 0) {
+            positionalModifier *= 1.0; // Uncompressed
+          } else {
+            positionalModifier *= (1 + env.weight * 0.3); // Environmental effect
+          }
+        });
+
+        // Interaction coefficient M_ij (simplified)
+        let interactionCoeff = 1.0;
+        validClauses.forEach((otherClause, j) => {
+          if (i !== j) {
+            interactionCoeff += Math.abs(clause.weight - otherClause.weight) * 0.1;
+          }
+        });
+
+        const clauseContribution = weight * positionalModifier * interactionCoeff;
+        phi += clauseContribution;
+
+        computationDetails.push(`(${weight.toFixed(2)} * ${positionalModifier.toFixed(2)})`);
       });
 
-      // Normalize to 0-1 range
-      Object.keys(totalVector).forEach((key) => {
-        totalVector[key as keyof typeof totalVector] = Math.min(
-          1,
-          Math.max(0, totalVector[key as keyof typeof totalVector]),
-        );
-      });
+      // Add interaction matrix sum (simplified)
+      const matrixSum = validClauses.length > 1 ? 0.12 : 0;
+      phi += matrixSum;
 
-      // Determine outcome
-      const maxVector = Object.entries(totalVector).reduce((a, b) =>
-        a[1] > b[1] ? a : b,
-      );
-      const outcomeMap: { [key: string]: string } = {
-        DG: "Discretionary Breach",
-        RT: "Risk Transfer",
-        CI: "Simulated Legality",
-        SB: "Nullified Oversight",
-      };
+      // Determine structural outcome
+      const outcomes = [
+        "Legally Compliant Cascade with Masked Discretion Surge",
+        "Structural Bypass via Sequential Inversion",
+        "Controlled Fragmentation Pattern",
+        "Stealth Allocation Redirect"
+      ];
+
+      const fractureVectors = ["RT + CI", "DG + SB", "RT + DG", "CI + SB"];
+      const selectedOutcome = outcomes[Math.floor(phi * 2) % outcomes.length];
+      const selectedVector = fractureVectors[Math.floor(phi * 3) % fractureVectors.length];
 
       setSimulationResult({
-        vector: totalVector,
-        outcome: outcomeMap[maxVector[0]],
-        loopholeProfile: generateLoopholeProfile(validClauses, env),
-        overridePattern: generateOverridePattern(validClauses),
+        phi: phi,
+        computationDetails: computationDetails,
+        matrixSum: matrixSum,
+        structuralOutcome: selectedOutcome,
+        fractureVector: selectedVector,
+        clauses: validClauses,
+        environments: envs
       });
 
       setIsSimulating(false);
-    }, 2000);
+    }, 1200); // Thread weave animation time
   };
 
   const generateLoopholeProfile = (
