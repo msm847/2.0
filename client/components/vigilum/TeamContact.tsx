@@ -470,7 +470,7 @@ const TeamContact = () => {
             </div>
 
             {/* Additional Mission Boxes */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
+            <div className="flex flex-col gap-6 mt-16 max-w-6xl mx-auto">
               {/* Students & Researchers Box */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -484,7 +484,7 @@ const TeamContact = () => {
                   border: "1px solid rgba(0,255,204,0.08)",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
                   backdropFilter: "blur(10px)",
-                  height: "220px",
+                  height: "140px",
                   transition: "all 0.15s ease",
                 }}
               >
@@ -496,19 +496,9 @@ const TeamContact = () => {
                         Students & Researchers
                       </h3>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                      We actively collaborate with academic institutions and research programs exploring
-                      governance systems, structural analysis, and predictive policy modeling.
-                    </p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                      Academic partnerships advance our understanding of institutional design patterns
-                      while providing researchers access to real-world governance intelligence frameworks.
-                    </p>
-                  </div>
-                  <div className="mt-auto">
-                    <p className="text-green-400 text-sm font-mono flex items-center">
-                      <Mail className="w-4 h-4 mr-2" />
-                      student@vigilum.com
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Academic collaboration on governance systems and structural analysis research.
+                      <span className="text-green-400 font-mono ml-2">student@vigilum.com</span>
                     </p>
                   </div>
                 </div>
@@ -527,7 +517,7 @@ const TeamContact = () => {
                   border: "1px solid rgba(0,255,204,0.08)",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
                   backdropFilter: "blur(10px)",
-                  height: "220px",
+                  height: "140px",
                   transition: "all 0.15s ease",
                 }}
               >
@@ -539,19 +529,9 @@ const TeamContact = () => {
                         Civil Signals
                       </h3>
                     </div>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                      Secure reporting channel for observations of structural governance irregularities,
-                      procedural inconsistencies, and institutional design vulnerabilities.
-                    </p>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                      Reports undergo encrypted validation and cross-correlation with our risk detection
-                      systems to identify systemic patterns that merit investigation.
-                    </p>
-                  </div>
-                  <div className="mt-auto">
-                    <p className="text-green-400 text-sm font-mono flex items-center">
-                      <Mail className="w-4 h-4 mr-2" />
-                      civil@vigilum.com
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Secure reporting for governance irregularities and institutional design vulnerabilities.
+                      <span className="text-green-400 font-mono ml-2">civil@vigilum.com</span>
                     </p>
                   </div>
                 </div>
