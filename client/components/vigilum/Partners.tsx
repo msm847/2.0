@@ -302,6 +302,7 @@ const Partners = () => {
                   </div>
                 </div>
               </motion.div>
+              </div>
             </div>
 
             {/* Executive Contact Form Modal */}
