@@ -323,33 +323,20 @@ const StructuralCognitionChamber: React.FC = () => {
             STRUCTURAL COGNITION CHAMBER
           </motion.h3>
 
-          {/* Hint Bar */}
-          {showHints && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              className="bg-gray-800/50 rounded-lg p-3 mb-6 flex items-center justify-between"
-            >
-              <span className="text-gray-300 text-sm">
-                Assemble scenario modules. Adjust environmental pressure. Observe structural configuration.
-              </span>
-              <button
-                onClick={() => setShowHints(false)}
-                className="text-gray-400 hover:text-white ml-4"
-              >
-                ×
-              </button>
-            </motion.div>
-          )}
-
-          {!showHints && (
-            <button
-              onClick={() => setShowHints(true)}
-              className="text-green-400 hover:text-green-300 text-sm mb-6"
-            >
-              ? Show hints
-            </button>
-          )}
+          {/* Epistemic Statement */}
+          <div className="mb-6">
+            <SplitText
+              text="This simulation does not reveal intention or error. It renders structural consequence — a logic state in the space between law and reality."
+              className="text-gray-400 text-sm font-mono leading-relaxed"
+              delay={50}
+              duration={0.8}
+              splitType="words"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.8}
+              textAlign="left"
+            />
+          </div>
         </div>
 
         {/* Main Interface */}
