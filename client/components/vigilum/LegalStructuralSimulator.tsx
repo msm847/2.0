@@ -327,7 +327,7 @@ const StructuralCognitionChamber: React.FC = () => {
         </div>
 
         {/* Main Interface */}
-        <div className="flex flex-col lg:flex-row gap-8 min-h-[600px] mb-16">
+        <div className="flex flex-col lg:flex-row gap-8 min-h-[600px] mb-24">
           {/* Structural Input Library */}
           <div className="flex-1 flex flex-col">
             <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
