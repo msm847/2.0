@@ -86,3 +86,22 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+.sphere-number {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Inter", monospace;
+  pointer-events: none;
+  z-index: 5;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+}
