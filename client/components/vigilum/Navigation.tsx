@@ -533,12 +533,6 @@ const Navigation = () => {
                 SPE
               </button>
               <button
-                onClick={() => handleNavigation("#clause-simulator")}
-                className={`${getButtonStyles("clause-simulator", activeSection === "clause-simulator")} text-left`}
-              >
-                CLAUSE SIMULATOR
-              </button>
-              <button
                 onClick={() => handleNavigation("#cases")}
                 className={`${getButtonStyles("cases", activeSection === "cases")} text-left`}
               >
