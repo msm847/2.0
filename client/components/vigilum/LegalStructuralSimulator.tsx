@@ -134,12 +134,12 @@ const LegalStructuralSimulator: React.FC = () => {
   const [activeEnvironments, setActiveEnvironments] = useState<string[]>([]);
   const [simulationResult, setSimulationResult] = useState<any>(null);
   const [isSimulating, setIsSimulating] = useState(false);
-  const [ellipsisCount, setEllipsisCount] = useState(1);
+  const [ellipsisCount, setEllipsisCount] = useState(0);
 
   // Animated ellipsis effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setEllipsisCount(prev => prev === 3 ? 1 : prev + 1);
+      setEllipsisCount(prev => prev === 3 ? 0 : prev + 1);
     }, 500);
 
     return () => clearInterval(interval);
