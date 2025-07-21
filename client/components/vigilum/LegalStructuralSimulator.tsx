@@ -265,15 +265,7 @@ const LegalStructuralSimulator: React.FC = () => {
             STRUCTURAL COGNITION CHAMBER
           </motion.h2>
 
-          <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-body-lg text-gray-300 mb-6 leading-relaxed">
-              Vigilum's primary simulation environment for modeling how economic corruption can structurally emerge inside legally valid decision frameworks.
-              <br />
-              <span className="text-green-400 font-medium">
-                Structure over surface. Sequence over symbol. Logic over blame.
-              </span>
-            </p>
-          </div>
+
         </div>
 
         <div
