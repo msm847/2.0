@@ -2,281 +2,352 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Type definitions
-interface ClauseData {
+interface StructuralInput {
   id: string;
   title: string;
   weight: number;
-  riskVector: {
-    DG: number;
-    RT: number;
-    CI: number;
-    SB: number;
-  };
-  overrideFlags: string;
-  typology: string;
-  color: string;
   description: string;
+  tags: string[];
+  professionalInsight: {
+    economist: string;
+    auditor: string;
+    engineer: string;
+  };
 }
 
 interface EnvironmentOperator {
   id: string;
   name: string;
   weight: number;
-  icon: string;
   description: string;
-  modifiers: {
-    DG: number;
-    RT: number;
-    CI: number;
-    SB: number;
-  };
-  specialEffects: string;
+  transformEffect: string;
 }
 
-// Clause data based on specifications - 6 Structural Economic Modules
-const availableClauses: ClauseData[] = [
+interface SimulationResult {
+  phi: number;
+  configurationName: string;
+  fractureVector: string;
+  typologyDrift: number;
+  overrideChainDepth: number;
+  detectionProbability: string;
+  computationDetails: string[];
+  professionalDiagnostics: {
+    economist: string;
+    auditor: string;
+    engineer: string;
+  };
+}
+
+// Structural Input data
+const structuralInputs: StructuralInput[] = [
+  {
+    id: "S1",
+    title: "Revenue Path Splitting",
+    weight: 0.46,
+    description: "Simulates multi-stage, opaquely routed funding flows. Triggers cross-discipline risk thresholds.",
+    tags: ["#multi-stage", "#opacity", "#cross-discipline"],
+    professionalInsight: {
+      economist: "Creates liquidity fragmentation across temporal boundaries",
+      auditor: "Trail becomes discontinuous at routing junctions",
+      engineer: "Parallel pathways enable load balancing but reduce traceability"
+    }
+  },
+  {
+    id: "S2",
+    title: "Incentive-Driven Compliance",
+    weight: 0.52,
+    description: "Obedience logic only triggers on downstream reward. Models performance-tied compliance elasticity.",
+    tags: ["#incentive", "#compliance", "#elasticity"],
+    professionalInsight: {
+      economist: "Behavior becomes reward-dependent rather than rule-dependent",
+      auditor: "Compliance gaps emerge during reward delays",
+      engineer: "System state depends on feedback loop timing"
+    }
+  },
+  {
+    id: "S3",
+    title: "Persistence Injection",
+    weight: 0.49,
+    description: "Scenario repeats or loops system behavior without explicit re-authorization. Tests for undetected inertia.",
+    tags: ["#persistence", "#inertia", "#loop"],
+    professionalInsight: {
+      economist: "Creates momentum beyond initial resource allocation",
+      auditor: "Authorization chain becomes unclear after first cycle",
+      engineer: "Self-sustaining processes reduce external control"
+    }
+  },
+  {
+    id: "S4",
+    title: "Latency Differential",
+    weight: 0.44,
+    description: "Systemic delays intentionally decouple resource release and recognition. Surfaces hidden liquidity and power shifts.",
+    tags: ["#latency", "#liquidity", "#power-shift"],
+    professionalInsight: {
+      economist: "Temporal arbitrage opportunities emerge from timing gaps",
+      auditor: "Recognition lag creates accountability windows",
+      engineer: "Asynchronous processing enables state manipulation"
+    }
+  },
+  {
+    id: "S5",
+    title: "External Logic Overwrite",
+    weight: 0.58,
+    description: "Foreign or donor logic dominates internal decision vectors. Probes dependency and agency displacement.",
+    tags: ["#dependency", "#agency", "#external"],
+    professionalInsight: {
+      economist: "Decision autonomy transfers to external stakeholders",
+      auditor: "Authority chain becomes externally determined",
+      engineer: "Control system architecture inverts"
+    }
+  },
+  {
+    id: "S6",
+    title: "Quantization Gate Fragmentation",
+    weight: 0.36,
+    description: "Splits authorizations into subunits to bypass scrutiny. Examines distributed threshold evasion.",
+    tags: ["#fragmentation", "#threshold", "#distributed"],
+    professionalInsight: {
+      economist: "Atomic transactions fall below oversight resolution",
+      auditor: "Individual approvals seem reasonable, aggregate does not",
+      engineer: "Distributed logic prevents holistic system visibility"
+    }
+  }
+];
+
+// Environment Operators data
+const environmentOperators: EnvironmentOperator[] = [
   {
     id: "E1",
-    title: "Deferred Allocation Logic",
-    weight: 0.42,
-    riskVector: { DG: 0.42, RT: 0.2, CI: 0.15, SB: 0.18 },
-    overrideFlags: "delays deployment",
-    typology: "RT",
-    color: "#1f2e28",
-    description: "Delays budget deployment, shifts control into next cycle",
+    name: "Vector Path Inversion",
+    weight: 0.34,
+    description: "Inverts directionality between inputs. Early-stage actions echo in late outcomes and vice versa.",
+    transformEffect: "Temporal causality reversal affects all module interactions"
   },
   {
     id: "E2",
-    title: "Threshold Conditionality",
-    weight: 0.37,
-    riskVector: { DG: 0.37, RT: 0.25, CI: 0.12, SB: 0.21 },
-    overrideFlags: "metric gated",
-    typology: "CI",
-    color: "#1f2e28",
-    description: "Resources unlocked only if external metrics hit",
+    name: "Constraint Masking",
+    weight: 0.41,
+    description: "Conceals mutual thresholds; modules become \"blind\" to each other's logic.",
+    transformEffect: "Information isolation between selected modules"
   },
   {
     id: "E3",
-    title: "Donor-Tied Budgeting",
-    weight: 0.53,
-    riskVector: { DG: 0.53, RT: 0.18, CI: 0.22, SB: 0.15 },
-    overrideFlags: "external alignment",
-    typology: "DG",
-    color: "#1f2e28",
-    description: "Line items must match external funding logic",
-  },
-  {
-    id: "E4",
-    title: "Multi-Level Disbursement",
-    weight: 0.48,
-    riskVector: { DG: 0.48, RT: 0.16, CI: 0.19, SB: 0.23 },
-    overrideFlags: "layer approval",
-    typology: "SB",
-    color: "#1f2e28",
-    description: "Requires approval through 3 governance layers",
-  },
-  {
-    id: "E5",
-    title: "Performance-Gated Release",
-    weight: 0.45,
-    riskVector: { DG: 0.45, RT: 0.21, CI: 0.17, SB: 0.19 },
-    overrideFlags: "KPI triggered",
-    typology: "RT",
-    color: "#1f2e28",
-    description: "Funds gated behind KPIs; triggered in waves",
-  },
-  {
-    id: "E6",
-    title: "Asset-Backed Procurement",
-    weight: 0.51,
-    riskVector: { DG: 0.51, RT: 0.14, CI: 0.24, SB: 0.16 },
-    overrideFlags: "asset offset",
-    typology: "CI",
-    color: "#1f2e28",
-    description: "Public spending offset by state-owned assets",
-  },
+    name: "Temporal Normalization Collapse",
+    weight: 0.38,
+    description: "Flattens process sequencing, forcing all modules to resolve simultaneously.",
+    transformEffect: "Sequential processing becomes parallel execution"
+  }
 ];
 
-const environmentOperators: EnvironmentOperator[] = [
+// Example scenarios for loader
+const exampleScenarios = [
   {
-    id: "temporal",
-    name: "Temporal Compression (𝓔₁)",
-    weight: 0.32,
-    icon: "",
-    description: "All clause latency functions are reduced",
-    modifiers: { DG: 0.32, RT: -0.08, CI: -0.12, SB: -0.05 },
-    specialEffects: "Reduces clause latency by 22%",
+    inputs: ["S1", "S3", "S5"],
+    operators: ["E2", "E3"],
+    name: "Distributed Persistence with External Override"
   },
   {
-    id: "narrative",
-    name: "Narrative Overwriting (𝓔₂)",
-    weight: 0.41,
-    icon: "",
-    description: "Control inversion vectors are masked in output sequence",
-    modifiers: { DG: 0.41, RT: -0.15, CI: 0.18, SB: -0.22 },
-    specialEffects: "Masks control inversion vectors",
+    inputs: ["S2", "S4", "S6"],
+    operators: ["E1"],
+    name: "Fragmented Incentive Cascade"
   },
   {
-    id: "recognition",
-    name: "Recognition Fog (𝓔₃)",
-    weight: 0.29,
-    icon: "",
-    description: "Clauses lose override visibility to one another",
-    modifiers: { DG: 0.29, RT: -0.11, CI: -0.18, SB: 0.15 },
-    specialEffects: "Clauses lose mutual override visibility",
-  },
+    inputs: ["S1", "S4", "S5"],
+    operators: ["E2"],
+    name: "Temporal Displacement Network"
+  }
 ];
 
-const LegalStructuralSimulator: React.FC = () => {
-  const [selectedClauses, setSelectedClauses] = useState<(ClauseData | null)[]>(
-    [null, null, null],
-  );
-  const [activeEnvironments, setActiveEnvironments] = useState<string[]>([]);
-  const [simulationResult, setSimulationResult] = useState<any>(null);
+const StructuralCognitionChamber: React.FC = () => {
+  const [selectedInputs, setSelectedInputs] = useState<(StructuralInput | null)[]>([null, null, null]);
+  const [selectedOperators, setSelectedOperators] = useState<string[]>([]);
+  const [simulationResult, setSimulationResult] = useState<SimulationResult | null>(null);
+  const [simulationHistory, setSimulationHistory] = useState<SimulationResult[]>([]);
   const [isSimulating, setIsSimulating] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [showHints, setShowHints] = useState(true);
+  const [professionalView, setProfessionalView] = useState<'economist' | 'auditor' | 'engineer'>('economist');
+  const [showComparison, setShowComparison] = useState(false);
   const [ellipsisCount, setEllipsisCount] = useState(0);
 
   // Animated ellipsis effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setEllipsisCount((prev) => (prev === 3 ? 0 : prev + 1));
+      setEllipsisCount(prev => prev === 3 ? 0 : prev + 1);
     }, 500);
-
     return () => clearInterval(interval);
   }, []);
 
-  const selectClause = (clause: ClauseData, slotIndex: number) => {
-    const newSelected = [...selectedClauses];
-    newSelected[slotIndex] = clause;
-    setSelectedClauses(newSelected);
+  // Auto-hide welcome message
+  useEffect(() => {
+    if (showWelcome) {
+      const timer = setTimeout(() => setShowWelcome(false), 8000);
+      return () => clearTimeout(timer);
+    }
+  }, [showWelcome]);
+
+  const selectInput = (input: StructuralInput, slotIndex: number) => {
+    const newSelected = [...selectedInputs];
+    newSelected[slotIndex] = input;
+    setSelectedInputs(newSelected);
   };
 
-  const removeClause = (slotIndex: number) => {
-    const newSelected = [...selectedClauses];
+  const removeInput = (slotIndex: number) => {
+    const newSelected = [...selectedInputs];
     newSelected[slotIndex] = null;
-    setSelectedClauses(newSelected);
+    setSelectedInputs(newSelected);
+  };
+
+  const toggleOperator = (operatorId: string) => {
+    if (selectedOperators.includes(operatorId)) {
+      setSelectedOperators(selectedOperators.filter(id => id !== operatorId));
+    } else if (selectedOperators.length < 2) {
+      setSelectedOperators([...selectedOperators, operatorId]);
+    }
+  };
+
+  const executeSimulation = () => {
+    setIsSimulating(true);
+
+    setTimeout(() => {
+      const validInputs = selectedInputs.filter(input => input !== null) as StructuralInput[];
+      const operators = environmentOperators.filter(op => selectedOperators.includes(op.id));
+
+      // Mathematical computation
+      let phi = 0;
+      let computationDetails: string[] = [];
+
+      validInputs.forEach((input, i) => {
+        let weight = input.weight;
+        let positionalModifier = 1.0;
+        let interactionCoeff = 1.0;
+
+        // Apply environmental transformations
+        operators.forEach(op => {
+          if (i === 0) {
+            positionalModifier *= 1.0;
+          } else {
+            positionalModifier *= (1 + op.weight * 0.3);
+          }
+        });
+
+        // Interaction coefficients
+        validInputs.forEach((otherInput, j) => {
+          if (i !== j) {
+            interactionCoeff += Math.abs(input.weight - otherInput.weight) * 0.1;
+          }
+        });
+
+        const contribution = weight * positionalModifier * interactionCoeff;
+        phi += contribution;
+        computationDetails.push(`(${weight.toFixed(2)} × ${positionalModifier.toFixed(2)} �� ${interactionCoeff.toFixed(2)})`);
+      });
+
+      // Generate configuration outcomes
+      const configurations = [
+        "Distributed Inertia Cascade with Fragmented Gate Logic",
+        "Temporal Displacement Network with External Override",
+        "Multi-Vector Persistence Under Constraint Masking",
+        "Incentive-Driven Threshold Evasion Pattern",
+        "Latency-Amplified Authority Displacement"
+      ];
+
+      const fractureVectors = [
+        "DG + RT via masked latency",
+        "CI + SB through temporal inversion",
+        "RT + OD via fragmentation cascade",
+        "DG + CI through persistence loop",
+        "SB + RT via external override"
+      ];
+
+      const result: SimulationResult = {
+        phi: phi,
+        configurationName: configurations[Math.floor(phi * 5) % configurations.length],
+        fractureVector: fractureVectors[Math.floor(phi * 5) % fractureVectors.length],
+        typologyDrift: Math.floor(phi * 25) % 30,
+        overrideChainDepth: Math.floor(phi * 3) % 5 + 1,
+        detectionProbability: phi > 1.5 ? "Recognition possible only via cross-field audit" : "Detectable through standard review",
+        computationDetails: computationDetails,
+        professionalDiagnostics: {
+          economist: `System simulates temporal dependency inversion — ${phi > 1.0 ? 'late volatility becomes early instability' : 'stable equilibrium maintained'}.`,
+          auditor: `Module fragmentation ${phi > 1.2 ? 'reduces visibility below minimum audit resolution' : 'remains within acceptable monitoring thresholds'}.`,
+          engineer: `Distributed thresholds create ${phi > 1.1 ? 'sharded logic; no single node signals full risk' : 'manageable system complexity'}.`
+        }
+      };
+
+      setSimulationResult(result);
+      setSimulationHistory(prev => [result, ...prev].slice(0, 5));
+      setIsSimulating(false);
+    }, 2000);
+  };
+
+  const loadExampleScenario = () => {
+    const scenario = exampleScenarios[Math.floor(Math.random() * exampleScenarios.length)];
+    
+    // Load inputs
+    const newInputs: (StructuralInput | null)[] = [null, null, null];
+    scenario.inputs.forEach((inputId, index) => {
+      const input = structuralInputs.find(s => s.id === inputId);
+      if (input && index < 3) {
+        newInputs[index] = input;
+      }
+    });
+    
+    setSelectedInputs(newInputs);
+    setSelectedOperators(scenario.operators);
+    
+    // Auto-execute
+    setTimeout(() => executeSimulation(), 500);
   };
 
   const resetSimulation = () => {
-    setSelectedClauses([null, null, null]);
-    setActiveEnvironments([]);
+    setSelectedInputs([null, null, null]);
+    setSelectedOperators([]);
     setSimulationResult(null);
     setIsSimulating(false);
   };
 
-  const toggleEnvironment = (envId: string) => {
-    if (activeEnvironments.includes(envId)) {
-      setActiveEnvironments(activeEnvironments.filter((id) => id !== envId));
-    } else if (activeEnvironments.length < 2) {
-      setActiveEnvironments([...activeEnvironments, envId]);
-    }
-  };
-
-  const simulateSequence = () => {
-    setIsSimulating(true);
-
-    // Simulate processing delay
-    setTimeout(() => {
-      const validClauses = selectedClauses.filter(
-        (clause) => clause !== null,
-      ) as ClauseData[];
-      const envs = activeEnvironments
-        .map((id) => environmentOperators.find((op) => op.id === id))
-        .filter(Boolean) as EnvironmentOperator[];
-
-      // New mathematical computation: ϕ(c₁, c₂, c₃; 𝓔₁, 𝓔₂) = Σ [ wᵢ * Pᵢ(𝓔) * Mᵢⱼ ]
-      let phi = 0;
-      let computationDetails: string[] = [];
-
-      validClauses.forEach((clause, i) => {
-        // Base weight
-        let weight = clause.weight;
-
-        // Apply positional environmental modifiers P_i(E)
-        let positionalModifier = 1.0;
-        envs.forEach((env, envIndex) => {
-          // Position 1 receives uncompressed logic, others get modified
-          if (i === 0) {
-            positionalModifier *= 1.0; // Uncompressed
-          } else {
-            positionalModifier *= 1 + env.weight * 0.3; // Environmental effect
-          }
-        });
-
-        // Interaction coefficient M_ij (simplified)
-        let interactionCoeff = 1.0;
-        validClauses.forEach((otherClause, j) => {
-          if (i !== j) {
-            interactionCoeff +=
-              Math.abs(clause.weight - otherClause.weight) * 0.1;
-          }
-        });
-
-        const clauseContribution =
-          weight * positionalModifier * interactionCoeff;
-        phi += clauseContribution;
-
-        computationDetails.push(
-          `(${weight.toFixed(2)} * ${positionalModifier.toFixed(2)})`,
-        );
-      });
-
-      // Add interaction matrix sum (simplified)
-      const matrixSum = validClauses.length > 1 ? 0.12 : 0;
-      phi += matrixSum;
-
-      // Determine structural outcome
-      const outcomes = [
-        "Legally Compliant Cascade with Masked Discretion Surge",
-        "Structural Bypass via Sequential Inversion",
-        "Controlled Fragmentation Pattern",
-        "Stealth Allocation Redirect",
-      ];
-
-      const fractureVectors = ["RT + CI", "DG + SB", "RT + DG", "CI + SB"];
-      const selectedOutcome = outcomes[Math.floor(phi * 2) % outcomes.length];
-      const selectedVector =
-        fractureVectors[Math.floor(phi * 3) % fractureVectors.length];
-
-      setSimulationResult({
-        phi: phi,
-        computationDetails: computationDetails,
-        matrixSum: matrixSum,
-        structuralOutcome: selectedOutcome,
-        fractureVector: selectedVector,
-        clauses: validClauses,
-        environments: envs,
-      });
-
-      setIsSimulating(false);
-    }, 1200); // Thread weave animation time
-  };
-
-  const generateLoopholeProfile = (
-    clauses: ClauseData[],
-    env: EnvironmentOperator | undefined,
-  ) => {
-    if (clauses.length === 0) return null;
-
-    return {
-      class: "Simulated Constraint via Sequence Inversion",
-      description: `This clause order results in ${clauses[0]?.title.toLowerCase()} being amplified by ${env?.name || "standard environment"}, creating a structural bypass mechanism.`,
-    };
-  };
-
-  const generateOverridePattern = (clauses: ClauseData[]) => {
-    return clauses.map((clause, index) => ({
-      id: clause.id,
-      position: index,
-      overrides: [],
-      overriddenBy: [],
-    }));
+  const getTotalWeight = () => {
+    return selectedInputs.reduce((sum, input) => sum + (input?.weight || 0), 0);
   };
 
   return (
     <section className="pt-20 px-4" style={{ backgroundColor: "#102B21" }}>
       <div className="container mx-auto max-w-7xl">
-        {/* Core Premise */}
+        {/* Welcome Overlay */}
+        <AnimatePresence>
+          {showWelcome && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+              onClick={() => setShowWelcome(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="bg-gray-900 rounded-lg p-8 max-w-lg mx-4 border border-green-400/20"
+              >
+                <h3 className="text-xl font-display text-white mb-4">Welcome to the Structural Cognition Chamber</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  Construct, stage, and simulate a synthetic economic environment.<br/>
+                  Each input is a logic fragment — not a contract, but a scenario.<br/>
+                  Simulation reveals what emerges when structure and pressure interact.
+                </p>
+                <button
+                  onClick={() => setShowWelcome(false)}
+                  className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+                >
+                  Begin
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Header */}
         <div className="text-left mb-8">
           <motion.h3
             className="text-heading-md text-white mb-4"
@@ -286,337 +357,237 @@ const LegalStructuralSimulator: React.FC = () => {
           >
             STRUCTURAL COGNITION CHAMBER
           </motion.h3>
+
+          {/* Hint Bar */}
+          {showHints && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              className="bg-gray-800/50 rounded-lg p-3 mb-6 flex items-center justify-between"
+            >
+              <span className="text-gray-300 text-sm">
+                Assemble scenario modules. Adjust environmental pressure. Observe structural configuration.
+              </span>
+              <button
+                onClick={() => setShowHints(false)}
+                className="text-gray-400 hover:text-white ml-4"
+              >
+                ×
+              </button>
+            </motion.div>
+          )}
+
+          {!showHints && (
+            <button
+              onClick={() => setShowHints(true)}
+              className="text-green-400 hover:text-green-300 text-sm mb-6"
+            >
+              ? Show hints
+            </button>
+          )}
         </div>
 
-        <div
-          className="clause-simulator-wrapper"
-          style={{
-            display: "flex",
-            alignItems: "stretch",
-            justifyContent: "space-between",
-            gap: "2rem",
-            width: "100%",
-            minHeight: "600px",
-          }}
-        >
-          {/* Left: Available Clauses - Scrollable */}
-          <div
-            className="clause-column available-clauses-column"
-            style={{
-              flex: "1 1 0",
-              display: "flex",
-              flexDirection: "column",
-              background: "inherit",
-              borderRadius: "inherit",
-              position: "relative",
-            }}
-          >
-            <div
-              className="clause-column-header"
-              style={{
-                flexShrink: 0,
-                padding: "1rem",
-                borderBottom: "1px solid rgba(255,255,255,0.1)",
-              }}
-            >
-              <h3 className="text-section text-green-400 font-ui uppercase tracking-wider text-center">
-                CLAUSE BANK
-              </h3>
+        {/* Main Interface */}
+        <div className="flex flex-col lg:flex-row gap-8 min-h-[600px] mb-16">
+          {/* Structural Input Library */}
+          <div className="flex-1 flex flex-col">
+            <div className="text-center p-4 border-b border-white/10">
+              <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+                Structural Input Library
+              </h4>
+              <p className="text-gray-400 text-sm mt-2">
+                Select up to 3 scenario modules — each a fictionalized economic logic fragment shaping system behavior.
+              </p>
             </div>
-            <div
-              className="clause-column-content"
-              style={{
-                flex: "1 1 auto",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                className="available-clauses-content"
-                style={{
-                  overflowY: "auto",
-                  flex: "none",
-                  padding: "1rem",
-                  height: "340px",
-                  maxHeight: "340px",
-                  scrollbarWidth: "thin",
-                  scrollbarColor: "#17B58F #0B1E16",
-                }}
-                css={{
-                  "&::-webkit-scrollbar": {
-                    width: "8px",
-                  },
-                  "&::-webkit-scrollbar-track": {
-                    background: "#0B1E16",
-                    borderRadius: "4px",
-                  },
-                  "&::-webkit-scrollbar-thumb": {
-                    background: "#17B58F",
-                    borderRadius: "4px",
-                    border: "1px solid #0E261D",
-                  },
-                  "&::-webkit-scrollbar-thumb:hover": {
-                    background: "#9DE6C6",
-                  },
-                }}
-              >
-                <div className="space-y-3">
-                  {availableClauses.map((clause) => (
-                    <motion.div
-                      key={clause.id}
-                      className="p-4 rounded-lg border border-gray-600 cursor-pointer hover:border-green-400/50 transition-all"
-                      style={{
-                        backgroundColor: "#1f2e28",
-                        borderColor: "rgba(255,255,255,0.1)",
-                      }}
-                      whileHover={{
-                        scale: 1.02,
-                        backgroundColor: "#2a3a32",
-                      }}
-                      onClick={() => {
-                        // Find first empty slot
-                        const emptySlot = selectedClauses.findIndex(
-                          (c) => c === null,
-                        );
-                        if (emptySlot !== -1) {
-                          selectClause(clause, emptySlot);
-                        }
-                      }}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <h4
-                          className="text-sm font-mono text-white"
-                          style={{ color: "#eae2cc" }}
-                        >
-                          {clause.title}
-                        </h4>
-                        <span className="text-xs font-mono text-gray-400">
-                          w = {clause.weight.toFixed(2)}
+            
+            <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
+              <div className="space-y-3">
+                {structuralInputs.map((input) => (
+                  <motion.div
+                    key={input.id}
+                    className="p-4 rounded-lg border border-gray-600 cursor-pointer hover:border-green-400/50 transition-all group"
+                    style={{ backgroundColor: "#1f2e28", borderColor: "rgba(255,255,255,0.1)" }}
+                    whileHover={{ scale: 1.02, backgroundColor: "#2a3a32" }}
+                    onClick={() => {
+                      const emptySlot = selectedInputs.findIndex(s => s === null);
+                      if (emptySlot !== -1) {
+                        selectInput(input, emptySlot);
+                      }
+                    }}
+                    title={`Tags: ${input.tags.join(', ')}`}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="text-sm font-mono text-white" style={{ color: "#eae2cc" }}>
+                        {input.title}
+                      </h4>
+                      <span className="text-xs font-mono text-gray-400">
+                        w = {input.weight.toFixed(2)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-400 leading-relaxed mb-2">
+                      {input.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1">
+                      {input.tags.map(tag => (
+                        <span key={tag} className="text-xs bg-green-900/30 text-green-400 px-2 py-1 rounded">
+                          {tag}
                         </span>
-                      </div>
-                      <p className="text-xs text-gray-400 leading-relaxed">
-                        {clause.description}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Center: Staging Field */}
-          <div
-            className="clause-column staging-field-column"
-            style={{
-              flex: "1 1 0",
-              display: "flex",
-              flexDirection: "column",
-              background: "inherit",
-              borderRadius: "inherit",
-              position: "relative",
-            }}
-          >
-            <div
-              className="clause-column-header"
-              style={{
-                flexShrink: 0,
-                padding: "1rem",
-                borderBottom: "1px solid rgba(255,255,255,0.1)",
-              }}
-            >
-              <h3 className="text-section text-green-400 font-ui text-center uppercase tracking-wider">
-                CLAUSE STAGING FIELD
-              </h3>
+          {/* Input Sequencer */}
+          <div className="flex-1 flex flex-col">
+            <div className="text-center p-4 border-b border-white/10">
+              <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+                Input Sequencer
+              </h4>
+              <p className="text-gray-400 text-sm mt-2">
+                Order and combine scenario modules. Sequence changes emergent outcome.
+              </p>
+              <div className="text-sm text-gray-500 mt-2">
+                Σw = {getTotalWeight().toFixed(2)}
+              </div>
             </div>
-            <div
-              className="clause-column-content"
-              style={{
-                flex: "1 1 auto",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                className="staging-field-content"
-                style={{
-                  padding: "1rem",
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                }}
-              >
-                {/* Staging Slots */}
-                <div className="space-y-4">
-                  {[0, 1, 2].map((slotIndex) => (
-                    <div
-                      key={slotIndex}
-                      className="h-24 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center"
-                    >
-                      {selectedClauses[slotIndex] ? (
-                        <motion.div
-                          className="w-full h-full p-3 bg-gray-800 rounded border border-gray-600 cursor-pointer"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          onClick={() => removeClause(slotIndex)}
-                        >
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs font-mono text-gray-400">
-                              {selectedClauses[slotIndex]!.id}
-                            </span>
-                            <div className="flex items-center space-x-2">
-                              <div
-                                className="w-2 h-2 rounded-full"
-                                style={{
-                                  backgroundColor:
-                                    selectedClauses[slotIndex]!.color,
-                                }}
-                              />
-                              <span className="text-xs text-red-400">✕</span>
-                            </div>
-                          </div>
-                          <div className="text-sm text-white">
-                            {selectedClauses[slotIndex]!.title}
-                          </div>
-                        </motion.div>
-                      ) : (
-                        <span className="text-gray-500 text-sm">
-                          Slot {slotIndex + 1} - Click clause to add
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
+            
+            <div className="flex-1 p-4">
+              <div className="space-y-4 mb-6">
+                {selectedInputs.map((input, index) => (
+                  <div
+                    key={index}
+                    className="min-h-[80px] border-2 border-dashed border-gray-600 rounded-lg p-4 flex items-center justify-center relative"
+                    style={{
+                      backgroundColor: input ? "#1f2e28" : "transparent",
+                      borderColor: input ? "#d4c69b" : "rgba(255,255,255,0.1)"
+                    }}
+                  >
+                    {input ? (
+                      <div className="w-full">
+                        <div className="flex items-center justify-between mb-2">
+                          <h5 className="text-sm font-mono text-white">{input.title}</h5>
+                          <button
+                            onClick={() => removeInput(index)}
+                            className="text-red-400 hover:text-red-300 text-xs"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          Position {index + 1} • w = {input.weight.toFixed(2)}
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="text-gray-500 text-sm">Position {index + 1}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
 
-                {/* Action Buttons - positioned below slot 3 with natural spacing */}
-                <div className="flex gap-3" style={{ marginTop: "40px" }}>
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                <motion.button
+                  onClick={executeSimulation}
+                  disabled={selectedInputs.every(s => s === null) || isSimulating}
+                  className="flex-1 py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {isSimulating ? "PROCESSING..." : "EXECUTE SIMULATION"}
+                </motion.button>
+                
+                {(selectedInputs.some(s => s !== null) || selectedOperators.length > 0 || simulationResult) && (
                   <motion.button
-                    onClick={simulateSequence}
-                    disabled={
-                      selectedClauses.every((c) => c === null) || isSimulating
-                    }
-                    className="flex-1 py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
+                    onClick={resetSimulation}
+                    className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    {isSimulating ? "PROCESSING..." : "EXECUTE COGNITION"}
+                    RESET
                   </motion.button>
+                )}
+              </div>
 
-                  {(selectedClauses.some((c) => c !== null) ||
-                    activeEnvironments.length > 0 ||
-                    simulationResult) && (
-                    <motion.button
-                      onClick={resetSimulation}
-                      className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      RESET
-                    </motion.button>
-                  )}
-                </div>
+              {/* Example Loader */}
+              <div className="mt-4">
+                <button
+                  onClick={loadExampleScenario}
+                  className="w-full py-2 bg-blue-900/30 hover:bg-blue-900/50 text-blue-400 border border-blue-700 rounded-lg transition-colors text-sm"
+                >
+                  Load Example Scenario
+                </button>
               </div>
             </div>
           </div>
 
-          {/* Right: Environment Operators */}
-          <div
-            className="clause-column environment-operator-column"
-            style={{
-              flex: "1 1 0",
-              display: "flex",
-              flexDirection: "column",
-              background: "inherit",
-              borderRadius: "inherit",
-              position: "relative",
-            }}
-          >
-            <div
-              className="clause-column-header"
-              style={{
-                flexShrink: 0,
-                padding: "1rem",
-                borderBottom: "1px solid rgba(255,255,255,0.1)",
-              }}
-            >
-              <h3 className="text-section text-green-400 font-ui uppercase tracking-wider text-center">
-                ENVIRONMENT OPS
-              </h3>
+          {/* Environment Operators */}
+          <div className="flex-1 flex flex-col">
+            <div className="text-center p-4 border-b border-white/10">
+              <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+                Environment Operators
+              </h4>
+              <p className="text-gray-400 text-sm mt-2">
+                Select up to 2. Each transforms module interactions — structurally, not visually.
+              </p>
             </div>
-            <div
-              className="clause-column-content"
-              style={{
-                flex: "1 1 auto",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <div
-                className="environment-operator-content"
-                style={{
-                  padding: "1rem",
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <div className="space-y-4">
-                  <p className="text-xs text-gray-400 mb-4">
-                    Select up to 2 operators
-                  </p>
-                  {environmentOperators.map((env, index) => (
-                    <motion.button
-                      key={env.id}
-                      onClick={() => toggleEnvironment(env.id)}
-                      className={`w-full text-left p-4 rounded-lg border transition-all ${
-                        activeEnvironments.includes(env.id)
-                          ? "border-green-400 bg-green-400/10 text-white"
-                          : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
-                      }`}
-                      style={{
-                        background: activeEnvironments.includes(env.id)
-                          ? "linear-gradient(135deg, #2a3a32, #1f2e28)"
-                          : "#202d29",
-                        borderColor: activeEnvironments.includes(env.id)
-                          ? "#d4c69b"
-                          : "rgba(255,255,255,0.1)",
-                      }}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      disabled={
-                        !activeEnvironments.includes(env.id) &&
-                        activeEnvironments.length >= 2
-                      }
-                    >
-                      <div className="flex flex-col">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4
-                            className="font-mono text-sm"
-                            style={{ color: "#cab27f" }}
-                          >
-                            {env.name}
-                          </h4>
-                          <span className="text-xs font-mono text-gray-400">
-                            w = {env.weight.toFixed(2)}
-                          </span>
-                        </div>
-                        <p className="text-xs text-gray-400 leading-relaxed">
-                          {env.specialEffects}
-                        </p>
+            
+            <div className="flex-1 p-4">
+              <div className="space-y-4">
+                <p className="text-xs text-gray-400 mb-4">Select up to 2 operators</p>
+                {environmentOperators.map((operator) => (
+                  <motion.button
+                    key={operator.id}
+                    onClick={() => toggleOperator(operator.id)}
+                    className={`w-full text-left p-4 rounded-lg border transition-all ${
+                      selectedOperators.includes(operator.id)
+                        ? "border-green-400 bg-green-400/10 text-white"
+                        : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
+                    }`}
+                    style={{
+                      background: selectedOperators.includes(operator.id)
+                        ? "linear-gradient(135deg, #2a3a32, #1f2e28)"
+                        : "#202d29",
+                      borderColor: selectedOperators.includes(operator.id)
+                        ? "#d4c69b"
+                        : "rgba(255,255,255,0.1)",
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={
+                      !selectedOperators.includes(operator.id) &&
+                      selectedOperators.length >= 2
+                    }
+                  >
+                    <div className="flex flex-col">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4
+                          className="font-mono text-sm"
+                          style={{ color: "#cab27f" }}
+                        >
+                          {operator.name}
+                        </h4>
+                        <span className="text-xs font-mono text-gray-400">
+                          w = {operator.weight.toFixed(2)}
+                        </span>
                       </div>
-                    </motion.button>
-                  ))}
-                </div>
+                      <p className="text-xs text-gray-400 leading-relaxed mb-2">
+                        {operator.description}
+                      </p>
+                      <div className="text-xs text-green-400/70">
+                        {operator.transformEffect}
+                      </div>
+                    </div>
+                  </motion.button>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom: Full-Width Simulation Output */}
+        {/* Simulation Output */}
         <div className="w-full" style={{ transform: "translateY(-60px)" }}>
           <AnimatePresence>
             {simulationResult && (
@@ -624,15 +595,24 @@ const LegalStructuralSimulator: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
-                className="max-w-4xl mx-auto"
+                className="max-w-6xl mx-auto"
               >
-                {/* Combined Output Box */}
                 <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
-                  {/* Mathematical Output Section */}
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-green-400 font-mono text-lg">SIMULATION OUTPUT</h4>
+                    {simulationHistory.length > 1 && (
+                      <button
+                        onClick={() => setShowComparison(!showComparison)}
+                        className="text-blue-400 hover:text-blue-300 text-sm"
+                      >
+                        Compare Simulations
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Mathematical Trace */}
                   <div className="mb-8">
-                    <h4 className="text-green-400 font-mono mb-6 text-lg">
-                      MATHEMATICAL OUTPUT
-                    </h4>
+                    <h5 className="text-green-400 font-mono mb-4 text-md">MATHEMATICAL TRACE</h5>
                     <div
                       className="p-6 rounded-lg font-mono text-lg leading-relaxed"
                       style={{
@@ -642,38 +622,111 @@ const LegalStructuralSimulator: React.FC = () => {
                       }}
                     >
                       <div className="mb-4">
-                        ϕ = {simulationResult.computationDetails.join(" + ")} +
-                        ΣM<sub>ij</sub> = {simulationResult.phi.toFixed(2)}
+                        ϕ(inputs, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+                      </div>
+                      <div className="mb-4">
+                        ϕ = {simulationResult.computationDetails.join(" + ")} = {simulationResult.phi.toFixed(2)}
                       </div>
                       <div className="text-sm text-gray-400">
-                        Where environment and position have modified original
-                        weights.
+                        Where environment and position have modified original weights.
                       </div>
                     </div>
                   </div>
 
-                  {/* Structural Interpretation Section */}
-                  <div>
-                    <h4 className="text-green-400 font-mono mb-6 text-lg">
-                      STRUCTURAL INTERPRETATION
-                    </h4>
-                    <div
-                      className="space-y-3 font-mono"
-                      style={{ color: "#cab27f" }}
-                    >
-                      <div className="text-lg">
-                        <span className="text-gray-400">
-                          Structural Outcome:
-                        </span>{" "}
-                        {simulationResult.structuralOutcome}
+                  {/* Structural Outcome */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">STRUCTURAL OUTCOME</h5>
+                      <div className="space-y-3 font-mono" style={{ color: "#cab27f" }}>
+                        <div className="text-lg">
+                          <span className="text-gray-400">Configuration Identified:</span><br/>
+                          "{simulationResult.configurationName}"
+                        </div>
+                        <div className="text-lg">
+                          <span className="text-gray-400">Fracture Vector:</span><br/>
+                          {simulationResult.fractureVector}
+                        </div>
                       </div>
-                      <div className="text-lg">
-                        <span className="text-gray-400">Fracture Vector:</span>{" "}
-                        {simulationResult.fractureVector} (interacting via P2
-                        inversion)
+                    </div>
+
+                    <div>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">EMERGENT RISK INDICES</h5>
+                      <div className="space-y-3 font-mono text-sm" style={{ color: "#cab27f" }}>
+                        <div>
+                          <span className="text-gray-400">Typology Drift (Δv):</span><br/>
+                          {simulationResult.typologyDrift}° off compliance baseline
+                        </div>
+                        <div>
+                          <span className="text-gray-400">Override Chain Depth (Ω):</span><br/>
+                          {simulationResult.overrideChainDepth} recursive redirections detected
+                        </div>
+                        <div>
+                          <span className="text-gray-400">Detection Probability (ρ):</span><br/>
+                          {simulationResult.detectionProbability}
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Professional Diagnostics */}
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <h5 className="text-green-400 font-mono text-md">PROFESSIONAL DIAGNOSTICS</h5>
+                      <div className="flex gap-2">
+                        {(['economist', 'auditor', 'engineer'] as const).map((profession) => (
+                          <button
+                            key={profession}
+                            onClick={() => setProfessionalView(profession)}
+                            className={`px-3 py-1 text-xs rounded ${
+                              professionalView === profession
+                                ? 'bg-green-600 text-white'
+                                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                            } transition-colors`}
+                          >
+                            {profession.charAt(0).toUpperCase() + profession.slice(1)}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div
+                      className="p-4 rounded-lg font-mono text-sm leading-relaxed"
+                      style={{
+                        backgroundColor: "#0e1e1a",
+                        color: "#cab27f",
+                        border: "1px solid rgba(202, 178, 127, 0.3)",
+                      }}
+                    >
+                      <div className="mb-2">
+                        <span className="text-gray-400">View As {professionalView.charAt(0).toUpperCase() + professionalView.slice(1)}:</span>
+                      </div>
+                      <div>
+                        "{simulationResult.professionalDiagnostics[professionalView]}"
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Comparison Panel */}
+                  {showComparison && simulationHistory.length > 1 && (
+                    <div className="mt-8 pt-8 border-t border-gray-600">
+                      <h5 className="text-green-400 font-mono mb-4 text-md">SIMULATION COMPARISON</h5>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {simulationHistory.slice(0, 2).map((result, index) => (
+                          <div key={index} className="p-4 bg-gray-800/50 rounded-lg">
+                            <div className="text-sm font-mono text-gray-400 mb-2">
+                              Simulation {index === 0 ? 'Current' : 'Previous'}
+                            </div>
+                            <div className="text-xs font-mono space-y-1" style={{ color: "#cab27f" }}>
+                              <div>ϕ = {result.phi.toFixed(2)}</div>
+                              <div>Drift: {result.typologyDrift}°</div>
+                              <div>Depth: {result.overrideChainDepth}</div>
+                              <div className="text-gray-400">{result.configurationName}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             )}
@@ -701,20 +754,25 @@ const LegalStructuralSimulator: React.FC = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
-                ⚙️
+                ⚡
               </motion.div>
-              <div className="font-mono text-xl">
-                Processing legal sequence...
-              </div>
-              <div className="text-sm text-gray-400 mt-2">
-                Analyzing clause interactions and environmental modifiers
+              <div className="text-xl font-mono">
+                Executing structural cognition...
               </div>
             </div>
           )}
+        </div>
+
+        {/* Epistemic Footer */}
+        <div className="text-center py-8 border-t border-gray-600 mt-16">
+          <p className="text-gray-400 text-sm font-mono leading-relaxed">
+            This simulation does not reveal intention or error.<br/>
+            It renders structural consequence — a logic state in the space between law and reality.
+          </p>
         </div>
       </div>
     </section>
   );
 };
 
-export default LegalStructuralSimulator;
+export default StructuralCognitionChamber;
