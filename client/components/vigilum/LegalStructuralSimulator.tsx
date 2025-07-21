@@ -325,17 +325,10 @@ const StructuralCognitionChamber: React.FC = () => {
 
           {/* Epistemic Statement */}
           <div className="mb-6">
-            <SplitText
-              text="This simulation does not reveal intention or error. It renders structural consequence — a logic state in the space between law and reality."
-              className="text-gray-400 text-sm font-mono leading-relaxed"
-              delay={50}
-              duration={0.8}
-              splitType="words"
-              from={{ opacity: 0, y: 20 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.8}
-              textAlign="left"
-            />
+            <p className="text-gray-400 text-sm font-mono leading-relaxed">
+              This simulation does not reveal intention or error.<br/>
+              It renders structural consequence — a logic state in the space between law and reality.
+            </p>
           </div>
         </div>
 
