@@ -589,72 +589,47 @@ const LegalStructuralSimulator: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+                className="max-w-4xl mx-auto"
               >
-                {/* Vector Projection */}
-                <div className="p-6 rounded-2xl border border-gray-600 bg-gray-800/50">
-                  <h4 className="text-green-400 font-mono mb-4 text-lg">
-                    VECTOR PROJECTION ϕ(c,𝓔)
+                {/* Mathematical Output */}
+                <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800 mb-6">
+                  <h4 className="text-green-400 font-mono mb-6 text-lg">
+                    MATHEMATICAL OUTPUT
                   </h4>
-                  <div className="space-y-4">
-                    {Object.entries(simulationResult.vector).map(
-                      ([key, value]) => (
-                        <div key={key}>
-                          <div className="flex justify-between text-sm mb-2">
-                            <span className="text-gray-300 font-mono">
-                              {key}
-                            </span>
-                            <span className="text-white font-bold">
-                              {(value as number).toFixed(3)}
-                            </span>
-                          </div>
-                          <div className="w-full bg-gray-700 rounded-full h-3">
-                            <motion.div
-                              className="bg-green-400 h-3 rounded-full"
-                              initial={{ width: 0 }}
-                              animate={{
-                                width: `${(value as number) * 100}%`,
-                              }}
-                              transition={{ duration: 1, delay: 0.2 }}
-                            />
-                          </div>
-                        </div>
-                      ),
-                    )}
-                  </div>
-                </div>
-
-                {/* Structural Outcome */}
-                <div className="p-6 rounded-2xl border border-gray-600 bg-gray-800/50">
-                  <h4 className="text-green-400 font-mono mb-4 text-lg">
-                    STRUCTURAL OUTCOME
-                  </h4>
-                  <div className="bg-yellow-400/20 border border-yellow-400 rounded-lg px-4 py-6 text-center">
-                    <span className="text-yellow-400 font-mono font-bold text-xl">
-                      {simulationResult.outcome}
-                    </span>
-                  </div>
-                  <div className="mt-4 text-gray-300 text-sm">
-                    Classification based on dominant risk vector component
-                  </div>
-                </div>
-
-                {/* Loophole Profile */}
-                {simulationResult.loopholeProfile && (
-                  <div className="p-6 rounded-2xl border border-gray-600 bg-gray-800/50">
-                    <h4 className="text-green-400 font-mono mb-4 text-lg">
-                      LOOPHOLE PROFILE
-                    </h4>
-                    <div className="space-y-4">
-                      <div className="text-white font-medium text-lg">
-                        {simulationResult.loopholeProfile.class}
-                      </div>
-                      <div className="text-gray-300 text-sm leading-relaxed">
-                        {simulationResult.loopholeProfile.description}
-                      </div>
+                  <div
+                    className="p-6 rounded-lg font-mono text-lg leading-relaxed"
+                    style={{
+                      backgroundColor: "#0e1e1a",
+                      color: "#cab27f",
+                      border: "1px solid rgba(202, 178, 127, 0.3)"
+                    }}
+                  >
+                    <div className="mb-4">
+                      ϕ = {simulationResult.computationDetails.join(" + ")} + ΣM<sub>ij</sub> = {simulationResult.phi.toFixed(2)}
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Where environment and position have modified original weights.
                     </div>
                   </div>
-                )}
+                </div>
+
+                {/* Structural Interpretation */}
+                <div className="p-8 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
+                  <h4 className="text-green-400 font-mono mb-6 text-lg">
+                    STRUCTURAL INTERPRETATION
+                  </h4>
+                  <div
+                    className="space-y-3 font-mono"
+                    style={{ color: "#cab27f" }}
+                  >
+                    <div className="text-lg">
+                      <span className="text-gray-400">Structural Outcome:</span> {simulationResult.structuralOutcome}
+                    </div>
+                    <div className="text-lg">
+                      <span className="text-gray-400">Fracture Vector:</span> {simulationResult.fractureVector} (interacting via P2 inversion)
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
