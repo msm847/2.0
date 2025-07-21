@@ -290,7 +290,7 @@ const PerceptionPerspective = () => {
                       e.currentTarget.style.transform =
                         "translateY(-2px) scale(1.02)";
                       e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.1)";
+                        "transparent";
                       e.currentTarget.style.borderColor =
                         "rgba(255, 255, 255, 0.2)";
                       e.currentTarget.style.boxShadow =
@@ -301,7 +301,7 @@ const PerceptionPerspective = () => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
                       e.currentTarget.style.background =
-                        "rgba(255, 255, 255, 0.05)";
+                        "transparent";
                       e.currentTarget.style.borderColor =
                         "rgba(255, 255, 255, 0.1)";
                       e.currentTarget.style.boxShadow =
