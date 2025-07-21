@@ -143,8 +143,11 @@ const Partners = () => {
   return (
     <div
       style={{
-        backgroundColor: "#081912", // Slightly darker than Mission section
-        background: "linear-gradient(135deg, #081912 0%, #0A1D16 100%)",
+        backgroundColor: "#1C2722", // Fallback background
+        background: `linear-gradient(90deg,
+          rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%,
+          rgba(52, 79, 64, ${1 - scrollIntensity * 0.2}) 100%)`,
+        transition: "background 0.2s ease-out"
       }}
     >
       {/* PARTNERS SECTION */}
