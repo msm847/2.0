@@ -1172,31 +1172,6 @@ export default function InfiniteMenu({ items = [] }) {
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <canvas id="infinite-grid-menu-canvas" ref={canvasRef} />
 
-      {/* Simple centered numbers for all spheres */}
-      <div style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        color: "white",
-        fontSize: "24px",
-        fontWeight: "bold",
-        fontFamily: "Inter, monospace",
-        pointerEvents: "none",
-        zIndex: 5,
-        textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "40px",
-        height: "40px",
-        background: "rgba(0,0,0,0.7)",
-        borderRadius: "50%",
-        border: "2px solid rgba(255,255,255,0.5)"
-      }}>
-        {activeItem ? (activeItem.number || "?") : ""}
-      </div>
-
       {activeItem && (
         <>
           <h2 className={`face-title ${isMoving ? "inactive" : "active"}`}>
