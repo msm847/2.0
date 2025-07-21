@@ -321,7 +321,7 @@ const StructuralCognitionChamber: React.FC = () => {
           <div className="mb-6">
             <p className="text-gray-400 text-sm font-mono leading-relaxed">
               This simulation does not reveal intention or error.<br/>
-              It renders structural consequence ��� a logic state in the space between law and reality.
+              It renders structural consequence — a logic state in the space between law and reality.
             </p>
           </div>
         </div>
@@ -332,10 +332,11 @@ const StructuralCognitionChamber: React.FC = () => {
           <div className="flex-1 flex flex-col">
             <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
               <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
-                Structural Input Library
+                Structural Input
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Assemble up to three synthetic logic fragments — each introduces a new axis of economic friction, dependency, or recursion...
+                Assemble up to three synthetic logic fragments:<br/>
+                each introduces a new axis of economic friction, dependency, or recursion...
               </p>
             </div>
 
