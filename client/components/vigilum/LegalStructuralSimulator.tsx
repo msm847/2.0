@@ -380,10 +380,10 @@ const LegalStructuralSimulator: React.FC = () => {
                       }}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-lg font-mono text-white" style={{ color: "#eae2cc" }}>
+                        <h4 className="text-sm font-mono text-white" style={{ color: "#eae2cc" }}>
                           {clause.title}
                         </h4>
-                        <span className="text-sm font-mono text-gray-400">
+                        <span className="text-xs font-mono text-gray-400">
                           w = {clause.weight.toFixed(2)}
                         </span>
                       </div>
