@@ -551,6 +551,12 @@ const Navigation = () => {
           >
             <div className="flex flex-col space-y-4">
               <button
+                onClick={() => handleNavigation("#perception-perspective")}
+                className={`${getButtonStyles("perception-perspective", activeSection === "perception-perspective")} text-left`}
+              >
+                REALITY
+              </button>
+              <button
                 onClick={() => handleNavigation("#modules")}
                 className={`${getButtonStyles("modules", activeSection === "modules")} text-left`}
               >
