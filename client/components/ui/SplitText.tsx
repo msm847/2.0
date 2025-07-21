@@ -5,21 +5,6 @@ import { SplitText as GSAPSplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
 
-interface SplitTextProps {
-  text: string;
-  className?: string;
-  delay?: number;
-  duration?: number;
-  ease?: string;
-  splitType?: "chars" | "words" | "lines";
-  from?: { opacity?: number; y?: number; [key: string]: any };
-  to?: { opacity?: number; y?: number; [key: string]: any };
-  threshold?: number;
-  rootMargin?: string;
-  textAlign?: "left" | "center" | "right";
-  onLetterAnimationComplete?: () => void;
-}
-
 const SplitText = ({
   text,
   className = "",
@@ -33,22 +18,22 @@ const SplitText = ({
   rootMargin = "-100px",
   textAlign = "center",
   onLetterAnimationComplete,
-}: SplitTextProps) => {
-  const ref = useRef<HTMLParagraphElement>(null);
+}) => {
+  const ref = useRef(null);
   const animationCompletedRef = useRef(false);
-  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+  const scrollTriggerRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || !ref.current || !text) return;
 
     const el = ref.current;
-
+    
     animationCompletedRef.current = false;
 
     const absoluteLines = splitType === "lines";
     if (absoluteLines) el.style.position = "relative";
 
-    let splitter: GSAPSplitText;
+    let splitter;
     try {
       splitter = new GSAPSplitText(el, {
         type: splitType,
@@ -60,19 +45,19 @@ const SplitText = ({
       return;
     }
 
-    let targets: Element[];
+    let targets;
     switch (splitType) {
       case "lines":
-        targets = splitter.lines || [];
+        targets = splitter.lines;
         break;
       case "words":
-        targets = splitter.words || [];
+        targets = splitter.words;
         break;
       case "chars":
-        targets = splitter.chars || [];
+        targets = splitter.chars;
         break;
       default:
-        targets = splitter.chars || [];
+        targets = splitter.chars;
     }
 
     if (!targets || targets.length === 0) {
@@ -82,17 +67,14 @@ const SplitText = ({
     }
 
     targets.forEach((t) => {
-      (t as HTMLElement).style.willChange = "transform, opacity";
+      t.style.willChange = "transform, opacity";
     });
 
     const startPct = (1 - threshold) * 100;
     const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
     const marginValue = marginMatch ? parseFloat(marginMatch[1]) : 0;
-    const marginUnit = marginMatch ? marginMatch[2] || "px" : "px";
-    const sign =
-      marginValue < 0
-        ? `-=${Math.abs(marginValue)}${marginUnit}`
-        : `+=${marginValue}${marginUnit}`;
+    const marginUnit = marginMatch ? (marginMatch[2] || "px") : "px";
+    const sign = marginValue < 0 ? `-=${Math.abs(marginValue)}${marginUnit}` : `+=${marginValue}${marginUnit}`;
     const start = `top ${startPct}%${sign}`;
 
     const tl = gsap.timeline({
