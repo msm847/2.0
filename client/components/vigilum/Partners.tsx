@@ -41,8 +41,8 @@ const Partners = () => {
       setScrollIntensity(intensity);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleFileUpload = (event) => {
@@ -147,7 +147,7 @@ const Partners = () => {
         background: `linear-gradient(90deg,
           rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%,
           rgba(52, 79, 64, ${1 - scrollIntensity * 0.2}) 100%)`,
-        transition: "background 0.2s ease-out"
+        transition: "background 0.2s ease-out",
       }}
     >
       {/* PARTNERS SECTION */}

@@ -139,7 +139,7 @@ const LegalStructuralSimulator: React.FC = () => {
   // Animated ellipsis effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setEllipsisCount(prev => prev === 3 ? 0 : prev + 1);
+      setEllipsisCount((prev) => (prev === 3 ? 0 : prev + 1));
     }, 500);
 
     return () => clearInterval(interval);
@@ -166,7 +166,7 @@ const LegalStructuralSimulator: React.FC = () => {
 
   const toggleEnvironment = (envId: string) => {
     if (activeEnvironments.includes(envId)) {
-      setActiveEnvironments(activeEnvironments.filter(id => id !== envId));
+      setActiveEnvironments(activeEnvironments.filter((id) => id !== envId));
     } else if (activeEnvironments.length < 2) {
       setActiveEnvironments([...activeEnvironments, envId]);
     }
@@ -180,9 +180,9 @@ const LegalStructuralSimulator: React.FC = () => {
       const validClauses = selectedClauses.filter(
         (clause) => clause !== null,
       ) as ClauseData[];
-      const envs = activeEnvironments.map(id =>
-        environmentOperators.find(op => op.id === id)
-      ).filter(Boolean) as EnvironmentOperator[];
+      const envs = activeEnvironments
+        .map((id) => environmentOperators.find((op) => op.id === id))
+        .filter(Boolean) as EnvironmentOperator[];
 
       // New mathematical computation: ϕ(c₁, c₂, c₃; 𝓔₁, 𝓔₂) = Σ [ wᵢ * Pᵢ(𝓔) * Mᵢⱼ ]
       let phi = 0;
@@ -199,7 +199,7 @@ const LegalStructuralSimulator: React.FC = () => {
           if (i === 0) {
             positionalModifier *= 1.0; // Uncompressed
           } else {
-            positionalModifier *= (1 + env.weight * 0.3); // Environmental effect
+            positionalModifier *= 1 + env.weight * 0.3; // Environmental effect
           }
         });
 
@@ -207,14 +207,18 @@ const LegalStructuralSimulator: React.FC = () => {
         let interactionCoeff = 1.0;
         validClauses.forEach((otherClause, j) => {
           if (i !== j) {
-            interactionCoeff += Math.abs(clause.weight - otherClause.weight) * 0.1;
+            interactionCoeff +=
+              Math.abs(clause.weight - otherClause.weight) * 0.1;
           }
         });
 
-        const clauseContribution = weight * positionalModifier * interactionCoeff;
+        const clauseContribution =
+          weight * positionalModifier * interactionCoeff;
         phi += clauseContribution;
 
-        computationDetails.push(`(${weight.toFixed(2)} * ${positionalModifier.toFixed(2)})`);
+        computationDetails.push(
+          `(${weight.toFixed(2)} * ${positionalModifier.toFixed(2)})`,
+        );
       });
 
       // Add interaction matrix sum (simplified)
@@ -226,12 +230,13 @@ const LegalStructuralSimulator: React.FC = () => {
         "Legally Compliant Cascade with Masked Discretion Surge",
         "Structural Bypass via Sequential Inversion",
         "Controlled Fragmentation Pattern",
-        "Stealth Allocation Redirect"
+        "Stealth Allocation Redirect",
       ];
 
       const fractureVectors = ["RT + CI", "DG + SB", "RT + DG", "CI + SB"];
       const selectedOutcome = outcomes[Math.floor(phi * 2) % outcomes.length];
-      const selectedVector = fractureVectors[Math.floor(phi * 3) % fractureVectors.length];
+      const selectedVector =
+        fractureVectors[Math.floor(phi * 3) % fractureVectors.length];
 
       setSimulationResult({
         phi: phi,
@@ -240,7 +245,7 @@ const LegalStructuralSimulator: React.FC = () => {
         structuralOutcome: selectedOutcome,
         fractureVector: selectedVector,
         clauses: validClauses,
-        environments: envs
+        environments: envs,
       });
 
       setIsSimulating(false);
@@ -380,7 +385,10 @@ const LegalStructuralSimulator: React.FC = () => {
                       }}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-sm font-mono text-white" style={{ color: "#eae2cc" }}>
+                        <h4
+                          className="text-sm font-mono text-white"
+                          style={{ color: "#eae2cc" }}
+                        >
                           {clause.title}
                         </h4>
                         <span className="text-xs font-mono text-gray-400">
@@ -496,7 +504,9 @@ const LegalStructuralSimulator: React.FC = () => {
                     {isSimulating ? "PROCESSING..." : "EXECUTE COGNITION"}
                   </motion.button>
 
-                  {(selectedClauses.some(c => c !== null) || activeEnvironments.length > 0 || simulationResult) && (
+                  {(selectedClauses.some((c) => c !== null) ||
+                    activeEnvironments.length > 0 ||
+                    simulationResult) && (
                     <motion.button
                       onClick={resetSimulation}
                       className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
@@ -555,7 +565,9 @@ const LegalStructuralSimulator: React.FC = () => {
                 }}
               >
                 <div className="space-y-4">
-                  <p className="text-xs text-gray-400 mb-4">Select up to 2 operators</p>
+                  <p className="text-xs text-gray-400 mb-4">
+                    Select up to 2 operators
+                  </p>
                   {environmentOperators.map((env, index) => (
                     <motion.button
                       key={env.id}
@@ -569,15 +581,23 @@ const LegalStructuralSimulator: React.FC = () => {
                         background: activeEnvironments.includes(env.id)
                           ? "linear-gradient(135deg, #2a3a32, #1f2e28)"
                           : "#202d29",
-                        borderColor: activeEnvironments.includes(env.id) ? "#d4c69b" : "rgba(255,255,255,0.1)"
+                        borderColor: activeEnvironments.includes(env.id)
+                          ? "#d4c69b"
+                          : "rgba(255,255,255,0.1)",
                       }}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      disabled={!activeEnvironments.includes(env.id) && activeEnvironments.length >= 2}
+                      disabled={
+                        !activeEnvironments.includes(env.id) &&
+                        activeEnvironments.length >= 2
+                      }
                     >
                       <div className="flex flex-col">
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-mono text-sm" style={{ color: "#cab27f" }}>
+                          <h4
+                            className="font-mono text-sm"
+                            style={{ color: "#cab27f" }}
+                          >
                             {env.name}
                           </h4>
                           <span className="text-xs font-mono text-gray-400">
@@ -598,7 +618,6 @@ const LegalStructuralSimulator: React.FC = () => {
 
         {/* Bottom: Full-Width Simulation Output */}
         <div className="w-full" style={{ transform: "translateY(-60px)" }}>
-
           <AnimatePresence>
             {simulationResult && (
               <motion.div
@@ -619,14 +638,16 @@ const LegalStructuralSimulator: React.FC = () => {
                       style={{
                         backgroundColor: "#0e1e1a",
                         color: "#cab27f",
-                        border: "1px solid rgba(202, 178, 127, 0.3)"
+                        border: "1px solid rgba(202, 178, 127, 0.3)",
                       }}
                     >
                       <div className="mb-4">
-                        ϕ = {simulationResult.computationDetails.join(" + ")} + ΣM<sub>ij</sub> = {simulationResult.phi.toFixed(2)}
+                        ϕ = {simulationResult.computationDetails.join(" + ")} +
+                        ΣM<sub>ij</sub> = {simulationResult.phi.toFixed(2)}
                       </div>
                       <div className="text-sm text-gray-400">
-                        Where environment and position have modified original weights.
+                        Where environment and position have modified original
+                        weights.
                       </div>
                     </div>
                   </div>
@@ -641,10 +662,15 @@ const LegalStructuralSimulator: React.FC = () => {
                       style={{ color: "#cab27f" }}
                     >
                       <div className="text-lg">
-                        <span className="text-gray-400">Structural Outcome:</span> {simulationResult.structuralOutcome}
+                        <span className="text-gray-400">
+                          Structural Outcome:
+                        </span>{" "}
+                        {simulationResult.structuralOutcome}
                       </div>
                       <div className="text-lg">
-                        <span className="text-gray-400">Fracture Vector:</span> {simulationResult.fractureVector} (interacting via P2 inversion)
+                        <span className="text-gray-400">Fracture Vector:</span>{" "}
+                        {simulationResult.fractureVector} (interacting via P2
+                        inversion)
                       </div>
                     </div>
                   </div>
@@ -655,11 +681,15 @@ const LegalStructuralSimulator: React.FC = () => {
 
           {!simulationResult && !isSimulating && (
             <div className="text-center text-gray-500 py-16">
-              <div className="text-2xl font-mono mb-4" style={{ color: "#cab27f" }}>
+              <div
+                className="text-2xl font-mono mb-4"
+                style={{ color: "#cab27f" }}
+              >
                 ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
               </div>
               <div className="text-lg font-mono text-gray-400">
-                Simulation inactive — structural input incomplete{".".repeat(ellipsisCount)}
+                Simulation inactive — structural input incomplete
+                {".".repeat(ellipsisCount)}
               </div>
             </div>
           )}
