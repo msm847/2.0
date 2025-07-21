@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 interface ClauseData {
   id: string;
   title: string;
+  weight: number;
   riskVector: {
     DG: number;
     RT: number;
