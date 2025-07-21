@@ -176,7 +176,10 @@ const ModuleGrid = () => {
   const [hoveredModule, setHoveredModule] = useState<string | null>(null);
 
   return (
-    <div className="py-20 px-4" style={{ background: "linear-gradient(180deg, #151A13, #1C2E22)" }}>
+    <div
+      className="py-20 px-4"
+      style={{ background: "linear-gradient(180deg, #151A13, #1C2E22)" }}
+    >
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 mt-8">

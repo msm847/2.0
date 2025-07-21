@@ -145,7 +145,8 @@ const PerceptionPerspective = () => {
       textColor: "#E5F3ED", // Off-white green, sharp against black
     },
     perspective: {
-      backgroundColor: "radial-gradient(ellipse at center, #2F4D3F 0%, #1D3328 100%)", // Semantic refraction with lateral shift
+      backgroundColor:
+        "radial-gradient(ellipse at center, #2F4D3F 0%, #1D3328 100%)", // Semantic refraction with lateral shift
       borderColor: "#E5F3ED", // Same white as perception TrueFocus box
       glowColor: "rgba(229, 243, 237, 0.6)", // Same white with opacity as perception
       accentColor: "#60A5FA",
