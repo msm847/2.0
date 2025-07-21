@@ -108,7 +108,7 @@ const structuralInputs: StructuralInput[] = [
   },
   {
     id: "S6",
-    title: "Quantization Gate Fragmentation",
+    title: "Segmented Authorization Drift",
     weight: 0.44,
     description:
       "Splits authorizations into subunits to bypass scrutiny. Examines distributed threshold evasion.",
@@ -134,10 +134,10 @@ const environmentOperators: EnvironmentOperator[] = [
   },
   {
     id: "E2",
-    name: "Recursive Authority Coupling",
+    name: "Authority Feedback Loop",
     weight: 0.67,
     description:
-      "Decision boundaries blur, creating feedback loops across modules. Responsibility, compliance, and oversight become mutually dependent and harder to unwind.",
+      "Creates overlapping, circular chains of responsibility. Compliance and oversight reference each other recursively, making structural ambiguity persistent and difficult to resolve.",
     transformEffect:
       "Entangles Incentive-Driven Compliance and Persistence Injection, increasing recursion and persistence of ambiguous authority",
   },
