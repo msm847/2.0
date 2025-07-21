@@ -31,11 +31,11 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#10201C",
-    title: "Vision Statement",
+    title: "Vision",
     description:
-      "Vigilum aims to empower societies with structural transparency where laws and contracts carry traceable logic, and loopholes have nowhere to hide.",
+      "Vigilum pioneers Structural Governance Intelligence—the first system capable of translating complex legal and political networks into real-time risk signals that reveal system-level vulnerabilities before they become procedural reality.",
     secondaryDescription:
-      "We believe in augmenting human oversight with AI to achieve accountability by design, transforming governance from reactive to predictive.",
+      "By computing intent rather than monitoring behavior, we enable institutions to foresee and prevent corruption that operates through compliance, not in violation of it.",
     url: "/core-principles",
     isVision: true,
   },
