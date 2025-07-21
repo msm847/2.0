@@ -289,7 +289,7 @@ const Navigation = () => {
                   </button>
                   <button
                     onClick={() => handleNavigation("#demo")}
-                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
+                    className="w-full text-right text-sm font-display transition-all duration-200 mb-2"
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
                       background:
