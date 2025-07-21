@@ -51,79 +51,15 @@ void main() {
 const discFragShaderSource = `#version 300 es
 precision highp float;
 
-uniform sampler2D uTex;
 uniform int uItemCount;
-uniform int uAtlasSize;
-
-out vec4 outColor;
-
-in vec2 vUvs;
-in float vAlpha;
 flat in int vInstanceId;
-
-// Simple number rendering function
-float renderNumber(vec2 uv, int number) {
-    // Center the UV coordinates
-    uv = (uv - 0.5) * 4.0; // Scale up for visibility
-
-    // Simple digit patterns using distance fields
-    float d = 999.0;
-
-    if (number == 1) {
-        // Render "1" - simple vertical line
-        d = min(d, abs(uv.x) - 0.1);
-    }
-    else if (number == 2) {
-        // Render "2" - simplified shape
-        if (uv.y > 0.3) d = min(d, abs(uv.x + 0.3) - 0.3);
-        else if (uv.y > -0.3) d = min(d, abs(uv.x - 0.3) - 0.3);
-        else d = min(d, abs(uv.x + 0.3) - 0.3);
-        d = min(d, abs(uv.y - 0.6) - 0.1);
-        d = min(d, abs(uv.y) - 0.1);
-        d = min(d, abs(uv.y + 0.6) - 0.1);
-    }
-    else if (number == 3) {
-        // Render "3" - simplified
-        d = min(d, abs(uv.x - 0.3) - 0.3);
-        d = min(d, abs(uv.y - 0.6) - 0.1);
-        d = min(d, abs(uv.y) - 0.1);
-        d = min(d, abs(uv.y + 0.6) - 0.1);
-    }
-    else if (number == 4) {
-        // Render "4" - simplified
-        if (uv.y > 0.0) d = min(d, abs(uv.x + 0.3) - 0.1);
-        d = min(d, abs(uv.x - 0.3) - 0.1);
-        d = min(d, abs(uv.y) - 0.1);
-    }
-    else if (number == 5) {
-        // Render "5" - simplified
-        d = min(d, abs(uv.x + 0.3) - 0.3);
-        d = min(d, abs(uv.y - 0.6) - 0.1);
-        d = min(d, abs(uv.y) - 0.1);
-        d = min(d, abs(uv.y + 0.6) - 0.1);
-        if (uv.y > 0.0) d = min(d, abs(uv.x + 0.6) - 0.1);
-        else d = min(d, abs(uv.x - 0.6) - 0.1);
-    }
-    else if (number == 6) {
-        // Render "6" - simplified
-        d = min(d, abs(uv.x + 0.3) - 0.3);
-        d = min(d, abs(uv.y - 0.6) - 0.1);
-        d = min(d, abs(uv.y) - 0.1);
-        d = min(d, abs(uv.y + 0.6) - 0.1);
-        if (uv.y < 0.0) d = min(d, abs(uv.x - 0.3) - 0.3);
-    }
-
-    return 1.0 - smoothstep(0.0, 0.1, d);
-}
+in float vAlpha;
+out vec4 outColor;
 
 void main() {
     int itemIndex = vInstanceId % uItemCount;
-    int number = (itemIndex % 6) + 1; // Numbers 1-6
 
-    // Render the number
-    float numberMask = renderNumber(vUvs, number);
-
-    // Base color from grey scale based on item index
+    // Grey scale colors based on item index
     vec3 greyColors[6];
     greyColors[0] = vec3(0.16, 0.16, 0.16); // #2A2A2A
     greyColors[1] = vec3(0.25, 0.25, 0.25); // #404040
@@ -134,10 +70,7 @@ void main() {
 
     vec3 baseColor = greyColors[itemIndex % 6];
 
-    // Mix number color (white) with base color
-    vec3 finalColor = mix(baseColor, vec3(1.0), numberMask);
-
-    outColor = vec4(finalColor, vAlpha);
+    outColor = vec4(baseColor, vAlpha);
 }
 `;
 
