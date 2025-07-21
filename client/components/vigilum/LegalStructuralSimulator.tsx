@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SplitText from "../ui/SplitText";
 
 // Type definitions
 interface StructuralInput {
