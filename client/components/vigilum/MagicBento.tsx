@@ -645,32 +645,22 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                     </h2>
                     <p
                       style={{
-                        fontSize: "13px",
-                        lineHeight: "1.5",
+                        fontSize: "17px",
+                        lineHeight: "25px",
                         color: "#E5E5E5",
-                        marginBottom: "30px",
-                        fontWeight: "500",
-                        fontStyle: "italic",
+                        marginBottom: "8px",
+                        fontWeight: "300",
                       }}
                     >
-                      "
-                      <span
-                        style={{
-                          fontWeight: "500",
-                          lineHeight: "30px",
-                          fontSize: "20px",
-                        }}
-                      >
-                        {card.description}
-                      </span>
-                      "
+                      {card.description}
                     </p>
                     <p
                       style={{
-                        fontSize: "14px",
-                        lineHeight: "30px",
-                        color: "#B0BEC5",
-                        fontWeight: "600",
+                        fontSize: "17px",
+                        lineHeight: "25px",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "300",
                       }}
                     >
                       {card.secondaryDescription}
