@@ -309,7 +309,7 @@ const StructuralCognitionChamber: React.FC = () => {
   };
 
   return (
-    <section className="pt-20 px-4 pb-32" style={{ backgroundColor: "#102B21" }}>
+    <section className="pt-20 px-4 pb-16" style={{ backgroundColor: "#102B21" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
