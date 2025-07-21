@@ -477,7 +477,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Environment Operators
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Select up to 2. Each transforms module interactions — structurally, not visually.
+                Superimpose up to two systemic constraints. Each operator alters internal alignments, forcing logics to compete, overlap, or dissolve.
               </p>
             </div>
 
