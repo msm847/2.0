@@ -504,13 +504,7 @@ const Navigation = () => {
                 onClick={() => handleNavigation("#modules")}
                 className={`${getButtonStyles("modules", activeSection === "modules")} text-left`}
               >
-                ENGINES
-              </button>
-              <button
-                onClick={() => handleNavigation("#about")}
-                className={`${getButtonStyles("about", activeSection === "about")} text-left`}
-              >
-                METHODOLOGY
+                CORE MODULES
               </button>
               <button
                 onClick={() => handleNavigation("#demo")}
@@ -522,21 +516,31 @@ const Navigation = () => {
                       : "500",
                 }}
               >
-                SPE
+                SEMANTIC PERMUTATION ENGINE
+              </button>
+              <button
+                onClick={() => handleNavigation("#clause-simulator")}
+                className={`${getButtonStyles("clause-simulator", activeSection === "clause-simulator")} text-left`}
+              >
+                CLAUSE SIMULATOR
               </button>
               <button
                 onClick={() => handleNavigation("#cases")}
                 className={`${getButtonStyles("cases", activeSection === "cases")} text-left`}
               >
-                LIBRARY
+                STRUCTURAL RETROSPECTIVES
               </button>
               <button
                 onClick={() => handleNavigation("#team")}
-                className={`${getSeeTogetherStyles(activeSection === "team")} text-left whitespace-nowrap`}
-                onMouseEnter={() => setSeeTogetherHovered(true)}
-                onMouseLeave={() => setSeeTogetherHovered(false)}
+                className={`${getButtonStyles("team", activeSection === "team")} text-left`}
               >
-                MISSION & PARTNERS
+                MISSION
+              </button>
+              <button
+                onClick={() => handleNavigation("#partners")}
+                className={`${getButtonStyles("partners", activeSection === "partners")} text-left`}
+              >
+                PARTNERS
               </button>
             </div>
           </div>
