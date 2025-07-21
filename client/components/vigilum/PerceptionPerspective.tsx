@@ -138,7 +138,7 @@ const PerceptionPerspective = () => {
   // Theme configurations
   const themes = {
     perception: {
-      backgroundColor: "#04110D", // Root perception; epistemic base layer
+      backgroundColor: "linear-gradient(135deg, #04110D, #0B231A)", // Root perception with deepening gradient
       borderColor: "#E5F3ED", // Same as text color
       glowColor: "rgba(229, 243, 237, 0.6)", // Same as text color with opacity
       accentColor: "#34D399",
