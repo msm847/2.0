@@ -183,17 +183,24 @@ const Partners = () => {
                   border: "1px solid rgba(0,255,204,0.08)",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
                   backdropFilter: "blur(10px)",
-                  height: "320px",
-                  transition: "all 0.3s ease"
+                  height: "260px",
+                  transition: "all 0.15s ease"
                 }}
               >
                 <div className="p-8 h-full flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-semibold text-white mb-4 font-display">
-                      Core Principles
-                    </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <Shield className="w-6 h-6 text-green-400" />
+                      <h3 className="text-2xl font-semibold text-white font-display">
+                        Core Principles
+                      </h3>
+                    </div>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
                       Foundational guidelines that drive our structural intelligence approach
+                    </p>
+                    <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
+                      <Mail className="w-4 h-4 mr-2" />
+                      &nbsp;
                     </p>
                   </div>
                   <div className="mt-auto">
@@ -220,17 +227,24 @@ const Partners = () => {
                   border: "1px solid rgba(0,255,204,0.08)",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
                   backdropFilter: "blur(10px)",
-                  height: "320px",
-                  transition: "all 0.3s ease"
+                  height: "260px",
+                  transition: "all 0.15s ease"
                 }}
               >
                 <div className="p-8 h-full flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-semibold text-white mb-4 font-display">
-                      Actors
-                    </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <Users className="w-6 h-6 text-green-400" />
+                      <h3 className="text-2xl font-semibold text-white font-display">
+                        Actors
+                      </h3>
+                    </div>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-4">
                       Key stakeholders and institutional players in governance intelligence
+                    </p>
+                    <p className="text-green-400 text-sm font-mono mb-6 flex items-center opacity-0">
+                      <Mail className="w-4 h-4 mr-2" />
+                      &nbsp;
                     </p>
                   </div>
                   <div className="mt-auto">
@@ -257,8 +271,8 @@ const Partners = () => {
                   border: "1px solid rgba(0,255,204,0.08)",
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
                   backdropFilter: "blur(10px)",
-                  height: "320px",
-                  transition: "all 0.3s ease"
+                  height: "260px",
+                  transition: "all 0.15s ease"
                 }}
               >
                 <div className="p-8 h-full flex flex-col justify-between">
