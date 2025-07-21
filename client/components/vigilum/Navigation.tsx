@@ -25,7 +25,7 @@ const Navigation = () => {
     } else if (path === "/vigilum") {
       // Track scroll position for vigilum page sections
       const handleScroll = () => {
-        const sections = ["modules", "demo", "cases", "about", "team"];
+        const sections = ["modules", "demo", "clause-simulator", "cases", "team", "partners"];
         const currentSection = sections.find((section) => {
           const element = document.getElementById(section);
           if (element) {
