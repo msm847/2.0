@@ -397,7 +397,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Input Sequencer
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Order and combine scenario modules. Sequence changes emergent outcome.
+                Sequence changes emergent outcome.
               </p>
               <div className="text-sm text-gray-500 mt-2">
                 Σw = {getTotalWeight().toFixed(2)}
