@@ -338,56 +338,6 @@ const Navigation = () => {
                     SPE
                   </button>
                   <button
-                    onClick={() => handleNavigation("#clause-simulator")}
-                    className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
-                    style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
-                      background:
-                        activeSection === "clause-simulator"
-                          ? "rgba(34, 197, 94, 0.15)"
-                          : "rgba(255, 255, 255, 0.05)",
-                      borderColor: "rgba(255, 255, 255, 0.1)",
-                      borderRadius: "12px",
-                      borderWidth: "1px",
-                      boxShadow:
-                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-                      color:
-                        activeSection === "clause-simulator"
-                          ? "rgba(34, 197, 94, 1)"
-                          : "rgba(255, 255, 255, 0.8)",
-                      fontWeight: "500",
-                      letterSpacing: "1.2px",
-                      textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                      padding: "10px 16px",
-                      cursor: "pointer",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform =
-                        "translateY(-1px) scale(1.01)";
-                      e.currentTarget.style.background =
-                        "rgba(34, 197, 94, 0.2)";
-                      e.currentTarget.style.color = "rgba(34, 197, 94, 1)";
-                      e.currentTarget.style.boxShadow =
-                        "0 0 20px rgba(34, 197, 94, 0.3), rgba(0, 0, 0, 0.1) 0px 4px 16px 0px";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform =
-                        "translateY(0px) scale(1)";
-                      e.currentTarget.style.background =
-                        activeSection === "clause-simulator"
-                          ? "rgba(34, 197, 94, 0.15)"
-                          : "rgba(255, 255, 255, 0.05)";
-                      e.currentTarget.style.color =
-                        activeSection === "clause-simulator"
-                          ? "rgba(34, 197, 94, 1)"
-                          : "rgba(255, 255, 255, 0.8)";
-                      e.currentTarget.style.boxShadow =
-                        "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset";
-                    }}
-                  >
-                    CLAUSE SIMULATOR
-                  </button>
-                  <button
                     onClick={() => handleNavigation("#cases")}
                     className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
