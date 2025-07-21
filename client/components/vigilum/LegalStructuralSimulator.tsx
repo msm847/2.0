@@ -367,19 +367,33 @@ const StructuralCognitionChamber: React.FC = () => {
 
             <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
               <div className="space-y-3">
-                {structuralInputs.map((input) => (
-                  <motion.div
-                    key={input.id}
-                    className="p-3 rounded-lg border border-gray-600 cursor-pointer hover:border-green-400/50 transition-all group"
-                    style={{ backgroundColor: "#1f2e28", borderColor: "rgba(255,255,255,0.1)" }}
-                    whileHover={{ scale: 1.02, backgroundColor: "#2a3a32" }}
-                    onClick={() => {
-                      const emptySlot = selectedInputs.findIndex(s => s === null);
-                      if (emptySlot !== -1) {
-                        selectInput(input, emptySlot);
-                      }
-                    }}
-                  >
+                {structuralInputs.map((input) => {
+                  const isAlreadySelected = selectedInputs.some(selectedInput =>
+                    selectedInput && selectedInput.id === input.id
+                  );
+
+                  return (
+                    <motion.div
+                      key={input.id}
+                      className={`p-3 rounded-lg border transition-all group ${
+                        isAlreadySelected
+                          ? "border-green-400 cursor-not-allowed opacity-60"
+                          : "border-gray-600 cursor-pointer hover:border-green-400/50"
+                      }`}
+                      style={{
+                        backgroundColor: isAlreadySelected ? "#2a4a32" : "#1f2e28",
+                        borderColor: isAlreadySelected ? "#d4c69b" : "rgba(255,255,255,0.1)"
+                      }}
+                      whileHover={!isAlreadySelected ? { scale: 1.02, backgroundColor: "#2a3a32" } : {}}
+                      onClick={() => {
+                        if (!isAlreadySelected) {
+                          const emptySlot = selectedInputs.findIndex(s => s === null);
+                          if (emptySlot !== -1) {
+                            selectInput(input, emptySlot);
+                          }
+                        }
+                      }}
+                    >
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-sm font-mono text-white flex-1 pr-2" style={{ color: "#eae2cc" }}>
                         {input.title}
