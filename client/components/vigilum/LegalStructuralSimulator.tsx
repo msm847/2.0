@@ -321,7 +321,7 @@ const StructuralCognitionChamber: React.FC = () => {
           <div className="mb-6">
             <p className="text-gray-400 text-sm font-mono leading-relaxed">
               This simulation does not reveal intention or error.<br/>
-              It renders structural consequence — a logic state in the space between law and reality.
+              It renders structural consequence ��� a logic state in the space between law and reality.
             </p>
           </div>
         </div>
@@ -393,7 +393,7 @@ const StructuralCognitionChamber: React.FC = () => {
                 Input Sequencer
               </h4>
               <p className="text-gray-400 text-sm mt-2">
-                Order is not cosmetic: each position reshapes the simulation's internal vector landscape and output structure.
+                Order is not cosmetic: each position reshapes the simulation's internal vector landscape...
               </p>
               <div className="text-sm text-gray-500 mt-2">
                 Σw = {getTotalWeight().toFixed(2)}
