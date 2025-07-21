@@ -138,14 +138,14 @@ const PerceptionPerspective = () => {
   // Theme configurations
   const themes = {
     perception: {
-      backgroundColor: "#04110D", // Surface Black Green
+      backgroundColor: "#04110D", // Root perception; epistemic base layer
       borderColor: "#E5F3ED", // Same as text color
       glowColor: "rgba(229, 243, 237, 0.6)", // Same as text color with opacity
       accentColor: "#34D399",
       textColor: "#E5F3ED", // Off-white green, sharp against black
     },
     perspective: {
-      backgroundColor: "#1B352A", // Structured Green Depth
+      backgroundColor: "#20382C", // Layered visibility, selective distortion
       borderColor: "#E5F3ED", // Same white as perception TrueFocus box
       glowColor: "rgba(229, 243, 237, 0.6)", // Same white with opacity as perception
       accentColor: "#60A5FA",
