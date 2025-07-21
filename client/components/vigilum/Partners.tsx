@@ -168,7 +168,8 @@ const Partners = () => {
             )}
 
             {/* Partners Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div style={{ height: "600px", position: "relative" }}>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
               {/* Core Principles Box */}
               <motion.div
