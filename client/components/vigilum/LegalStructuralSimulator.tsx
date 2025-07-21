@@ -178,9 +178,16 @@ const StructuralCognitionChamber: React.FC = () => {
   }, []);
 
   const selectInput = (input: StructuralInput, slotIndex: number) => {
-    const newSelected = [...selectedInputs];
-    newSelected[slotIndex] = input;
-    setSelectedInputs(newSelected);
+    // Check if this input is already selected in any slot
+    const isAlreadySelected = selectedInputs.some(selectedInput =>
+      selectedInput && selectedInput.id === input.id
+    );
+
+    if (!isAlreadySelected) {
+      const newSelected = [...selectedInputs];
+      newSelected[slotIndex] = input;
+      setSelectedInputs(newSelected);
+    }
   };
 
   const removeInput = (slotIndex: number) => {
