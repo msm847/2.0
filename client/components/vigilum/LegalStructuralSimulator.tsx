@@ -101,6 +101,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "temporal",
     name: "Temporal Compression (𝓔₁)",
+    weight: 0.32,
     icon: "",
     description: "All clause latency functions are reduced",
     modifiers: { DG: 0.32, RT: -0.08, CI: -0.12, SB: -0.05 },
@@ -109,6 +110,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "narrative",
     name: "Narrative Overwriting (𝓔₂)",
+    weight: 0.41,
     icon: "",
     description: "Control inversion vectors are masked in output sequence",
     modifiers: { DG: 0.41, RT: -0.15, CI: 0.18, SB: -0.22 },
@@ -117,6 +119,7 @@ const environmentOperators: EnvironmentOperator[] = [
   {
     id: "recognition",
     name: "Recognition Fog (𝓔₃)",
+    weight: 0.29,
     icon: "",
     description: "Clauses lose override visibility to one another",
     modifiers: { DG: 0.29, RT: -0.11, CI: -0.18, SB: 0.15 },
