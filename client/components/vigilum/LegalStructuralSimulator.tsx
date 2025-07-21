@@ -679,7 +679,7 @@ const StructuralCognitionChamber: React.FC = () => {
           </AnimatePresence>
 
           {!simulationResult && !isSimulating && (
-            <div className="text-center pt-8 pb-16">
+            <div className="text-center pt-4 pb-16">
               <div
                 className="text-2xl font-mono mb-4"
                 style={{ color: "#cab27f" }}
