@@ -269,7 +269,7 @@ const LegalStructuralSimulator: React.FC = () => {
   };
 
   return (
-    <section className="pt-20 px-4" style={{ backgroundColor: "#081A0E" }}>
+    <section className="pt-20 px-4" style={{ backgroundColor: "#102B21" }}>
       <div className="container mx-auto max-w-7xl">
         {/* Core Premise */}
         <div className="text-left mb-8">
