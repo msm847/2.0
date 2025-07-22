@@ -534,8 +534,9 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   key={index}
                   className="min-h-[80px] border-2 border-dashed border-gray-600 rounded-lg p-4 flex items-center justify-center relative"
                   style={{
-                    background: input ? "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)" : "transparent",
+                    background: "transparent",
                     borderColor: input ? "#7b7455" : "rgba(123, 116, 85, 0.3)",
+                    boxShadow: input ? "0px 0px 20px rgba(123, 116, 85, 0.6), 0px 0px 40px rgba(123, 116, 85, 0.3), inset 0px 1px 0px rgba(255, 255, 255, 0.1)" : "none",
                   }}
                 >
                   {input ? (
