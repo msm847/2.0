@@ -108,15 +108,15 @@ const structuralInputs: StructuralInput[] = [
   },
   {
     id: "S6",
-    title: "Segmented Authorization Drift",
-    weight: 0.44,
+    title: "Incentive-Driven Compliance",
+    weight: 0.54,
     description:
-      "Splits authorizations into subunits to bypass scrutiny. Examines distributed threshold evasion.",
-    tags: ["#fragmentation", "#threshold", "#distributed"],
+      "Obedience logic only triggers on downstream reward. Models performance-tied compliance elasticity.",
+    tags: ["#incentive", "#compliance", "#elasticity"],
     professionalInsight: {
-      economist: "Atomic transactions fall below oversight resolution",
-      auditor: "Individual approvals seem reasonable, aggregate does not",
-      engineer: "Distributed logic prevents holistic system visibility",
+      economist: "Behavior becomes reward-dependent rather than rule-dependent",
+      auditor: "Compliance gaps emerge during reward delays",
+      engineer: "System state depends on feedback loop timing",
     },
   },
 ];
