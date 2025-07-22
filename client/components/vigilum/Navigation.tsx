@@ -483,7 +483,7 @@ const Navigation = () => {
                           ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)";
                       e.currentTarget.style.color =
-                        activeSection === "partners"
+                        activeSection === "stakeholders"
                           ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)";
                       e.currentTarget.style.boxShadow =
