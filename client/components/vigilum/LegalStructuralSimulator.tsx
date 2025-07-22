@@ -179,9 +179,9 @@ const environmentOperators: EnvironmentOperator[] = [
 // Example scenarios for loader
 const exampleScenarios = [
   {
-    inputs: ["S2", "S4", "S6"],
-    operators: ["E1", "E3"],
-    name: "Dynamic Authority Fragmentation Pattern",
+    inputs: ["S3", "S6", "S1"],
+    operators: ["E1", "E2"],
+    name: "Persistence-Driven Compliance Network",
   },
   {
     inputs: ["S2", "S4", "S6"],
@@ -758,7 +758,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                     }}
                   >
                     <div className="mb-4">
-                      ϕ(inputs, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+                      ϕ(inputs, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × M���ⱼ
                     </div>
                     <div className="mb-4">
                       ϕ = {simulationResult.computationDetails.join(" + ")} ={" "}
