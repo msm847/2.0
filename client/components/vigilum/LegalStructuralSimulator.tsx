@@ -600,10 +600,10 @@ const StructuralCognitionChamber: React.FC = () => {
                           w = {operator.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none" }}>
                         {operator.description}
                       </p>
-                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50">
+                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none" }}>
                         {operator.transformEffect}
                       </div>
                     </div>
