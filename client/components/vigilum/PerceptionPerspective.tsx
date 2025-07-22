@@ -286,11 +286,13 @@ const PerceptionPerspective = () => {
                     };
 
                     const buttonBackground = getButtonBackground(label);
+                    const isSelected = selectedButton === label;
 
                     return (
                       <button
                         key={label}
                         className="glass-button"
+                        onClick={() => setSelectedButton(label)}
                         style={{
                           display: "inline-block",
                           backdropFilter: "blur(20px) saturate(180%)",
