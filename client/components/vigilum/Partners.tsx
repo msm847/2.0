@@ -101,11 +101,16 @@ const Partners = () => {
   const resetForm = () => {
     setIsSubmitted(false);
     setFullName("");
+    setBusinessEmail("");
+    setPhone("");
+    setJobTitle("");
     setCompany("");
-    setPosition("");
-    setMessage("");
+    setCountry("");
+    setProjectDescription("");
     setAttachedFiles([]);
     setError("");
+    setRobotVerified(false);
+    setPrivacyAccepted(false);
   };
 
   // Auto-reset success message after 5 seconds
