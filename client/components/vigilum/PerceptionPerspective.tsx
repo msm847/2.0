@@ -337,7 +337,7 @@ const PerceptionPerspective = () => {
 
                 {/* Structural Cognition Chamber integrated below the buttons */}
                 <div className="mt-8">
-                  <LegalStructuralSimulator />
+                  <LegalStructuralSimulator embedded={true} />
                 </div>
               </>
             )}
