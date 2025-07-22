@@ -297,21 +297,15 @@ const PerceptionPerspective = () => {
             transition={{ duration: 0.6 }}
           >
             <div
-              className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000"
+              className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
               style={{ color: currentTheme.textColor }}
             >
-              <SplitText
-                text={currentContent.description}
-                delay={30}
-                duration={0.6}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-100px"
-                textAlign="center"
-              />
+              {currentContent.description.split('\n').map((line, index) => (
+                <div key={index}>
+                  {line}
+                  {index < currentContent.description.split('\n').length - 1 && <br />}
+                </div>
+              ))}
             </div>
 
             {activeSection === "perspective" && (
