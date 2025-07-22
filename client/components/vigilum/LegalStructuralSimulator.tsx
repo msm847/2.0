@@ -587,7 +587,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {isSimulating ? "PROCESSING..." : simulationResult ? "See Below" : "EXECUTE SIMULATION"}
+                {isSimulating ? "PROCESSING..." : simulationResult ? "See Below" : selectedInputs.every((s) => s === null) ? "Select an input" : "EXECUTE SIMULATION"}
               </motion.button>
 
               {(selectedInputs.some((s) => s !== null) ||
