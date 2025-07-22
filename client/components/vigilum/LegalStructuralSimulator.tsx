@@ -585,7 +585,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
         {/* Environment Operators */}
         <div className="flex-1 flex flex-col">
           <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
-            <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+            <h4 className="text-xl text-white font-display uppercase tracking-wide">
               Environment Operators
             </h4>
             <p className="text-gray-400 text-sm mt-2">
