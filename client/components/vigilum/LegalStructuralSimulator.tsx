@@ -346,8 +346,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
   };
 
   const loadExampleScenario = () => {
-    const scenario =
-      exampleScenarios[Math.floor(Math.random() * exampleScenarios.length)];
+    const scenario = exampleScenarios[0]; // Always load the first scenario
 
     // Load inputs
     const newInputs: (StructuralInput | null)[] = [null, null, null];
