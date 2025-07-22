@@ -547,24 +547,24 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               <motion.button
                 onClick={executeSimulation}
                 disabled={
-                  selectedInputs.every((s) => s === null) || isSimulating
+                  selectedInputs.every((s) => s === null) || isSimulating || simulationResult
                 }
                 className="flex-1 py-4 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-all duration-300"
                 style={{
-                  background: selectedInputs.every((s) => s === null) || isSimulating
+                  background: selectedInputs.every((s) => s === null) || isSimulating || simulationResult
                     ? "#4b5563"
                     : "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)",
-                  cursor: selectedInputs.every((s) => s === null) || isSimulating ? "not-allowed" : "pointer"
+                  cursor: selectedInputs.every((s) => s === null) || isSimulating || simulationResult ? "not-allowed" : "pointer"
                 }}
                 whileHover={{
-                  scale: selectedInputs.every((s) => s === null) || isSimulating ? 1 : 1.02,
-                  background: selectedInputs.every((s) => s === null) || isSimulating
+                  scale: selectedInputs.every((s) => s === null) || isSimulating || simulationResult ? 1 : 1.02,
+                  background: selectedInputs.every((s) => s === null) || isSimulating || simulationResult
                     ? "#4b5563"
                     : "linear-gradient(135deg, #2a2b28, #5d5748, #8b8465)"
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {isSimulating ? "PROCESSING..." : "EXECUTE SIMULATION"}
+                {isSimulating ? "PROCESSING..." : simulationResult ? "See Below" : "EXECUTE SIMULATION"}
               </motion.button>
 
               {(selectedInputs.some((s) => s !== null) ||
