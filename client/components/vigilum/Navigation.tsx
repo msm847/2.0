@@ -443,7 +443,7 @@ const Navigation = () => {
                     MISSION
                   </button>
                   <button
-                    onClick={() => handleNavigation("#partners")}
+                    onClick={() => handleNavigation("#stakeholders")}
                     className="w-full text-left text-sm font-display transition-all duration-200"
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
