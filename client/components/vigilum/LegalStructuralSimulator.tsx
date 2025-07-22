@@ -512,29 +512,29 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   key={index}
                   className="min-h-[80px] border-2 border-dashed border-gray-600 rounded-lg p-4 flex items-center justify-center relative"
                   style={{
-                    backgroundColor: input ? "#1f2e28" : "transparent",
-                    borderColor: input ? "#d4c69b" : "rgba(255,255,255,0.1)",
+                    background: input ? "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)" : "transparent",
+                    borderColor: input ? "#7b7455" : "rgba(123, 116, 85, 0.3)",
                   }}
                 >
                   {input ? (
-                    <div className="w-full">
-                      <div className="flex items-start justify-between mb-2">
-                        <h5 className="text-sm font-mono text-white">
+                    <div className="w-full text-center">
+                      <div className="flex items-center justify-center mb-2 relative">
+                        <h5 className="text-sm font-mono text-white text-center">
                           {input.title}
                         </h5>
                         <button
                           onClick={() => removeInput(index)}
-                          className="text-red-400 hover:text-red-300 text-xs"
+                          className="text-red-400 hover:text-red-300 text-xs absolute top-0 right-0"
                         >
                           ✕
                         </button>
                       </div>
-                      <div className="text-xs text-gray-400">
+                      <div className="text-xs text-gray-400 text-center">
                         Position {index + 1} • w = {input.weight.toFixed(2)}
                       </div>
                     </div>
                   ) : (
-                    <span className="text-gray-500 text-sm">
+                    <span className="text-gray-500 text-sm text-center">
                       Position {index + 1}
                     </span>
                   )}
