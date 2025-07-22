@@ -587,22 +587,32 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                 disabled={
                   selectedInputs.every((s) => s === null) || isSimulating || simulationResult
                 }
-                className="flex-1 py-4 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-all duration-300"
+                className="flex-1 py-4 text-white font-ui font-bold rounded-2xl transition-all duration-300"
                 style={{
                   background: selectedInputs.every((s) => s === null) || isSimulating || simulationResult
-                    ? "#4b5563"
+                    ? "rgba(255, 255, 255, 0.05)"
                     : "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)",
+                  border: selectedInputs.every((s) => s === null) || isSimulating || simulationResult
+                    ? "1px solid rgba(255, 255, 255, 0.1)"
+                    : "none",
+                  backdropFilter: selectedInputs.every((s) => s === null) || isSimulating || simulationResult
+                    ? "blur(20px) saturate(180%)"
+                    : "none",
                   cursor: selectedInputs.every((s) => s === null) || isSimulating || simulationResult ? "not-allowed" : "pointer"
                 }}
                 whileHover={{
                   scale: selectedInputs.every((s) => s === null) || isSimulating || simulationResult ? 1 : 1.02,
                   background: selectedInputs.every((s) => s === null) || isSimulating || simulationResult
-                    ? "#4b5563"
+                    ? "rgba(255, 255, 255, 0.1)"
                     : "linear-gradient(135deg, #2a2b28, #5d5748, #8b8465)"
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {isSimulating ? "PROCESSING..." : simulationResult ? "See Below" : selectedInputs.every((s) => s === null) ? "Select an input" : "EXECUTE SIMULATION"}
+                {isSimulating ? "PROCESSING..." : simulationResult ? "See Below" : selectedInputs.every((s) => s === null) ? (
+                  <>
+                    Select an input<AnimatedDots />
+                  </>
+                ) : "EXECUTE SIMULATION"}
               </motion.button>
 
               {(selectedInputs.some((s) => s !== null) ||
