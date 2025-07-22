@@ -546,7 +546,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               {selectedInputs.map((input, index) => (
                 <div
                   key={index}
-                  className="min-h-[50px] border border-dashed border-gray-600 rounded-md px-3 py-2 flex items-center justify-center relative"
+                  className="min-h-[60px] border border-dashed border-gray-600 rounded-md px-4 py-3 flex items-center justify-center relative"
                   style={{
                     background: "transparent",
                     borderColor: input ? "#7b7455" : "rgba(123, 116, 85, 0.3)",
@@ -556,7 +556,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   {input ? (
                     <div className="w-full text-center">
                       <div className="flex items-center justify-center mb-1 relative">
-                        <h5 className="text-xs font-mono text-white text-center leading-tight">
+                        <h5 className="text-sm font-mono text-white text-center">
                           {input.title}
                         </h5>
                         <button
@@ -571,7 +571,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                       </div>
                     </div>
                   ) : (
-                    <span className="text-gray-500 text-xs text-center">
+                    <span className="text-gray-500 text-sm text-center">
                       Position {index + 1}
                     </span>
                   )}
