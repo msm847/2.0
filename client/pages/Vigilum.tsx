@@ -49,15 +49,14 @@ const VigilumPage = () => {
       <div id="perception-perspective">
         <PerceptionPerspective />
       </div>
+      <div id="clause-simulator">
+        <LegalStructuralSimulator />
+      </div>
       <div id="modules">
         <ModuleGrid />
       </div>
       <div id="demo">
         <SemanticPermutationEngine />
-      </div>
-
-      <div id="clause-simulator">
-        <LegalStructuralSimulator />
       </div>
 
       <div id="cases">
