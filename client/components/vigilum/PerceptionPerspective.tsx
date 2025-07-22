@@ -301,7 +301,7 @@ const PerceptionPerspective = () => {
                           borderRadius: "25px",
                           borderWidth: "1px",
                           boxShadow: isSelected
-                            ? "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset"
+                            ? `0px 0px 30px ${label === "Cultural" ? "rgba(72, 110, 96, 0.6)" : label === "Economic" ? "rgba(123, 116, 85, 0.6)" : "rgba(139, 92, 87, 0.6)"}, 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset`
                             : "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                           color: isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.8)",
                           fontFamily: "var(--font-display)",
@@ -316,6 +316,7 @@ const PerceptionPerspective = () => {
                           position: "relative",
                           overflow: "hidden",
                           transform: isSelected ? "translateY(-2px) scale(1.02)" : "translateY(0px) scale(1)",
+                          animation: isSelected ? `pulse-${label.toLowerCase()} 2s ease-in-out infinite` : "none",
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform =
