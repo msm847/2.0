@@ -893,7 +893,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               className="text-2xl font-mono mb-4"
               style={{ color: "#cab27f" }}
             >
-              ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢ���
+              ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
             </div>
             <div className="text-lg font-mono text-gray-400">
               Simulation inactive — structural input incomplete
