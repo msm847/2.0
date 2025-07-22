@@ -550,10 +550,10 @@ const Navigation = () => {
                 MISSION
               </button>
               <button
-                onClick={() => handleNavigation("#partners")}
-                className={`${getButtonStyles("partners", activeSection === "partners")} text-left`}
+                onClick={() => handleNavigation("#stakeholders")}
+                className={`${getButtonStyles("stakeholders", activeSection === "stakeholders")} text-left`}
               >
-                PARTNERS
+                STAKEHOLDERS
               </button>
             </div>
           </div>
