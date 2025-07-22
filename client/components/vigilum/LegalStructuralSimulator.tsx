@@ -730,7 +730,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
             </p>
           </div>
 
-          <div className="overflow-y-auto p-4 h-[466px]">
+          <div className="overflow-y-auto p-4 h-[447px]">
             <div className="space-y-4">
               <p className="text-xs text-gray-400 mb-4">
                 Select up to 2 operators
