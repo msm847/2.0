@@ -90,6 +90,11 @@ const ModulePageTemplate = ({
   const nextModule = modules[currentModuleIndex + 1];
 
   useEffect(() => {
+    // Scroll to top when module page loads
+    window.scrollTo(0, 0);
+  }, [moduleData.id]);
+
+  useEffect(() => {
     // Auto-cycle through pattern archive
     const interval = setInterval(() => {
       setCurrentPatternIndex(
