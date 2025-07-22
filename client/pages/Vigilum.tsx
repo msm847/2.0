@@ -4,7 +4,6 @@ import Navigation from "@/components/vigilum/Navigation";
 import Hero from "@/components/vigilum/Hero";
 import PerceptionPerspective from "@/components/vigilum/PerceptionPerspective";
 import ModuleGrid from "@/components/vigilum/ModuleGrid";
-import LegalStructuralSimulator from "@/components/vigilum/LegalStructuralSimulator";
 
 import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationEngine";
 import UseCases from "@/components/vigilum/UseCases";
