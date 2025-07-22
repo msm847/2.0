@@ -346,9 +346,11 @@ const PerceptionPerspective = () => {
                 </div>
 
                 {/* Structural Cognition Chamber integrated below the buttons */}
-                <div className="mt-8 -mx-32 max-w-none">
-                  <LegalStructuralSimulator embedded={true} />
-                </div>
+                {selectedButton === "Economic" && (
+                  <div className="mt-8 -mx-32 max-w-none">
+                    <LegalStructuralSimulator embedded={true} />
+                  </div>
+                )}
               </>
             )}
           </motion.div>
