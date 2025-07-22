@@ -189,7 +189,7 @@ const Partners = () => {
               >
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-green-300 font-mono">
-                  Partnership inquiry sent successfully! We'll get back to you soon.
+                  Stakeholder inquiry sent successfully! We'll get back to you soon.
                 </span>
               </motion.div>
             )}
