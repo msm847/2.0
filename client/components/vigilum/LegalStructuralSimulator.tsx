@@ -417,9 +417,10 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         borderColor: isAlreadySelected
                           ? "#d4c69b"
                           : "rgba(255,255,255,0.1)",
-                        minHeight: "120px",
-                        display: "flex",
-                        flexDirection: "column"
+                        height: "140px",
+                        display: "grid",
+                        gridTemplateRows: "auto 1fr",
+                        gap: "12px"
                       }}
                       whileHover={
                         !isAlreadySelected
@@ -437,31 +438,52 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         }
                       }}
                     >
-                      <div className="flex items-start justify-between mb-3 gap-3">
+                      <div style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr auto",
+                        gap: "12px",
+                        alignItems: "start"
+                      }}>
                         <h4
-                          className="text-sm font-mono text-white leading-tight"
+                          className="text-sm font-mono text-white"
                           style={{
                             color: "#eae2cc",
-                            flex: "1 1 auto",
-                            minWidth: "0",
-                            lineHeight: "1.2",
-                            fontSize: "0.875rem"
+                            lineHeight: "1.3",
+                            fontSize: "0.875rem",
+                            fontWeight: "500",
+                            margin: "0",
+                            overflow: "hidden",
+                            display: "-webkit-box",
+                            WebkitLineClamp: "2",
+                            WebkitBoxOrient: "vertical"
                           }}
                         >
                           {input.title}
                         </h4>
                         <span
-                          className="text-xs font-mono text-gray-400 flex-shrink-0 self-start"
+                          className="text-xs font-mono text-gray-400"
                           style={{
-                            lineHeight: "1.2",
+                            lineHeight: "1.3",
                             fontSize: "0.75rem",
-                            marginTop: "1px"
+                            fontWeight: "400",
+                            whiteSpace: "nowrap"
                           }}
                         >
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed flex-1" style={{ lineHeight: "1.4" }}>
+                      <p
+                        className="text-xs text-gray-400"
+                        style={{
+                          lineHeight: "1.4",
+                          fontSize: "0.75rem",
+                          margin: "0",
+                          overflow: "hidden",
+                          display: "-webkit-box",
+                          WebkitLineClamp: "4",
+                          WebkitBoxOrient: "vertical"
+                        }}
+                      >
                         {input.description}
                       </p>
                     </motion.div>
@@ -840,7 +862,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                 className="text-2xl font-mono mb-4"
                 style={{ color: "#cab27f" }}
               >
-                ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+                ϕ(c, ���) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
               </div>
               <div className="text-lg font-mono text-gray-400">
                 Simulation inactive — structural input incomplete
