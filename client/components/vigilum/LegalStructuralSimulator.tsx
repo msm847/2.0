@@ -363,7 +363,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
     return (
       <div className="mx-auto max-w-[1600px] px-8">
         {/* Header */}
-        <div className="mb-8 text-left">
+        <div className="mb-8 mt-16 text-left">
           <h3 className="text-heading-md text-white mb-4">
             STRUCTURAL COGNITION CHAMBER
           </h3>
