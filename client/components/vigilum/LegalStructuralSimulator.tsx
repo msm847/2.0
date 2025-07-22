@@ -542,21 +542,21 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
           </div>
 
           <div className="flex-1 p-4">
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3 mb-6">
               {selectedInputs.map((input, index) => (
                 <div
                   key={index}
-                  className="min-h-[80px] border-2 border-dashed border-gray-600 rounded-lg p-4 flex items-center justify-center relative"
+                  className="min-h-[50px] border border-dashed border-gray-600 rounded-md px-3 py-2 flex items-center justify-center relative"
                   style={{
                     background: "transparent",
                     borderColor: input ? "#7b7455" : "rgba(123, 116, 85, 0.3)",
-                    boxShadow: input ? "0px 0px 20px rgba(123, 116, 85, 0.6), 0px 0px 40px rgba(123, 116, 85, 0.3), inset 0px 1px 0px rgba(255, 255, 255, 0.1)" : "none",
+                    boxShadow: input ? "0px 0px 15px rgba(123, 116, 85, 0.5), 0px 0px 30px rgba(123, 116, 85, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.08)" : "none",
                   }}
                 >
                   {input ? (
                     <div className="w-full text-center">
-                      <div className="flex items-center justify-center mb-2 relative">
-                        <h5 className="text-sm font-mono text-white text-center">
+                      <div className="flex items-center justify-center mb-1 relative">
+                        <h5 className="text-xs font-mono text-white text-center leading-tight">
                           {input.title}
                         </h5>
                         <button
@@ -566,12 +566,12 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           ✕
                         </button>
                       </div>
-                      <div className="text-xs text-gray-400 text-center">
+                      <div className="text-xs text-gray-400 text-center opacity-80">
                         Position {index + 1} • w = {input.weight.toFixed(2)}
                       </div>
                     </div>
                   ) : (
-                    <span className="text-gray-500 text-sm text-center">
+                    <span className="text-gray-500 text-xs text-center">
                       Position {index + 1}
                     </span>
                   )}
