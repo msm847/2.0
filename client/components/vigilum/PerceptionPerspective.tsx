@@ -393,7 +393,7 @@ const PerceptionPerspective = () => {
                     <LegalStructuralSimulator embedded={true} />
                   </div>
                 )}
-              </>
+              </motion.div>
             )}
           </motion.div>
         </div>
