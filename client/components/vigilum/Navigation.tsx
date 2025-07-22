@@ -457,7 +457,7 @@ const Navigation = () => {
                       boxShadow:
                         "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                       color:
-                        activeSection === "partners"
+                        activeSection === "stakeholders"
                           ? "rgba(34, 197, 94, 1)"
                           : "rgba(255, 255, 255, 0.8)",
                       fontWeight: "500",
