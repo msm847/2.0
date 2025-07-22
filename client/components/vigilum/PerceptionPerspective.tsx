@@ -4,6 +4,53 @@ import SplitText from "@/components/ui/SplitText";
 import LegalStructuralSimulator from "./LegalStructuralSimulator";
 import "./TrueFocus.css";
 
+// Add CSS-in-JS for 3D pulsating button animations
+const buttonPulseStyles = `
+  @keyframes pulse-cultural {
+    0%, 100% {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0px 0px 30px rgba(72, 110, 96, 0.6), 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset;
+    }
+    50% {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0px 0px 40px rgba(72, 110, 96, 0.8), 0px 16px 50px rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+    }
+  }
+
+  @keyframes pulse-economic {
+    0%, 100% {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0px 0px 30px rgba(123, 116, 85, 0.6), 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset;
+    }
+    50% {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0px 0px 40px rgba(123, 116, 85, 0.8), 0px 16px 50px rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+    }
+  }
+
+  @keyframes pulse-social {
+    0%, 100% {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0px 0px 30px rgba(139, 92, 87, 0.6), 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset;
+    }
+    50% {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0px 0px 40px rgba(139, 92, 87, 0.8), 0px 16px 50px rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+    }
+  }
+`;
+
+// Inject the styles into the head
+if (typeof document !== 'undefined') {
+  const existingStyle = document.getElementById('button-pulse-styles');
+  if (!existingStyle) {
+    const style = document.createElement('style');
+    style.id = 'button-pulse-styles';
+    style.textContent = buttonPulseStyles;
+    document.head.appendChild(style);
+  }
+}
+
 const ClickableTrueFocus = ({
   sentence = "True Focus",
   manualMode = false,
