@@ -479,7 +479,7 @@ const Navigation = () => {
                       e.currentTarget.style.transform =
                         "translateY(0px) scale(1)";
                       e.currentTarget.style.background =
-                        activeSection === "partners"
+                        activeSection === "stakeholders"
                           ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)";
                       e.currentTarget.style.color =
