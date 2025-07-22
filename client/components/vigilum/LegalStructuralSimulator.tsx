@@ -357,11 +357,17 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
       }
     });
 
+    // Set states first
     setSelectedInputs(newInputs);
     setSelectedOperators(scenario.operators);
 
-    // Auto-execute
-    setTimeout(() => executeSimulation(), 500);
+    // Wait longer for React state to update, then execute
+    setTimeout(() => {
+      // Double-check that the inputs are properly loaded before executing
+      if (newInputs.some(input => input !== null)) {
+        executeSimulation();
+      }
+    }, 1000);
   };
 
   const resetSimulation = () => {
