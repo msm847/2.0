@@ -662,12 +662,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                     >
                       {operator.description}
                     </p>
-                    <div
-                      className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50"
-                      style={{ textTransform: "none", textAlign: "left" }}
-                    >
-                      {operator.transformEffect}
-                    </div>
+
                   </div>
                 </motion.button>
               ))}
