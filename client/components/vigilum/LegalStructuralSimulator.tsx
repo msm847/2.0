@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Animated dots component
+const AnimatedDots = () => {
+  const [dotCount, setDotCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDotCount((prev) => (prev + 1) % 4); // 0, 1, 2, 3, then back to 0
+    }, 500); // Change every 500ms
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return <span>{".".repeat(dotCount)}</span>;
+};
+
 // Type definitions
 interface StructuralInput {
   id: string;
