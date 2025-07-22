@@ -176,9 +176,9 @@ const ModulePageTemplate = ({
             </div>
 
             {/* Module Summary */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <div className="mb-16">
               {/* Main Info */}
-              <div className="lg:col-span-2">
+              <div>
                 <div className="flex items-start gap-6 mb-6">
                   <div
                     className="text-6xl font-bold"
