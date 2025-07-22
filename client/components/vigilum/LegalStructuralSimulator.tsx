@@ -622,11 +622,11 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   }`}
                   style={{
                     background: selectedOperators.includes(operator.id)
-                      ? "linear-gradient(135deg, #2a3a32, #1f2e28)"
-                      : "#202d29",
+                      ? "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)"
+                      : "transparent",
                     borderColor: selectedOperators.includes(operator.id)
-                      ? "#d4c69b"
-                      : "rgba(255,255,255,0.1)",
+                      ? "#7b7455"
+                      : "rgba(123, 116, 85, 0.3)",
                   }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
