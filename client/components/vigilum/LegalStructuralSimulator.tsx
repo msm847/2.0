@@ -590,21 +590,21 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                     }
                   >
                     <div className="flex flex-col space-y-2">
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-start justify-between">
                         <h4
                           className="font-mono text-sm flex-1 pr-2"
-                          style={{ color: "#cab27f", textTransform: "none" }}
+                          style={{ color: "#cab27f", textTransform: "none", textAlign: "left" }}
                         >
                           {operator.name}
                         </h4>
-                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none" }}>
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none", textAlign: "left" }}>
                           w = {operator.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none" }}>
+                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none", textAlign: "left" }}>
                         {operator.description}
                       </p>
-                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none" }}>
+                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none", textAlign: "left" }}>
                         {operator.transformEffect}
                       </div>
                     </div>
@@ -1086,21 +1086,21 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                     }
                   >
                     <div className="flex flex-col space-y-2">
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-start justify-between">
                         <h4
                           className="font-mono text-sm flex-1 pr-2"
-                          style={{ color: "#cab27f", textTransform: "none" }}
+                          style={{ color: "#cab27f", textTransform: "none", textAlign: "left" }}
                         >
                           {operator.name}
                         </h4>
-                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none" }}>
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none", textAlign: "left" }}>
                           w = {operator.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none" }}>
+                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none", textAlign: "left" }}>
                         {operator.description}
                       </p>
-                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none" }}>
+                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none", textAlign: "left" }}>
                         {operator.transformEffect}
                       </div>
                     </div>
