@@ -436,6 +436,65 @@ const Partners = () => {
           </div>
         </div>
       </section>
+
+      {/* Privacy Policy Modal */}
+      {showPrivacyModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <motion.div
+            className="bg-gray-900 rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-white">Privacy Policy</h3>
+                <button
+                  onClick={() => setShowPrivacyModal(false)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              <div className="text-gray-300 space-y-4">
+                <p className="text-sm">
+                  <strong>Vigilum Privacy Policy - Stakeholder Communications</strong>
+                </p>
+                <p className="text-sm">
+                  This privacy policy outlines how we handle information collected through our stakeholder
+                  inquiry form and communications.
+                </p>
+                <p className="text-sm">
+                  <strong>Data Collection:</strong> We collect personal and professional information you
+                  provide including name, email, phone, job title, company, country, and project details.
+                </p>
+                <p className="text-sm">
+                  <strong>Data Use:</strong> Information is used solely for stakeholder communication,
+                  project evaluation, and institutional collaboration purposes.
+                </p>
+                <p className="text-sm">
+                  <strong>Data Protection:</strong> All data is encrypted, securely stored, and not shared
+                  with third parties without explicit consent.
+                </p>
+                <p className="text-sm">
+                  <strong>Contact:</strong> For privacy inquiries, contact privacy@vigilum.com
+                </p>
+                <p className="text-xs text-gray-400 mt-4">
+                  [Full privacy policy will be available soon]
+                </p>
+              </div>
+              <div className="mt-6 flex justify-end">
+                <Button
+                  onClick={() => setShowPrivacyModal(false)}
+                  className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
