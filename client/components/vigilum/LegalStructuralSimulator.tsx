@@ -361,7 +361,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
     return selectedInputs.reduce((sum, input) => sum + (input?.weight || 0), 0);
   };
 
-  if (embedded) {
+  const content = (
     return (
       <div className="mx-auto max-w-[1600px] px-8">
         {/* Header */}
