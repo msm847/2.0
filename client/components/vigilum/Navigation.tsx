@@ -37,7 +37,7 @@ const Navigation = () => {
           "clause-simulator",
           "cases",
           "team",
-          "partners",
+          "stakeholders",
         ];
         const currentSection = sections.find((section) => {
           const element = document.getElementById(section);
