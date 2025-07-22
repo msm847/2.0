@@ -500,7 +500,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               Order is not cosmetic: each position reshapes the simulation's
               internal vector landscape...
             </p>
-            <div className="text-sm text-gray-500 mt-2">
+            <div className="text-sm mt-2" style={{ color: "#7B7455" }}>
               Σw = {getTotalWeight().toFixed(2)}
             </div>
           </div>
