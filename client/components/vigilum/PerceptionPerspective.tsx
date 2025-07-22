@@ -304,7 +304,12 @@ const PerceptionPerspective = () => {
             </div>
 
             {activeSection === "perspective" && (
-              <>
+              <motion.div
+                key={selectedButton} // Force re-render when button changes
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="flex flex-wrap justify-center gap-4 mt-8">
                   {["Cultural", "Economic", "Social"].map((label, index) => {
                     // Define specific gradients for each button
