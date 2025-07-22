@@ -424,7 +424,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                     }}
                     whileHover={
                       !isAlreadySelected
-                        ? { scale: 1.02, backgroundColor: "#2a3a32" }
+                        ? { scale: 1.02 }
                         : {}
                     }
                     onClick={() => {
