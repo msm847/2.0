@@ -592,7 +592,7 @@ const StructuralCognitionChamber: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <h4
                           className="font-mono text-sm flex-1 pr-2"
-                          style={{ color: "#cab27f" }}
+                          style={{ color: "#cab27f", textTransform: "none" }}
                         >
                           {operator.name}
                         </h4>
