@@ -405,7 +405,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   return (
                     <motion.div
                       key={input.id}
-                      className={`p-4 rounded-lg border transition-all group ${
+                      className={`p-3 rounded-lg border transition-all group ${
                         isAlreadySelected
                           ? "border-green-400 cursor-not-allowed opacity-60"
                           : "border-gray-600 cursor-pointer hover:border-green-400/50"
@@ -417,10 +417,6 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         borderColor: isAlreadySelected
                           ? "#d4c69b"
                           : "rgba(255,255,255,0.1)",
-                        height: "140px",
-                        display: "grid",
-                        gridTemplateRows: "auto 1fr",
-                        gap: "12px"
                       }}
                       whileHover={
                         !isAlreadySelected
@@ -438,52 +434,18 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         }
                       }}
                     >
-                      <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr auto",
-                        gap: "12px",
-                        alignItems: "start"
-                      }}>
+                      <div className="flex items-center justify-between mb-2">
                         <h4
-                          className="text-sm font-mono text-white"
-                          style={{
-                            color: "#eae2cc",
-                            lineHeight: "1.3",
-                            fontSize: "0.875rem",
-                            fontWeight: "500",
-                            margin: "0",
-                            overflow: "hidden",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "2",
-                            WebkitBoxOrient: "vertical"
-                          }}
+                          className="text-sm font-mono text-white flex-1 pr-2"
+                          style={{ color: "#eae2cc" }}
                         >
                           {input.title}
                         </h4>
-                        <span
-                          className="text-xs font-mono text-gray-400"
-                          style={{
-                            lineHeight: "1.3",
-                            fontSize: "0.75rem",
-                            fontWeight: "400",
-                            whiteSpace: "nowrap"
-                          }}
-                        >
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p
-                        className="text-xs text-gray-400"
-                        style={{
-                          lineHeight: "1.4",
-                          fontSize: "0.75rem",
-                          margin: "0",
-                          overflow: "hidden",
-                          display: "-webkit-box",
-                          WebkitLineClamp: "4",
-                          WebkitBoxOrient: "vertical"
-                        }}
-                      >
+                      <p className="text-xs text-gray-400 leading-relaxed">
                         {input.description}
                       </p>
                     </motion.div>
@@ -862,7 +824,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                 className="text-2xl font-mono mb-4"
                 style={{ color: "#cab27f" }}
               >
-                ϕ(c, ���) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+                ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
               </div>
               <div className="text-lg font-mono text-gray-400">
                 Simulation inactive — structural input incomplete
