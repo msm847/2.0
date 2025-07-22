@@ -848,6 +848,19 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
           )}
         </div>
       </div>
+    </div>
+  );
+
+  if (embedded) {
+    return content;
+  }
+
+  return (
+    <section
+      className="pt-20 px-4 pb-16"
+      style={{ backgroundColor: "#102B21" }}
+    >
+      {content}
     </section>
   );
 };
