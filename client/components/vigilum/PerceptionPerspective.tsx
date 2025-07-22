@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SplitText from "@/components/ui/SplitText";
+import LegalStructuralSimulator from "./LegalStructuralSimulator";
 import "./TrueFocus.css";
 
 const ClickableTrueFocus = ({
