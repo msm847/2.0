@@ -194,7 +194,12 @@ const PerceptionPerspective = () => {
     if (wordIndex === 0) {
       setActiveSection(activeSection === "perception" ? null : "perception");
     } else if (wordIndex === 1) {
-      setActiveSection(activeSection === "perspective" ? null : "perspective");
+      const newPerspectiveState = activeSection === "perspective" ? null : "perspective";
+      setActiveSection(newPerspectiveState);
+      // Auto-select Economic when perspective is clicked
+      if (newPerspectiveState === "perspective") {
+        setSelectedButton("Economic");
+      }
     }
   };
 
