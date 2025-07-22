@@ -595,7 +595,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           className="font-mono text-sm flex-1 pr-2"
                           style={{ color: "#cab27f", textTransform: "none", textAlign: "left" }}
                         >
-                          {operator.name}
+                          {operator.name.split("\n").map((line, index) => (<div key={index}>{line}</div>))}
                         </h4>
                         <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none", textAlign: "left" }}>
                           w = {operator.weight.toFixed(2)}
@@ -1091,7 +1091,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           className="font-mono text-sm flex-1 pr-2"
                           style={{ color: "#cab27f", textTransform: "none", textAlign: "left" }}
                         >
-                          {operator.name}
+                          {operator.name.split("\n").map((line, index) => (<div key={index}>{line}</div>))}
                         </h4>
                         <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none", textAlign: "left" }}>
                           w = {operator.weight.toFixed(2)}
