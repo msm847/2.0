@@ -596,7 +596,7 @@ const StructuralCognitionChamber: React.FC = () => {
                         >
                           {operator.name}
                         </h4>
-                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none" }}>
                           w = {operator.weight.toFixed(2)}
                         </span>
                       </div>
