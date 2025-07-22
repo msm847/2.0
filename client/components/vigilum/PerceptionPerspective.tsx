@@ -297,14 +297,15 @@ const PerceptionPerspective = () => {
                           display: "inline-block",
                           backdropFilter: "blur(20px) saturate(180%)",
                           background: buttonBackground,
-                          borderColor: "rgba(255, 255, 255, 0.1)",
+                          borderColor: isSelected ? "rgba(255, 255, 255, 0.3)" : "rgba(255, 255, 255, 0.1)",
                           borderRadius: "25px",
                           borderWidth: "1px",
-                          boxShadow:
-                            "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-                          color: "rgba(255, 255, 255, 0.8)",
+                          boxShadow: isSelected
+                            ? "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset"
+                            : "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                          color: isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.8)",
                           fontFamily: "var(--font-display)",
-                          fontWeight: "500",
+                          fontWeight: isSelected ? "600" : "500",
                           letterSpacing: "1.5px",
                           textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
                           transitionDuration: "0.3s",
@@ -314,6 +315,7 @@ const PerceptionPerspective = () => {
                           cursor: "pointer",
                           position: "relative",
                           overflow: "hidden",
+                          transform: isSelected ? "translateY(-2px) scale(1.02)" : "translateY(0px) scale(1)",
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform =
