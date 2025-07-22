@@ -10,6 +10,11 @@ const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Hide navigation on module pages
+  if (location.pathname.startsWith('/module/')) {
+    return null;
+  }
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleNavigation = (hash: string) => {
