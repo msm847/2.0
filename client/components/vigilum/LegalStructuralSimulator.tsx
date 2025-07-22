@@ -546,7 +546,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               {selectedInputs.map((input, index) => (
                 <div
                   key={index}
-                  className="min-h-[60px] border border-dashed border-gray-600 rounded-md px-4 py-3 flex items-center justify-center relative"
+                  className="min-h-[70px] border border-dashed border-gray-600 rounded-lg px-5 py-4 flex items-center justify-center relative"
                   style={{
                     background: "transparent",
                     borderColor: input ? "#7b7455" : "rgba(123, 116, 85, 0.3)",
