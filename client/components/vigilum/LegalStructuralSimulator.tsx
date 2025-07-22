@@ -357,17 +357,87 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
       }
     });
 
-    // Set states first
+    // Set states
     setSelectedInputs(newInputs);
     setSelectedOperators(scenario.operators);
 
-    // Wait longer for React state to update, then execute
+    // Execute simulation directly with the loaded data instead of waiting for state
+    setIsSimulating(true);
+
     setTimeout(() => {
-      // Double-check that the inputs are properly loaded before executing
-      if (newInputs.some(input => input !== null)) {
-        executeSimulation();
-      }
-    }, 1000);
+      const validInputs = newInputs.filter(
+        (input) => input !== null,
+      ) as StructuralInput[];
+      const operators = environmentOperators.filter((op) =>
+        scenario.operators.includes(op.id),
+      );
+
+      // Mathematical computation (same logic as executeSimulation)
+      let phi = 0;
+      let computationDetails: string[] = [];
+
+      validInputs.forEach((input, i) => {
+        let weight = input.weight;
+        let positionalModifier = 1.0;
+        let interactionCoeff = 1.0;
+
+        // Apply environmental transformations
+        operators.forEach((op) => {
+          if (i === 0) {
+            positionalModifier *= 1.0;
+          } else {
+            positionalModifier *= 1 + op.weight * 0.3;
+          }
+        });
+
+        // Interaction coefficients
+        validInputs.forEach((otherInput, j) => {
+          if (i !== j) {
+            interactionCoeff +=
+              Math.abs(input.weight - otherInput.weight) * 0.1;
+          }
+        });
+
+        const contribution = weight * positionalModifier * interactionCoeff;
+        phi += contribution;
+        computationDetails.push(
+          `(${weight.toFixed(2)} × ${positionalModifier.toFixed(2)} × ${interactionCoeff.toFixed(2)})`,
+        );
+      });
+
+      // Generate configuration outcomes
+      const configurations = [
+        "Distributed Inertia Cascade with Fragmented Gate Logic",
+        "Temporal Displacement Network with External Override",
+        "Multi-Vector Persistence Under Constraint Masking",
+        "Incentive-Driven Threshold Evasion Pattern",
+        "Latency-Amplified Authority Displacement",
+      ];
+
+      const fractureVectors = [
+        "DG + RT via masked latency",
+        "CI + SB through temporal inversion",
+        "RT + OD via fragmentation cascade",
+        "DG + CI through persistence loop",
+        "SB + RT via external override",
+      ];
+
+      const result = {
+        phi: phi,
+        computation: `ϕ = ${computationDetails.join(" + ")} = ${phi.toFixed(3)}`,
+        configurationOutcome: configurations[Math.floor(Math.random() * configurations.length)],
+        fractureVector: fractureVectors[Math.floor(Math.random() * fractureVectors.length)],
+        professionalDiagnostics: {
+          economist: `System simulates temporal dependency inversion — ${phi > 1.0 ? "late volatility becomes early instability" : "stable equilibrium maintained"}.`,
+          auditor: `Module fragmentation ${phi > 1.2 ? "reduces visibility below minimum audit resolution" : "remains within acceptable monitoring thresholds"}.`,
+          engineer: `Distributed thresholds create ${phi > 1.1 ? "sharded logic; no single node signals full risk" : "manageable system complexity"}.`,
+        },
+      };
+
+      setSimulationResult(result);
+      setSimulationHistory((prev) => [result, ...prev].slice(0, 5));
+      setIsSimulating(false);
+    }, 2000);
   };
 
   const resetSimulation = () => {
