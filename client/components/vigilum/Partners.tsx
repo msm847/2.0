@@ -136,8 +136,8 @@ const Partners = () => {
         transition: "background 0.2s ease-out",
       }}
     >
-      {/* PARTNERS SECTION */}
-      <section className="py-20" aria-labelledby="partners-heading">
+      {/* STAKEHOLDERS SECTION */}
+      <section className="py-20" aria-labelledby="stakeholders-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Section Header */}
@@ -155,12 +155,12 @@ const Partners = () => {
                   fontWeight: "400",
                 }}
               >
-                PARTNERS
+                STAKEHOLDERS
               </h2>
               <div className="max-w-2xl mx-auto">
                 <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                  Strategic partnerships and enterprise integration for institutions requiring
-                  structural analysis at scale.
+                  Connect with institutional stakeholders and collaborative networks for structural
+                  governance intelligence and strategic implementation.
                 </p>
                 <div className="flex items-center justify-center space-x-8 text-sm text-green-400">
                   <div className="flex items-center space-x-2">
