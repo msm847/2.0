@@ -211,7 +211,7 @@ const Partners = () => {
                 <div className="flex items-center space-x-3 mb-6">
                   <Briefcase className="w-6 h-6 text-green-400" />
                   <h3 className="text-2xl font-bold text-white font-display">
-                    Partnership Inquiry
+                    Stakeholder Inquiry
                   </h3>
                 </div>
 
@@ -224,7 +224,7 @@ const Partners = () => {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Required Fields */}
+                  {/* Personal Information */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-green-400 mb-2">
@@ -240,6 +240,48 @@ const Partners = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-green-400 mb-2">
+                        Business Email *
+                      </label>
+                      <input
+                        type="email"
+                        value={businessEmail}
+                        onChange={(e) => setBusinessEmail(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Phone (Optional)
+                      </label>
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        placeholder="+1 (555) 123-4567"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Job Title *
+                      </label>
+                      <input
+                        type="text"
+                        value={jobTitle}
+                        onChange={(e) => setJobTitle(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
                         Company/Institution *
                       </label>
                       <input
@@ -250,41 +292,40 @@ const Partners = () => {
                         required
                       />
                     </div>
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Country *
+                      </label>
+                      <input
+                        type="text"
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
                   </div>
 
+                  {/* Project Description */}
                   <div>
                     <label className="block text-sm font-medium text-green-400 mb-2">
-                      Position/Title *
-                    </label>
-                    <input
-                      type="text"
-                      value={position}
-                      onChange={(e) => setPosition(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Partnership Details *
+                      Tell us about your project *
                     </label>
                     <div className="relative">
                       <textarea
-                        value={message}
+                        value={projectDescription}
                         onChange={(e) => {
                           if (e.target.value.length <= 4000) {
-                            setMessage(e.target.value);
+                            setProjectDescription(e.target.value);
                           }
                         }}
-                        placeholder="Describe your partnership opportunity, integration requirements, or strategic collaboration needs..."
+                        placeholder="Describe your project, collaboration needs, institutional requirements, or stakeholder engagement opportunities..."
                         rows={6}
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
                         required
                       />
                       <div className="absolute bottom-3 right-3 text-xs text-gray-500">
-                        {message.length}/4000
+                        {projectDescription.length}/4000
                       </div>
                     </div>
                   </div>
