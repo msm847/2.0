@@ -185,7 +185,11 @@ const exampleScenarios = [
   },
 ];
 
-const StructuralCognitionChamber: React.FC = () => {
+interface StructuralCognitionChamberProps {
+  embedded?: boolean;
+}
+
+const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({ embedded = false }) => {
   const [selectedInputs, setSelectedInputs] = useState<
     (StructuralInput | null)[]
   >([null, null, null]);
