@@ -375,12 +375,34 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
         </h3>
 
         {/* Epistemic Statement */}
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <p className="text-gray-400 text-sm font-mono leading-relaxed">
             This is a logic environment.
             <br />
             Structural consequence: the space between law and reality.
           </p>
+
+          <button
+            onClick={loadExampleScenario}
+            className="px-4 py-1.5 text-sm font-medium text-white/80 hover:text-white rounded-full transition-all duration-200 backdrop-blur-xl"
+            style={{
+              background: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(20px) saturate(180%)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.transform = "scale(1.02)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            Load Example Scenario
+          </button>
         </div>
       </div>
 
@@ -870,7 +892,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               className="text-2xl font-mono mb-4"
               style={{ color: "#cab27f" }}
             >
-              ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+              ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢ���
             </div>
             <div className="text-lg font-mono text-gray-400">
               Simulation inactive — structural input incomplete
