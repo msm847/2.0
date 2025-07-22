@@ -82,9 +82,12 @@ const Partners = () => {
       // Send contact form using email service
       await sendContactForm({
         fullName,
+        businessEmail,
+        phone,
+        jobTitle,
         company,
-        position,
-        message,
+        country,
+        projectDescription,
         attachedFiles,
       });
 
