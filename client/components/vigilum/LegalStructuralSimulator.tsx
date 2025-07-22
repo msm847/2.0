@@ -411,22 +411,50 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                 return (
                   <motion.div
                     key={input.id}
-                    className={`p-3 rounded-lg border transition-all group ${
+                    className={`p-3 rounded-lg border transition-all duration-300 group ${
                       isAlreadySelected
-                        ? "border-green-400 cursor-not-allowed opacity-60"
-                        : "border-gray-600 cursor-pointer hover:border-green-400/50"
+                        ? "cursor-not-allowed opacity-60"
+                        : "cursor-pointer"
                     }`}
                     style={{
                       backgroundColor: "transparent",
                       borderColor: isAlreadySelected
-                        ? "#d4c69b"
-                        : "rgba(255,255,255,0.1)",
+                        ? "#7B7455"
+                        : "rgba(123, 116, 85, 0.3)",
+                      borderWidth: "1px",
+                      boxShadow: isAlreadySelected
+                        ? "0px 0px 15px rgba(123, 116, 85, 0.4), rgba(123, 116, 85, 0.1) 0px 1px 0px 0px inset"
+                        : "rgba(123, 116, 85, 0.1) 0px 2px 8px 0px",
                     }}
                     whileHover={
                       !isAlreadySelected
-                        ? { scale: 1.02 }
+                        ? {
+                            scale: 1.05,
+                            y: -4,
+                            transition: { duration: 0.3, ease: "easeOut" }
+                          }
                         : {}
                     }
+                    onHoverStart={() => {
+                      if (!isAlreadySelected) {
+                        // Additional hover styling via direct DOM manipulation for smooth effect
+                        const element = document.querySelector(`[data-input-id="${input.id}"]`);
+                        if (element) {
+                          element.style.borderColor = "rgba(123, 116, 85, 0.8)";
+                          element.style.boxShadow = "0px 0px 25px rgba(123, 116, 85, 0.6), 0px 8px 25px rgba(0, 0, 0, 0.2), rgba(123, 116, 85, 0.2) 0px 1px 0px 0px inset";
+                        }
+                      }
+                    }}
+                    onHoverEnd={() => {
+                      if (!isAlreadySelected) {
+                        const element = document.querySelector(`[data-input-id="${input.id}"]`);
+                        if (element) {
+                          element.style.borderColor = "rgba(123, 116, 85, 0.3)";
+                          element.style.boxShadow = "rgba(123, 116, 85, 0.1) 0px 2px 8px 0px";
+                        }
+                      }
+                    }}
+                    data-input-id={input.id}
                     onClick={() => {
                       if (!isAlreadySelected) {
                         const emptySlot = selectedInputs.findIndex(
