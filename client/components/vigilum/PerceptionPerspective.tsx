@@ -332,33 +332,55 @@ const PerceptionPerspective = () => {
                         onClick={() => setSelectedButton(label)}
                         style={{
                           display: "inline-block",
-                          backdropFilter: "blur(20px) saturate(180%)",
-                          background: buttonBackground,
+                          backdropFilter: "blur(30px) saturate(200%) brightness(1.1)",
+                          background: `${buttonBackground}, linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%)`,
                           borderColor: isSelected
-                            ? "rgba(255, 255, 255, 0.3)"
-                            : "rgba(255, 255, 255, 0.1)",
+                            ? "rgba(255, 255, 255, 0.4)"
+                            : "rgba(255, 255, 255, 0.15)",
                           borderRadius: "25px",
                           borderWidth: "1px",
+                          borderStyle: "solid",
                           boxShadow: isSelected
-                            ? `0px 0px 60px ${label === "Cultural" ? "rgba(72, 110, 96, 0.9)" : label === "Economic" ? "rgba(123, 116, 85, 0.9)" : "rgba(139, 92, 87, 0.9)"}, 0px 0px 40px ${label === "Cultural" ? "rgba(72, 110, 96, 0.7)" : label === "Economic" ? "rgba(123, 116, 85, 0.7)" : "rgba(139, 92, 87, 0.7)"}, 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset`
-                            : "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                            ? `
+                              0px 0px 80px ${label === "Cultural" ? "rgba(72, 110, 96, 0.9)" : label === "Economic" ? "rgba(123, 116, 85, 0.9)" : "rgba(139, 92, 87, 0.9)"},
+                              0px 0px 50px ${label === "Cultural" ? "rgba(72, 110, 96, 0.7)" : label === "Economic" ? "rgba(123, 116, 85, 0.7)" : "rgba(139, 92, 87, 0.7)"},
+                              0px 25px 60px -12px rgba(0, 0, 0, 0.4),
+                              0px 12px 25px -8px rgba(0, 0, 0, 0.3),
+                              0px 6px 12px -3px rgba(0, 0, 0, 0.2),
+                              rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset,
+                              rgba(255, 255, 255, 0.2) 0px 2px 4px 0px inset,
+                              rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset,
+                              rgba(0, 0, 0, 0.1) 0px -2px 4px 0px inset
+                            `
+                            : `
+                              rgba(0, 0, 0, 0.15) 0px 12px 40px -8px,
+                              rgba(0, 0, 0, 0.1) 0px 6px 20px -4px,
+                              rgba(0, 0, 0, 0.08) 0px 3px 8px -2px,
+                              rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset,
+                              rgba(255, 255, 255, 0.1) 0px 2px 4px 0px inset,
+                              rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset,
+                              rgba(0, 0, 0, 0.08) 0px -2px 4px 0px inset
+                            `,
                           color: isSelected
                             ? "rgba(255, 255, 255, 1)"
-                            : "rgba(255, 255, 255, 0.8)",
+                            : "rgba(255, 255, 255, 0.85)",
                           fontFamily: "var(--font-display)",
                           fontWeight: isSelected ? "600" : "500",
                           letterSpacing: "1.5px",
-                          textShadow: "rgba(0, 0, 0, 0.3) 0px 1px 2px",
-                          transitionDuration: "0.3s",
+                          textShadow: isSelected
+                            ? "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.2) 0px 1px 2px"
+                            : "rgba(0, 0, 0, 0.3) 0px 1px 2px",
+                          transitionDuration: "0.4s",
                           transitionTimingFunction:
                             "cubic-bezier(0.4, 0, 0.2, 1)",
-                          padding: "12px 24px",
+                          transitionProperty: "all",
+                          padding: "14px 28px",
                           cursor: "pointer",
                           position: "relative",
                           overflow: "hidden",
                           transform: isSelected
-                            ? "translateY(-2px) scale(1.02)"
-                            : "translateY(0px) scale(1)",
+                            ? "translateY(-3px) scale(1.03) perspective(1000px) rotateX(2deg)"
+                            : "translateY(0px) scale(1) perspective(1000px) rotateX(0deg)",
                           animation: isSelected
                             ? `pulse-${label.toLowerCase()} 2s ease-in-out infinite`
                             : "none",
