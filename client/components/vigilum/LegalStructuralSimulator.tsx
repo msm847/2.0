@@ -620,8 +620,17 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                 simulationResult) && (
                 <motion.button
                   onClick={resetSimulation}
-                  className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
-                  whileHover={{ scale: 1.02 }}
+                  className="px-6 py-4 text-white font-ui font-medium rounded-2xl transition-all duration-300"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    backdropFilter: "blur(20px) saturate(180%)",
+                  }}
+                  whileHover={{
+                    scale: 1.02,
+                    background: "rgba(255, 255, 255, 0.1)",
+                    borderColor: "rgba(255, 255, 255, 0.2)"
+                  }}
                   whileTap={{ scale: 0.98 }}
                 >
                   RESET
