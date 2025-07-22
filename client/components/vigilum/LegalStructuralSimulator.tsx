@@ -363,7 +363,11 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
 
   // Main content JSX
   const mainContent = (
-    <div className={embedded ? "mx-auto max-w-[1600px] px-8" : "container mx-auto max-w-7xl"}>
+    <div
+      className={
+        embedded ? "mx-auto max-w-[1600px] px-8" : "container mx-auto max-w-7xl"
+      }
+    >
       {/* Header */}
       <div className="mb-8 mt-16 text-left">
         <h3 className="text-heading-md text-white mb-4">
@@ -704,9 +708,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         <br />"{simulationResult.configurationName}"
                       </div>
                       <div className="text-lg">
-                        <span className="text-gray-400">
-                          Fracture Vector:
-                        </span>
+                        <span className="text-gray-400">Fracture Vector:</span>
                         <br />
                         {simulationResult.fractureVector}
                       </div>
