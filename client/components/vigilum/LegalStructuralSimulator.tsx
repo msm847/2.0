@@ -512,7 +512,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
             </p>
           </div>
 
-          <div className="overflow-y-auto p-4 h-[466px]">
+          <div className="overflow-y-auto p-4 h-[447px]">
             <div className="space-y-3">
               {structuralInputs.map((input) => {
                 const isAlreadySelected = selectedInputs.some(
