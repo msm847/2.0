@@ -380,14 +380,54 @@ const Partners = () => {
                     )}
                   </div>
 
+                  {/* Verification and Privacy */}
+                  <div className="space-y-4">
+                    {/* Robot Verification */}
+                    <div className="flex items-center space-x-3">
+                      <input
+                        type="checkbox"
+                        id="robot-check"
+                        checked={robotVerified}
+                        onChange={(e) => setRobotVerified(e.target.checked)}
+                        className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2"
+                      />
+                      <label htmlFor="robot-check" className="text-gray-300 text-sm">
+                        I am not a robot
+                      </label>
+                    </div>
+
+                    {/* Privacy Policy */}
+                    <div className="flex items-start space-x-3">
+                      <input
+                        type="checkbox"
+                        id="privacy-check"
+                        checked={privacyAccepted}
+                        onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                        className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2 mt-0.5"
+                        required
+                      />
+                      <label htmlFor="privacy-check" className="text-gray-300 text-sm">
+                        I agree to the{" "}
+                        <button
+                          type="button"
+                          onClick={() => setShowPrivacyModal(true)}
+                          className="text-green-400 hover:text-green-300 underline transition-colors"
+                        >
+                          Privacy Policy
+                        </button>{" "}
+                        and consent to data processing for stakeholder communication purposes.
+                      </label>
+                    </div>
+                  </div>
+
                   {/* Submit Button */}
                   <div className="flex justify-end">
                     <Button
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !robotVerified || !privacyAccepted}
                       className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isSubmitting ? "Sending..." : "Send Partnership Inquiry"}
+                      {isSubmitting ? "Sending..." : "Send Stakeholder Inquiry"}
                     </Button>
                   </div>
                 </form>
