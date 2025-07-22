@@ -179,9 +179,9 @@ const environmentOperators: EnvironmentOperator[] = [
 // Example scenarios for loader
 const exampleScenarios = [
   {
-    inputs: ["S1", "S3", "S5"],
-    operators: ["E2", "E4"],
-    name: "Recursive Persistence with Exogenous Override",
+    inputs: ["S2", "S4", "S6"],
+    operators: ["E1", "E3"],
+    name: "Dynamic Authority Fragmentation Pattern",
   },
   {
     inputs: ["S2", "S4", "S6"],
