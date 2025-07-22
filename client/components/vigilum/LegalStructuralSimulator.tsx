@@ -359,12 +359,8 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
     return selectedInputs.reduce((sum, input) => sum + (input?.weight || 0), 0);
   };
 
-  return (
-    <section
-      className="pt-20 px-4 pb-16"
-      style={{ backgroundColor: "#102B21" }}
-    >
-      <div className="container mx-auto max-w-7xl">
+  const content = (
+    <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
           <h3 className="text-heading-md text-white mb-4">
