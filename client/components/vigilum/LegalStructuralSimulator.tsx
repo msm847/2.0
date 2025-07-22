@@ -837,8 +837,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                       ϕ(inputs, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × M���ⱼ
                     </div>
                     <div className="mb-4">
-                      ϕ = {simulationResult.computationDetails.join(" + ")} ={" "}
-                      {simulationResult.phi.toFixed(2)}
+                      {simulationResult.computation}
                     </div>
                     <div className="text-sm text-gray-400">
                       Where environment and position have modified original
