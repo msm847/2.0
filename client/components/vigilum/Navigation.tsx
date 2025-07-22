@@ -448,7 +448,7 @@ const Navigation = () => {
                     style={{
                       backdropFilter: "blur(20px) saturate(180%)",
                       background:
-                        activeSection === "partners"
+                        activeSection === "stakeholders"
                           ? "rgba(34, 197, 94, 0.15)"
                           : "rgba(255, 255, 255, 0.05)",
                       borderColor: "rgba(255, 255, 255, 0.1)",
