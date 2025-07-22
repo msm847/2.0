@@ -849,11 +849,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
           )}
         </div>
       </div>
-    </div>
-  );
-
-  if (embedded) {
-    return content;
+    );
   }
 
   return (
@@ -861,7 +857,494 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
       className="pt-20 px-4 pb-16"
       style={{ backgroundColor: "#102B21" }}
     >
-      {content}
+      <div className="container mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="mb-8">
+          <h3 className="text-heading-md text-white mb-4">
+            STRUCTURAL COGNITION CHAMBER
+          </h3>
+
+          {/* Epistemic Statement */}
+          <div className="mb-6">
+            <p className="text-gray-400 text-sm font-mono leading-relaxed">
+              This is a logic environment.
+              <br />
+              Structural consequence: the space between law and reality.
+            </p>
+          </div>
+        </div>
+
+        {/* Main Interface */}
+        <div className="flex flex-col lg:flex-row gap-8 min-h-[600px] mb-24">
+          {/* Structural Input Library */}
+          <div className="flex-1 flex flex-col">
+            <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
+              <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+                Structural Motifs
+              </h4>
+              <p className="text-gray-400 text-sm mt-2">
+                Assemble up to three synthetic logic fragments:
+                <br />
+                each introduces a new axis of economic friction, dependency, or
+                recursion...
+              </p>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
+              <div className="space-y-3">
+                {structuralInputs.map((input) => {
+                  const isAlreadySelected = selectedInputs.some(
+                    (selectedInput) =>
+                      selectedInput && selectedInput.id === input.id,
+                  );
+
+                  return (
+                    <motion.div
+                      key={input.id}
+                      className={`p-3 rounded-lg border transition-all group ${
+                        isAlreadySelected
+                          ? "border-green-400 cursor-not-allowed opacity-60"
+                          : "border-gray-600 cursor-pointer hover:border-green-400/50"
+                      }`}
+                      style={{
+                        backgroundColor: isAlreadySelected
+                          ? "#2a4a32"
+                          : "#1f2e28",
+                        borderColor: isAlreadySelected
+                          ? "#d4c69b"
+                          : "rgba(255,255,255,0.1)",
+                      }}
+                      whileHover={
+                        !isAlreadySelected
+                          ? { scale: 1.02, backgroundColor: "#2a3a32" }
+                          : {}
+                      }
+                      onClick={() => {
+                        if (!isAlreadySelected) {
+                          const emptySlot = selectedInputs.findIndex(
+                            (s) => s === null,
+                          );
+                          if (emptySlot !== -1) {
+                            selectInput(input, emptySlot);
+                          }
+                        }
+                      }}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h4
+                          className="text-sm font-mono text-white flex-1 pr-2"
+                          style={{ color: "#eae2cc" }}
+                        >
+                          {input.title}
+                        </h4>
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
+                          w = {input.weight.toFixed(2)}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400 leading-relaxed">
+                        {input.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Input Sequencer */}
+          <div className="flex-1 flex flex-col">
+            <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
+              <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+                Logic Configuration
+              </h4>
+              <p className="text-gray-400 text-sm mt-2">
+                Order is not cosmetic: each position reshapes the simulation's
+                internal vector landscape...
+              </p>
+              <div className="text-sm text-gray-500 mt-2">
+                Σw = {getTotalWeight().toFixed(2)}
+              </div>
+            </div>
+
+            <div className="flex-1 p-4">
+              <div className="space-y-4 mb-6">
+                {selectedInputs.map((input, index) => (
+                  <div
+                    key={index}
+                    className="min-h-[80px] border-2 border-dashed border-gray-600 rounded-lg p-4 flex items-center justify-center relative"
+                    style={{
+                      backgroundColor: input ? "#1f2e28" : "transparent",
+                      borderColor: input ? "#d4c69b" : "rgba(255,255,255,0.1)",
+                    }}
+                  >
+                    {input ? (
+                      <div className="w-full">
+                        <div className="flex items-center justify-between mb-2">
+                          <h5 className="text-sm font-mono text-white">
+                            {input.title}
+                          </h5>
+                          <button
+                            onClick={() => removeInput(index)}
+                            className="text-red-400 hover:text-red-300 text-xs"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          Position {index + 1} • w = {input.weight.toFixed(2)}
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="text-gray-500 text-sm">
+                        Position {index + 1}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                <motion.button
+                  onClick={executeSimulation}
+                  disabled={
+                    selectedInputs.every((s) => s === null) || isSimulating
+                  }
+                  className="flex-1 py-4 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white font-ui font-bold rounded-2xl transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {isSimulating ? "PROCESSING..." : "EXECUTE SIMULATION"}
+                </motion.button>
+
+                {(selectedInputs.some((s) => s !== null) ||
+                  selectedOperators.length > 0 ||
+                  simulationResult) && (
+                  <motion.button
+                    onClick={resetSimulation}
+                    className="px-6 py-4 bg-gray-700 hover:bg-gray-600 text-white font-ui font-medium rounded-2xl transition-colors border border-gray-500"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    RESET
+                  </motion.button>
+                )}
+              </div>
+
+              {/* Example Loader */}
+              <div className="mt-4">
+                <button
+                  onClick={loadExampleScenario}
+                  className="w-full py-2 bg-blue-900/30 hover:bg-blue-900/50 text-blue-400 border border-blue-700 rounded-lg transition-colors text-sm"
+                >
+                  Load Example Scenario
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Environment Operators */}
+          <div className="flex-1 flex flex-col">
+            <div className="text-center p-4 border-b border-white/10 h-[120px] flex flex-col justify-center">
+              <h4 className="text-xl text-green-400 font-display uppercase tracking-wide">
+                Environment Operators
+              </h4>
+              <p className="text-gray-400 text-sm mt-2">
+                Superimpose up to two systemic constraints. Each operator alters
+                internal alignments, forcing logics to compete, overlap, or
+                dissolve.
+              </p>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-4 max-h-[400px]">
+              <div className="space-y-4">
+                <p className="text-xs text-gray-400 mb-4">
+                  Select up to 2 operators
+                </p>
+                {environmentOperators.map((operator) => (
+                  <motion.button
+                    key={operator.id}
+                    onClick={() => toggleOperator(operator.id)}
+                    className={`w-full text-left p-3 rounded-lg border transition-all ${
+                      selectedOperators.includes(operator.id)
+                        ? "border-green-400 bg-green-400/10 text-white"
+                        : "border-gray-600 bg-gray-800/50 text-gray-300 hover:border-gray-500"
+                    }`}
+                    style={{
+                      background: selectedOperators.includes(operator.id)
+                        ? "linear-gradient(135deg, #2a3a32, #1f2e28)"
+                        : "#202d29",
+                      borderColor: selectedOperators.includes(operator.id)
+                        ? "#d4c69b"
+                        : "rgba(255,255,255,0.1)",
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    disabled={
+                      !selectedOperators.includes(operator.id) &&
+                      selectedOperators.length >= 2
+                    }
+                  >
+                    <div className="flex flex-col space-y-2">
+                      <div className="flex items-center justify-between">
+                        <h4
+                          className="font-mono text-sm flex-1 pr-2"
+                          style={{ color: "#cab27f", textTransform: "none" }}
+                        >
+                          {operator.name}
+                        </h4>
+                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none" }}>
+                          w = {operator.weight.toFixed(2)}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none" }}>
+                        {operator.description}
+                      </p>
+                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none" }}>
+                        {operator.transformEffect}
+                      </div>
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Simulation Output */}
+        <div className="w-full" style={{ transform: "translateY(-60px)" }}>
+          <AnimatePresence>
+            {simulationResult && (
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 50 }}
+                className="max-w-6xl mx-auto"
+              >
+                <div className="p-10 rounded-lg border border-gray-600 bg-gradient-to-br from-gray-900 to-gray-800">
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-green-400 font-mono text-lg">
+                      SIMULATION OUTPUT
+                    </h4>
+                    {simulationHistory.length > 1 && (
+                      <button
+                        onClick={() => setShowComparison(!showComparison)}
+                        className="text-blue-400 hover:text-blue-300 text-sm"
+                      >
+                        Compare Simulations
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Mathematical Trace */}
+                  <div className="mb-8">
+                    <h5 className="text-green-400 font-mono mb-4 text-md">
+                      MATHEMATICAL TRACE
+                    </h5>
+                    <div
+                      className="p-6 rounded-lg font-mono text-lg leading-relaxed"
+                      style={{
+                        backgroundColor: "#0e1e1a",
+                        color: "#cab27f",
+                        border: "1px solid rgba(202, 178, 127, 0.3)",
+                      }}
+                    >
+                      <div className="mb-4">
+                        ϕ(inputs, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+                      </div>
+                      <div className="mb-4">
+                        ϕ = {simulationResult.computationDetails.join(" + ")} ={" "}
+                        {simulationResult.phi.toFixed(2)}
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Where environment and position have modified original
+                        weights.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Structural Outcome */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">
+                        STRUCTURAL OUTCOME
+                      </h5>
+                      <div
+                        className="space-y-3 font-mono"
+                        style={{ color: "#cab27f" }}
+                      >
+                        <div className="text-lg">
+                          <span className="text-gray-400">
+                            Configuration Identified:
+                          </span>
+                          <br />"{simulationResult.configurationName}"
+                        </div>
+                        <div className="text-lg">
+                          <span className="text-gray-400">
+                            Fracture Vector:
+                          </span>
+                          <br />
+                          {simulationResult.fractureVector}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="text-green-400 font-mono mb-4 text-md">
+                        EMERGENT RISK INDICES
+                      </h5>
+                      <div
+                        className="space-y-3 font-mono text-sm"
+                        style={{ color: "#cab27f" }}
+                      >
+                        <div>
+                          <span className="text-gray-400">
+                            Typology Drift (Δv):
+                          </span>
+                          <br />
+                          {simulationResult.typologyDrift}° off compliance
+                          baseline
+                        </div>
+                        <div>
+                          <span className="text-gray-400">
+                            Override Chain Depth (Ω):
+                          </span>
+                          <br />
+                          {simulationResult.overrideChainDepth} recursive
+                          redirections detected
+                        </div>
+                        <div>
+                          <span className="text-gray-400">
+                            Detection Probability (ρ):
+                          </span>
+                          <br />
+                          {simulationResult.detectionProbability}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Professional Diagnostics */}
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <h5 className="text-green-400 font-mono text-md">
+                        PROFESSIONAL DIAGNOSTICS
+                      </h5>
+                      <div className="flex gap-2">
+                        {(["economist", "auditor", "engineer"] as const).map(
+                          (profession) => (
+                            <button
+                              key={profession}
+                              onClick={() => setProfessionalView(profession)}
+                              className={`px-3 py-1 text-xs rounded ${
+                                professionalView === profession
+                                  ? "bg-green-600 text-white"
+                                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                              } transition-colors`}
+                            >
+                              {profession.charAt(0).toUpperCase() +
+                                profession.slice(1)}
+                            </button>
+                          ),
+                        )}
+                      </div>
+                    </div>
+
+                    <div
+                      className="p-4 rounded-lg font-mono text-sm leading-relaxed"
+                      style={{
+                        backgroundColor: "#0e1e1a",
+                        color: "#cab27f",
+                        border: "1px solid rgba(202, 178, 127, 0.3)",
+                      }}
+                    >
+                      <div className="mb-2">
+                        <span className="text-gray-400">
+                          View As{" "}
+                          {professionalView.charAt(0).toUpperCase() +
+                            professionalView.slice(1)}
+                          :
+                        </span>
+                      </div>
+                      <div>
+                        "
+                        {
+                          simulationResult.professionalDiagnostics[
+                            professionalView
+                          ]
+                        }
+                        "
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Comparison Panel */}
+                  {showComparison && simulationHistory.length > 1 && (
+                    <div className="mt-8 pt-8 border-t border-gray-600">
+                      <h5 className="text-green-400 font-mono mb-4 text-md">
+                        SIMULATION COMPARISON
+                      </h5>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {simulationHistory.slice(0, 2).map((result, index) => (
+                          <div
+                            key={index}
+                            className="p-4 bg-gray-800/50 rounded-lg"
+                          >
+                            <div className="text-sm font-mono text-gray-400 mb-2">
+                              Simulation {index === 0 ? "Current" : "Previous"}
+                            </div>
+                            <div
+                              className="text-xs font-mono space-y-1"
+                              style={{ color: "#cab27f" }}
+                            >
+                              <div>ϕ = {result.phi.toFixed(2)}</div>
+                              <div>Drift: {result.typologyDrift}°</div>
+                              <div>Depth: {result.overrideChainDepth}</div>
+                              <div className="text-gray-400">
+                                {result.configurationName}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {!simulationResult && !isSimulating && (
+            <div className="text-center pt-2 pb-16">
+              <div
+                className="text-2xl font-mono mb-4"
+                style={{ color: "#cab27f" }}
+              >
+                ϕ(c, 𝓔) = ∑ wᵢ × Pᵢ(𝓔) × Mᵢⱼ
+              </div>
+              <div className="text-lg font-mono text-gray-400">
+                Simulation inactive — structural input incomplete
+                {".".repeat(ellipsisCount)}
+              </div>
+            </div>
+          )}
+
+          {isSimulating && (
+            <div className="text-center text-green-400 py-16">
+              <motion.div
+                className="text-6xl mb-6"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                ⚡
+              </motion.div>
+              <div className="text-xl font-mono">
+                Executing structural cognition...
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </section>
   );
 };
