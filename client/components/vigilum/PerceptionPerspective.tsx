@@ -300,12 +300,7 @@ const PerceptionPerspective = () => {
               className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
               style={{ color: currentTheme.textColor }}
             >
-              {currentContent.description.split('\n').map((line, index) => (
-                <div key={index}>
-                  {line}
-                  {index < currentContent.description.split('\n').length - 1 && <br />}
-                </div>
-              ))}
+              {currentContent.description.replace('\n', ' ')}
             </div>
 
             {activeSection === "perspective" && (
