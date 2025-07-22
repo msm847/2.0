@@ -41,11 +41,11 @@ const buttonPulseStyles = `
 `;
 
 // Inject the styles into the head
-if (typeof document !== 'undefined') {
-  const existingStyle = document.getElementById('button-pulse-styles');
+if (typeof document !== "undefined") {
+  const existingStyle = document.getElementById("button-pulse-styles");
   if (!existingStyle) {
-    const style = document.createElement('style');
-    style.id = 'button-pulse-styles';
+    const style = document.createElement("style");
+    style.id = "button-pulse-styles";
     style.textContent = buttonPulseStyles;
     document.head.appendChild(style);
   }
@@ -241,7 +241,8 @@ const PerceptionPerspective = () => {
     if (wordIndex === 0) {
       setActiveSection(activeSection === "perception" ? null : "perception");
     } else if (wordIndex === 1) {
-      const newPerspectiveState = activeSection === "perspective" ? null : "perspective";
+      const newPerspectiveState =
+        activeSection === "perspective" ? null : "perspective";
       setActiveSection(newPerspectiveState);
       // Auto-select Economic when perspective is clicked
       if (newPerspectiveState === "perspective") {
@@ -300,7 +301,7 @@ const PerceptionPerspective = () => {
               className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
               style={{ color: currentTheme.textColor }}
             >
-              {currentContent.description.replace('\n', ' ')}
+              {currentContent.description.replace("\n", " ")}
             </div>
 
             {activeSection === "perspective" && (
@@ -333,13 +334,17 @@ const PerceptionPerspective = () => {
                           display: "inline-block",
                           backdropFilter: "blur(20px) saturate(180%)",
                           background: buttonBackground,
-                          borderColor: isSelected ? "rgba(255, 255, 255, 0.3)" : "rgba(255, 255, 255, 0.1)",
+                          borderColor: isSelected
+                            ? "rgba(255, 255, 255, 0.3)"
+                            : "rgba(255, 255, 255, 0.1)",
                           borderRadius: "25px",
                           borderWidth: "1px",
                           boxShadow: isSelected
                             ? `0px 0px 60px ${label === "Cultural" ? "rgba(72, 110, 96, 0.9)" : label === "Economic" ? "rgba(123, 116, 85, 0.9)" : "rgba(139, 92, 87, 0.9)"}, 0px 0px 40px ${label === "Cultural" ? "rgba(72, 110, 96, 0.7)" : label === "Economic" ? "rgba(123, 116, 85, 0.7)" : "rgba(139, 92, 87, 0.7)"}, 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset`
                             : "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-                          color: isSelected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.8)",
+                          color: isSelected
+                            ? "rgba(255, 255, 255, 1)"
+                            : "rgba(255, 255, 255, 0.8)",
                           fontFamily: "var(--font-display)",
                           fontWeight: isSelected ? "600" : "500",
                           letterSpacing: "1.5px",
@@ -351,8 +356,12 @@ const PerceptionPerspective = () => {
                           cursor: "pointer",
                           position: "relative",
                           overflow: "hidden",
-                          transform: isSelected ? "translateY(-2px) scale(1.02)" : "translateY(0px) scale(1)",
-                          animation: isSelected ? `pulse-${label.toLowerCase()} 2s ease-in-out infinite` : "none",
+                          transform: isSelected
+                            ? "translateY(-2px) scale(1.02)"
+                            : "translateY(0px) scale(1)",
+                          animation: isSelected
+                            ? `pulse-${label.toLowerCase()} 2s ease-in-out infinite`
+                            : "none",
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform =
@@ -362,7 +371,8 @@ const PerceptionPerspective = () => {
                             "rgba(255, 255, 255, 0.2)";
                           e.currentTarget.style.boxShadow =
                             "rgba(0, 0, 0, 0.15) 0px 12px 40px 0px, rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset";
-                          e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
+                          e.currentTarget.style.color =
+                            "rgba(255, 255, 255, 1)";
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.transform =

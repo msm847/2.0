@@ -189,7 +189,9 @@ interface StructuralCognitionChamberProps {
   embedded?: boolean;
 }
 
-const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({ embedded = false }) => {
+const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
+  embedded = false,
+}) => {
   const [selectedInputs, setSelectedInputs] = useState<
     (StructuralInput | null)[]
   >([null, null, null]);
@@ -445,7 +447,10 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed text-left" style={{ textAlign: "left" }}>
+                      <p
+                        className="text-xs text-gray-400 leading-relaxed text-left"
+                        style={{ textAlign: "left" }}
+                      >
                         {input.description}
                       </p>
                     </motion.div>
@@ -593,18 +598,33 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                       <div className="flex items-start justify-between">
                         <h4
                           className="font-mono text-sm flex-1 pr-2"
-                          style={{ color: "#cab27f", textTransform: "none", textAlign: "left" }}
+                          style={{
+                            color: "#cab27f",
+                            textTransform: "none",
+                            textAlign: "left",
+                          }}
                         >
-                          {operator.name.split("\n").map((line, index) => (<div key={index}>{line}</div>))}
+                          {operator.name.split("\n").map((line, index) => (
+                            <div key={index}>{line}</div>
+                          ))}
                         </h4>
-                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none", textAlign: "left" }}>
+                        <span
+                          className="text-xs font-mono text-gray-400 whitespace-nowrap"
+                          style={{ textTransform: "none", textAlign: "left" }}
+                        >
                           w = {operator.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none", textAlign: "left" }}>
+                      <p
+                        className="text-xs text-gray-400 leading-relaxed"
+                        style={{ textTransform: "none", textAlign: "left" }}
+                      >
                         {operator.description}
                       </p>
-                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none", textAlign: "left" }}>
+                      <div
+                        className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50"
+                        style={{ textTransform: "none", textAlign: "left" }}
+                      >
                         {operator.transformEffect}
                       </div>
                     </div>
@@ -941,7 +961,10 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed text-left" style={{ textAlign: "left" }}>
+                      <p
+                        className="text-xs text-gray-400 leading-relaxed text-left"
+                        style={{ textAlign: "left" }}
+                      >
                         {input.description}
                       </p>
                     </motion.div>
@@ -1089,18 +1112,33 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                       <div className="flex items-start justify-between">
                         <h4
                           className="font-mono text-sm flex-1 pr-2"
-                          style={{ color: "#cab27f", textTransform: "none", textAlign: "left" }}
+                          style={{
+                            color: "#cab27f",
+                            textTransform: "none",
+                            textAlign: "left",
+                          }}
                         >
-                          {operator.name.split("\n").map((line, index) => (<div key={index}>{line}</div>))}
+                          {operator.name.split("\n").map((line, index) => (
+                            <div key={index}>{line}</div>
+                          ))}
                         </h4>
-                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap" style={{ textTransform: "none", textAlign: "left" }}>
+                        <span
+                          className="text-xs font-mono text-gray-400 whitespace-nowrap"
+                          style={{ textTransform: "none", textAlign: "left" }}
+                        >
                           w = {operator.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed" style={{ textTransform: "none", textAlign: "left" }}>
+                      <p
+                        className="text-xs text-gray-400 leading-relaxed"
+                        style={{ textTransform: "none", textAlign: "left" }}
+                      >
                         {operator.description}
                       </p>
-                      <div className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50" style={{ textTransform: "none", textAlign: "left" }}>
+                      <div
+                        className="text-xs text-green-400/70 pt-1 border-t border-gray-700/50"
+                        style={{ textTransform: "none", textAlign: "left" }}
+                      >
                         {operator.transformEffect}
                       </div>
                     </div>
