@@ -16,14 +16,20 @@ import {
 const Partners = () => {
   // Contact Form State
   const [fullName, setFullName] = useState("");
+  const [businessEmail, setBusinessEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
-  const [position, setPosition] = useState("");
-  const [message, setMessage] = useState("");
+  const [country, setCountry] = useState("");
+  const [projectDescription, setProjectDescription] = useState("");
   const [attachedFiles, setAttachedFiles] = useState([]);
   const [scrollIntensity, setScrollIntensity] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [robotVerified, setRobotVerified] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -116,8 +122,8 @@ const Partners = () => {
     <div
       style={{
         backgroundColor: "#1C2722", // Fallback background
-        background: `linear-gradient(90deg, 
-          rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%, 
+        background: `linear-gradient(90deg,
+          rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%,
           rgba(52, 79, 64, ${1 - scrollIntensity * 0.2}) 100%)`,
         transition: "background 0.2s ease-out",
       }}
