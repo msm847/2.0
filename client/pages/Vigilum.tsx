@@ -61,7 +61,7 @@ const VigilumPage = () => {
       <div id="team">
         <TeamContact />
       </div>
-      <div id="partners">
+      <div id="stakeholders">
         <Partners />
       </div>
       <div id="bottom" style={{ height: "1px" }}></div>
