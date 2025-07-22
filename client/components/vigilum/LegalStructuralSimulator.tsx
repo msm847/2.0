@@ -434,10 +434,10 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         }
                       }}
                     >
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-start justify-between mb-2">
                         <h4
-                          className="text-sm font-mono text-white flex-1 pr-2"
-                          style={{ color: "#eae2cc" }}
+                          className="text-sm font-mono text-white flex-1 pr-2 text-left"
+                          style={{ color: "#eae2cc", textAlign: "left" }}
                         >
                           {input.title}
                         </h4>
@@ -445,7 +445,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <p className="text-xs text-gray-400 leading-relaxed text-left" style={{ textAlign: "left" }}>
                         {input.description}
                       </p>
                     </motion.div>
@@ -483,7 +483,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   >
                     {input ? (
                       <div className="w-full">
-                        <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-start justify-between mb-2">
                           <h5 className="text-sm font-mono text-white">
                             {input.title}
                           </h5>
@@ -930,10 +930,10 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         }
                       }}
                     >
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-start justify-between mb-2">
                         <h4
-                          className="text-sm font-mono text-white flex-1 pr-2"
-                          style={{ color: "#eae2cc" }}
+                          className="text-sm font-mono text-white flex-1 pr-2 text-left"
+                          style={{ color: "#eae2cc", textAlign: "left" }}
                         >
                           {input.title}
                         </h4>
@@ -941,7 +941,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <p className="text-xs text-gray-400 leading-relaxed text-left" style={{ textAlign: "left" }}>
                         {input.description}
                       </p>
                     </motion.div>
@@ -979,7 +979,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   >
                     {input ? (
                       <div className="w-full">
-                        <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-start justify-between mb-2">
                           <h5 className="text-sm font-mono text-white">
                             {input.title}
                           </h5>
