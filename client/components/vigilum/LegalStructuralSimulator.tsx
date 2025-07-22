@@ -417,9 +417,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         : "border-gray-600 cursor-pointer hover:border-green-400/50"
                     }`}
                     style={{
-                      backgroundColor: isAlreadySelected
-                        ? "#2a4a32"
-                        : "#1f2e28",
+                      backgroundColor: "transparent",
                       borderColor: isAlreadySelected
                         ? "#d4c69b"
                         : "rgba(255,255,255,0.1)",
