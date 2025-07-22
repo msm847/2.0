@@ -617,7 +617,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
             </div>
           </div>
 
-          <div className="flex-1 p-4">
+          <div className="flex-1 px-4 pb-[108px] -mb-1">
             <div className="space-y-3 mb-6">
               {selectedInputs.map((input, index) => (
                 <div
