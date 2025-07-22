@@ -405,7 +405,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                   return (
                     <motion.div
                       key={input.id}
-                      className={`p-3 rounded-lg border transition-all group ${
+                      className={`p-4 rounded-lg border transition-all group ${
                         isAlreadySelected
                           ? "border-green-400 cursor-not-allowed opacity-60"
                           : "border-gray-600 cursor-pointer hover:border-green-400/50"
@@ -417,6 +417,9 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         borderColor: isAlreadySelected
                           ? "#d4c69b"
                           : "rgba(255,255,255,0.1)",
+                        minHeight: "120px",
+                        display: "flex",
+                        flexDirection: "column"
                       }}
                       whileHover={
                         !isAlreadySelected
@@ -434,18 +437,31 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
                         }
                       }}
                     >
-                      <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-start justify-between mb-3 gap-3">
                         <h4
-                          className="text-sm font-mono text-white flex-1 pr-2"
-                          style={{ color: "#eae2cc" }}
+                          className="text-sm font-mono text-white leading-tight"
+                          style={{
+                            color: "#eae2cc",
+                            flex: "1 1 auto",
+                            minWidth: "0",
+                            lineHeight: "1.2",
+                            fontSize: "0.875rem"
+                          }}
                         >
                           {input.title}
                         </h4>
-                        <span className="text-xs font-mono text-gray-400 whitespace-nowrap">
+                        <span
+                          className="text-xs font-mono text-gray-400 flex-shrink-0 self-start"
+                          style={{
+                            lineHeight: "1.2",
+                            fontSize: "0.75rem",
+                            marginTop: "1px"
+                          }}
+                        >
                           w = {input.weight.toFixed(2)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <p className="text-xs text-gray-400 leading-relaxed flex-1" style={{ lineHeight: "1.4" }}>
                         {input.description}
                       </p>
                     </motion.div>
