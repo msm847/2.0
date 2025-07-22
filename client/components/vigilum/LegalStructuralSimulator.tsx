@@ -134,7 +134,7 @@ const environmentOperators: EnvironmentOperator[] = [
   },
   {
     id: "E2",
-    name: "Authority Feedback Loop",
+    name: "Authority Feedback\nLoop",
     weight: 0.67,
     description:
       "Creates overlapping, circular chains of responsibility. Compliance and oversight reference each other recursively, making structural ambiguity persistent and difficult to resolve.",
