@@ -361,7 +361,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
 
   if (embedded) {
     return (
-      <div className="w-full">
+      <div className="container mx-auto max-w-7xl px-4">
         {/* Header */}
         <div className="mb-8">
           <h3 className="text-heading-md text-white mb-4">
