@@ -246,77 +246,7 @@ const ModulePageTemplate = ({
                 </div>
               </div>
 
-              {/* Status Panel */}
-              <div>
-                <div
-                  className="backdrop-blur-lg border rounded-xl p-6"
-                  style={{
-                    backgroundColor: `${moduleData.color}30`,
-                    borderColor: `${moduleData.accentColor}30`,
-                  }}
-                >
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-bold text-white font-mono">
-                      MODULE STATUS
-                    </h3>
-                    <Activity className="w-5 h-5 text-gray-400" />
-                  </div>
 
-                  {/* Status Badge */}
-                  <div
-                    className="px-3 py-2 rounded-full text-sm font-mono font-bold border mb-6 text-center"
-                    style={{
-                      backgroundColor: `${getStatusColor(moduleData.status)}20`,
-                      borderColor: getStatusColor(moduleData.status),
-                      color: getStatusColor(moduleData.status),
-                    }}
-                  >
-                    {moduleData.status}
-                  </div>
-
-                  {/* Risk Fingerprint */}
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between text-sm font-mono mb-2">
-                      <span className="text-gray-400">RISK FINGERPRINT</span>
-                      <span style={{ color: moduleData.accentColor }}>
-                        {moduleData.riskFingerprint.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-3">
-                      <div
-                        className="h-3 rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${moduleData.riskFingerprint * 100}%`,
-                          backgroundColor: moduleData.accentColor,
-                          boxShadow: `0 0 10px ${moduleData.accentColor}`,
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Typology Focus */}
-                  <div>
-                    <div className="text-sm text-gray-400 mb-3 font-mono">
-                      TYPOLOGY FOCUS
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {moduleData.typologyFocus.map((type) => (
-                        <span
-                          key={type}
-                          className="px-2 py-1 rounded text-xs font-mono"
-                          style={{
-                            backgroundColor: `${moduleData.accentColor}20`,
-                            color: moduleData.accentColor,
-                            border: `1px solid ${moduleData.accentColor}40`,
-                          }}
-                        >
-                          {type}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Semantic Interface Background */}
