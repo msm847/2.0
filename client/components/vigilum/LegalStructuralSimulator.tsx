@@ -581,15 +581,7 @@ const StructuralCognitionChamber: React.FC<StructuralCognitionChamberProps> = ({
               )}
             </div>
 
-            {/* Example Loader */}
-            <div className="mt-4">
-              <button
-                onClick={loadExampleScenario}
-                className="w-full py-2 bg-blue-900/30 hover:bg-blue-900/50 text-blue-400 border border-blue-700 rounded-lg transition-colors text-sm"
-              >
-                Load Example Scenario
-              </button>
-            </div>
+
           </div>
         </div>
 
