@@ -758,7 +758,7 @@ const SemanticPermutationEngine = () => {
                       {OPERATOR_WEIGHTS[op as keyof typeof OPERATOR_WEIGHTS].toFixed(1)}{op}
                     </span>
                   </span>
-                ))} + ∇𝓔
+                ))} + ∇𝓔 = <span className="text-green-400">{permutationResult.mathematical_result.phi.toFixed(3)}</span>
               </div>
             )}
           </div>
