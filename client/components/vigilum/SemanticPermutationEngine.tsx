@@ -869,7 +869,7 @@ const SemanticPermutationEngine = () => {
         {permutationResult && (
           <div className="mb-12">
             <div
-              className="rounded-lg p-4 border max-w-4xl mx-auto"
+              className="rounded-lg p-4 border"
               style={{
                 backgroundColor: "rgba(16, 44, 34, 0.7)",
                 borderColor: "rgba(34, 68, 54, 0.8)",
