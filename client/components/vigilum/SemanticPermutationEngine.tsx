@@ -1249,83 +1249,91 @@ const SemanticPermutationEngine = () => {
           </div>
 
           {/* Expandable Content */}
-          <div className="space-y-6 mb-8">
-            {/* Execution trace */}
-            <AnimatePresence>
-              {showTrace && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="border-t border-gray-600 pt-6"
-                >
-                  <h4 className="text-sm font-bold text-white font-mono mb-4">
-                    TEMPORAL EXECUTION TRACE (t₀ → t₅)
-                  </h4>
-                  <div className="space-y-3 max-h-64 overflow-y-auto">
-                    {executionTrace.map((step, index) => (
-                      <div
-                        key={index}
-                        className={`p-3 rounded border ${
-                          step.nullified
-                            ? "border-red-700 bg-red-900/20"
-                            : "border-gray-600 bg-gray-800/30"
-                        }`}
-                      >
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-mono text-white">
-                            t{step.t + 1}: {step.operator} - {step.operator_name}
-                          </span>
-                          {step.nullified && (
-                            <span className="text-xs text-red-400 font-mono">NULLIFIED</span>
-                          )}
-                        </div>
-                        <div className="text-xs text-gray-400 space-y-1">
-                          {Object.entries(step.output_state).map(([layer, value]) => {
-                            const inputValue = step.input_state[layer] || 0;
-                            const delta = (value as number) - (inputValue as number);
-                            return (
-                              <div key={layer} className="flex justify-between">
-                                <span>{layer}:</span>
-                                <span>
-                                  {(inputValue as number).toFixed(2)} → {(value as number).toFixed(2)}
-                                  <span
-                                    className={
-                                      delta > 0 ? "text-green-400" :
-                                      delta < 0 ? "text-red-400" : "text-gray-400"
-                                    }
-                                  >
-                                    {" "}({delta > 0 ? "+" : ""}{delta.toFixed(2)})
+          {(showTrace || showJSON) && (
+            <div
+              className="rounded-lg p-6 border mt-8"
+              style={{
+                backgroundColor: "rgba(16, 44, 34, 0.7)",
+                borderColor: "rgba(34, 68, 54, 0.8)",
+              }}
+            >
+              {/* Execution trace */}
+              <AnimatePresence>
+                {showTrace && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="mb-6"
+                  >
+                    <h4 className="text-sm font-bold text-white font-mono mb-4">
+                      TEMPORAL EXECUTION TRACE (t₀ → t₅)
+                    </h4>
+                    <div className="space-y-3 max-h-64 overflow-y-auto">
+                      {executionTrace.map((step, index) => (
+                        <div
+                          key={index}
+                          className={`p-3 rounded border ${
+                            step.nullified
+                              ? "border-red-700 bg-red-900/20"
+                              : "border-gray-600 bg-gray-800/30"
+                          }`}
+                        >
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-sm font-mono text-white">
+                              t{step.t + 1}: {step.operator} - {step.operator_name}
+                            </span>
+                            {step.nullified && (
+                              <span className="text-xs text-red-400 font-mono">NULLIFIED</span>
+                            )}
+                          </div>
+                          <div className="text-xs text-gray-400 space-y-1">
+                            {Object.entries(step.output_state).map(([layer, value]) => {
+                              const inputValue = step.input_state[layer] || 0;
+                              const delta = (value as number) - (inputValue as number);
+                              return (
+                                <div key={layer} className="flex justify-between">
+                                  <span>{layer}:</span>
+                                  <span>
+                                    {(inputValue as number).toFixed(2)} → {(value as number).toFixed(2)}
+                                    <span
+                                      className={
+                                        delta > 0 ? "text-green-400" :
+                                        delta < 0 ? "text-red-400" : "text-gray-400"
+                                      }
+                                    >
+                                      {" "}({delta > 0 ? "+" : ""}{delta.toFixed(2)})
+                                    </span>
                                   </span>
-                                </span>
-                              </div>
-                            );
-                          })}
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-            {/* JSON output */}
-            <AnimatePresence>
-              {showJSON && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="border-t border-gray-600 pt-6"
-                >
-                  <h4 className="text-sm font-bold text-white font-mono mb-4">STRUCTURED OUTPUT</h4>
-                  <pre className="text-xs text-gray-300 font-mono bg-gray-900 p-4 rounded max-h-64 overflow-auto">
-                    {JSON.stringify(permutationResult, null, 2)}
-                  </pre>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+              {/* JSON output */}
+              <AnimatePresence>
+                {showJSON && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className={showTrace ? "border-t border-gray-600 pt-6" : ""}
+                  >
+                    <h4 className="text-sm font-bold text-white font-mono mb-4">STRUCTURED OUTPUT</h4>
+                    <pre className="text-xs text-gray-300 font-mono bg-gray-900 p-4 rounded max-h-64 overflow-auto">
+                      {JSON.stringify(permutationResult, null, 2)}
+                    </pre>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
         )}
       </div>
     </div>
