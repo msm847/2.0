@@ -737,7 +737,7 @@ const SemanticPermutationEngine = () => {
             </div>
           </div>
 
-          {/* System State */}
+          {/* Override Resolution Path */}
           <div
             className="rounded-lg p-6 border"
             style={{
@@ -746,38 +746,129 @@ const SemanticPermutationEngine = () => {
             }}
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-white font-mono">SYSTEM STATE</h3>
-              <Activity className="w-5 h-5 text-gray-400" />
+              <div className="flex items-center space-x-3">
+                <div
+                  className="w-1 h-6 rounded"
+                  style={{ backgroundColor: "#10b981" }}
+                />
+                <h3 className="text-lg font-bold text-white font-mono">OVERRIDE RESOLUTION PATH</h3>
+              </div>
+              <Network className="w-5 h-5 text-gray-400" />
             </div>
 
-            <div className="space-y-4">
-              {Object.entries(finalState).map(([layer, value]) => (
-                <div key={layer} className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="font-mono text-gray-300">
-                      {layer} - {SYSTEM_LAYERS[layer as keyof typeof SYSTEM_LAYERS]?.name}
-                    </span>
-                    <span className="font-mono text-white">{value.toFixed(3)}</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
+            {/* Status Summary */}
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              {["ACTIVE", "NULLIFIED", "BYPASS", "CONSTRAINT"].map(status => {
+                const count = OVERRIDE_MATRIX.filter(override => {
+                  const isActive = operatorSequence.indexOf(override.from) < operatorSequence.indexOf(override.to);
+                  return status === "ACTIVE" ? isActive :
+                         status === "NULLIFIED" ? !isActive :
+                         status === override.type;
+                }).length;
+
+                return (
+                  <div key={status} className="text-center p-2 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                     <div
-                      className="h-2 rounded-full transition-all duration-1000"
+                      className="text-lg font-bold font-mono"
                       style={{
-                        width: `${value * 100}%`,
-                        backgroundColor: value > 0.7 ? "#ef4444" : value > 0.4 ? "#f59e0b" : "#10b981",
+                        color: status === "ACTIVE" ? "#ef4444" :
+                               status === "NULLIFIED" ? "#6b7280" :
+                               "#10b981"
                       }}
-                    />
+                    >
+                      {count}
+                    </div>
+                    <div className="text-xs text-gray-400 font-mono">{status}</div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
+            </div>
+
+            {/* Override Graph Visualization - Compact */}
+            <div className="space-y-2 max-h-64 overflow-y-auto">
+              {OVERRIDE_MATRIX.map((override, index) => {
+                const fromOp = OPERATORS.find((op) => op.id === override.from)!;
+                const toOp = OPERATORS.find((op) => op.id === override.to)!;
+                const fromIndex = operatorSequence.indexOf(override.from);
+                const toIndex = operatorSequence.indexOf(override.to);
+                const isActive = fromIndex < toIndex && fromIndex !== -1 && toIndex !== -1;
+
+                return (
+                  <motion.div
+                    key={index}
+                    className={`p-3 rounded border transition-all duration-300 ${
+                      isActive ? "border-red-500 bg-red-900/20" : "border-gray-600 bg-gray-800/20"
+                    }`}
+                    animate={{
+                      boxShadow: isActive ? `0 0 15px rgba(239, 68, 68, 0.2)` : "none"
+                    }}
+                  >
+                    {/* Node Connection */}
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <div
+                          className="text-xs font-mono font-bold px-2 py-1 rounded"
+                          style={{
+                            backgroundColor: `${fromOp.color}30`,
+                            color: fromOp.color,
+                          }}
+                        >
+                          {override.from}
+                        </div>
+                        <div className="text-xs text-gray-400">→</div>
+                        <div
+                          className="text-xs font-mono font-bold px-2 py-1 rounded"
+                          style={{
+                            backgroundColor: `${toOp.color}30`,
+                            color: toOp.color,
+                          }}
+                        >
+                          {override.to}
+                        </div>
+                      </div>
+
+                      {/* Status Indicator */}
+                      {isActive && (
+                        <motion.div
+                          className="w-2 h-2 rounded-full bg-red-400"
+                          animate={{ opacity: [1, 0.3, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        />
+                      )}
+                    </div>
+
+                    {/* Override Description */}
+                    <div className="text-xs text-gray-300 font-mono leading-relaxed">
+                      {override.effect}
+                    </div>
+
+                    {/* Type Badge */}
+                    <div className="flex justify-between items-center mt-2">
+                      <div
+                        className="text-xs font-mono px-2 py-0.5 rounded"
+                        style={{
+                          backgroundColor: isActive ? "rgba(239, 68, 68, 0.2)" : "rgba(107, 114, 128, 0.2)",
+                          color: isActive ? "#fca5a5" : "#9ca3af",
+                        }}
+                      >
+                        {override.type}
+                      </div>
+
+                      {isActive && (
+                        <div className="text-xs text-red-400 font-mono font-bold">ACTIVE</div>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        {/* Override Resolution Path & Permutation Results */}
+        {/* System State & Permutation Results */}
         {permutationResult && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Override Resolution Path */}
+            {/* System State */}
             <div
               className="rounded-lg p-6 border"
               style={{
@@ -786,121 +877,30 @@ const SemanticPermutationEngine = () => {
               }}
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div
-                    className="w-1 h-6 rounded"
-                    style={{ backgroundColor: "#10b981" }}
-                  />
-                  <h3 className="text-lg font-bold text-white font-mono">OVERRIDE RESOLUTION PATH</h3>
-                </div>
-                <Network className="w-5 h-5 text-gray-400" />
+                <h3 className="text-lg font-bold text-white font-mono">SYSTEM STATE</h3>
+                <Activity className="w-5 h-5 text-gray-400" />
               </div>
 
-              {/* Status Summary */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {["ACTIVE", "NULLIFIED", "BYPASS", "CONSTRAINT"].map(status => {
-                  const count = OVERRIDE_MATRIX.filter(override => {
-                    const isActive = operatorSequence.indexOf(override.from) < operatorSequence.indexOf(override.to);
-                    return status === "ACTIVE" ? isActive :
-                           status === "NULLIFIED" ? !isActive :
-                           status === override.type;
-                  }).length;
-
-                  return (
-                    <div key={status} className="text-center p-2 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                      <div
-                        className="text-lg font-bold font-mono"
-                        style={{
-                          color: status === "ACTIVE" ? "#ef4444" :
-                                 status === "NULLIFIED" ? "#6b7280" :
-                                 "#10b981"
-                        }}
-                      >
-                        {count}
-                      </div>
-                      <div className="text-xs text-gray-400 font-mono">{status}</div>
+              <div className="space-y-4">
+                {Object.entries(finalState).map(([layer, value]) => (
+                  <div key={layer} className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="font-mono text-gray-300">
+                        {layer} - {SYSTEM_LAYERS[layer as keyof typeof SYSTEM_LAYERS]?.name}
+                      </span>
+                      <span className="font-mono text-white">{value.toFixed(3)}</span>
                     </div>
-                  );
-                })}
-              </div>
-
-              {/* Override Graph Visualization - Compact */}
-              <div className="space-y-2 max-h-64 overflow-y-auto">
-                {OVERRIDE_MATRIX.map((override, index) => {
-                  const fromOp = OPERATORS.find((op) => op.id === override.from)!;
-                  const toOp = OPERATORS.find((op) => op.id === override.to)!;
-                  const fromIndex = operatorSequence.indexOf(override.from);
-                  const toIndex = operatorSequence.indexOf(override.to);
-                  const isActive = fromIndex < toIndex && fromIndex !== -1 && toIndex !== -1;
-
-                  return (
-                    <motion.div
-                      key={index}
-                      className={`p-3 rounded border transition-all duration-300 ${
-                        isActive ? "border-red-500 bg-red-900/20" : "border-gray-600 bg-gray-800/20"
-                      }`}
-                      animate={{
-                        boxShadow: isActive ? `0 0 15px rgba(239, 68, 68, 0.2)` : "none"
-                      }}
-                    >
-                      {/* Node Connection */}
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-2">
-                          <div
-                            className="text-xs font-mono font-bold px-2 py-1 rounded"
-                            style={{
-                              backgroundColor: `${fromOp.color}30`,
-                              color: fromOp.color,
-                            }}
-                          >
-                            {override.from}
-                          </div>
-                          <div className="text-xs text-gray-400">→</div>
-                          <div
-                            className="text-xs font-mono font-bold px-2 py-1 rounded"
-                            style={{
-                              backgroundColor: `${toOp.color}30`,
-                              color: toOp.color,
-                            }}
-                          >
-                            {override.to}
-                          </div>
-                        </div>
-
-                        {/* Status Indicator */}
-                        {isActive && (
-                          <motion.div
-                            className="w-2 h-2 rounded-full bg-red-400"
-                            animate={{ opacity: [1, 0.3, 1] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                          />
-                        )}
-                      </div>
-
-                      {/* Override Description */}
-                      <div className="text-xs text-gray-300 font-mono leading-relaxed">
-                        {override.effect}
-                      </div>
-
-                      {/* Type Badge */}
-                      <div className="flex justify-between items-center mt-2">
-                        <div
-                          className="text-xs font-mono px-2 py-0.5 rounded"
-                          style={{
-                            backgroundColor: isActive ? "rgba(239, 68, 68, 0.2)" : "rgba(107, 114, 128, 0.2)",
-                            color: isActive ? "#fca5a5" : "#9ca3af",
-                          }}
-                        >
-                          {override.type}
-                        </div>
-
-                        {isActive && (
-                          <div className="text-xs text-red-400 font-mono font-bold">ACTIVE</div>
-                        )}
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                    <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div
+                        className="h-2 rounded-full transition-all duration-1000"
+                        style={{
+                          width: `${value * 100}%`,
+                          backgroundColor: value > 0.7 ? "#ef4444" : value > 0.4 ? "#f59e0b" : "#10b981",
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             {/* Primary Results */}
