@@ -868,69 +868,54 @@ const SemanticPermutationEngine = () => {
         {/* Permutation Results */}
         {permutationResult && (
           <div className="mb-12">
-            {/* Primary Results */}
             <div
-              className="rounded-lg p-6 border"
+              className="rounded-lg p-4 border max-w-4xl mx-auto"
               style={{
                 backgroundColor: "rgba(16, 44, 34, 0.7)",
                 borderColor: "rgba(34, 68, 54, 0.8)",
               }}
             >
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-white font-mono">PERMUTATION RESULTS</h3>
                 <BarChart3 className="w-5 h-5 text-gray-400" />
               </div>
 
-              {/* Apple-style Primary Metrics Cards */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div
-                  className="p-4 rounded-xl transition-all duration-200 hover:scale-105 cursor-pointer"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)"
-                  }}
-                >
-                  <div className="text-xl font-bold text-white font-mono">
+              {/* Compact Metrics Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4">
+                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div className="text-lg font-bold text-white font-mono">
                     {permutationResult.mathematical_result.phi.toFixed(3)}
                   </div>
-                  <div className="text-xs text-gray-400 mt-1">ϕ RESULT</div>
+                  <div className="text-xs text-gray-400">ϕ RESULT</div>
                 </div>
-                <div
-                  className="p-4 rounded-xl transition-all duration-200 hover:scale-105 cursor-pointer"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)"
-                  }}
-                >
-                  <div className="text-xl font-bold text-white font-mono">
+                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div className="text-lg font-bold text-white font-mono">
                     {permutationResult.decoherence_score.toFixed(2)}
                   </div>
-                  <div className="text-xs text-gray-400 mt-1">DECOHERENCE</div>
+                  <div className="text-xs text-gray-400">DECOHERENCE</div>
                 </div>
-              </div>
-
-              {/* Secondary Metrics */}
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                  <span className="text-sm font-mono text-gray-300">Illusion Depth</span>
-                  <span className="text-sm font-mono text-white">{permutationResult.final_state.compliance_illusion_depth.toFixed(3)}</span>
+                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div className="text-sm font-bold text-white font-mono">
+                    {permutationResult.final_state.compliance_illusion_depth.toFixed(3)}
+                  </div>
+                  <div className="text-xs text-gray-400">ILLUSION DEPTH</div>
                 </div>
-                <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                  <span className="text-sm font-mono text-gray-300">Dominant Typology</span>
-                  <span className="text-sm font-mono text-white">{permutationResult.final_state.dominant_typology}</span>
+                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div className="text-sm font-bold text-white font-mono">
+                    {permutationResult.final_state.dominant_typology}
+                  </div>
+                  <div className="text-xs text-gray-400">TYPOLOGY</div>
                 </div>
-                <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                  <span className="text-sm font-mono text-gray-300">Legal Status</span>
-                  <span className={`text-sm font-mono ${permutationResult.final_state.legal_validity ? 'text-green-400' : 'text-red-400'}`}>
+                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div className={`text-sm font-bold font-mono ${permutationResult.final_state.legal_validity ? 'text-green-400' : 'text-red-400'}`}>
                     {permutationResult.final_state.legal_validity ? "VALID" : "INVALID"}
-                  </span>
+                  </div>
+                  <div className="text-xs text-gray-400">LEGAL STATUS</div>
                 </div>
               </div>
 
-              {/* Apple-style Action Buttons */}
-              <div className="space-y-2">
+              {/* Compact Action Buttons */}
+              <div className="flex gap-2">
                 <button
                   onClick={() => setShowTrace(!showTrace)}
                   className="w-full p-3 rounded-xl font-mono text-sm font-medium transition-all duration-200 flex items-center justify-center space-x-2"
