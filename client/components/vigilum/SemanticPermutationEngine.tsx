@@ -1051,85 +1051,205 @@ const SemanticPermutationEngine = () => {
           </div>
         </div>
 
-        {/* Results Panel */}
+        {/* Results Panel - Apple-style Compact Design */}
         {permutationResult && (
-          <div
-            className="rounded-lg p-6 border"
-            style={{
-              backgroundColor: "rgba(16, 44, 34, 0.7)",
-              borderColor: "rgba(34, 68, 54, 0.8)",
-            }}
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-white font-mono">PERMUTATION RESULTS</h3>
-              <div className="flex gap-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Primary Results */}
+            <div
+              className="rounded-lg p-6 border"
+              style={{
+                backgroundColor: "rgba(16, 44, 34, 0.7)",
+                borderColor: "rgba(34, 68, 54, 0.8)",
+              }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-lg font-bold text-white font-mono">PERMUTATION RESULTS</h3>
+                <BarChart3 className="w-5 h-5 text-gray-400" />
+              </div>
+
+              {/* Apple-style Primary Metrics Cards */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div
+                  className="p-4 rounded-xl transition-all duration-200 hover:scale-105 cursor-pointer"
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.03)",
+                    backdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)"
+                  }}
+                >
+                  <div className="text-xl font-bold text-white font-mono">
+                    {permutationResult.mathematical_result.phi.toFixed(3)}
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">ϕ RESULT</div>
+                </div>
+                <div
+                  className="p-4 rounded-xl transition-all duration-200 hover:scale-105 cursor-pointer"
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.03)",
+                    backdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)"
+                  }}
+                >
+                  <div className="text-xl font-bold text-white font-mono">
+                    {permutationResult.decoherence_score.toFixed(2)}
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">DECOHERENCE</div>
+                </div>
+              </div>
+
+              {/* Secondary Metrics */}
+              <div className="space-y-3 mb-6">
+                <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <span className="text-sm font-mono text-gray-300">Illusion Depth</span>
+                  <span className="text-sm font-mono text-white">{permutationResult.final_state.compliance_illusion_depth.toFixed(3)}</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <span className="text-sm font-mono text-gray-300">Dominant Typology</span>
+                  <span className="text-sm font-mono text-white">{permutationResult.final_state.dominant_typology}</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <span className="text-sm font-mono text-gray-300">Legal Status</span>
+                  <span className={`text-sm font-mono ${permutationResult.final_state.legal_validity ? 'text-green-400' : 'text-red-400'}`}>
+                    {permutationResult.final_state.legal_validity ? "VALID" : "INVALID"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Apple-style Action Buttons */}
+              <div className="space-y-2">
                 <button
                   onClick={() => setShowTrace(!showTrace)}
-                  className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 flex items-center"
+                  className="w-full p-3 rounded-xl font-mono text-sm font-medium transition-all duration-200 flex items-center justify-center space-x-2"
                   style={{
-                    backgroundColor: "rgba(16, 44, 34, 0.7)",
-                    borderColor: "rgba(52, 211, 153, 0.3)",
-                    color: "#10b981",
+                    backgroundColor: showTrace ? "rgba(52, 211, 153, 0.15)" : "rgba(255, 255, 255, 0.05)",
+                    backdropFilter: "blur(20px)",
+                    border: `1px solid ${showTrace ? "rgba(52, 211, 153, 0.3)" : "rgba(255, 255, 255, 0.1)"}`,
+                    color: showTrace ? "#10b981" : "#ffffff",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!showTrace) {
+                      e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
+                      e.currentTarget.style.transform = "translateY(-1px)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!showTrace) {
+                      e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.transform = "translateY(0px)";
+                    }
                   }}
                 >
-                  <Eye className="w-4 h-4 mr-2" />
-                  TRACE
-                  {showTrace ? <ChevronUp className="w-4 h-4 ml-2" /> : <ChevronDown className="w-4 h-4 ml-2" />}
+                  <Eye className="w-4 h-4" />
+                  <span>View Execution Trace</span>
+                  {showTrace ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </button>
-                <button
-                  onClick={() => setShowJSON(!showJSON)}
-                  className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 flex items-center"
-                  style={{
-                    backgroundColor: "rgba(16, 44, 34, 0.7)",
-                    borderColor: "rgba(52, 211, 153, 0.3)",
-                    color: "#10b981",
-                  }}
-                >
-                  <FileText className="w-4 h-4 mr-2" />
-                  JSON
-                </button>
-                <button
-                  onClick={downloadResults}
-                  className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 flex items-center"
-                  style={{
-                    backgroundColor: "rgba(16, 44, 34, 0.7)",
-                    borderColor: "rgba(52, 211, 153, 0.3)",
-                    color: "#10b981",
-                  }}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  DOWNLOAD
-                </button>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => setShowJSON(!showJSON)}
+                    className="p-3 rounded-xl font-mono text-sm font-medium transition-all duration-200 flex items-center justify-center space-x-2"
+                    style={{
+                      backgroundColor: showJSON ? "rgba(52, 211, 153, 0.15)" : "rgba(255, 255, 255, 0.05)",
+                      backdropFilter: "blur(20px)",
+                      border: `1px solid ${showJSON ? "rgba(52, 211, 153, 0.3)" : "rgba(255, 255, 255, 0.1)"}`,
+                      color: showJSON ? "#10b981" : "#ffffff",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!showJSON) {
+                        e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
+                        e.currentTarget.style.transform = "translateY(-1px)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!showJSON) {
+                        e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+                        e.currentTarget.style.transform = "translateY(0px)";
+                      }
+                    }}
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span>JSON</span>
+                  </button>
+
+                  <button
+                    onClick={downloadResults}
+                    className="p-3 rounded-xl font-mono text-sm font-medium transition-all duration-200 flex items-center justify-center space-x-2"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
+                      backdropFilter: "blur(20px)",
+                      border: "1px solid rgba(255, 255, 255, 0.1)",
+                      color: "#ffffff",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "rgba(52, 211, 153, 0.1)";
+                      e.currentTarget.style.borderColor = "rgba(52, 211, 153, 0.3)";
+                      e.currentTarget.style.color = "#10b981";
+                      e.currentTarget.style.transform = "translateY(-1px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+                      e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                      e.currentTarget.style.color = "#ffffff";
+                      e.currentTarget.style.transform = "translateY(0px)";
+                    }}
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Export</span>
+                  </button>
+                </div>
               </div>
             </div>
 
-            {/* Summary metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white font-mono">
-                  {permutationResult.mathematical_result.phi.toFixed(3)}
-                </div>
-                <div className="text-xs text-gray-400">FORMULA RESULT ϕ</div>
+            {/* Detailed Analysis */}
+            <div
+              className="rounded-lg p-6 border"
+              style={{
+                backgroundColor: "rgba(16, 44, 34, 0.7)",
+                borderColor: "rgba(34, 68, 54, 0.8)",
+              }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-lg font-bold text-white font-mono">STRUCTURAL ANALYSIS</h3>
+                <Activity className="w-5 h-5 text-gray-400" />
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white font-mono">
-                  {permutationResult.final_state.compliance_illusion_depth.toFixed(2)}
-                </div>
-                <div className="text-xs text-gray-400">ILLUSION DEPTH</div>
+
+              {/* State Indicators */}
+              <div className="space-y-4 mb-6">
+                <div className="text-sm font-mono text-gray-400 mb-3">SYSTEM STATE INDICATORS</div>
+                {[
+                  { key: 'procedural_integrity', label: 'Procedural Integrity', value: permutationResult.final_state.procedural_integrity },
+                  { key: 'perceived_transparency', label: 'Perceived Transparency', value: permutationResult.final_state.perceived_transparency },
+                  { key: 'actual_escalation_possible', label: 'Escalation Possible', value: permutationResult.final_state.actual_escalation_possible }
+                ].map(item => (
+                  <div key={item.key} className="flex justify-between items-center">
+                    <span className="text-sm font-mono text-gray-300">{item.label}</span>
+                    <div className="flex items-center space-x-2">
+                      <div
+                        className={`w-2 h-2 rounded-full ${item.value ? 'bg-green-400' : 'bg-red-400'}`}
+                      />
+                      <span className={`text-sm font-mono ${item.value ? 'text-green-400' : 'text-red-400'}`}>
+                        {item.value ? 'ACTIVE' : 'INACTIVE'}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white font-mono">
-                  {permutationResult.decoherence_score.toFixed(2)}
+
+              {/* Reflex Space Status */}
+              <div className="p-4 rounded-xl" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                <div className="text-sm font-mono text-gray-400 mb-2">REFLEX SPACE STATUS</div>
+                <div className="text-lg font-mono text-white">
+                  {permutationResult.final_state.reflex_space.toUpperCase()}
                 </div>
-                <div className="text-xs text-gray-400">DECOHERENCE</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white font-mono">
-                  {permutationResult.final_state.dominant_typology}
+                <div className="text-xs text-gray-400 mt-1">
+                  Current operational capacity
                 </div>
-                <div className="text-xs text-gray-400">DOMINANT TYPE</div>
               </div>
             </div>
+          </div>
+
+          {/* Expandable Content */}
+          <div className="space-y-6">
 
             {/* Execution trace */}
             <AnimatePresence>
