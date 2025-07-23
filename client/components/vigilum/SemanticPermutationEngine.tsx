@@ -904,13 +904,13 @@ const SemanticPermutationEngine = () => {
               {/* Compact Metrics Grid */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4">
                 <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                  <div className="text-lg font-bold text-white font-mono">
+                  <div className="text-sm font-bold text-white font-mono">
                     {permutationResult.mathematical_result.phi.toFixed(3)}
                   </div>
                   <div className="text-xs text-gray-400">ϕ RESULT</div>
                 </div>
                 <div className="text-center p-3 rounded-lg" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                  <div className="text-lg font-bold text-white font-mono">
+                  <div className="text-sm font-bold text-white font-mono">
                     {permutationResult.decoherence_score.toFixed(2)}
                   </div>
                   <div className="text-xs text-gray-400">DECOHERENCE</div>
