@@ -129,52 +129,220 @@ const Partners = () => {
   return (
     <div
       style={{
-        backgroundColor: "#1C2722", // Fallback background
-        background: `linear-gradient(90deg,
-          rgba(28, 39, 34, ${1 - scrollIntensity * 0.3}) 0%,
-          rgba(52, 79, 64, ${1 - scrollIntensity * 0.2}) 100%)`,
-        transition: "background 0.2s ease-out",
+        background: "radial-gradient(circle, #0C2017 0%, #10291C 100%)",
       }}
     >
       {/* STAKEHOLDERS SECTION */}
-      <section className="py-20" aria-labelledby="stakeholders-heading">
-        <div className="container mx-auto px-4">
+      <section className="py-24" aria-labelledby="stakeholders-heading">
+        <div className="mx-auto px-16" style={{ maxWidth: "1280px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Section Header - Left Side */}
+            {/* StakeholderHeroBlock - Left Side */}
             <motion.div
-              className="text-left"
-              initial={{ opacity: 0, y: 50 }}
+              className="flex flex-col"
+              style={{
+                flexBasis: "48%",
+                minWidth: "320px",
+                gap: "36px",
+                height: "fit-content"
+              }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
             >
-              <h2
-                className="text-white font-display mb-6"
+              {/* 1. Micro-label */}
+              <div
+                className="font-mono font-bold"
                 style={{
-                  fontSize: "48px",
-                  lineHeight: "60px",
-                  fontWeight: "400",
+                  fontSize: "14px",
+                  letterSpacing: "0.12em",
+                  color: "#7BFF9C"
                 }}
               >
                 STAKEHOLDERS
+              </div>
+
+              {/* 2. H2 Headline */}
+              <h2
+                className="font-semibold leading-tight"
+                style={{
+                  fontFamily: "IBM Plex Sans, sans-serif",
+                  fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
+                  color: "#EAF8E2"
+                }}
+              >
+                Shape Tomorrow's Governance
               </h2>
-              <div className="max-w-xl">
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  Connect with institutional stakeholders and collaborative networks for structural
-                  governance intelligence and strategic implementation.
+
+              {/* 3. Story Capsule */}
+              <p
+                className="leading-relaxed"
+                style={{
+                  fontFamily: "IBM Plex Sans, sans-serif",
+                  fontSize: "16px",
+                  color: "#EAF8E2",
+                  lineHeight: "1.6"
+                }}
+              >
+                Vigilum converts the hidden architecture of laws, tenders, and influence into real-time foresight, revealing risks before they harden into policy failure. By modeling intent—not just compliance—we empower ministries, multilaterals, and ESG investors to pre-empt systemic loss. Born at Columbia's MARS-REERS program, our platform transforms oversight from reaction to anticipation.
+              </p>
+
+              {/* 4. Founder Quote */}
+              <div className="space-y-2">
+                <p
+                  className="italic leading-relaxed"
+                  style={{
+                    fontFamily: "IBM Plex Sans, sans-serif",
+                    fontSize: "16px",
+                    color: "#EAF8E2",
+                    lineHeight: "1.6"
+                  }}
+                >
+                  "We discovered that corruption isn't a breach—it's a design pattern. When you expose the pattern, systems can self-correct. That is structural foresight."
                 </p>
-                <div className="space-y-4 text-sm text-green-400">
-                  <div className="flex items-center space-x-2">
-                    <Building className="w-4 h-4" />
-                    <span>Enterprise Solutions</span>
+                <p
+                  className="font-medium"
+                  style={{
+                    fontFamily: "IBM Plex Sans, sans-serif",
+                    fontSize: "14px",
+                    color: "#EAF8E2"
+                  }}
+                >
+                  — Adam Kovarskas, Founder
+                </p>
+              </div>
+
+              {/* 5. Divider */}
+              <div
+                className="mt-6"
+                style={{
+                  width: "48px",
+                  height: "2px",
+                  backgroundColor: "#1B3C2D"
+                }}
+              />
+
+              {/* 6. Pillar Duo */}
+              <div className="space-y-8">
+                {/* Enterprise Solutions */}
+                <div className="flex items-start" style={{ gap: "16px" }}>
+                  <Briefcase
+                    className="flex-shrink-0 mt-1"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      color: "#7BFF9C"
+                    }}
+                    aria-label="Enterprise Solutions icon"
+                  />
+                  <div>
+                    <h3
+                      className="font-semibold mb-2"
+                      style={{
+                        fontFamily: "IBM Plex Sans, sans-serif",
+                        fontSize: "18px",
+                        color: "#EAF8E2"
+                      }}
+                    >
+                      Enterprise Solutions
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "IBM Plex Sans, sans-serif",
+                        fontSize: "14px",
+                        color: "#EAF8E2",
+                        lineHeight: "1.5"
+                      }}
+                    >
+                      Embed Vigilum engines inside procurement, ESG, or audit workflows for live integrity diagnostics.
+                    </p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-4 h-4" />
-                    <span>Strategic Partnerships</span>
+                </div>
+
+                {/* Strategic Partnerships */}
+                <div className="flex items-start" style={{ gap: "16px" }}>
+                  <Users
+                    className="flex-shrink-0 mt-1"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      color: "#7BFF9C"
+                    }}
+                    aria-label="Strategic Partnerships icon"
+                  />
+                  <div>
+                    <h3
+                      className="font-semibold mb-2"
+                      style={{
+                        fontFamily: "IBM Plex Sans, sans-serif",
+                        fontSize: "18px",
+                        color: "#EAF8E2"
+                      }}
+                    >
+                      Strategic Partnerships
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "IBM Plex Sans, sans-serif",
+                        fontSize: "14px",
+                        color: "#EAF8E2",
+                        lineHeight: "1.5"
+                      }}
+                    >
+                      Co-create pilots, research, or integrity labs that stress-test governance at scale.
+                    </p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Mail className="w-4 h-4" />
-                    <span>info@vigilum.com</span>
-                  </div>
+                </div>
+              </div>
+
+              {/* 7. Micro-CTAs */}
+              <div className="space-y-3">
+                <a
+                  href="mailto:info@vigilum.com"
+                  className="block transition-colors duration-150"
+                  style={{
+                    fontFamily: "IBM Plex Mono, monospace",
+                    fontSize: "15px",
+                    fontWeight: "500",
+                    color: "#7BFF9C",
+                    textDecoration: "none"
+                  }}
+                  onMouseEnter={(e) => e.target.style.color = "#B1FFC8"}
+                  onMouseLeave={(e) => e.target.style.color = "#7BFF9C"}
+                >
+                  info@vigilum.com
+                </a>
+                <div className="flex space-x-4">
+                  <a
+                    href="mailto:student@vigilum.com"
+                    className="transition-colors duration-150"
+                    style={{
+                      fontFamily: "IBM Plex Mono, monospace",
+                      fontSize: "15px",
+                      fontWeight: "500",
+                      color: "#7BFF9C",
+                      textDecoration: "none"
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = "#B1FFC8"}
+                    onMouseLeave={(e) => e.target.style.color = "#7BFF9C"}
+                  >
+                    student@vigilum.com
+                  </a>
+                  <span style={{ color: "#7BFF9C" }}>|</span>
+                  <a
+                    href="mailto:civil@vigilum.com"
+                    className="transition-colors duration-150"
+                    style={{
+                      fontFamily: "IBM Plex Mono, monospace",
+                      fontSize: "15px",
+                      fontWeight: "500",
+                      color: "#7BFF9C",
+                      textDecoration: "none"
+                    }}
+                    onMouseEnter={(e) => e.target.style.color = "#B1FFC8"}
+                    onMouseLeave={(e) => e.target.style.color = "#7BFF9C"}
+                  >
+                    civil@vigilum.com
+                  </a>
                 </div>
               </div>
             </motion.div>
