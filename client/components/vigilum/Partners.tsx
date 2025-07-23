@@ -432,6 +432,7 @@ const Partners = () => {
                 </form>
               </div>
             </motion.div>
+            </div>
           </div>
         </div>
       </section>
