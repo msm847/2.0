@@ -699,41 +699,53 @@ const SemanticPermutationEngine = () => {
               <BarChart3 className="w-5 h-5 text-gray-400" />
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {/* Layer headers */}
-              <div className="grid grid-cols-7 gap-2 text-xs font-mono text-gray-400">
-                <div></div>
+              <div className="grid grid-cols-7 gap-1 text-xs font-mono text-gray-400 px-2">
+                <div className="text-center py-2"></div>
                 {Object.keys(SYSTEM_LAYERS).map((layer) => (
-                  <div key={layer} className="text-center">{layer}</div>
+                  <div key={layer} className="text-center py-2 px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                    {layer}
+                  </div>
                 ))}
               </div>
 
               {/* Matrix rows */}
-              {matrixData.map((row, rowIndex) => (
-                <div key={rowIndex} className="grid grid-cols-7 gap-2">
-                  <div className="text-xs font-mono text-gray-300">
-                    {operatorSequence[rowIndex]}
-                  </div>
-                  {row.map((cell, colIndex) => (
-                    <div
-                      key={colIndex}
-                      className="h-8 rounded flex items-center justify-center text-xs font-mono"
-                      style={{
-                        backgroundColor: cell.nullified
-                          ? "#374151"
-                          : cell.type === "positive"
-                            ? `rgba(16, 185, 129, ${cell.strength})`
-                            : cell.type === "destructive"
-                              ? `rgba(239, 68, 68, ${cell.strength})`
-                              : "rgba(107, 114, 128, 0.3)",
-                        color: cell.strength > 0.5 ? "white" : "#d1d5db",
-                      }}
-                    >
-                      {cell.nullified ? "×" : cell.delta.toFixed(1)}
+              <div className="space-y-1 px-2">
+                {matrixData.map((row, rowIndex) => (
+                  <div key={rowIndex} className="grid grid-cols-7 gap-1">
+                    <div className="text-xs font-mono text-gray-300 flex items-center justify-center py-2 px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                      {operatorSequence[rowIndex]}
                     </div>
-                  ))}
-                </div>
-              ))}
+                    {row.map((cell, colIndex) => (
+                      <div
+                        key={colIndex}
+                        className="h-10 rounded-md flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border"
+                        style={{
+                          backgroundColor: cell.nullified
+                            ? "rgba(55, 65, 81, 0.8)"
+                            : cell.type === "positive"
+                              ? `rgba(16, 185, 129, ${Math.max(0.2, cell.strength)})`
+                              : cell.type === "destructive"
+                                ? `rgba(239, 68, 68, ${Math.max(0.2, cell.strength)})`
+                                : "rgba(107, 114, 128, 0.4)",
+                          color: cell.strength > 0.4 ? "white" : "#f3f4f6",
+                          borderColor: cell.nullified
+                            ? "rgba(107, 114, 128, 0.3)"
+                            : cell.type === "positive"
+                              ? "rgba(16, 185, 129, 0.5)"
+                              : cell.type === "destructive"
+                                ? "rgba(239, 68, 68, 0.5)"
+                                : "rgba(107, 114, 128, 0.3)",
+                          boxShadow: cell.strength > 0.7 ? "0 0 8px rgba(16, 185, 129, 0.3)" : "none"
+                        }}
+                      >
+                        {cell.nullified ? "×" : cell.delta.toFixed(1)}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
