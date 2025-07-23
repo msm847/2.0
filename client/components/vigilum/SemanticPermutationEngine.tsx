@@ -701,7 +701,7 @@ const SemanticPermutationEngine = () => {
 
             <div className="flex flex-col flex-1 min-h-0">
               {/* Layer headers */}
-              <div className="grid grid-cols-7 gap-1 text-xs font-mono text-gray-400 mb-2 flex-shrink-0">
+              <div className="grid grid-cols-7 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
                 <div className="h-10 flex items-center justify-center"></div>
                 {Object.keys(SYSTEM_LAYERS).map((layer) => (
                   <div key={layer} className="h-10 text-center px-1 rounded flex items-center justify-center" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
@@ -711,9 +711,9 @@ const SemanticPermutationEngine = () => {
               </div>
 
               {/* Matrix rows - flex to fill remaining space */}
-              <div className="flex-1 flex flex-col justify-between">
+              <div className="flex-1 flex flex-col justify-between gap-2">
                 {matrixData.map((row, rowIndex) => (
-                  <div key={rowIndex} className="grid grid-cols-7 gap-1 flex-1">
+                  <div key={rowIndex} className="grid grid-cols-7 gap-2 flex-1">
                     <div className="text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", minHeight: "3rem" }}>
                       {operatorSequence[rowIndex]}
                     </div>
