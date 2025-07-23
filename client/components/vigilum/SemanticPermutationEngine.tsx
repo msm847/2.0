@@ -865,44 +865,9 @@ const SemanticPermutationEngine = () => {
           </div>
         </div>
 
-        {/* System State & Permutation Results */}
+        {/* Permutation Results */}
         {permutationResult && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* System State */}
-            <div
-              className="rounded-lg p-6 border"
-              style={{
-                backgroundColor: "rgba(16, 44, 34, 0.7)",
-                borderColor: "rgba(34, 68, 54, 0.8)",
-              }}
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold text-white font-mono">SYSTEM STATE</h3>
-                <Activity className="w-5 h-5 text-gray-400" />
-              </div>
-
-              <div className="space-y-4">
-                {Object.entries(finalState).map(([layer, value]) => (
-                  <div key={layer} className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="font-mono text-gray-300">
-                        {layer} - {SYSTEM_LAYERS[layer as keyof typeof SYSTEM_LAYERS]?.name}
-                      </span>
-                      <span className="font-mono text-white">{value.toFixed(3)}</span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
-                      <div
-                        className="h-2 rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${value * 100}%`,
-                          backgroundColor: value > 0.7 ? "#ef4444" : value > 0.4 ? "#f59e0b" : "#10b981",
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="mb-12">
             {/* Primary Results */}
             <div
               className="rounded-lg p-6 border"
