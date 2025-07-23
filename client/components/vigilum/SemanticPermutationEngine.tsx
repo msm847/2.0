@@ -136,7 +136,7 @@ const OPERATORS = [
     fullName: "Override Functions and Nullification Logic",
     weight: OPERATOR_WEIGHTS.O,
     symbol: "O",
-    glyph: "⊗",
+    glyph: "���",
     affects: ["L", "P", "V"],
     position_sensitive: true,
     override_targets: ["A", "R"],
@@ -1132,52 +1132,7 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
 
-            {/* Detailed Analysis */}
-            <div
-              className="rounded-lg p-6 border"
-              style={{
-                backgroundColor: "rgba(16, 44, 34, 0.7)",
-                borderColor: "rgba(34, 68, 54, 0.8)",
-              }}
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-lg font-bold text-white font-mono">STRUCTURAL ANALYSIS</h3>
-                <Activity className="w-5 h-5 text-gray-400" />
-              </div>
 
-              {/* State Indicators */}
-              <div className="space-y-4 mb-6">
-                <div className="text-sm font-mono text-gray-400 mb-3">SYSTEM STATE INDICATORS</div>
-                {[
-                  { key: 'procedural_integrity', label: 'Procedural Integrity', value: permutationResult.final_state.procedural_integrity },
-                  { key: 'perceived_transparency', label: 'Perceived Transparency', value: permutationResult.final_state.perceived_transparency },
-                  { key: 'actual_escalation_possible', label: 'Escalation Possible', value: permutationResult.final_state.actual_escalation_possible }
-                ].map(item => (
-                  <div key={item.key} className="flex justify-between items-center">
-                    <span className="text-sm font-mono text-gray-300">{item.label}</span>
-                    <div className="flex items-center space-x-2">
-                      <div
-                        className={`w-2 h-2 rounded-full ${item.value ? 'bg-green-400' : 'bg-red-400'}`}
-                      />
-                      <span className={`text-sm font-mono ${item.value ? 'text-green-400' : 'text-red-400'}`}>
-                        {item.value ? 'ACTIVE' : 'INACTIVE'}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Reflex Space Status */}
-              <div className="p-4 rounded-xl" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                <div className="text-sm font-mono text-gray-400 mb-2">REFLEX SPACE STATUS</div>
-                <div className="text-lg font-mono text-white">
-                  {permutationResult.final_state.reflex_space.toUpperCase()}
-                </div>
-                <div className="text-xs text-gray-400 mt-1">
-                  Current operational capacity
-                </div>
-              </div>
-            </div>
           </div>
         )}
 
