@@ -770,7 +770,7 @@ const SemanticPermutationEngine = () => {
             </div>
 
             {/* Status Summary */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-4 gap-2 mb-6">
               {["ACTIVE", "NULLIFIED", "BYPASS", "CONSTRAINT"].map(status => {
                 const count = OVERRIDE_MATRIX.filter(override => {
                   const isActive = operatorSequence.indexOf(override.from) < operatorSequence.indexOf(override.to);
