@@ -637,7 +637,9 @@ const SemanticPermutationEngine = () => {
                       {/* Scrollable Content */}
                       <div className="overflow-y-auto flex-1 pr-2 mt-2" style={{ maxHeight: "calc(100% - 1rem)" }}>
                         {/* Scroll hint */}
-                        <div className="text-xs text-gray-500 font-mono mb-2">↓ Scroll for more details</div>
+                        <div className="text-xs text-gray-500 font-mono mb-2">
+                          <span className="text-lg">↓</span> Scroll for more details
+                        </div>
 
                         {/* Operator Full Name */}
                         <div
