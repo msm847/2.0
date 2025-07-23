@@ -1024,7 +1024,7 @@ const SemanticPermutationEngine = () => {
                   <h4 className="text-sm font-bold text-white font-mono mb-4">
                     TEMPORAL EXECUTION TRACE (t₀ → t₅)
                   </h4>
-                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                  <div className="space-y-3 max-h-48 overflow-y-auto">
                     {executionTrace.map((step, index) => (
                       <div
                         key={index}
