@@ -139,10 +139,10 @@ const Partners = () => {
       {/* STAKEHOLDERS SECTION */}
       <section className="py-20" aria-labelledby="stakeholders-heading">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Section Header */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Section Header - Left Side */}
             <motion.div
-              className="text-center mb-12"
+              className="text-left"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -157,12 +157,12 @@ const Partners = () => {
               >
                 STAKEHOLDERS
               </h2>
-              <div className="max-w-2xl mx-auto">
-                <p className="text-gray-300 text-lg leading-relaxed mb-4">
+              <div className="max-w-xl">
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
                   Connect with institutional stakeholders and collaborative networks for structural
                   governance intelligence and strategic implementation.
                 </p>
-                <div className="flex items-center justify-center space-x-8 text-sm text-green-400">
+                <div className="space-y-4 text-sm text-green-400">
                   <div className="flex items-center space-x-2">
                     <Building className="w-4 h-4" />
                     <span>Enterprise Solutions</span>
@@ -179,34 +179,36 @@ const Partners = () => {
               </div>
             </motion.div>
 
-            {/* Success Message */}
-            {isSubmitted && (
-              <motion.div
-                className="mb-8 p-4 bg-green-900/30 border border-green-700 rounded-lg flex items-center justify-center space-x-3"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-green-300 font-mono">
-                  Stakeholder inquiry sent successfully! We'll get back to you soon.
-                </span>
-              </motion.div>
-            )}
+            {/* Right Side - Form Container */}
+            <div className="space-y-6">
+              {/* Success Message */}
+              {isSubmitted && (
+                <motion.div
+                  className="p-4 bg-green-900/30 border border-green-700 rounded-lg flex items-center space-x-3"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-green-300 font-mono text-sm">
+                    Stakeholder inquiry sent successfully! We'll get back to you soon.
+                  </span>
+                </motion.div>
+              )}
 
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="rounded-lg"
-              style={{
-                background: "rgba(16, 32, 28, 0.95)",
-                border: "1px solid rgba(0,255,204,0.15)",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
-                backdropFilter: "blur(10px)",
-              }}
-            >
+              {/* Contact Form */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="rounded-lg"
+                style={{
+                  background: "rgba(16, 32, 28, 0.95)",
+                  border: "1px solid rgba(0,255,204,0.15)",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+                  backdropFilter: "blur(10px)",
+                }}
+              >
               <div className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
                   <Briefcase className="w-6 h-6 text-green-400" />
