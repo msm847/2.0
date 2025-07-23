@@ -634,58 +634,36 @@ const SemanticPermutationEngine = () => {
                         <X className="w-4 h-4" />
                       </button>
 
-                      {/* Scrollable Content with indicators */}
-                      <div className="relative flex-1 mt-2">
+                      {/* Scrollable Content */}
+                      <div className="overflow-y-auto flex-1 pr-2 mt-2" style={{ maxHeight: "calc(100% - 1rem)" }}>
                         {/* Scroll hint */}
-                        <div className="text-xs text-gray-500 font-mono mb-2 flex items-center">
-                          <span>Scroll for details</span>
-                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                          </svg>
-                        </div>
+                        <div className="text-xs text-gray-500 font-mono mb-2">↓ Scroll for more details</div>
 
+                        {/* Operator Full Name */}
                         <div
-                          className="overflow-y-auto pr-2 custom-scrollbar"
-                          style={{
-                            maxHeight: "calc(100% - 2rem)",
-                            scrollbarWidth: "thin",
-                            scrollbarColor: `${operator.color}40 transparent`
-                          }}
+                          className="text-sm font-bold font-mono mb-2 flex-shrink-0"
+                          style={{ color: operator.color }}
                         >
-                          {/* Operator Full Name */}
-                          <div
-                            className="text-sm font-bold font-mono mb-2 flex-shrink-0"
-                            style={{ color: operator.color }}
-                          >
-                            {operator.symbol} — {operator.fullName}
-                          </div>
+                          {operator.symbol} — {operator.fullName}
+                        </div>
 
-                          {/* Description */}
-                          <p className="text-xs text-gray-300 font-mono leading-relaxed mb-3">
-                            {operator.description}
-                          </p>
+                        {/* Description */}
+                        <p className="text-xs text-gray-300 font-mono leading-relaxed mb-3">
+                          {operator.description}
+                        </p>
 
-                          {/* Mathematical Representation */}
-                          <div className="mb-3">
-                            <div className="text-xs text-gray-400 font-mono mb-1">Mathematical Representation:</div>
-                            <div className="text-xs text-white font-mono bg-gray-800 p-2 rounded">
-                              {operator.calculation.formula}
-                            </div>
-                          </div>
-
-                          {/* Impact Statement */}
-                          <div className="text-xs text-gray-300 font-mono">
-                            <span className="text-gray-400">Impact:</span> {operator.impact}
+                        {/* Mathematical Representation */}
+                        <div className="mb-3">
+                          <div className="text-xs text-gray-400 font-mono mb-1">Mathematical Representation:</div>
+                          <div className="text-xs text-white font-mono bg-gray-800 p-2 rounded">
+                            {operator.calculation.formula}
                           </div>
                         </div>
 
-                        {/* Bottom fade indicator */}
-                        <div
-                          className="absolute bottom-0 left-0 right-0 h-4 pointer-events-none"
-                          style={{
-                            background: `linear-gradient(transparent, rgba(16, 44, 34, 0.95))`
-                          }}
-                        />
+                        {/* Impact Statement */}
+                        <div className="text-xs text-gray-300 font-mono">
+                          <span className="text-gray-400">Impact:</span> {operator.impact}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
