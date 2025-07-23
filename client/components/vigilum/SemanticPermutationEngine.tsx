@@ -614,7 +614,7 @@ const SemanticPermutationEngine = () => {
 
                     {/* Back Face */}
                     <div
-                      className="absolute w-full h-full rounded-lg border-2 p-4"
+                      className="absolute w-full h-full rounded-lg border-2 p-4 flex flex-col"
                       style={{
                         backgroundColor: "rgba(16, 44, 34, 0.95)",
                         borderColor: operator.color,
@@ -625,7 +625,7 @@ const SemanticPermutationEngine = () => {
                     >
                       {/* Close button */}
                       <button
-                        className="absolute top-2 right-2 text-gray-400 hover:text-white"
+                        className="absolute top-2 right-2 text-gray-400 hover:text-white z-10"
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleCard(opId);
@@ -634,30 +634,33 @@ const SemanticPermutationEngine = () => {
                         <X className="w-4 h-4" />
                       </button>
 
-                      {/* Operator Full Name */}
-                      <div
-                        className="text-sm font-bold font-mono mb-2"
-                        style={{ color: operator.color }}
-                      >
-                        {operator.symbol} — {operator.fullName}
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-xs text-gray-300 font-mono leading-relaxed mb-3">
-                        {operator.description}
-                      </p>
-
-                      {/* Mathematical Representation */}
-                      <div className="mb-3">
-                        <div className="text-xs text-gray-400 font-mono mb-1">Mathematical Representation:</div>
-                        <div className="text-xs text-white font-mono bg-gray-800 p-2 rounded">
-                          {operator.calculation.formula}
+                      {/* Scrollable Content */}
+                      <div className="overflow-y-auto flex-1 pr-2 mt-2" style={{ maxHeight: "calc(100% - 1rem)" }}>
+                        {/* Operator Full Name */}
+                        <div
+                          className="text-sm font-bold font-mono mb-2 flex-shrink-0"
+                          style={{ color: operator.color }}
+                        >
+                          {operator.symbol} — {operator.fullName}
                         </div>
-                      </div>
 
-                      {/* Impact Statement */}
-                      <div className="text-xs text-gray-300 font-mono">
-                        <span className="text-gray-400">Impact:</span> {operator.impact}
+                        {/* Description */}
+                        <p className="text-xs text-gray-300 font-mono leading-relaxed mb-3">
+                          {operator.description}
+                        </p>
+
+                        {/* Mathematical Representation */}
+                        <div className="mb-3">
+                          <div className="text-xs text-gray-400 font-mono mb-1">Mathematical Representation:</div>
+                          <div className="text-xs text-white font-mono bg-gray-800 p-2 rounded">
+                            {operator.calculation.formula}
+                          </div>
+                        </div>
+
+                        {/* Impact Statement */}
+                        <div className="text-xs text-gray-300 font-mono">
+                          <span className="text-gray-400">Impact:</span> {operator.impact}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
