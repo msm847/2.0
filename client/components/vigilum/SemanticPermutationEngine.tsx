@@ -167,33 +167,33 @@ const INITIAL_STATE = {
 
 // Override resolution matrix with enhanced logic
 const OVERRIDE_MATRIX = [
-  {
-    from: "O",
-    to: "A",
+  { 
+    from: "O", 
+    to: "A", 
     effect: "Nullifies actor discretionary space through direct constraint override",
     type: "NULLIFICATION",
-    strength: 0.9
+    strength: 0.9 
   },
-  {
-    from: "O",
-    to: "R",
+  { 
+    from: "O", 
+    to: "R", 
     effect: "Bypasses institutional reflex patterns via systematic override",
-    type: "BYPASS",
-    strength: 0.8
+    type: "BYPASS", 
+    strength: 0.8 
   },
-  {
-    from: "A",
-    to: "V",
+  { 
+    from: "A", 
+    to: "V", 
     effect: "Actor configuration masks visibility through liability transfer",
     type: "MASKING",
-    strength: 0.7
+    strength: 0.7 
   },
-  {
-    from: "R",
-    to: "ε",
+  { 
+    from: "R", 
+    to: "ε", 
     effect: "Reflex patterns compress environmental response timeframes",
     type: "COMPRESSION",
-    strength: 0.6
+    strength: 0.6 
   },
   {
     from: "V",
@@ -249,10 +249,10 @@ const SemanticPermutationEngine = () => {
       const baseValue = 0.5 + (Math.sin(operator.weight * Math.PI) * 0.3);
       const environmentalInfluence = environmentGradient * (Math.random() * 0.4 - 0.2);
       const variableValue = Math.max(0, Math.min(1, baseValue + environmentalInfluence));
-
+      
       const contribution = (weight as number) * variableValue;
       total += contribution;
-
+      
       breakdown.push({
         weight: weight,
         variable: variableKey,
@@ -274,7 +274,7 @@ const SemanticPermutationEngine = () => {
     sequence.forEach((opId) => {
       const operator = OPERATORS.find(op => op.id === opId)!;
       const { value, breakdown } = calculateOperatorValue(operator, environmentGradient);
-
+      
       phi += operator.weight * value;
       formulaTerms.push(`${operator.weight.toFixed(1)}${opId}`);
       calculationDetails[opId] = { value, breakdown, weight: operator.weight };
@@ -312,7 +312,7 @@ const SemanticPermutationEngine = () => {
         operator.affects.forEach(layer => {
           const currentValue = currentState[layer as keyof typeof currentState] || 0;
           const operatorInfluence = operator.weight * positionMultiplier * 0.3;
-
+          
           // Apply operator-specific transformations
           switch (operator.id) {
             case "A":
@@ -382,7 +382,7 @@ const SemanticPermutationEngine = () => {
   // Generate final permutation result
   const generatePermutationResult = useCallback((sequence: string[], finalState: any, trace: any[]) => {
     const formulaResult = calculatePermutationFormula(sequence);
-
+    
     const riskVector = {
       DG: Math.min(1, finalState.P * 0.3 + finalState.A * 0.4 + finalState.ε * 0.3),
       CI: Math.min(1, finalState.L * 0.4 + finalState.V * 0.6),
@@ -418,7 +418,7 @@ const SemanticPermutationEngine = () => {
     setFinalState(newFinalState);
     setExecutionTrace(trace);
     setMatrixData(generateMatrixData(trace));
-
+    
     const result = generatePermutationResult(operatorSequence, newFinalState, trace);
     setPermutationResult(result);
     setCalculationBreakdowns(result.mathematical_result.details);
@@ -503,7 +503,7 @@ const SemanticPermutationEngine = () => {
         {/* Mathematical Formula Display */}
         {permutationResult && (
           <div className="mb-12 text-center">
-            <div
+            <div 
               className="inline-block p-6 rounded-lg border"
               style={{
                 backgroundColor: "rgba(16, 44, 34, 0.7)",
@@ -533,7 +533,7 @@ const SemanticPermutationEngine = () => {
               exit={{ opacity: 0, height: 0 }}
               className="mb-12"
             >
-              <div
+              <div 
                 className="p-6 rounded-lg border"
                 style={{
                   backgroundColor: "rgba(16, 44, 34, 0.7)",
@@ -545,13 +545,13 @@ const SemanticPermutationEngine = () => {
                   {operatorSequence.map(opId => {
                     const details = calculationBreakdowns[opId];
                     if (!details) return null;
-
+                    
                     const operator = OPERATORS.find(op => op.id === opId)!;
-
+                    
                     return (
                       <div key={opId} className="space-y-3">
                         <div className="flex items-center space-x-2">
-                          <span
+                          <span 
                             className="text-lg font-mono font-bold"
                             style={{ color: operator.color }}
                           >
@@ -679,7 +679,7 @@ const SemanticPermutationEngine = () => {
                       </div>
 
                       {/* Weight Value */}
-                      <div
+                      <div 
                         className="text-2xl font-mono font-bold"
                         style={{ color: operator.color }}
                       >
@@ -715,7 +715,7 @@ const SemanticPermutationEngine = () => {
                       </button>
 
                       {/* Operator Full Name */}
-                      <div
+                      <div 
                         className="text-sm font-bold font-mono mb-2"
                         style={{ color: operator.color }}
                       >
@@ -854,9 +854,9 @@ const SemanticPermutationEngine = () => {
           </div>
         </div>
 
-        {/* Analysis Grid Extended - Override Resolution Path */}
+        {/* Analysis Grid Extended - Override Resolution Path & System Metrics */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Override Resolution Path - Repositioned and Enhanced */}
+          {/* Override Resolution Path */}
           <div
             className="rounded-lg p-6 border"
             style={{
@@ -866,7 +866,7 @@ const SemanticPermutationEngine = () => {
           >
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-3">
-                <div
+                <div 
                   className="w-1 h-6 rounded"
                   style={{ backgroundColor: "#10b981" }}
                 />
@@ -880,19 +880,19 @@ const SemanticPermutationEngine = () => {
               {["ACTIVE", "NULLIFIED", "BYPASS", "CONSTRAINT"].map(status => {
                 const count = OVERRIDE_MATRIX.filter(override => {
                   const isActive = operatorSequence.indexOf(override.from) < operatorSequence.indexOf(override.to);
-                  return status === "ACTIVE" ? isActive :
+                  return status === "ACTIVE" ? isActive : 
                          status === "NULLIFIED" ? !isActive :
                          status === override.type;
                 }).length;
-
+                
                 return (
                   <div key={status} className="text-center p-2 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-                    <div
+                    <div 
                       className="text-lg font-bold font-mono"
-                      style={{
-                        color: status === "ACTIVE" ? "#ef4444" :
-                               status === "NULLIFIED" ? "#6b7280" :
-                               "#10b981"
+                      style={{ 
+                        color: status === "ACTIVE" ? "#ef4444" : 
+                               status === "NULLIFIED" ? "#6b7280" : 
+                               "#10b981" 
                       }}
                     >
                       {count}
@@ -945,10 +945,10 @@ const SemanticPermutationEngine = () => {
                           {override.to}
                         </div>
                       </div>
-
+                      
                       {/* Status Indicator */}
                       {isActive && (
-                        <motion.div
+                        <motion.div 
                           className="w-2 h-2 rounded-full bg-red-400"
                           animate={{ opacity: [1, 0.3, 1] }}
                           transition={{ duration: 1.5, repeat: Infinity }}
@@ -960,10 +960,10 @@ const SemanticPermutationEngine = () => {
                     <div className="text-xs text-gray-300 font-mono leading-relaxed">
                       {override.effect}
                     </div>
-
+                    
                     {/* Type Badge */}
                     <div className="flex justify-between items-center mt-2">
-                      <div
+                      <div 
                         className="text-xs font-mono px-2 py-0.5 rounded"
                         style={{
                           backgroundColor: isActive ? "rgba(239, 68, 68, 0.2)" : "rgba(107, 114, 128, 0.2)",
@@ -972,7 +972,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {override.type}
                       </div>
-
+                      
                       {isActive && (
                         <div className="text-xs text-red-400 font-mono font-bold">ACTIVE</div>
                       )}
@@ -1028,7 +1028,7 @@ const SemanticPermutationEngine = () => {
                           className="h-1.5 rounded-full transition-all duration-1000"
                           style={{
                             width: `${(value as number) * 100}%`,
-                            backgroundColor: (value as number) > 0.7 ? "#ef4444" :
+                            backgroundColor: (value as number) > 0.7 ? "#ef4444" : 
                                            (value as number) > 0.4 ? "#f59e0b" : "#10b981",
                           }}
                         />
@@ -1069,9 +1069,9 @@ const SemanticPermutationEngine = () => {
 
               {/* Apple-style Primary Metrics Cards */}
               <div className="grid grid-cols-2 gap-3 mb-6">
-                <div
+                <div 
                   className="p-4 rounded-xl transition-all duration-200 hover:scale-105 cursor-pointer"
-                  style={{
+                  style={{ 
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
                     backdropFilter: "blur(20px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)"
@@ -1082,9 +1082,9 @@ const SemanticPermutationEngine = () => {
                   </div>
                   <div className="text-xs text-gray-400 mt-1">ϕ RESULT</div>
                 </div>
-                <div
+                <div 
                   className="p-4 rounded-xl transition-all duration-200 hover:scale-105 cursor-pointer"
-                  style={{
+                  style={{ 
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
                     backdropFilter: "blur(20px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)"
@@ -1224,7 +1224,7 @@ const SemanticPermutationEngine = () => {
                   <div key={item.key} className="flex justify-between items-center">
                     <span className="text-sm font-mono text-gray-300">{item.label}</span>
                     <div className="flex items-center space-x-2">
-                      <div
+                      <div 
                         className={`w-2 h-2 rounded-full ${item.value ? 'bg-green-400' : 'bg-red-400'}`}
                       />
                       <span className={`text-sm font-mono ${item.value ? 'text-green-400' : 'text-red-400'}`}>
@@ -1247,93 +1247,93 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
           </div>
+        )}
 
-          {/* Expandable Content */}
-          {(showTrace || showJSON) && (
-            <div
-              className="rounded-lg p-6 border mt-8"
-              style={{
-                backgroundColor: "rgba(16, 44, 34, 0.7)",
-                borderColor: "rgba(34, 68, 54, 0.8)",
-              }}
-            >
-              {/* Execution trace */}
-              <AnimatePresence>
-                {showTrace && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="mb-6"
-                  >
-                    <h4 className="text-sm font-bold text-white font-mono mb-4">
-                      TEMPORAL EXECUTION TRACE (t₀ → t₅)
-                    </h4>
-                    <div className="space-y-3 max-h-64 overflow-y-auto">
-                      {executionTrace.map((step, index) => (
-                        <div
-                          key={index}
-                          className={`p-3 rounded border ${
-                            step.nullified
-                              ? "border-red-700 bg-red-900/20"
-                              : "border-gray-600 bg-gray-800/30"
-                          }`}
-                        >
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm font-mono text-white">
-                              t{step.t + 1}: {step.operator} - {step.operator_name}
-                            </span>
-                            {step.nullified && (
-                              <span className="text-xs text-red-400 font-mono">NULLIFIED</span>
-                            )}
-                          </div>
-                          <div className="text-xs text-gray-400 space-y-1">
-                            {Object.entries(step.output_state).map(([layer, value]) => {
-                              const inputValue = step.input_state[layer] || 0;
-                              const delta = (value as number) - (inputValue as number);
-                              return (
-                                <div key={layer} className="flex justify-between">
-                                  <span>{layer}:</span>
-                                  <span>
-                                    {(inputValue as number).toFixed(2)} → {(value as number).toFixed(2)}
-                                    <span
-                                      className={
-                                        delta > 0 ? "text-green-400" :
-                                        delta < 0 ? "text-red-400" : "text-gray-400"
-                                      }
-                                    >
-                                      {" "}({delta > 0 ? "+" : ""}{delta.toFixed(2)})
-                                    </span>
-                                  </span>
-                                </div>
-                              );
-                            })}
-                          </div>
+        {/* Expandable Content */}
+        {(showTrace || showJSON) && (
+          <div
+            className="rounded-lg p-6 border"
+            style={{
+              backgroundColor: "rgba(16, 44, 34, 0.7)",
+              borderColor: "rgba(34, 68, 54, 0.8)",
+            }}
+          >
+            {/* Execution trace */}
+            <AnimatePresence>
+              {showTrace && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="mb-6"
+                >
+                  <h4 className="text-sm font-bold text-white font-mono mb-4">
+                    TEMPORAL EXECUTION TRACE (t₀ → t₅)
+                  </h4>
+                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                    {executionTrace.map((step, index) => (
+                      <div
+                        key={index}
+                        className={`p-3 rounded border ${
+                          step.nullified
+                            ? "border-red-700 bg-red-900/20"
+                            : "border-gray-600 bg-gray-800/30"
+                        }`}
+                      >
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-mono text-white">
+                            t{step.t + 1}: {step.operator} - {step.operator_name}
+                          </span>
+                          {step.nullified && (
+                            <span className="text-xs text-red-400 font-mono">NULLIFIED</span>
+                          )}
                         </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                        <div className="text-xs text-gray-400 space-y-1">
+                          {Object.entries(step.output_state).map(([layer, value]) => {
+                            const inputValue = step.input_state[layer] || 0;
+                            const delta = (value as number) - (inputValue as number);
+                            return (
+                              <div key={layer} className="flex justify-between">
+                                <span>{layer}:</span>
+                                <span>
+                                  {(inputValue as number).toFixed(2)} → {(value as number).toFixed(2)}
+                                  <span
+                                    className={
+                                      delta > 0 ? "text-green-400" :
+                                      delta < 0 ? "text-red-400" : "text-gray-400"
+                                    }
+                                  >
+                                    {" "}({delta > 0 ? "+" : ""}{delta.toFixed(2)})
+                                  </span>
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-              {/* JSON output */}
-              <AnimatePresence>
-                {showJSON && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className={showTrace ? "border-t border-gray-600 pt-6" : ""}
-                  >
-                    <h4 className="text-sm font-bold text-white font-mono mb-4">STRUCTURED OUTPUT</h4>
-                    <pre className="text-xs text-gray-300 font-mono bg-gray-900 p-4 rounded max-h-64 overflow-auto">
-                      {JSON.stringify(permutationResult, null, 2)}
-                    </pre>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          )}
+            {/* JSON output */}
+            <AnimatePresence>
+              {showJSON && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className={showTrace ? "border-t border-gray-600 pt-6" : ""}
+                >
+                  <h4 className="text-sm font-bold text-white font-mono mb-4">STRUCTURED OUTPUT</h4>
+                  <pre className="text-xs text-gray-300 font-mono bg-gray-900 p-4 rounded max-h-64 overflow-auto">
+                    {JSON.stringify(permutationResult, null, 2)}
+                  </pre>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         )}
       </div>
     </div>
