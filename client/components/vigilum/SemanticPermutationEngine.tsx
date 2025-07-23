@@ -688,39 +688,39 @@ const SemanticPermutationEngine = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Matrix Visualizer */}
           <div
-            className="rounded-lg p-6 border"
+            className="rounded-lg p-6 border h-full flex flex-col"
             style={{
               backgroundColor: "rgba(16, 44, 34, 0.7)",
               borderColor: "rgba(34, 68, 54, 0.8)",
             }}
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-4 flex-shrink-0">
               <h3 className="text-lg font-bold text-white font-mono">EXECUTION MATRIX</h3>
               <BarChart3 className="w-5 h-5 text-gray-400" />
             </div>
 
-            <div className="space-y-2">
+            <div className="flex flex-col flex-1 min-h-0">
               {/* Layer headers */}
-              <div className="grid grid-cols-7 gap-1 text-xs font-mono text-gray-400">
-                <div className="h-8 flex items-center justify-center"></div>
+              <div className="grid grid-cols-7 gap-1 text-xs font-mono text-gray-400 mb-2 flex-shrink-0">
+                <div className="h-10 flex items-center justify-center"></div>
                 {Object.keys(SYSTEM_LAYERS).map((layer) => (
-                  <div key={layer} className="h-8 text-center px-1 rounded flex items-center justify-center" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div key={layer} className="h-10 text-center px-1 rounded flex items-center justify-center" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                     {layer}
                   </div>
                 ))}
               </div>
 
-              {/* Matrix rows */}
-              <div className="space-y-1">
+              {/* Matrix rows - flex to fill remaining space */}
+              <div className="flex-1 flex flex-col justify-between">
                 {matrixData.map((row, rowIndex) => (
-                  <div key={rowIndex} className="grid grid-cols-7 gap-1">
-                    <div className="h-12 text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div key={rowIndex} className="grid grid-cols-7 gap-1 flex-1">
+                    <div className="text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", minHeight: "3rem" }}>
                       {operatorSequence[rowIndex]}
                     </div>
                     {row.map((cell, colIndex) => (
                       <div
                         key={colIndex}
-                        className="h-12 rounded-md flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border"
+                        className="rounded-md flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border"
                         style={{
                           backgroundColor: cell.nullified
                             ? "rgba(55, 65, 81, 0.8)"
@@ -737,7 +737,8 @@ const SemanticPermutationEngine = () => {
                               : cell.type === "destructive"
                                 ? "rgba(239, 68, 68, 0.5)"
                                 : "rgba(107, 114, 128, 0.3)",
-                          boxShadow: cell.strength > 0.7 ? "0 0 8px rgba(16, 185, 129, 0.3)" : "none"
+                          boxShadow: cell.strength > 0.7 ? "0 0 8px rgba(16, 185, 129, 0.3)" : "none",
+                          minHeight: "3rem"
                         }}
                       >
                         {cell.nullified ? "×" : cell.delta.toFixed(1)}
