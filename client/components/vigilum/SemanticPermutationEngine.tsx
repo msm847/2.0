@@ -788,7 +788,15 @@ const SemanticPermutationEngine = () => {
                 }).length;
 
                 return (
-                  <div key={status} className="text-center p-2 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div
+                    key={status}
+                    className="text-center p-2 rounded border transition-all duration-200 hover:scale-105"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.03)",
+                      backdropFilter: "blur(20px)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)"
+                    }}
+                  >
                     <div
                       className="text-lg font-bold font-mono"
                       style={{
