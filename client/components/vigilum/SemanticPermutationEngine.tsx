@@ -1249,8 +1249,7 @@ const SemanticPermutationEngine = () => {
           </div>
 
           {/* Expandable Content */}
-          <div className="space-y-6">
-
+          <div className="space-y-6 mb-8">
             {/* Execution trace */}
             <AnimatePresence>
               {showTrace && (
