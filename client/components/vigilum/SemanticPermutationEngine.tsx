@@ -699,28 +699,28 @@ const SemanticPermutationEngine = () => {
               <BarChart3 className="w-5 h-5 text-gray-400" />
             </div>
 
-            <div className="h-full flex flex-col">
+            <div className="space-y-2">
               {/* Layer headers */}
-              <div className="grid grid-cols-7 gap-1 text-xs font-mono text-gray-400 mb-2">
-                <div className="text-center py-3 flex items-center justify-center"></div>
+              <div className="grid grid-cols-7 gap-1 text-xs font-mono text-gray-400">
+                <div className="h-8 flex items-center justify-center"></div>
                 {Object.keys(SYSTEM_LAYERS).map((layer) => (
-                  <div key={layer} className="text-center py-3 px-1 rounded flex items-center justify-center" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div key={layer} className="h-8 text-center px-1 rounded flex items-center justify-center" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                     {layer}
                   </div>
                 ))}
               </div>
 
-              {/* Matrix rows - flex to fill remaining space */}
-              <div className="flex-1 flex flex-col justify-between space-y-1">
+              {/* Matrix rows */}
+              <div className="space-y-1">
                 {matrixData.map((row, rowIndex) => (
-                  <div key={rowIndex} className="grid grid-cols-7 gap-1 flex-1">
-                    <div className="text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+                  <div key={rowIndex} className="grid grid-cols-7 gap-1">
+                    <div className="h-12 text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
                       {operatorSequence[rowIndex]}
                     </div>
                     {row.map((cell, colIndex) => (
                       <div
                         key={colIndex}
-                        className="rounded-md flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border"
+                        className="h-12 rounded-md flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border"
                         style={{
                           backgroundColor: cell.nullified
                             ? "rgba(55, 65, 81, 0.8)"
