@@ -66,8 +66,20 @@ const Partners = () => {
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [isStudent, setIsStudent] = useState(false);
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateFullName = (name) => {
+    const words = name.trim().split(/\s+/);
+    return words.length >= 2 && words.every(word => word.length > 0);
+  };
 
   // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
   // Current key is Google's test key - get your own from: https://www.google.com/recaptcha/admin
