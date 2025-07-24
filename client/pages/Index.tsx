@@ -127,11 +127,8 @@ export default function Index() {
           color: "white",
           pointerEvents: "none",
           zIndex: 3,
-          background: "rgba(16, 32, 28, 0.85)",
+          background: "transparent",
           padding: "50px 60px",
-          borderRadius: "48px",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
       >
         <GradientText
