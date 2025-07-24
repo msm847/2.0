@@ -504,13 +504,20 @@ const Partners = () => {
                     <label className="block text-sm font-medium text-green-400 mb-2">
                       Phone (Optional)
                     </label>
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      placeholder={phonePlaceholder}
-                    />
+                    <div className="flex">
+                      {/* Country Code Box */}
+                      <div className="flex items-center px-3 py-3 bg-green-600 border border-green-500 rounded-l-lg text-white font-mono text-sm font-medium">
+                        {phonePlaceholder || "+1"}
+                      </div>
+                      {/* Phone Input */}
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="flex-1 p-3 bg-gray-800 border border-gray-600 border-l-0 rounded-r-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        placeholder=""
+                      />
+                    </div>
                   </div>
 
                   <div>
