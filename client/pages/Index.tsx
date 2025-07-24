@@ -495,6 +495,12 @@ export default function Index() {
       </div>
 
       <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
         #enter-button:active {
           transform: scale(0.95) !important;
         }
