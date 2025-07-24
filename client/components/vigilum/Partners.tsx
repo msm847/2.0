@@ -1727,7 +1727,11 @@ const Partners = () => {
                             onChange={(e) =>
                               setPrivacyAccepted(e.target.checked)
                             }
-                            className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2 mt-0.5"
+                            className={`w-4 h-4 bg-gray-800 border rounded mt-0.5 ${
+                              validationErrors.privacyAccepted
+                                ? 'border-red-500 focus:ring-red-500'
+                                : 'border-gray-600 focus:ring-green-500'
+                            } focus:ring-2`}
                             required
                           />
                           <label
