@@ -1421,6 +1421,41 @@ const Partners = () => {
                     </p>
                   </div>
                 </div>
+
+                {/* RECOGNITION */}
+                <div className="flex items-start" style={{ gap: "16px" }}>
+                  <AlertCircle
+                    className="flex-shrink-0 mt-1"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      color: "#7BFF9C",
+                    }}
+                    aria-label="RECOGNITION icon"
+                  />
+                  <div>
+                    <h3
+                      className="font-semibold mb-2"
+                      style={{
+                        fontFamily: "IBM Plex Sans, sans-serif",
+                        fontSize: "18px",
+                        color: "#EAF8E2",
+                      }}
+                    >
+                      RECOGNITION
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "IBM Plex Sans, sans-serif",
+                        fontSize: "14px",
+                        color: "#EAF8E2",
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      Diagnose where contradiction dissolves and truth exits the system. Reconstruct the pathways for meaning to re-enter institutional logic.
+                    </p>
+                  </div>
+                </div>
               </div>
 
 
