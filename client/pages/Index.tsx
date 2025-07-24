@@ -194,9 +194,9 @@ export default function Index() {
         <div
           style={{
             position: "absolute",
-            top: "15%",
+            top: "50%",
             left: "50%",
-            transform: "translateX(-50%)",
+            transform: "translate(-50%, -50%)",
             textAlign: "center",
             color: "white",
             pointerEvents: "none",
