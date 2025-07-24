@@ -355,39 +355,7 @@ const Partners = () => {
                 >
                   info@vigilum.com
                 </a>
-                <div className="flex space-x-4">
-                  <a
-                    href="mailto:student@vigilum.com"
-                    className="transition-colors duration-150"
-                    style={{
-                      fontFamily: "IBM Plex Mono, monospace",
-                      fontSize: "15px",
-                      fontWeight: "500",
-                      color: "#7BFF9C",
-                      textDecoration: "none"
-                    }}
-                    onMouseEnter={(e) => e.target.style.color = "#B1FFC8"}
-                    onMouseLeave={(e) => e.target.style.color = "#7BFF9C"}
-                  >
-                    student@vigilum.com
-                  </a>
-                  <span style={{ color: "#7BFF9C" }}>|</span>
-                  <a
-                    href="mailto:civil@vigilum.com"
-                    className="transition-colors duration-150"
-                    style={{
-                      fontFamily: "IBM Plex Mono, monospace",
-                      fontSize: "15px",
-                      fontWeight: "500",
-                      color: "#7BFF9C",
-                      textDecoration: "none"
-                    }}
-                    onMouseEnter={(e) => e.target.style.color = "#B1FFC8"}
-                    onMouseLeave={(e) => e.target.style.color = "#7BFF9C"}
-                  >
-                    civil@vigilum.com
-                  </a>
-                </div>
+
               </div>
             </motion.div>
 
