@@ -1178,7 +1178,7 @@ export default function InfiniteMenu({ items = [] }) {
           <div className={`face-source ${isMoving ? "inactive" : "active"}`}
                style={{
                  fontFamily: "monospace",
-                 color: "#888888",
+                 color: "white",
                  fontSize: "12px",
                  textAlign: "center",
                  marginBottom: "8px",
@@ -1197,7 +1197,11 @@ export default function InfiniteMenu({ items = [] }) {
                 fontSize: "24px",
                 textAlign: "center",
                 marginBottom: "12px",
-                lineHeight: "1.2"
+                lineHeight: "1.2",
+                display: "-webkit-box",
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden"
               }}>
             {activeItem.title}
           </h2>
@@ -1205,7 +1209,7 @@ export default function InfiniteMenu({ items = [] }) {
           {/* Preview/Scenario - Bottom */}
           <p className={`face-description ${isMoving ? "inactive" : "active"}`}
              style={{
-               color: "#9DE6C6",
+               color: "white",
                fontSize: "14px",
                textAlign: "center",
                lineHeight: "1.4",
