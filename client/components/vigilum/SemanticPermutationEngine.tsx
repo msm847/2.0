@@ -203,30 +203,32 @@ const OPERATORS_V2 = [
       "Binds discretionary acts to traceability/observation.",
   },
   {
-    id: "S",
-    name: "Scope Elasticity",
-    fullName: "Scope Elasticity and Boundary Manipulation",
-    weight: 0.4,
-    symbol: "S",
+    id: "M",
+    name: "Masking",
+    fullName: "Masking and Semantic Opacity",
+    weight: 0.05,
+    symbol: "M",
     glyph: "⧨",
     affects: ["L", "A", "P"],
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F97316", // Orange
     description:
-      "This operator governs the expansion and contraction of procedural scope and definitional boundaries. Values determine flexibility in interpretation and application.",
+      "High-risk, especially if adjacent to Proxy, Liability Shift, or used late. Masking → Override: most hazardous pattern.",
     calculation: {
       formula:
-        "S = w₁ × boundary_flexibility + w₂ × scope_expansion + w₃ × definition_elasticity",
-      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+        "ϕ(M) = 0.05·H + 0.25·S + 0.33·B + 0.02·W + γ(Seq,𝓔)",
+      weights: { w1: 0.05, w2: 0.25, w3: 0.33, w4: 0.02 },
       variables: {
-        boundary_flexibility: "Degree of definitional boundary adaptation",
-        scope_expansion: "Capacity for procedural scope enlargement",
-        definition_elasticity: "Interpretive flexibility in rule application",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "If Masking is paired or sequenced with Soft/Black, γ = +0.13; if immediately followed by Audit, γ = –0.07"
       },
     },
     impact:
-      "Modifying 'S' alters the interpretive boundaries and scope flexibility of the system.",
+      "Creates ambiguity, semantic opacity, or off-ledger status (deliberate or emergent).",
   },
   {
     id: "I",
