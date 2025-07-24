@@ -226,6 +226,13 @@ const Partners = () => {
       return;
     }
 
+    const jobTitleValidation = validateJobTitle(jobTitle);
+    if (!jobTitleValidation.isValid) {
+      setError(jobTitleValidation.error);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       // Send contact form using email service
       await sendContactForm({
