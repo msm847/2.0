@@ -568,6 +568,40 @@ const Partners = () => {
                       </div>
                     </div>
 
+                    {/* Privacy Policy - Enterprise Grade */}
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <input
+                          type="checkbox"
+                          id="privacy-check"
+                          checked={privacyAccepted}
+                          onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                          className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2 mt-0.5"
+                          required
+                        />
+                        <label htmlFor="privacy-check" className="text-gray-300 text-sm leading-relaxed">
+                          I have read and agree to the{" "}
+                          <button
+                            type="button"
+                            onClick={() => setShowPrivacyModal(true)}
+                            className="text-green-400 hover:text-green-300 underline transition-colors font-medium"
+                          >
+                            Vigilum Privacy Policy and Data Use Statement
+                          </button>.
+                        </label>
+                      </div>
+                      <div className="text-xs text-gray-400 leading-relaxed pl-7">
+                        By submitting this inquiry, I consent to the processing of my data for institutional engagement, product research, and compliance analytics, as described in the{" "}
+                        <button
+                          type="button"
+                          onClick={() => setShowPrivacyModal(true)}
+                          className="text-green-400 hover:text-green-300 underline transition-colors"
+                        >
+                          Vigilum Privacy Policy
+                        </button>. All data is processed under GDPR and international standards.
+                      </div>
+                    </div>
+
                   </div>
 
                   {/* Submit Button - Centered with extra spacing */}
