@@ -120,15 +120,15 @@ export default function Index() {
         id="content-overlay"
         style={{
           position: "absolute",
-          top: "50%",
+          top: "80px",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translateX(-50%)",
           textAlign: "center",
           color: "white",
           pointerEvents: "none",
           zIndex: 3,
           background: "transparent",
-          padding: "50px 60px",
+          padding: "40px 60px",
         }}
       >
         <GradientText
