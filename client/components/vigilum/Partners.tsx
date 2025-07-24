@@ -632,8 +632,8 @@ const Partners = () => {
             transition={{ duration: 0.2 }}
           >
             <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-white">Privacy Policy</h3>
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-white">Vigilum Privacy Policy and Data Use Statement</h3>
                 <button
                   onClick={() => setShowPrivacyModal(false)}
                   className="text-gray-400 hover:text-white transition-colors"
@@ -641,32 +641,84 @@ const Partners = () => {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              <div className="text-gray-300 space-y-4">
-                <p className="text-sm">
-                  <strong>Vigilum Privacy Policy - Stakeholder Communications</strong>
-                </p>
-                <p className="text-sm">
-                  This privacy policy outlines how we handle information collected through our stakeholder
-                  inquiry form and communications.
-                </p>
-                <p className="text-sm">
-                  <strong>Data Collection:</strong> We collect personal and professional information you
-                  provide including name, email, phone, job title, company, country, and project details.
-                </p>
-                <p className="text-sm">
-                  <strong>Data Use:</strong> Information is used solely for stakeholder communication,
-                  project evaluation, and institutional collaboration purposes.
-                </p>
-                <p className="text-sm">
-                  <strong>Data Protection:</strong> All data is encrypted, securely stored, and not shared
-                  with third parties without explicit consent.
-                </p>
-                <p className="text-sm">
-                  <strong>Contact:</strong> For privacy inquiries, contact privacy@vigilum.com
-                </p>
-                <p className="text-xs text-gray-400 mt-4">
-                  [Full privacy policy will be available soon]
-                </p>
+              <div className="text-gray-300 space-y-6 text-sm leading-relaxed">
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">1. Data Collection</h4>
+                  <p>We collect the following data when you submit an inquiry:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li>Contact information (name, business email, phone number)</li>
+                    <li>Professional details (job title, company/institution, country)</li>
+                    <li>Project descriptions and inquiries</li>
+                    <li>Technical logs (IP address, browser type, submission timestamp)</li>
+                    <li>reCAPTCHA verification data</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">2. Data Purpose</h4>
+                  <p>Your data is processed for the following purposes:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li>Institutional engagement and stakeholder communication</li>
+                    <li>Product research and development analytics</li>
+                    <li>Compliance monitoring and reporting</li>
+                    <li>Security and fraud prevention</li>
+                    <li>Legal and regulatory compliance</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">3. Data Storage and Security</h4>
+                  <p>We implement enterprise-grade security measures:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li><strong>Retention:</strong> Data retained for 7 years or as required by law</li>
+                    <li><strong>Location:</strong> Stored in secure, encrypted databases in the US and EU</li>
+                    <li><strong>Security:</strong> AES-256 encryption, SOC 2 compliant infrastructure</li>
+                    <li><strong>Access:</strong> Restricted to authorized personnel only</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">4. Data Sharing</h4>
+                  <p className="text-green-400 font-medium">We never sell your data.</p>
+                  <p className="mt-2">Limited sharing occurs only for:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li>Institutional engagement and partnership development</li>
+                    <li>Legal compliance when required by law</li>
+                    <li>Trusted service providers under strict data processing agreements</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">5. Your Rights (GDPR & International Standards)</h4>
+                  <ul className="list-disc list-inside ml-4 space-y-1">
+                    <li><strong>Access:</strong> Request copies of your data</li>
+                    <li><strong>Rectification:</strong> Correct inaccurate information</li>
+                    <li><strong>Erasure:</strong> Request deletion of your data</li>
+                    <li><strong>Portability:</strong> Receive your data in machine-readable format</li>
+                    <li><strong>Objection:</strong> Opt-out of processing for specific purposes</li>
+                    <li><strong>Restriction:</strong> Limit how we process your data</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">6. Contact Information</h4>
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <p><strong>Data Protection Officer:</strong></p>
+                    <p className="text-green-400 font-mono">privacy@vigilum.com</p>
+                    <p className="mt-2"><strong>Postal Address:</strong></p>
+                    <p>Vigilum Data Protection<br/>
+                    Columbia University MARS-REERS Program<br/>
+                    New York, NY 10027, USA</p>
+                  </div>
+                </section>
+
+                <section className="text-xs text-gray-400 border-t border-gray-600 pt-4">
+                  <p><strong>Last Updated:</strong> {new Date().toLocaleDateString()}</p>
+                  <p><strong>Governing Law:</strong> New York State, USA | EU GDPR Compliant</p>
+                  <p><strong>Policy Version:</strong> 2.1</p>
+                </section>
+
               </div>
               <div className="mt-6 flex justify-end">
                 <Button
