@@ -465,7 +465,9 @@ const SemanticPermutationEngine = () => {
       let calculationDetails: any = {};
 
       sequence.forEach((opId) => {
-        const operator = getCurrentOperators().find((op) => op.id === opId)!;
+        const operator = getCurrentOperators().find((op) => op.id === opId);
+        if (!operator) return;
+
         const { value, breakdown } = calculateOperatorValue(
           operator,
           environmentGradient,
