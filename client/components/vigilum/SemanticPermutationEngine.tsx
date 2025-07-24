@@ -983,7 +983,7 @@ const SemanticPermutationEngine = () => {
                         color: getCurrentOperators().find((o) => o.id === op)?.color,
                       }}
                     >
-                      {getCurrentOperators().find((o) => o.id === op)?.weight.toFixed(1)}
+                      {getCurrentOperators().find((o) => o.id === op)?.weight?.toFixed(1) || "0.0"}
                       {op}
                     </span>
                   </span>
