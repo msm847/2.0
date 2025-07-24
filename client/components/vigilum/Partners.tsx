@@ -174,9 +174,26 @@ const Partners = () => {
     }
   };
 
+  const handleJobTitleSearch = (e) => {
+    const value = e.target.value;
+    setJobTitle(value);
+    setJobTitleSearch(value);
+    setShowJobTitleDropdown(value.length > 0);
+  };
+
+  const selectJobTitle = (selectedTitle) => {
+    setJobTitle(selectedTitle);
+    setJobTitleSearch(selectedTitle);
+    setShowJobTitleDropdown(false);
+  };
+
   const filteredCountries = COUNTRIES.filter(country =>
     country.toLowerCase().includes(countrySearch.toLowerCase())
   );
+
+  const filteredJobTitles = COMMON_JOB_TITLES.filter(title =>
+    title.toLowerCase().includes(jobTitleSearch.toLowerCase())
+  ).slice(0, 8); // Limit to 8 suggestions
 
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
