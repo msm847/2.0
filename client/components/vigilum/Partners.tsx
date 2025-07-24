@@ -522,12 +522,12 @@ const Partners = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-green-400 mb-2">
-                      Job Title *
+                      Company/Institution *
                     </label>
                     <input
                       type="text"
-                      value={jobTitle}
-                      onChange={(e) => setJobTitle(e.target.value)}
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
                       className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                       required
                     />
@@ -535,12 +535,12 @@ const Partners = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-green-400 mb-2">
-                      Company/Institution *
+                      Job Title *
                     </label>
                     <input
                       type="text"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
+                      value={jobTitle}
+                      onChange={(e) => setJobTitle(e.target.value)}
                       className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                       required
                     />
