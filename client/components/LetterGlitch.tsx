@@ -205,7 +205,7 @@ const LetterGlitch = ({
             display: "flex",
             cursor: "pointer",
             padding: "10px",
-            position: "relative",
+            position: "absolute",
           }}
           onClick={handleAudioClick}
           title={isPlaying ? "Click to stop robot voice" : "Click to play robot voice"}
