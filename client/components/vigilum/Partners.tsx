@@ -215,6 +215,7 @@ const Partners = () => {
     setRobotVerified(false);
     setRecaptchaToken("");
     setPrivacyAccepted(false);
+    setIsStudent(false);
     if (recaptchaRef.current) {
       recaptchaRef.current.reset();
     }
