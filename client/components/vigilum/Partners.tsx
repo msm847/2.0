@@ -1135,7 +1135,8 @@ const Partners = () => {
     if (isStudent) {
       setShowUniversityDropdown(value.length > 0);
     }
-    if (validationErrors.company) {
+    // Only clear error if field becomes valid (has content)
+    if (validationErrors.company && value.trim().length > 0) {
       setValidationErrors(prev => ({ ...prev, company: null }));
     }
   };
