@@ -218,26 +218,11 @@ const LetterGlitch = ({
                 height: `${10 + i * 4}px`,
                 backgroundColor: "#40FFAA",
                 borderRadius: "1px",
-                animation: isPlaying ? `soundWave 0.6s ease-in-out infinite ${i * 0.1}s` : "none",
-                opacity: isPlaying ? 1 : 0.5,
+                animation: `soundWave 0.6s ease-in-out infinite ${i * 0.1}s`,
+                opacity: 1,
               }}
             />
           ))}
-          {/* Slash overlay when paused */}
-          {!isPlaying && (
-            <div
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%) rotate(45deg)",
-                width: "20px",
-                height: "1px",
-                backgroundColor: "#40FFAA",
-                zIndex: 3,
-              }}
-            />
-          )}
         </div>
       )}
 
