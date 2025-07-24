@@ -52,15 +52,15 @@ const OPERATORS = [
     description:
       "Override operators forcibly reset or override prior safeguards. Risk spikes when used late in a chain or immediately after ambiguous operators. Maximum risk if O follows Masking (M), Masking → Override (M→O): simulated transparency, hidden extraction. Minimum risk if O opens a sequence and is followed by White/Hard (O→A): visible reset, no stealth.",
     calculation: {
-      formula:
-        "ϕ(O) = 0.34·H + 0.05·S + 0.17·B + 0.04·W + γ(Seq,𝓔)",
+      formula: "ϕ(O) = 0.34·H + 0.05·S + 0.17·B + 0.04·W + γ(Seq,𝓔)",
       weights: { w1: 0.34, w2: 0.05, w3: 0.17, w4: 0.04 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma: "If O follows Masking or Soft actor split, γ = +0.11; if O follows Audit or Disclosure, γ = –0.07"
+        gamma:
+          "If O follows Masking or Soft actor split, γ = +0.11; if O follows Audit or Disclosure, γ = –0.07",
       },
     },
     impact:
@@ -106,15 +106,15 @@ const OPERATORS = [
     description:
       "Proxy logic is low to moderate risk on its own, but forms hazardous channels when combined with liability shifts or soft operators. Proxy → Masking → Liability Shift = classic laundering pattern.",
     calculation: {
-      formula:
-        "ϕ(P) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
-      weights: { w1: 0.13, w2: 0.16, w3: 0.20, w4: 0.07 },
+      formula: "ϕ(P) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
+      weights: { w1: 0.13, w2: 0.16, w3: 0.2, w4: 0.07 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma: "If Proxy is sandwiched by Soft/Black operators, γ = +0.14; if Proxy precedes Audit, γ = –0.04"
+        gamma:
+          "If Proxy is sandwiched by Soft/Black operators, γ = +0.14; if Proxy precedes Audit, γ = –0.04",
       },
     },
     impact:
@@ -180,7 +180,7 @@ const OPERATORS_V2 = [
     id: "V",
     name: "Visibility Constraint",
     fullName: "Visibility Constraint and Traceability Binding",
-    weight: 0.10,
+    weight: 0.1,
     symbol: "V",
     glyph: "⟐",
     affects: ["V", "L", "ε"],
@@ -190,19 +190,17 @@ const OPERATORS_V2 = [
     description:
       "Highly stabilizing—risk sinks as W increases, but if sandwiched by Black/Soft operators, V becomes 'ritual visibility' (simulated audit).",
     calculation: {
-      formula:
-        "ϕ(V) = 0.10·H + 0.02·S + 0.02·B + 0.30·W + γ(Seq,𝓔)",
-      weights: { w1: 0.10, w2: 0.02, w3: 0.02, w4: 0.30 },
+      formula: "ϕ(V) = 0.10·H + 0.02·S + 0.02·B + 0.30·W + γ(Seq,𝓔)",
+      weights: { w1: 0.1, w2: 0.02, w3: 0.02, w4: 0.3 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma: "If V is last or paired with Masking, γ = –0.08"
+        gamma: "If V is last or paired with Masking, γ = –0.08",
       },
     },
-    impact:
-      "Binds discretionary acts to traceability/observation.",
+    impact: "Binds discretionary acts to traceability/observation.",
   },
   {
     id: "M",
@@ -218,15 +216,15 @@ const OPERATORS_V2 = [
     description:
       "High-risk, especially if adjacent to Proxy, Liability Shift, or used late. Masking → Override: most hazardous pattern.",
     calculation: {
-      formula:
-        "ϕ(M) = 0.05·H + 0.25·S + 0.33·B + 0.02·W + γ(Seq,𝓔)",
+      formula: "ϕ(M) = 0.05·H + 0.25·S + 0.33·B + 0.02·W + γ(Seq,𝓔)",
       weights: { w1: 0.05, w2: 0.25, w3: 0.33, w4: 0.02 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma: "If Masking is paired or sequenced with Soft/Black, γ = +0.13; if immediately followed by Audit, γ = –0.07"
+        gamma:
+          "If Masking is paired or sequenced with Soft/Black, γ = +0.13; if immediately followed by Audit, γ = –0.07",
       },
     },
     impact:
@@ -251,7 +249,8 @@ const OPERATORS_V2 = [
       weights: { w1: 1.0 },
       variables: {
         ε_env: "Environmental disruption coefficient",
-        gamma: "Multiplies risk of adjacent Black/Soft by 1.25–1.45 if high disruption; divides by 0.7 if stabilizing"
+        gamma:
+          "Multiplies risk of adjacent Black/Soft by 1.25–1.45 if high disruption; divides by 0.7 if stabilizing",
       },
     },
     impact:
@@ -297,15 +296,15 @@ const OPERATORS_V2 = [
     description:
       "Often the closing move in risk chains—dangerous if last, less so if opening and subject to Audit/Visibility.",
     calculation: {
-      formula:
-        "ϕ(PM) = 0.05·H + 0.28·S + 0.29·B + 0.01·W + γ(Seq,𝓔)",
+      formula: "ϕ(PM) = 0.05·H + 0.28·S + 0.29·B + 0.01·W + γ(Seq,𝓔)",
       weights: { w1: 0.05, w2: 0.28, w3: 0.29, w4: 0.01 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma: "If PM is last in chain, γ = +0.10 (risk masked); if first, γ = –0.05"
+        gamma:
+          "If PM is last in chain, γ = +0.10 (risk masked); if first, γ = –0.05",
       },
     },
     impact:
@@ -504,80 +503,85 @@ const SemanticPermutationEngine = () => {
   );
 
   // Calculate tensor effects based on operator sequence
-  const calculateTensorEffects = useCallback((sequence: string[]) => {
-    let currentState = { ...INITIAL_STATE };
-    const trace: any[] = [];
-    const currentOperators = operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
+  const calculateTensorEffects = useCallback(
+    (sequence: string[]) => {
+      let currentState = { ...INITIAL_STATE };
+      const trace: any[] = [];
+      const currentOperators =
+        operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
 
-    sequence.forEach((opId, index) => {
-      const operator = currentOperators.find((op) => op.id === opId);
-      if (!operator) return;
+      sequence.forEach((opId, index) => {
+        const operator = currentOperators.find((op) => op.id === opId);
+        if (!operator) return;
 
-      const inputState = { ...currentState };
+        const inputState = { ...currentState };
 
-      // Apply positional modifiers
-      const positionMultiplier = index === 0 ? 1.3 : 1.0;
+        // Apply positional modifiers
+        const positionMultiplier = index === 0 ? 1.3 : 1.0;
 
-      // Check for overrides
-      const activeOverrides = checkActiveOverrides(opId, sequence, index);
-      const isNullified = activeOverrides.length > 0;
+        // Check for overrides
+        const activeOverrides = checkActiveOverrides(opId, sequence, index);
+        const isNullified = activeOverrides.length > 0;
 
-      if (!isNullified) {
-        // Apply effects based on operator's mathematical properties
-        operator.affects.forEach((layer) => {
-          const currentValue =
-            currentState[layer as keyof typeof currentState] || 0;
-          const operatorInfluence = operator.weight * positionMultiplier * 0.3;
+        if (!isNullified) {
+          // Apply effects based on operator's mathematical properties
+          operator.affects.forEach((layer) => {
+            const currentValue =
+              currentState[layer as keyof typeof currentState] || 0;
+            const operatorInfluence =
+              operator.weight * positionMultiplier * 0.3;
 
-          // Apply operator-specific transformations
-          switch (operator.id) {
-            case "A":
-              currentState[layer as keyof typeof currentState] = Math.min(
-                1,
-                currentValue + operatorInfluence,
-              );
-              break;
-            case "R":
-              currentState[layer as keyof typeof currentState] = Math.max(
-                0,
-                currentValue - operatorInfluence * 0.5,
-              );
-              break;
-            case "V":
-              currentState[layer as keyof typeof currentState] = Math.abs(
-                currentValue - operatorInfluence * 0.7,
-              );
-              break;
-            case "ε":
-              currentState[layer as keyof typeof currentState] = Math.min(
-                1,
-                currentValue + operatorInfluence * 1.2,
-              );
-              break;
-            case "O":
-              currentState[layer as keyof typeof currentState] = Math.max(
-                0,
-                currentValue - operatorInfluence * 0.8,
-              );
-              break;
-          }
+            // Apply operator-specific transformations
+            switch (operator.id) {
+              case "A":
+                currentState[layer as keyof typeof currentState] = Math.min(
+                  1,
+                  currentValue + operatorInfluence,
+                );
+                break;
+              case "R":
+                currentState[layer as keyof typeof currentState] = Math.max(
+                  0,
+                  currentValue - operatorInfluence * 0.5,
+                );
+                break;
+              case "V":
+                currentState[layer as keyof typeof currentState] = Math.abs(
+                  currentValue - operatorInfluence * 0.7,
+                );
+                break;
+              case "ε":
+                currentState[layer as keyof typeof currentState] = Math.min(
+                  1,
+                  currentValue + operatorInfluence * 1.2,
+                );
+                break;
+              case "O":
+                currentState[layer as keyof typeof currentState] = Math.max(
+                  0,
+                  currentValue - operatorInfluence * 0.8,
+                );
+                break;
+            }
+          });
+        }
+
+        trace.push({
+          t: index,
+          operator: opId,
+          operator_name: operator.name,
+          input_state: inputState,
+          output_state: { ...currentState },
+          nullified: isNullified,
+          position_multiplier: positionMultiplier,
+          active_overrides: activeOverrides,
         });
-      }
-
-      trace.push({
-        t: index,
-        operator: opId,
-        operator_name: operator.name,
-        input_state: inputState,
-        output_state: { ...currentState },
-        nullified: isNullified,
-        position_multiplier: positionMultiplier,
-        active_overrides: activeOverrides,
       });
-    });
 
-    return { finalState: currentState, trace };
-  }, [operatorVersion]);
+      return { finalState: currentState, trace };
+    },
+    [operatorVersion],
+  );
 
   // Check active overrides for operator
   const checkActiveOverrides = (
@@ -594,8 +598,10 @@ const SemanticPermutationEngine = () => {
   // Generate matrix visualization data
   const generateMatrixData = useCallback(
     (trace: any[]) => {
-      const currentSequence = operatorVersion === "v1" ? operatorSequence : operatorSequenceV2;
-      const currentOperators = operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
+      const currentSequence =
+        operatorVersion === "v1" ? operatorSequence : operatorSequenceV2;
+      const currentOperators =
+        operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
 
       return currentSequence.map((opId, rowIndex) => {
         const operator = currentOperators.find((op) => op.id === opId);
@@ -677,11 +683,7 @@ const SemanticPermutationEngine = () => {
     setExecutionTrace(trace);
     setMatrixData(generateMatrixData(trace));
 
-    const result = generatePermutationResult(
-      currentSeq,
-      newFinalState,
-      trace,
-    );
+    const result = generatePermutationResult(currentSeq, newFinalState, trace);
     setPermutationResult(result);
     setCalculationBreakdowns(result.mathematical_result.details);
   }, [
@@ -849,11 +851,14 @@ const SemanticPermutationEngine = () => {
           {/* Operator Cards with Flip Animation */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
             {getCurrentSequence().map((opId, index) => {
-              const operator = getCurrentOperators().find((op) => op.id === opId)!;
+              const operator = getCurrentOperators().find(
+                (op) => op.id === opId,
+              )!;
               const isFlipped = flippedCards.has(opId);
               const calculationData = calculationBreakdowns[opId];
               const isNullified =
-                checkActiveOverrides(opId, getCurrentSequence(), index).length > 0;
+                checkActiveOverrides(opId, getCurrentSequence(), index).length >
+                0;
 
               return (
                 <div
@@ -1010,10 +1015,13 @@ const SemanticPermutationEngine = () => {
                     {i > 0 && " + "}
                     <span
                       style={{
-                        color: getCurrentOperators().find((o) => o.id === op)?.color,
+                        color: getCurrentOperators().find((o) => o.id === op)
+                          ?.color,
                       }}
                     >
-                      {getCurrentOperators().find((o) => o.id === op)?.weight?.toFixed(1) || "0.0"}
+                      {getCurrentOperators()
+                        .find((o) => o.id === op)
+                        ?.weight?.toFixed(1) || "0.0"}
                       {op}
                     </span>
                   </span>
@@ -1064,9 +1072,15 @@ const SemanticPermutationEngine = () => {
               </div>
 
               {/* Matrix rows - flex to fill remaining space */}
-              <div key={`${operatorVersion}-${getCurrentSequence().join('')}`} className="flex-1 flex flex-col justify-between gap-2">
+              <div
+                key={`${operatorVersion}-${getCurrentSequence().join("")}`}
+                className="flex-1 flex flex-col justify-between gap-2"
+              >
                 {matrixData.map((row, rowIndex) => (
-                  <div key={`${operatorVersion}-${rowIndex}-${getCurrentSequence()[rowIndex]}`} className="grid grid-cols-7 gap-2 flex-1">
+                  <div
+                    key={`${operatorVersion}-${rowIndex}-${getCurrentSequence()[rowIndex]}`}
+                    className="grid grid-cols-7 gap-2 flex-1"
+                  >
                     <div
                       className="text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded border transition-all duration-200 hover:scale-105"
                       style={{
@@ -1182,11 +1196,17 @@ const SemanticPermutationEngine = () => {
 
             {/* Override Graph Visualization - Compact */}
             <div className="space-y-2 max-h-64 overflow-y-auto">
-              {OVERRIDE_MATRIX.filter(override =>
-                getCurrentSequence().includes(override.from) && getCurrentSequence().includes(override.to)
+              {OVERRIDE_MATRIX.filter(
+                (override) =>
+                  getCurrentSequence().includes(override.from) &&
+                  getCurrentSequence().includes(override.to),
               ).map((override, index) => {
-                const fromOp = getCurrentOperators().find((op) => op.id === override.from);
-                const toOp = getCurrentOperators().find((op) => op.id === override.to);
+                const fromOp = getCurrentOperators().find(
+                  (op) => op.id === override.from,
+                );
+                const toOp = getCurrentOperators().find(
+                  (op) => op.id === override.to,
+                );
                 if (!fromOp || !toOp) return null;
                 const fromIndex = getCurrentSequence().indexOf(override.from);
                 const toIndex = getCurrentSequence().indexOf(override.to);
