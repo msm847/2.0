@@ -132,10 +132,10 @@ const LetterGlitch = ({
       {/* Robot Animation */}
       <iframe
         src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
-        style={iframeStyle}
+        frameBorder="0"
+        width="100%"
+        height="100%"
         onLoad={handleIframeLoad}
-        title="Robot Animation"
-        allow="autoplay"
       />
 
       {/* Audio for robot voice */}
