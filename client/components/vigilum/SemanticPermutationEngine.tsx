@@ -492,7 +492,7 @@ const SemanticPermutationEngine = () => {
         environmentGradient,
       };
     },
-    [calculateOperatorValue],
+    [calculateOperatorValue, operatorVersion],
   );
 
   // Calculate tensor effects based on operator sequence
