@@ -80,7 +80,7 @@ const OPERATORS = [
       "This operator measures the institutionalized behavioral patterns and automatic responses within the system. High values indicate strong reflexive compliance structures.",
     calculation: {
       formula:
-        "R = w₁ × pattern_strength + w₂ × automation_depth + w₃ × override_resistance",
+        "R = w₁ �� pattern_strength + w₂ × automation_depth + w₃ × override_resistance",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         pattern_strength: "Degree of institutionalized response patterns",
@@ -607,7 +607,7 @@ const SemanticPermutationEngine = () => {
         });
       });
     },
-    [operatorSequence],
+    [operatorSequence, operatorSequenceV2, operatorVersion],
   );
 
   // Generate final permutation result
