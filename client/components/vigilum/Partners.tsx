@@ -1180,6 +1180,8 @@ const Partners = () => {
     setShowJobTitleDropdown(false);
     setCompanySearch("");
     setShowUniversityDropdown(false);
+    setValidationErrors({});
+    setHasTriedSubmit(false);
     if (recaptchaRef.current) {
       recaptchaRef.current.reset();
     }
