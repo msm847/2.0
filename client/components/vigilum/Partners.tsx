@@ -130,7 +130,11 @@ const Partners = () => {
     setAttachedFiles([]);
     setError("");
     setRobotVerified(false);
+    setRecaptchaToken("");
     setPrivacyAccepted(false);
+    if (recaptchaRef.current) {
+      recaptchaRef.current.reset();
+    }
   };
 
   // Auto-reset success message after 5 seconds
