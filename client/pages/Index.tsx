@@ -90,7 +90,7 @@ export default function Index() {
         />
       </div>
 
-      {/* VIGILUM.AI Logo - Top Left */}
+      {/* VIGILUM Logo - Company Name */}
       <div
         id="logo-container"
         style={{
@@ -105,6 +105,11 @@ export default function Index() {
           pointerEvents: "none",
           fontFamily: "var(--font-display)",
           letterSpacing: "1px",
+          opacity: robotAnimationFinished ? 1 : 0,
+          transition: "opacity 1.5s ease-in-out, transform 1.5s ease-in-out",
+          transform: robotAnimationFinished
+            ? "translateX(-50%) translateY(0)"
+            : "translateX(-50%) translateY(20px)",
         }}
       >
         <h1
