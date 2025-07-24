@@ -383,19 +383,7 @@ export default function Index() {
       </div>
 
         {/* Team Button */}
-      <div
-        id="team-button-container"
-        style={{
-          position: "absolute",
-          top: "75%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "160px",
-          height: "40px",
-          zIndex: 10,
-          pointerEvents: "auto",
-        }}
-      >
+
         <button
           id="team-button"
           onClick={(e) => {
