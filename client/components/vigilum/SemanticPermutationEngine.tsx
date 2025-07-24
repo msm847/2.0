@@ -594,8 +594,11 @@ const SemanticPermutationEngine = () => {
   // Generate matrix visualization data
   const generateMatrixData = useCallback(
     (trace: any[]) => {
-      return getCurrentSequence().map((opId, rowIndex) => {
-        const operator = getCurrentOperators().find((op) => op.id === opId);
+      const currentSequence = operatorVersion === "v1" ? operatorSequence : operatorSequenceV2;
+      const currentOperators = operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
+
+      return currentSequence.map((opId, rowIndex) => {
+        const operator = currentOperators.find((op) => op.id === opId);
         if (!operator) return [];
 
         return Object.keys(SYSTEM_LAYERS).map((layer) => {
