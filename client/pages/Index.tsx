@@ -199,10 +199,8 @@ export default function Index() {
               width: "220px",
               height: "50px",
               background: "transparent",
-              border: "2px solid transparent",
-              backgroundImage: "linear-gradient(transparent, transparent), linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e)",
-              backgroundOrigin: "border-box",
-              backgroundClip: "padding-box, border-box",
+              border: "2px solid",
+              borderImage: "linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e) 1",
               borderRadius: "25px",
               fontSize: "16px",
               fontWeight: "500",
@@ -213,11 +211,7 @@ export default function Index() {
               transition: "all 0.3s ease",
               pointerEvents: "auto",
               padding: "0",
-              background: "linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              textShadow: "none",
+              color: "#61dca3",
             }}
             onMouseEnter={(e) => {
               e.target.style.background = "rgba(97, 220, 163, 0.1)";
