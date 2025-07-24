@@ -1129,6 +1129,9 @@ const Partners = () => {
     if (isStudent) {
       setShowUniversityDropdown(value.length > 0);
     }
+    if (validationErrors.company) {
+      setValidationErrors(prev => ({ ...prev, company: null }));
+    }
   };
 
   const selectUniversity = (selectedUniversity) => {
