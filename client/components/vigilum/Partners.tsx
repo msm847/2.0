@@ -538,7 +538,7 @@ const Partners = () => {
                             <div
                               key={countryName}
                               onClick={() => selectCountry(countryName)}
-                              className="px-3 py-2 text-white hover:bg-gray-700 cursor-pointer transition-colors"
+                              className="px-3 py-2 text-white hover:bg-green-600 cursor-pointer transition-colors"
                             >
                               {countryName}
                             </div>
