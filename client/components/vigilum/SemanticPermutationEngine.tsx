@@ -132,7 +132,7 @@ const OPERATORS = [
       "This operator quantifies environmental pressure effects and temporal distortions that compress decision timeframes and alter system responses under stress conditions.",
     calculation: {
       formula:
-        "ε = w₁ × pressure_coefficient + w₂ × temporal_compression + w₃ × distortion_amplitude",
+        "ε = w₁ × pressure_coefficient + w��� × temporal_compression + w₃ × distortion_amplitude",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         pressure_coefficient: "Environmental pressure intensity on system",
@@ -815,8 +815,8 @@ const SemanticPermutationEngine = () => {
 
           {/* Operator Cards with Flip Animation */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-            {operatorSequence.map((opId, index) => {
-              const operator = OPERATORS.find((op) => op.id === opId)!;
+            {getCurrentSequence().map((opId, index) => {
+              const operator = getCurrentOperators().find((op) => op.id === opId)!;
               const isFlipped = flippedCards.has(opId);
               const calculationData = calculationBreakdowns[opId];
               const isNullified =
