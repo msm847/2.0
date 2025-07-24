@@ -1118,33 +1118,21 @@ const Partners = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setHasTriedSubmit(true);
     setIsSubmitting(true);
     setError("");
 
-    // Validation checks
-    if (!validateFullName(fullName)) {
-      setError("Please enter your full name (at least first and last name).");
+    // Comprehensive validation
+    const errors = validateForm();
+    setValidationErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      setError("Please fill in all required fields. See highlighted fields above.");
       setIsSubmitting(false);
       return;
     }
 
-    if (!validateEmail(businessEmail)) {
-      setError("Please enter a valid email address.");
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Only validate job title if not a student or if student has provided a job title
-    if (!isStudent || (isStudent && jobTitle.trim().length > 0)) {
-      const jobTitleValidation = validateJobTitle(jobTitle);
-      if (!jobTitleValidation.isValid) {
-        setError(jobTitleValidation.error);
-        setIsSubmitting(false);
-        return;
-      }
-    }
-
-    try {
+    try:
       // Send contact form using email service
       await sendContactForm({
         fullName,
