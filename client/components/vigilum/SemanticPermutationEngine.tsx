@@ -568,7 +568,7 @@ const SemanticPermutationEngine = () => {
     });
 
     return { finalState: currentState, trace };
-  }, []);
+  }, [operatorVersion]);
 
   // Check active overrides for operator
   const checkActiveOverrides = (
