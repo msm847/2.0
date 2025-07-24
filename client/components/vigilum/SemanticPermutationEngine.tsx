@@ -785,6 +785,9 @@ const SemanticPermutationEngine = () => {
                   onClick={() => {
                     setOperatorVersion("v1");
                     setFlippedCards(new Set());
+                    setMatrixData([]);
+                    setExecutionTrace([]);
+                    setPermutationResult(null);
                   }}
                   className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
                     operatorVersion === "v1"
@@ -798,6 +801,9 @@ const SemanticPermutationEngine = () => {
                   onClick={() => {
                     setOperatorVersion("v2");
                     setFlippedCards(new Set());
+                    setMatrixData([]);
+                    setExecutionTrace([]);
+                    setPermutationResult(null);
                   }}
                   className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
                     operatorVersion === "v2"
