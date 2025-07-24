@@ -338,6 +338,21 @@ const Partners = () => {
     setShowJobTitleDropdown(false);
   };
 
+  const handleCompanySearch = (e) => {
+    const value = e.target.value;
+    setCompany(value);
+    setCompanySearch(value);
+    if (isStudent) {
+      setShowUniversityDropdown(value.length > 0);
+    }
+  };
+
+  const selectUniversity = (selectedUniversity) => {
+    setCompany(selectedUniversity);
+    setCompanySearch(selectedUniversity);
+    setShowUniversityDropdown(false);
+  };
+
   const filteredCountries = COUNTRIES.filter(country =>
     country.toLowerCase().includes(countrySearch.toLowerCase())
   );
@@ -345,6 +360,10 @@ const Partners = () => {
   const filteredJobTitles = COMMON_JOB_TITLES.filter(title =>
     title.toLowerCase().includes(jobTitleSearch.toLowerCase())
   ).slice(0, 8); // Limit to 8 suggestions
+
+  const filteredUniversities = TOP_UNIVERSITIES.filter(university =>
+    university.toLowerCase().includes(companySearch.toLowerCase())
+  ).slice(0, 10); // Limit to 10 suggestions
 
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
