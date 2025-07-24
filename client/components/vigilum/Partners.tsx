@@ -580,14 +580,15 @@ const Partners = () => {
                           required
                         />
                         <label htmlFor="privacy-check" className="text-gray-300 text-sm leading-relaxed">
-                          I have read and agree to the{" "}
+                          I confirm that I have read and fully understood the{" "}
                           <button
                             type="button"
                             onClick={() => setShowPrivacyModal(true)}
                             className="text-green-400 hover:text-green-300 transition-colors text-sm font-bold"
                           >
-                            Vigilum Privacy Policy and Data Use Statement
-                          </button>.
+                            Vigilum Privacy Policy
+                          </button>{" "}
+                          and Data Use Statement, and expressly consent to the processing of my information as described therein.
                         </label>
                       </div>
                       <div className="text-gray-400 leading-relaxed pl-7" style={{ fontSize: "10px" }}>
