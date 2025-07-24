@@ -266,7 +266,7 @@ const OPERATORS_V2 = [
       "This operator maps the relational networks and dependency structures between system actors. Values determine the density and influence of relationship networks.",
     calculation: {
       formula:
-        "N = w₁ × network_density + w₂ × influence_centrality + w₃ × dependency_depth",
+        "N = w₁ × network_density + w₂ × influence_centrality + w�� × dependency_depth",
       weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
       variables: {
         network_density: "Concentration of actor relationships",
@@ -501,7 +501,9 @@ const SemanticPermutationEngine = () => {
     const trace: any[] = [];
 
     sequence.forEach((opId, index) => {
-      const operator = getCurrentOperators().find((op) => op.id === opId)!;
+      const operator = getCurrentOperators().find((op) => op.id === opId);
+      if (!operator) return;
+
       const inputState = { ...currentState };
 
       // Apply positional modifiers
