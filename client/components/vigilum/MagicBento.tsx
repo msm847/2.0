@@ -372,18 +372,6 @@ const MagicBento: React.FC<MagicBentoProps> = ({
                         {card.description}
                         <EmailIcon />
                       </p>
-                      <p
-                        style={{
-                          color: "#9DE6C6",
-                          fontSize: "12px",
-                          lineHeight: "1.4",
-                          opacity: 0.9,
-                        }}
-                      >
-                        For institutional partnerships, technical integration,
-                        <br />
-                        or research collaboration inquiries
-                      </p>
                       <div className="card__footer">
                         <a
                           href={card.url}
