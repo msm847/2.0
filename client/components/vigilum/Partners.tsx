@@ -1691,16 +1691,9 @@ const Partners = () => {
                             ? "Job title (optional) - type or select from suggestions..."
                             : "Type your job title or select from suggestions..."
                         }
-                        className={`w-full p-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${
-                          validationErrors.jobTitle
-                            ? 'border-red-500 focus:border-red-500 hover:border-red-400'
-                            : 'border-gray-600 focus:border-green-500'
-                        }`}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                         required={!isStudent}
                       />
-                      {validationErrors.jobTitle && (
-                        <div className="text-red-400 text-xs mt-1">{validationErrors.jobTitle}</div>
-                      )}
 
                       {/* Job Title Dropdown */}
                       {showJobTitleDropdown && filteredJobTitles.length > 0 && (
