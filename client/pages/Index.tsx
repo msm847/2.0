@@ -177,6 +177,9 @@ export default function Index() {
               letterSpacing: "0.5px",
               lineHeight: 1.4,
               textShadow: `
+                0 0 15px rgba(255, 255, 255, 0.5),
+                0 0 30px rgba(255, 255, 255, 0.3),
+                0 0 45px rgba(255, 255, 255, 0.15),
                 0 2px 4px rgba(0, 0, 0, 0.9),
                 0 4px 8px rgba(0, 0, 0, 0.7),
                 0 6px 12px rgba(0, 0, 0, 0.5),
