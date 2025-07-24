@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { sendContactForm } from "@/lib/emailService";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
   Mail,
   Upload,
@@ -11,6 +12,7 @@ import {
   Briefcase,
   Users,
   Building,
+  Shield,
 } from "lucide-react";
 
 const Partners = () => {
