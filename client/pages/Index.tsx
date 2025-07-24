@@ -124,13 +124,7 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-      {/* Aurora Background */}
-      <Aurora
-        colorStops={["#25443B", "#40FFAA", "#10201C"]}
-        amplitude={1.2}
-        blend={0.4}
-        speed={0.56}
-      />
+
 
 
 
