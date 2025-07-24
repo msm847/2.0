@@ -24,9 +24,9 @@ const LetterGlitch = ({
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
-    // Play audio once when robot animation fully loads
+    // Play audio once when robot animation fully finishes (longer delay)
     if (audioRef.current && !hasPlayedOnce) {
-      // Small delay to ensure iframe content is fully loaded
+      // Longer delay to ensure animation sequence completes
       setTimeout(() => {
         audioRef.current?.play().then(() => {
           setIsPlaying(true);
@@ -35,7 +35,7 @@ const LetterGlitch = ({
           // If autoplay fails, user can still click button
           console.log("Autoplay prevented - user can click audio button");
         });
-      }, 1000);
+      }, 4000); // Increased from 1000ms to 4000ms for animation completion
     }
   };
 
