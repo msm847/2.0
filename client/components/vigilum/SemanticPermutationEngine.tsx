@@ -499,7 +499,7 @@ const SemanticPermutationEngine = () => {
     const trace: any[] = [];
 
     sequence.forEach((opId, index) => {
-      const operator = OPERATORS.find((op) => op.id === opId)!;
+      const operator = getCurrentOperators().find((op) => op.id === opId)!;
       const inputState = { ...currentState };
 
       // Apply positional modifiers
