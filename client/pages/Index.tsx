@@ -244,16 +244,16 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Button Container - Static Button - Outside content overlay */}
+      {/* Buttons Container - Both buttons side by side */}
       <div
-        id="button-container"
+        id="buttons-container"
         style={{
           position: "absolute",
           top: "65%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "220px",
-          height: "50px",
+          display: "flex",
+          gap: "20px",
           zIndex: 10,
           pointerEvents: "auto",
         }}
