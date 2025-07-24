@@ -832,9 +832,9 @@ const Partners = () => {
                     {/* University Dropdown - Only show when student is checked */}
                     {isStudent && showUniversityDropdown && filteredUniversities.length > 0 && (
                       <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                        {filteredUniversities.map((university) => (
+                        {filteredUniversities.map((university, index) => (
                           <div
-                            key={university}
+                            key={`university-${index}-${university}`}
                             onClick={() => selectUniversity(university)}
                             className="px-3 py-2 text-white hover:bg-green-600 cursor-pointer transition-colors"
                           >
