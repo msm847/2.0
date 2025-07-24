@@ -156,6 +156,25 @@ const LetterGlitch = ({
         Your browser does not support the audio element.
       </audio>
 
+      {/* Audio Control Button */}
+      {robotLoaded && (
+        <button
+          onClick={handleAudioClick}
+          style={audioButtonStyle}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(64, 255, 170, 0.2)";
+            e.currentTarget.style.borderColor = "rgba(64, 255, 170, 0.5)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "rgba(64, 255, 170, 0.1)";
+            e.currentTarget.style.borderColor = "rgba(64, 255, 170, 0.3)";
+          }}
+          title={isPlaying ? "Stop robot voice" : "Play robot voice"}
+        >
+          {isPlaying ? "⏸" : "🔊"}
+        </button>
+      )}
+
       {/* Vignette overlays */}
       {outerVignette && <div style={outerVignetteStyle}></div>}
       {centerVignette && <div style={centerVignetteStyle}></div>}
