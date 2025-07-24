@@ -249,7 +249,7 @@ export default function Index() {
         id="buttons-container"
         style={{
           position: "absolute",
-          top: "65%",
+          top: "58%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           display: "flex",
