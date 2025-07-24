@@ -577,7 +577,7 @@ const Partners = () => {
                         Security Verification *
                       </label>
                       <div className="space-y-3">
-                        <div className="p-4 bg-gray-800/50 border border-gray-600 rounded-lg">
+                        <div className="p-4 border border-gray-600 rounded-lg">
                           <ReCAPTCHA
                             ref={recaptchaRef}
                             sitekey={RECAPTCHA_SITE_KEY}
