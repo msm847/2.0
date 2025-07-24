@@ -590,7 +590,7 @@ const Partners = () => {
                           </button>.
                         </label>
                       </div>
-                      <div className="text-xs text-gray-400 leading-relaxed pl-7">
+                      <div className="text-gray-400 leading-relaxed pl-7" style={{ fontSize: "10px" }}>
                         By submitting this inquiry, I authorize Vigilum to collect, store, and process my personal and institutional data for the purposes of partnership evaluation, product research, compliance analytics, and operational communication, in accordance with the Vigilum Privacy Policy and applicable international data protection laws (including GDPR).
                       </div>
                     </div>
