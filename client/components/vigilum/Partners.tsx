@@ -1310,7 +1310,7 @@ const Partners = () => {
                 <br /><br />
                 Effective oversight requires simulating clause order, override paths, and environmental interaction—projecting risk before materialization.
                 <br />
-                The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving regulatory architectures.
+                The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving compliance structures.
                 <br /><br />
                 We are advancing this platform as a structural engine for scenario modeling, legal-logic analysis, and governance stress testing.
                 <br />
