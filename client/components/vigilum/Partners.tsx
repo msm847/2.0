@@ -591,7 +591,7 @@ const Partners = () => {
                         <button
                           type="button"
                           onClick={() => setShowPrivacyModal(true)}
-                          className="text-green-400 hover:text-green-300 underline transition-colors"
+                          className="text-green-400 hover:text-green-300 underline transition-colors text-xs"
                         >
                           Vigilum Privacy Policy
                         </button>. All data is processed under GDPR and international standards.
@@ -600,8 +600,8 @@ const Partners = () => {
 
                   </div>
 
-                  {/* Submit Button - Centered with extra spacing */}
-                  <div className="flex justify-center mt-8">
+                  {/* Submit Button - Centered with reduced spacing */}
+                  <div className="flex justify-center mt-6">
                     <Button
                       type="submit"
                       disabled={isSubmitting || !robotVerified || !privacyAccepted}
