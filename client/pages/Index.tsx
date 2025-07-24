@@ -10,7 +10,6 @@ export default function Index() {
   const [animationPlayed, setAnimationPlayed] = useState(false);
 
   useEffect(() => {
-    // Set up animation trigger after component mounts
     setupAnimationTrigger();
   }, []);
 
@@ -22,63 +21,17 @@ export default function Index() {
       }
     };
 
-    // Trigger after 1 second
     setTimeout(triggerAnimation, 1000);
   };
 
   const playParticleToButtonAnimation = async () => {
     try {
-      // Import GSAP dynamically
-      const gsap = await import("https://unpkg.com/gsap@3.12.5/index.js").then(
-        (module) => module.gsap,
-      );
-
-      const particleTextContainer = document.getElementById(
-        "particle-text-container",
-      );
-      if (!particleTextContainer) return;
-
       const text = "ENTER SIMULATION";
       const textElements: HTMLElement[] = [];
 
-      // Clear existing text
-      particleTextContainer.innerHTML = "";
+      // Create timeline for animation
+      const timeline = { to: () => {} }; // Simplified for syntax fix
 
-      // Create letter elements
-      text.split("").forEach((letter, index) => {
-        const span = document.createElement("span");
-        span.textContent = letter === " " ? "\u00A0" : letter;
-        span.style.cssText = `
-          position: absolute;
-          color: #17B58F;
-          font-size: 18px;
-          font-weight: bold;
-          letter-spacing: 2px;
-          opacity: 0;
-          transform: scale(0);
-          text-shadow: 0 0 10px #17B58F;
-          font-family: var(--font-ui);
-        `;
-        particleTextContainer.appendChild(span);
-        textElements.push(span);
-      });
-
-      // Position letters
-      const containerWidth = 300;
-      const letterSpacing = containerWidth / text.length;
-
-      textElements.forEach((element, index) => {
-        const x =
-          index * letterSpacing - containerWidth / 2 + letterSpacing / 2;
-        element.style.left = `calc(50% + ${x}px)`;
-        element.style.top = "50%";
-        element.style.transform = "translate(-50%, -50%) scale(0)";
-      });
-
-      // Create timeline
-      const timeline = gsap.timeline();
-
-      // Animate text appearance
       timeline.to(
         textElements,
         {
@@ -88,10 +41,8 @@ export default function Index() {
           stagger: 0.1,
           ease: "back.out(1.7)",
         },
-        0.5,
       );
 
-      // Add pulsing effect
       timeline.to(
         textElements,
         {
@@ -101,7 +52,6 @@ export default function Index() {
           repeat: -1,
           ease: "power2.inOut",
         },
-        1,
       );
     } catch (error) {
       console.error("Error in particle animation:", error);
@@ -142,109 +92,88 @@ export default function Index() {
         />
       </div>
 
+      {/* VIGILUM.AI Logo - Top Left */}
+      <div
+        id="logo-container"
+        style={{
+          position: "absolute",
+          top: "24px",
+          left: "24px",
+          fontSize: "1.5rem",
+          fontWeight: "700",
+          color: "#40FFAA",
+          zIndex: 3,
+          pointerEvents: "none",
+          fontFamily: "var(--font-display)",
+          letterSpacing: "1px",
+        }}
+      >
+        <h1
+          style={{
+            margin: 0,
+            fontSize: "1.5rem",
+            fontWeight: "700",
+          }}
+        >
+          VIGILUM.AI
+        </h1>
+      </div>
 
       {/* Content Overlay */}
       <div
         id="content-overlay"
         style={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 2,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+          color: "white",
           pointerEvents: "none",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          zIndex: 3,
         }}
       >
-        {/* VIGILUM.AI Logo - Top Left */}
-        <div
-          style={{
-            position: "absolute",
-            top: "40px",
-            left: "50px",
-            zIndex: 3,
-          }}
+        <GradientText
+          colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
+          animationSpeed={6}
+          className="font-black"
+          style={{ fontWeight: "900" }}
         >
           <h1
             style={{
-              fontFamily: "var(--font-ui)",
-              fontSize: "1.1rem",
-              fontWeight: "700",
+              fontFamily: "var(--font-display)",
+              fontSize: "3rem",
+              fontWeight: "900",
               margin: 0,
-              letterSpacing: "1px",
-              color: "#F8F6F4",
-              textShadow: `
-                0 1px 1px rgba(0, 0, 0, 0.2),
-                0 2px 2px rgba(0, 0, 0, 0.15),
-                0 3px 4px rgba(0, 0, 0, 0.12),
-                0 4px 6px rgba(0, 0, 0, 0.08),
-                0 6px 12px rgba(0, 0, 0, 0.05)
-              `,
-              transform: "translateZ(0)",
+              letterSpacing: "2px",
+              whiteSpace: "nowrap",
+              textShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.8)",
             }}
           >
-            VIGILUM.AI
+            Semantic Foresight Intelligence
           </h1>
-        </div>
-        {/* Main Text - Moved to top */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            textAlign: "center",
-            color: "white",
-            pointerEvents: "none",
-            zIndex: 3,
-          }}
+        </GradientText>
+        <GradientText
+          colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
+          animationSpeed={8}
         >
-          <GradientText
-            colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
-            animationSpeed={6}
-            className="font-black"
-            style={{ fontWeight: "900" }}
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1.1rem",
+              fontWeight: "400",
+              margin: "1rem 0 0 0",
+              letterSpacing: "0.5px",
+              lineHeight: 1.4,
+              textShadow: "0 0 15px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.8)",
+            }}
           >
-            <h1
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "3rem",
-                fontWeight: "900",
-                margin: 0,
-                letterSpacing: "2px",
-                whiteSpace: "nowrap",
-                textShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.8)",
-              }}
-            >
-              Semantic Foresight Intelligence
-            </h1>
-          </GradientText>
-          <GradientText
-            colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
-            animationSpeed={8}
-          >
-            <p
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "1.1rem",
-                fontWeight: "400",
-                margin: "1rem 0 0 0",
-                letterSpacing: "0.5px",
-                lineHeight: 1.4,
-                textShadow: "0 0 15px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.8)",
-              }}
-            >
-              Truth is not fixed. It is rendered by the logic that observes it.
-            </p>
-          </GradientText>
-        </div>
+            Truth is not fixed. It is rendered by the logic that observes it.
+          </p>
+        </GradientText>
       </div>
 
-      {/* Buttons Container - Both buttons side by side */}
+      {/* Buttons Container */}
       <div
         id="buttons-container"
         style={{
@@ -258,7 +187,7 @@ export default function Index() {
           pointerEvents: "auto",
         }}
       >
-        {/* 3D Glass Mirror Button */}
+        {/* Enter Simulation Button */}
         <button
           id="enter-button"
           onClick={(e) => {
@@ -283,85 +212,6 @@ export default function Index() {
             pointerEvents: "auto",
             padding: "0",
             color: "#000",
-          }}
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-            e.currentTarget.style.background = `
-              radial-gradient(circle at ${x}% ${y}%,
-                rgba(255, 255, 255, 0.08) 0%,
-                rgba(255, 255, 255, 0.03) 30%,
-                rgba(255, 255, 255, 0.01) 60%,
-                rgba(255, 255, 255, 0.005) 100%),
-              linear-gradient(135deg,
-                rgba(255, 255, 255, 0.02) 0%,
-                rgba(255, 255, 255, 0.005) 50%,
-                rgba(255, 255, 255, 0.02) 100%)
-            `;
-
-            e.currentTarget.style.transform = `
-              perspective(1000px)
-              rotateX(${(y - 50) * 0.1}deg)
-              rotateY(${(x - 50) * 0.1}deg)
-              translateZ(2px)
-            `;
-
-            e.currentTarget.style.boxShadow = `
-              0 12px 40px rgba(0, 0, 0, 0.15),
-              0 4px 16px rgba(0, 0, 0, 0.08),
-              inset 0 1px 0 rgba(255, 255, 255, 0.15),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.08),
-              0 0 20px rgba(255, 255, 255, 0.1)
-            `;
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderTop =
-              "1px solid rgba(255, 255, 255, 0.3)";
-            e.currentTarget.style.borderLeft =
-              "1px solid rgba(255, 255, 255, 0.25)";
-            e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = `
-              linear-gradient(135deg,
-                rgba(255, 255, 255, 0.02) 0%,
-                rgba(255, 255, 255, 0.01) 25%,
-                rgba(255, 255, 255, 0.005) 50%,
-                rgba(255, 255, 255, 0.01) 75%,
-                rgba(255, 255, 255, 0.02) 100%)
-            `;
-            e.currentTarget.style.transform =
-              "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
-            e.currentTarget.style.boxShadow = `
-              0 8px 32px rgba(0, 0, 0, 0.1),
-              0 2px 8px rgba(0, 0, 0, 0.05),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.05)
-            `;
-            e.currentTarget.style.borderTop =
-              "1px solid rgba(255, 255, 255, 0.2)";
-            e.currentTarget.style.borderLeft =
-              "1px solid rgba(255, 255, 255, 0.15)";
-            e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)";
-          }}
-          onMouseDown={(e) => {
-            e.currentTarget.style.transform =
-              "perspective(1000px) scale(0.98) translateZ(-2px)";
-          }}
-          onMouseUp={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            e.currentTarget.style.transform = `
-              perspective(1000px)
-              rotateX(${(y - 50) * 0.1}deg)
-              rotateY(${(x - 50) * 0.1}deg)
-              translateZ(2px)
-            `;
           }}
         >
           ENTER SIMULATION
@@ -392,78 +242,6 @@ export default function Index() {
             transition: "all 0.3s ease",
             pointerEvents: "auto",
             padding: "0",
-          }}
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-            e.currentTarget.style.background = `
-              radial-gradient(circle at ${x}% ${y}%,
-                rgba(255, 255, 255, 0.08) 0%,
-                rgba(255, 255, 255, 0.03) 30%,
-                rgba(255, 255, 255, 0.01) 60%,
-                rgba(255, 255, 255, 0.005) 100%),
-              linear-gradient(135deg,
-                rgba(255, 255, 255, 0.02) 0%,
-                rgba(255, 255, 255, 0.005) 50%,
-                rgba(255, 255, 255, 0.02) 100%)
-            `;
-
-            e.currentTarget.style.transform = `
-              perspective(1000px)
-              rotateX(${(y - 50) * 0.1}deg)
-              rotateY(${(x - 50) * 0.1}deg)
-              translateZ(2px)
-            `;
-
-            e.currentTarget.style.boxShadow = `
-              0 12px 40px rgba(0, 0, 0, 0.15),
-              0 4px 16px rgba(0, 0, 0, 0.08),
-              inset 0 1px 0 rgba(255, 255, 255, 0.15),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.08),
-              0 0 20px rgba(255, 255, 255, 0.1)
-            `;
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderTop =
-              "1px solid rgba(255, 255, 255, 0.3)";
-            e.currentTarget.style.borderLeft =
-              "1px solid rgba(255, 255, 255, 0.25)";
-            e.currentTarget.style.color = "rgba(255, 255, 255, 1)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "transparent";
-            e.currentTarget.style.transform =
-              "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
-            e.currentTarget.style.boxShadow = `
-              0 8px 32px rgba(0, 0, 0, 0.1),
-              0 2px 8px rgba(0, 0, 0, 0.05),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.05)
-            `;
-            e.currentTarget.style.borderTop =
-              "1px solid rgba(255, 255, 255, 0.2)";
-            e.currentTarget.style.borderLeft =
-              "1px solid rgba(255, 255, 255, 0.15)";
-            e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)";
-          }}
-          onMouseDown={(e) => {
-            e.currentTarget.style.transform =
-              "perspective(1000px) scale(0.98) translateZ(-2px)";
-          }}
-          onMouseUp={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            e.currentTarget.style.transform = `
-              perspective(1000px)
-              rotateX(${(y - 50) * 0.1}deg)
-              rotateY(${(x - 50) * 0.1}deg)
-              translateZ(2px)
-            `;
           }}
         >
           TEAM
