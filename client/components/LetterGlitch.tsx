@@ -127,17 +127,13 @@ const LetterGlitch = ({
       }} />
 
       {/* Robot Animation */}
-      <Spline
-        scene="https://prod.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/scene.splinecode"
-        onLoad={handleSplineLoad}
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 0,
-        }}
+      <iframe
+        src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
+        frameBorder="0"
+        width="100%"
+        height="100%"
+        style={iframeStyle}
+        onLoad={handleIframeLoad}
       />
 
       {/* Audio for robot voice */}
