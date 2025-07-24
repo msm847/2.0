@@ -876,7 +876,7 @@ const Partners = () => {
     "Catholic University of Lublin",
     "University of Szczecin",
     "West Pomeranian University of Technology",
-    "Rzeszów University of Technology",
+    "Rzesz��w University of Technology",
     "University of Rzeszów",
     "Maria Curie-Skłodowska University",
     "Lublin University of Technology",
@@ -1312,11 +1312,7 @@ const Partners = () => {
                 <br />
                 The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving compliance structures.
                 <br /><br />
-                We are advancing this platform as a structural engine for scenario modeling, legal-logic analysis, and governance stress testing.
-                <br />
-                Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work.
-                <br />
-                All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
+                What you see here is an early, condensed demonstration—structurally isolated from the underlying Vigilum system. The interface is intended for preliminary engagement and does not reflect the scope or complexity of the operational platform in development. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
