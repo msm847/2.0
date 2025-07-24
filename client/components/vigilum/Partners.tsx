@@ -36,9 +36,9 @@ const Partners = () => {
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
 
-  // REPLACE THIS WITH YOUR ACTUAL GOOGLE reCAPTCHA SITE KEY
-  // Get your key from: https://www.google.com/recaptcha/admin
-  const RECAPTCHA_SITE_KEY = "YOUR_RECAPTCHA_SITE_KEY_HERE";
+  // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
+  // Current key is Google's test key - get your own from: https://www.google.com/recaptcha/admin
+  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
   useEffect(() => {
     const handleScroll = () => {
