@@ -74,16 +74,75 @@ const Partners = () => {
 
   // Common job titles for suggestions
   const COMMON_JOB_TITLES = [
+    // Executive Level
     "Chief Executive Officer", "Chief Technology Officer", "Chief Financial Officer", "Chief Operating Officer",
-    "Managing Director", "Executive Director", "General Manager", "Operations Manager", "Project Manager",
-    "Senior Director", "Director", "Assistant Director", "Vice President", "Senior Vice President",
-    "Department Head", "Team Lead", "Senior Manager", "Program Manager", "Product Manager",
-    "Business Analyst", "Senior Analyst", "Research Analyst", "Policy Analyst", "Data Analyst",
-    "Senior Consultant", "Consultant", "Advisory Consultant", "Strategic Advisor", "Board Member",
-    "Government Official", "Minister", "Deputy Minister", "Secretary", "Under Secretary",
-    "Professor", "Associate Professor", "Assistant Professor", "Research Fellow", "Senior Researcher",
-    "Principal", "Coordinator", "Administrator", "Supervisor", "Specialist", "Senior Specialist",
-    "Legal Counsel", "General Counsel", "Compliance Officer", "Audit Manager", "Risk Manager"
+    "Managing Director", "Executive Director", "General Manager", "Vice President", "Senior Vice President",
+
+    // Senior Management
+    "Senior Director", "Director", "Assistant Director", "Department Head", "Division Head",
+    "Senior Manager", "Operations Manager", "Project Manager", "Program Manager", "Product Manager",
+
+    // Mid-Level Management
+    "Manager", "Assistant Manager", "Team Leader", "Team Lead", "Section Head", "Unit Manager",
+    "Supervisor", "Coordinator", "Senior Coordinator", "Program Coordinator", "Project Coordinator",
+
+    // Professional/Technical
+    "Senior Analyst", "Business Analyst", "Research Analyst", "Policy Analyst", "Data Analyst",
+    "Financial Analyst", "Systems Analyst", "Security Analyst", "Compliance Analyst",
+    "Senior Consultant", "Consultant", "Advisory Consultant", "Management Consultant",
+    "Senior Engineer", "Engineer", "Software Engineer", "Systems Engineer", "Technical Engineer",
+    "Senior Developer", "Developer", "Software Developer", "Web Developer", "Application Developer",
+    "Senior Specialist", "Specialist", "Technical Specialist", "Subject Matter Specialist",
+    "Senior Advisor", "Strategic Advisor", "Policy Advisor", "Technical Advisor",
+
+    // Government/Public Sector
+    "Government Official", "Public Official", "Civil Servant", "Public Administrator",
+    "Minister", "Deputy Minister", "Secretary", "Under Secretary", "Assistant Secretary",
+    "Commissioner", "Deputy Commissioner", "Inspector", "Senior Inspector", "Investigator",
+    "Policy Officer", "Program Officer", "Administrative Officer", "Compliance Officer",
+    "Procurement Officer", "Contract Officer", "Grants Officer", "Regulatory Officer",
+
+    // Academic/Research
+    "Professor", "Associate Professor", "Assistant Professor", "Lecturer", "Senior Lecturer",
+    "Research Fellow", "Senior Research Fellow", "Postdoctoral Researcher", "Research Associate",
+    "Senior Researcher", "Research Scientist", "Principal Investigator", "Research Director",
+    "PhD Candidate", "Graduate Student", "Research Assistant", "Teaching Assistant",
+    "Dean", "Associate Dean", "Department Chair", "Academic Director",
+
+    // Legal/Compliance
+    "General Counsel", "Legal Counsel", "Senior Legal Counsel", "Staff Attorney", "Associate Attorney",
+    "Legal Advisor", "Legal Officer", "Compliance Officer", "Senior Compliance Officer",
+    "Audit Manager", "Senior Auditor", "Internal Auditor", "Risk Manager", "Risk Analyst",
+
+    // Entry Level/Junior
+    "Analyst", "Junior Analyst", "Associate", "Senior Associate", "Research Associate",
+    "Assistant", "Administrative Assistant", "Executive Assistant", "Program Assistant",
+    "Officer", "Junior Officer", "Staff Officer", "Operations Officer",
+    "Trainee", "Graduate Trainee", "Management Trainee", "Intern", "Fellow",
+
+    // Non-Profit/NGO
+    "Executive Director", "Program Director", "Development Director", "Communications Director",
+    "Program Manager", "Development Manager", "Outreach Manager", "Community Manager",
+    "Program Officer", "Development Officer", "Communications Officer", "Outreach Coordinator",
+    "Volunteer Coordinator", "Community Outreach Coordinator", "Grant Writer", "Fundraiser",
+
+    // Finance/Banking
+    "Investment Manager", "Portfolio Manager", "Relationship Manager", "Account Manager",
+    "Credit Analyst", "Investment Analyst", "Financial Advisor", "Wealth Manager",
+    "Underwriter", "Loan Officer", "Banking Officer", "Treasury Analyst",
+
+    // Consulting/Advisory
+    "Principal Consultant", "Senior Principal", "Engagement Manager", "Associate Consultant",
+    "Junior Consultant", "Business Advisor", "Strategy Consultant", "Implementation Specialist",
+
+    // Operations/Administration
+    "Operations Analyst", "Business Operations Manager", "Administrative Manager",
+    "Office Manager", "Facilities Manager", "Human Resources Manager", "HR Specialist",
+    "Training Manager", "Quality Manager", "Process Manager", "Records Manager",
+
+    // Technology/IT
+    "IT Manager", "Technology Manager", "Database Administrator", "Network Administrator",
+    "Security Officer", "Information Security Analyst", "IT Specialist", "Technical Support"
   ];
 
   // Blacklisted fake entries
