@@ -1808,9 +1808,12 @@ const Partners = () => {
                             type="checkbox"
                             id="privacy-check"
                             checked={privacyAccepted}
-                            onChange={(e) =>
-                              setPrivacyAccepted(e.target.checked)
-                            }
+                            onChange={(e) => {
+                              setPrivacyAccepted(e.target.checked);
+                              if (validationErrors.privacyAccepted) {
+                                setValidationErrors(prev => ({ ...prev, privacyAccepted: null }));
+                              }
+                            }}
                             className={`w-4 h-4 bg-gray-800 border rounded mt-0.5 ${
                               validationErrors.privacyAccepted
                                 ? 'border-red-500 focus:ring-red-500'
