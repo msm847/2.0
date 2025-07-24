@@ -516,17 +516,48 @@ const Partners = () => {
                     />
                   </div>
 
-                  <div>
+                  <div className="relative">
                     <label className="block text-sm font-medium text-green-400 mb-2">
                       Country *
                     </label>
                     <input
                       type="text"
-                      value={country}
-                      onChange={(e) => setCountry(e.target.value)}
+                      value={countrySearch}
+                      onChange={handleCountrySearch}
+                      onFocus={() => setShowCountryDropdown(true)}
+                      placeholder="Search for a country..."
                       className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                       required
                     />
+
+                    {/* Country Dropdown */}
+                    {showCountryDropdown && (
+                      <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                        {filteredCountries.length > 0 ? (
+                          filteredCountries.map((countryName) => (
+                            <div
+                              key={countryName}
+                              onClick={() => selectCountry(countryName)}
+                              className="px-3 py-2 text-white hover:bg-gray-700 cursor-pointer transition-colors"
+                            >
+                              {countryName}
+                            </div>
+                          ))
+                        ) : (
+                          <div className="px-3 py-2 text-gray-400">
+                            No countries found
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Close dropdown when clicking outside */}
+                    {showCountryDropdown && (
+                      <div
+                        className="fixed inset-0 z-0"
+                        onClick={() => setShowCountryDropdown(false)}
+                      />
+                    )}
                   </div>
 
                   {/* Project Description */}
