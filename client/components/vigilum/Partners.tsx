@@ -584,10 +584,14 @@ const Partners = () => {
                           <button
                             type="button"
                             onClick={() => setShowPrivacyModal(true)}
-                            className="text-green-400 hover:text-green-300 underline transition-colors text-sm font-bold"
+                            className="text-green-400 hover:text-green-300 underline transition-colors"
+                            style={{
+                              fontSize: "0.875rem",
+                              fontWeight: "700"
+                            }}
                           >
                             Vigilum Privacy Policy and Data Use Statement
-                          </button>.
+                          </button>
                         </label>
                       </div>
                       <div className="text-xs text-gray-400 leading-relaxed pl-7">
