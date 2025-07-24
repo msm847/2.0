@@ -591,7 +591,7 @@ const Partners = () => {
                         <button
                           type="button"
                           onClick={() => setShowPrivacyModal(true)}
-                          className="text-green-400 hover:text-green-300 underline transition-colors text-xs"
+                          className="text-green-400 hover:text-green-300 transition-colors text-xs"
                         >
                           Vigilum Privacy Policy
                         </button>. All data is processed under GDPR and international standards.
