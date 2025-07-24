@@ -7,6 +7,7 @@ interface LetterGlitchProps {
   centerVignette?: boolean;
   outerVignette?: boolean;
   smooth?: boolean;
+  onAnimationFinished?: () => void;
 }
 
 const LetterGlitch = ({
