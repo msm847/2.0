@@ -118,12 +118,24 @@ const LetterGlitch = ({
 
   return (
     <div style={containerStyle} className={className}>
+      {/* Green background layer */}
+      <div style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#10201C",
+        zIndex: -1,
+      }} />
+
       {/* Robot Animation */}
       <iframe
         src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
         style={iframeStyle}
         onLoad={handleIframeLoad}
         title="Robot Animation"
+        allow="autoplay"
       />
 
       {/* Audio for robot voice */}
