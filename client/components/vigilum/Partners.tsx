@@ -117,7 +117,7 @@ const Partners = () => {
     "Audit Manager", "Senior Auditor", "Internal Auditor", "Risk Manager", "Risk Analyst",
 
     // Entry Level/Junior
-    "Analyst", "Junior Analyst", "Associate", "Senior Associate", "Research Associate",
+    "Analyst", "Junior Analyst", "Associate", "Senior Associate",
     "Assistant", "Administrative Assistant", "Executive Assistant", "Program Assistant",
     "Officer", "Junior Officer", "Staff Officer", "Operations Officer",
     "Trainee", "Graduate Trainee", "Management Trainee", "Intern", "Fellow",
