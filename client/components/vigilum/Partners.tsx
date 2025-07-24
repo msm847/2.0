@@ -1352,16 +1352,16 @@ const Partners = () => {
 
               {/* 6. Pillar Duo */}
               <div className="space-y-8">
-                {/* Enterprise Solutions */}
+                {/* MAPPING */}
                 <div className="flex items-start" style={{ gap: "16px" }}>
-                  <Briefcase
+                  <Building
                     className="flex-shrink-0 mt-1"
                     style={{
                       width: "32px",
                       height: "32px",
                       color: "#7BFF9C",
                     }}
-                    aria-label="Enterprise Solutions icon"
+                    aria-label="MAPPING icon"
                   />
                   <div>
                     <h3
@@ -1372,7 +1372,7 @@ const Partners = () => {
                         color: "#EAF8E2",
                       }}
                     >
-                      Enterprise Solutions
+                      MAPPING
                     </h3>
                     <p
                       style={{
@@ -1382,8 +1382,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Embed Vigilum engines inside procurement, ESG, or audit
-                      workflows for live integrity diagnostics.
+                      Reveal how risk propagates through clause order, override chains, and recognition collapse. Mapping structure is the first step in governance repair.
                     </p>
                   </div>
                 </div>
