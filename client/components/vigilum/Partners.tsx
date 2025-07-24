@@ -193,6 +193,7 @@ const Partners = () => {
     setCountry("");
     setCountrySearch("");
     setShowCountryDropdown(false);
+    setPhonePlaceholder("+1 (555) 123-4567");
     setProjectDescription("");
     setAttachedFiles([]);
     setError("");
