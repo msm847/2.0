@@ -687,13 +687,13 @@ const SemanticPermutationEngine = () => {
     e.preventDefault();
     if (!draggedOperator) return;
 
-    const newSequence = [...operatorSequence];
+    const newSequence = [...getCurrentSequence()];
     const draggedIndex = newSequence.indexOf(draggedOperator);
 
     newSequence.splice(draggedIndex, 1);
     newSequence.splice(targetIndex, 0, draggedOperator);
 
-    setOperatorSequence(newSequence);
+    setCurrentSequence(newSequence);
     setDraggedOperator(null);
   };
 
