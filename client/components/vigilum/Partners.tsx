@@ -466,45 +466,6 @@ const Partners = () => {
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Phone (Optional)
-                    </label>
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      placeholder="+1 (555) 123-4567"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Job Title *
-                    </label>
-                    <input
-                      type="text"
-                      value={jobTitle}
-                      onChange={(e) => setJobTitle(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Company/Institution *
-                    </label>
-                    <input
-                      type="text"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
-
                   <div className="relative">
                     <label className="block text-sm font-medium text-green-400 mb-2">
                       Country *
@@ -547,6 +508,45 @@ const Partners = () => {
                         onClick={() => setShowCountryDropdown(false)}
                       />
                     )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Phone (Optional)
+                    </label>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                      placeholder={phonePlaceholder}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Job Title *
+                    </label>
+                    <input
+                      type="text"
+                      value={jobTitle}
+                      onChange={(e) => setJobTitle(e.target.value)}
+                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Company/Institution *
+                    </label>
+                    <input
+                      type="text"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
+                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                      required
+                    />
                   </div>
 
                   {/* Project Description */}
