@@ -10,20 +10,20 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#10201C",
-    title: "Vision",
-    description: "",
-    secondaryDescription: "",
-    url: "/core-principles",
-    isVision: true,
-  },
-  {
-    color: "#10201C",
     title: "Mission",
     description: "",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
     isFounder: true,
+  },
+  {
+    color: "#10201C",
+    title: "Vision",
+    description: "",
+    secondaryDescription: "",
+    url: "/core-principles",
+    isVision: true,
   },
 ];
 
