@@ -65,6 +65,11 @@ const LetterGlitch = ({
     height: "100%",
     border: "none",
     display: "block",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: 0,
+    backgroundColor: "#10201C",
   };
 
   const outerVignetteStyle: React.CSSProperties = {
