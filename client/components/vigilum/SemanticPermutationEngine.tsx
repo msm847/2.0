@@ -653,7 +653,7 @@ const SemanticPermutationEngine = () => {
         execution_trace: trace,
       };
     },
-    [calculatePermutationFormula],
+    [calculatePermutationFormula, operatorVersion],
   );
 
   // Execute permutation calculation
