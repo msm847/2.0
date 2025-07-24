@@ -56,7 +56,7 @@ const LetterGlitch = ({
     position: "relative",
     width: "100%",
     height: "100%",
-    backgroundColor: "#10201C",
+    backgroundColor: "rgba(16, 32, 28, 0.85)",
     overflow: "hidden",
   };
 
