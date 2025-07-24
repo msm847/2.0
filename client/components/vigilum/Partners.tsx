@@ -897,7 +897,7 @@ const Partners = () => {
                   {/* Project Description */}
                   <div>
                     <label className="block text-sm font-medium text-green-400 mb-2">
-                      Describe Your Initiative, Challenge, or Collaboration Interest *
+                      {isStudent ? "Describe Your Research Interest or Academic Project *" : "Describe Your Initiative, Challenge, or Collaboration Interest *"}
                     </label>
                     <div className="relative">
                       <textarea
@@ -907,7 +907,10 @@ const Partners = () => {
                             setProjectDescription(e.target.value);
                           }
                         }}
-                        placeholder="Please provide as much relevant structural detail as possible regarding your institution, scenario, and objectives..."
+                        placeholder={isStudent
+                          ? "Please describe your research area, academic project, thesis topic, or areas of study that relate to governance, policy analysis, or institutional research. Include your academic level (undergraduate, graduate, PhD) and any specific interests in transparency, compliance, or public administration..."
+                          : "Please provide as much relevant structural detail as possible regarding your institution, scenario, and objectives..."
+                        }
                         rows={6}
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
                         required
