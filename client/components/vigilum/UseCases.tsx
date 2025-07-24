@@ -34,28 +34,37 @@ const UseCases = () => {
               Retrospective Clause Mapping
             </motion.h2>
             <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
-              <p>Each sphere node is a live loophole profile: source, mechanism, risk, and real-world scenario.</p>
-              <p>Scroll to surface the architectures of bypass that shape procurement across the EU.</p>
+              <p>
+                Each sphere node is a live loophole profile: source, mechanism,
+                risk, and real-world scenario.
+              </p>
+              <p>
+                Scroll to surface the architectures of bypass that shape
+                procurement across the EU.
+              </p>
             </div>
           </div>
 
           <div style={{ height: "600px", position: "relative" }}>
             {/* Interactive instruction text */}
-            <div style={{
-              position: "absolute",
-              top: "20px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 10,
-              color: "rgba(255, 255, 255, 0.9)",
-              fontSize: "14px",
-              fontFamily: "monospace",
-              letterSpacing: "1px",
-              textAlign: "center",
-              pointerEvents: "none",
-              textShadow: "0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2)",
-              filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))"
-            }}>
+            <div
+              style={{
+                position: "absolute",
+                top: "20px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                zIndex: 10,
+                color: "rgba(255, 255, 255, 0.9)",
+                fontSize: "14px",
+                fontFamily: "monospace",
+                letterSpacing: "1px",
+                textAlign: "center",
+                pointerEvents: "none",
+                textShadow:
+                  "0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2)",
+                filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))",
+              }}
+            >
               Interactive • Click & drag
             </div>
             <InfiniteMenu
@@ -65,7 +74,8 @@ const UseCases = () => {
                   link: "/loophole/L001",
                   source: "Directive 2014/24/EU, Art. 32(2)(a)",
                   title: "Negotiated Procedure Without Publication",
-                  description: "If no \"suitable\" bids are received, authorities may negotiate directly—opening a formal backdoor for preferred suppliers.",
+                  description:
+                    'If no "suitable" bids are received, authorities may negotiate directly—opening a formal backdoor for preferred suppliers.',
                   number: 1,
                 },
                 {
@@ -73,7 +83,8 @@ const UseCases = () => {
                   link: "/loophole/L002",
                   source: "Directive 2014/24/EU, Art. 32(2)(c)",
                   title: "Urgent Direct Award",
-                  description: "\"Extreme urgency\" provisions let officials skip open bidding, making it possible to justify direct contracts by invoking crisis or emergency.",
+                  description:
+                    '"Extreme urgency" provisions let officials skip open bidding, making it possible to justify direct contracts by invoking crisis or emergency.',
                   number: 2,
                 },
                 {
@@ -81,7 +92,8 @@ const UseCases = () => {
                   link: "/loophole/L003",
                   source: "Directive 2014/24/EU, Art. 72(1)(c)",
                   title: "Contract Modification for Unforeseen Events",
-                  description: "Contracts can be expanded after award if justified as \"unforeseeable,\" often masking planned scope increases or retroactive legal cover.",
+                  description:
+                    'Contracts can be expanded after award if justified as "unforeseeable," often masking planned scope increases or retroactive legal cover.',
                   number: 3,
                 },
                 {
@@ -89,7 +101,8 @@ const UseCases = () => {
                   link: "/loophole/L004",
                   source: "Directive 2014/24/EU, Art. 12",
                   title: "In-House Award (Teckal Exemption)",
-                  description: "Authorities create their own controlled entities and award contracts internally, bypassing competition in ways that embed loyalty networks.",
+                  description:
+                    "Authorities create their own controlled entities and award contracts internally, bypassing competition in ways that embed loyalty networks.",
                   number: 4,
                 },
                 {
@@ -97,7 +110,8 @@ const UseCases = () => {
                   link: "/loophole/L005",
                   source: "Directive 2014/23/EU, Art. 42 & 43",
                   title: "Unregulated Subcontracting",
-                  description: "Subcontracting rules are delegated to national law, enabling local actors to structure shadow deals that escape EU procurement oversight.",
+                  description:
+                    "Subcontracting rules are delegated to national law, enabling local actors to structure shadow deals that escape EU procurement oversight.",
                   number: 5,
                 },
                 {
@@ -105,7 +119,8 @@ const UseCases = () => {
                   link: "/loophole/L006",
                   source: "Directive 2014/25/EU, Art. 30",
                   title: "Joint Venture Internal Award",
-                  description: "Public utilities and entities form joint ventures, then transfer contracts internally—evading open tenders by engineering eligibility.",
+                  description:
+                    "Public utilities and entities form joint ventures, then transfer contracts internally—evading open tenders by engineering eligibility.",
                   number: 6,
                 },
               ]}

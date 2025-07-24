@@ -1169,67 +1169,75 @@ export default function InfiniteMenu({ items = [] }) {
   };
 
   return (
-    <div style={{
-      position: "relative",
-      width: "100%",
-      height: "100%",
-      cursor: "grab"
-    }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        cursor: "grab",
+      }}
+    >
       <canvas
         id="infinite-grid-menu-canvas"
         ref={canvasRef}
         style={{ cursor: "grab" }}
-        onMouseDown={(e) => e.target.style.cursor = "grabbing"}
-        onMouseUp={(e) => e.target.style.cursor = "grab"}
-        onMouseLeave={(e) => e.target.style.cursor = "grab"}
+        onMouseDown={(e) => (e.target.style.cursor = "grabbing")}
+        onMouseUp={(e) => (e.target.style.cursor = "grab")}
+        onMouseLeave={(e) => (e.target.style.cursor = "grab")}
       />
 
       {activeItem && (
         <>
           {/* Source/Article - Top */}
-          <div className={`face-source ${isMoving ? "inactive" : "active"}`}
-               style={{
-                 fontFamily: "monospace",
-                 color: "white",
-                 fontSize: "12px",
-                 textAlign: "center",
-                 marginBottom: "8px",
-                 whiteSpace: "nowrap",
-                 overflow: "hidden",
-                 textOverflow: "ellipsis"
-               }}>
+          <div
+            className={`face-source ${isMoving ? "inactive" : "active"}`}
+            style={{
+              fontFamily: "monospace",
+              color: "white",
+              fontSize: "12px",
+              textAlign: "center",
+              marginBottom: "8px",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
             {activeItem.source}
           </div>
 
           {/* Loophole Title - Middle */}
-          <h2 className={`face-title ${isMoving ? "inactive" : "active"}`}
-              style={{
-                fontWeight: "bold",
-                color: "white",
-                fontSize: "24px",
-                textAlign: "center",
-                marginBottom: "12px",
-                lineHeight: "1.2",
-                display: "-webkit-box",
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden"
-              }}>
+          <h2
+            className={`face-title ${isMoving ? "inactive" : "active"}`}
+            style={{
+              fontWeight: "bold",
+              color: "white",
+              fontSize: "24px",
+              textAlign: "center",
+              marginBottom: "12px",
+              lineHeight: "1.2",
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
             {activeItem.title}
           </h2>
 
           {/* Preview/Scenario - Bottom */}
-          <p className={`face-description ${isMoving ? "inactive" : "active"}`}
-             style={{
-               color: "white",
-               fontSize: "14px",
-               textAlign: "center",
-               lineHeight: "1.4",
-               display: "-webkit-box",
-               WebkitLineClamp: 2,
-               WebkitBoxOrient: "vertical",
-               overflow: "hidden"
-             }}>
+          <p
+            className={`face-description ${isMoving ? "inactive" : "active"}`}
+            style={{
+              color: "white",
+              fontSize: "14px",
+              textAlign: "center",
+              lineHeight: "1.4",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
             {activeItem.description}
           </p>
 

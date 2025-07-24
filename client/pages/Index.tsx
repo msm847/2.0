@@ -32,27 +32,21 @@ export default function Index() {
       // Create timeline for animation
       const timeline = { to: () => {} }; // Simplified for syntax fix
 
-      timeline.to(
-        textElements,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "back.out(1.7)",
-        },
-      );
+      timeline.to(textElements, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "back.out(1.7)",
+      });
 
-      timeline.to(
-        textElements,
-        {
-          textShadow: "0 0 20px #17B58F, 0 0 30px #17B58F, 0 0 40px #17B58F",
-          duration: 1,
-          yoyo: true,
-          repeat: -1,
-          ease: "power2.inOut",
-        },
-      );
+      timeline.to(textElements, {
+        textShadow: "0 0 20px #17B58F, 0 0 30px #17B58F, 0 0 40px #17B58F",
+        duration: 1,
+        yoyo: true,
+        repeat: -1,
+        ease: "power2.inOut",
+      });
     } catch (error) {
       console.error("Error in particle animation:", error);
     }
@@ -76,14 +70,16 @@ export default function Index() {
       }}
     >
       {/* LetterGlitch Background */}
-      <div style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 1,
-      }}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+        }}
+      >
         <LetterGlitch
           glitchSpeed={50}
           centerVignette={false}
@@ -200,7 +196,8 @@ export default function Index() {
               height: "50px",
               background: "transparent",
               border: "2px solid",
-              borderImage: "linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e) 1",
+              borderImage:
+                "linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e) 1",
               borderRadius: "25px",
               fontSize: "16px",
               fontWeight: "500",
@@ -239,7 +236,8 @@ export default function Index() {
               height: "50px",
               background: "transparent",
               border: "2px solid",
-              borderImage: "linear-gradient(to right, #61dca3, #7dd4ba, #61b3dc, #7dd4ba, #61dca3) 1",
+              borderImage:
+                "linear-gradient(to right, #61dca3, #7dd4ba, #61b3dc, #7dd4ba, #61dca3) 1",
               borderRadius: "25px",
               fontSize: "16px",
               fontWeight: "500",
