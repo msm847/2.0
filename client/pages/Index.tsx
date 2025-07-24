@@ -268,14 +268,14 @@ export default function Index() {
             handleButtonClick();
           }}
           style={{
-            width: "200px",
+            width: "220px",
             height: "50px",
             background: "linear-gradient(45deg, #E5F3ED, #9DE6C6, #40FFAA, #9DE6C6, #E5F3ED)",
             backgroundSize: "400% 400%",
             animation: "gradientShift 6s ease infinite",
             border: "1px solid rgba(255, 255, 255, 0.2)",
             borderRadius: "25px",
-            fontSize: "12px",
+            fontSize: "16px",
             fontWeight: "500",
             letterSpacing: "1px",
             cursor: "pointer",
