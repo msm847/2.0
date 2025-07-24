@@ -215,7 +215,7 @@ const LetterGlitch = ({
       </audio>
 
       {/* Sound Wave Animation - Only Audio Indicator */}
-      {robotLoaded && (
+      {robotLoaded && isPlaying && (
         <div
           style={{
             ...soundWaveStyle,
@@ -225,11 +225,7 @@ const LetterGlitch = ({
             position: "absolute",
           }}
           onClick={handleAudioClick}
-          title={
-            isPlaying
-              ? "Click to stop robot voice"
-              : "Click to play robot voice"
-          }
+          title="Click to stop robot voice"
         >
           {[...Array(4)].map((_, i) => (
             <div
@@ -237,9 +233,9 @@ const LetterGlitch = ({
               style={{
                 width: "2px",
                 height: `${10 + i * 4}px`,
-                backgroundColor: "#40FFAA",
+                backgroundColor: isPlaying ? "#40FFAA" : "#6B8673",
                 borderRadius: "1px",
-                animation: `soundWave 0.6s ease-in-out infinite ${i * 0.1}s`,
+                animation: isPlaying ? `soundWave 0.6s ease-in-out infinite ${i * 0.1}s` : "none",
                 opacity: 1,
               }}
             />
