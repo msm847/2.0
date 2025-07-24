@@ -413,11 +413,14 @@ const Partners = () => {
       return;
     }
 
-    const jobTitleValidation = validateJobTitle(jobTitle);
-    if (!jobTitleValidation.isValid) {
-      setError(jobTitleValidation.error);
-      setIsSubmitting(false);
-      return;
+    // Only validate job title if not a student or if student has provided a job title
+    if (!isStudent || (isStudent && jobTitle.trim().length > 0)) {
+      const jobTitleValidation = validateJobTitle(jobTitle);
+      if (!jobTitleValidation.isValid) {
+        setError(jobTitleValidation.error);
+        setIsSubmitting(false);
+        return;
+      }
     }
 
     try {
