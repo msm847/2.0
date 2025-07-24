@@ -378,11 +378,11 @@ const SemanticPermutationEngine = () => {
     "R",
   ]);
   const [operatorSequenceV2, setOperatorSequenceV2] = useState([
-    "T",
+    "V",
+    "M",
+    "ε",
     "S",
-    "I",
-    "N",
-    "C",
+    "PM",
   ]);
   const [draggedOperator, setDraggedOperator] = useState<string | null>(null);
   const [executionTrace, setExecutionTrace] = useState<any[]>([]);
