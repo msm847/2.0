@@ -253,7 +253,7 @@ const PerceptionPerspective = () => {
 
   return (
     <section
-      className="min-h-screen pt-32 pb-20 pl-12 pr-12"
+      className="min-h-screen pt-20 pb-20 pl-12 pr-12"
       style={{
         background: currentTheme.backgroundColor,
         transition: "background 0.9s cubic-bezier(0.42, 0, 0.58, 1)",
