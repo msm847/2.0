@@ -757,9 +757,30 @@ const SemanticPermutationEngine = () => {
         {/* Interactive Operator Cards */}
         <div className="mb-12">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-2xl font-bold text-white font-mono">
-              OPERATOR SEQUENCE
-            </h3>
+            <div className="flex items-center gap-6">
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setOperatorVersion("v1")}
+                  className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
+                    operatorVersion === "v1"
+                      ? "border-green-400 bg-green-400/20 text-green-400"
+                      : "border-gray-600 bg-gray-800/50 text-gray-400"
+                  }`}
+                >
+                  OPERATOR SEQUENCE V1
+                </button>
+                <button
+                  onClick={() => setOperatorVersion("v2")}
+                  className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
+                    operatorVersion === "v2"
+                      ? "border-green-400 bg-green-400/20 text-green-400"
+                      : "border-gray-600 bg-gray-800/50 text-gray-400"
+                  }`}
+                >
+                  OPERATOR SEQUENCE V2
+                </button>
+              </div>
+            </div>
             <div className="flex gap-3">
               <button
                 onClick={shuffleOperators}
