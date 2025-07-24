@@ -469,74 +469,7 @@ const TeamContact = () => {
               />
             </div>
 
-            {/* Additional Mission Boxes */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 max-w-6xl mx-auto">
-              {/* Students & Researchers Box */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="group cursor-pointer"
-                whileHover={{ scale: 1.02, y: -5 }}
-                style={{
-                  background: "rgba(16, 32, 28, 0.95)",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(0,255,204,0.08)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                  backdropFilter: "blur(10px)",
-                  height: "140px",
-                  transition: "all 0.15s ease",
-                }}
-              >
-                <div className="p-6 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-3">
-                      <GraduationCap className="w-5 h-5 text-green-400" />
-                      <h3 className="text-xl font-semibold text-white font-display">
-                        Students & Researchers
-                      </h3>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Academic collaboration on governance systems and structural analysis research.
-                      <span className="text-green-400 font-mono ml-2">student@vigilum.com</span>
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
 
-              {/* Civil Signals Box */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="group cursor-pointer"
-                whileHover={{ scale: 1.02, y: -5 }}
-                style={{
-                  background: "rgba(16, 32, 28, 0.95)",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(0,255,204,0.08)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
-                  backdropFilter: "blur(10px)",
-                  height: "140px",
-                  transition: "all 0.15s ease",
-                }}
-              >
-                <div className="p-6 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-3">
-                      <Eye className="w-5 h-5 text-green-400" />
-                      <h3 className="text-xl font-semibold text-white font-display">
-                        Civil Signals
-                      </h3>
-                    </div>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Secure reporting for governance irregularities and institutional design vulnerabilities.
-                      <span className="text-green-400 font-mono ml-2">civil@vigilum.com</span>
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
