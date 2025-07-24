@@ -33,9 +33,7 @@ const UseCases = () => {
               Retrospective Clause Mapping
             </motion.h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
-              Structural analysis of EU procurement directive clauses revealing
-              embedded loopholes and override paths that enable systematic
-              competition bypass.
+              Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or sequence re-routes oversight, encodes risk transfer, or fragments recognition across the system.
             </p>
           </div>
 
