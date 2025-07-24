@@ -268,17 +268,15 @@ const PerceptionPerspective = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
           <div
-            className="text-display-lg mb-8 transition-colors duration-1000"
+            className="mb-8 transition-colors duration-1000 font-semibold leading-tight"
             style={{
-              fontSize: "clamp(2.2rem, 6.5vw, 3rem)",
-              lineHeight: "1.25",
-              fontWeight: "600",
-              fontFamily: "var(--font-display)",
+              fontFamily: "IBM Plex Sans, sans-serif",
+              fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
               color: currentTheme.textColor,
             }}
           >
             <ClickableTrueFocus
-              sentence="PERCEPTION PERSPECTIVE"
+              sentence="Perception Perspective"
               manualMode={true}
               blurAmount={3}
               borderColor={currentTheme.borderColor}
