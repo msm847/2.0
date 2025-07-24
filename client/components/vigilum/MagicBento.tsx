@@ -11,7 +11,8 @@ const cardData = [
   {
     color: "#10201C",
     title: "Mission",
-    description: "This unified structural intelligence system ingests legal, procedural, network, and enforcement data to preemptively close corruption pathways. Inspired by Aladdin's orchestration of risk management, its modular engines integrate anomaly detection, clause analysis, influence mapping, and enforcement tracking into a single pane of glass. Machine-powered diagnostics simulate future governance scenarios, quantify institutional exposure in real time, and trigger automated interventions before design flaws become systemic failures.",
+    description:
+      "This unified structural intelligence system ingests legal, procedural, network, and enforcement data to preemptively close corruption pathways. Inspired by Aladdin's orchestration of risk management, its modular engines integrate anomaly detection, clause analysis, influence mapping, and enforcement tracking into a single pane of glass. Machine-powered diagnostics simulate future governance scenarios, quantify institutional exposure in real time, and trigger automated interventions before design flaws become systemic failures.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
@@ -20,7 +21,8 @@ const cardData = [
   {
     color: "#10201C",
     title: "Vision",
-    description: "Our vision is to set the global standard for institutional integrity—an intelligent foresight engine that outpaces reactive audits with a continuous structural risk index. Inspired by market-shaping platforms, we aim for every contract, tender, and enforcement action to be scored, monitored, and optimized within a governance operating system. By democratizing advanced analytics and embedding transparent signal flows into policy and funding decisions, we will render corruption traceable and ultimately unexecutable at its design stage.",
+    description:
+      "Our vision is to set the global standard for institutional integrity—an intelligent foresight engine that outpaces reactive audits with a continuous structural risk index. Inspired by market-shaping platforms, we aim for every contract, tender, and enforcement action to be scored, monitored, and optimized within a governance operating system. By democratizing advanced analytics and embedding transparent signal flows into policy and funding decisions, we will render corruption traceable and ultimately unexecutable at its design stage.",
     secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
