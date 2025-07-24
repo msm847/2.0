@@ -11,7 +11,7 @@ const cardData = [
   {
     color: "#10201C",
     title: "Mission",
-    description: "",
+    description: "Vigilum transforms complex legal, contractual, and political frameworks into dynamic, machine-readable logic. By ingesting procurement metadata, clause structures, and governance network graphs, the platform delivers real-time integrity signals that unearth hidden institutional risk before it hardens into policy failure. Our modular engines—from anomaly detectors to NLP clause analyzers and political graph mappers—operate in harmony to expose how design choices diffuse accountability. Through seamless API integration and intuitive dashboards, Vigilum equips regulators, multilateral bodies, and civic actors to anticipate structural vulnerabilities, optimize interventions, and protect public resources with precision and agility.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
@@ -20,7 +20,7 @@ const cardData = [
   {
     color: "#10201C",
     title: "Vision",
-    description: "",
+    description: "Vigilum envisions a world where structural intelligence guides every governance decision. We aim to replace reactive audits with a living risk index that blends textual analysis, anomaly detection, network mapping, and enforcement monitoring. By democratizing these insights through our Civic Signal Channel, we foster a global community of oversight actors—regulators, researchers, and citizens—united to transform opaque systems into resilient architectures. In this future, latent compromise becomes legible, and institutional design itself prevents integrity failures rather than responding to them.",
     secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
