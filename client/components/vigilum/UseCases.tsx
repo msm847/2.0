@@ -34,7 +34,7 @@ const UseCases = () => {
             </motion.h2>
             <div className="flex justify-center max-w-4xl mx-auto relative">
               <p className="text-xl text-gray-400 font-light leading-relaxed text-center">
-                Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or <span className="relative inline-block">sequence<div className="absolute text-gray-400 z-10" style={{ left: '100%', top: '-10px', marginLeft: '8px' }}>
+                Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or <span className="relative inline-block">sequence<div className="absolute text-gray-400 z-10" style={{ left: '100%', top: '8px', marginLeft: '8px' }}>
                   <svg
                     width="100"
                     height="80"
