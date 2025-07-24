@@ -559,7 +559,9 @@ const Partners = () => {
                             setProjectDescription(e.target.value);
                           }
                         }}
-                        placeholder="Summarize your organization, core challenge, and the context for potential engagement."
+                        placeholder="Summarize your organization, core challenge, and the context for potential engagement.
+
+Vigilum is in advanced development. Inquiries are reviewed for research and pilot collaboration. Direct product demonstrations are not available."
                         rows={6}
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
                         required
