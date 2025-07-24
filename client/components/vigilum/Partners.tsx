@@ -30,9 +30,14 @@ const Partners = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [robotVerified, setRobotVerified] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const fileInputRef = useRef(null);
+  const recaptchaRef = useRef(null);
+
+  // reCAPTCHA site key - you should add this to your environment variables
+  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // This is a test key, replace with your actual site key
 
   useEffect(() => {
     const handleScroll = () => {
