@@ -724,9 +724,9 @@ const SemanticPermutationEngine = () => {
 
   const resetToDefault = () => {
     if (operatorVersion === "v1") {
-      setOperatorSequence(["A", "R", "V", "ε", "O"]);
+      setOperatorSequence(["O", "L", "P", "A", "R"]);
     } else {
-      setOperatorSequenceV2(["T", "S", "I", "N", "C"]);
+      setOperatorSequenceV2(["V", "M", "ε", "S", "PM"]);
     }
     setFlippedCards(new Set());
   };
