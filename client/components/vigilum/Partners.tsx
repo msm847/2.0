@@ -1760,7 +1760,8 @@ const Partners = () => {
                           />
                           <label
                             htmlFor="privacy-check"
-                            className="text-gray-300 text-sm leading-relaxed"
+                            className="text-gray-300 leading-relaxed"
+                            style={{ fontSize: "14px" }}
                           >
                             I confirm that I have read and fully understood the
                             Vigilum{" "}
