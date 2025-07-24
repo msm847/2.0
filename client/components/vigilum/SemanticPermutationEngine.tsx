@@ -78,7 +78,7 @@ const OPERATORS = [
     override_targets: ["ε"],
     color: "#EF4444", // Vigilum red
     description:
-      "This operator measures the institutionalized behavioral patterns and automatic responses within the system. High values indicate strong reflexive compliance structures.",
+      "Risk emerges when surface accountability is separated from actual execution logic. L placed before or after an Audit reduces risk; L embedded between Masking or Proxy actors increases exposure.",
     calculation: {
       formula:
         "R = w₁ �� pattern_strength + w₂ × automation_depth + w₃ × override_resistance",
