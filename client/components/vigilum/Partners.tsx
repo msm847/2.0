@@ -36,10 +36,9 @@ const Partners = () => {
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
 
-  // reCAPTCHA site key from environment variables
-  // To use your own key: Replace the fallback key with your actual Google reCAPTCHA site key
-  // Or set VITE_RECAPTCHA_SITE_KEY in your .env file
-  const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+  // REPLACE THIS WITH YOUR ACTUAL GOOGLE reCAPTCHA SITE KEY
+  // Get your key from: https://www.google.com/recaptcha/admin
+  const RECAPTCHA_SITE_KEY = "YOUR_RECAPTCHA_SITE_KEY_HERE";
 
   useEffect(() => {
     const handleScroll = () => {
