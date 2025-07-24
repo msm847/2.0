@@ -164,7 +164,7 @@ export default function Index() {
           </h1>
         </GradientText>
         <GradientText
-          colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
+          colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
           animationSpeed={8}
         >
           <p
