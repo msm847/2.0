@@ -1302,13 +1302,14 @@ const Partners = () => {
                   lineHeight: "1.6",
                 }}
               >
-                Vigilum converts the hidden architecture of laws, tenders, and
-                influence into real-time foresight, revealing risks before they
-                harden into policy failure. By modeling intent—not just
-                compliance—we empower ministries, multilaterals, and ESG
-                investors to pre-empt systemic loss. Born at Columbia's
-                MARS-REERS program, our platform transforms oversight from
-                reaction to anticipation.
+                Systemic risk is a function of structure, not individual intent.
+                Exposure emerges from how legal, procedural, and contractual forms encode discretion, sequence overrides, and segment recognition.
+                Policy failure is not produced by lack of control, but by the simulation of constraint—where compliance format and extraction logic coincide.
+                <br /><br />
+                Effective oversight requires simulating clause order, override paths, and environmental interaction—projecting risk before materialization.
+                The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving regulatory architectures.
+                <br /><br />
+                We are advancing this platform as a structural engine for scenario modeling, legal-logic analysis, and governance stress testing. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
