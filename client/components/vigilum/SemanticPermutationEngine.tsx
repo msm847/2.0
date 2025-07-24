@@ -823,7 +823,7 @@ const SemanticPermutationEngine = () => {
               const isFlipped = flippedCards.has(opId);
               const calculationData = calculationBreakdowns[opId];
               const isNullified =
-                checkActiveOverrides(opId, operatorSequence, index).length > 0;
+                checkActiveOverrides(opId, getCurrentSequence(), index).length > 0;
 
               return (
                 <div
