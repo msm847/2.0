@@ -698,16 +698,21 @@ const SemanticPermutationEngine = () => {
   };
 
   const shuffleOperators = () => {
-    const shuffled = [...operatorSequence];
+    const currentSeq = getCurrentSequence();
+    const shuffled = [...currentSeq];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    setOperatorSequence(shuffled);
+    setCurrentSequence(shuffled);
   };
 
   const resetToDefault = () => {
-    setOperatorSequence(["A", "R", "V", "ε", "O"]);
+    if (operatorVersion === "v1") {
+      setOperatorSequence(["A", "R", "V", "ε", "O"]);
+    } else {
+      setOperatorSequenceV2(["T", "S", "I", "N", "C"]);
+    }
     setFlippedCards(new Set());
   };
 
