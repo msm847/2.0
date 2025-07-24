@@ -147,7 +147,17 @@ export default function Index() {
               margin: 0,
               letterSpacing: "2px",
               whiteSpace: "nowrap",
-              textShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.8)",
+              textShadow: `
+                0 0 30px rgba(64, 255, 170, 0.8),
+                0 0 60px rgba(64, 255, 170, 0.6),
+                0 4px 8px rgba(0, 0, 0, 0.9),
+                0 8px 16px rgba(0, 0, 0, 0.7),
+                0 12px 24px rgba(0, 0, 0, 0.5),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8),
+                6px 6px 0px rgba(0, 0, 0, 0.6)
+              `,
+              WebkitTextStroke: "1px rgba(255, 255, 255, 0.1)",
             }}
           >
             Semantic Foresight Intelligence
