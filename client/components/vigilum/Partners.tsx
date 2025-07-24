@@ -621,7 +621,7 @@ const Partners = () => {
     "Free University of Berlin",
     "RWTH Aachen University",
     "University of Freiburg",
-    "University of G��ttingen",
+    "University of Göttingen",
     "University of Hamburg",
     "University of Cologne",
     "University of Frankfurt",
@@ -2147,118 +2147,179 @@ const Partners = () => {
                     1. Introduction
                   </h4>
                   <p>
-                    Vigilum ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard the information you provide when you submit the Structural Engagement Intake form on our website.
+                    This Privacy Policy ("Policy") explains how Vigilum U ("Vigilum," "we," "us," or "our") collects, uses, discloses, and protects the personal data you provide when submitting the Structural Engagement Intake form on our website. We are committed to transparency, data minimization, and compliance with applicable international data protection laws, including the EU General Data Protection Regulation (GDPR) and other jurisdictional requirements.
                   </p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    2. Data Controller
+                    2. Definitions
+                  </h4>
+                  <p>For clarity, the following terms have the meanings set out below:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li><strong>Personal Data:</strong> Any information relating to an identified or identifiable natural person.</li>
+                    <li><strong>Processing:</strong> Any operation performed on Personal Data (e.g., collection, storage, retrieval, use, disclosure, erasure).</li>
+                    <li><strong>Data Controller:</strong> The entity that determines the purposes and means of Processing.</li>
+                    <li><strong>Data Processor:</strong> A third-party that Processes Personal Data on our behalf.</li>
+                    <li><strong>Data Subject:</strong> An individual whose Personal Data is Processed.</li>
+                    <li><strong>Consent:</strong> A freely given, specific, informed, and unambiguous indication of Data Subject's wishes by which they signify agreement to the Processing of their Personal Data.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    3. Data Controller & Contact Details
                   </h4>
                   <p>
                     Vigilum UAB<br />
                     Address: ___________________________<br />
                     Email: ___________________________<br />
-                    Data Protection Officer: ___________________________
+                    Data Protection Officer (DPO): ___________________________<br />
+                    DPO Email: ___________________________
                   </p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    3. Information We Collect
+                    4. Categories of Personal Data Collected
                   </h4>
-                  <p>When you submit the Structural Engagement Intake form, we collect:</p>
-                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li><strong>Identifying Information:</strong> Full Name, Business Email, Country, Phone number (optional), Company/Institution, Job Title</li>
-                    <li><strong>Initiative Details:</strong> Description of your initiative, challenge, or collaboration interest (up to 4,000 characters)</li>
-                    <li><strong>Consent Confirmation:</strong> Your affirmative consent to this Privacy Policy and Data Use Statement</li>
-                  </ul>
+                  <div className="space-y-3">
+                    <div>
+                      <p><strong>4.1. Directly from You:</strong></p>
+                      <ul className="list-disc list-inside ml-4 mt-1 space-y-1">
+                        <li>Identifiers (Full Name, Business Email)</li>
+                        <li>Professional Information (Company/Institution, Job Title)</li>
+                        <li>Contact Details (Country, Phone number—optional)</li>
+                        <li>Initiative Details (Description of initiative, challenge, or collaboration interest)</li>
+                        <li>Consent Records (checkbox confirmation)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p><strong>4.2. Automatically (via cookies and analytics):</strong></p>
+                      <ul className="list-disc list-inside ml-4 mt-1 space-y-1">
+                        <li>Usage Data (IP address, browser type, pages visited, timestamps)</li>
+                        <li>Cookie Identifiers</li>
+                      </ul>
+                    </div>
+                  </div>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    4. How We Collect Your Information
+                    5. Purposes of Processing & Lawful Bases
                   </h4>
-                  <ul className="list-disc list-inside ml-4 space-y-1">
-                    <li><strong>Directly from You:</strong> When you complete and submit the intake form.</li>
-                    <li><strong>Automatically:</strong> Via cookies and analytics tools when you visit our site (see Cookie Policy).</li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h4 className="text-lg font-semibold text-white mb-3">
-                    5. Purposes of Processing & Legal Basis
-                  </h4>
-                  <p>We process your personal data for the following purposes under GDPR:</p>
-                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li><strong>Partnership Evaluation</strong> (Article 6(1)(b) – performance of a contract)</li>
-                    <li><strong>Product Research & Pilot Collaboration</strong> (Article 6(1)(f) – legitimate interests)</li>
-                    <li><strong>Compliance Analytics & Regulatory Reporting</strong> (Article 6(1)(c) – legal obligation)</li>
-                    <li><strong>Operational Communication</strong> (Article 6(1)(b) – performance of a contract)</li>
-                  </ul>
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b border-gray-600">
+                          <th className="text-left py-2 text-green-400">Purpose</th>
+                          <th className="text-left py-2 text-green-400">Lawful Basis (GDPR Art. 6)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="space-y-1">
+                        <tr className="border-b border-gray-700">
+                          <td className="py-2">Partnership evaluation</td>
+                          <td className="py-2">Performance of a contract (Art. 6(1)(b))</td>
+                        </tr>
+                        <tr className="border-b border-gray-700">
+                          <td className="py-2">Product research & pilot collaboration</td>
+                          <td className="py-2">Legitimate interests (Art. 6(1)(f))</td>
+                        </tr>
+                        <tr className="border-b border-gray-700">
+                          <td className="py-2">Compliance analytics & regulatory reporting</td>
+                          <td className="py-2">Legal obligation (Art. 6(1)(c))</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2">Operational communication</td>
+                          <td className="py-2">Performance of a contract (Art. 6(1)(b))</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="mt-2 text-xs">We ensure that our legitimate-interests assessment balances our needs with your rights.</p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
                     6. Data Retention
                   </h4>
-                  <p>We retain personal data only as long as necessary to fulfill the purposes above or as required by law.</p>
+                  <p>We retain Personal Data only as long as necessary to fulfill the purposes above, plus any additional period required by law. Retention periods are determined as follows:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li><strong>Inquiry records:</strong> 24 months after inquiry closure</li>
+                    <li><strong>Analytics data:</strong> 12 months</li>
+                    <li><strong>Legal compliance logs:</strong> 5 years (or as mandated by applicable law)</li>
+                  </ul>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
                     7. Data Sharing & Recipients
                   </h4>
-                  <p>Your data may be shared with:</p>
+                  <p>Your Personal Data may be disclosed to:</p>
                   <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
                     <li>Vigilum-affiliated researchers and engineers for analysis</li>
-                    <li>Third-party service providers for hosting, security, and analytics</li>
-                    <li>Regulatory authorities as required by law</li>
+                    <li>Third-party Processors (hosting, security, analytics) under Data Processing Agreements</li>
+                    <li>Regulatory authorities when required by law</li>
                   </ul>
+                  <p className="mt-2">We require all Processors to implement GDPR-equivalent safeguards (Standard Contractual Clauses or Binding Corporate Rules for international transfers).</p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
                     8. International Transfers
                   </h4>
-                  <p>Data may be transferred outside the EEA under Standard Contractual Clauses approved by the European Commission.</p>
+                  <p>If we transfer data outside the European Economic Area (EEA), we do so under EU-approved mechanisms (Standard Contractual Clauses, adequacy decisions, or Binding Corporate Rules).</p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
                     9. Your Rights
                   </h4>
-                  <p>Under GDPR, you have the right to:</p>
+                  <p>Under the GDPR, you have the right to:</p>
                   <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li>Access your personal data</li>
+                    <li>Access and receive a copy of your Personal Data</li>
                     <li>Rectify inaccurate or incomplete data</li>
-                    <li>Erase data under certain conditions</li>
-                    <li>Restrict or object to processing</li>
-                    <li>Data portability where applicable</li>
-                    <li>Withdraw consent at any time without affecting prior lawful processing</li>
+                    <li>Erase data ("right to be forgotten") under certain conditions</li>
+                    <li>Restrict or object to Processing on grounds relating to your situation</li>
+                    <li>Data portability where Processing is based on consent or contract</li>
+                    <li>Withdraw consent at any time (without affecting prior lawful Processing)</li>
                   </ul>
-                  <p className="mt-2">To exercise these rights, contact: ___________________________</p>
+                  <p className="mt-2">To exercise these rights, contact our DPO at ___________________________. We respond within one month of request receipt.</p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    10. Consent
+                    10. Consent Mechanism
                   </h4>
-                  <p>By clicking "Send an Inquiry," you confirm that you have read and understood this Privacy Policy and expressly consent to our processing of your data for the purposes described herein.</p>
+                  <p>The Structural Engagement Intake form includes an unchecked-by-default checkbox that links to this Policy. Checking the box constitutes valid GDPR consent. You may withdraw consent at any time by contacting our DPO. Withdrawal does not affect the lawfulness of Processing prior to withdrawal.</p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    11. Changes to This Policy
+                    11. Cookies & Tracking
                   </h4>
-                  <p>We will update this Privacy Policy to reflect changes in our data practices or legal obligations. The "Effective Date" at the top will indicate the last revision.</p>
+                  <p>We use cookies and similar tracking technologies to operate and improve our website. Upon your first visit, you will be presented with a cookie consent banner offering granular choices. For details, refer to our Cookie Policy.</p>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    12. Contact Us
+                    12. Security Measures
                   </h4>
-                  <p>For questions or complaints regarding this Privacy Policy or our data practices, please contact:</p>
+                  <p>We implement appropriate technical and organizational measures, including encryption (AES-256 in transit and at rest), access controls (least-privilege), regular audits, employee training, and incident response procedures to safeguard your data.</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    13. Changes to This Policy
+                  </h4>
+                  <p>We may update this Policy due to legal or operational changes. The "Effective Date" will be updated accordingly. Material changes will be communicated via email to prior inquirers or via a notice on our website.</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    14. Contact Us
+                  </h4>
+                  <p>For questions, complaints, or to exercise your rights, contact:</p>
                   <div className="bg-gray-800 p-4 rounded-lg mt-2">
                     <p><strong>Data Protection Officer</strong></p>
                     <p>Email: ___________________________</p>
