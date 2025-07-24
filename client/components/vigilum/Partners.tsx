@@ -15,7 +15,7 @@ import {
   Shield,
 } from "lucide-react";
 
-// Countries list
+// Countries list with phone codes
 const COUNTRIES = [
   "Afghanistan", "Albania", "Algeria", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
   "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Bulgaria",
@@ -29,6 +29,21 @@ const COUNTRIES = [
   "Romania", "Russia", "Saudi Arabia", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden", "Switzerland",
   "Thailand", "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Venezuela", "Vietnam"
 ];
+
+// Country phone codes mapping
+const COUNTRY_PHONE_CODES = {
+  "Afghanistan": "+93", "Albania": "+355", "Algeria": "+213", "Argentina": "+54", "Armenia": "+374", "Australia": "+61", "Austria": "+43", "Azerbaijan": "+994",
+  "Bahrain": "+973", "Bangladesh": "+880", "Belarus": "+375", "Belgium": "+32", "Bolivia": "+591", "Bosnia and Herzegovina": "+387", "Brazil": "+55", "Bulgaria": "+359",
+  "Cambodia": "+855", "Canada": "+1", "Chile": "+56", "China": "+86", "Colombia": "+57", "Costa Rica": "+506", "Croatia": "+385", "Czech Republic": "+420",
+  "Denmark": "+45", "Dominican Republic": "+1", "Ecuador": "+593", "Egypt": "+20", "Estonia": "+372", "Ethiopia": "+251",
+  "Finland": "+358", "France": "+33", "Georgia": "+995", "Germany": "+49", "Ghana": "+233", "Greece": "+30", "Guatemala": "+502",
+  "Honduras": "+504", "Hungary": "+36", "Iceland": "+354", "India": "+91", "Indonesia": "+62", "Iran": "+98", "Iraq": "+964", "Ireland": "+353", "Israel": "+972", "Italy": "+39",
+  "Japan": "+81", "Jordan": "+962", "Kazakhstan": "+7", "Kenya": "+254", "Kuwait": "+965", "Latvia": "+371", "Lebanon": "+961", "Lithuania": "+370", "Luxembourg": "+352",
+  "Malaysia": "+60", "Mexico": "+52", "Morocco": "+212", "Netherlands": "+31", "New Zealand": "+64", "Nigeria": "+234", "Norway": "+47",
+  "Pakistan": "+92", "Panama": "+507", "Peru": "+51", "Philippines": "+63", "Poland": "+48", "Portugal": "+351", "Qatar": "+974",
+  "Romania": "+40", "Russia": "+7", "Saudi Arabia": "+966", "Serbia": "+381", "Singapore": "+65", "Slovakia": "+421", "Slovenia": "+386", "South Africa": "+27", "South Korea": "+82", "Spain": "+34", "Sri Lanka": "+94", "Sweden": "+46", "Switzerland": "+41",
+  "Thailand": "+66", "Turkey": "+90", "Ukraine": "+380", "United Arab Emirates": "+971", "United Kingdom": "+44", "United States": "+1", "Uruguay": "+598", "Venezuela": "+58", "Vietnam": "+84"
+};
 
 const Partners = () => {
   // Contact Form State
