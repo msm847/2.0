@@ -1478,15 +1478,51 @@ const Partners = () => {
 
                 {/* RECOGNITION */}
                 <div className="flex items-start" style={{ gap: "16px" }}>
-                  <AlertCircle
+                  <svg
                     className="flex-shrink-0 mt-1"
                     style={{
                       width: "32px",
                       height: "32px",
-                      color: "#7BFF9C",
                     }}
+                    viewBox="0 0 32 32"
+                    fill="none"
                     aria-label="RECOGNITION icon"
-                  />
+                  >
+                    {/* Eye shape - upper half */}
+                    <path
+                      d="M4 16 C8 8, 24 8, 28 16"
+                      stroke="#7BFF9C"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                    {/* Eye shape - lower half */}
+                    <path
+                      d="M4 16 C8 24, 24 24, 28 16"
+                      stroke="#7BFF9C"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                    {/* Iris */}
+                    <circle cx="16" cy="16" r="6" stroke="#7BFF9C" strokeWidth="2" fill="none" />
+                    {/* Pupil */}
+                    <circle cx="16" cy="16" r="3" fill="#7BFF9C" />
+                    {/* Cut line through the eye */}
+                    <line
+                      x1="6" y1="10"
+                      x2="26" y2="22"
+                      stroke="#7BFF9C"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                    {/* Cut separation effect */}
+                    <line
+                      x1="5" y1="9"
+                      x2="25" y2="21"
+                      stroke="#1B3C2D"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                    />
+                  </svg>
                   <div>
                     <h3
                       className="font-semibold mb-2"
