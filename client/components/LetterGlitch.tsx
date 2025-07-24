@@ -20,45 +20,23 @@ const LetterGlitch = ({
   const audioRef = useRef<HTMLAudioElement>(null);
   const [robotLoaded, setRobotLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [userInteracted, setUserInteracted] = useState(false);
-
-  useEffect(() => {
-    // Set up user interaction listeners
-    const handleUserInteraction = () => {
-      setUserInteracted(true);
-      if (audioRef.current && robotLoaded && !isPlaying) {
-        audioRef.current.play().catch(console.error);
-        setIsPlaying(true);
-      }
-    };
-
-    // Listen for any user interaction
-    document.addEventListener('click', handleUserInteraction, { once: true });
-    document.addEventListener('keydown', handleUserInteraction, { once: true });
-    document.addEventListener('touchstart', handleUserInteraction, { once: true });
-
-    return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('keydown', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-    };
-  }, [robotLoaded, isPlaying]);
-
-  useEffect(() => {
-    // Robot loaded, try to play audio if user has interacted
-    const timer = setTimeout(() => {
-      setRobotLoaded(true);
-      if (userInteracted && audioRef.current && !isPlaying) {
-        audioRef.current.play().catch(console.error);
-        setIsPlaying(true);
-      }
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [userInteracted, isPlaying]);
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
+    // Play audio once when robot animation fully loads
+    if (audioRef.current && !hasPlayedOnce) {
+      // Small delay to ensure iframe content is fully loaded
+      setTimeout(() => {
+        audioRef.current?.play().then(() => {
+          setIsPlaying(true);
+          setHasPlayedOnce(true);
+        }).catch(() => {
+          // If autoplay fails, user can still click button
+          console.log("Autoplay prevented - user can click audio button");
+        });
+      }, 1000);
+    }
   };
 
   const handleAudioClick = () => {
