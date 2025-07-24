@@ -188,19 +188,29 @@ const LetterGlitch = ({
         Your browser does not support the audio element.
       </audio>
 
+      {/* Sound Wave Animation */}
+      {isPlaying && (
+        <div style={soundWaveStyle}>
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              style={{
+                width: "2px",
+                height: `${10 + i * 4}px`,
+                backgroundColor: "#40FFAA",
+                borderRadius: "1px",
+                animation: `soundWave 0.6s ease-in-out infinite ${i * 0.1}s`,
+              }}
+            />
+          ))}
+        </div>
+      )}
+
       {/* Audio Control Button */}
       {robotLoaded && (
         <button
           onClick={handleAudioClick}
           style={audioButtonStyle}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(64, 255, 170, 0.2)";
-            e.currentTarget.style.borderColor = "rgba(64, 255, 170, 0.5)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(64, 255, 170, 0.1)";
-            e.currentTarget.style.borderColor = "rgba(64, 255, 170, 0.3)";
-          }}
           title={isPlaying ? "Stop robot voice" : "Play robot voice"}
         >
           {isPlaying ? "⏸" : "🔊"}
