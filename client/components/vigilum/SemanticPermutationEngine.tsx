@@ -231,30 +231,29 @@ const OPERATORS_V2 = [
       "Creates ambiguity, semantic opacity, or off-ledger status (deliberate or emergent).",
   },
   {
-    id: "I",
-    name: "Information Asymmetry",
-    fullName: "Information Asymmetry and Knowledge Gradients",
-    weight: 0.8,
-    symbol: "I",
-    glyph: "⧉",
-    affects: ["V", "A", "L"],
+    id: "ε",
+    name: "Environmental Operator",
+    fullName: "Environmental Operator and External Disruption",
+    weight: 0.25,
+    symbol: "ε",
+    glyph: "⟡",
+    affects: ["ε", "P", "A"],
     position_sensitive: true,
-    override_targets: ["ε"],
+    override_targets: ["R"],
     color: "#EC4899", // Pink
     description:
-      "This operator quantifies information distribution imbalances and knowledge access differentials. High values indicate systematic information hoarding or selective disclosure.",
+      "Not an actor; amplifies or absorbs risk for all operators within its effective window. Example: Procurement under 'state of emergency' has ε = 0.41; all Soft/Black operators compound.",
     calculation: {
       formula:
-        "I = w₁ × access_differential + w₂ × knowledge_hoarding + w₃ × disclosure_timing",
-      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+        "ϕ(ε) = ε_env (scalable, typically 0.10–0.45 based on real scenario, can be 0.0 for neutral)",
+      weights: { w1: 1.0 },
       variables: {
-        access_differential: "Degree of unequal information access",
-        knowledge_hoarding: "Strategic retention of critical information",
-        disclosure_timing: "Temporal control over information release",
+        ε_env: "Environmental disruption coefficient",
+        gamma: "Multiplies risk of adjacent Black/Soft by 1.25–1.45 if high disruption; divides by 0.7 if stabilizing"
       },
     },
     impact:
-      "Elevating 'I' creates systematic knowledge imbalances that favor informed actors.",
+      "External, exogenous, or ambient environmental shift (legal crisis, emergency, war, etc).",
   },
   {
     id: "N",
