@@ -547,9 +547,23 @@ const Partners = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Company/Institution *
-                    </label>
+                    <div className="flex items-center justify-between mb-2">
+                      <label className="text-sm font-medium text-green-400">
+                        Company/Institution *
+                      </label>
+                      <div className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          id="student-check"
+                          checked={isStudent}
+                          onChange={(e) => setIsStudent(e.target.checked)}
+                          className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2"
+                        />
+                        <label htmlFor="student-check" className="text-sm text-gray-300">
+                          Student
+                        </label>
+                      </div>
+                    </div>
                     <input
                       type="text"
                       value={company}
