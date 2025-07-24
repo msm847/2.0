@@ -570,9 +570,6 @@ Vigilum is in advanced development. Inquiries are reviewed for research and pilo
                         {projectDescription.length}/4000
                       </div>
                     </div>
-                    <div className="text-gray-400 text-xs leading-relaxed mt-2">
-                      Vigilum is in advanced development. Inquiries are reviewed for research and pilot collaboration. Direct product demonstrations are not available.
-                    </div>
                   </div>
 
 
