@@ -519,55 +519,7 @@ const Partners = () => {
                     </div>
                   </div>
 
-                  {/* File Upload */}
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Attachments (Optional)
-                    </label>
-                    <div
-                      className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center cursor-pointer hover:border-green-500 transition-colors"
-                      onClick={() => fileInputRef.current?.click()}
-                    >
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                      <p className="text-gray-400 text-sm">
-                        Click to upload files or drag and drop
-                      </p>
-                      <p className="text-gray-500 text-xs mt-1">
-                        Max 20MB per file
-                      </p>
-                    </div>
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      multiple
-                      className="hidden"
-                      onChange={handleFileUpload}
-                      accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
-                    />
 
-                    {/* Attached Files */}
-                    {attachedFiles.length > 0 && (
-                      <div className="mt-4 space-y-2">
-                        {attachedFiles.map((file, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center justify-between p-2 bg-gray-800 rounded border border-gray-600"
-                          >
-                            <span className="text-white text-sm truncate">
-                              {file.name}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => removeFile(index)}
-                              className="text-red-400 hover:text-red-300 transition-colors"
-                            >
-                              <X className="w-4 h-4" />
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
 
                   {/* Verification and Privacy */}
                   <div className="space-y-6">
