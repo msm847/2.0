@@ -1540,7 +1540,8 @@ const Partners = () => {
                       value={businessEmail}
                       onChange={(e) => {
                         setBusinessEmail(e.target.value);
-                        if (validationErrors.businessEmail) {
+                        // Only clear error if field becomes valid
+                        if (validationErrors.businessEmail && e.target.value.trim() && validateEmail(e.target.value)) {
                           setValidationErrors(prev => ({ ...prev, businessEmail: null }));
                         }
                       }}
