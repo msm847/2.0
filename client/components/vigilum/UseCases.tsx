@@ -33,7 +33,10 @@ const UseCases = () => {
               Retrospective Clause Mapping
             </motion.h2>
             <div className="flex items-start justify-center max-w-4xl mx-auto relative">
-              <div className="absolute left-0 top-0 text-gray-400 z-10" style={{ transform: 'translateY(-10px)' }}>
+              <p className="text-xl text-gray-400 font-light leading-relaxed text-center">
+                Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or sequence re-routes oversight, encodes risk transfer, or fragments recognition across the system.
+              </p>
+              <div className="absolute right-0 top-0 text-gray-400 z-10" style={{ transform: 'translateY(-10px)' }}>
                 <svg
                   width="120"
                   height="80"
@@ -44,15 +47,12 @@ const UseCases = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  {/* L-shaped arrow path: left then down */}
+                  {/* L-shaped arrow path: right then down */}
                   <path d="M10 20 L50 20 L50 60" />
                   {/* Arrow head pointing down */}
                   <polyline points="45,55 50,60 55,55" />
                 </svg>
               </div>
-              <p className="text-xl text-gray-400 font-light leading-relaxed ml-32">
-                Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or sequence re-routes oversight, encodes risk transfer, or fragments recognition across the system.
-              </p>
             </div>
           </div>
 
