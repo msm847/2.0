@@ -1174,12 +1174,46 @@ export default function InfiniteMenu({ items = [] }) {
 
       {activeItem && (
         <>
-          <h2 className={`face-title ${isMoving ? "inactive" : "active"}`}>
+          {/* Source/Article - Top */}
+          <div className={`face-source ${isMoving ? "inactive" : "active"}`}
+               style={{
+                 fontFamily: "monospace",
+                 color: "#888888",
+                 fontSize: "12px",
+                 textAlign: "center",
+                 marginBottom: "8px",
+                 whiteSpace: "nowrap",
+                 overflow: "hidden",
+                 textOverflow: "ellipsis"
+               }}>
+            {activeItem.source}
+          </div>
+
+          {/* Loophole Title - Middle */}
+          <h2 className={`face-title ${isMoving ? "inactive" : "active"}`}
+              style={{
+                fontWeight: "bold",
+                color: "white",
+                fontSize: "24px",
+                textAlign: "center",
+                marginBottom: "12px",
+                lineHeight: "1.2"
+              }}>
             {activeItem.title}
           </h2>
 
-          <p className={`face-description ${isMoving ? "inactive" : "active"}`}>
-            {" "}
+          {/* Preview/Scenario - Bottom */}
+          <p className={`face-description ${isMoving ? "inactive" : "active"}`}
+             style={{
+               color: "#9DE6C6",
+               fontSize: "14px",
+               textAlign: "center",
+               lineHeight: "1.4",
+               display: "-webkit-box",
+               WebkitLineClamp: 2,
+               WebkitBoxOrient: "vertical",
+               overflow: "hidden"
+             }}>
             {activeItem.description}
           </p>
 
