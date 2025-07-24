@@ -106,7 +106,7 @@ const Partners = () => {
 
     // Academic/Research
     "Professor", "Associate Professor", "Assistant Professor", "Lecturer", "Senior Lecturer",
-    "Research Fellow", "Senior Research Fellow", "Postdoctoral Researcher", "Research Associate",
+    "Research Fellow", "Senior Research Fellow", "Postdoctoral Researcher",
     "Senior Researcher", "Research Scientist", "Principal Investigator", "Research Director",
     "PhD Candidate", "Graduate Student", "Research Assistant", "Teaching Assistant",
     "Dean", "Associate Dean", "Department Chair", "Academic Director",
