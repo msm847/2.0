@@ -138,8 +138,8 @@ export default function Index() {
           pointerEvents: "none",
           zIndex: 3,
           background: "rgba(16, 32, 28, 0.85)",
-          padding: "60px 80px",
-          borderRadius: "32px",
+          padding: "50px 60px",
+          borderRadius: "48px",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
