@@ -175,30 +175,32 @@ const OPERATORS = [
 // Five Additional Semantic Operators - V2
 const OPERATORS_V2 = [
   {
-    id: "T",
-    name: "Temporal Fragmentation",
-    fullName: "Temporal Fragmentation and Schedule Control",
-    weight: 0.6,
-    symbol: "T",
-    glyph: "⧖",
-    affects: ["P", "ε", "A"],
+    id: "V",
+    name: "Visibility Constraint",
+    fullName: "Visibility Constraint and Traceability Binding",
+    weight: 0.10,
+    symbol: "V",
+    glyph: "⟐",
+    affects: ["V", "L", "ε"],
     position_sensitive: true,
-    override_targets: ["V"],
+    override_targets: ["A"],
     color: "#06B6D4", // Cyan
     description:
-      "This operator controls temporal scheduling and deadline manipulation within the system. High values indicate compressed timeframes that limit thorough evaluation.",
+      "Highly stabilizing—risk sinks as W increases, but if sandwiched by Black/Soft operators, V becomes 'ritual visibility' (simulated audit).",
     calculation: {
       formula:
-        "T = w₁ × schedule_compression + w₂ × deadline_manipulation + w₃ × temporal_asymmetry",
-      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+        "ϕ(V) = 0.10·H + 0.02·S + 0.02·B + 0.30·W + γ(Seq,𝓔)",
+      weights: { w1: 0.10, w2: 0.02, w3: 0.02, w4: 0.30 },
       variables: {
-        schedule_compression: "Degree of accelerated processing timelines",
-        deadline_manipulation: "Strategic timing control mechanisms",
-        temporal_asymmetry: "Unequal time allocation across actors",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "If V is last or paired with Masking, γ = –0.08"
       },
     },
     impact:
-      "Increasing 'T' creates temporal pressure that constrains deliberative processes.",
+      "Binds discretionary acts to traceability/observation.",
   },
   {
     id: "S",
