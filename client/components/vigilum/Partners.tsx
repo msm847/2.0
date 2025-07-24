@@ -1777,7 +1777,8 @@ const Partners = () => {
                           onChange={(e) => {
                             if (e.target.value.length <= 4000) {
                               setProjectDescription(e.target.value);
-                              if (validationErrors.projectDescription) {
+                              // Only clear error if field has valid content
+                              if (validationErrors.projectDescription && e.target.value.trim().length > 0) {
                                 setValidationErrors(prev => ({ ...prev, projectDescription: null }));
                               }
                             }
