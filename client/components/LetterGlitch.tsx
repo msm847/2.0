@@ -124,7 +124,6 @@ const LetterGlitch = ({
     position: "absolute",
     bottom: "75px",
     right: "30px",
-    display: isPlaying ? "flex" : "none",
     alignItems: "center",
     gap: "3px",
     zIndex: 2,
