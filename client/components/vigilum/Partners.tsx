@@ -15,6 +15,21 @@ import {
   Shield,
 } from "lucide-react";
 
+// Countries list
+const COUNTRIES = [
+  "Afghanistan", "Albania", "Algeria", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
+  "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Bulgaria",
+  "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Croatia", "Czech Republic",
+  "Denmark", "Dominican Republic", "Ecuador", "Egypt", "Estonia", "Ethiopia",
+  "Finland", "France", "Georgia", "Germany", "Ghana", "Greece", "Guatemala",
+  "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
+  "Japan", "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Latvia", "Lebanon", "Lithuania", "Luxembourg",
+  "Malaysia", "Mexico", "Morocco", "Netherlands", "New Zealand", "Nigeria", "Norway",
+  "Pakistan", "Panama", "Peru", "Philippines", "Poland", "Portugal", "Qatar",
+  "Romania", "Russia", "Saudi Arabia", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden", "Switzerland",
+  "Thailand", "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Venezuela", "Vietnam"
+];
+
 const Partners = () => {
   // Contact Form State
   const [fullName, setFullName] = useState("");
@@ -23,6 +38,8 @@ const Partners = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [country, setCountry] = useState("");
+  const [countrySearch, setCountrySearch] = useState("");
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [projectDescription, setProjectDescription] = useState("");
   const [attachedFiles, setAttachedFiles] = useState([]);
   const [scrollIntensity, setScrollIntensity] = useState(0);
