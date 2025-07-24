@@ -855,7 +855,7 @@ const Partners = () => {
 
                   <div className="relative">
                     <label className="block text-sm font-medium text-green-400 mb-2">
-                      Job Title *
+                      Job Title {isStudent ? "(Optional)" : "*"}
                     </label>
                     <input
                       type="text"
