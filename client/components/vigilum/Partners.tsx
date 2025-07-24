@@ -606,29 +606,7 @@ const Partners = () => {
                       </div>
                     </div>
 
-                    {/* Google reCAPTCHA */}
-                    <div className="space-y-3">
-                      <div className="space-y-3">
-                        <ReCAPTCHA
-                          ref={recaptchaRef}
-                          sitekey={RECAPTCHA_SITE_KEY}
-                          onChange={handleRecaptchaChange}
-                          onExpired={handleRecaptchaExpired}
-                          theme="dark"
-                          size="normal"
-                        />
-                        {robotVerified && (
-                          <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="flex items-center space-x-2 text-green-400"
-                          >
-                            <Shield className="w-4 h-4" />
-                            <span className="text-sm font-medium">Verified ✓</span>
-                          </motion.div>
-                        )}
-                      </div>
-                    </div>
+
 
                   </div>
 
