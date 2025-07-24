@@ -897,20 +897,131 @@ const Partners = () => {
 
     // Check for valid TLD (top-level domain)
     const validTLDs = [
-      'com', 'org', 'net', 'edu', 'gov', 'mil', 'int', 'eu', 'uk', 'de', 'fr', 'it', 'es', 'nl',
-      'be', 'ch', 'at', 'se', 'dk', 'no', 'fi', 'pl', 'cz', 'hu', 'ro', 'bg', 'hr', 'si', 'sk',
-      'lt', 'lv', 'ee', 'ie', 'pt', 'gr', 'cy', 'mt', 'lu', 'ca', 'au', 'nz', 'jp', 'kr', 'cn',
-      'in', 'br', 'mx', 'ar', 'cl', 'co', 'pe', 'uy', 've', 'za', 'ng', 'ke', 'eg', 'ma', 'tn',
-      'dz', 'ly', 'sd', 'et', 'gh', 'tz', 'ug', 'zw', 'bw', 'zm', 'mw', 'rw', 'bi', 'dj', 'so',
-      'ru', 'ua', 'by', 'md', 'ge', 'am', 'az', 'kz', 'kg', 'tj', 'tm', 'uz', 'mn', 'ir', 'iq',
-      'tr', 'sy', 'lb', 'jo', 'ps', 'il', 'sa', 'ae', 'kw', 'qa', 'bh', 'om', 'ye', 'af', 'pk',
-      'bd', 'lk', 'mv', 'np', 'bt', 'mm', 'th', 'la', 'kh', 'vn', 'my', 'sg', 'id', 'ph', 'tl'
+      "com",
+      "org",
+      "net",
+      "edu",
+      "gov",
+      "mil",
+      "int",
+      "eu",
+      "uk",
+      "de",
+      "fr",
+      "it",
+      "es",
+      "nl",
+      "be",
+      "ch",
+      "at",
+      "se",
+      "dk",
+      "no",
+      "fi",
+      "pl",
+      "cz",
+      "hu",
+      "ro",
+      "bg",
+      "hr",
+      "si",
+      "sk",
+      "lt",
+      "lv",
+      "ee",
+      "ie",
+      "pt",
+      "gr",
+      "cy",
+      "mt",
+      "lu",
+      "ca",
+      "au",
+      "nz",
+      "jp",
+      "kr",
+      "cn",
+      "in",
+      "br",
+      "mx",
+      "ar",
+      "cl",
+      "co",
+      "pe",
+      "uy",
+      "ve",
+      "za",
+      "ng",
+      "ke",
+      "eg",
+      "ma",
+      "tn",
+      "dz",
+      "ly",
+      "sd",
+      "et",
+      "gh",
+      "tz",
+      "ug",
+      "zw",
+      "bw",
+      "zm",
+      "mw",
+      "rw",
+      "bi",
+      "dj",
+      "so",
+      "ru",
+      "ua",
+      "by",
+      "md",
+      "ge",
+      "am",
+      "az",
+      "kz",
+      "kg",
+      "tj",
+      "tm",
+      "uz",
+      "mn",
+      "ir",
+      "iq",
+      "tr",
+      "sy",
+      "lb",
+      "jo",
+      "ps",
+      "il",
+      "sa",
+      "ae",
+      "kw",
+      "qa",
+      "bh",
+      "om",
+      "ye",
+      "af",
+      "pk",
+      "bd",
+      "lk",
+      "mv",
+      "np",
+      "bt",
+      "mm",
+      "th",
+      "la",
+      "kh",
+      "vn",
+      "my",
+      "sg",
+      "id",
+      "ph",
+      "tl",
     ];
 
-    const domain = email.split('@')[1];
+    const domain = email.split("@")[1];
     if (!domain) return false;
 
-    const tld = domain.split('.').pop().toLowerCase();
+    const tld = domain.split(".").pop().toLowerCase();
     if (!validTLDs.includes(tld)) {
       return false;
     }
@@ -928,8 +1039,8 @@ const Partners = () => {
       /123\.123/,
       /abc\.abc/,
       /xxx\.xxx/,
-      /^.@[a-z]\.com$/,  // single letter domains
-      /^.@[a-z]{2}\.com$/  // two letter suspicious domains
+      /^.@[a-z]\.com$/, // single letter domains
+      /^.@[a-z]{2}\.com$/, // two letter suspicious domains
     ];
 
     const lowerEmail = email.toLowerCase();
@@ -940,15 +1051,26 @@ const Partners = () => {
     }
 
     // Check for minimum domain name length
-    const domainName = domain.split('.')[0];
+    const domainName = domain.split(".")[0];
     if (domainName.length < 2) {
       return false;
     }
 
     // Check for common business/institutional domains
     const businessDomains = [
-      'gmail.com', 'outlook.com', 'hotmail.com', 'yahoo.com', 'icloud.com', 'protonmail.com',
-      'live.com', 'msn.com', 'aol.com', 'mail.com', 'zoho.com', 'fastmail.com', 'tutanota.com'
+      "gmail.com",
+      "outlook.com",
+      "hotmail.com",
+      "yahoo.com",
+      "icloud.com",
+      "protonmail.com",
+      "live.com",
+      "msn.com",
+      "aol.com",
+      "mail.com",
+      "zoho.com",
+      "fastmail.com",
+      "tutanota.com",
     ];
 
     // For institutional form, we'll be more lenient but still block obvious fakes
@@ -1009,7 +1131,8 @@ const Partners = () => {
     if (!fullName.trim()) {
       errors.fullName = "Full name is required";
     } else if (!validateFullName(fullName)) {
-      errors.fullName = "Please enter your full name (at least first and last name)";
+      errors.fullName =
+        "Please enter your full name (at least first and last name)";
     }
 
     // Email validation
@@ -1026,7 +1149,9 @@ const Partners = () => {
 
     // Company/University validation
     if (!company.trim()) {
-      errors.company = isStudent ? "University is required" : "Company/Institution is required";
+      errors.company = isStudent
+        ? "University is required"
+        : "Company/Institution is required";
     }
 
     // Job title validation (only for non-students)
@@ -1068,11 +1193,20 @@ const Partners = () => {
     const hasValidEmail = businessEmail.trim() && validateEmail(businessEmail);
     const hasCountry = country.trim();
     const hasCompany = company.trim();
-    const hasJobTitle = isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
+    const hasJobTitle =
+      isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
     const hasProjectDescription = projectDescription.trim();
     const hasPrivacyAccepted = privacyAccepted;
 
-    return hasFullName && hasValidEmail && hasCountry && hasCompany && hasJobTitle && hasProjectDescription && hasPrivacyAccepted;
+    return (
+      hasFullName &&
+      hasValidEmail &&
+      hasCountry &&
+      hasCompany &&
+      hasJobTitle &&
+      hasProjectDescription &&
+      hasPrivacyAccepted
+    );
   };
 
   // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
@@ -1304,15 +1438,33 @@ const Partners = () => {
               >
                 Systemic risk is a function of structure, not individual intent.
                 <br />
-                Exposure emerges from how legal, procedural, and contractual forms encode discretion, sequence overrides, and segment recognition.
+                Exposure emerges from how legal, procedural, and contractual
+                forms encode discretion, sequence overrides, and segment
+                recognition.
                 <br />
-                Policy failure is not produced by lack of control, but by the simulation of constraint—where compliance format and extraction logic coincide.
-                <br /><br />
-                Effective oversight requires simulating clause order, override paths, and environmental interaction—projecting risk before materialization.
+                Policy failure is not produced by lack of control, but by the
+                simulation of constraint—where compliance format and extraction
+                logic coincide.
                 <br />
-                The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving compliance structures.
-                <br /><br />
-                What you explored above is an early, condensed demonstration—structurally isolated from the underlying Vigilum system. The interface is intended for preliminary engagement and does not reflect the scope or complexity of the operational platform in development. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
+                <br />
+                Effective oversight requires simulating clause order, override
+                paths, and environmental interaction—projecting risk before
+                materialization.
+                <br />
+                The critical problem is not identifying actors, but modeling the
+                space of structurally permitted outcomes under evolving
+                compliance structures.
+                <br />
+                <br />
+                What you explored above is an early, condensed
+                demonstration—structurally isolated from the underlying Vigilum
+                system. The interface is intended for preliminary engagement and
+                does not reflect the scope or complexity of the operational
+                platform in development. Collaboration is open to institutions,
+                researchers, and practitioners positioned to contribute to this
+                work. All engagements are strictly confidential and directed
+                toward the joint development of public-interest oversight
+                infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
@@ -1326,7 +1478,11 @@ const Partners = () => {
                     lineHeight: "1.6",
                   }}
                 >
-                  "What the citizen sees as scandal, the institution encodes as procedure, the law validates as form, and the structure routinizes as extraction. When recognition fragments, contradiction dissolves—truth is subtracted from the system's operation."
+                  "What the citizen sees as scandal, the institution encodes as
+                  procedure, the law validates as form, and the structure
+                  routinizes as extraction. When recognition fragments,
+                  contradiction dissolves—truth is subtracted from the system's
+                  operation."
                 </p>
                 <p
                   className="font-medium"
@@ -1410,7 +1566,9 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Reveal how risk propagates through clause order, override chains, and recognition collapse. Mapping structure is the first step in governance repair.
+                      Reveal how risk propagates through clause order, override
+                      chains, and recognition collapse. Mapping structure is the
+                      first step in governance repair.
                     </p>
                   </div>
                 </div>
@@ -1446,7 +1604,14 @@ const Partners = () => {
                     </g>
 
                     {/* Central intersection circle */}
-                    <circle cx="16" cy="16" r="3" fill="#7BFF9C" stroke="#7BFF9C" strokeWidth="1" />
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="3"
+                      fill="#7BFF9C"
+                      stroke="#7BFF9C"
+                      strokeWidth="1"
+                    />
                   </svg>
                   <div>
                     <h3
@@ -1467,7 +1632,9 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Simulate alternative clause sequences and environmental settings to project risk space and expose pre-encoded extraction logic.
+                      Simulate alternative clause sequences and environmental
+                      settings to project risk space and expose pre-encoded
+                      extraction logic.
                     </p>
                   </div>
                 </div>
@@ -1499,21 +1666,32 @@ const Partners = () => {
                       fill="none"
                     />
                     {/* Iris */}
-                    <circle cx="16" cy="16" r="6" stroke="#7BFF9C" strokeWidth="2" fill="none" />
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="6"
+                      stroke="#7BFF9C"
+                      strokeWidth="2"
+                      fill="none"
+                    />
                     {/* Pupil */}
                     <circle cx="16" cy="16" r="3" fill="#7BFF9C" />
                     {/* Cut line through the eye */}
                     <line
-                      x1="6" y1="10"
-                      x2="26" y2="22"
+                      x1="6"
+                      y1="10"
+                      x2="26"
+                      y2="22"
                       stroke="#7BFF9C"
                       strokeWidth="3"
                       strokeLinecap="round"
                     />
                     {/* Cut separation effect */}
                     <line
-                      x1="5" y1="9"
-                      x2="25" y2="21"
+                      x1="5"
+                      y1="9"
+                      x2="25"
+                      y2="21"
                       stroke="#1B3C2D"
                       strokeWidth="1"
                       strokeLinecap="round"
@@ -1538,13 +1716,13 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Diagnose where contradiction dissolves and truth exits the system. Reconstruct the pathways for meaning to re-enter institutional logic.
+                      Diagnose where contradiction dissolves and truth exits the
+                      system. Reconstruct the pathways for meaning to re-enter
+                      institutional logic.
                     </p>
                   </div>
                 </div>
               </div>
-
-
             </motion.div>
 
             {/* Right Side - Form Container */}
@@ -1598,45 +1776,45 @@ const Partners = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Personal Information - Single Column */}
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Business Email *
-                    </label>
-                    <input
-                      type="email"
-                      value={businessEmail}
-                      onChange={(e) => setBusinessEmail(e.target.value)}
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Business Email *
+                      </label>
+                      <input
+                        type="email"
+                        value={businessEmail}
+                        onChange={(e) => setBusinessEmail(e.target.value)}
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
 
-                  <div className="relative">
-                    <label className="block text-sm font-medium text-green-400 mb-2">
-                      Country *
-                    </label>
-                    <input
-                      type="text"
-                      value={countrySearch}
-                      onChange={handleCountrySearch}
-                      onFocus={() => setShowCountryDropdown(true)}
-                      placeholder="Search for a country..."
-                      className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
-                    />
+                    <div className="relative">
+                      <label className="block text-sm font-medium text-green-400 mb-2">
+                        Country *
+                      </label>
+                      <input
+                        type="text"
+                        value={countrySearch}
+                        onChange={handleCountrySearch}
+                        onFocus={() => setShowCountryDropdown(true)}
+                        placeholder="Search for a country..."
+                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        required
+                      />
 
                       {/* Country Dropdown */}
                       {showCountryDropdown && (
@@ -1706,10 +1884,12 @@ const Partners = () => {
                             }}
                             className="w-4 h-4 appearance-none bg-gray-800 border border-gray-600 rounded cursor-pointer focus:ring-green-500 focus:ring-2 checked:bg-gray-800 checked:border-gray-600 relative"
                             style={{
-                              backgroundImage: isStudent ? `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e")` : 'none',
-                              backgroundSize: '100% 100%',
-                              backgroundPosition: 'center',
-                              backgroundRepeat: 'no-repeat'
+                              backgroundImage: isStudent
+                                ? `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e")`
+                                : "none",
+                              backgroundSize: "100% 100%",
+                              backgroundPosition: "center",
+                              backgroundRepeat: "no-repeat",
                             }}
                           />
                           <label
@@ -1852,13 +2032,17 @@ const Partners = () => {
                             type="checkbox"
                             id="privacy-check"
                             checked={privacyAccepted}
-                            onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                            onChange={(e) =>
+                              setPrivacyAccepted(e.target.checked)
+                            }
                             className="w-4 h-4 appearance-none bg-gray-800 border border-gray-600 rounded cursor-pointer focus:ring-green-500 focus:ring-2 checked:bg-gray-800 checked:border-gray-600 relative mt-1 flex-shrink-0"
                             style={{
-                              backgroundImage: privacyAccepted ? `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e")` : 'none',
-                              backgroundSize: '100% 100%',
-                              backgroundPosition: 'center',
-                              backgroundRepeat: 'no-repeat'
+                              backgroundImage: privacyAccepted
+                                ? `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e")`
+                                : "none",
+                              backgroundSize: "100% 100%",
+                              backgroundPosition: "center",
+                              backgroundRepeat: "no-repeat",
                             }}
                             required
                           />
