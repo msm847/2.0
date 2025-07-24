@@ -162,6 +162,19 @@ const Partners = () => {
     setIsSubmitting(true);
     setError("");
 
+    // Validation checks
+    if (!validateFullName(fullName)) {
+      setError("Please enter your full name (at least first and last name).");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!validateEmail(businessEmail)) {
+      setError("Please enter a valid email address.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       // Send contact form using email service
       await sendContactForm({
