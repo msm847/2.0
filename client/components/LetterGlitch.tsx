@@ -100,8 +100,8 @@ const LetterGlitch = ({
     width: "50px",
     height: "50px",
     borderRadius: "50%",
-    backgroundColor: "rgba(64, 255, 170, 0.1)",
-    border: "2px solid rgba(64, 255, 170, 0.3)",
+    backgroundColor: isPlaying ? "rgba(64, 255, 170, 0.2)" : "rgba(64, 255, 170, 0.1)",
+    border: `2px solid ${isPlaying ? "rgba(64, 255, 170, 0.6)" : "rgba(64, 255, 170, 0.3)"}`,
     color: "#40FFAA",
     cursor: "pointer",
     display: "flex",
@@ -111,6 +111,18 @@ const LetterGlitch = ({
     zIndex: 2,
     transition: "all 0.3s ease",
     backdropFilter: "blur(10px)",
+    boxShadow: isPlaying ? "0 0 20px rgba(64, 255, 170, 0.4)" : "none",
+    animation: isPlaying ? "pulse 1.5s ease-in-out infinite" : "none",
+  };
+
+  const soundWaveStyle: React.CSSProperties = {
+    position: "absolute",
+    bottom: "75px",
+    right: "30px",
+    display: isPlaying ? "flex" : "none",
+    alignItems: "center",
+    gap: "3px",
+    zIndex: 2,
   };
 
   return (
