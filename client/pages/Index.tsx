@@ -86,7 +86,7 @@ export default function Index() {
       }}>
         <LetterGlitch
           glitchSpeed={50}
-          centerVignette={true}
+          centerVignette={false}
           outerVignette={false}
           smooth={true}
         />
