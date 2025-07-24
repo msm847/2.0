@@ -216,7 +216,7 @@ const LetterGlitch = ({
       </audio>
 
       {/* Sound Wave Animation - Audio Indicator */}
-      {robotLoaded && (
+      {animationFinished && (
         <div
           style={{
             ...soundWaveStyle,
