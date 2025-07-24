@@ -178,7 +178,7 @@ export default function Index() {
             gap: "20px",
             justifyContent: "center",
             pointerEvents: "auto",
-            marginTop: "0.5rem",
+            marginTop: "0.2rem",
           }}
         >
           {/* Enter Simulation Button */}
