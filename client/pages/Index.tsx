@@ -131,6 +131,11 @@ export default function Index() {
           color: "white",
           pointerEvents: "none",
           zIndex: 3,
+          background: "rgba(16, 32, 28, 0.85)",
+          padding: "60px 80px",
+          borderRadius: "20px",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
       >
         <GradientText
@@ -148,17 +153,11 @@ export default function Index() {
               letterSpacing: "2px",
               whiteSpace: "nowrap",
               textShadow: `
-                0 0 20px rgba(255, 255, 255, 0.6),
-                0 0 40px rgba(255, 255, 255, 0.4),
-                0 0 60px rgba(255, 255, 255, 0.2),
-                0 4px 8px rgba(0, 0, 0, 0.9),
-                0 8px 16px rgba(0, 0, 0, 0.7),
-                0 12px 24px rgba(0, 0, 0, 0.5),
-                2px 2px 0px rgba(0, 0, 0, 1),
-                4px 4px 0px rgba(0, 0, 0, 0.8),
-                6px 6px 0px rgba(0, 0, 0, 0.6)
+                0 0 30px rgba(64, 255, 170, 0.8),
+                0 0 60px rgba(64, 255, 170, 0.4),
+                0 2px 4px rgba(0, 0, 0, 0.8)
               `,
-              WebkitTextStroke: "1px rgba(255, 255, 255, 0.1)",
+              filter: "brightness(1.2) contrast(1.1)",
             }}
           >
             Semantic Foresight Intelligence
@@ -177,17 +176,11 @@ export default function Index() {
               letterSpacing: "0.5px",
               lineHeight: 1.4,
               textShadow: `
-                0 0 15px rgba(255, 255, 255, 0.5),
-                0 0 30px rgba(255, 255, 255, 0.3),
-                0 0 45px rgba(255, 255, 255, 0.15),
-                0 2px 4px rgba(0, 0, 0, 0.9),
-                0 4px 8px rgba(0, 0, 0, 0.7),
-                0 6px 12px rgba(0, 0, 0, 0.5),
-                1px 1px 0px rgba(0, 0, 0, 1),
-                2px 2px 0px rgba(0, 0, 0, 0.8),
-                3px 3px 0px rgba(0, 0, 0, 0.6)
+                0 0 20px rgba(64, 255, 170, 0.6),
+                0 0 40px rgba(64, 255, 170, 0.3),
+                0 1px 2px rgba(0, 0, 0, 0.8)
               `,
-              WebkitTextStroke: "0.5px rgba(255, 255, 255, 0.1)",
+              filter: "brightness(1.1) contrast(1.05)",
             }}
           >
             Truth is not fixed. It is rendered by the logic that observes it.
