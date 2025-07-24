@@ -205,19 +205,7 @@ const Partners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              {/* 1. Micro-label */}
-              <div
-                className="font-mono font-bold"
-                style={{
-                  fontSize: "14px",
-                  letterSpacing: "0.12em",
-                  color: "#7BFF9C"
-                }}
-              >
-                STAKEHOLDERS
-              </div>
-
-              {/* 2. H2 Headline */}
+              {/* Main Headline */}
               <h2
                 className="font-semibold leading-tight"
                 style={{
