@@ -380,10 +380,8 @@ export default function Index() {
         >
           ENTER SIMULATION
         </button>
-      </div>
 
         {/* Team Button */}
-
         <button
           id="team-button"
           onClick={(e) => {
