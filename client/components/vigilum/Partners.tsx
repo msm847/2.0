@@ -581,9 +581,13 @@ const Partners = () => {
                         />
                         <label htmlFor="privacy-check" className="text-gray-300 text-sm leading-relaxed">
                           I have read and agree to the{" "}
-                          <span className="font-bold">
+                          <button
+                            type="button"
+                            onClick={() => setShowPrivacyModal(true)}
+                            className="text-green-400 hover:text-green-300 transition-colors text-sm font-bold"
+                          >
                             Vigilum Privacy Policy and Data Use Statement
-                          </span>.
+                          </button>.
                         </label>
                       </div>
                       <div className="text-xs text-gray-400 leading-relaxed pl-7">
