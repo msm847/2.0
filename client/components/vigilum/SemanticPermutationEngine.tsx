@@ -67,9 +67,9 @@ const OPERATORS = [
       "Explicit clause or mechanism nullifying existing constraint or escalation.",
   },
   {
-    id: "R",
-    name: "Reflex Maps",
-    fullName: "Reflex Maps and Institutional Behaviors",
+    id: "L",
+    name: "Liability Shift",
+    fullName: "Liability Transfer and Responsibility Displacement",
     weight: OPERATOR_WEIGHTS.R,
     symbol: "R",
     glyph: "⊕",
