@@ -1210,19 +1210,8 @@ const Partners = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setHasTriedSubmit(true);
     setIsSubmitting(true);
     setError("");
-
-    // Comprehensive validation
-    const errors = validateForm();
-    setValidationErrors(errors);
-
-    if (Object.keys(errors).length > 0) {
-      setError("Please fill in all required fields. See highlighted fields above.");
-      setIsSubmitting(false);
-      return;
-    }
 
     try {
       // Send contact form using email service
