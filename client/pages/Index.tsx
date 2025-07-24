@@ -93,7 +93,7 @@ export default function Index() {
         id="logo-container"
         style={{
           position: "absolute",
-          top: "60%",
+          top: "55%",
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "1.5rem",
@@ -110,6 +110,7 @@ export default function Index() {
             margin: 0,
             fontSize: "1.5rem",
             fontWeight: "900",
+            fontStyle: "normal",
           }}
         >
           VIGILUM
