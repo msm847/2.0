@@ -30,6 +30,7 @@ const LetterGlitch = ({
     // Wait for robot animation to fully finish, then show sound wave and play audio once
     setTimeout(() => {
       setAnimationFinished(true);
+      onAnimationFinished?.(); // Notify parent component that animation is finished
       if (audioRef.current && !hasPlayedOnce) {
         audioRef.current
           ?.play()
