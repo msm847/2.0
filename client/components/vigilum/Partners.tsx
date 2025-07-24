@@ -1744,16 +1744,9 @@ const Partners = () => {
                               : "Please provide as much relevant structural detail as possible regarding your institution, scenario, and objectives..."
                           }
                           rows={6}
-                          className={`w-full p-3 bg-gray-800 border rounded-lg text-white resize-none focus:outline-none transition-colors ${
-                            validationErrors.projectDescription
-                              ? 'border-red-500 focus:border-red-500 hover:border-red-400'
-                              : 'border-gray-600 focus:border-green-500'
-                          }`}
+                          className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
                           required
                         />
-                        {validationErrors.projectDescription && (
-                          <div className="text-red-400 text-xs mt-1">{validationErrors.projectDescription}</div>
-                        )}
                         <div className="absolute bottom-3 right-3 text-xs text-gray-500">
                           {projectDescription.length}/4000
                         </div>
