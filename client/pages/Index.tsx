@@ -133,28 +133,7 @@ export default function Index() {
       />
 
 
-      {/* Second Orb - Team */}
-      <div
-        id="orb-background-team"
-        style={{
-          position: "absolute",
-          top: "75%",
-          left: "60%",
-          transform: "translate(-50%, -50%)",
-          width: "396px",
-          height: "396px",
-          zIndex: 5,
-          opacity: 0.6,
-          pointerEvents: "auto",
-        }}
-      >
-        <Orb
-          hue={160}
-          hoverIntensity={0.2}
-          rotateOnHover={true}
-          forceHoverState={false}
-        />
-      </div>
+
 
       {/* Content Overlay */}
       <div
