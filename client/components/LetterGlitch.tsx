@@ -158,7 +158,7 @@ const LetterGlitch = ({
         }}
       >
         <iframe
-          src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/?head=false&headTracking=false"
+          src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
           frameBorder="0"
           width="100%"
           height="100%"
@@ -168,6 +168,7 @@ const LetterGlitch = ({
             height: "calc(100% - 200px)",
             mixBlendMode: "multiply",
             filter: "contrast(1.2) brightness(1.1)",
+            pointerEvents: "none", // Disable all mouse interactions
           }}
           onLoad={handleIframeLoad}
         />
