@@ -151,6 +151,96 @@ const Partners = () => {
     "xxx", "yyy", "zzz", "abc", "123", "fake", "false", "example", "sample", "demo"
   ];
 
+  // Top 250+ Universities worldwide
+  const TOP_UNIVERSITIES = [
+    // United States
+    "Harvard University", "Stanford University", "Massachusetts Institute of Technology", "California Institute of Technology",
+    "University of Chicago", "Princeton University", "University of Pennsylvania", "Yale University", "Columbia University",
+    "Northwestern University", "Duke University", "Johns Hopkins University", "Dartmouth College", "Brown University",
+    "Cornell University", "Rice University", "University of Notre Dame", "Vanderbilt University", "Washington University in St. Louis",
+    "Georgetown University", "University of California Berkeley", "University of California Los Angeles", "University of Southern California",
+    "Carnegie Mellon University", "University of Virginia", "Tufts University", "Wake Forest University", "University of Michigan",
+    "Boston College", "New York University", "University of Rochester", "Brandeis University", "Case Western Reserve University",
+    "Tulane University", "Boston University", "Northeastern University", "Rensselaer Polytechnic Institute", "University of Miami",
+    "University of California San Diego", "University of California Davis", "University of California Irvine", "University of California Santa Barbara",
+    "University of North Carolina Chapel Hill", "University of Wisconsin Madison", "University of Illinois Urbana-Champaign", "Georgia Institute of Technology",
+    "University of Texas Austin", "University of Washington", "Ohio State University", "Pennsylvania State University", "University of Florida",
+    "University of Minnesota", "Purdue University", "Texas A&M University", "University of Georgia", "Indiana University Bloomington",
+
+    // United Kingdom
+    "University of Oxford", "University of Cambridge", "Imperial College London", "London School of Economics", "University College London",
+    "King's College London", "University of Edinburgh", "University of Manchester", "University of Warwick", "University of Bristol",
+    "University of Glasgow", "University of Southampton", "University of Birmingham", "University of Sheffield", "University of Nottingham",
+    "University of Leeds", "University of Liverpool", "Newcastle University", "Cardiff University", "Queen's University Belfast",
+    "University of York", "University of Exeter", "University of Bath", "Lancaster University", "University of Surrey",
+    "Loughborough University", "University of Leicester", "University of East Anglia", "University of Reading", "Heriot-Watt University",
+
+    // Canada
+    "University of Toronto", "McGill University", "University of British Columbia", "University of Alberta", "University of Montreal",
+    "McMaster University", "University of Waterloo", "Queen's University", "University of Calgary", "University of Ottawa",
+    "Western University", "Dalhousie University", "University of Saskatchewan", "University of Manitoba", "Carleton University",
+    "Simon Fraser University", "York University", "Concordia University", "University of Victoria", "Memorial University of Newfoundland",
+
+    // Australia
+    "University of Melbourne", "Australian National University", "University of Sydney", "University of Queensland", "Monash University",
+    "University of New South Wales", "University of Western Australia", "University of Adelaide", "University of Technology Sydney",
+    "Queensland University of Technology", "Macquarie University", "Curtin University", "Deakin University", "Griffith University",
+    "La Trobe University", "University of South Australia", "University of Tasmania", "University of Wollongong", "Flinders University",
+
+    // Germany
+    "Technical University of Munich", "Ludwig Maximilian University of Munich", "Heidelberg University", "Humboldt University of Berlin",
+    "Free University of Berlin", "RWTH Aachen University", "University of Freiburg", "University of Göttingen", "University of Hamburg",
+    "University of Cologne", "University of Frankfurt", "University of Tübingen", "University of Bonn", "University of Stuttgart",
+    "Technical University of Berlin", "University of Münster", "University of Würzburg", "University of Erlangen-Nuremberg", "University of Mainz",
+
+    // France
+    "Sorbonne University", "École Polytechnique", "École Normale Supérieure", "University of Paris-Saclay", "CentraleSupélec",
+    "Sciences Po", "École des Ponts ParisTech", "University of Strasbourg", "University of Lyon", "Aix-Marseille University",
+    "University of Bordeaux", "University of Toulouse", "University of Lille", "University of Nantes", "University of Rennes",
+    "University of Montpellier", "University of Nice", "University of Grenoble", "INSA Lyon", "École Centrale Lyon",
+
+    // Netherlands
+    "University of Amsterdam", "Delft University of Technology", "Utrecht University", "Leiden University", "Eindhoven University of Technology",
+    "University of Groningen", "Erasmus University Rotterdam", "Wageningen University", "Maastricht University", "VU Amsterdam",
+    "Radboud University", "University of Twente", "Tilburg University", "Open University Netherlands", "HAN University of Applied Sciences",
+
+    // Switzerland
+    "ETH Zurich", "EPFL", "University of Zurich", "University of Geneva", "University of Basel", "University of Bern",
+    "University of Lausanne", "University of St. Gallen", "University of Fribourg", "University of Neuchâtel",
+
+    // Sweden
+    "Karolinska Institute", "KTH Royal Institute of Technology", "Stockholm University", "University of Gothenburg", "Lund University",
+    "Uppsala University", "Chalmers University of Technology", "Linköping University", "Umeå University", "Swedish University of Agricultural Sciences",
+
+    // Denmark
+    "University of Copenhagen", "Technical University of Denmark", "Aarhus University", "Aalborg University", "University of Southern Denmark",
+    "Copenhagen Business School", "Roskilde University", "IT University of Copenhagen",
+
+    // Norway
+    "University of Oslo", "Norwegian University of Science and Technology", "University of Bergen", "University of Tromsø",
+    "Norwegian School of Economics", "BI Norwegian Business School", "University of Stavanger", "University of Agder",
+
+    // Finland
+    "University of Helsinki", "Aalto University", "University of Turku", "University of Tampere", "University of Oulu",
+    "University of Jyväskylä", "University of Eastern Finland", "Åbo Akademi University",
+
+    // Italy
+    "Bocconi University", "Sapienza University of Rome", "University of Bologna", "University of Milan", "Politecnico di Milano",
+    "University of Padua", "University of Florence", "University of Naples", "University of Turin", "University of Pisa",
+    "University of Rome Tor Vergata", "University of Genoa", "University of Bari", "University of Palermo", "University of Catania",
+
+    // Spain
+    "University of Barcelona", "Autonomous University of Madrid", "Complutense University of Madrid", "Pompeu Fabra University",
+    "University of Valencia", "University of Seville", "University of Granada", "Polytechnic University of Madrid", "University of the Basque Country",
+    "University of Santiago de Compostela", "University of Zaragoza", "University of Salamanca", "University of Alcalá", "Carlos III University of Madrid",
+
+    // Asia-Pacific
+    "National University of Singapore", "Nanyang Technological University", "University of Hong Kong", "Hong Kong University of Science and Technology",
+    "Chinese University of Hong Kong", "City University of Hong Kong", "Seoul National University", "KAIST", "Yonsei University",
+    "Korea University", "University of Tokyo", "Kyoto University", "Osaka University", "Tokyo Institute of Technology",
+    "Tohoku University", "Nagoya University", "Kyushu University", "Hokkaido University", "Waseda University", "Keio University"
+  ];
+
   // Validation functions
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
