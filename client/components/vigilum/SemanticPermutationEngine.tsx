@@ -93,30 +93,32 @@ const OPERATORS = [
       "Increasing 'R' constrains variability and enforces systematic behavioral patterns.",
   },
   {
-    id: "V",
-    name: "Visibility Logic",
-    fullName: "Visibility Logic and Perceptual Control",
-    weight: OPERATOR_WEIGHTS.V,
-    symbol: "V",
-    glyph: "⟐",
-    affects: ["V", "L", "ε"],
+    id: "P",
+    name: "Proxy Actor",
+    fullName: "Proxy Actor Intermediation",
+    weight: 0.13,
+    symbol: "P",
+    glyph: "⧬",
+    affects: ["A", "R", "L"],
     position_sensitive: true,
-    override_targets: ["A"],
-    color: "#F59E0B", // Vigilum gold
+    override_targets: ["V"],
+    color: "#8B5CF6", // Vigilum purple
     description:
-      "This operator governs information visibility, transparency mechanisms, and perceptual control within the system. Values determine observability depth and selective disclosure patterns.",
+      "Proxy logic is low to moderate risk on its own, but forms hazardous channels when combined with liability shifts or soft operators. Proxy → Masking → Liability Shift = classic laundering pattern.",
     calculation: {
       formula:
-        "V = w₁ × transparency_level + w₂ × disclosure_selectivity + w₃ × observation_depth",
-      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+        "ϕ(P) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
+      weights: { w1: 0.13, w2: 0.16, w3: 0.20, w4: 0.07 },
       variables: {
-        transparency_level: "Base level of information accessibility",
-        disclosure_selectivity: "Degree of selective information filtering",
-        observation_depth: "Structural depth of observational mechanisms",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "If Proxy is sandwiched by Soft/Black operators, γ = +0.14; if Proxy precedes Audit, γ = –0.04"
       },
     },
     impact:
-      "Modifying 'V' alters perceptual boundaries and information asymmetries in the system.",
+      "Inserts an intermediary or delegated actor to perform/absorb institutional functions.",
   },
   {
     id: "ε",
