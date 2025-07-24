@@ -86,6 +86,7 @@ export default function Index() {
           centerVignette={false}
           outerVignette={false}
           smooth={true}
+          onAnimationFinished={() => setRobotAnimationFinished(true)}
         />
       </div>
 
