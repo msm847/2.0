@@ -559,7 +559,7 @@ const Partners = () => {
                             setProjectDescription(e.target.value);
                           }
                         }}
-                        placeholder="Describe your project, collaboration needs, institutional requirements, or stakeholder engagement opportunities..."
+                        placeholder="Summarize your organization, core challenge, and the context for potential engagement."
                         rows={6}
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
                         required
@@ -567,6 +567,9 @@ const Partners = () => {
                       <div className="absolute bottom-3 right-3 text-xs text-gray-500">
                         {projectDescription.length}/4000
                       </div>
+                    </div>
+                    <div className="text-gray-400 text-xs leading-relaxed mt-2">
+                      Vigilum is in advanced development. Inquiries are reviewed for research and pilot collaboration. Direct product demonstrations are not available.
                     </div>
                   </div>
 
