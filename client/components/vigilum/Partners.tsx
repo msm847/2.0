@@ -464,6 +464,8 @@ const Partners = () => {
     setIsStudent(false);
     setJobTitleSearch("");
     setShowJobTitleDropdown(false);
+    setCompanySearch("");
+    setShowUniversityDropdown(false);
     if (recaptchaRef.current) {
       recaptchaRef.current.reset();
     }
