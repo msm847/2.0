@@ -70,6 +70,26 @@ const Partners = () => {
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
 
+  // Common job titles for suggestions
+  const COMMON_JOB_TITLES = [
+    "Chief Executive Officer", "Chief Technology Officer", "Chief Financial Officer", "Chief Operating Officer",
+    "Managing Director", "Executive Director", "General Manager", "Operations Manager", "Project Manager",
+    "Senior Director", "Director", "Assistant Director", "Vice President", "Senior Vice President",
+    "Department Head", "Team Lead", "Senior Manager", "Program Manager", "Product Manager",
+    "Business Analyst", "Senior Analyst", "Research Analyst", "Policy Analyst", "Data Analyst",
+    "Senior Consultant", "Consultant", "Advisory Consultant", "Strategic Advisor", "Board Member",
+    "Government Official", "Minister", "Deputy Minister", "Secretary", "Under Secretary",
+    "Professor", "Associate Professor", "Assistant Professor", "Research Fellow", "Senior Researcher",
+    "Principal", "Coordinator", "Administrator", "Supervisor", "Specialist", "Senior Specialist",
+    "Legal Counsel", "General Counsel", "Compliance Officer", "Audit Manager", "Risk Manager"
+  ];
+
+  // Blacklisted fake entries
+  const BLACKLISTED_TITLES = [
+    "test", "asdf", "none", "n/a", "na", "null", "undefined", "admin", "user", "temp", "temporary",
+    "xxx", "yyy", "zzz", "abc", "123", "fake", "false", "example", "sample", "demo"
+  ];
+
   // Validation functions
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -79,6 +99,35 @@ const Partners = () => {
   const validateFullName = (name) => {
     const words = name.trim().split(/\s+/);
     return words.length >= 2 && words.every(word => word.length > 0);
+  };
+
+  const validateJobTitle = (title) => {
+    const trimmedTitle = title.trim();
+
+    // Check minimum length
+    if (trimmedTitle.length < 3) {
+      return { isValid: false, error: "Job title must be at least 3 characters long." };
+    }
+
+    // Check format (letters, spaces, hyphens only)
+    const formatRegex = /^[a-zA-Z\s\-]+$/;
+    if (!formatRegex.test(trimmedTitle)) {
+      return { isValid: false, error: "Job title can only contain letters, spaces, and hyphens." };
+    }
+
+    // Check for blacklisted entries
+    const lowerTitle = trimmedTitle.toLowerCase();
+    if (BLACKLISTED_TITLES.includes(lowerTitle)) {
+      return { isValid: false, error: "Please enter a valid professional job title." };
+    }
+
+    // Check minimum word count (2 words) OR minimum character count (3 chars)
+    const words = trimmedTitle.split(/\s+/).filter(word => word.length > 0);
+    if (words.length < 2 && trimmedTitle.length < 3) {
+      return { isValid: false, error: "Please enter a complete job title (at least 2 words or 3 characters)." };
+    }
+
+    return { isValid: true, error: null };
   };
 
   // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
