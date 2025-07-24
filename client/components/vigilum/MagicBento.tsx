@@ -31,11 +31,7 @@ const cardData = [
   },
 ];
 
-const createParticleElement = (
-  x,
-  y,
-  color = DEFAULT_GLOW_COLOR
-) => {
+const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
   const el = document.createElement("div");
   el.className = "particle";
   el.style.cssText = `
@@ -58,13 +54,7 @@ const calculateSpotlightValues = (radius) => ({
   fadeDistance: radius * 0.75,
 });
 
-const updateCardGlowProperties = (
-  card,
-  mouseX,
-  mouseY,
-  glow,
-  radius
-) => {
+const updateCardGlowProperties = (card, mouseX, mouseY, glow, radius) => {
   const rect = card.getBoundingClientRect();
   const relativeX = ((mouseX - rect.left) / rect.width) * 100;
   const relativeY = ((mouseY - rect.top) / rect.height) * 100;
@@ -102,8 +92,8 @@ const ParticleCard = ({
       createParticleElement(
         Math.random() * width,
         Math.random() * height,
-        glowColor
-      )
+        glowColor,
+      ),
     );
     particlesInitialized.current = true;
   }, [particleCount, glowColor]);
@@ -145,7 +135,7 @@ const ParticleCard = ({
         gsap.fromTo(
           clone,
           { scale: 0, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" }
+          { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" },
         );
 
         gsap.to(clone, {
@@ -260,7 +250,7 @@ const ParticleCard = ({
         Math.hypot(x, y),
         Math.hypot(x - rect.width, y),
         Math.hypot(x, y - rect.height),
-        Math.hypot(x - rect.width, y - rect.height)
+        Math.hypot(x - rect.width, y - rect.height),
       );
 
       const ripple = document.createElement("div");
@@ -290,7 +280,7 @@ const ParticleCard = ({
           duration: 0.8,
           ease: "power2.out",
           onComplete: () => ripple.remove(),
-        }
+        },
       );
     };
 
@@ -421,7 +411,7 @@ const GlobalSpotlight = ({
           e.clientX,
           e.clientY,
           glowIntensity,
-          spotlightRadius
+          spotlightRadius,
         );
       });
 
@@ -473,10 +463,7 @@ const GlobalSpotlight = ({
   return null;
 };
 
-const BentoCardGrid = ({
-  children,
-  gridRef
-}) => (
+const BentoCardGrid = ({ children, gridRef }) => (
   <div className="card-grid bento-section" ref={gridRef}>
     {children}
   </div>
@@ -535,7 +522,7 @@ const MagicBento = ({
             style: {
               backgroundColor: card.color,
               "--glow-color": glowColor,
-            }
+            },
           };
 
           if (enableStars) {
@@ -719,7 +706,7 @@ const MagicBento = ({
                     Math.hypot(x, y),
                     Math.hypot(x - rect.width, y),
                     Math.hypot(x, y - rect.height),
-                    Math.hypot(x - rect.width, y - rect.height)
+                    Math.hypot(x - rect.width, y - rect.height),
                   );
 
                   const ripple = document.createElement("div");
@@ -749,7 +736,7 @@ const MagicBento = ({
                       duration: 0.8,
                       ease: "power2.out",
                       onComplete: () => ripple.remove(),
-                    }
+                    },
                   );
                 };
 
