@@ -577,16 +577,14 @@ const Partners = () => {
                         Security Verification *
                       </label>
                       <div className="space-y-3">
-                        <div className="p-4 border border-gray-600 rounded-lg">
-                          <ReCAPTCHA
-                            ref={recaptchaRef}
-                            sitekey={RECAPTCHA_SITE_KEY}
-                            onChange={handleRecaptchaChange}
-                            onExpired={handleRecaptchaExpired}
-                            theme="dark"
-                            size="normal"
-                          />
-                        </div>
+                        <ReCAPTCHA
+                          ref={recaptchaRef}
+                          sitekey={RECAPTCHA_SITE_KEY}
+                          onChange={handleRecaptchaChange}
+                          onExpired={handleRecaptchaExpired}
+                          theme="dark"
+                          size="normal"
+                        />
                         {robotVerified && (
                           <motion.div
                             initial={{ opacity: 0, y: -10 }}
