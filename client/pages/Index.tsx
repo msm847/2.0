@@ -270,7 +270,9 @@ export default function Index() {
           style={{
             width: "200px",
             height: "50px",
-            background: "transparent",
+            background: "linear-gradient(45deg, #E5F3ED, #9DE6C6, #40FFAA, #9DE6C6, #E5F3ED)",
+            backgroundSize: "400% 400%",
+            animation: "gradientShift 6s ease infinite",
             border: "1px solid rgba(255, 255, 255, 0.2)",
             borderRadius: "25px",
             fontSize: "12px",
@@ -282,6 +284,7 @@ export default function Index() {
             transition: "all 0.3s ease",
             pointerEvents: "auto",
             padding: "0",
+            color: "#000",
           }}
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
