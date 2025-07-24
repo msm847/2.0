@@ -186,6 +186,23 @@ const LetterGlitch = ({
             pointerEvents: "none",
           }}
         />
+
+        {/* Invisible overlay to block head interactions */}
+        <div
+          style={{
+            position: "absolute",
+            top: "250px", // Adjust based on robot head position
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "150px", // Approximate head width
+            height: "150px", // Approximate head height
+            pointerEvents: "none", // Block mouse interactions for this area
+            zIndex: 3,
+            // Uncomment below for debugging - shows overlay area
+            // backgroundColor: "rgba(255, 0, 0, 0.2)",
+            // border: "2px solid red",
+          }}
+        />
       </div>
 
       {/* Audio for robot voice */}
