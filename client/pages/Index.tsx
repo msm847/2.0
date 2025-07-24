@@ -132,7 +132,7 @@ export default function Index() {
           pointerEvents: "none",
           zIndex: 3,
           background: "rgba(16, 32, 28, 0.85)",
-          padding: "60px 80px",
+          padding: "60px 80px 80px 80px",
           borderRadius: "20px",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -172,7 +172,7 @@ export default function Index() {
               fontFamily: "var(--font-body)",
               fontSize: "1.1rem",
               fontWeight: "600",
-              margin: "1rem 0 0 0",
+              margin: "1rem 0 2rem 0",
               letterSpacing: "0.5px",
               lineHeight: 1.4,
               textShadow: `
@@ -186,81 +186,96 @@ export default function Index() {
             Truth is not fixed. It is rendered by the logic that observes it.
           </p>
         </GradientText>
-      </div>
 
-      {/* Buttons Container */}
-      <div
-        id="buttons-container"
-        style={{
-          position: "absolute",
-          top: "58%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          display: "flex",
-          gap: "20px",
-          zIndex: 10,
-          pointerEvents: "auto",
-        }}
-      >
-        {/* Enter Simulation Button */}
-        <button
-          id="enter-button"
-          onClick={(e) => {
-            console.log("Button click event triggered");
-            e.preventDefault();
-            e.stopPropagation();
-            handleButtonClick();
-          }}
+        {/* Buttons Container - Inside content overlay */}
+        <div
+          id="buttons-container"
           style={{
-            width: "220px",
-            height: "50px",
-            background: "#61dca3",
-            border: "1px solid rgba(255, 255, 255, 0.2)",
-            borderRadius: "25px",
-            fontSize: "16px",
-            fontWeight: "500",
-            letterSpacing: "1px",
-            cursor: "pointer",
-            fontFamily: "var(--font-ui)",
-            textTransform: "uppercase",
-            transition: "all 0.3s ease",
+            display: "flex",
+            gap: "20px",
+            justifyContent: "center",
             pointerEvents: "auto",
-            padding: "0",
-            color: "#000",
+            marginTop: "1rem",
           }}
         >
-          ENTER SIMULATION
-        </button>
+          {/* Enter Simulation Button */}
+          <button
+            id="enter-button"
+            onClick={(e) => {
+              console.log("Button click event triggered");
+              e.preventDefault();
+              e.stopPropagation();
+              handleButtonClick();
+            }}
+            style={{
+              width: "220px",
+              height: "50px",
+              background: "transparent",
+              border: "2px solid rgba(97, 220, 163, 0.6)",
+              borderRadius: "25px",
+              fontSize: "16px",
+              fontWeight: "500",
+              letterSpacing: "1px",
+              cursor: "pointer",
+              fontFamily: "var(--font-ui)",
+              textTransform: "uppercase",
+              transition: "all 0.3s ease",
+              pointerEvents: "auto",
+              padding: "0",
+              color: "#61dca3",
+              textShadow: "0 0 10px rgba(97, 220, 163, 0.5)",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(97, 220, 163, 0.1)";
+              e.target.style.borderColor = "rgba(97, 220, 163, 0.8)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "transparent";
+              e.target.style.borderColor = "rgba(97, 220, 163, 0.6)";
+            }}
+          >
+            ENTER SIMULATION
+          </button>
 
-        {/* Team Button */}
-        <button
-          id="team-button"
-          onClick={(e) => {
-            console.log("Team button clicked - navigating to team page");
-            e.preventDefault();
-            e.stopPropagation();
-            navigate("/vigilum#team");
-          }}
-          style={{
-            width: "180px",
-            height: "50px",
-            background: "#61b3dc",
-            border: "1px solid rgba(255, 255, 255, 0.2)",
-            borderRadius: "25px",
-            color: "#000",
-            fontSize: "16px",
-            fontWeight: "500",
-            letterSpacing: "1px",
-            cursor: "pointer",
-            fontFamily: "var(--font-ui)",
-            textTransform: "uppercase",
-            transition: "all 0.3s ease",
-            pointerEvents: "auto",
-            padding: "0",
-          }}
-        >
-          TEAM
-        </button>
+          {/* Team Button */}
+          <button
+            id="team-button"
+            onClick={(e) => {
+              console.log("Team button clicked - navigating to team page");
+              e.preventDefault();
+              e.stopPropagation();
+              navigate("/vigilum#team");
+            }}
+            style={{
+              width: "180px",
+              height: "50px",
+              background: "transparent",
+              border: "2px solid rgba(97, 179, 220, 0.6)",
+              borderRadius: "25px",
+              color: "#61b3dc",
+              fontSize: "16px",
+              fontWeight: "500",
+              letterSpacing: "1px",
+              cursor: "pointer",
+              fontFamily: "var(--font-ui)",
+              textTransform: "uppercase",
+              transition: "all 0.3s ease",
+              pointerEvents: "auto",
+              padding: "0",
+              textShadow: "0 0 10px rgba(97, 179, 220, 0.5)",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(97, 179, 220, 0.1)";
+              e.target.style.borderColor = "rgba(97, 179, 220, 0.8)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "transparent";
+              e.target.style.borderColor = "rgba(97, 179, 220, 0.6)";
+            }}
+          >
+            TEAM
+          </button>
+        </div>
       </div>
 
       <style>{`
