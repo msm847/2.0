@@ -1768,6 +1768,9 @@ const Partners = () => {
                           Vigilum Privacy Policy and applicable international
                           data protection laws (including GDPR).
                         </div>
+                        {validationErrors.privacyAccepted && (
+                          <div className="text-red-400 text-xs mt-1 pl-7">{validationErrors.privacyAccepted}</div>
+                        )}
                       </div>
                     </div>
 
@@ -1778,11 +1781,20 @@ const Partners = () => {
                     >
                       <Button
                         type="submit"
-                        disabled={isSubmitting || !privacyAccepted}
-                        className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={isSubmitting}
+                        className={`px-8 py-3 font-medium rounded-lg transition-colors ${
+                          hasTriedSubmit && Object.keys(validationErrors).length > 0
+                            ? 'bg-red-600 hover:bg-red-700 text-white'
+                            : 'bg-green-600 hover:bg-green-700 text-white disabled:opacity-50 disabled:cursor-not-allowed'
+                        }`}
                         style={{ textTransform: "none" }}
                       >
-                        {isSubmitting ? "Sending..." : "Send an Inquiry"}
+                        {isSubmitting
+                          ? "Sending..."
+                          : hasTriedSubmit && Object.keys(validationErrors).length > 0
+                            ? "See Above - Fix Required Fields"
+                            : "Send an Inquiry"
+                        }
                       </Button>
                     </div>
                   </form>
