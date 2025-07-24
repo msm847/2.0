@@ -123,7 +123,7 @@ const Partners = () => {
     "Trainee", "Graduate Trainee", "Management Trainee", "Intern", "Fellow",
 
     // Non-Profit/NGO
-    "Executive Director", "Program Director", "Development Director", "Communications Director",
+    "Program Director", "Development Director", "Communications Director",
     "Program Manager", "Development Manager", "Outreach Manager", "Community Manager",
     "Program Officer", "Development Officer", "Communications Officer", "Outreach Coordinator",
     "Volunteer Coordinator", "Community Outreach Coordinator", "Grant Writer", "Fundraiser",
