@@ -1303,13 +1303,20 @@ const Partners = () => {
                 }}
               >
                 Systemic risk is a function of structure, not individual intent.
+                <br />
                 Exposure emerges from how legal, procedural, and contractual forms encode discretion, sequence overrides, and segment recognition.
+                <br />
                 Policy failure is not produced by lack of control, but by the simulation of constraint—where compliance format and extraction logic coincide.
                 <br /><br />
                 Effective oversight requires simulating clause order, override paths, and environmental interaction—projecting risk before materialization.
+                <br />
                 The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving regulatory architectures.
                 <br /><br />
-                We are advancing this platform as a structural engine for scenario modeling, legal-logic analysis, and governance stress testing. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
+                We are advancing this platform as a structural engine for scenario modeling, legal-logic analysis, and governance stress testing.
+                <br />
+                Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work.
+                <br />
+                All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
