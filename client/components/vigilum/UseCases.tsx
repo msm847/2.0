@@ -32,27 +32,26 @@ const UseCases = () => {
             >
               Retrospective Clause Mapping
             </motion.h2>
-            <div className="flex items-start justify-center max-w-4xl mx-auto relative">
+            <div className="flex justify-center max-w-4xl mx-auto relative">
               <p className="text-xl text-gray-400 font-light leading-relaxed text-center">
-                Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or sequence re-routes oversight, encodes risk transfer, or fragments recognition across the system.
+                Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or <span className="relative inline-block">sequence<div className="absolute text-gray-400 z-10" style={{ left: '100%', top: '-10px', marginLeft: '8px' }}>
+                  <svg
+                    width="100"
+                    height="80"
+                    viewBox="0 0 100 80"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {/* L-shaped arrow path: right then down */}
+                    <path d="M5 20 L40 20 L40 60" />
+                    {/* Arrow head pointing down */}
+                    <polyline points="35,55 40,60 45,55" />
+                  </svg>
+                </div></span> re-routes oversight, encodes risk transfer, or fragments recognition across the system.
               </p>
-              <div className="absolute right-0 top-0 text-gray-400 z-10" style={{ transform: 'translateY(-10px)' }}>
-                <svg
-                  width="120"
-                  height="80"
-                  viewBox="0 0 120 80"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {/* L-shaped arrow path: right then down */}
-                  <path d="M10 20 L50 20 L50 60" />
-                  {/* Arrow head pointing down */}
-                  <polyline points="45,55 50,60 55,55" />
-                </svg>
-              </div>
             </div>
           </div>
 
