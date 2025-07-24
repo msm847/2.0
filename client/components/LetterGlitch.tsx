@@ -22,11 +22,11 @@ const LetterGlitch = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
-  const handleSplineLoad = () => {
+  const handleIframeLoad = () => {
     setRobotLoaded(true);
     // Play audio once when robot animation fully loads
     if (audioRef.current && !hasPlayedOnce) {
-      // Small delay to ensure spline content is fully loaded
+      // Small delay to ensure iframe content is fully loaded
       setTimeout(() => {
         audioRef.current?.play().then(() => {
           setIsPlaying(true);
