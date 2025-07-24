@@ -615,7 +615,7 @@ const Partners = () => {
                             type="button"
                             onClick={() => setShowPrivacyModal(true)}
                             className="text-green-400 hover:text-green-300 transition-colors"
-                            style={{ fontSize: "inherit", fontWeight: "normal" }}
+                            style={{ fontSize: "inherit", fontWeight: "normal", textTransform: "none" }}
                           >
                             Privacy Policy
                           </button>{" "}
