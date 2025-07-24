@@ -651,17 +651,42 @@ const Partners = () => {
                     />
                   </div>
 
-                  <div>
+                  <div className="relative">
                     <label className="block text-sm font-medium text-green-400 mb-2">
                       Job Title *
                     </label>
                     <input
                       type="text"
                       value={jobTitle}
-                      onChange={(e) => setJobTitle(e.target.value)}
+                      onChange={handleJobTitleSearch}
+                      onFocus={() => setShowJobTitleDropdown(jobTitle.length > 0)}
+                      placeholder="Type your job title or select from suggestions..."
                       className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                       required
                     />
+
+                    {/* Job Title Dropdown */}
+                    {showJobTitleDropdown && filteredJobTitles.length > 0 && (
+                      <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                        {filteredJobTitles.map((title) => (
+                          <div
+                            key={title}
+                            onClick={() => selectJobTitle(title)}
+                            className="px-3 py-2 text-white hover:bg-green-600 cursor-pointer transition-colors"
+                          >
+                            {title}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Close dropdown when clicking outside */}
+                    {showJobTitleDropdown && (
+                      <div
+                        className="fixed inset-0 z-0"
+                        onClick={() => setShowJobTitleDropdown(false)}
+                      />
+                    )}
                   </div>
 
                   {/* Project Description */}
