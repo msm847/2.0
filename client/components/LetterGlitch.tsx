@@ -225,7 +225,11 @@ const LetterGlitch = ({
             position: "absolute",
           }}
           onClick={handleAudioClick}
-          title={isPlaying ? "Click to stop robot voice" : "Click to play robot voice"}
+          title={
+            isPlaying
+              ? "Click to stop robot voice"
+              : "Click to play robot voice"
+          }
         >
           {[...Array(4)].map((_, i) => (
             <div
