@@ -125,9 +125,22 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-
-
-
+      {/* LetterGlitch Background */}
+      <div style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 1,
+      }}>
+        <LetterGlitch
+          glitchSpeed={50}
+          centerVignette={true}
+          outerVignette={false}
+          smooth={true}
+        />
+      </div>
 
 
       {/* Content Overlay */}
