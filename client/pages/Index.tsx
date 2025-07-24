@@ -388,7 +388,7 @@ export default function Index() {
             borderTop: "1px solid rgba(255, 255, 255, 0.2)",
             borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
             borderRadius: "25px",
-            color: "rgba(255, 255, 255, 0.9)",
+            color: "#000",
             fontSize: "16px",
             fontWeight: "500",
             letterSpacing: "1.5px",
