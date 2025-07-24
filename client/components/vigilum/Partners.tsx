@@ -1427,30 +1427,26 @@ const Partners = () => {
                     fill="none"
                     aria-label="SIMULATION icon"
                   >
-                    {/* Circuit connections */}
-                    <g stroke="#7BFF9C" strokeWidth="2" fill="none">
-                      <line x1="2" y1="8" x2="10" y2="8" />
-                      <line x1="14" y1="8" x2="22" y2="8" />
-                      <line x1="26" y1="8" x2="30" y2="8" />
-                      <line x1="2" y1="16" x2="8" y2="16" />
-                      <line x1="12" y1="16" x2="20" y2="16" />
-                      <line x1="24" y1="16" x2="30" y2="16" />
-                      <line x1="2" y1="24" x2="10" y2="24" />
-                      <line x1="14" y1="24" x2="22" y2="24" />
-                      <line x1="26" y1="24" x2="30" y2="24" />
-                      {/* Vertical connections */}
-                      <line x1="16" y1="4" x2="16" y2="12" />
-                      <line x1="16" y1="20" x2="16" y2="28" />
+                    {/* Horizontal arrow (left to right) */}
+                    <g stroke="#7BFF9C" strokeWidth="2" fill="#7BFF9C">
+                      <line x1="4" y1="16" x2="28" y2="16" />
+                      <polygon points="24,12 28,16 24,20" />
                     </g>
-                    {/* Logic gates */}
-                    <rect x="10" y="6" width="4" height="4" fill="#7BFF9C" rx="1" />
-                    <rect x="22" y="6" width="4" height="4" fill="#7BFF9C" rx="1" />
-                    <rect x="8" y="14" width="4" height="4" fill="#7BFF9C" rx="1" />
-                    <rect x="20" y="14" width="4" height="4" fill="#7BFF9C" rx="1" />
-                    <rect x="10" y="22" width="4" height="4" fill="#7BFF9C" rx="1" />
-                    <rect x="22" y="22" width="4" height="4" fill="#7BFF9C" rx="1" />
-                    {/* Central processor */}
-                    <rect x="14" y="12" width="4" height="8" fill="#7BFF9C" stroke="#7BFF9C" strokeWidth="1" rx="1" />
+
+                    {/* Vertical arrow (top to bottom) */}
+                    <g stroke="#7BFF9C" strokeWidth="2" fill="#7BFF9C">
+                      <line x1="16" y1="4" x2="16" y2="28" />
+                      <polygon points="12,24 16,28 20,24" />
+                    </g>
+
+                    {/* Diagonal arrow (bottom-left to top-right) */}
+                    <g stroke="#7BFF9C" strokeWidth="2" fill="#7BFF9C">
+                      <line x1="6" y1="26" x2="26" y2="6" />
+                      <polygon points="22,4 26,6 24,10" />
+                    </g>
+
+                    {/* Central intersection circle */}
+                    <circle cx="16" cy="16" r="3" fill="#7BFF9C" stroke="#7BFF9C" strokeWidth="1" />
                   </svg>
                   <div>
                     <h3
