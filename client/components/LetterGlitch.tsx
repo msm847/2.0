@@ -126,15 +126,42 @@ const LetterGlitch = ({
         zIndex: -1,
       }} />
 
-      {/* Robot Animation */}
-      <iframe
-        src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
-        frameBorder="0"
-        width="100%"
-        height="100%"
-        style={iframeStyle}
-        onLoad={handleIframeLoad}
-      />
+      {/* Robot Animation with background replacement */}
+      <div style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        background: "#10201C",
+        zIndex: 0,
+      }}>
+        <iframe
+          src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          style={{
+            ...iframeStyle,
+            mixBlendMode: "multiply",
+            filter: "contrast(1.2) brightness(1.1)",
+          }}
+          onLoad={handleIframeLoad}
+        />
+        {/* Green overlay to replace white background */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#10201C",
+          mixBlendMode: "screen",
+          opacity: 0.7,
+          zIndex: 1,
+          pointerEvents: "none",
+        }} />
+      </div>
 
       {/* Audio for robot voice */}
       <audio
