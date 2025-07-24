@@ -50,6 +50,16 @@ const Partners = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
+    setRobotVerified(!!token);
+  };
+
+  const handleRecaptchaExpired = () => {
+    setRecaptchaToken("");
+    setRobotVerified(false);
+  };
+
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
     const maxSize = 20 * 1024 * 1024; // 20MB in bytes
