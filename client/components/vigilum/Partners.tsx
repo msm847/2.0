@@ -1132,7 +1132,7 @@ const Partners = () => {
       return;
     }
 
-    try:
+    try {
       // Send contact form using email service
       await sendContactForm({
         fullName,
