@@ -1420,7 +1420,7 @@ const Partners = () => {
                 style={{
                   fontFamily: "IBM Plex Sans, sans-serif",
                   fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
-                  color: "#EAF8E2",
+                  color: "#E5F3ED",
                 }}
               >
                 Shape Tomorrow's Governance
