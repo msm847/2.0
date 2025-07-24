@@ -169,11 +169,19 @@ export default function Index() {
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "1.1rem",
-              fontWeight: "400",
+              fontWeight: "600",
               margin: "1rem 0 0 0",
               letterSpacing: "0.5px",
               lineHeight: 1.4,
-              textShadow: "0 0 15px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.8)",
+              textShadow: `
+                0 2px 4px rgba(0, 0, 0, 0.9),
+                0 4px 8px rgba(0, 0, 0, 0.7),
+                0 6px 12px rgba(0, 0, 0, 0.5),
+                1px 1px 0px rgba(0, 0, 0, 1),
+                2px 2px 0px rgba(0, 0, 0, 0.8),
+                3px 3px 0px rgba(0, 0, 0, 0.6)
+              `,
+              WebkitTextStroke: "0.5px rgba(255, 255, 255, 0.1)",
             }}
           >
             Truth is not fixed. It is rendered by the logic that observes it.
