@@ -393,8 +393,8 @@ export default function Index() {
             navigate("/vigilum#team");
           }}
           style={{
-            width: "100%",
-            height: "100%",
+            width: "180px",
+            height: "50px",
             background: "transparent",
             border: "1px solid rgba(255, 255, 255, 0.15)",
             borderTop: "1px solid rgba(255, 255, 255, 0.2)",
