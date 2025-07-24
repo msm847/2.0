@@ -1767,6 +1767,9 @@ const Partners = () => {
                           onChange={(e) => {
                             if (e.target.value.length <= 4000) {
                               setProjectDescription(e.target.value);
+                              if (validationErrors.projectDescription) {
+                                setValidationErrors(prev => ({ ...prev, projectDescription: null }));
+                              }
                             }
                           }}
                           placeholder={
