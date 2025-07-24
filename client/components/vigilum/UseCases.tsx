@@ -19,7 +19,7 @@ const UseCases = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 mt-8">
             <motion.h2
               className="mb-8 font-semibold leading-tight"
               style={{
