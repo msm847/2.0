@@ -67,6 +67,8 @@ const Partners = () => {
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [isStudent, setIsStudent] = useState(false);
+  const [jobTitleSearch, setJobTitleSearch] = useState("");
+  const [showJobTitleDropdown, setShowJobTitleDropdown] = useState(false);
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
 
