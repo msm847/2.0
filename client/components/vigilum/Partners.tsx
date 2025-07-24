@@ -942,6 +942,66 @@ const Partners = () => {
     return { isValid: true, error: null };
   };
 
+  const validateForm = () => {
+    const errors = {};
+
+    // Full name validation
+    if (!fullName.trim()) {
+      errors.fullName = "Full name is required";
+    } else if (!validateFullName(fullName)) {
+      errors.fullName = "Please enter your full name (at least first and last name)";
+    }
+
+    // Email validation
+    if (!businessEmail.trim()) {
+      errors.businessEmail = "Email is required";
+    } else if (!validateEmail(businessEmail)) {
+      errors.businessEmail = "Please enter a valid email address";
+    }
+
+    // Country validation
+    if (!country.trim()) {
+      errors.country = "Country is required";
+    }
+
+    // Company/University validation
+    if (!company.trim()) {
+      errors.company = isStudent ? "University is required" : "Company/Institution is required";
+    }
+
+    // Job title validation (only for non-students)
+    if (!isStudent) {
+      if (!jobTitle.trim()) {
+        errors.jobTitle = "Job title is required";
+      } else {
+        const jobTitleValidation = validateJobTitle(jobTitle);
+        if (!jobTitleValidation.isValid) {
+          errors.jobTitle = jobTitleValidation.error;
+        }
+      }
+    } else if (isStudent && jobTitle.trim().length > 0) {
+      // Validate job title if student provided one
+      const jobTitleValidation = validateJobTitle(jobTitle);
+      if (!jobTitleValidation.isValid) {
+        errors.jobTitle = jobTitleValidation.error;
+      }
+    }
+
+    // Project description validation
+    if (!projectDescription.trim()) {
+      errors.projectDescription = isStudent
+        ? "Please describe your research interest or academic project"
+        : "Please describe your initiative, challenge, or collaboration interest";
+    }
+
+    // Privacy policy validation
+    if (!privacyAccepted) {
+      errors.privacyAccepted = "You must accept the privacy policy to continue";
+    }
+
+    return errors;
+  };
+
   // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
   // Current key is Google's test key - get your own from: https://www.google.com/recaptcha/admin
   const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
