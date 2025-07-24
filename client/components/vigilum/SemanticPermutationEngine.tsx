@@ -652,14 +652,15 @@ const SemanticPermutationEngine = () => {
 
   // Execute permutation calculation
   useEffect(() => {
+    const currentSeq = getCurrentSequence();
     const { finalState: newFinalState, trace } =
-      calculateTensorEffects(operatorSequence);
+      calculateTensorEffects(currentSeq);
     setFinalState(newFinalState);
     setExecutionTrace(trace);
     setMatrixData(generateMatrixData(trace));
 
     const result = generatePermutationResult(
-      operatorSequence,
+      currentSeq,
       newFinalState,
       trace,
     );
@@ -667,6 +668,8 @@ const SemanticPermutationEngine = () => {
     setCalculationBreakdowns(result.mathematical_result.details);
   }, [
     operatorSequence,
+    operatorSequenceV2,
+    operatorVersion,
     calculateTensorEffects,
     generateMatrixData,
     generatePermutationResult,
