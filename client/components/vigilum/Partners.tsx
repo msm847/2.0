@@ -559,7 +559,7 @@ const Partners = () => {
                             setProjectDescription(e.target.value);
                           }
                         }}
-                        placeholder="Summarize your organization, core challenge, and the context for potential engagement."
+                        placeholder="Please provide as much relevant structural detail as possible regarding your institution, scenario, and objectives..."
                         rows={6}
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
                         required
