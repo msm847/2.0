@@ -131,28 +131,7 @@ export default function Index() {
         blend={0.4}
         speed={0.56}
       />
-      {/* Orb Background */}
-      <div
-        id="orb-background"
-        style={{
-          position: "absolute",
-          top: "55%",
-          left: "40%",
-          transform: "translate(-50%, -50%)",
-          width: "528px",
-          height: "528px",
-          zIndex: 5,
-          opacity: 0.6,
-          pointerEvents: "auto",
-        }}
-      >
-        <Orb
-          hue={160}
-          hoverIntensity={0.7}
-          rotateOnHover={true}
-          forceHoverState={false}
-        />
-      </div>
+
 
       {/* Second Orb - Team */}
       <div
