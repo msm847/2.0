@@ -574,30 +574,6 @@ const Partners = () => {
 
                   {/* Verification and Privacy */}
                   <div className="space-y-6">
-                    {/* Google reCAPTCHA */}
-                    <div className="space-y-3">
-                      <div className="space-y-3">
-                        <ReCAPTCHA
-                          ref={recaptchaRef}
-                          sitekey={RECAPTCHA_SITE_KEY}
-                          onChange={handleRecaptchaChange}
-                          onExpired={handleRecaptchaExpired}
-                          theme="dark"
-                          size="normal"
-                        />
-                        {robotVerified && (
-                          <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="flex items-center space-x-2 text-green-400"
-                          >
-                            <Shield className="w-4 h-4" />
-                            <span className="text-sm font-medium">Verified ✓</span>
-                          </motion.div>
-                        )}
-                      </div>
-                    </div>
-
                     {/* Privacy Policy - Enterprise Grade */}
                     <div className="space-y-3">
                       <div className="flex items-start space-x-3">
@@ -624,6 +600,30 @@ const Partners = () => {
                       </div>
                       <div className="text-gray-400 leading-relaxed pl-7" style={{ fontSize: "10px" }}>
                         By submitting this inquiry, I authorize Vigilum to collect, store, and process my personal and institutional data for the purposes of partnership evaluation, product research, compliance analytics, and operational communication, in accordance with the Vigilum Privacy Policy and applicable international data protection laws (including GDPR).
+                      </div>
+                    </div>
+
+                    {/* Google reCAPTCHA */}
+                    <div className="space-y-3">
+                      <div className="space-y-3">
+                        <ReCAPTCHA
+                          ref={recaptchaRef}
+                          sitekey={RECAPTCHA_SITE_KEY}
+                          onChange={handleRecaptchaChange}
+                          onExpired={handleRecaptchaExpired}
+                          theme="dark"
+                          size="normal"
+                        />
+                        {robotVerified && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex items-center space-x-2 text-green-400"
+                          >
+                            <Shield className="w-4 h-4" />
+                            <span className="text-sm font-medium">Verified ✓</span>
+                          </motion.div>
+                        )}
                       </div>
                     </div>
 
