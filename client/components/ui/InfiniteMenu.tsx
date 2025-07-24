@@ -1169,8 +1169,20 @@ export default function InfiniteMenu({ items = [] }) {
   };
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
-      <canvas id="infinite-grid-menu-canvas" ref={canvasRef} />
+    <div style={{
+      position: "relative",
+      width: "100%",
+      height: "100%",
+      cursor: "grab"
+    }}>
+      <canvas
+        id="infinite-grid-menu-canvas"
+        ref={canvasRef}
+        style={{ cursor: "grab" }}
+        onMouseDown={(e) => e.target.style.cursor = "grabbing"}
+        onMouseUp={(e) => e.target.style.cursor = "grab"}
+        onMouseLeave={(e) => e.target.style.cursor = "grab"}
+      />
 
       {activeItem && (
         <>
