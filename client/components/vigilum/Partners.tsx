@@ -608,7 +608,7 @@ const Partners = () => {
                   <div className="flex justify-center mt-8">
                     <Button
                       type="submit"
-                      disabled={isSubmitting || !robotVerified}
+                      disabled={isSubmitting || !robotVerified || !privacyAccepted}
                       className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? "Sending..." : "Send Stakeholder Inquiry"}
