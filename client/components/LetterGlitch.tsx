@@ -17,6 +17,7 @@ const LetterGlitch = ({
   centerVignette = false,
   outerVignette = true,
   smooth = true,
+  onAnimationFinished,
 }: LetterGlitchProps) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [robotLoaded, setRobotLoaded] = useState(false);
