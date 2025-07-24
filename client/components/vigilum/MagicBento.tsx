@@ -4,45 +4,30 @@ import "./MagicBento.css";
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
-const DEFAULT_GLOW_COLOR = "132, 0, 255";
+const DEFAULT_GLOW_COLOR = "64, 255, 170";
 const MOBILE_BREAKPOINT = 768;
 
 const cardData = [
   {
-    color: "#060010",
-    title: "Analytics",
-    description: "Track user behavior",
-    label: "Insights",
+    color: "#10201C",
+    title: "Vision",
+    description:
+      "Vigilum pioneers Structural Governance Intelligence—the first system capable of translating complex legal and political networks into real-time risk signals that reveal system-level vulnerabilities before they become procedural reality.",
+    secondaryDescription:
+      "By computing intent rather than monitoring behavior, we enable institutions to foresee and prevent corruption that operates through compliance, not in violation of it.",
+    url: "/core-principles",
+    isVision: true,
   },
   {
-    color: "#060010",
-    title: "Dashboard",
-    description: "Centralized data view",
-    label: "Overview",
-  },
-  {
-    color: "#060010",
-    title: "Collaboration",
-    description: "Work together seamlessly",
-    label: "Teamwork",
-  },
-  {
-    color: "#060010",
-    title: "Automation",
-    description: "Streamline workflows",
-    label: "Efficiency",
-  },
-  {
-    color: "#060010",
-    title: "Integration",
-    description: "Connect favorite tools",
-    label: "Connectivity",
-  },
-  {
-    color: "#060010",
-    title: "Security",
-    description: "Enterprise-grade protection",
-    label: "Protection",
+    color: "#10201C",
+    title: "Founder's Note",
+    description:
+      "During my research in the MARS-REERS program at Columbia University, I discovered a fundamental gap in how we approach corruption. We often react to scandals rather than predict them. Traditional tools detect issues after rules are broken, but what if we could identify the structural flaws that enable corruption before any funds are spent or contracts signed?",
+    secondaryDescription:
+      "Vigilum emerged from this insight. Our mission is to render institutional structure legible before it breaks, to spotlight design flaws that breed corruption so they can be fixed in time. This isn't just detection — this is preemption.",
+    signature: "— Adam Kovarskas, Founder",
+    url: "/core-principles",
+    isFounder: true,
   },
 ];
 
