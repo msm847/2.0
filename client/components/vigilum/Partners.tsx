@@ -870,9 +870,9 @@ const Partners = () => {
                     {/* Job Title Dropdown */}
                     {showJobTitleDropdown && filteredJobTitles.length > 0 && (
                       <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                        {filteredJobTitles.map((title) => (
+                        {filteredJobTitles.map((title, index) => (
                           <div
-                            key={title}
+                            key={`job-title-${index}-${title}`}
                             onClick={() => selectJobTitle(title)}
                             className="px-3 py-2 text-white hover:bg-green-600 cursor-pointer transition-colors"
                           >
