@@ -19,15 +19,16 @@ const LetterGlitch = ({
 }: LetterGlitchProps) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [robotLoaded, setRobotLoaded] = useState(false);
+  const [animationFinished, setAnimationFinished] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
-    // Play audio once when robot animation fully finishes (longer delay)
-    if (audioRef.current && !hasPlayedOnce) {
-      // Longer delay to ensure animation sequence completes
-      setTimeout(() => {
+    // Wait for robot animation to fully finish, then show sound wave and play audio once
+    setTimeout(() => {
+      setAnimationFinished(true);
+      if (audioRef.current && !hasPlayedOnce) {
         audioRef.current
           ?.play()
           .then(() => {
@@ -38,8 +39,8 @@ const LetterGlitch = ({
             // If autoplay fails, user can still click button
             console.log("Autoplay prevented - user can click audio button");
           });
-      }, 4000); // Increased from 1000ms to 4000ms for animation completion
-    }
+      }
+    }, 4000); // Wait 4 seconds for animation to complete
   };
 
   const handleAudioClick = () => {
