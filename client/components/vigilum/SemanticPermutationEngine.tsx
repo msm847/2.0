@@ -578,7 +578,7 @@ const SemanticPermutationEngine = () => {
             className="text-white mb-8 font-semibold leading-tight"
             style={{
               fontFamily: "IBM Plex Sans, sans-serif",
-              fontSize: "clamp(2.4rem, 3.4vw, 3rem)"
+              fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
             }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -330,7 +330,8 @@ const PerceptionPerspective = () => {
                         onClick={() => setSelectedButton(label)}
                         style={{
                           display: "inline-block",
-                          backdropFilter: "blur(30px) saturate(200%) brightness(1.1)",
+                          backdropFilter:
+                            "blur(30px) saturate(200%) brightness(1.1)",
                           background: `${buttonBackground}, linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.1) 100%)`,
                           borderColor: isSelected
                             ? "rgba(255, 255, 255, 0.4)"

@@ -444,7 +444,7 @@ const TeamContact = () => {
               style={{
                 fontFamily: "IBM Plex Sans, sans-serif",
                 fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
-                color: "#EAF8E2"
+                color: "#EAF8E2",
               }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -468,8 +468,6 @@ const TeamContact = () => {
                 glowColor="132, 0, 255"
               />
             </div>
-
-
           </div>
         </div>
       </section>
