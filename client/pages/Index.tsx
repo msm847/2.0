@@ -152,12 +152,6 @@ export default function Index() {
               margin: 0,
               letterSpacing: "2px",
               whiteSpace: "nowrap",
-              textShadow: `
-                0 0 30px rgba(64, 255, 170, 0.8),
-                0 0 60px rgba(64, 255, 170, 0.4),
-                0 2px 4px rgba(0, 0, 0, 0.8)
-              `,
-              filter: "brightness(1.2) contrast(1.1)",
             }}
           >
             Semantic Foresight Intelligence
