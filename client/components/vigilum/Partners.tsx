@@ -1103,7 +1103,6 @@ const Partners = () => {
   const handleCountrySearch = (e) => {
     setCountrySearch(e.target.value);
     setShowCountryDropdown(true);
-    // Only clear error when user starts typing (but keep it visible until country is fully selected)
   };
 
   const selectCountry = (selectedCountry) => {
