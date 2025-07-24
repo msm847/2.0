@@ -282,30 +282,32 @@ const OPERATORS_V2 = [
       "Increasing 'N' amplifies network effects and relationship-based influence mechanisms.",
   },
   {
-    id: "C",
-    name: "Compliance Simulation",
-    fullName: "Compliance Simulation and Procedural Masking",
-    weight: 0.9,
-    symbol: "C",
+    id: "PM",
+    name: "Perception Management",
+    fullName: "Perception Management and Narrative Control",
+    weight: 0.05,
+    symbol: "PM",
     glyph: "⧪",
     affects: ["R", "L", "V"],
     position_sensitive: true,
     override_targets: ["T"],
     color: "#A855F7", // Violet
     description:
-      "This operator represents surface-level compliance mechanisms that simulate adherence while enabling substantive deviation. High values indicate sophisticated masking of non-compliance.",
+      "Often the closing move in risk chains—dangerous if last, less so if opening and subject to Audit/Visibility.",
     calculation: {
       formula:
-        "C = w₁ × surface_compliance + w₂ × deviation_masking + w₃ × procedural_simulation",
-      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+        "ϕ(PM) = 0.05·H + 0.28·S + 0.29·B + 0.01·W + γ(Seq,𝓔)",
+      weights: { w1: 0.05, w2: 0.28, w3: 0.29, w4: 0.01 },
       variables: {
-        surface_compliance: "Degree of apparent procedural adherence",
-        deviation_masking: "Sophistication of non-compliance concealment",
-        procedural_simulation: "Accuracy of compliance performance simulation",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "If PM is last in chain, γ = +0.10 (risk masked); if first, γ = –0.05"
       },
     },
     impact:
-      "Elevating 'C' enables systematic deviation while maintaining appearance of compliance.",
+      "Operators targeting narrative, optics, or 'surface' compliance (media, PR, simulated transparency).",
   },
 ];
 
