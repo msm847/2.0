@@ -440,11 +440,11 @@ const TeamContact = () => {
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <motion.div
-              className="text-center mb-16 pb-8 text-white font-display"
+              className="text-center mb-16 pb-8 font-semibold leading-tight"
               style={{
-                fontSize: "48px",
-                lineHeight: "60px",
-                fontWeight: "400",
+                fontFamily: "IBM Plex Sans, sans-serif",
+                fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
+                color: "#EAF8E2"
               }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
