@@ -180,10 +180,10 @@ const Partners = () => {
     setPhone("");
     setJobTitle("");
     setCompany("");
-    setCountry("");
-    setCountrySearch("");
+    setCountry("Lithuania");
+    setCountrySearch("Lithuania");
     setShowCountryDropdown(false);
-    setPhonePlaceholder("+1 (555) 123-4567");
+    setPhonePlaceholder("+370");
     setProjectDescription("");
     setAttachedFiles([]);
     setError("");
