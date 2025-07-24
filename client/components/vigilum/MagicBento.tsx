@@ -11,7 +11,7 @@ const cardData = [
   {
     color: "#10201C",
     title: "Mission",
-    description: "Vigilum transforms complex legal, contractual, and political frameworks into dynamic, machine-readable logic. By ingesting procurement metadata, clause structures, and governance network graphs, the platform delivers real-time integrity signals that unearth hidden institutional risk before it hardens into policy failure. Our modular engines—from anomaly detectors to NLP clause analyzers and political graph mappers—operate in harmony to expose how design choices diffuse accountability. Through seamless API integration and intuitive dashboards, Vigilum equips regulators, multilateral bodies, and civic actors to anticipate structural vulnerabilities, optimize interventions, and protect public resources with precision and agility.",
+    description: "This unified structural intelligence system ingests legal, procedural, network, and enforcement data to preemptively close corruption pathways. Inspired by Aladdin's orchestration of risk management, its modular engines integrate anomaly detection, clause analysis, influence mapping, and enforcement tracking into a single pane of glass. Machine-powered diagnostics simulate future governance scenarios, quantify institutional exposure in real time, and trigger automated interventions before design flaws become systemic failures.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
@@ -20,7 +20,7 @@ const cardData = [
   {
     color: "#10201C",
     title: "Vision",
-    description: "Vigilum envisions a world where structural intelligence guides every governance decision. We aim to replace reactive audits with a living risk index that blends textual analysis, anomaly detection, network mapping, and enforcement monitoring. By democratizing these insights through our Civic Signal Channel, we foster a global community of oversight actors—regulators, researchers, and citizens—united to transform opaque systems into resilient architectures. In this future, latent compromise becomes legible, and institutional design itself prevents integrity failures rather than responding to them.",
+    description: "Our vision is to set the global standard for institutional integrity—an intelligent foresight engine that outpaces reactive audits with a continuous structural risk index. Inspired by market-shaping platforms, we aim for every contract, tender, and enforcement action to be scored, monitored, and optimized within a governance operating system. By democratizing advanced analytics and embedding transparent signal flows into policy and funding decisions, we will render corruption traceable and ultimately unexecutable at its design stage.",
     secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
