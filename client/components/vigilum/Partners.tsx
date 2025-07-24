@@ -1434,18 +1434,25 @@ const Partners = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Personal Information - Single Column */}
-                    <div>
-                      <label className="block text-sm font-medium text-green-400 mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                        required
-                      />
-                    </div>
+                  <div>
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      className={`w-full p-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${
+                        validationErrors.fullName
+                          ? 'border-red-500 focus:border-red-500 hover:border-red-400'
+                          : 'border-gray-600 focus:border-green-500'
+                      }`}
+                      required
+                    />
+                    {validationErrors.fullName && (
+                      <div className="text-red-400 text-xs mt-1">{validationErrors.fullName}</div>
+                    )}
+                  </div>
 
                     <div>
                       <label className="block text-sm font-medium text-green-400 mb-2">
