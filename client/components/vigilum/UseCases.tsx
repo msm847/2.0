@@ -30,7 +30,7 @@ const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Structural Retrospectives
+              Retrospective Clause Mapping
             </motion.h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
               Structural analysis of EU procurement directive clauses revealing
