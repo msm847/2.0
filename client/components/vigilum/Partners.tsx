@@ -240,7 +240,44 @@ const Partners = () => {
     "National University of Singapore", "Nanyang Technological University", "University of Hong Kong", "Hong Kong University of Science and Technology",
     "Chinese University of Hong Kong", "City University of Hong Kong", "Seoul National University", "KAIST", "Yonsei University",
     "Korea University", "University of Tokyo", "Kyoto University", "Osaka University", "Tokyo Institute of Technology",
-    "Tohoku University", "Nagoya University", "Kyushu University", "Hokkaido University", "Waseda University", "Keio University"
+    "Tohoku University", "Nagoya University", "Kyushu University", "Hokkaido University", "Waseda University", "Keio University",
+
+    // Lithuania
+    "Vilnius University", "Kaunas University of Technology", "Vytautas Magnus University", "Vilnius Gediminas Technical University",
+    "Lithuanian University of Health Sciences", "Mykolas Romeris University", "Vilnius University of Applied Sciences",
+    "Kaunas University of Applied Sciences", "Lithuanian Academy of Music and Theatre", "Vilnius Academy of Arts",
+    "Lithuanian Sports University", "Šiauliai University", "Klaipėda University", "Aleksandras Stulginskis University",
+
+    // Latvia
+    "University of Latvia", "Riga Technical University", "Latvia University of Life Sciences and Technologies",
+    "Riga Stradiņš University", "Daugavpils University", "Liepāja University", "Ventspils University of Applied Sciences",
+    "BA School of Business and Finance", "Art Academy of Latvia", "Jāzeps Vītols Latvian Academy of Music",
+    "Latvian Academy of Sport Education", "Turība University", "RISEBA University of Applied Sciences",
+
+    // Estonia
+    "University of Tartu", "Tallinn University of Technology", "Tallinn University", "Estonian University of Life Sciences",
+    "Estonian Academy of Arts", "Estonian Academy of Music and Theatre", "Estonian Maritime Academy",
+    "Tallinn Health Care College", "Estonian Entrepreneurship University of Applied Sciences", "Nord University",
+
+    // Ukraine
+    "Taras Shevchenko National University of Kyiv", "National Technical University of Ukraine", "Lviv Polytechnic National University",
+    "Ivan Franko National University of Lviv", "V.N. Karazin Kharkiv National University", "National University of Kyiv-Mohyla Academy",
+    "Kyiv National Economic University", "National Aviation University", "Odessa National University", "Dnipro University of Technology",
+    "Sumy State University", "Zaporizhzhia National University", "Chernivtsi National University", "Ternopil National Economic University",
+    "Ukrainian Catholic University", "Borys Grinchenko Kyiv University", "National University of Life and Environmental Sciences of Ukraine",
+    "Kharkiv National University of Radio Electronics", "National Technical University Kharkiv Polytechnic Institute",
+    "Donetsk National University", "Poltava University of Economics and Trade", "Uzhhorod National University",
+
+    // Poland
+    "University of Warsaw", "Jagiellonian University", "Warsaw University of Technology", "AGH University of Science and Technology",
+    "University of Wrocław", "Adam Mickiewicz University", "Gdańsk University of Technology", "University of Gdańsk",
+    "Nicolaus Copernicus University", "Łódź University of Technology", "University of Łódź", "Silesian University of Technology",
+    "University of Silesia", "Poznań University of Technology", "Wrocław University of Science and Technology",
+    "Cracow University of Technology", "Medical University of Warsaw", "Medical University of Gdańsk", "University of Economics in Katowice",
+    "Warsaw School of Economics", "Kozminski University", "SWPS University", "Cardinal Stefan Wyszyński University",
+    "Catholic University of Lublin", "University of Szczecin", "West Pomeranian University of Technology", "Rzeszów University of Technology",
+    "University of Rzeszów", "Maria Curie-Skłodowska University", "Lublin University of Technology", "Białystok University of Technology",
+    "University of Białystok", "Opole University", "Jan Kochanowski University", "Częstochowa University of Technology"
   ];
 
   // Validation functions
