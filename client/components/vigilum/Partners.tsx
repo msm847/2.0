@@ -600,11 +600,25 @@ const Partners = () => {
                   </div>
 
                   {/* Submit Button - Centered with extended spacing */}
-                  <div className="flex justify-center mt-10 mb-6">
+                  <div
+                    className="flex justify-center"
+                    style={{
+                      marginTop: "3rem",
+                      marginBottom: "2rem",
+                      paddingTop: "1rem",
+                      paddingBottom: "1rem"
+                    }}
+                  >
                     <Button
                       type="submit"
                       disabled={isSubmitting || !robotVerified || !privacyAccepted}
-                      className="px-10 py-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      style={{
+                        paddingLeft: "2.5rem",
+                        paddingRight: "2.5rem",
+                        paddingTop: "1rem",
+                        paddingBottom: "1rem"
+                      }}
                     >
                       {isSubmitting ? "Sending..." : "Send Stakeholder Inquiry"}
                     </Button>
