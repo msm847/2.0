@@ -1387,16 +1387,16 @@ const Partners = () => {
                   </div>
                 </div>
 
-                {/* Strategic Partnerships */}
+                {/* SIMULATION */}
                 <div className="flex items-start" style={{ gap: "16px" }}>
-                  <Users
+                  <Shield
                     className="flex-shrink-0 mt-1"
                     style={{
                       width: "32px",
                       height: "32px",
                       color: "#7BFF9C",
                     }}
-                    aria-label="Strategic Partnerships icon"
+                    aria-label="SIMULATION icon"
                   />
                   <div>
                     <h3
@@ -1407,7 +1407,7 @@ const Partners = () => {
                         color: "#EAF8E2",
                       }}
                     >
-                      Strategic Partnerships
+                      SIMULATION
                     </h3>
                     <p
                       style={{
@@ -1417,8 +1417,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Co-create pilots, research, or integrity labs that
-                      stress-test governance at scale.
+                      Simulate alternative clause sequences and environmental settings to project risk space and expose pre-encoded extraction logic.
                     </p>
                   </div>
                 </div>
