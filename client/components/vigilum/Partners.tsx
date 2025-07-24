@@ -546,9 +546,6 @@ const Partners = () => {
                   <div className="space-y-6">
                     {/* Google reCAPTCHA */}
                     <div className="space-y-3">
-                      <label className="block text-sm font-medium text-green-400">
-                        Security Verification *
-                      </label>
                       <div className="space-y-3">
                         <ReCAPTCHA
                           ref={recaptchaRef}
