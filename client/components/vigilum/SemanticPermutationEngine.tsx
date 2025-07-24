@@ -575,16 +575,16 @@ const SemanticPermutationEngine = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
-            className="text-white mb-8 font-mono font-bold"
+            className="text-white mb-8 font-semibold leading-tight"
             style={{
-              fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-              lineHeight: "1.2",
+              fontFamily: "IBM Plex Sans, sans-serif",
+              fontSize: "clamp(2.4rem, 3.4vw, 3rem)"
             }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            SEMANTIC PERMUTATION ENGINE
+            Semantic Permutation Engine
           </motion.h2>
           <p className="text-xl text-gray-400 font-mono max-w-4xl mx-auto leading-relaxed">
             Mathematical operators governing structural logic permutation
