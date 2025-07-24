@@ -379,9 +379,7 @@ export default function Index() {
           style={{
             width: "180px",
             height: "50px",
-            background: "linear-gradient(45deg, #E5F3ED, #9DE6C6, #40FFAA, #9DE6C6, #E5F3ED)",
-            backgroundSize: "400% 400%",
-            animation: "gradientShift 6s ease infinite",
+            background: "#61b3dc",
             border: "1px solid rgba(255, 255, 255, 0.2)",
             borderRadius: "25px",
             color: "#000",
