@@ -1742,8 +1742,8 @@ const Partners = () => {
                     {/* Verification and Privacy */}
                     <div className="space-y-6">
                       {/* Privacy Policy - Enterprise Grade */}
-                      <div className="space-y-3">
-                        <div className="flex items-start space-x-3">
+                      <div className="space-y-4">
+                        <div className="flex items-start space-x-4 py-2">
                           <input
                             type="checkbox"
                             id="privacy-check"
