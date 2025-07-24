@@ -214,8 +214,8 @@ const LetterGlitch = ({
         Your browser does not support the audio element.
       </audio>
 
-      {/* Sound Wave Animation - Only Audio Indicator */}
-      {robotLoaded && isPlaying && (
+      {/* Sound Wave Animation - Audio Indicator */}
+      {robotLoaded && (
         <div
           style={{
             ...soundWaveStyle,
@@ -225,7 +225,7 @@ const LetterGlitch = ({
             position: "absolute",
           }}
           onClick={handleAudioClick}
-          title="Click to stop robot voice"
+          title={isPlaying ? "Click to stop robot voice" : "Click to play robot voice"}
         >
           {[...Array(4)].map((_, i) => (
             <div
@@ -236,7 +236,7 @@ const LetterGlitch = ({
                 backgroundColor: isPlaying ? "#40FFAA" : "#6B8673",
                 borderRadius: "1px",
                 animation: isPlaying ? `soundWave 0.6s ease-in-out infinite ${i * 0.1}s` : "none",
-                opacity: 1,
+                opacity: isPlaying ? 1 : 0.6,
               }}
             />
           ))}
