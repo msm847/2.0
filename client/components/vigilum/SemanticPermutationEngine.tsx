@@ -156,9 +156,9 @@ const OPERATORS = [
     affects: ["L", "P", "V"],
     position_sensitive: true,
     override_targets: ["A", "R"],
-    color: "#10B981", // Vigilum mint
+    color: "#EF4444", // Vigilum red
     description:
-      "This operator represents direct nullification and override mechanisms that bypass standard procedural constraints. Active values indicate systematic constraint circumvention.",
+      "Reflex risk is contextual: reduces actor discretion, but can be weaponized if environment operator (𝓔) is high entropy/disordered.",
     calculation: {
       formula:
         "O = w₁ × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
