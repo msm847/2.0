@@ -8,6 +8,7 @@ import LetterGlitch from "@/components/LetterGlitch";
 export default function Index() {
   const navigate = useNavigate();
   const [animationPlayed, setAnimationPlayed] = useState(false);
+  const [robotAnimationFinished, setRobotAnimationFinished] = useState(false);
 
   useEffect(() => {
     setupAnimationTrigger();
