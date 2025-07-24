@@ -1503,7 +1503,12 @@ const Partners = () => {
                     <input
                       type="text"
                       value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
+                      onChange={(e) => {
+                        setFullName(e.target.value);
+                        if (validationErrors.fullName) {
+                          setValidationErrors(prev => ({ ...prev, fullName: null }));
+                        }
+                      }}
                       className={`w-full p-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${
                         validationErrors.fullName
                           ? 'border-red-500 focus:border-red-500 hover:border-red-400'
