@@ -587,15 +587,7 @@ const Partners = () => {
                         </label>
                       </div>
                       <div className="text-xs text-gray-400 leading-relaxed pl-7">
-                        By submitting this inquiry, I authorize Vigilum to collect, store, and process my personal and institutional data for the purposes of partnership evaluation, product research, compliance analytics, and operational communication, in accordance with the{" "}
-                        <button
-                          type="button"
-                          onClick={() => setShowPrivacyModal(true)}
-                          className="text-green-400 hover:text-green-300 transition-colors text-xs"
-                        >
-                          Vigilum Privacy Policy
-                        </button>{" "}
-                        and applicable international data protection laws (including GDPR).
+                        By submitting this inquiry, I authorize Vigilum to collect, store, and process my personal and institutional data for the purposes of partnership evaluation, product research, compliance analytics, and operational communication, in accordance with the Vigilum Privacy Policy and applicable international data protection laws (including GDPR).
                       </div>
                     </div>
 
