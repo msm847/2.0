@@ -184,12 +184,16 @@ const ModuleGrid = () => {
         {/* Header */}
         <div className="text-center mb-16 mt-8">
           <motion.h2
-            className="text-display-lg text-white mb-8"
+            className="text-white mb-8 font-semibold leading-tight"
+            style={{
+              fontFamily: "IBM Plex Sans, sans-serif",
+              fontSize: "clamp(2.4rem, 3.4vw, 3rem)"
+            }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            CORE MODULES
+            Core Modules
           </motion.h2>
         </div>
 
