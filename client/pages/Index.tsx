@@ -139,7 +139,7 @@ export default function Index() {
           zIndex: 3,
           background: "rgba(16, 32, 28, 0.85)",
           padding: "60px 80px",
-          borderRadius: "20px",
+          borderRadius: "32px",
           backdropFilter: "blur(10px)",
           border: "1px solid rgba(255, 255, 255, 0.1)",
         }}
