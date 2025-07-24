@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 interface LetterGlitchProps {
   glitchColors?: string[];
@@ -17,16 +17,8 @@ const LetterGlitch = ({
   outerVignette = true,
   smooth = true,
 }: LetterGlitchProps) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number | null>(null);
-  const letters = useRef<
-    Array<{
-      char: string;
-      color: string;
-      targetColor: string;
-      colorProgress: number;
-    }>
-  >([]);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [robotLoaded, setRobotLoaded] = useState(false);
   const grid = useRef({ columns: 0, rows: 0 });
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const lastGlitchTime = useRef(Date.now());
