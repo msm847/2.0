@@ -122,7 +122,7 @@ const LetterGlitch = ({
 
   const soundWaveStyle: React.CSSProperties = {
     position: "absolute",
-    bottom: "75px",
+    bottom: "30px",
     right: "30px",
     alignItems: "center",
     gap: "3px",
