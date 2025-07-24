@@ -573,7 +573,7 @@ const SemanticPermutationEngine = () => {
     >
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-8">
           <motion.h2
             className="mb-8 font-semibold leading-tight"
             style={{
