@@ -22,9 +22,8 @@ const cardData = [
     color: "#10201C",
     title: "Mission",
     description: "",
-    secondaryDescription:
-      "Vigilum emerged from this insight. Our mission is to render institutional structure legible before it breaks, to spotlight design flaws that breed corruption so they can be fixed in time. This isn't just detection — this is preemption.",
-    signature: "— Adam Kovarskas, Founder",
+    secondaryDescription: "",
+    signature: "",
     url: "/core-principles",
     isFounder: true,
   },
