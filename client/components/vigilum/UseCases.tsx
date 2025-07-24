@@ -41,6 +41,22 @@ const UseCases = () => {
           </div>
 
           <div style={{ height: "600px", position: "relative" }}>
+            {/* Interactive instruction text */}
+            <div style={{
+              position: "absolute",
+              top: "20px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 10,
+              color: "rgba(255, 255, 255, 0.7)",
+              fontSize: "14px",
+              fontFamily: "monospace",
+              letterSpacing: "1px",
+              textAlign: "center",
+              pointerEvents: "none"
+            }}>
+              Interactive • Click & drag
+            </div>
             <InfiniteMenu
               items={[
                 {
