@@ -47,12 +47,14 @@ const UseCases = () => {
               left: "50%",
               transform: "translateX(-50%)",
               zIndex: 10,
-              color: "rgba(255, 255, 255, 0.7)",
+              color: "rgba(255, 255, 255, 0.9)",
               fontSize: "14px",
               fontFamily: "monospace",
               letterSpacing: "1px",
               textAlign: "center",
-              pointerEvents: "none"
+              pointerEvents: "none",
+              textShadow: "0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)",
+              filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))"
             }}>
               Interactive • Click & drag
             </div>
