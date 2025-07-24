@@ -39,31 +39,32 @@ const SYSTEM_LAYERS = {
 // Five Atomic Semantic Operators with Mathematical Definitions
 const OPERATORS = [
   {
-    id: "A",
-    name: "Actor Configuration",
-    fullName: "Actor Configuration and Legal Identity",
-    weight: OPERATOR_WEIGHTS.A,
-    symbol: "A",
-    glyph: "⚬",
-    affects: ["A", "P", "L"],
+    id: "O",
+    name: "Override",
+    fullName: "Override Functions and Nullification Logic",
+    weight: 0.34,
+    symbol: "O",
+    glyph: "⊗",
+    affects: ["L", "P", "V"],
     position_sensitive: true,
-    override_targets: ["V"],
-    color: "#3B82F6", // Vigilum blue
+    override_targets: ["A", "R"],
+    color: "#10B981", // Vigilum mint
     description:
-      "This operator quantifies the actor's legal agency and liability structure within the clause permutation. High values indicate expanded discretionary space and the presence of liability transfer mechanisms.",
+      "Override operators forcibly reset or override prior safeguards. Risk spikes when used late in a chain or immediately after ambiguous operators. Maximum risk if O follows Masking (M), Masking → Override (M→O): simulated transparency, hidden extraction. Minimum risk if O opens a sequence and is followed by White/Hard (O→A): visible reset, no stealth.",
     calculation: {
       formula:
-        "A = w₁ × legal_identity + w₂ × liability_vector + w₃ × configuration_depth",
-      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+        "ϕ(O) = 0.34·H + 0.05·S + 0.17·B + 0.04·W + γ(Seq,𝓔)",
+      weights: { w1: 0.34, w2: 0.05, w3: 0.17, w4: 0.04 },
       variables: {
-        legal_identity: "Actor's documented legal standing and recognition",
-        liability_vector:
-          "Degree of liability transfer or absorption mechanisms",
-        configuration_depth: "Structural complexity of actor arrangement",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "If O follows Masking or Soft actor split, γ = +0.11; if O follows Audit or Disclosure, γ = –0.07"
       },
     },
     impact:
-      "Raising 'A' amplifies potential for discretionary override in the final result.",
+      "Explicit clause or mechanism nullifying existing constraint or escalation.",
   },
   {
     id: "R",
