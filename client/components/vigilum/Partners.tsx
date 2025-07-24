@@ -1417,15 +1417,41 @@ const Partners = () => {
 
                 {/* SIMULATION */}
                 <div className="flex items-start" style={{ gap: "16px" }}>
-                  <Shield
+                  <svg
                     className="flex-shrink-0 mt-1"
                     style={{
                       width: "32px",
                       height: "32px",
-                      color: "#7BFF9C",
                     }}
+                    viewBox="0 0 32 32"
+                    fill="none"
                     aria-label="SIMULATION icon"
-                  />
+                  >
+                    {/* Circuit connections */}
+                    <g stroke="#7BFF9C" strokeWidth="2" fill="none">
+                      <line x1="2" y1="8" x2="10" y2="8" />
+                      <line x1="14" y1="8" x2="22" y2="8" />
+                      <line x1="26" y1="8" x2="30" y2="8" />
+                      <line x1="2" y1="16" x2="8" y2="16" />
+                      <line x1="12" y1="16" x2="20" y2="16" />
+                      <line x1="24" y1="16" x2="30" y2="16" />
+                      <line x1="2" y1="24" x2="10" y2="24" />
+                      <line x1="14" y1="24" x2="22" y2="24" />
+                      <line x1="26" y1="24" x2="30" y2="24" />
+                      {/* Vertical connections */}
+                      <line x1="16" y1="4" x2="16" y2="12" />
+                      <line x1="16" y1="20" x2="16" y2="28" />
+                    </g>
+                    {/* Logic gates */}
+                    <rect x="10" y="6" width="4" height="4" fill="#7BFF9C" rx="1" />
+                    <rect x="22" y="6" width="4" height="4" fill="#7BFF9C" rx="1" />
+                    <rect x="8" y="14" width="4" height="4" fill="#7BFF9C" rx="1" />
+                    <rect x="20" y="14" width="4" height="4" fill="#7BFF9C" rx="1" />
+                    <rect x="10" y="22" width="4" height="4" fill="#7BFF9C" rx="1" />
+                    <rect x="22" y="22" width="4" height="4" fill="#7BFF9C" rx="1" />
+                    {/* Central processor */}
+                    <rect x="14" y="12" width="4" height="8" fill="#7BFF9C" stroke="#7BFF9C" strokeWidth="1" rx="1" />
+                  </svg>
                   <div>
                     <h3
                       className="font-semibold mb-2"
