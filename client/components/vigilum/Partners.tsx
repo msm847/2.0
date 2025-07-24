@@ -621,7 +621,7 @@ const Partners = () => {
     "Free University of Berlin",
     "RWTH Aachen University",
     "University of Freiburg",
-    "University of Göttingen",
+    "University of G��ttingen",
     "University of Hamburg",
     "University of Cologne",
     "University of Frankfurt",
@@ -2128,7 +2128,7 @@ const Partners = () => {
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-white">
-                  Vigilum Privacy Policy and Data Use Statement
+                  Vigilum Privacy Policy Statement for Structural Engagement Intake
                 </h3>
                 <button
                   onClick={() => setShowPrivacyModal(false)}
@@ -2139,156 +2139,132 @@ const Partners = () => {
               </div>
               <div className="text-gray-300 space-y-6 text-sm leading-relaxed">
                 <section>
+                  <p><strong>Effective Date:</strong> July 24, 2025</p>
+                </section>
+
+                <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    1. Data Collection
+                    1. Introduction
                   </h4>
                   <p>
-                    We collect the following data when you submit an inquiry:
+                    Vigilum ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard the information you provide when you submit the Structural Engagement Intake form on our website.
                   </p>
-                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li>
-                      Contact information (name, business email, phone number)
-                    </li>
-                    <li>
-                      Professional details (job title, company/institution,
-                      country)
-                    </li>
-                    <li>Project descriptions and inquiries</li>
-                    <li>
-                      Technical logs (IP address, browser type, submission
-                      timestamp)
-                    </li>
-                    <li>reCAPTCHA verification data</li>
-                  </ul>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    2. Data Purpose
+                    2. Data Controller
                   </h4>
-                  <p>Your data is processed for the following purposes:</p>
-                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li>
-                      Institutional engagement and stakeholder communication
-                    </li>
-                    <li>Product research and development analytics</li>
-                    <li>Compliance monitoring and reporting</li>
-                    <li>Security and fraud prevention</li>
-                    <li>Legal and regulatory compliance</li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h4 className="text-lg font-semibold text-white mb-3">
-                    3. Data Storage and Security
-                  </h4>
-                  <p>We implement enterprise-grade security measures:</p>
-                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li>
-                      <strong>Retention:</strong> Data retained for 7 years or
-                      as required by law
-                    </li>
-                    <li>
-                      <strong>Location:</strong> Stored in secure, encrypted
-                      databases in the US and EU
-                    </li>
-                    <li>
-                      <strong>Security:</strong> AES-256 encryption, SOC 2
-                      compliant infrastructure
-                    </li>
-                    <li>
-                      <strong>Access:</strong> Restricted to authorized
-                      personnel only
-                    </li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h4 className="text-lg font-semibold text-white mb-3">
-                    4. Data Sharing
-                  </h4>
-                  <p className="text-green-400 font-medium">
-                    We never sell your data.
+                  <p>
+                    Vigilum UAB<br />
+                    Address: ___________________________<br />
+                    Email: ___________________________<br />
+                    Data Protection Officer: ___________________________
                   </p>
-                  <p className="mt-2">Limited sharing occurs only for:</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    3. Information We Collect
+                  </h4>
+                  <p>When you submit the Structural Engagement Intake form, we collect:</p>
                   <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                    <li>
-                      Institutional engagement and partnership development
-                    </li>
-                    <li>Legal compliance when required by law</li>
-                    <li>
-                      Trusted service providers under strict data processing
-                      agreements
-                    </li>
+                    <li><strong>Identifying Information:</strong> Full Name, Business Email, Country, Phone number (optional), Company/Institution, Job Title</li>
+                    <li><strong>Initiative Details:</strong> Description of your initiative, challenge, or collaboration interest (up to 4,000 characters)</li>
+                    <li><strong>Consent Confirmation:</strong> Your affirmative consent to this Privacy Policy and Data Use Statement</li>
                   </ul>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    5. Your Rights (GDPR & International Standards)
+                    4. How We Collect Your Information
                   </h4>
                   <ul className="list-disc list-inside ml-4 space-y-1">
-                    <li>
-                      <strong>Access:</strong> Request copies of your data
-                    </li>
-                    <li>
-                      <strong>Rectification:</strong> Correct inaccurate
-                      information
-                    </li>
-                    <li>
-                      <strong>Erasure:</strong> Request deletion of your data
-                    </li>
-                    <li>
-                      <strong>Portability:</strong> Receive your data in
-                      machine-readable format
-                    </li>
-                    <li>
-                      <strong>Objection:</strong> Opt-out of processing for
-                      specific purposes
-                    </li>
-                    <li>
-                      <strong>Restriction:</strong> Limit how we process your
-                      data
-                    </li>
+                    <li><strong>Directly from You:</strong> When you complete and submit the intake form.</li>
+                    <li><strong>Automatically:</strong> Via cookies and analytics tools when you visit our site (see Cookie Policy).</li>
                   </ul>
                 </section>
 
                 <section>
                   <h4 className="text-lg font-semibold text-white mb-3">
-                    6. Contact Information
+                    5. Purposes of Processing & Legal Basis
                   </h4>
-                  <div className="bg-gray-800 p-4 rounded-lg">
-                    <p>
-                      <strong>Data Protection Officer:</strong>
-                    </p>
-                    <p className="text-green-400 font-mono">
-                      privacy@vigilum.com
-                    </p>
-                    <p className="mt-2">
-                      <strong>Postal Address:</strong>
-                    </p>
-                    <p>
-                      Vigilum Data Protection
-                      <br />
-                      Columbia University MARS-REERS Program
-                      <br />
-                      New York, NY 10027, USA
-                    </p>
-                  </div>
+                  <p>We process your personal data for the following purposes under GDPR:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li><strong>Partnership Evaluation</strong> (Article 6(1)(b) – performance of a contract)</li>
+                    <li><strong>Product Research & Pilot Collaboration</strong> (Article 6(1)(f) – legitimate interests)</li>
+                    <li><strong>Compliance Analytics & Regulatory Reporting</strong> (Article 6(1)(c) – legal obligation)</li>
+                    <li><strong>Operational Communication</strong> (Article 6(1)(b) – performance of a contract)</li>
+                  </ul>
                 </section>
 
-                <section className="text-xs text-gray-400 border-t border-gray-600 pt-4">
-                  <p>
-                    <strong>Last Updated:</strong>{" "}
-                    {new Date().toLocaleDateString()}
-                  </p>
-                  <p>
-                    <strong>Governing Law:</strong> New York State, USA | EU
-                    GDPR Compliant
-                  </p>
-                  <p>
-                    <strong>Policy Version:</strong> 2.1
-                  </p>
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    6. Data Retention
+                  </h4>
+                  <p>We retain personal data only as long as necessary to fulfill the purposes above or as required by law.</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    7. Data Sharing & Recipients
+                  </h4>
+                  <p>Your data may be shared with:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li>Vigilum-affiliated researchers and engineers for analysis</li>
+                    <li>Third-party service providers for hosting, security, and analytics</li>
+                    <li>Regulatory authorities as required by law</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    8. International Transfers
+                  </h4>
+                  <p>Data may be transferred outside the EEA under Standard Contractual Clauses approved by the European Commission.</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    9. Your Rights
+                  </h4>
+                  <p>Under GDPR, you have the right to:</p>
+                  <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                    <li>Access your personal data</li>
+                    <li>Rectify inaccurate or incomplete data</li>
+                    <li>Erase data under certain conditions</li>
+                    <li>Restrict or object to processing</li>
+                    <li>Data portability where applicable</li>
+                    <li>Withdraw consent at any time without affecting prior lawful processing</li>
+                  </ul>
+                  <p className="mt-2">To exercise these rights, contact: ___________________________</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    10. Consent
+                  </h4>
+                  <p>By clicking "Send an Inquiry," you confirm that you have read and understood this Privacy Policy and expressly consent to our processing of your data for the purposes described herein.</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    11. Changes to This Policy
+                  </h4>
+                  <p>We will update this Privacy Policy to reflect changes in our data practices or legal obligations. The "Effective Date" at the top will indicate the last revision.</p>
+                </section>
+
+                <section>
+                  <h4 className="text-lg font-semibold text-white mb-3">
+                    12. Contact Us
+                  </h4>
+                  <p>For questions or complaints regarding this Privacy Policy or our data practices, please contact:</p>
+                  <div className="bg-gray-800 p-4 rounded-lg mt-2">
+                    <p><strong>Data Protection Officer</strong></p>
+                    <p>Email: ___________________________</p>
+                    <p>Phone: +370 _____________________</p>
+                  </div>
+                  <p className="mt-4 text-green-400 font-medium">Your privacy is important to us. Thank you for entrusting Vigilum with your information.</p>
                 </section>
               </div>
               <div className="mt-6 flex justify-end">
