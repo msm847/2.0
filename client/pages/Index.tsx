@@ -366,13 +366,7 @@ export default function Index() {
             `;
           }}
         >
-          <GradientText
-            colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
-            animationSpeed={6}
-            style={{ fontWeight: "500", textTransform: "uppercase", letterSpacing: "1px" }}
-          >
-            ENTER SIMULATION
-          </GradientText>
+          ENTER SIMULATION
         </button>
 
         {/* Team Button */}
