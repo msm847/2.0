@@ -197,9 +197,19 @@ const LetterGlitch = ({
         Your browser does not support the audio element.
       </audio>
 
-      {/* Sound Wave Animation */}
-      {isPlaying && (
-        <div style={soundWaveStyle}>
+      {/* Sound Wave Animation - Only Audio Indicator */}
+      {robotLoaded && (
+        <div
+          style={{
+            ...soundWaveStyle,
+            display: "flex",
+            cursor: "pointer",
+            padding: "10px",
+            position: "relative",
+          }}
+          onClick={handleAudioClick}
+          title={isPlaying ? "Click to stop robot voice" : "Click to play robot voice"}
+        >
           {[...Array(4)].map((_, i) => (
             <div
               key={i}
@@ -208,22 +218,27 @@ const LetterGlitch = ({
                 height: `${10 + i * 4}px`,
                 backgroundColor: "#40FFAA",
                 borderRadius: "1px",
-                animation: `soundWave 0.6s ease-in-out infinite ${i * 0.1}s`,
+                animation: isPlaying ? `soundWave 0.6s ease-in-out infinite ${i * 0.1}s` : "none",
+                opacity: isPlaying ? 1 : 0.5,
               }}
             />
           ))}
+          {/* Slash overlay when paused */}
+          {!isPlaying && (
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%) rotate(45deg)",
+                width: "20px",
+                height: "1px",
+                backgroundColor: "#40FFAA",
+                zIndex: 3,
+              }}
+            />
+          )}
         </div>
-      )}
-
-      {/* Audio Control Button */}
-      {robotLoaded && (
-        <button
-          onClick={handleAudioClick}
-          style={audioButtonStyle}
-          title={isPlaying ? "Stop robot voice" : "Play robot voice"}
-        >
-          {isPlaying ? "⏸" : "🔊"}
-        </button>
       )}
 
       {/* Vignette overlays */}
