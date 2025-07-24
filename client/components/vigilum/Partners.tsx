@@ -1114,6 +1114,9 @@ const Partners = () => {
     setJobTitle(value);
     setJobTitleSearch(value);
     setShowJobTitleDropdown(value.length > 0);
+    if (validationErrors.jobTitle) {
+      setValidationErrors(prev => ({ ...prev, jobTitle: null }));
+    }
   };
 
   const selectJobTitle = (selectedTitle) => {
