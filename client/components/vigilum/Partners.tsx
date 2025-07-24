@@ -549,7 +549,7 @@ const Partners = () => {
                   {/* Project Description */}
                   <div>
                     <label className="block text-sm font-medium text-green-400 mb-2">
-                      Tell us about your project *
+                      Describe Your Initiative, Challenge, or Collaboration Interest *
                     </label>
                     <div className="relative">
                       <textarea
