@@ -782,7 +782,10 @@ const SemanticPermutationEngine = () => {
             <div className="flex items-center gap-6">
               <div className="flex gap-2">
                 <button
-                  onClick={() => setOperatorVersion("v1")}
+                  onClick={() => {
+                    setOperatorVersion("v1");
+                    setFlippedCards(new Set());
+                  }}
                   className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
                     operatorVersion === "v1"
                       ? "border-green-400 bg-green-400/20 text-green-400"
@@ -792,7 +795,10 @@ const SemanticPermutationEngine = () => {
                   OPERATOR SEQUENCE V1
                 </button>
                 <button
-                  onClick={() => setOperatorVersion("v2")}
+                  onClick={() => {
+                    setOperatorVersion("v2");
+                    setFlippedCards(new Set());
+                  }}
                   className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 ${
                     operatorVersion === "v2"
                       ? "border-green-400 bg-green-400/20 text-green-400"
