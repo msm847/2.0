@@ -28,13 +28,16 @@ const LetterGlitch = ({
     if (audioRef.current && !hasPlayedOnce) {
       // Longer delay to ensure animation sequence completes
       setTimeout(() => {
-        audioRef.current?.play().then(() => {
-          setIsPlaying(true);
-          setHasPlayedOnce(true);
-        }).catch(() => {
-          // If autoplay fails, user can still click button
-          console.log("Autoplay prevented - user can click audio button");
-        });
+        audioRef.current
+          ?.play()
+          .then(() => {
+            setIsPlaying(true);
+            setHasPlayedOnce(true);
+          })
+          .catch(() => {
+            // If autoplay fails, user can still click button
+            console.log("Autoplay prevented - user can click audio button");
+          });
       }, 4000); // Increased from 1000ms to 4000ms for animation completion
     }
   };
@@ -100,7 +103,9 @@ const LetterGlitch = ({
     width: "50px",
     height: "50px",
     borderRadius: "50%",
-    backgroundColor: isPlaying ? "rgba(64, 255, 170, 0.2)" : "rgba(64, 255, 170, 0.1)",
+    backgroundColor: isPlaying
+      ? "rgba(64, 255, 170, 0.2)"
+      : "rgba(64, 255, 170, 0.1)",
     border: `2px solid ${isPlaying ? "rgba(64, 255, 170, 0.6)" : "rgba(64, 255, 170, 0.3)"}`,
     color: "#40FFAA",
     cursor: "pointer",
@@ -128,26 +133,30 @@ const LetterGlitch = ({
   return (
     <div style={containerStyle} className={className}>
       {/* Green background layer */}
-      <div style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#10201C",
-        zIndex: -1,
-      }} />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#10201C",
+          zIndex: -1,
+        }}
+      />
 
       {/* Robot Animation with background replacement */}
-      <div style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        background: "#10201C",
-        zIndex: 0,
-      }}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "#10201C",
+          zIndex: 0,
+        }}
+      >
         <iframe
           src="https://my.spline.design/nexbotrobotcharacterconcept-w4s24MAIQS4z8NrM3EJCw0RZ/"
           frameBorder="0"
@@ -163,26 +172,24 @@ const LetterGlitch = ({
           onLoad={handleIframeLoad}
         />
         {/* Green overlay to replace white background */}
-        <div style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "#10201C",
-          mixBlendMode: "screen",
-          opacity: 0.7,
-          zIndex: 1,
-          pointerEvents: "none",
-        }} />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#10201C",
+            mixBlendMode: "screen",
+            opacity: 0.7,
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        />
       </div>
 
       {/* Audio for robot voice */}
-      <audio
-        ref={audioRef}
-        preload="auto"
-        onEnded={() => setIsPlaying(false)}
-      >
+      <audio ref={audioRef} preload="auto" onEnded={() => setIsPlaying(false)}>
         <source
           src="https://cdn.builder.io/o/assets%2F41e98af6d24e4f21a2289029be813332%2F8e84c7ac708b412881d0ea909addd048?alt=media&token=8e2a75df-3e11-4f03-9345-e6d6a9e37bdf&apiKey=41e98af6d24e4f21a2289029be813332"
           type="audio/mpeg"
