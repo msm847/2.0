@@ -36,8 +36,8 @@ const Partners = () => {
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
 
-  // reCAPTCHA site key - you should add this to your environment variables
-  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // This is a test key, replace with your actual site key
+  // reCAPTCHA site key from environment variables
+  const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
   useEffect(() => {
     const handleScroll = () => {
