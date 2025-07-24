@@ -292,6 +292,8 @@ const Partners = () => {
     setRecaptchaToken("");
     setPrivacyAccepted(false);
     setIsStudent(false);
+    setJobTitleSearch("");
+    setShowJobTitleDropdown(false);
     if (recaptchaRef.current) {
       recaptchaRef.current.reset();
     }
