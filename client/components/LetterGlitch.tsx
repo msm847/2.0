@@ -141,10 +141,10 @@ const LetterGlitch = ({
       {/* Robot Animation with background replacement */}
       <div style={{
         position: "absolute",
-        top: "200px",
+        top: 0,
         left: 0,
         width: "100%",
-        height: "calc(100% - 200px)",
+        height: "100%",
         background: "#10201C",
         zIndex: 0,
       }}>
