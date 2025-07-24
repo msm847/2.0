@@ -78,6 +78,21 @@ const Partners = () => {
     setRobotVerified(false);
   };
 
+  const handleCountrySearch = (e) => {
+    setCountrySearch(e.target.value);
+    setShowCountryDropdown(true);
+  };
+
+  const selectCountry = (selectedCountry) => {
+    setCountry(selectedCountry);
+    setCountrySearch(selectedCountry);
+    setShowCountryDropdown(false);
+  };
+
+  const filteredCountries = COUNTRIES.filter(country =>
+    country.toLowerCase().includes(countrySearch.toLowerCase())
+  );
+
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files);
     const maxSize = 20 * 1024 * 1024; // 20MB in bytes
