@@ -171,6 +171,140 @@ const OPERATORS = [
   },
 ];
 
+// Five Additional Semantic Operators - V2
+const OPERATORS_V2 = [
+  {
+    id: "T",
+    name: "Temporal Fragmentation",
+    fullName: "Temporal Fragmentation and Schedule Control",
+    weight: 0.6,
+    symbol: "T",
+    glyph: "⧖",
+    affects: ["P", "ε", "A"],
+    position_sensitive: true,
+    override_targets: ["V"],
+    color: "#06B6D4", // Cyan
+    description:
+      "This operator controls temporal scheduling and deadline manipulation within the system. High values indicate compressed timeframes that limit thorough evaluation.",
+    calculation: {
+      formula:
+        "T = w₁ × schedule_compression + w₂ × deadline_manipulation + w₃ × temporal_asymmetry",
+      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+      variables: {
+        schedule_compression: "Degree of accelerated processing timelines",
+        deadline_manipulation: "Strategic timing control mechanisms",
+        temporal_asymmetry: "Unequal time allocation across actors",
+      },
+    },
+    impact:
+      "Increasing 'T' creates temporal pressure that constrains deliberative processes.",
+  },
+  {
+    id: "S",
+    name: "Scope Elasticity",
+    fullName: "Scope Elasticity and Boundary Manipulation",
+    weight: 0.4,
+    symbol: "S",
+    glyph: "⧨",
+    affects: ["L", "A", "P"],
+    position_sensitive: true,
+    override_targets: ["R"],
+    color: "#F97316", // Orange
+    description:
+      "This operator governs the expansion and contraction of procedural scope and definitional boundaries. Values determine flexibility in interpretation and application.",
+    calculation: {
+      formula:
+        "S = w₁ × boundary_flexibility + w₂ × scope_expansion + w₃ × definition_elasticity",
+      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+      variables: {
+        boundary_flexibility: "Degree of definitional boundary adaptation",
+        scope_expansion: "Capacity for procedural scope enlargement",
+        definition_elasticity: "Interpretive flexibility in rule application",
+      },
+    },
+    impact:
+      "Modifying 'S' alters the interpretive boundaries and scope flexibility of the system.",
+  },
+  {
+    id: "I",
+    name: "Information Asymmetry",
+    fullName: "Information Asymmetry and Knowledge Gradients",
+    weight: 0.8,
+    symbol: "I",
+    glyph: "⧉",
+    affects: ["V", "A", "L"],
+    position_sensitive: true,
+    override_targets: ["ε"],
+    color: "#EC4899", // Pink
+    description:
+      "This operator quantifies information distribution imbalances and knowledge access differentials. High values indicate systematic information hoarding or selective disclosure.",
+    calculation: {
+      formula:
+        "I = w₁ × access_differential + w₂ × knowledge_hoarding + w₃ × disclosure_timing",
+      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+      variables: {
+        access_differential: "Degree of unequal information access",
+        knowledge_hoarding: "Strategic retention of critical information",
+        disclosure_timing: "Temporal control over information release",
+      },
+    },
+    impact:
+      "Elevating 'I' creates systematic knowledge imbalances that favor informed actors.",
+  },
+  {
+    id: "N",
+    name: "Network Topology",
+    fullName: "Network Topology and Relationship Mapping",
+    weight: 0.3,
+    symbol: "N",
+    glyph: "⧬",
+    affects: ["A", "R", "P"],
+    position_sensitive: true,
+    override_targets: ["O"],
+    color: "#84CC16", // Lime
+    description:
+      "This operator maps the relational networks and dependency structures between system actors. Values determine the density and influence of relationship networks.",
+    calculation: {
+      formula:
+        "N = w₁ × network_density + w₂ × influence_centrality + w₃ × dependency_depth",
+      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+      variables: {
+        network_density: "Concentration of actor relationships",
+        influence_centrality: "Degree of centralized influence distribution",
+        dependency_depth: "Structural dependency complexity",
+      },
+    },
+    impact:
+      "Increasing 'N' amplifies network effects and relationship-based influence mechanisms.",
+  },
+  {
+    id: "C",
+    name: "Compliance Simulation",
+    fullName: "Compliance Simulation and Procedural Masking",
+    weight: 0.9,
+    symbol: "C",
+    glyph: "⧪",
+    affects: ["R", "L", "V"],
+    position_sensitive: true,
+    override_targets: ["T"],
+    color: "#A855F7", // Violet
+    description:
+      "This operator represents surface-level compliance mechanisms that simulate adherence while enabling substantive deviation. High values indicate sophisticated masking of non-compliance.",
+    calculation: {
+      formula:
+        "C = w₁ × surface_compliance + w₂ × deviation_masking + w₃ × procedural_simulation",
+      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+      variables: {
+        surface_compliance: "Degree of apparent procedural adherence",
+        deviation_masking: "Sophistication of non-compliance concealment",
+        procedural_simulation: "Accuracy of compliance performance simulation",
+      },
+    },
+    impact:
+      "Elevating 'C' enables systematic deviation while maintaining appearance of compliance.",
+  },
+];
+
 // Initial system state
 const INITIAL_STATE = {
   L: 0.5,
