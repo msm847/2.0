@@ -33,7 +33,9 @@ const UseCases = () => {
               Retrospective Clause Mapping
             </motion.h2>
             <p className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
-              Scroll through an interactive sphere of loophole profiles—each simulating how a single clause or sequence re-routes oversight, encodes risk transfer, or fragments recognition across the system.
+              Scroll through an interactive sphere of loophole profiles—each
+              simulating how a single clause or sequence re-routes oversight,
+              encodes risk transfer, or fragments recognition across the system.
             </p>
           </div>
 
