@@ -205,7 +205,10 @@ export default function Index() {
               width: "220px",
               height: "50px",
               background: "transparent",
-              border: "2px solid rgba(97, 220, 163, 0.6)",
+              border: "2px solid transparent",
+              backgroundImage: "linear-gradient(transparent, transparent), linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e)",
+              backgroundOrigin: "border-box",
+              backgroundClip: "padding-box, border-box",
               borderRadius: "25px",
               fontSize: "16px",
               fontWeight: "500",
@@ -216,8 +219,11 @@ export default function Index() {
               transition: "all 0.3s ease",
               pointerEvents: "auto",
               padding: "0",
-              color: "#61dca3",
-              textShadow: "0 0 10px rgba(97, 220, 163, 0.5)",
+              background: "linear-gradient(to right, #1a3d2e, #2d6b4f, #61dca3, #2d6b4f, #1a3d2e)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              textShadow: "none",
             }}
             onMouseEnter={(e) => {
               e.target.style.background = "rgba(97, 220, 163, 0.1)";
