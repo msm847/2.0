@@ -113,6 +113,12 @@ export default function Index() {
             margin: 0,
             fontSize: "1.5rem",
             fontWeight: "700",
+            textShadow: `
+              0 0 20px rgba(64, 255, 170, 0.8),
+              0 0 40px rgba(64, 255, 170, 0.4),
+              0 2px 4px rgba(0, 0, 0, 0.9)
+            `,
+            filter: "brightness(1.2)",
           }}
         >
           VIGILUM.AI
