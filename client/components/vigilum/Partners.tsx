@@ -1474,19 +1474,26 @@ const Partners = () => {
                     )}
                   </div>
 
-                    <div className="relative">
-                      <label className="block text-sm font-medium text-green-400 mb-2">
-                        Country *
-                      </label>
-                      <input
-                        type="text"
-                        value={countrySearch}
-                        onChange={handleCountrySearch}
-                        onFocus={() => setShowCountryDropdown(true)}
-                        placeholder="Search for a country..."
-                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                        required
-                      />
+                  <div className="relative">
+                    <label className="block text-sm font-medium text-green-400 mb-2">
+                      Country *
+                    </label>
+                    <input
+                      type="text"
+                      value={countrySearch}
+                      onChange={handleCountrySearch}
+                      onFocus={() => setShowCountryDropdown(true)}
+                      placeholder="Search for a country..."
+                      className={`w-full p-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${
+                        validationErrors.country
+                          ? 'border-red-500 focus:border-red-500 hover:border-red-400'
+                          : 'border-gray-600 focus:border-green-500'
+                      }`}
+                      required
+                    />
+                    {validationErrors.country && (
+                      <div className="text-red-400 text-xs mt-1">{validationErrors.country}</div>
+                    )}
 
                       {/* Country Dropdown */}
                       {showCountryDropdown && (
