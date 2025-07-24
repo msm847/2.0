@@ -1528,7 +1528,12 @@ const Partners = () => {
                     <input
                       type="email"
                       value={businessEmail}
-                      onChange={(e) => setBusinessEmail(e.target.value)}
+                      onChange={(e) => {
+                        setBusinessEmail(e.target.value);
+                        if (validationErrors.businessEmail) {
+                          setValidationErrors(prev => ({ ...prev, businessEmail: null }));
+                        }
+                      }}
                       className={`w-full p-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${
                         validationErrors.businessEmail
                           ? 'border-red-500 focus:border-red-500 hover:border-red-400'
