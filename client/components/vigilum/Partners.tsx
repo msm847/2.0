@@ -796,17 +796,22 @@ const Partners = () => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="relative">
                     <div className="flex items-center justify-between mb-2">
                       <label className="text-sm font-medium text-green-400">
-                        Company/Institution *
+                        {isStudent ? "University *" : "Company/Institution *"}
                       </label>
                       <div className="flex items-center space-x-2">
                         <input
                           type="checkbox"
                           id="student-check"
                           checked={isStudent}
-                          onChange={(e) => setIsStudent(e.target.checked)}
+                          onChange={(e) => {
+                            setIsStudent(e.target.checked);
+                            setCompany("");
+                            setCompanySearch("");
+                            setShowUniversityDropdown(false);
+                          }}
                           className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2"
                         />
                         <label htmlFor="student-check" className="text-sm text-gray-300">
@@ -817,10 +822,35 @@ const Partners = () => {
                     <input
                       type="text"
                       value={company}
-                      onChange={(e) => setCompany(e.target.value)}
+                      onChange={handleCompanySearch}
+                      onFocus={() => isStudent && company.length > 0 && setShowUniversityDropdown(true)}
+                      placeholder={isStudent ? "Search for your university or type to find it..." : "Enter your company or institution name..."}
                       className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                       required
                     />
+
+                    {/* University Dropdown - Only show when student is checked */}
+                    {isStudent && showUniversityDropdown && filteredUniversities.length > 0 && (
+                      <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                        {filteredUniversities.map((university) => (
+                          <div
+                            key={university}
+                            onClick={() => selectUniversity(university)}
+                            className="px-3 py-2 text-white hover:bg-green-600 cursor-pointer transition-colors"
+                          >
+                            {university}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Close dropdown when clicking outside */}
+                    {isStudent && showUniversityDropdown && (
+                      <div
+                        className="fixed inset-0 z-0"
+                        onClick={() => setShowUniversityDropdown(false)}
+                      />
+                    )}
                   </div>
 
                   <div className="relative">
