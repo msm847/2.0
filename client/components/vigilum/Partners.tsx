@@ -186,6 +186,7 @@ const Partners = () => {
         country,
         projectDescription,
         attachedFiles,
+        isStudent,
       });
 
       setIsSubmitted(true);
