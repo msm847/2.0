@@ -382,7 +382,7 @@ export default function Index() {
         </button>
       </div>
 
-      {/* Team Button Container - For second orb */}
+        {/* Team Button */}
       <div
         id="team-button-container"
         style={{
