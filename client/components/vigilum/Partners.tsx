@@ -630,7 +630,7 @@ const Partners = () => {
                   </div>
 
                   {/* Submit Button - Centered with balanced spacing */}
-                  <div className="flex justify-center mt-8 mb-4">
+                  <div className="flex justify-center mt-12 mb-4">
                     <Button
                       type="submit"
                       disabled={isSubmitting || !robotVerified || !privacyAccepted}
