@@ -758,12 +758,97 @@ const MagicBento = ({
                 el.addEventListener("click", handleClick);
               }}
             >
-              <div className="card__header">
-                <div className="card__label">{card.label}</div>
-              </div>
               <div className="card__content">
-                <h2 className="card__title">{card.title}</h2>
-                <p className="card__description">{card.description}</p>
+                {card.isVision ? (
+                  <>
+                    <h2
+                      className="card__title"
+                      style={{
+                        fontSize: "30px",
+                        marginBottom: "12px",
+                        color: "#9DE6C6",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {card.title}
+                    </h2>
+                    <p
+                      style={{
+                        fontSize: "17px",
+                        lineHeight: "25px",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "300",
+                      }}
+                    >
+                      {card.description}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "17px",
+                        lineHeight: "25px",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "300",
+                      }}
+                    >
+                      {card.secondaryDescription}
+                    </p>
+                  </>
+                ) : card.isFounder ? (
+                  <>
+                    <h2
+                      className="card__title"
+                      style={{
+                        fontSize: "30px",
+                        marginBottom: "10px",
+                        color: "rgba(157, 230, 198, 1)",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {card.title}
+                    </h2>
+                    <p
+                      style={{
+                        fontSize: "17px",
+                        lineHeight: "25px",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "300",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {card.description}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        lineHeight: "25px",
+                        color: "#D0D0D0",
+                        marginBottom: "8px",
+                        fontWeight: "200",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {card.secondaryDescription}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "15px",
+                        lineHeight: "13px",
+                        color: "#9DE6C6",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {card.signature}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="card__title">{card.title}</h2>
+                    <p className="card__description">{card.description}</p>
+                  </>
+                )}
               </div>
             </div>
           );
