@@ -1398,7 +1398,7 @@ const Partners = () => {
       }}
     >
       {/* STAKEHOLDERS SECTION */}
-      <section className="py-24" aria-labelledby="stakeholders-heading">
+      <section className="py-20" aria-labelledby="stakeholders-heading">
         <div className="mx-auto px-16" style={{ maxWidth: "1280px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* StakeholderHeroBlock - Left Side */}
