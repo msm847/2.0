@@ -44,11 +44,11 @@ const OPERATORS = [
     fullName: "Override Functions and Nullification Logic",
     weight: 0.34,
     symbol: "O",
-    glyph: "⊕",
-    affects: ["R", "P", "A"],
+    glyph: "⊗",
+    affects: ["L", "P", "V"],
     position_sensitive: true,
-    override_targets: ["ε"],
-    color: "#EF4444", // Vigilum red
+    override_targets: ["A", "R"],
+    color: "#10B981", // Vigilum mint
     description:
       "Override operators forcibly reset or override prior safeguards. Risk spikes when used late in a chain or immediately after ambiguous operators. Maximum risk if O follows Masking (M), Masking → Override (M→O): simulated transparency, hidden extraction. Minimum risk if O opens a sequence and is followed by White/Hard (O→A): visible reset, no stealth.",
     calculation: {
