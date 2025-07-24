@@ -11,10 +11,8 @@ const cardData = [
   {
     color: "#10201C",
     title: "Vision",
-    description:
-      "Vigilum pioneers Structural Governance Intelligence—the first system capable of translating complex legal and political networks into real-time risk signals that reveal system-level vulnerabilities before they become procedural reality.",
-    secondaryDescription:
-      "By computing intent rather than monitoring behavior, we enable institutions to foresee and prevent corruption that operates through compliance, not in violation of it.",
+    description: "",
+    secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
   },
