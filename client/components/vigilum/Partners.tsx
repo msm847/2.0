@@ -159,6 +159,8 @@ const Partners = () => {
     setJobTitle("");
     setCompany("");
     setCountry("");
+    setCountrySearch("");
+    setShowCountryDropdown(false);
     setProjectDescription("");
     setAttachedFiles([]);
     setError("");
