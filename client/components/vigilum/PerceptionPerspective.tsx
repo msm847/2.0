@@ -289,7 +289,7 @@ const PerceptionPerspective = () => {
               onWordClick={handleWordClick}
               activeSection={activeSection}
             />
-          </div>
+          </motion.div>
 
           <motion.div
             className="max-w-4xl mx-auto"
