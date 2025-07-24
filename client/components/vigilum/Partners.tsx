@@ -750,9 +750,9 @@ const Partners = () => {
                     {showCountryDropdown && (
                       <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-600 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                         {filteredCountries.length > 0 ? (
-                          filteredCountries.map((countryName) => (
+                          filteredCountries.map((countryName, index) => (
                             <div
-                              key={countryName}
+                              key={`country-${index}-${countryName}`}
                               onClick={() => selectCountry(countryName)}
                               className="px-3 py-2 text-white hover:bg-green-600 cursor-pointer transition-colors"
                             >
