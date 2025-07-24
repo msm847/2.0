@@ -390,6 +390,23 @@ const SemanticPermutationEngine = () => {
   const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set());
   const [calculationBreakdowns, setCalculationBreakdowns] = useState<any>({});
 
+  // Get current operators based on version
+  const getCurrentOperators = () => {
+    return operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
+  };
+
+  const getCurrentSequence = () => {
+    return operatorVersion === "v1" ? operatorSequence : operatorSequenceV2;
+  };
+
+  const setCurrentSequence = (sequence: string[]) => {
+    if (operatorVersion === "v1") {
+      setOperatorSequence(sequence);
+    } else {
+      setOperatorSequenceV2(sequence);
+    }
+  };
+
   // Toggle card flip
   const toggleCard = (operatorId: string) => {
     const newFlipped = new Set(flippedCards);
