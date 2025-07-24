@@ -10,8 +10,9 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#10201C",
-    title: "Mission",
-    description: "",
+    title: "Vision",
+    description:
+      "Vigilum pioneers Structural Governance Intelligence—the first system capable of translating complex legal and political networks into real-time risk signals that reveal system-level vulnerabilities before they become procedural reality.",
     secondaryDescription:
       "By computing intent rather than monitoring behavior, we enable institutions to foresee and prevent corruption that operates through compliance, not in violation of it.",
     url: "/core-principles",
@@ -19,7 +20,7 @@ const cardData = [
   },
   {
     color: "#10201C",
-    title: "Founder's Note",
+    title: "Mission",
     description:
       "During my research in the MARS-REERS program at Columbia University, I discovered a fundamental gap in how we approach corruption. We often react to scandals rather than predict them. Traditional tools detect issues after rules are broken, but what if we could identify the structural flaws that enable corruption before any funds are spent or contracts signed?",
     secondaryDescription:
