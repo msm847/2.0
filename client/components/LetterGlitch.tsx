@@ -20,19 +20,42 @@ const LetterGlitch = ({
   const audioRef = useRef<HTMLAudioElement>(null);
   const [robotLoaded, setRobotLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
 
   useEffect(() => {
-    // Play the robot voice when component mounts (robot appears)
-    const timer = setTimeout(() => {
-      setRobotLoaded(true);
-      if (audioRef.current && !isPlaying) {
+    // Set up user interaction listeners
+    const handleUserInteraction = () => {
+      setUserInteracted(true);
+      if (audioRef.current && robotLoaded && !isPlaying) {
         audioRef.current.play().catch(console.error);
         setIsPlaying(true);
       }
-    }, 2000); // Delay to let robot animation load
+    };
+
+    // Listen for any user interaction
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('keydown', handleUserInteraction, { once: true });
+    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+
+    return () => {
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
+    };
+  }, [robotLoaded, isPlaying]);
+
+  useEffect(() => {
+    // Robot loaded, try to play audio if user has interacted
+    const timer = setTimeout(() => {
+      setRobotLoaded(true);
+      if (userInteracted && audioRef.current && !isPlaying) {
+        audioRef.current.play().catch(console.error);
+        setIsPlaying(true);
+      }
+    }, 2000);
 
     return () => clearTimeout(timer);
-  }, [isPlaying]);
+  }, [userInteracted, isPlaying]);
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
@@ -86,7 +109,7 @@ const LetterGlitch = ({
         onLoad={handleIframeLoad}
         title="Robot Animation"
       />
-      
+
       {/* Audio for robot voice */}
       <audio
         ref={audioRef}
