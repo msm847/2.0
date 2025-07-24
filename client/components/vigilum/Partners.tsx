@@ -1811,9 +1811,6 @@ const Partners = () => {
                           Vigilum Privacy Policy and applicable international
                           data protection laws (including GDPR).
                         </div>
-                        {validationErrors.privacyAccepted && (
-                          <div className="text-red-400 text-xs mt-1 pl-7">{validationErrors.privacyAccepted}</div>
-                        )}
                       </div>
                     </div>
 
@@ -1822,23 +1819,24 @@ const Partners = () => {
                       className="flex justify-center mb-4"
                       style={{ marginTop: "32px" }}
                     >
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className={`px-8 py-3 font-medium rounded-lg transition-colors ${
-                          hasTriedSubmit && Object.keys(validationErrors).length > 0
-                            ? 'bg-red-600 hover:bg-red-700 text-white'
-                            : 'bg-green-600 hover:bg-green-700 text-white disabled:opacity-50 disabled:cursor-not-allowed'
-                        }`}
-                        style={{ textTransform: "none" }}
-                      >
-                        {isSubmitting
-                          ? "Sending..."
-                          : hasTriedSubmit && Object.keys(validationErrors).length > 0
-                            ? "See Above - Fix Required Fields"
-                            : "Send an Inquiry"
-                        }
-                      </Button>
+                      <div className="relative group">
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting || !isFormValid()}
+                          className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          style={{ textTransform: "none" }}
+                        >
+                          {isSubmitting ? "Sending..." : "Send an Inquiry"}
+                        </Button>
+
+                        {/* Tooltip for disabled button */}
+                        {!isFormValid() && !isSubmitting && (
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                            Please fill out all required fields to continue
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </form>
                 </div>
