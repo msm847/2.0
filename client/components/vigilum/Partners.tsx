@@ -1117,8 +1117,12 @@ const Partners = () => {
     setJobTitle(value);
     setJobTitleSearch(value);
     setShowJobTitleDropdown(value.length > 0);
-    if (validationErrors.jobTitle) {
-      setValidationErrors(prev => ({ ...prev, jobTitle: null }));
+    // Only clear error if field becomes valid
+    if (validationErrors.jobTitle && value.trim().length > 0) {
+      const jobTitleValidation = validateJobTitle(value);
+      if (jobTitleValidation.isValid) {
+        setValidationErrors(prev => ({ ...prev, jobTitle: null }));
+      }
     }
   };
 
