@@ -1064,6 +1064,19 @@ const Partners = () => {
     return errors;
   };
 
+  const isFormValid = () => {
+    // Check all required fields
+    const hasFullName = fullName.trim() && validateFullName(fullName);
+    const hasValidEmail = businessEmail.trim() && validateEmail(businessEmail);
+    const hasCountry = country.trim();
+    const hasCompany = company.trim();
+    const hasJobTitle = isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
+    const hasProjectDescription = projectDescription.trim();
+    const hasPrivacyAccepted = privacyAccepted;
+
+    return hasFullName && hasValidEmail && hasCountry && hasCompany && hasJobTitle && hasProjectDescription && hasPrivacyAccepted;
+  };
+
   // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
   // Current key is Google's test key - get your own from: https://www.google.com/recaptcha/admin
   const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
