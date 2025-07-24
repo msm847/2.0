@@ -67,6 +67,8 @@ const LetterGlitch = ({
     top: 0,
     left: 0,
     zIndex: 0,
+    filter: "sepia(0.3) hue-rotate(120deg) saturate(0.8)",
+    mixBlendMode: "multiply",
   };
 
   const outerVignetteStyle: React.CSSProperties = {
