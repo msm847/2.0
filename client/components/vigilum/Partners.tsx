@@ -1354,15 +1354,43 @@ const Partners = () => {
               <div className="space-y-8">
                 {/* MAPPING */}
                 <div className="flex items-start" style={{ gap: "16px" }}>
-                  <Building
+                  <svg
                     className="flex-shrink-0 mt-1"
                     style={{
                       width: "32px",
                       height: "32px",
-                      color: "#7BFF9C",
                     }}
+                    viewBox="0 0 32 32"
+                    fill="none"
                     aria-label="MAPPING icon"
-                  />
+                  >
+                    {/* Grid lines */}
+                    <g stroke="#7BFF9C" strokeWidth="1" opacity="0.6">
+                      <line x1="8" y1="0" x2="8" y2="32" />
+                      <line x1="16" y1="0" x2="16" y2="32" />
+                      <line x1="24" y1="0" x2="24" y2="32" />
+                      <line x1="0" y1="8" x2="32" y2="8" />
+                      <line x1="0" y1="16" x2="32" y2="16" />
+                      <line x1="0" y1="24" x2="32" y2="24" />
+                    </g>
+                    {/* Highlighted path */}
+                    <path
+                      d="M4 4 L12 4 L12 12 L20 12 L20 20 L28 20 L28 28"
+                      stroke="#7BFF9C"
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {/* Path nodes */}
+                    <circle cx="4" cy="4" r="2" fill="#7BFF9C" />
+                    <circle cx="12" cy="4" r="2" fill="#7BFF9C" />
+                    <circle cx="12" cy="12" r="2" fill="#7BFF9C" />
+                    <circle cx="20" cy="12" r="2" fill="#7BFF9C" />
+                    <circle cx="20" cy="20" r="2" fill="#7BFF9C" />
+                    <circle cx="28" cy="20" r="2" fill="#7BFF9C" />
+                    <circle cx="28" cy="28" r="2" fill="#7BFF9C" />
+                  </svg>
                   <div>
                     <h3
                       className="font-semibold mb-2"
