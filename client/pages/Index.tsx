@@ -204,7 +204,7 @@ export default function Index() {
           }}
         >
           <GradientText
-            colors={["#9DE6C6", "#17B58F", "#40ffaa", "#17B58F", "#9DE6C6"]}
+            colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
             animationSpeed={6}
             className="font-black"
             style={{ fontWeight: "900" }}
@@ -217,13 +217,14 @@ export default function Index() {
                 margin: 0,
                 letterSpacing: "2px",
                 whiteSpace: "nowrap",
+                textShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.8)",
               }}
             >
               Semantic Foresight Intelligence
             </h1>
           </GradientText>
           <GradientText
-            colors={["#B8D0C9", "#9DE6C6", "#17B58F", "#9DE6C6", "#B8D0C9"]}
+            colors={["#E5F3ED", "#9DE6C6", "#40FFAA", "#9DE6C6", "#E5F3ED"]}
             animationSpeed={8}
           >
             <p
@@ -234,6 +235,7 @@ export default function Index() {
                 margin: "1rem 0 0 0",
                 letterSpacing: "0.5px",
                 lineHeight: 1.4,
+                textShadow: "0 0 15px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.8)",
               }}
             >
               Truth is not fixed. It is rendered by the logic that observes it.
