@@ -507,9 +507,10 @@ const SemanticPermutationEngine = () => {
   const calculateTensorEffects = useCallback((sequence: string[]) => {
     let currentState = { ...INITIAL_STATE };
     const trace: any[] = [];
+    const currentOperators = operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
 
     sequence.forEach((opId, index) => {
-      const operator = getCurrentOperators().find((op) => op.id === opId);
+      const operator = currentOperators.find((op) => op.id === opId);
       if (!operator) return;
 
       const inputState = { ...currentState };
