@@ -1585,9 +1585,16 @@ const Partners = () => {
                             ? "Search for your university or type to find it..."
                             : "Enter your company or institution name..."
                         }
-                        className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
+                        className={`w-full p-3 bg-gray-800 border rounded-lg text-white focus:outline-none transition-colors ${
+                          validationErrors.company
+                            ? 'border-red-500 focus:border-red-500 hover:border-red-400'
+                            : 'border-gray-600 focus:border-green-500'
+                        }`}
                         required
                       />
+                      {validationErrors.company && (
+                        <div className="text-red-400 text-xs mt-1">{validationErrors.company}</div>
+                      )}
 
                       {/* University Dropdown - Only show when student is checked */}
                       {isStudent &&
