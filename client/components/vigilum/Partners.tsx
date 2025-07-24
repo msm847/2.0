@@ -1477,8 +1477,8 @@ const Partners = () => {
                   <svg
                     className="flex-shrink-0 mt-1"
                     style={{
-                      width: "32px",
-                      height: "32px",
+                      width: "48px",
+                      height: "48px",
                     }}
                     viewBox="0 0 32 32"
                     fill="none"
