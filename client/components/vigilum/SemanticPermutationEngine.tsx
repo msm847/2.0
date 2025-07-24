@@ -739,7 +739,7 @@ const SemanticPermutationEngine = () => {
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `vigilum-spe-${operatorSequence.join("-")}.json`;
+    link.download = `vigilum-spe-${getCurrentSequence().join("-")}.json`;
     link.click();
     URL.revokeObjectURL(url);
   };
