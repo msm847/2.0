@@ -341,7 +341,7 @@ const Partners = () => {
               {/* 7. Micro-CTAs */}
               <div className="space-y-3">
                 <a
-                  href="mailto:info@vigilum.com"
+                  href="mailto:network@vigilum.com"
                   className="block transition-colors duration-150"
                   style={{
                     fontFamily: "IBM Plex Mono, monospace",
@@ -353,7 +353,7 @@ const Partners = () => {
                   onMouseEnter={(e) => e.target.style.color = "#B1FFC8"}
                   onMouseLeave={(e) => e.target.style.color = "#7BFF9C"}
                 >
-                  info@vigilum.com
+                  network@vigilum.com
                 </a>
 
               </div>
