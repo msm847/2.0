@@ -975,12 +975,12 @@ const SemanticPermutationEngine = () => {
             {permutationResult && (
               <div className="text-lg font-mono text-white">
                 ϕ(c,𝓔) ={" "}
-                {operatorSequence.map((op, i) => (
+                {getCurrentSequence().map((op, i) => (
                   <span key={i}>
                     {i > 0 && " + "}
                     <span
                       style={{
-                        color: OPERATORS.find((o) => o.id === op)?.color,
+                        color: getCurrentOperators().find((o) => o.id === op)?.color,
                       }}
                     >
                       {OPERATOR_WEIGHTS[
