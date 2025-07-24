@@ -1326,9 +1326,7 @@ const Partners = () => {
                     lineHeight: "1.6",
                   }}
                 >
-                  "We discovered that corruption isn't a breach—it's a design
-                  pattern. When you expose the pattern, systems can
-                  self-correct. That is structural foresight."
+                  "What the citizen sees as scandal, the institution encodes as procedure, the law validates as form, and the structure routinizes as extraction. When recognition fragments, contradiction dissolves—truth is subtracted from the system's operation."
                 </p>
                 <p
                   className="font-medium"
