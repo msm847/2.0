@@ -172,7 +172,7 @@ export default function Index() {
               fontFamily: "var(--font-body)",
               fontSize: "1.1rem",
               fontWeight: "600",
-              margin: "1rem 0 2rem 0",
+              margin: "1rem 0 1.5rem 0",
               letterSpacing: "0.5px",
               lineHeight: 1.4,
               textShadow: `
