@@ -268,35 +268,20 @@ export default function Index() {
             handleButtonClick();
           }}
           style={{
-            width: "180px",
+            width: "200px",
             height: "50px",
             background: "transparent",
-            border: "1px solid rgba(255, 255, 255, 0.15)",
-            borderTop: "1px solid rgba(255, 255, 255, 0.2)",
-            borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
             borderRadius: "25px",
-            color: "rgba(255, 255, 255, 0.9)",
-            fontSize: "16px",
+            fontSize: "12px",
             fontWeight: "500",
-            letterSpacing: "1.5px",
+            letterSpacing: "1px",
             cursor: "pointer",
             fontFamily: "var(--font-ui)",
             textTransform: "uppercase",
-            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-            backdropFilter: "blur(40px) saturate(1.8)",
-            WebkitBackdropFilter: "blur(40px) saturate(1.8)",
-            boxShadow: `
-              0 8px 32px rgba(0, 0, 0, 0.1),
-              0 2px 8px rgba(0, 0, 0, 0.05),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.05)
-            `,
-            textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
-            position: "relative",
-            overflow: "hidden",
+            transition: "all 0.3s ease",
             pointerEvents: "auto",
-            zIndex: 1000,
+            padding: "0",
           }}
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
