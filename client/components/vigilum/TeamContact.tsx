@@ -439,19 +439,21 @@ const TeamContact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
-            <motion.div
-              className="text-center mb-16 pb-8 font-semibold leading-tight"
-              style={{
-                fontFamily: "IBM Plex Sans, sans-serif",
-                fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
-                color: "#E5F3ED",
-              }}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Purpose & Horizon
-            </motion.div>
+            <div className="text-center mb-16 mt-8">
+              <motion.h2
+                className="mb-8 font-semibold leading-tight"
+                style={{
+                  fontFamily: "IBM Plex Sans, sans-serif",
+                  fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
+                  color: "#E5F3ED",
+                }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Purpose & Horizon
+              </motion.h2>
+            </div>
 
             {/* MagicBento Grid */}
             <div style={{ height: "850px", position: "relative" }}>
