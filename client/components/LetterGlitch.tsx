@@ -113,6 +113,26 @@ const LetterGlitch = ({
     zIndex: 1,
   };
 
+  const audioButtonStyle: React.CSSProperties = {
+    position: "absolute",
+    bottom: "20px",
+    right: "20px",
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
+    backgroundColor: "rgba(64, 255, 170, 0.1)",
+    border: "2px solid rgba(64, 255, 170, 0.3)",
+    color: "#40FFAA",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "20px",
+    zIndex: 2,
+    transition: "all 0.3s ease",
+    backdropFilter: "blur(10px)",
+  };
+
   return (
     <div style={containerStyle} className={className}>
       {/* Robot Animation */}
