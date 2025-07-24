@@ -148,8 +148,6 @@ export default function Index() {
               letterSpacing: "2px",
               whiteSpace: "nowrap",
               textShadow: `
-                0 0 30px rgba(64, 255, 170, 0.8),
-                0 0 60px rgba(64, 255, 170, 0.6),
                 0 4px 8px rgba(0, 0, 0, 0.9),
                 0 8px 16px rgba(0, 0, 0, 0.7),
                 0 12px 24px rgba(0, 0, 0, 0.5),
