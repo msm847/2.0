@@ -1115,11 +1115,6 @@ const Partners = () => {
     if (countryCode) {
       setPhonePlaceholder(countryCode);
     }
-
-    // Clear country error when valid country is selected
-    if (validationErrors.country) {
-      setValidationErrors(prev => ({ ...prev, country: null }));
-    }
   };
 
   const handleJobTitleSearch = (e) => {
