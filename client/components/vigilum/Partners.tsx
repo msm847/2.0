@@ -103,6 +103,22 @@ const Partners = () => {
     setCountry(selectedCountry);
     setCountrySearch(selectedCountry);
     setShowCountryDropdown(false);
+
+    // Update phone placeholder based on selected country
+    const countryCode = COUNTRY_PHONE_CODES[selectedCountry];
+    if (countryCode) {
+      if (countryCode === "+1") {
+        setPhonePlaceholder("+1 (555) 123-4567");
+      } else if (countryCode === "+44") {
+        setPhonePlaceholder("+44 20 7123 4567");
+      } else if (countryCode === "+49") {
+        setPhonePlaceholder("+49 30 12345678");
+      } else if (countryCode === "+33") {
+        setPhonePlaceholder("+33 1 23 45 67 89");
+      } else {
+        setPhonePlaceholder(`${countryCode} 123456789`);
+      }
+    }
   };
 
   const filteredCountries = COUNTRIES.filter(country =>
