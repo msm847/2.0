@@ -155,6 +155,8 @@ const LetterGlitch = ({
           height="100%"
           style={{
             ...iframeStyle,
+            marginTop: "200px",
+            height: "calc(100% - 200px)",
             mixBlendMode: "multiply",
             filter: "contrast(1.2) brightness(1.1)",
           }}
