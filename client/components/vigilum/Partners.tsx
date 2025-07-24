@@ -862,9 +862,9 @@ const Partners = () => {
                       value={jobTitle}
                       onChange={handleJobTitleSearch}
                       onFocus={() => setShowJobTitleDropdown(jobTitle.length > 0)}
-                      placeholder="Type your job title or select from suggestions..."
+                      placeholder={isStudent ? "Job title (optional) - type or select from suggestions..." : "Type your job title or select from suggestions..."}
                       className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
-                      required
+                      required={!isStudent}
                     />
 
                     {/* Job Title Dropdown */}
