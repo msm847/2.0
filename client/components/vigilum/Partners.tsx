@@ -1514,7 +1514,8 @@ const Partners = () => {
                       value={fullName}
                       onChange={(e) => {
                         setFullName(e.target.value);
-                        if (validationErrors.fullName) {
+                        // Only clear error if field becomes valid
+                        if (validationErrors.fullName && e.target.value.trim() && validateFullName(e.target.value)) {
                           setValidationErrors(prev => ({ ...prev, fullName: null }));
                         }
                       }}
