@@ -93,8 +93,9 @@ export default function Index() {
         id="logo-container"
         style={{
           position: "absolute",
-          top: "24px",
-          left: "24px",
+          top: "60%",
+          left: "50%",
+          transform: "translateX(-50%)",
           fontSize: "1.5rem",
           fontWeight: "900",
           color: "#FFFFFF",
@@ -111,7 +112,7 @@ export default function Index() {
             fontWeight: "900",
           }}
         >
-          VIGILUM.AI
+          VIGILUM
         </h1>
       </div>
 
