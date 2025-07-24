@@ -569,19 +569,34 @@ const Partners = () => {
                   </div>
 
                   {/* Verification and Privacy */}
-                  <div className="space-y-4">
-                    {/* Robot Verification */}
-                    <div className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="robot-check"
-                        checked={robotVerified}
-                        onChange={(e) => setRobotVerified(e.target.checked)}
-                        className="w-4 h-4 bg-gray-800 border border-gray-600 rounded focus:ring-green-500 focus:ring-2"
-                      />
-                      <label htmlFor="robot-check" className="text-gray-300 text-sm">
-                        I am not a robot
+                  <div className="space-y-6">
+                    {/* Google reCAPTCHA */}
+                    <div className="space-y-3">
+                      <label className="block text-sm font-medium text-green-400">
+                        Security Verification *
                       </label>
+                      <div className="space-y-3">
+                        <div className="p-4 bg-gray-800/50 border border-gray-600 rounded-lg">
+                          <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={RECAPTCHA_SITE_KEY}
+                            onChange={handleRecaptchaChange}
+                            onExpired={handleRecaptchaExpired}
+                            theme="dark"
+                            size="normal"
+                          />
+                        </div>
+                        {robotVerified && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex items-center space-x-2 text-green-400"
+                          >
+                            <Shield className="w-4 h-4" />
+                            <span className="text-sm font-medium">Verified ✓</span>
+                          </motion.div>
+                        )}
+                      </div>
                     </div>
 
                     {/* Privacy Policy */}
