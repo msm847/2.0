@@ -1092,6 +1092,9 @@ const Partners = () => {
   const handleCountrySearch = (e) => {
     setCountrySearch(e.target.value);
     setShowCountryDropdown(true);
+    if (validationErrors.country) {
+      setValidationErrors(prev => ({ ...prev, country: null }));
+    }
   };
 
   const selectCountry = (selectedCountry) => {
