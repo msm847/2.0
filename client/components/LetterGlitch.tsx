@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import Spline from '@splinetool/react-spline';
 
 interface LetterGlitchProps {
   glitchColors?: string[];
