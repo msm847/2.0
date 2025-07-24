@@ -230,12 +230,20 @@ const OVERRIDE_MATRIX = [
 ];
 
 const SemanticPermutationEngine = () => {
+  const [operatorVersion, setOperatorVersion] = useState<"v1" | "v2">("v1");
   const [operatorSequence, setOperatorSequence] = useState([
     "A",
     "R",
     "V",
     "ε",
     "O",
+  ]);
+  const [operatorSequenceV2, setOperatorSequenceV2] = useState([
+    "T",
+    "S",
+    "I",
+    "N",
+    "C",
   ]);
   const [draggedOperator, setDraggedOperator] = useState<string | null>(null);
   const [executionTrace, setExecutionTrace] = useState<any[]>([]);
