@@ -1821,7 +1821,8 @@ const Partners = () => {
                             checked={privacyAccepted}
                             onChange={(e) => {
                               setPrivacyAccepted(e.target.checked);
-                              if (validationErrors.privacyAccepted) {
+                              // Only clear error when checkbox is actually checked
+                              if (validationErrors.privacyAccepted && e.target.checked) {
                                 setValidationErrors(prev => ({ ...prev, privacyAccepted: null }));
                               }
                             }}
