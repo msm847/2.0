@@ -169,12 +169,6 @@ export default function Index() {
               margin: "1rem 0 1.5rem 0",
               letterSpacing: "0.5px",
               lineHeight: 1.4,
-              textShadow: `
-                0 0 20px rgba(64, 255, 170, 0.6),
-                0 0 40px rgba(64, 255, 170, 0.3),
-                0 1px 2px rgba(0, 0, 0, 0.8)
-              `,
-              filter: "brightness(1.1) contrast(1.05)",
             }}
           >
             Truth is not fixed. It is rendered by the logic that observes it.
