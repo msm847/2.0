@@ -65,6 +65,7 @@ export default function Carousel({
   // Create extended array for infinite loop
   const carouselItems = loop ? [...items, ...items, ...items] : items;
   const [currentIndex, setCurrentIndex] = useState(loop ? items.length : 0);
+  const [cycleCompleted, setCycleCompleted] = useState(false);
   const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
