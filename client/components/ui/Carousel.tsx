@@ -1,7 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 // replace icons with your own if needed
-import { FiCircle, FiCode, FiFileText, FiLayers, FiLayout } from "react-icons/fi";
+import {
+  FiCircle,
+  FiCode,
+  FiFileText,
+  FiLayers,
+  FiLayout,
+} from "react-icons/fi";
 
 import "./Carousel.css";
 
@@ -44,7 +50,7 @@ const GAP = 16;
 const SPRING_OPTIONS = {
   type: "tween",
   duration: 0.6,
-  ease: [0.25, 0.46, 0.45, 0.94] // Smooth easing curve
+  ease: [0.25, 0.46, 0.45, 0.94], // Smooth easing curve
 };
 
 export default function Carousel({
@@ -203,11 +209,11 @@ export default function Carousel({
   const dragProps = loop
     ? {} // No constraints for infinite loop
     : {
-      dragConstraints: {
-        left: -trackItemOffset * (items.length - 1),
-        right: 0,
-      },
-    };
+        dragConstraints: {
+          left: -trackItemOffset * (items.length - 1),
+          right: 0,
+        },
+      };
 
   return (
     <div
@@ -244,9 +250,13 @@ export default function Carousel({
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const rotateY = useTransform(x, range, outputRange, { clamp: false });
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const opacity = useTransform(x, range, [0.6, 1, 0.6], { clamp: false });
+          const opacity = useTransform(x, range, [0.6, 1, 0.6], {
+            clamp: false,
+          });
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const scale = useTransform(x, range, [0.95, 1, 0.95], { clamp: false });
+          const scale = useTransform(x, range, [0.95, 1, 0.95], {
+            clamp: false,
+          });
           return (
             <motion.div
               key={index}
@@ -265,14 +275,16 @@ export default function Carousel({
                 customRender(item)
               ) : (
                 <>
-                  <div className={`carousel-item-header ${round ? "round" : ""}`}>
-                    <span className="carousel-icon-container">
-                      {item.icon}
-                    </span>
+                  <div
+                    className={`carousel-item-header ${round ? "round" : ""}`}
+                  >
+                    <span className="carousel-icon-container">{item.icon}</span>
                   </div>
                   <div className="carousel-item-content">
                     <div className="carousel-item-title">{item.title}</div>
-                    <p className="carousel-item-description">{item.description}</p>
+                    <p className="carousel-item-description">
+                      {item.description}
+                    </p>
                   </div>
                 </>
               )}
@@ -285,12 +297,20 @@ export default function Carousel({
           {items.map((_, index) => (
             <motion.div
               key={index}
-              className={`carousel-indicator ${(loop ? (currentIndex % items.length) : currentIndex) === index ? "active" : "inactive"
-                }`}
+              className={`carousel-indicator ${
+                (loop ? currentIndex % items.length : currentIndex) === index
+                  ? "active"
+                  : "inactive"
+              }`}
               animate={{
-                scale: (loop ? (currentIndex % items.length) : currentIndex) === index ? 1.2 : 1,
+                scale:
+                  (loop ? currentIndex % items.length : currentIndex) === index
+                    ? 1.2
+                    : 1,
               }}
-              onClick={() => setCurrentIndex(loop ? items.length + index : index)}
+              onClick={() =>
+                setCurrentIndex(loop ? items.length + index : index)
+              }
               transition={{ duration: 0.15 }}
             />
           ))}

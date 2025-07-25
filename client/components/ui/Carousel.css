@@ -95,7 +95,7 @@
 
 .carousel-icon-container {
   font-size: 32px;
-  color: #9DE6C6;
+  color: #9de6c6;
   background: rgba(157, 230, 198, 0.15);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(157, 230, 198, 0.2);
@@ -124,13 +124,13 @@
 .carousel-item-title {
   font-size: 18px;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
 .carousel-item-description {
   font-size: 14px;
-  color: #E5E5E5;
+  color: #e5e5e5;
   line-height: 1.5;
   margin: 0;
   flex: 1;
@@ -169,7 +169,7 @@
 }
 
 .carousel-indicator.active {
-  background: #9DE6C6;
+  background: #9de6c6;
   box-shadow: 0 0 8px rgba(157, 230, 198, 0.6);
 }
 

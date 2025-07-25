@@ -39,15 +39,17 @@ const cardData = [
       {
         name: "Adam Kovarskas",
         role: "Founder / CEO",
-        description: "Leading technical innovation and system architecture to transform governance through advanced analytics.",
+        description:
+          "Leading technical innovation and system architecture to transform governance through advanced analytics.",
         imageUrl: "/placeholder.svg",
       },
       {
         name: "Misha Martynov",
         role: "Founding Team / Chief of Staff",
-        description: "Driving strategic vision and partnerships to democratize institutional transparency worldwide.",
+        description:
+          "Driving strategic vision and partnerships to democratize institutional transparency worldwide.",
         imageUrl: "/placeholder.svg",
-      }
+      },
     ],
   },
 ];
@@ -507,7 +509,10 @@ const TeamCarousel = ({ card }) => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentMember((prev) => (prev - 1 + card.teamMembers.length) % card.teamMembers.length);
+      setCurrentMember(
+        (prev) =>
+          (prev - 1 + card.teamMembers.length) % card.teamMembers.length,
+      );
       setIsTransitioning(false);
     }, 150);
   };
@@ -659,7 +664,10 @@ const TeamCarousel = ({ card }) => {
                   width: "8px",
                   height: "8px",
                   borderRadius: "50%",
-                  backgroundColor: index === currentMember ? "#9DE6C6" : "rgba(157, 230, 198, 0.3)",
+                  backgroundColor:
+                    index === currentMember
+                      ? "#9DE6C6"
+                      : "rgba(157, 230, 198, 0.3)",
                   cursor: "pointer",
                   transition: "background-color 0.2s ease",
                 }}
@@ -761,7 +769,9 @@ const MagicBento = ({
               <ParticleCard
                 key={index}
                 {...cardProps}
-                disableAnimations={shouldDisableAnimations || card.isTeamCarousel}
+                disableAnimations={
+                  shouldDisableAnimations || card.isTeamCarousel
+                }
                 particleCount={particleCount}
                 glowColor={glowColor}
                 enableTilt={enableTilt && !card.isTeamCarousel}
@@ -988,7 +998,12 @@ const MagicBento = ({
                 };
 
                 const handleClick = (e) => {
-                  if (!clickEffect || shouldDisableAnimations || card.isTeamCarousel) return;
+                  if (
+                    !clickEffect ||
+                    shouldDisableAnimations ||
+                    card.isTeamCarousel
+                  )
+                    return;
 
                   const rect = el.getBoundingClientRect();
                   const x = e.clientX - rect.left;
@@ -1179,16 +1194,16 @@ const MagicBento = ({
                       >
                         {card.description}
                       </p>
-                      </div>
-                    </>
-                  ) : card.isTeamCarousel ? (
-                    <TeamCarousel card={card} />
-                  ) : (
-                    <>
-                      <h2 className="card__title">{card.title}</h2>
-                      <p className="card__description">{card.description}</p>
-                    </>
-                  )}
+                    </div>
+                  </>
+                ) : card.isTeamCarousel ? (
+                  <TeamCarousel card={card} />
+                ) : (
+                  <>
+                    <h2 className="card__title">{card.title}</h2>
+                    <p className="card__description">{card.description}</p>
+                  </>
+                )}
               </div>
             </div>
           );
