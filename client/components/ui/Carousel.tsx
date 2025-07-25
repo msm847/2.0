@@ -81,6 +81,13 @@ export default function Carousel({
     }
   }, [cycleCompleted, onCycleComplete]);
 
+  // Handle synchronized reset for all carousels
+  useEffect(() => {
+    if (shouldReset) {
+      setCurrentIndex(0);
+    }
+  }, [shouldReset]);
+
   // Reset to first item and start immediately when carousel becomes active
   useEffect(() => {
     if (autoplay && !loop) {
