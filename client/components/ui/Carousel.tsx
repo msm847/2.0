@@ -41,7 +41,11 @@ const DEFAULT_ITEMS = [
 const DRAG_BUFFER = 0;
 const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
-const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
+const SPRING_OPTIONS = {
+  type: "tween",
+  duration: 0.6,
+  ease: [0.25, 0.46, 0.45, 0.94] // Smooth easing curve
+};
 
 export default function Carousel({
   items = DEFAULT_ITEMS,
