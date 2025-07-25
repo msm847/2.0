@@ -189,6 +189,8 @@ export default function Carousel({
                 width: itemWidth,
                 height: round ? itemWidth : "100%",
                 rotateY: rotateY,
+                opacity: opacity,
+                scale: useTransform(x, range, [0.95, 1, 0.95], { clamp: false }),
                 ...(round && { borderRadius: "50%" }),
               }}
               transition={effectiveTransition}
