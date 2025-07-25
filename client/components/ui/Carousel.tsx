@@ -109,12 +109,7 @@ export default function Carousel({
   const effectiveTransition = isResetting ? { duration: 0 } : SPRING_OPTIONS;
 
   const handleAnimationComplete = () => {
-    if (loop && currentIndex === carouselItems.length - 1) {
-      setIsResetting(true);
-      x.set(0);
-      setCurrentIndex(0);
-      setTimeout(() => setIsResetting(false), 50);
-    }
+    // No longer needed for seamless looping
   };
 
   const handleDragEnd = (_, info) => {
