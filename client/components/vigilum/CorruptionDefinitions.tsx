@@ -605,7 +605,7 @@ const CorruptionDefinitions = () => {
             lineHeight: "1.6"
           }}
         >
-          Every institution defines corruption in its own terms. Explore how the world's leading authorities describe and classify corruption—and what acts or words may or may not be included.
+          Explore how the world's leading authorities describe and classify corruption.
         </p>
       </div>
 
