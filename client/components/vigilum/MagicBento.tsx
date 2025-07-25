@@ -38,13 +38,13 @@ const cardData = [
     teamMembers: [
       {
         name: "Adam Kovarskas",
-        role: "Founder",
+        role: "Founder / CEO",
         description: "Leading technical innovation and system architecture to transform governance through advanced analytics.",
         imageUrl: "/placeholder.svg",
       },
       {
         name: "Misha Martynov",
-        role: "Co-Founder & CEO",
+        role: "Founding Team / Chief of Staff",
         description: "Driving strategic vision and partnerships to democratize institutional transparency worldwide.",
         imageUrl: "/placeholder.svg",
       }
