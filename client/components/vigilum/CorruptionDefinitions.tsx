@@ -729,7 +729,11 @@ const CorruptionDefinitions = () => {
             </div>
 
             {/* Institution Carousel */}
-            <InstitutionCarousel institutions={institutionalData.groups[3].institutions} />
+            <InstitutionCarousel
+              institutions={institutionalData.groups[3].institutions}
+              isActive={activeCarousel === 3}
+              onCycleComplete={() => handleCarouselComplete(3)}
+            />
           </div>
         </div>
       </div>
