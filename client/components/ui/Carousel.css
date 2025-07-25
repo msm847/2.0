@@ -96,13 +96,18 @@
 .carousel-icon-container {
   font-size: 32px;
   color: #9DE6C6;
-  background: rgba(157, 230, 198, 0.1);
-  border-radius: 8px;
+  background: rgba(157, 230, 198, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(157, 230, 198, 0.2);
+  border-radius: 10px;
   width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.3) inset;
 }
 
 .carousel-icon {
