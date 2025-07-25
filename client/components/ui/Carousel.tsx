@@ -89,10 +89,20 @@ export default function Carousel({
       const timer = setInterval(() => {
         setCurrentIndex((prev) => {
           const nextIndex = prev + 1;
-          // Prevent going past second set
+
+          // Handle cycle completion for non-loop mode
+          if (!loop && nextIndex >= items.length) {
+            if (onCycleComplete) {
+              onCycleComplete();
+            }
+            return 0; // Return to first item after completing cycle
+          }
+
+          // Handle loop mode
           if (loop && nextIndex >= items.length * 2) {
             return items.length;
           }
+
           return nextIndex;
         });
       }, autoplayDelay);
@@ -105,6 +115,7 @@ export default function Carousel({
     pauseOnHover,
     loop,
     items.length,
+    onCycleComplete,
   ]);
 
   const effectiveTransition = SPRING_OPTIONS; // Always use smooth transitions
