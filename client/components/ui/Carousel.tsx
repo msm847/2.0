@@ -224,12 +224,12 @@ export default function Carousel({
           {items.map((_, index) => (
             <motion.div
               key={index}
-              className={`carousel-indicator ${currentIndex % items.length === index ? "active" : "inactive"
+              className={`carousel-indicator ${(loop ? (currentIndex % items.length) : currentIndex) === index ? "active" : "inactive"
                 }`}
               animate={{
-                scale: currentIndex % items.length === index ? 1.2 : 1,
+                scale: (loop ? (currentIndex % items.length) : currentIndex) === index ? 1.2 : 1,
               }}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => setCurrentIndex(loop ? items.length + index : index)}
               transition={{ duration: 0.15 }}
             />
           ))}
