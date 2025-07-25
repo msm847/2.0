@@ -381,6 +381,106 @@ const TagPill = ({ tag, status, label }) => {
   );
 };
 
+const InstitutionCarousel = ({ institutions }) => {
+  // Convert institutions to carousel format
+  const carouselItems = institutions.map((institution, index) => ({
+    id: index,
+    title: institution.name,
+    description: institution.definition,
+    icon: (
+      <div
+        style={{
+          fontSize: "24px",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        {institution.logo}
+      </div>
+    ),
+    institution: institution // Keep full institution data for rendering
+  }));
+
+  return (
+    <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+      <Carousel
+        items={carouselItems}
+        baseWidth={400}
+        autoplay={false}
+        loop={true}
+        customRender={(item) => (
+          <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "16px" }}>
+              <div
+                style={{
+                  fontSize: "32px",
+                  width: "48px",
+                  height: "48px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "rgba(157, 230, 198, 0.1)",
+                  borderRadius: "8px"
+                }}
+              >
+                {item.institution.logo}
+              </div>
+              <div style={{ flex: 1 }}>
+                <h4
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    color: "#FFFFFF",
+                    margin: "0 0 8px 0"
+                  }}
+                >
+                  {item.institution.name}
+                </h4>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: "#9CA3AF",
+                    margin: "0 0 8px 0"
+                  }}
+                >
+                  Source: {item.institution.source}
+                </p>
+              </div>
+            </div>
+
+            <p
+              style={{
+                fontSize: "13px",
+                fontStyle: "italic",
+                color: "#E5E5E5",
+                lineHeight: "1.4",
+                margin: "0 0 16px 0",
+                flex: 1
+              }}
+            >
+              "{item.institution.definition}"
+            </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "auto" }}>
+              {Object.entries(item.institution.tags).map(([tag, status]) => (
+                <TagPill
+                  key={tag}
+                  tag={tag}
+                  status={status}
+                  label={tagLabels[tag]}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      />
+    </div>
+  );
+};
+
 const InstitutionCard = ({ institution }) => {
   return (
     <div
