@@ -429,6 +429,19 @@ const PerceptionPerspective = () => {
                     <LegalStructuralSimulator embedded={true} />
                   </motion.div>
                 )}
+
+                {/* Corruption Definitions section for Cultural button */}
+                {selectedButton === "Cultural" && (
+                  <motion.div
+                    key={selectedButton}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="mt-8 -mx-32 max-w-none"
+                  >
+                    <CorruptionDefinitions />
+                  </motion.div>
+                )}
               </>
             )}
           </motion.div>
