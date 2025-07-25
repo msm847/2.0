@@ -736,7 +736,7 @@ const CorruptionDefinitions = () => {
                 e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
               }}
             >
-              Compare All<br />Definitions
+              Compare All Definitions
             </button>
           </div>
 
