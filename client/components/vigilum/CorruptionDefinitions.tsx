@@ -662,8 +662,8 @@ const CorruptionDefinitions = () => {
             alignItems: "start"
           }}
         >
-          {/* Top Row: First 3 groups */}
-          {institutionalData.groups.slice(0, 3).map((group, index) => (
+          {/* Top Row: First 2 groups only */}
+          {institutionalData.groups.slice(0, 2).map((group, index) => (
             <div key={group.id} style={{ display: "flex", flexDirection: "column" }}>
               {/* Group Header */}
               <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px", justifyContent: "center" }}>
