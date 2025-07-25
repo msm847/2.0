@@ -365,13 +365,13 @@ const TagPill = ({ tag, status, label }) => {
       className="tag-pill"
       style={{
         ...style,
-        padding: "2px 6px",
-        borderRadius: "8px",
+        padding: "3px 8px",
+        borderRadius: "10px",
         border: "1px solid",
-        fontSize: "9px",
-        fontWeight: "500",
+        fontSize: "10px",
+        fontWeight: "600",
         textTransform: "uppercase",
-        letterSpacing: "0.3px",
+        letterSpacing: "0.4px",
         cursor: tagTooltips[tag] ? "help" : "default",
         whiteSpace: "nowrap"
       }}
