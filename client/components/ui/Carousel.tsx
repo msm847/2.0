@@ -176,7 +176,7 @@ export default function Carousel({
             -index * trackItemOffset,
             -(index - 1) * trackItemOffset,
           ];
-          const outputRange = [90, 0, -90];
+          const outputRange = [15, 0, -15]; // Much more subtle rotation
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const rotateY = useTransform(x, range, outputRange, { clamp: false });
           return (
