@@ -37,13 +37,13 @@ const cardData = [
     isTeamCarousel: true,
     teamMembers: [
       {
-        name: "Team Member 1",
-        role: "Co-Founder & CTO",
+        name: "Adam Kovarskas",
+        role: "Founder",
         description: "Leading technical innovation and system architecture to transform governance through advanced analytics.",
         imageUrl: "/placeholder.svg",
       },
       {
-        name: "Team Member 2",
+        name: "Misha Martynov",
         role: "Co-Founder & CEO",
         description: "Driving strategic vision and partnerships to democratize institutional transparency worldwide.",
         imageUrl: "/placeholder.svg",
