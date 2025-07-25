@@ -57,6 +57,7 @@ export default function Carousel({
   round = false,
   customRender = null,
   onCycleComplete = null,
+  shouldReset = false,
 }) {
   const containerPadding = 16;
   const itemWidth = baseWidth - containerPadding * 2;
