@@ -102,8 +102,8 @@ export default function Carousel({
 
           // Handle cycle completion for non-loop mode
           if (!loop && nextIndex >= items.length) {
-            setCycleCompleted(true); // Set flag instead of calling callback directly
-            return 0; // Return to first item after completing cycle
+            setCycleCompleted(true); // Set flag to trigger completion callback
+            return items.length - 1; // Stay on last item instead of returning to first
           }
 
           // Handle loop mode
