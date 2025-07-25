@@ -707,25 +707,25 @@ const CorruptionDefinitions = () => {
           {/* Bottom Left: 4th group */}
           <div style={{ gridColumn: "1", gridRow: "2", display: "flex", flexDirection: "column" }}>
             {/* Group Header */}
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px", justifyContent: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px", justifyContent: "center" }}>
               <div
                 style={{
-                  fontSize: "24px",
-                  width: "40px",
-                  height: "40px",
+                  fontSize: "32px",
+                  width: "52px",
+                  height: "52px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   backgroundColor: "rgba(157, 230, 198, 0.1)",
-                  borderRadius: "8px"
+                  borderRadius: "10px"
                 }}
               >
                 {institutionalData.groups[3].emblem}
               </div>
               <h3
                 style={{
-                  fontSize: "18px",
-                  fontWeight: "600",
+                  fontSize: "22px",
+                  fontWeight: "700",
                   color: "#9DE6C6",
                   margin: "0",
                   fontFamily: "var(--font-display)",
