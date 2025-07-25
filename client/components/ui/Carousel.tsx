@@ -86,15 +86,7 @@ export default function Carousel({
   useEffect(() => {
     if (autoplay && (!pauseOnHover || !isHovered)) {
       const timer = setInterval(() => {
-        setCurrentIndex((prev) => {
-          if (prev === items.length - 1 && loop) {
-            return 0; // Go back to first item
-          }
-          if (prev === items.length - 1) {
-            return loop ? 0 : prev;
-          }
-          return prev + 1;
-        });
+        setCurrentIndex((prev) => prev + 1);
       }, autoplayDelay);
       return () => clearInterval(timer);
     }
@@ -102,8 +94,6 @@ export default function Carousel({
     autoplay,
     autoplayDelay,
     isHovered,
-    loop,
-    items.length,
     pauseOnHover,
   ]);
 
