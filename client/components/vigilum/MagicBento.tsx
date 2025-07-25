@@ -490,6 +490,214 @@ const BentoCardGrid = ({ children, gridRef }) => (
   </div>
 );
 
+const TeamCarousel = ({ card }) => {
+  const [currentMember, setCurrentMember] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const nextMember = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentMember((prev) => (prev + 1) % card.teamMembers.length);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const prevMember = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentMember((prev) => (prev - 1 + card.teamMembers.length) % card.teamMembers.length);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const member = card.teamMembers[currentMember];
+
+  return (
+    <>
+      <h2
+        className="card__title"
+        style={{
+          fontSize: "30px",
+          marginBottom: "20px",
+          color: "#9DE6C6",
+          fontWeight: "400",
+          textAlign: "center",
+        }}
+      >
+        {card.title}
+      </h2>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "20px",
+          position: "relative",
+          opacity: isTransitioning ? 0.5 : 1,
+          transition: "opacity 0.15s ease",
+        }}
+      >
+        {/* Profile Image */}
+        <div
+          style={{
+            width: "140px",
+            height: "140px",
+            borderRadius: "50%",
+            backgroundColor: "#2d4a3f",
+            border: "3px solid #9DE6C6",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            overflow: "hidden",
+            boxShadow: "0 4px 15px rgba(157, 230, 198, 0.2)",
+          }}
+        >
+          <img
+            src={member.imageUrl}
+            alt={member.name}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: "brightness(0.9)",
+            }}
+          />
+        </div>
+
+        {/* Member Info */}
+        <div style={{ textAlign: "center", maxWidth: "280px" }}>
+          <h3
+            style={{
+              fontSize: "22px",
+              fontWeight: "600",
+              color: "#FFFFFF",
+              margin: "0 0 8px 0",
+            }}
+          >
+            {member.name}
+          </h3>
+          <p
+            style={{
+              fontSize: "16px",
+              fontWeight: "400",
+              color: "#9DE6C6",
+              margin: "0 0 12px 0",
+            }}
+          >
+            {member.role}
+          </p>
+          <p
+            style={{
+              fontSize: "14px",
+              lineHeight: "20px",
+              color: "#E5E5E5",
+              fontWeight: "300",
+              margin: "0",
+            }}
+          >
+            {member.description}
+          </p>
+        </div>
+
+        {/* Navigation */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            marginTop: "10px",
+          }}
+        >
+          <button
+            onClick={prevMember}
+            style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "50%",
+              backgroundColor: "rgba(157, 230, 198, 0.1)",
+              border: "1px solid rgba(157, 230, 198, 0.3)",
+              color: "#9DE6C6",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "18px",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+              e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+              e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+            }}
+          >
+            ‹
+          </button>
+
+          {/* Dots indicator */}
+          <div style={{ display: "flex", gap: "8px" }}>
+            {card.teamMembers.map((_, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  if (!isTransitioning) {
+                    setIsTransitioning(true);
+                    setTimeout(() => {
+                      setCurrentMember(index);
+                      setIsTransitioning(false);
+                    }, 150);
+                  }
+                }}
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  backgroundColor: index === currentMember ? "#9DE6C6" : "rgba(157, 230, 198, 0.3)",
+                  cursor: "pointer",
+                  transition: "background-color 0.2s ease",
+                }}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextMember}
+            style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "50%",
+              backgroundColor: "rgba(157, 230, 198, 0.1)",
+              border: "1px solid rgba(157, 230, 198, 0.3)",
+              color: "#9DE6C6",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "18px",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+              e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+              e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+            }}
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const useMobileDetection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
