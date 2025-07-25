@@ -86,7 +86,14 @@ export default function Carousel({
   useEffect(() => {
     if (autoplay && (!pauseOnHover || !isHovered)) {
       const timer = setInterval(() => {
-        setCurrentIndex((prev) => prev + 1);
+        setCurrentIndex((prev) => {
+          const nextIndex = prev + 1;
+          // Prevent going past second set
+          if (loop && nextIndex >= items.length * 2) {
+            return items.length;
+          }
+          return nextIndex;
+        });
       }, autoplayDelay);
       return () => clearInterval(timer);
     }
@@ -95,6 +102,8 @@ export default function Carousel({
     autoplayDelay,
     isHovered,
     pauseOnHover,
+    loop,
+    items.length,
   ]);
 
   const effectiveTransition = SPRING_OPTIONS; // Always use smooth transitions
