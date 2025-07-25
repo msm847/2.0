@@ -409,7 +409,7 @@ const InstitutionCarousel = ({ institutions }) => {
     <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
       <Carousel
         items={carouselItems}
-        baseWidth={400}
+        baseWidth={350}
         autoplay={true}
         autoplayDelay={4000}
         pauseOnHover={true}
