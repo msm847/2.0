@@ -100,7 +100,18 @@ export default function Carousel({
   const effectiveTransition = isResetting ? { duration: 0 } : SPRING_OPTIONS;
 
   const handleAnimationComplete = () => {
-    // No longer needed for seamless looping
+    if (loop) {
+      // Reset position when we reach the boundaries
+      if (currentIndex >= items.length * 2) {
+        setIsResetting(true);
+        setCurrentIndex(items.length);
+        setTimeout(() => setIsResetting(false), 50);
+      } else if (currentIndex <= 0) {
+        setIsResetting(true);
+        setCurrentIndex(items.length);
+        setTimeout(() => setIsResetting(false), 50);
+      }
+    }
   };
 
   const handleDragEnd = (_, info) => {
