@@ -795,33 +795,7 @@ const CorruptionDefinitions = () => {
         </div>
       </div>
 
-      {/* Compare All Button */}
-      <div style={{ textAlign: "center", marginTop: "40px" }}>
-        <button
-          onClick={() => setShowCompareAll(true)}
-          style={{
-            backgroundColor: "rgba(157, 230, 198, 0.1)",
-            border: "1px solid rgba(157, 230, 198, 0.3)",
-            borderRadius: "25px",
-            padding: "16px 32px",
-            color: "#9DE6C6",
-            fontSize: "16px",
-            fontWeight: "500",
-            cursor: "pointer",
-            transition: "all 0.3s ease"
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-            e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-            e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
-          }}
-        >
-          Compare All Definitions
-        </button>
-      </div>
+
 
       {/* Footer */}
       <div style={{ textAlign: "center", marginTop: "48px", paddingTop: "32px", borderTop: "1px solid rgba(157, 230, 198, 0.2)" }}>
