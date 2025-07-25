@@ -22,14 +22,43 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  background: rgba(16, 32, 28, 0.8);
-  border: 1px solid rgba(157, 230, 198, 0.2);
-  border-radius: 12px;
+  /* Apple-style glassmorphism */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(120%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
   padding: 20px;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   overflow: hidden;
   transition: all 0.3s ease;
+
+  /* 3D glass effect with multiple shadows */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.1) inset,
+    0 2px 4px rgba(255, 255, 255, 0.1) inset;
+
+  /* Subtle gradient overlay for depth */
+  position: relative;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  border-radius: 16px 16px 0 0;
 }
 
 .carousel-item:hover {
@@ -141,19 +170,19 @@
   .carousel-container {
     padding: 8px;
   }
-  
+
   .carousel-track {
     height: 350px;
   }
-  
+
   .carousel-item {
     padding: 16px;
   }
-  
+
   .carousel-item-title {
     font-size: 16px;
   }
-  
+
   .carousel-item-description {
     font-size: 13px;
   }
