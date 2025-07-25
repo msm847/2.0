@@ -711,6 +711,35 @@ const CorruptionDefinitions = () => {
             </div>
           ))}
 
+          {/* Top Right: Compare All Button */}
+          <div style={{ gridColumn: "3", gridRow: "1", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <button
+              onClick={() => setShowCompareAll(true)}
+              style={{
+                backgroundColor: "rgba(157, 230, 198, 0.1)",
+                border: "1px solid rgba(157, 230, 198, 0.3)",
+                borderRadius: "25px",
+                padding: "16px 24px",
+                color: "#9DE6C6",
+                fontSize: "15px",
+                fontWeight: "600",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                textAlign: "center"
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+              }}
+            >
+              Compare All<br />Definitions
+            </button>
+          </div>
+
           {/* Bottom Center: Private/Corporate (3rd group) */}
           <div style={{ gridColumn: "2", gridRow: "2", display: "flex", flexDirection: "column" }}>
             {/* Group Header */}
