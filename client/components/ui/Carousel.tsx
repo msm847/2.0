@@ -71,6 +71,15 @@ export default function Carousel({
   const [isResetting, setIsResetting] = useState(false);
 
   const containerRef = useRef(null);
+
+  // Handle cycle completion callback
+  useEffect(() => {
+    if (cycleCompleted && onCycleComplete) {
+      onCycleComplete();
+      setCycleCompleted(false); // Reset the flag
+    }
+  }, [cycleCompleted, onCycleComplete]);
+
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
