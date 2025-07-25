@@ -80,10 +80,15 @@ export default function Carousel({
     }
   }, [cycleCompleted, onCycleComplete]);
 
-  // Reset to first item when carousel becomes active
+  // Reset to first item and start immediately when carousel becomes active
   useEffect(() => {
     if (autoplay && !loop) {
       setCurrentIndex(0);
+      // Start moving immediately if autoplay is enabled
+      const timer = setTimeout(() => {
+        setCurrentIndex(1);
+      }, 100); // Very short delay to ensure smooth transition
+      return () => clearTimeout(timer);
     }
   }, [autoplay, loop]);
 
