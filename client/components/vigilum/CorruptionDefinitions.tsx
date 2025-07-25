@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Carousel from "@/components/ui/Carousel";
 
 // Data for the institutional definitions
 const institutionalData = {
