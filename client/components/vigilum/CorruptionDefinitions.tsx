@@ -826,19 +826,7 @@ const CorruptionDefinitions = () => {
 
 
 
-      {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: "48px", paddingTop: "32px", borderTop: "1px solid rgba(157, 230, 198, 0.2)" }}>
-        <p
-          style={{
-            fontSize: "16px",
-            color: "#E5E5E5",
-            fontStyle: "italic",
-            opacity: 0.8
-          }}
-        >
-          There is no single answer. Every institution, every law, every policy defines corruption in its own terms.
-        </p>
-      </div>
+
 
       {/* Compare All Modal */}
       <AnimatePresence>
