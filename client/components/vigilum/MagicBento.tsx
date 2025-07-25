@@ -12,7 +12,7 @@ const cardData = [
     color: "#10201C",
     title: "Mission",
     description:
-      "This unified structural intelligence platform transforms complex legal, procedural, and political frameworks into dynamic, machine-readable logic. Drawing inspiration from world-class enterprise risk systems, its modular engines integrate anomaly detection, clause analysis, influence mapping, and enforcement tracking into a single diagnostic layer. Machine-powered analytics simulate governance scenarios, quantify institutional exposure in real time, and trigger automated interventions before design flaws become systemic failures.",
+      "This integrated structural intelligence system transforms complex legal, procedural, and network data into clear risk signals that safeguard public resources and foster economic growth. Its modular engines combine procurement anomaly detection, contract clause evaluation, influence mapping, and enforcement monitoring into a unified interface. Machine-powered analysis simulates future governance scenarios, quantifies exposure in real time, and recommends proactive measures to close hidden gaps—so institutions can unlock value, enhance transparency, and build prosperity for all stakeholders.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
