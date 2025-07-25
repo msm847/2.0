@@ -591,6 +591,11 @@ const CorruptionDefinitions = () => {
   const [activeCarousel, setActiveCarousel] = useState(0);
   const [carouselCycles, setCarouselCycles] = useState([0, 0, 0, 0]); // Track cycles for each carousel
 
+  const handleCarouselComplete = (carouselIndex) => {
+    // Move to next carousel when current one completes a full cycle
+    setActiveCarousel((prev) => (prev + 1) % 4);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
