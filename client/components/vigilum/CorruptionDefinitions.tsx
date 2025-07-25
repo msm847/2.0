@@ -688,7 +688,11 @@ const CorruptionDefinitions = () => {
               </div>
 
               {/* Institution Carousel */}
-              <InstitutionCarousel institutions={group.institutions} />
+              <InstitutionCarousel
+                institutions={group.institutions}
+                isActive={activeCarousel === index}
+                onCycleComplete={() => handleCarouselComplete(index)}
+              />
             </div>
           ))}
 
