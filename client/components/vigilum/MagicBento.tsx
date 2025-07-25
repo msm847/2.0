@@ -702,6 +702,8 @@ const MagicBento = ({
                         </p>
                       </div>
                     </>
+                  ) : card.isTeamCarousel ? (
+                    <TeamCarousel card={card} />
                   ) : (
                     <>
                       <h2 className="card__title">{card.title}</h2>
