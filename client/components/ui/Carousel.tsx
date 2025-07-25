@@ -124,7 +124,12 @@ export default function Carousel({
       // Moving right (next item)
       setCurrentIndex((prev) => {
         if (loop) {
-          return prev + 1;
+          const nextIndex = prev + 1;
+          // Prevent going past second set
+          if (nextIndex >= items.length * 2) {
+            return items.length;
+          }
+          return nextIndex;
         } else {
           return Math.min(prev + 1, items.length - 1);
         }
@@ -133,7 +138,12 @@ export default function Carousel({
       // Moving left (previous item)
       setCurrentIndex((prev) => {
         if (loop) {
-          return prev - 1;
+          const prevIndex = prev - 1;
+          // Prevent going before first set
+          if (prevIndex < 0) {
+            return items.length - 1;
+          }
+          return prevIndex;
         } else {
           return Math.max(prev - 1, 0);
         }
