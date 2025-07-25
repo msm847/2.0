@@ -22,7 +22,7 @@ const cardData = [
     color: "#10201C",
     title: "Vision",
     description:
-      "Our vision is to set the global standard for institutional integrity—an intelligent foresight engine that outpaces reactive audits with a continuous structural risk index. Inspired by market-shaping platforms, we aim for every contract, tender, and enforcement action to be scored, monitored, and optimized within a governance operating system. By democratizing advanced analytics and embedding transparent signal flows into policy and funding decisions, we will render corruption traceable and ultimately unexecutable at its design stage.",
+      "Our vision is to establish the global standard for institutional integrity—an intelligent foresight engine that surpasses reactive audits with continuous structural risk assessment. We envision a future where every contract, tender, and enforcement action is scored, monitored, and optimized within a governance operating system. By democratizing advanced analytics and embedding transparent signal flows into policy decisions, we will render structural compromise computationally legible and ultimately unexecutable at its design stage.",
     secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
