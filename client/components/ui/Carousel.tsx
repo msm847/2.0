@@ -136,7 +136,7 @@ export default function Carousel({
     ? {}
     : {
       dragConstraints: {
-        left: -trackItemOffset * (carouselItems.length - 1),
+        left: -trackItemOffset * (items.length - 1),
         right: 0,
       },
     };
