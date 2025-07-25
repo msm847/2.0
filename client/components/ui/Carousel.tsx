@@ -122,14 +122,16 @@ export default function Carousel({
     const offset = info.offset.x;
     const velocity = info.velocity.x;
     if (offset < -DRAG_BUFFER || velocity < -VELOCITY_THRESHOLD) {
+      // Moving right (next item)
       if (loop && currentIndex === items.length - 1) {
-        setCurrentIndex(currentIndex + 1);
+        setCurrentIndex(0); // Go to first item
       } else {
-        setCurrentIndex((prev) => Math.min(prev + 1, carouselItems.length - 1));
+        setCurrentIndex((prev) => Math.min(prev + 1, items.length - 1));
       }
     } else if (offset > DRAG_BUFFER || velocity > VELOCITY_THRESHOLD) {
+      // Moving left (previous item)
       if (loop && currentIndex === 0) {
-        setCurrentIndex(items.length - 1);
+        setCurrentIndex(items.length - 1); // Go to last item
       } else {
         setCurrentIndex((prev) => Math.max(prev - 1, 0));
       }
