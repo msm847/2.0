@@ -97,7 +97,7 @@ export default function Carousel({
     pauseOnHover,
   ]);
 
-  const effectiveTransition = isResetting ? { duration: 0 } : SPRING_OPTIONS;
+  const effectiveTransition = SPRING_OPTIONS; // Always use smooth transitions
 
   const handleAnimationComplete = () => {
     if (loop) {
