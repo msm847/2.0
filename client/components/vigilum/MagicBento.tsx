@@ -12,7 +12,7 @@ const cardData = [
     color: "#10201C",
     title: "Mission",
     description:
-      "This unified structural intelligence system ingests legal, procedural, network, and enforcement data to preemptively close corruption pathways. Inspired by Aladdin's orchestration of risk management, its modular engines integrate anomaly detection, clause analysis, influence mapping, and enforcement tracking into a single pane of glass. Machine-powered diagnostics simulate future governance scenarios, quantify institutional exposure in real time, and trigger automated interventions before design flaws become systemic failures.",
+      "This unified structural intelligence platform transforms complex legal, procedural, and political frameworks into dynamic, machine-readable logic. Drawing inspiration from world-class enterprise risk systems, its modular engines integrate anomaly detection, clause analysis, influence mapping, and enforcement tracking into a single diagnostic layer. Machine-powered analytics simulate governance scenarios, quantify institutional exposure in real time, and trigger automated interventions before design flaws become systemic failures.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
