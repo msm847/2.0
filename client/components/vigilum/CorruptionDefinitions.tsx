@@ -594,7 +594,7 @@ const CorruptionDefinitions = () => {
             fontStyle: "italic"
           }}
         >
-          A Comparative Map of Institutional Definitions
+          Every institution defines corruption in its own terms.
         </p>
         <p
           style={{
