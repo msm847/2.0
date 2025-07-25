@@ -61,7 +61,7 @@ export default function Carousel({
   const itemWidth = baseWidth - containerPadding * 2;
   const trackItemOffset = itemWidth + GAP;
 
-  const carouselItems = loop ? [...items, items[0]] : items;
+  const carouselItems = items;
   const [currentIndex, setCurrentIndex] = useState(0);
   const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
