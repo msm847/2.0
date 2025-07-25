@@ -382,7 +382,7 @@ const TagPill = ({ tag, status, label }) => {
   );
 };
 
-const InstitutionCarousel = ({ institutions }) => {
+const InstitutionCarousel = ({ institutions, isActive = false, onCycleComplete = () => {} }) => {
   // Convert institutions to carousel format
   const carouselItems = institutions.map((institution, index) => ({
     id: index,
