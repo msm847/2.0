@@ -102,9 +102,7 @@ export default function Carousel({
 
           // Handle cycle completion for non-loop mode
           if (!loop && nextIndex >= items.length) {
-            if (onCycleComplete) {
-              onCycleComplete();
-            }
+            setCycleCompleted(true); // Set flag instead of calling callback directly
             return 0; // Return to first item after completing cycle
           }
 
