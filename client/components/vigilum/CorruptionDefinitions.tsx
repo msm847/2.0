@@ -85,7 +85,7 @@ const institutionalData = {
       id: "financial",
       name: "International Financial",
       description: "Leading global financial institutions with their corruption frameworks.",
-      emblem: "🏦",
+      emblem: "��",
       institutions: [
         {
           name: "World Bank",
@@ -587,15 +587,7 @@ const InstitutionCard = ({ institution }) => {
 
 
 const CorruptionDefinitions = () => {
-  const [expandedGroups, setExpandedGroups] = useState({});
   const [showCompareAll, setShowCompareAll] = useState(false);
-
-  const toggleGroup = (groupId) => {
-    setExpandedGroups(prev => ({
-      ...prev,
-      [groupId]: !prev[groupId]
-    }));
-  };
 
   return (
     <motion.div
