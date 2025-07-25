@@ -85,7 +85,7 @@ const institutionalData = {
       id: "financial",
       name: "International Financial",
       description: "Leading global financial institutions with their corruption frameworks.",
-      emblem: "��",
+      emblem: "🏦",
       institutions: [
         {
           name: "World Bank",
@@ -635,17 +635,64 @@ const CorruptionDefinitions = () => {
         </p>
       </div>
 
-      {/* Group Sections */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        {institutionalData.groups.map((group) => (
-          <div key={group.id} style={{ marginBottom: "48px" }}>
+      {/* Group Sections in Grid Layout */}
+      <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateRows: "auto auto",
+            gap: "40px",
+            alignItems: "start"
+          }}
+        >
+          {/* Top Row: First 3 groups */}
+          {institutionalData.groups.slice(0, 3).map((group, index) => (
+            <div key={group.id} style={{ display: "flex", flexDirection: "column" }}>
+              {/* Group Header */}
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px", justifyContent: "center" }}>
+                <div
+                  style={{
+                    fontSize: "24px",
+                    width: "40px",
+                    height: "40px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "rgba(157, 230, 198, 0.1)",
+                    borderRadius: "8px"
+                  }}
+                >
+                  {group.emblem}
+                </div>
+                <h3
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    color: "#9DE6C6",
+                    margin: "0",
+                    fontFamily: "var(--font-display)",
+                    textAlign: "center"
+                  }}
+                >
+                  {group.name}
+                </h3>
+              </div>
+
+              {/* Institution Carousel */}
+              <InstitutionCarousel institutions={group.institutions} />
+            </div>
+          ))}
+
+          {/* Bottom Left: 4th group */}
+          <div style={{ gridColumn: "1", gridRow: "2", display: "flex", flexDirection: "column" }}>
             {/* Group Header */}
-            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "32px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px", justifyContent: "center" }}>
               <div
                 style={{
-                  fontSize: "32px",
-                  width: "48px",
-                  height: "48px",
+                  fontSize: "24px",
+                  width: "40px",
+                  height: "40px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -653,27 +700,26 @@ const CorruptionDefinitions = () => {
                   borderRadius: "8px"
                 }}
               >
-                {group.emblem}
+                {institutionalData.groups[3].emblem}
               </div>
-              <div>
-                <h3
-                  style={{
-                    fontSize: "24px",
-                    fontWeight: "600",
-                    color: "#9DE6C6",
-                    margin: "0",
-                    fontFamily: "var(--font-display)"
-                  }}
-                >
-                  {group.name}
-                </h3>
-              </div>
+              <h3
+                style={{
+                  fontSize: "18px",
+                  fontWeight: "600",
+                  color: "#9DE6C6",
+                  margin: "0",
+                  fontFamily: "var(--font-display)",
+                  textAlign: "center"
+                }}
+              >
+                {institutionalData.groups[3].name}
+              </h3>
             </div>
 
             {/* Institution Carousel */}
-            <InstitutionCarousel institutions={group.institutions} />
+            <InstitutionCarousel institutions={institutionalData.groups[3].institutions} />
           </div>
-        ))}
+        </div>
       </div>
 
       {/* Compare All Button */}
