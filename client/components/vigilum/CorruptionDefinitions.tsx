@@ -788,6 +788,7 @@ const CorruptionDefinitions = () => {
               institutions={institutionalData.groups[3].institutions}
               isActive={activeCarousel === 3}
               onCycleComplete={() => handleCarouselComplete(3)}
+              shouldReset={allCarouselsReset}
             />
           </div>
         </div>
