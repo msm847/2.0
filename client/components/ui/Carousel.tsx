@@ -92,10 +92,10 @@ export default function Carousel({
   useEffect(() => {
     if (autoplay && !loop) {
       setCurrentIndex(0);
-      // Start moving immediately if autoplay is enabled
+      // Start moving with appropriate delay
       const timer = setTimeout(() => {
         setCurrentIndex(1);
-      }, 100); // Very short delay to ensure smooth transition
+      }, 500); // Longer delay for smoother transition, especially after resets
       return () => clearTimeout(timer);
     }
   }, [autoplay, loop]);
