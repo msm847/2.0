@@ -540,11 +540,7 @@ const GroupPanel = ({ group, isExpanded, onToggle }) => {
             style={{ overflow: "hidden" }}
           >
             <div style={{ padding: "0 24px 24px 24px" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
-                {group.institutions.map((institution, index) => (
-                  <InstitutionCard key={index} institution={institution} />
-                ))}
-              </div>
+              <InstitutionCarousel institutions={group.institutions} />
             </div>
           </motion.div>
         )}
