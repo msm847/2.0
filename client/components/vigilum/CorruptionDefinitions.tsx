@@ -704,8 +704,48 @@ const CorruptionDefinitions = () => {
             </div>
           ))}
 
-          {/* Bottom Left: 4th group */}
-          <div style={{ gridColumn: "1", gridRow: "2", display: "flex", flexDirection: "column" }}>
+          {/* Bottom Center: Private/Corporate (3rd group) */}
+          <div style={{ gridColumn: "2", gridRow: "2", display: "flex", flexDirection: "column" }}>
+            {/* Group Header */}
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px", justifyContent: "center" }}>
+              <div
+                style={{
+                  fontSize: "32px",
+                  width: "52px",
+                  height: "52px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "rgba(157, 230, 198, 0.1)",
+                  borderRadius: "10px"
+                }}
+              >
+                {institutionalData.groups[2].emblem}
+              </div>
+              <h3
+                style={{
+                  fontSize: "22px",
+                  fontWeight: "700",
+                  color: "#9DE6C6",
+                  margin: "0",
+                  fontFamily: "var(--font-display)",
+                  textAlign: "center"
+                }}
+              >
+                {institutionalData.groups[2].name}
+              </h3>
+            </div>
+
+            {/* Institution Carousel */}
+            <InstitutionCarousel
+              institutions={institutionalData.groups[2].institutions}
+              isActive={activeCarousel === 2}
+              onCycleComplete={() => handleCarouselComplete(2)}
+            />
+          </div>
+
+          {/* Bottom Right: Civil Society/NGO (4th group) */}
+          <div style={{ gridColumn: "3", gridRow: "2", display: "flex", flexDirection: "column" }}>
             {/* Group Header */}
             <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px", justifyContent: "center" }}>
               <div
