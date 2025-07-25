@@ -140,7 +140,7 @@ export default function Carousel({
   };
 
   const dragProps = loop
-    ? {}
+    ? {} // No constraints for infinite loop
     : {
       dragConstraints: {
         left: -trackItemOffset * (items.length - 1),
