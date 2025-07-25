@@ -410,10 +410,11 @@ const InstitutionCarousel = ({ institutions, isActive = false, onCycleComplete =
       <Carousel
         items={carouselItems}
         baseWidth={350}
-        autoplay={true}
-        autoplayDelay={4000}
-        pauseOnHover={true}
-        loop={true}
+        autoplay={isActive}
+        autoplayDelay={3000}
+        pauseOnHover={false}
+        loop={false}
+        onCycleComplete={onCycleComplete}
         customRender={(item) => (
           <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "4px" }}>
             {/* Header with logo space and institution info */}
