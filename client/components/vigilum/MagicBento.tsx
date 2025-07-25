@@ -20,6 +20,26 @@ const cardData = [
   },
   {
     color: "#10201C",
+    title: "Member 1",
+    description: "Team member description goes here. Add details about their role, expertise, and contribution to the mission.",
+    secondaryDescription: "",
+    signature: "",
+    url: "/team",
+    isTeamMember: true,
+    imageUrl: "/placeholder.svg",
+  },
+  {
+    color: "#10201C",
+    title: "Member 2",
+    description: "Team member description goes here. Add details about their role, expertise, and contribution to the mission.",
+    secondaryDescription: "",
+    signature: "",
+    url: "/team",
+    isTeamMember: true,
+    imageUrl: "/placeholder.svg",
+  },
+  {
+    color: "#10201C",
     title: "Vision",
     description:
       "Our vision is to empower every decision with structural foresight that promotes shared prosperity and integrity. We envision a world where every contract, tender, and regulatory action is continuously assessed against a dynamic risk framework—blending text analysis, process review, network insights, and outcome tracking. By making these insights widely accessible, we create a collaborative ecosystem of regulators, institutions, and communities working together to prevent systemic loss and direct resources toward productive, sustainable growth.",
