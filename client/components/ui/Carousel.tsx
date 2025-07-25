@@ -87,9 +87,9 @@ export default function Carousel({
       const timer = setInterval(() => {
         setCurrentIndex((prev) => {
           if (prev === items.length - 1 && loop) {
-            return prev + 1;
+            return 0; // Go back to first item
           }
-          if (prev === carouselItems.length - 1) {
+          if (prev === items.length - 1) {
             return loop ? 0 : prev;
           }
           return prev + 1;
@@ -103,7 +103,6 @@ export default function Carousel({
     isHovered,
     loop,
     items.length,
-    carouselItems.length,
     pauseOnHover,
   ]);
 
