@@ -181,6 +181,8 @@ export default function Carousel({
           const rotateY = useTransform(x, range, outputRange, { clamp: false });
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const opacity = useTransform(x, range, [0.6, 1, 0.6], { clamp: false });
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const scale = useTransform(x, range, [0.95, 1, 0.95], { clamp: false });
           return (
             <motion.div
               key={index}
