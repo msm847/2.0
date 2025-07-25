@@ -933,7 +933,7 @@ const MagicBento = ({
                 if (!el) return;
 
                 const handleMouseMove = (e) => {
-                  if (shouldDisableAnimations) return;
+                  if (shouldDisableAnimations || card.isTeamCarousel) return;
 
                   const rect = el.getBoundingClientRect();
                   const x = e.clientX - rect.left;
@@ -966,7 +966,7 @@ const MagicBento = ({
                 };
 
                 const handleMouseLeave = () => {
-                  if (shouldDisableAnimations) return;
+                  if (shouldDisableAnimations || card.isTeamCarousel) return;
 
                   if (enableTilt) {
                     gsap.to(el, {
@@ -988,7 +988,7 @@ const MagicBento = ({
                 };
 
                 const handleClick = (e) => {
-                  if (!clickEffect || shouldDisableAnimations) return;
+                  if (!clickEffect || shouldDisableAnimations || card.isTeamCarousel) return;
 
                   const rect = el.getBoundingClientRect();
                   const x = e.clientX - rect.left;
