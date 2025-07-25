@@ -735,15 +735,44 @@ const CorruptionDefinitions = () => {
         </p>
       </div>
 
-      {/* Group Panels */}
+      {/* Group Sections */}
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {institutionalData.groups.map((group) => (
-          <GroupPanel
-            key={group.id}
-            group={group}
-            isExpanded={expandedGroups[group.id]}
-            onToggle={() => toggleGroup(group.id)}
-          />
+          <div key={group.id} style={{ marginBottom: "48px" }}>
+            {/* Group Header */}
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "32px" }}>
+              <div
+                style={{
+                  fontSize: "32px",
+                  width: "48px",
+                  height: "48px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "rgba(157, 230, 198, 0.1)",
+                  borderRadius: "8px"
+                }}
+              >
+                {group.emblem}
+              </div>
+              <div>
+                <h3
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: "600",
+                    color: "#9DE6C6",
+                    margin: "0",
+                    fontFamily: "var(--font-display)"
+                  }}
+                >
+                  {group.name}
+                </h3>
+              </div>
+            </div>
+
+            {/* Institution Carousel */}
+            <InstitutionCarousel institutions={group.institutions} />
+          </div>
         ))}
       </div>
 
