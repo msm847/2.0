@@ -704,8 +704,8 @@ const CorruptionDefinitions = () => {
             </div>
           ))}
 
-          {/* Bottom Center: 4th group - below International Financial */}
-          <div style={{ gridColumn: "2", gridRow: "2", display: "flex", flexDirection: "column" }}>
+          {/* Bottom Left: 4th group */}
+          <div style={{ gridColumn: "1", gridRow: "2", display: "flex", flexDirection: "column" }}>
             {/* Group Header */}
             <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "16px", justifyContent: "center" }}>
               <div
