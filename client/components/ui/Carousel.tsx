@@ -101,15 +101,17 @@ export default function Carousel({
 
   const handleAnimationComplete = () => {
     if (loop) {
-      // Reset position when we reach the boundaries
+      // Seamless reset without animation when reaching boundaries
       if (currentIndex >= items.length * 2) {
-        setIsResetting(true);
-        setCurrentIndex(items.length);
-        setTimeout(() => setIsResetting(false), 50);
-      } else if (currentIndex <= 0) {
-        setIsResetting(true);
-        setCurrentIndex(items.length);
-        setTimeout(() => setIsResetting(false), 50);
+        // Reset to equivalent position in middle section
+        const equivalentIndex = items.length;
+        x.set(-(equivalentIndex * trackItemOffset));
+        setCurrentIndex(equivalentIndex);
+      } else if (currentIndex < 0) {
+        // Reset to equivalent position in middle section
+        const equivalentIndex = items.length - 1;
+        x.set(-(equivalentIndex * trackItemOffset));
+        setCurrentIndex(equivalentIndex);
       }
     }
   };
