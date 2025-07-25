@@ -439,7 +439,7 @@ const InstitutionCard = ({ institution }) => {
           </p>
         </div>
       </div>
-      
+
       <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
         {Object.entries(institution.tags).map(([tag, status]) => (
           <TagPill
@@ -528,7 +528,7 @@ const GroupPanel = ({ group, isExpanded, onToggle }) => {
           ▼
         </div>
       </button>
-      
+
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -569,9 +569,7 @@ const CorruptionDefinitions = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       style={{
-        backgroundColor: "#10201C",
         padding: "40px 32px",
-        borderRadius: "20px",
         marginTop: "32px"
       }}
     >
@@ -717,9 +715,9 @@ const CorruptionDefinitions = () => {
                   ✕
                 </button>
               </div>
-              
+
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "20px" }}>
-                {institutionalData.groups.flatMap(group => 
+                {institutionalData.groups.flatMap(group =>
                   group.institutions.map((institution, index) => (
                     <InstitutionCard key={`${group.id}-${index}`} institution={institution} />
                   ))
