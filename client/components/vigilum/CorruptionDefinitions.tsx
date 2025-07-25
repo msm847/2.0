@@ -574,7 +574,7 @@ const CorruptionDefinitions = () => {
       }}
     >
       {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "48px" }}>
+      <div style={{ textAlign: "left", marginBottom: "48px" }}>
         <h2
           style={{
             fontSize: "clamp(2rem, 4vw, 2.5rem)",
