@@ -29,23 +29,26 @@ const cardData = [
   },
   {
     color: "#10201C",
-    title: "Member 2",
-    description: "Team member description goes here. Add details about their role, expertise, and contribution to the mission.",
+    title: "Our Team",
+    description: "Meet the innovators behind Vigilum",
     secondaryDescription: "",
     signature: "",
     url: "/team",
-    isTeamMember: true,
-    imageUrl: "/placeholder.svg",
-  },
-  {
-    color: "#10201C",
-    title: "Member 1",
-    description: "Team member description goes here. Add details about their role, expertise, and contribution to the mission.",
-    secondaryDescription: "",
-    signature: "",
-    url: "/team",
-    isTeamMember: true,
-    imageUrl: "/placeholder.svg",
+    isTeamCarousel: true,
+    teamMembers: [
+      {
+        name: "Team Member 1",
+        role: "Co-Founder & CTO",
+        description: "Leading technical innovation and system architecture to transform governance through advanced analytics.",
+        imageUrl: "/placeholder.svg",
+      },
+      {
+        name: "Team Member 2",
+        role: "Co-Founder & CEO",
+        description: "Driving strategic vision and partnerships to democratize institutional transparency worldwide.",
+        imageUrl: "/placeholder.svg",
+      }
+    ],
   },
 ];
 
