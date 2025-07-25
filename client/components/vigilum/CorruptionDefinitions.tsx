@@ -410,7 +410,9 @@ const InstitutionCarousel = ({ institutions }) => {
       <Carousel
         items={carouselItems}
         baseWidth={400}
-        autoplay={false}
+        autoplay={true}
+        autoplayDelay={4000}
+        pauseOnHover={true}
         loop={true}
         customRender={(item) => (
           <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
