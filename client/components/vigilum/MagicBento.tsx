@@ -969,14 +969,16 @@ const MagicBento = ({
                       >
                         {card.description}
                       </p>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <h2 className="card__title">{card.title}</h2>
-                    <p className="card__description">{card.description}</p>
-                  </>
-                )}
+                      </div>
+                    </>
+                  ) : card.isTeamCarousel ? (
+                    <TeamCarousel card={card} />
+                  ) : (
+                    <>
+                      <h2 className="card__title">{card.title}</h2>
+                      <p className="card__description">{card.description}</p>
+                    </>
+                  )}
               </div>
             </div>
           );
