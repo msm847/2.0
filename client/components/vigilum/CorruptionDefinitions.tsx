@@ -601,7 +601,7 @@ const CorruptionDefinitions = () => {
             fontSize: "16px",
             color: "#E5E5E5",
             maxWidth: "800px",
-            margin: "0 auto",
+            margin: "0",
             lineHeight: "1.6"
           }}
         >
