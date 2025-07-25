@@ -80,6 +80,13 @@ export default function Carousel({
     }
   }, [cycleCompleted, onCycleComplete]);
 
+  // Reset to first item when carousel becomes active
+  useEffect(() => {
+    if (autoplay && !loop) {
+      setCurrentIndex(0);
+    }
+  }, [autoplay, loop]);
+
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
