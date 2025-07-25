@@ -594,7 +594,15 @@ const CorruptionDefinitions = () => {
 
   const handleCarouselComplete = (carouselIndex) => {
     // Move to next carousel when current one completes a full cycle
-    setActiveCarousel((prev) => (prev + 1) % 4);
+    if (carouselIndex === activeCarousel) {
+      if (activeCarousel === 3) {
+        // If last carousel completed, reset to first carousel
+        setActiveCarousel(0);
+      } else {
+        // Move to next carousel
+        setActiveCarousel(prev => prev + 1);
+      }
+    }
   };
 
   return (
