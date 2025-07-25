@@ -415,38 +415,45 @@ const InstitutionCarousel = ({ institutions }) => {
         pauseOnHover={true}
         loop={true}
         customRender={(item) => (
-          <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "16px" }}>
+          <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "4px" }}>
+            {/* Header with logo space and institution info */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "12px", marginBottom: "20px" }}>
               <div
                 style={{
-                  fontSize: "32px",
-                  width: "48px",
-                  height: "48px",
+                  fontSize: "28px",
+                  width: "56px",
+                  height: "56px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   backgroundColor: "rgba(157, 230, 198, 0.1)",
-                  borderRadius: "8px"
+                  borderRadius: "10px",
+                  flexShrink: 0
                 }}
               >
                 {item.institution.logo}
               </div>
-              <div style={{ flex: 1 }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
                 <h4
                   style={{
-                    fontSize: "18px",
-                    fontWeight: "600",
+                    fontSize: "16px",
+                    fontWeight: "700",
                     color: "#FFFFFF",
-                    margin: "0 0 8px 0"
+                    margin: "0 0 6px 0",
+                    lineHeight: "1.2",
+                    letterSpacing: "0.3px"
                   }}
                 >
                   {item.institution.name}
                 </h4>
                 <p
                   style={{
-                    fontSize: "12px",
+                    fontSize: "10px",
                     color: "#9CA3AF",
-                    margin: "0 0 8px 0"
+                    margin: "0",
+                    fontWeight: "500",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px"
                   }}
                 >
                   Source: {item.institution.source}
@@ -454,20 +461,39 @@ const InstitutionCarousel = ({ institutions }) => {
               </div>
             </div>
 
-            <p
+            {/* Definition text */}
+            <div
               style={{
-                fontSize: "13px",
-                fontStyle: "italic",
-                color: "#E5E5E5",
-                lineHeight: "1.4",
-                margin: "0 0 16px 0",
-                flex: 1
+                flex: 1,
+                marginBottom: "16px",
+                display: "flex",
+                alignItems: "flex-start"
               }}
             >
-              "{item.institution.definition}"
-            </p>
+              <p
+                style={{
+                  fontSize: "14px",
+                  fontStyle: "italic",
+                  color: "#E5E5E5",
+                  lineHeight: "1.5",
+                  margin: "0",
+                  fontWeight: "400",
+                  textAlign: "left"
+                }}
+              >
+                "{item.institution.definition}"
+              </p>
+            </div>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "auto" }}>
+            {/* Tags at bottom */}
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "6px",
+              marginTop: "auto",
+              paddingTop: "12px",
+              borderTop: "1px solid rgba(157, 230, 198, 0.1)"
+            }}>
               {Object.entries(item.institution.tags).map(([tag, status]) => (
                 <TagPill
                   key={tag}
