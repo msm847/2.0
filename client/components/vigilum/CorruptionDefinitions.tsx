@@ -602,7 +602,10 @@ const CorruptionDefinitions = () => {
         setAllCarouselsReset(true);
         setTimeout(() => {
           setAllCarouselsReset(false);
-          setActiveCarousel(0); // Start sequence again from first carousel
+          // Add extra delay before starting first carousel to avoid jarring transition
+          setTimeout(() => {
+            setActiveCarousel(0); // Start sequence again from first carousel
+          }, 800); // Additional delay for smooth restart
         }, 500); // Brief pause for visual effect
       } else {
         // Move to next carousel
