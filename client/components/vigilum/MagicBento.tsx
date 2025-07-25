@@ -907,6 +907,65 @@ const MagicBento = ({
                       {card.signature}
                     </p>
                   </>
+                ) : card.isTeamMember ? (
+                  <>
+                    <h2
+                      className="card__title"
+                      style={{
+                        fontSize: "30px",
+                        marginBottom: "16px",
+                        color: "#9DE6C6",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {card.title}
+                    </h2>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        gap: "16px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "120px",
+                          height: "120px",
+                          borderRadius: "50%",
+                          backgroundColor: "#2d4a3f",
+                          border: "2px solid #9DE6C6",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          overflow: "hidden",
+                        }}
+                      >
+                        <img
+                          src={card.imageUrl}
+                          alt={card.title}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            filter: "brightness(0.9)",
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          fontSize: "16px",
+                          lineHeight: "22px",
+                          color: "#E5E5E5",
+                          textAlign: "center",
+                          fontWeight: "300",
+                          margin: "0",
+                        }}
+                      >
+                        {card.description}
+                      </p>
+                    </div>
+                  </>
                 ) : (
                   <>
                     <h2 className="card__title">{card.title}</h2>
