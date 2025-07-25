@@ -591,6 +591,7 @@ const CorruptionDefinitions = () => {
   const [showCompareAll, setShowCompareAll] = useState(false);
   const [activeCarousel, setActiveCarousel] = useState(0);
   const [carouselCycles, setCarouselCycles] = useState([0, 0, 0, 0]); // Track cycles for each carousel
+  const [allCarouselsReset, setAllCarouselsReset] = useState(false);
 
   const handleCarouselComplete = (carouselIndex) => {
     // Move to next carousel when current one completes a full cycle
