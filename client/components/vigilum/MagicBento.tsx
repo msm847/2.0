@@ -543,11 +543,11 @@ const TeamCarousel = ({ card }) => {
         {/* Profile Image */}
         <div
           style={{
-            width: "140px",
-            height: "140px",
-            borderRadius: "50%",
+            width: "160px",
+            height: "160px",
+            borderRadius: "12px",
             backgroundColor: "#2d4a3f",
-            border: "3px solid #9DE6C6",
+            border: "2px solid #9DE6C6",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -568,31 +568,33 @@ const TeamCarousel = ({ card }) => {
         </div>
 
         {/* Member Info */}
-        <div style={{ textAlign: "center", maxWidth: "280px" }}>
+        <div style={{ textAlign: "center", maxWidth: "300px" }}>
           <h3
             style={{
-              fontSize: "22px",
+              fontSize: "20px",
               fontWeight: "600",
               color: "#FFFFFF",
-              margin: "0 0 8px 0",
+              margin: "0 0 6px 0",
+              lineHeight: "1.2",
             }}
           >
             {member.name}
           </h3>
           <p
             style={{
-              fontSize: "16px",
-              fontWeight: "400",
+              fontSize: "14px",
+              fontWeight: "500",
               color: "#9DE6C6",
               margin: "0 0 12px 0",
+              lineHeight: "1.3",
             }}
           >
             {member.role}
           </p>
           <p
             style={{
-              fontSize: "14px",
-              lineHeight: "20px",
+              fontSize: "13px",
+              lineHeight: "1.4",
               color: "#E5E5E5",
               fontWeight: "300",
               margin: "0",
