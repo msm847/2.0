@@ -38,8 +38,8 @@ const DEFAULT_ITEMS = [
   },
 ];
 
-const DRAG_BUFFER = 0;
-const VELOCITY_THRESHOLD = 500;
+const DRAG_BUFFER = 50;
+const VELOCITY_THRESHOLD = 300;
 const GAP = 16;
 const SPRING_OPTIONS = {
   type: "tween",
