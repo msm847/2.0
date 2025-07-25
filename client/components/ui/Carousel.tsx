@@ -179,6 +179,8 @@ export default function Carousel({
           const outputRange = [15, 0, -15]; // Much more subtle rotation
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const rotateY = useTransform(x, range, outputRange, { clamp: false });
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const opacity = useTransform(x, range, [0.6, 1, 0.6], { clamp: false });
           return (
             <motion.div
               key={index}
