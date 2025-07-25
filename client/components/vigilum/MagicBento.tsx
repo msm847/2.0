@@ -761,12 +761,12 @@ const MagicBento = ({
               <ParticleCard
                 key={index}
                 {...cardProps}
-                disableAnimations={shouldDisableAnimations}
+                disableAnimations={shouldDisableAnimations || card.isTeamCarousel}
                 particleCount={particleCount}
                 glowColor={glowColor}
-                enableTilt={enableTilt}
-                clickEffect={clickEffect}
-                enableMagnetism={enableMagnetism}
+                enableTilt={enableTilt && !card.isTeamCarousel}
+                clickEffect={clickEffect && !card.isTeamCarousel}
+                enableMagnetism={enableMagnetism && !card.isTeamCarousel}
               >
                 <div className="card__content">
                   {card.isVision ? (
