@@ -165,7 +165,7 @@ export default function Carousel({
         animate={{ x: -(currentIndex * trackItemOffset) }}
         transition={effectiveTransition}
       >
-        {carouselItems.map((item, index) => {
+        {items.map((item, index) => {
           const range = [
             -(index + 1) * trackItemOffset,
             -index * trackItemOffset,
