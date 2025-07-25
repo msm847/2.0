@@ -415,6 +415,7 @@ const InstitutionCarousel = ({ institutions, isActive = false, onCycleComplete =
         pauseOnHover={false}
         loop={false}
         onCycleComplete={onCycleComplete}
+        shouldReset={shouldReset}
         customRender={(item) => (
           <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "4px" }}>
             {/* Header with logo space and institution info */}
