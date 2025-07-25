@@ -171,6 +171,7 @@ export default function Carousel({
         onDragEnd={handleDragEnd}
         animate={{ x: -(currentIndex * trackItemOffset) }}
         transition={effectiveTransition}
+        onAnimationComplete={handleAnimationComplete}
       >
         {items.map((item, index) => {
           const range = [
