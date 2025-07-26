@@ -236,7 +236,7 @@ const ModuleGrid = () => {
               >
                 {/* Module Card */}
                 <div
-                  className={`relative backdrop-blur-lg border rounded-2xl p-6 h-full min-h-[420px] flex flex-col transition-all duration-500 ${
+                  className={`relative backdrop-blur-lg border rounded-2xl p-6 h-full min-h-[420px] flex flex-col transition-all duration-300 ${
                     isPhantom ? "border-dashed" : ""
                   }`}
                   style={{
@@ -370,7 +370,7 @@ const ModuleGrid = () => {
                 {/* Hover Glow Effect */}
                 {isHovered && !isPhantom && (
                   <div
-                    className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-[0.375] transition-opacity duration-500"
+                    className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-[0.375] transition-opacity duration-300"
                     style={{
                       backgroundColor: module.accentColor,
                     }}
@@ -379,7 +379,7 @@ const ModuleGrid = () => {
 
                 {/* Phantom Module Corner Pulse */}
                 {isPhantom && isHovered && (
-                  <div className="absolute inset-0 rounded-2xl -z-10 transition-opacity duration-500">
+                  <div className="absolute inset-0 rounded-2xl -z-10 transition-opacity duration-300">
                     <div
                       className="absolute top-0 left-0 w-4 h-4 rounded-full blur-sm opacity-30 animate-pulse"
                       style={{ backgroundColor: "#0f3d2a" }}

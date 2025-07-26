@@ -369,7 +369,7 @@ const PerceptionPerspective = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16 mt-20">
           <motion.div
-            className="mb-8 transition-colors duration-1000 font-semibold leading-tight"
+            className="mb-8 transition-colors duration-300 font-semibold leading-tight"
             style={{
               fontFamily: "IBM Plex Sans, sans-serif",
               fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
@@ -437,7 +437,7 @@ const PerceptionPerspective = () => {
                 >
                   {/* Original Perception Perspective words positioned above instruction */}
                   <div
-                    className="mb-12 transition-colors duration-1000 font-semibold leading-tight"
+                    className="mb-12 transition-colors duration-300 font-semibold leading-tight"
                     style={{
                       fontFamily: "IBM Plex Sans, sans-serif",
                       fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
@@ -476,13 +476,13 @@ const PerceptionPerspective = () => {
                   </div>
 
                   <div
-                    className="text-lg font-semibold mb-6 transition-colors duration-1000"
+                    className="text-lg font-semibold mb-6 transition-colors duration-300"
                     style={{ color: currentTheme.textColor }}
                   >
                     Choose Your Lens.
                   </div>
                   <div
-                    className="text-base leading-relaxed transition-colors duration-1000"
+                    className="text-base leading-relaxed transition-colors duration-300"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
                     Click either lens above to observe risk, meaning, and
@@ -494,7 +494,7 @@ const PerceptionPerspective = () => {
 
             {activeSection && (
               <div
-                className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
+                className="text-body-lg mb-6 leading-relaxed transition-colors duration-300 text-center"
                 style={{ color: currentTheme.textColor }}
               >
                 {currentContent.description.replace("\n", " ")}

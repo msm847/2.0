@@ -258,7 +258,7 @@ const WhatWeFight: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen pt-32 pb-20 pl-12 pr-12 transition-colors duration-1000"
+      className="min-h-screen pt-32 pb-20 pl-12 pr-12 transition-colors duration-300"
       style={
         {
           backgroundColor: isTier4InView ? "#0E261D" : "#0E261D",
