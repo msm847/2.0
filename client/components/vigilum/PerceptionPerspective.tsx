@@ -561,6 +561,14 @@ const PerceptionPerspective = () => {
 
             {activeSection === "perspective" && (
               <>
+                {/* Progress Bar */}
+                <ProgressBar
+                  steps={perspectiveSteps}
+                  currentStep={currentStep}
+                  completedSteps={completedSteps}
+                  onStepClick={navigateToStep}
+                />
+
                 {/* Show Cultural content by default */}
                 {selectedButton === "Cultural" && (
                   <motion.div
@@ -596,6 +604,16 @@ const PerceptionPerspective = () => {
                     <StructuralImpactMap onNavigate={setSelectedButton} />
                   </motion.div>
                 )}
+
+                {/* Navigation Controls */}
+                <NavigationControls
+                  currentStep={currentStep}
+                  totalSteps={perspectiveSteps.length}
+                  completedSteps={completedSteps}
+                  onPrevious={goToPreviousStep}
+                  onNext={goToNextStep}
+                  steps={perspectiveSteps}
+                />
               </>
             )}
           </motion.div>
