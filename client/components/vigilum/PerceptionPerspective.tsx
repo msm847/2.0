@@ -297,17 +297,20 @@ const PerceptionPerspective = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <ClickableTrueFocus
-              sentence="Perception Perspective"
-              manualMode={true}
-              blurAmount={3}
-              borderColor={currentTheme.borderColor}
-              glowColor={currentTheme.glowColor}
-              animationDuration={0.8}
-              pauseBetweenAnimations={2}
-              onWordClick={handleWordClick}
-              activeSection={activeSection}
-            />
+            {/* Only show ClickableTrueFocus when a section is active */}
+            {activeSection && (
+              <ClickableTrueFocus
+                sentence="Perception Perspective"
+                manualMode={true}
+                blurAmount={3}
+                borderColor={currentTheme.borderColor}
+                glowColor={currentTheme.glowColor}
+                animationDuration={0.8}
+                pauseBetweenAnimations={2}
+                onWordClick={handleWordClick}
+                activeSection={activeSection}
+              />
+            )}
           </motion.div>
 
           <motion.div
