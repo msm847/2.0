@@ -21,16 +21,7 @@ const buttonPulseStyles = `
     }
   }
 
-  @keyframes pulse-economic {
-    0%, 100% {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0px 0px 12px rgba(123, 116, 85, 0.6), 0px 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-      transform: translateY(-4px) scale(1.04);
-      box-shadow: 0px 0px 16px rgba(123, 116, 85, 0.8), 0px 6px 16px rgba(0, 0, 0, 0.3);
-    }
-  }
+
 
   @keyframes pulse-social {
     0%, 100% {
@@ -194,7 +185,7 @@ const PerceptionPerspective = () => {
   const [showFloatingNav, setShowFloatingNav] = useState(false); // Control floating nav visibility
 
   // Simple step navigation for perspective section
-  const perspectiveSteps = ["Cultural", "Social", "Economic"];
+  const perspectiveSteps = ["Cultural", "Social"];
   const currentStepIndex = perspectiveSteps.indexOf(selectedButton);
 
   const canGoNext = currentStepIndex < perspectiveSteps.length - 1;
