@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 // Enhanced data model for the immersive structural impact map
 const impactNetworkData = {
