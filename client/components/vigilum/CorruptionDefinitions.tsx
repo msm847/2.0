@@ -1834,34 +1834,32 @@ const CorruptionDefinitions = ({ onNavigate }) => {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <button
-              onClick={() => onNavigate && onNavigate("Social")}
+              onClick={() => setShowCompareAll(true)}
               style={{
-                backdropFilter: "blur(20px) saturate(180%)",
-                background: "rgba(255, 255, 255, 0.05)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
+                backgroundColor: "rgba(157, 230, 198, 0.1)",
+                border: "1px solid rgba(157, 230, 198, 0.3)",
                 borderRadius: "8px",
-                boxShadow:
-                  "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                 padding: "12px 24px",
+                color: "#9DE6C6",
                 fontSize: "14px",
                 fontWeight: "500",
-                color: "#E5E5E5",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                textAlign: "center",
                 fontFamily: "var(--font-display)",
                 letterSpacing: "1px",
-                textTransform: "uppercase",
-                transition: "all 0.3s ease",
+                textTransform: "uppercase"
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = "rgba(255, 255, 255, 0.1)";
-                e.target.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
               }}
             >
-              Explore the Consequences of Corruption
+              Compare All Definitions
             </button>
 
           </div>
