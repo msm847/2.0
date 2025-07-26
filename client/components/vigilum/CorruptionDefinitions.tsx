@@ -1675,11 +1675,7 @@ const InstitutionCard = ({ institution }) => {
         </div>
       </div>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-        {Object.entries(institution.tags).map(([tag, status]) => (
-          <TagPill key={tag} tag={tag} status={status} label={tagLabels[tag]} />
-        ))}
-      </div>
+
     </div>
   );
 };
