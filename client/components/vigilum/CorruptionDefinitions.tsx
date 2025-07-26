@@ -838,6 +838,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 color: "#E5E5E5",
                 margin: "0",
                 lineHeight: "1.6",
+                whiteSpace: "nowrap",
               }}
             >
               Explore how the world's leading authorities describe and classify corruption.
