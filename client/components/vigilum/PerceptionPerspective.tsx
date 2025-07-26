@@ -191,6 +191,7 @@ const PerceptionPerspective = () => {
   const location = useLocation();
   const [activeSection, setActiveSection] = useState(null); // Start with no section selected
   const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
+  const [visitedSections, setVisitedSections] = useState(new Set(["Cultural"])); // Track visited sections
 
   // Simple step navigation for perspective section
   const perspectiveSteps = ["Cultural", "Social", "Economic"];
