@@ -904,28 +904,6 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             </button>
           </div>
         </div>
-        <p
-          style={{
-            fontSize: "18px",
-            color: "#9DE6C6",
-            margin: "0 0 8px 0",
-            fontStyle: "italic",
-          }}
-        >
-          Every institution defines corruption in its own terms.
-        </p>
-        <p
-          style={{
-            fontSize: "16px",
-            color: "#E5E5E5",
-            maxWidth: "800px",
-            margin: "0",
-            lineHeight: "1.6",
-          }}
-        >
-          Explore how the world's leading authorities describe and classify
-          corruption.
-        </p>
       </div>
 
       {/* Group Sections in Grid Layout */}
