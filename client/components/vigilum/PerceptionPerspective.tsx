@@ -444,7 +444,7 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-                {/* Corruption Impact section for Social button */}
+                {/* Structural Impact Map section for Social button */}
                 {selectedButton === "Social" && (
                   <motion.div
                     key={selectedButton}
@@ -453,7 +453,7 @@ const PerceptionPerspective = () => {
                     transition={{ duration: 0.6 }}
                     className="mt-8 -mx-32 max-w-none"
                   >
-                    <CorruptionImpact />
+                    <StructuralImpactMap />
                   </motion.div>
                 )}
               </>
