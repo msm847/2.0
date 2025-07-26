@@ -303,22 +303,10 @@ const PerceptionPerspective = () => {
           >
             {!activeSection && (
               <div className="text-center mt-16 mb-8">
-                {/* Visual indicators pointing up */}
-                <div className="flex justify-center items-center gap-32 mb-8">
-                  <div className="flex flex-col items-center">
-                    <div style={{ color: currentTheme.textColor, fontSize: "24px", marginBottom: "8px" }}>↑</div>
-                    <div style={{ color: currentTheme.textColor, fontSize: "14px", opacity: 0.8 }}>PERCEPTION</div>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div style={{ color: currentTheme.textColor, fontSize: "24px", marginBottom: "8px" }}>↑</div>
-                    <div style={{ color: currentTheme.textColor, fontSize: "14px", opacity: 0.8 }}>PERSPECTIVE</div>
-                  </div>
-                </div>
-
                 {/* Instruction text */}
-                <div className="max-w-2xl mx-auto">
+                <div className="max-w-2xl mx-auto mb-8">
                   <div
-                    className="text-lg font-semibold mb-4 transition-colors duration-1000"
+                    className="text-lg font-semibold mb-6 transition-colors duration-1000"
                     style={{ color: currentTheme.textColor }}
                   >
                     Choose Your Approach
@@ -327,7 +315,42 @@ const PerceptionPerspective = () => {
                     className="text-base leading-relaxed transition-colors duration-1000"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
-                    Click either word above to explore how institutional structures reveal their vulnerabilities through different analytical frameworks.
+                    Click either word above to explore how institutional structures reveal <br />
+                    their vulnerabilities through different analytical frameworks.
+                  </div>
+                </div>
+
+                {/* Visual connectors - straight lines pointing to clickable words */}
+                <div className="flex justify-center items-start gap-32 relative">
+                  <div className="flex flex-col items-center">
+                    <div
+                      style={{
+                        width: "2px",
+                        height: "120px",
+                        background: `linear-gradient(to top, ${currentTheme.textColor}60, ${currentTheme.textColor}20)`,
+                        marginBottom: "8px"
+                      }}
+                    />
+                    <div style={{
+                      color: currentTheme.textColor,
+                      fontSize: "18px",
+                      transform: "rotate(180deg)"
+                    }}>↑</div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div
+                      style={{
+                        width: "2px",
+                        height: "120px",
+                        background: `linear-gradient(to top, ${currentTheme.textColor}60, ${currentTheme.textColor}20)`,
+                        marginBottom: "8px"
+                      }}
+                    />
+                    <div style={{
+                      color: currentTheme.textColor,
+                      fontSize: "18px",
+                      transform: "rotate(180deg)"
+                    }}>↑</div>
                   </div>
                 </div>
               </div>
