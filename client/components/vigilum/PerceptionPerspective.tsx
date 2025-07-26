@@ -506,8 +506,6 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-
-
                 {/* Social section */}
                 {selectedButton === "Social" && (
                   <motion.div
@@ -604,8 +602,6 @@ const PerceptionPerspective = () => {
                       {visitedSections.has("Social") ? "✓ " : "→ "}Consequences
                       of Corruption
                     </motion.button>
-
-
                   </motion.div>
                 )}
               </>

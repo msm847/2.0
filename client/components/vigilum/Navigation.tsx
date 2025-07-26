@@ -11,7 +11,7 @@ const Navigation = () => {
   const location = useLocation();
 
   // Hide navigation on module pages
-  if (location.pathname.startsWith('/module/')) {
+  if (location.pathname.startsWith("/module/")) {
     return null;
   }
 
