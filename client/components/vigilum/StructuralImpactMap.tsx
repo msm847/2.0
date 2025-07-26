@@ -1155,10 +1155,7 @@ const StructuralImpactMap = () => {
         </p>
 
         {isIntroVisible && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+          <div
             style={{
               background: "rgba(157, 230, 198, 0.1)",
               border: "1px solid rgba(157, 230, 198, 0.3)",
