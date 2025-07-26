@@ -321,36 +321,34 @@ const PerceptionPerspective = () => {
                 </div>
 
                 {/* Visual connectors - straight lines pointing to clickable words */}
-                <div className="flex justify-center items-start gap-32 relative">
+                <div className="flex justify-center items-end gap-32 relative">
                   <div className="flex flex-col items-center">
+                    <div style={{
+                      color: currentTheme.textColor,
+                      fontSize: "18px",
+                      marginBottom: "8px"
+                    }}>↑</div>
                     <div
                       style={{
                         width: "2px",
                         height: "120px",
-                        background: `linear-gradient(to top, ${currentTheme.textColor}60, ${currentTheme.textColor}20)`,
-                        marginBottom: "8px"
+                        background: `linear-gradient(to top, ${currentTheme.textColor}20, ${currentTheme.textColor}60)`
                       }}
                     />
-                    <div style={{
-                      color: currentTheme.textColor,
-                      fontSize: "18px",
-                      transform: "rotate(180deg)"
-                    }}>↑</div>
                   </div>
                   <div className="flex flex-col items-center">
+                    <div style={{
+                      color: currentTheme.textColor,
+                      fontSize: "18px",
+                      marginBottom: "8px"
+                    }}>↑</div>
                     <div
                       style={{
                         width: "2px",
                         height: "120px",
-                        background: `linear-gradient(to top, ${currentTheme.textColor}60, ${currentTheme.textColor}20)`,
-                        marginBottom: "8px"
+                        background: `linear-gradient(to top, ${currentTheme.textColor}20, ${currentTheme.textColor}60)`
                       }}
                     />
-                    <div style={{
-                      color: currentTheme.textColor,
-                      fontSize: "18px",
-                      transform: "rotate(180deg)"
-                    }}>↑</div>
                   </div>
                 </div>
               </div>
