@@ -154,13 +154,13 @@ float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord,
   float cosAngle = dot(dirNorm, rayRefDirection);
 
   float distortedAngle = cosAngle + distortion * sin(iTime * 2.0 + length(sourceToCoord) * 0.01) * 0.2;
-  
+
   float spreadFactor = pow(max(distortedAngle, 0.0), 1.0 / max(lightSpread, 0.001));
 
   float distance = length(sourceToCoord);
   float maxDistance = iResolution.x * rayLength;
   float lengthFalloff = clamp((maxDistance - distance) / maxDistance, 0.0, 1.0);
-  
+
   float fadeFalloff = clamp((iResolution.x * fadeDistance - distance) / (iResolution.x * fadeDistance), 0.5, 1.0);
   float pulse = pulsating > 0.5 ? (0.8 + 0.2 * sin(iTime * speed * 3.0)) : 1.0;
 
@@ -175,7 +175,7 @@ float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord,
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   vec2 coord = vec2(fragCoord.x, iResolution.y - fragCoord.y);
-  
+
   vec2 finalRayDir = rayDir;
   if (mouseInfluence > 0.0) {
     vec2 mouseScreenPos = mousePos * iResolution.xy;
@@ -270,10 +270,20 @@ void main() {
           return;
         }
 
+        // Throttle to 30fps instead of 60fps for better performance
+        const targetFPS = 30;
+        const frameDelay = 1000 / targetFPS;
+
+        if (t - (loop.lastTime || 0) < frameDelay) {
+          animationIdRef.current = requestAnimationFrame(loop);
+          return;
+        }
+        loop.lastTime = t;
+
         uniforms.iTime.value = t * 0.001;
 
         if (followMouse && mouseInfluence > 0.0) {
-          const smoothing = 0.92;
+          const smoothing = 0.95; // More smoothing for less frequent updates
 
           smoothMouseRef.current.x =
             smoothMouseRef.current.x * smoothing +
