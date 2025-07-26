@@ -795,7 +795,7 @@ const BoundaryLogicCarousel = () => {
               scrollSnapType: 'x mandatory',
               paddingBottom: '12px',
               scrollbarWidth: 'thin',
-              maxWidth: '640px', // 2 cards (320px each) visible with no third card showing
+              maxWidth: '660px', // 2 cards (320px each) visible with proper spacing
               margin: '0'
             }}
           >
