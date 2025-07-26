@@ -989,7 +989,7 @@ const institutionalData = {
         },
         {
           name: "OECD",
-          logo: "��",
+          logo: "🌐",
           definition:
             "Corruption is the abuse of public or private office for personal gain.",
           source: "OECD, official website",
@@ -1768,6 +1768,24 @@ const CorruptionDefinitions = ({ onNavigate }) => {
               Explore how the world's leading authorities describe and classify
               corruption.
             </p>
+
+            {/* Key Insight */}
+            <div style={{
+              marginTop: '16px',
+              marginBottom: '8px'
+            }}>
+              <p style={{
+                margin: 0,
+                fontSize: '13px',
+                color: '#E5E5E5',
+                fontWeight: '400',
+                lineHeight: '1.5',
+                opacity: 0.8
+              }}>
+                💡 Institutional boundaries determine what can be prosecuted, managed, or ignored.<br />
+                Vigilum models how these definitions produce blindspots and transfer structural risk.
+              </p>
+            </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <button
