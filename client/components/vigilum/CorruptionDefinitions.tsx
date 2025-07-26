@@ -39,7 +39,7 @@ const boundaryLogicData = {
       tags: {
         bribery: { state: '✓', tooltip: 'Central focus on active bribery of foreign officials under Article 1.', typology: ['CI'] },
         lobbying: { state: '?', tooltip: 'Lobbying is only problematic when crossing into bribery territory (OECD Guidelines, 2011). Legal advocacy remains excluded.', typology: ['DG'] },
-        privateSector: { state: '–', tooltip: 'OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.', typology: ['SB'] },
+        privateSector: { state: '��', tooltip: 'OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.', typology: ['SB'] },
         influencePeddling: { state: '✓', tooltip: 'Included when involving foreign public officials (Article 1 interpretation).', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
         fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
@@ -1767,32 +1767,6 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             >
               Explore how the world's leading authorities describe and classify
               corruption.
-            </p>
-          </div>
-
-          {/* Key Insight Bar */}
-          <div style={{
-            width: '100%',
-            marginTop: '20px',
-            padding: '16px 24px',
-            background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-            backdropFilter: 'blur(10px)'
-          }}>
-            <div style={{ fontSize: '20px' }}>💡</div>
-            <p style={{
-              margin: 0,
-              fontSize: '14px',
-              color: '#F5F5F5',
-              fontWeight: '500',
-              lineHeight: '1.4'
-            }}>
-              Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored.
-              Vigilum models how these definitions produce blindspots and transfer structural risk.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
