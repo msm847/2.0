@@ -620,28 +620,25 @@ const BoundaryLogicCarousel = () => {
               <div
                 key={term}
                 style={{
-                  height: '24px',
-                  padding: '4px 6px',
+                  height: '28px',
+                  padding: '4px 8px',
                   border: `2px solid ${getTagColor(tag.state)}`,
                   borderRadius: '6px',
                   background: getTagBackground(tag.state),
                   color: getTagColor(tag.state),
-                  fontSize: '10px',
+                  fontSize: '11px',
                   fontWeight: '600',
                   fontFamily: 'SF Mono, Monaco, monospace',
                   letterSpacing: '0.02em',
                   textAlign: 'center',
                   cursor: 'pointer',
-                  textTransform: 'capitalize',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  gap: '4px',
                   transition: 'all 0.2s ease',
                   transform: isSelected ? 'scale(1.05)' : 'scale(1)',
-                  boxShadow: isSelected ? `0 0 8px ${getTagColor(tag.state)}44` : 'none',
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis'
+                  boxShadow: isSelected ? `0 0 8px ${getTagColor(tag.state)}44` : 'none'
                 }}
                 onMouseEnter={() => setHoveredTag(`${institution.id}-${term}`)}
                 onMouseLeave={() => setHoveredTag(null)}
@@ -661,7 +658,21 @@ const BoundaryLogicCarousel = () => {
                 data-term={term}
                 title={tag.tooltip}
               >
-                {tag.state} {term.replace(/([A-Z])/g, ' $1').trim()}
+                <span style={{ fontSize: '12px', fontWeight: '700' }}>{tag.state}</span>
+                <span style={{
+                  textTransform: 'uppercase',
+                  fontSize: '9px',
+                  fontWeight: '600',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxWidth: '80px'
+                }}>
+                  {term === 'privateSector' ? 'PRIVATE' :
+                   term === 'influencePeddling' ? 'INFLUENCE' :
+                   term === 'conflictOfInterest' ? 'CONFLICT' :
+                   term.toUpperCase()}
+                </span>
               </div>
             );
           })}
