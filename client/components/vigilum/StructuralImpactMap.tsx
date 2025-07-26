@@ -1214,22 +1214,16 @@ const StructuralImpactMap = () => {
 
 
         {/* Nodes */}
-        {nodes.map((node, index) => (
-          <motion.div
+        {nodes.map((node) => (
+          <NetworkNode
             key={node.id}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <NetworkNode
-              node={node}
-              isActive={activeNode === node.id}
-              isVisited={visitedNodes.has(node.id)}
-              onActivate={handleNodeActivate}
-              isPropagationTarget={propagationTargets.has(node.id)}
-              userPath={userPath}
-            />
-          </motion.div>
+            node={node}
+            isActive={activeNode === node.id}
+            isVisited={visitedNodes.has(node.id)}
+            onActivate={handleNodeActivate}
+            isPropagationTarget={propagationTargets.has(node.id)}
+            userPath={userPath}
+          />
         ))}
 
         {/* System Shockwave */}
