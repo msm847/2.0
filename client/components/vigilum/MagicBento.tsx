@@ -65,7 +65,7 @@ const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
     background: rgba(${color}, 1);
     box-shadow: 0 0 6px rgba(${color}, 0.6);
     pointer-events: none;
-    z-index: 100;
+    z-index: 10;
     left: ${x}px;
     top: ${y}px;
   `;
@@ -370,7 +370,7 @@ const GlobalSpotlight = ({
         rgba(${glowColor}, 0.01) 65%,
         transparent 70%
       );
-      z-index: 200;
+      z-index: 15;
       opacity: 0;
       transform: translate(-50%, -50%);
       mix-blend-mode: screen;
