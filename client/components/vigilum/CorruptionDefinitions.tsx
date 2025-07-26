@@ -500,9 +500,11 @@ const BoundaryLogicCarousel = () => {
         {/* Logo and Institution Header */}
         <div style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          alignItems: 'center',
           marginBottom: '12px',
-          alignItems: 'flex-start'
+          position: 'relative',
+          height: '54px'
         }}>
           <div
             style={{
@@ -517,7 +519,9 @@ const BoundaryLogicCarousel = () => {
               borderRadius: '8px',
               padding: '6px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              position: 'absolute',
+              left: '0'
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -530,16 +534,19 @@ const BoundaryLogicCarousel = () => {
             {institution.logo}
           </div>
           <div style={{
-            textAlign: 'right',
-            flex: 1,
-            marginLeft: '12px'
+            position: 'absolute',
+            right: '0',
+            display: 'flex',
+            alignItems: 'center',
+            height: '54px'
           }}>
             <h4 style={{
               margin: 0,
               fontSize: '19px',
               fontWeight: 'bold',
               color: '#FFFFFF',
-              lineHeight: '24px'
+              lineHeight: '24px',
+              textAlign: 'right'
             }}>
               {institution.name}
             </h4>
