@@ -61,7 +61,7 @@ const boundaryLogicData = {
         bribery: { state: '✓', tooltip: 'Core focus on both active and passive bribery under Criminal Law Convention.', typology: ['CI'] },
         lobbying: { state: '?', tooltip: 'Transparency required but lobbying not inherently corrupt unless involving improper influence.', typology: ['DG'] },
         privateSector: { state: '✓', tooltip: 'Private sector bribery explicitly addressed in Additional Protocol Article 7.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered under "trading in influence" provisions (Article 12).', typology: ['CI'] },
+        influencePeddling: { state: '��', tooltip: 'Covered under "trading in influence" provisions (Article 12).', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Addressed in public ethics recommendations and evaluation reports.', typology: ['RT'] },
         fraud: { state: '–', tooltip: 'Outside core corruption mandate. Not systematically evaluated.', typology: ['SB'] },
         embezzlement: { state: '✓', tooltip: 'Included in "abuse of functions" category under Article 10.', typology: ['RT'] },
