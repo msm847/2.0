@@ -1462,27 +1462,14 @@ const StructuralImpactMap = ({ onNavigate }) => {
             style={{
               background: "rgba(157, 230, 198, 0.1)",
               border: "1px solid rgba(157, 230, 198, 0.3)",
-              borderRadius: "12px",
-              padding: "16px 24px",
+              borderRadius: "8px",
+              padding: "12px 16px",
               display: "inline-block",
               fontSize: "14px",
               color: "#9DE6C6",
             }}
           >
             Click any node to explore its impacts and connections
-            <button
-              onClick={() => setIsIntroVisible(false)}
-              style={{
-                marginLeft: "12px",
-                background: "transparent",
-                border: "none",
-                color: "#9DE6C6",
-                cursor: "pointer",
-                fontSize: "16px",
-              }}
-            >
-              ✕
-            </button>
           </div>
         )}
       </div>
