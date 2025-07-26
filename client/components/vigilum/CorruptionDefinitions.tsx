@@ -904,7 +904,7 @@ const BoundaryLogicCarousel = () => {
               margin: '0 0 16px 0',
               fontSize: '18px',
               fontWeight: '700',
-              color: theme.primary,
+              color: '#FFFFFF',
               lineHeight: '1.3',
               fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
             }}>
