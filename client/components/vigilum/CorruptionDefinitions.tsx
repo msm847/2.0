@@ -889,15 +889,15 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   backgroundColor: "rgba(157, 230, 198, 0.1)",
                   border: "1px solid rgba(157, 230, 198, 0.3)",
                   borderRadius: "8px",
-                  padding: "10px 20px",
+                  padding: "12px 24px",
                   color: "#9DE6C6",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: "500",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
                   textAlign: "center",
                   fontFamily: "var(--font-display)",
-                  letterSpacing: "0.5px",
+                  letterSpacing: "1px",
                   textTransform: "uppercase"
                 }}
                 onMouseEnter={(e) => {
