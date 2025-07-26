@@ -515,41 +515,7 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-                {/* Economic section */}
-                {selectedButton === "Economic" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="mt-8 -mx-32 max-w-none"
-                  >
-                    <div className="text-center py-16">
-                      <button
-                        className="px-8 py-4 rounded-xl font-medium transition-all duration-300 text-lg"
-                        style={{
-                          background: "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)",
-                          border: "1px solid rgba(255, 255, 255, 0.2)",
-                          color: "#eae2cc",
-                          boxShadow: "0px 0px 15px rgba(123, 116, 85, 0.3)",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = "scale(1.05)";
-                          e.currentTarget.style.boxShadow = "0px 0px 25px rgba(123, 116, 85, 0.5)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = "scale(1)";
-                          e.currentTarget.style.boxShadow = "0px 0px 15px rgba(123, 116, 85, 0.3)";
-                        }}
-                        onClick={() => {
-                          // Navigate to simulation or open modal
-                          window.open('/core-intelligence/problem', '_blank');
-                        }}
-                      >
-                        Try a Simulation
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
+
 
                 {/* Social section */}
                 {selectedButton === "Social" && (
