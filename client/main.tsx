@@ -16,7 +16,7 @@ import NEXUSPOTENTIAModulePage from "./pages/modules/NEXUSPOTENTIAModule";
 import VIGILOCOREModulePage from "./pages/modules/VIGILOCOREModule";
 import VERISModulePage from "./pages/modules/VERISModule";
 import SENTIUMModulePage from "./pages/modules/SENTIUMModule";
-import ProblemPage from "./pages/core-intelligence/problem";
+
 import SolutionPage from "./pages/core-intelligence/solution";
 import MethodPage from "./pages/core-intelligence/method";
 import SystemPage from "./pages/core-intelligence/system";
@@ -73,7 +73,7 @@ const App = () => (
           />
           <Route path="/module/veris" element={<VERISModulePage />} />
           <Route path="/module/sentium" element={<SENTIUMModulePage />} />
-          <Route path="/core-intelligence/problem" element={<ProblemPage />} />
+
           <Route
             path="/core-intelligence/solution"
             element={<SolutionPage />}
