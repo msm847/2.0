@@ -225,6 +225,26 @@ const PerceptionPerspective = () => {
     }
   }, [location.hash]);
 
+  // Control floating navigation visibility
+  useEffect(() => {
+    // Show floating nav when user has selected a perception/perspective section
+    if (activeSection !== null || selectedButton !== null) {
+      // Add a small delay for smoother transition
+      const timer = setTimeout(() => setShowFloatingNav(true), 200);
+      return () => clearTimeout(timer);
+    } else {
+      setShowFloatingNav(false);
+    }
+  }, [activeSection, selectedButton]);
+
+  // Hide floating nav when navigating away from this component
+  useEffect(() => {
+    // Hide when not on the vigilum page or when navigating to other sections
+    if (!location.pathname.includes('vigilum') || location.hash.includes('core-modules')) {
+      setShowFloatingNav(false);
+    }
+  }, [location]);
+
   // Theme configurations
   const themes = {
     perception: {
