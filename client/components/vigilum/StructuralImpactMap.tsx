@@ -428,31 +428,51 @@ const NetworkNode = ({
     height: isActive ? "160px" : "120px",
     borderRadius: "50%",
     background: isActive
-      ? `radial-gradient(circle, ${node.color}40, ${node.color}20)`
+      ? `radial-gradient(circle at 30% 30%, ${node.color}60, ${node.color}30, ${node.color}15)`
       : isVisited
-        ? `radial-gradient(circle, ${node.color}25, ${node.color}10)`
+        ? `radial-gradient(circle at 30% 30%, ${node.color}45, ${node.color}25, ${node.color}10)`
         : isPropagationTarget
-          ? `radial-gradient(circle, ${node.color}30, ${node.color}15)`
-          : "transparent",
-    border: `3px solid ${
-      isActive
-        ? node.color
-        : isVisited
-          ? `${node.color}80`
-          : isPropagationTarget
-            ? `${node.color}60`
-            : "transparent"
-    }`,
+          ? `radial-gradient(circle at 30% 30%, ${node.color}35, ${node.color}20, ${node.color}08)`
+          : `radial-gradient(circle at 30% 30%, ${node.color}25, ${node.color}15, ${node.color}05)`,
+    border: `2px solid ${node.color}40`,
     cursor: "pointer",
-    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-    backdropFilter: "blur(15px)",
+    transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    backdropFilter: "blur(20px) saturate(180%) brightness(120%)",
     boxShadow: isActive
-      ? `0 0 40px ${node.color}60, 0 12px 48px rgba(0, 0, 0, 0.3)`
+      ? `
+        0 0 60px ${node.color}80,
+        0 0 30px ${node.color}60,
+        0 16px 64px rgba(0, 0, 0, 0.4),
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.2)
+      `
       : isHovered
-        ? `0 0 24px ${node.color}40, 0 8px 32px rgba(0, 0, 0, 0.2)`
+        ? `
+          0 0 40px ${node.color}60,
+          0 0 20px ${node.color}40,
+          0 12px 48px rgba(0, 0, 0, 0.3),
+          0 6px 24px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+        `
         : isPropagationTarget
-          ? `0 0 20px ${node.color}30, 0 6px 24px rgba(0, 0, 0, 0.15)`
-          : "0 6px 24px rgba(0, 0, 0, 0.1)",
+          ? `
+            0 0 30px ${node.color}50,
+            0 0 15px ${node.color}30,
+            0 8px 32px rgba(0, 0, 0, 0.25),
+            0 4px 16px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
+          `
+          : `
+            0 0 20px ${node.color}30,
+            0 0 10px ${node.color}20,
+            0 6px 24px rgba(0, 0, 0, 0.2),
+            0 3px 12px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.05)
+          `,
     zIndex: isActive ? 30 : isHovered ? 25 : isPropagationTarget ? 20 : 15,
   };
 
