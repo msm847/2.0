@@ -1246,7 +1246,7 @@ const StructuralImpactMap = () => {
           onClose={() => setShowFinalSummary(false)}
         />
       )}
-    </motion.div>
+    </div>
   );
 };
 
