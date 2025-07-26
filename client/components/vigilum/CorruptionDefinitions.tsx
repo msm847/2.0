@@ -1835,6 +1835,34 @@ const CorruptionDefinitions = ({ onNavigate }) => {
       {/* Boundary Logic Carousel System */}
       <BoundaryLogicCarousel />
 
+      {/* Key Insight Bar */}
+      <div style={{
+        width: '100%',
+        marginTop: '32px',
+        padding: '16px 24px',
+        background: 'rgba(255, 255, 255, 0.05)',
+        borderRadius: '12px',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '16px',
+        backdropFilter: 'blur(10px)',
+        maxWidth: '1400px',
+        margin: '32px auto 0 auto'
+      }}>
+        <div style={{ fontSize: '20px' }}>💡</div>
+        <p style={{
+          margin: 0,
+          fontSize: '14px',
+          color: '#F5F5F5',
+          fontWeight: '500',
+          lineHeight: '1.4'
+        }}>
+          Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored.
+          Vigilum models how these definitions produce blindspots and transfer structural risk.
+        </p>
+      </div>
+
       {/* Compare All Modal */}
       <AnimatePresence>
         {showCompareAll && (
