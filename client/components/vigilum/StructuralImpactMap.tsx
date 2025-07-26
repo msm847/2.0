@@ -80,7 +80,7 @@ const impactNetworkData = {
         { text: "Educational access reduced by 25%", source: "UNESCO", icon: "🎓" }
       ],
       timeline: [
-        { step: "Health bribe demanded", description: "Payment required for basic care", icon: "🏥" },
+        { step: "Health bribe demanded", description: "Payment required for basic care", icon: "���" },
         { step: "Patient excluded", description: "Cannot afford treatment", icon: "❌" },
         { step: "Poverty entrenched", description: "Long-term exclusion cycle begins", icon: "🔄" }
       ],
@@ -170,7 +170,7 @@ const impactNetworkData = {
         { text: "Civil conflict risk doubles", source: "World Bank", icon: "⚔️" }
       ],
       timeline: [
-        { step: "Security bribed", description: "Border control fails", icon: "🚨" },
+        { step: "Security bribed", description: "Border control fails", icon: "����" },
         { step: "Control lost", description: "Institutional collapse begins", icon: "🏗️" },
         { step: "Instability spreads", description: "Regional consequences cascade", icon: "🌊" }
       ],
@@ -335,7 +335,7 @@ const NetworkNode = ({ node, isActive, isVisited, onActivate, isPropagationTarge
         ? `radial-gradient(circle, ${node.color}25, ${node.color}10)`
         : isPropagationTarget
           ? `radial-gradient(circle, ${node.color}30, ${node.color}15)`
-          : "rgba(255, 255, 255, 0.05)",
+          : "transparent",
     border: `3px solid ${
       isActive
         ? node.color
