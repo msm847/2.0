@@ -811,9 +811,20 @@ const BoundaryLogicCarousel = () => {
           </div>
         </div>
 
-        {/* Right Column - Button and Analytics Panel */}
-        <div>
-          {/* Compare All Definitions Button */}
+        {/* Right Analytics Panel */}
+        <div style={{
+          background: '#F6F7F9',
+          borderRadius: '16px',
+          padding: '24px',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+          borderTop: `3px solid ${theme.secondary}`,
+          height: '470px',
+          overflowY: 'auto',
+          transform: 'translateX(-100px) translateY(16px)',
+          width: 'calc(100% + 40px)',
+          position: 'relative'
+        }}>
+          {/* Compare All Definitions Button - Positioned Above */}
           <button
             onClick={() => setShowCompareAll(true)}
             style={{
@@ -831,8 +842,9 @@ const BoundaryLogicCarousel = () => {
               letterSpacing: "1px",
               textTransform: "uppercase",
               width: "100%",
-              marginBottom: "16px",
-              transform: 'translateX(-100px)'
+              position: "absolute",
+              top: "-60px",
+              left: "0"
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
@@ -845,19 +857,6 @@ const BoundaryLogicCarousel = () => {
           >
             Compare All Definitions
           </button>
-
-          {/* Right Analytics Panel */}
-          <div style={{
-            background: '#F6F7F9',
-            borderRadius: '16px',
-            padding: '24px',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-            borderTop: `3px solid ${theme.secondary}`,
-            height: '470px',
-            overflowY: 'auto',
-            transform: 'translateX(-100px)',
-            width: 'calc(100% + 40px)'
-          }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
             <h4 style={{
@@ -1325,7 +1324,7 @@ const institutionalData = {
       institutions: [
         {
           name: "Transparency International",
-          logo: "🔍",
+          logo: "��",
           definition:
             "Corruption is the abuse of entrusted power for private gain.",
           source: "Transparency International, official website",
