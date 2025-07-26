@@ -497,7 +497,7 @@ const PerceptionPerspective = () => {
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        The Consequences of Corruption →
+                        Consequences of Corruption →
                       </motion.button>
 
                       <motion.button
