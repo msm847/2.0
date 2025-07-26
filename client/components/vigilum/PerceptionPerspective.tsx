@@ -303,8 +303,40 @@ const PerceptionPerspective = () => {
           >
             {!activeSection && (
               <div className="text-center mt-16 mb-8">
+                {/* Visual connectors - straight lines pointing to clickable words */}
+                <div className="flex justify-center items-end gap-32 relative mb-12">
+                  <div className="flex flex-col items-center">
+                    <div style={{
+                      color: currentTheme.textColor,
+                      fontSize: "18px",
+                      marginBottom: "8px"
+                    }}>↑</div>
+                    <div
+                      style={{
+                        width: "2px",
+                        height: "80px",
+                        background: `linear-gradient(to top, ${currentTheme.textColor}20, ${currentTheme.textColor}60)`
+                      }}
+                    />
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div style={{
+                      color: currentTheme.textColor,
+                      fontSize: "18px",
+                      marginBottom: "8px"
+                    }}>↑</div>
+                    <div
+                      style={{
+                        width: "2px",
+                        height: "80px",
+                        background: `linear-gradient(to top, ${currentTheme.textColor}20, ${currentTheme.textColor}60)`
+                      }}
+                    />
+                  </div>
+                </div>
+
                 {/* Instruction text */}
-                <div className="max-w-2xl mx-auto mb-8">
+                <div className="max-w-2xl mx-auto">
                   <div
                     className="text-lg font-semibold mb-6 transition-colors duration-1000"
                     style={{ color: currentTheme.textColor }}
@@ -317,38 +349,6 @@ const PerceptionPerspective = () => {
                   >
                     Click either word above to explore how institutional structures reveal <br />
                     their vulnerabilities through different analytical frameworks.
-                  </div>
-                </div>
-
-                {/* Visual connectors - straight lines pointing to clickable words */}
-                <div className="flex justify-center items-end gap-32 relative">
-                  <div className="flex flex-col items-center">
-                    <div style={{
-                      color: currentTheme.textColor,
-                      fontSize: "18px",
-                      marginBottom: "8px"
-                    }}>↑</div>
-                    <div
-                      style={{
-                        width: "2px",
-                        height: "120px",
-                        background: `linear-gradient(to top, ${currentTheme.textColor}20, ${currentTheme.textColor}60)`
-                      }}
-                    />
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div style={{
-                      color: currentTheme.textColor,
-                      fontSize: "18px",
-                      marginBottom: "8px"
-                    }}>↑</div>
-                    <div
-                      style={{
-                        width: "2px",
-                        height: "120px",
-                        background: `linear-gradient(to top, ${currentTheme.textColor}20, ${currentTheme.textColor}60)`
-                      }}
-                    />
                   </div>
                 </div>
               </div>
