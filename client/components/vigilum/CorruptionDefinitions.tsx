@@ -104,7 +104,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting improper influence or advantage.', typology: ['DG'] },
         privateSector: { state: '✓', tooltip: 'Private sector bribery fully covered under Sections 1-2.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Covered under general bribery provisions when involving improper influence.', typology: ['CI'] },
-        conflictOfInterest: { state: '–', tooltip: 'Not directly criminalized unless involving bribery elements.', typology: ['SB'] },
+        conflictOfInterest: { state: '���', tooltip: 'Not directly criminalized unless involving bribery elements.', typology: ['SB'] },
         fraud: { state: '–', tooltip: 'Covered under separate Fraud Act 2006, not Bribery Act.', typology: ['SB'] },
         embezzlement: { state: '–', tooltip: 'Outside Bribery Act scope. Covered under other legislation.', typology: ['SB'] },
         nepotism: { state: '–', tooltip: 'Not specifically criminalized unless involving bribery or advantage.', typology: ['SB'] }
@@ -338,7 +338,7 @@ const boundaryLogicData = {
         privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity screening procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational guidelines.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Addressed in procurement and operational integrity procedures.', typology: ['RT'] },
-        fraud: { state: '���', tooltip: 'Fraudulent practices prohibited in project implementation and financing.', typology: ['RT'] },
+        fraud: { state: '✓', tooltip: 'Fraudulent practices prohibited in project implementation and financing.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation covered in prohibited practices and sanctions framework.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Managed through transparency and conflict of interest procedures.', typology: ['DG'] }
       }
