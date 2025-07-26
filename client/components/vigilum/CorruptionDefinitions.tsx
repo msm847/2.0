@@ -43,7 +43,7 @@ const boundaryLogicData = {
         influencePeddling: { state: '✓', tooltip: 'Included when involving foreign public officials (Article 1 interpretation).', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
         fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
-        embezzlement: { state: '���', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
+        embezzlement: { state: '–', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
         nepotism: { state: '–', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
       }
     },
@@ -1835,30 +1835,29 @@ const CorruptionDefinitions = ({ onNavigate }) => {
       {/* Boundary Logic Carousel System */}
       <BoundaryLogicCarousel />
 
-      {/* Key Insight Bar */}
+      {/* Key Insight */}
       <div style={{
-        width: '100%',
-        marginTop: '24px',
-        padding: '12px 16px',
-        background: 'rgba(255, 255, 255, 0.05)',
-        borderRadius: '8px',
-        border: '1px solid rgba(255, 255, 255, 0.1)',
+        marginTop: '16px',
+        padding: '8px 12px',
+        background: 'rgba(255, 255, 255, 0.03)',
+        borderRadius: '6px',
+        border: '1px solid rgba(255, 255, 255, 0.08)',
         display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        backdropFilter: 'blur(10px)',
-        maxWidth: '1400px',
-        margin: '24px auto 0 auto'
+        alignItems: 'flex-start',
+        gap: '8px',
+        maxWidth: '800px',
+        margin: '16px auto 0 auto'
       }}>
-        <div style={{ fontSize: '16px' }}>💡</div>
+        <div style={{ fontSize: '14px', marginTop: '1px' }}>💡</div>
         <p style={{
           margin: 0,
-          fontSize: '13px',
+          fontSize: '12px',
           color: '#F5F5F5',
-          fontWeight: '500',
-          lineHeight: '1.3'
+          fontWeight: '400',
+          lineHeight: '1.4',
+          opacity: 0.9
         }}>
-          Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored. <br />
+          Institutional boundaries determine what can be prosecuted, managed, or ignored.<br />
           Vigilum models how these definitions produce blindspots and transfer structural risk.
         </p>
       </div>
