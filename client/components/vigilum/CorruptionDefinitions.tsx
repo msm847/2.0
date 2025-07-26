@@ -472,7 +472,7 @@ const BoundaryLogicCarousel = () => {
     return (
       <motion.div
         style={{
-          background: theme.cardBg,
+          background: 'transparent',
           borderRadius: '20px',
           padding: '24px',
           border: `2px solid ${isActive ? theme.secondary : 'rgba(0,0,0,0.1)'}`,
