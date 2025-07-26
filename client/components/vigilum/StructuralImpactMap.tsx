@@ -67,7 +67,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 45, y: 20 },
+      position: { x: 44, y: 12 },
       headline: "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
         ratePerSecond: 15200,
