@@ -808,13 +808,13 @@ const CorruptionDefinitions = ({ onNavigate }) => {
       }}
     >
       {/* Header */}
-      <div style={{ textAlign: "left", marginBottom: "48px" }}>
+      <div style={{ textAlign: "left", marginBottom: "32px" }}>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "16px",
+            alignItems: "flex-start",
+            marginBottom: "12px",
           }}
         >
           <h2
@@ -828,9 +828,8 @@ const CorruptionDefinitions = ({ onNavigate }) => {
           >
             What is Corruption?
           </h2>
-          <div>
-            <div style={{ display: "flex", gap: "12px", marginBottom: "12px" }}>
-              <button
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <button
                 onClick={() => onNavigate && onNavigate("Social")}
                 style={{
                   backdropFilter: "blur(20px) saturate(180%)",
