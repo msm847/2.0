@@ -249,29 +249,37 @@ const PerceptionPerspective = () => {
 
   // Hide floating nav when scrolling away from perception/perspective section
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const perceptionSection = document.getElementById(
-        "perception-perspective",
-      );
-      if (perceptionSection) {
-        const rect = perceptionSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const perceptionSection = document.getElementById(
+            "perception-perspective",
+          );
+          if (perceptionSection) {
+            const rect = perceptionSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
 
-        // Hide when scrolling towards corruption definitions (less than 60% visible)
-        const visibleHeight =
-          Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-        const sectionHeight = rect.height;
-        const visibilityRatio = Math.max(0, visibleHeight / sectionHeight);
+            // Hide when scrolling towards corruption definitions (less than 60% visible)
+            const visibleHeight =
+              Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+            const sectionHeight = rect.height;
+            const visibilityRatio = Math.max(0, visibleHeight / sectionHeight);
 
-        if (visibilityRatio < 0.6 || rect.bottom < viewportHeight * 0.7) {
-          setShowFloatingNav(false);
-        } else if (activeSection !== null && visibilityRatio > 0.4) {
-          setShowFloatingNav(true);
-        }
+            if (visibilityRatio < 0.6 || rect.bottom < viewportHeight * 0.7) {
+              setShowFloatingNav(false);
+            } else if (activeSection !== null && visibilityRatio > 0.4) {
+              setShowFloatingNav(true);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
 
