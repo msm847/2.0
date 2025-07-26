@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import SplitText from "@/components/ui/SplitText";
 import LegalStructuralSimulator from "./LegalStructuralSimulator";
