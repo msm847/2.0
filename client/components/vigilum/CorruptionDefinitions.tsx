@@ -609,7 +609,6 @@ const InstitutionCarousel = ({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "rgba(157, 230, 198, 0.1)",
                   borderRadius: "10px",
                   flexShrink: 0,
                 }}
