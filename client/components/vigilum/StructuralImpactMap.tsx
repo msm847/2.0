@@ -1118,7 +1118,6 @@ const StructuralImpactMap = () => {
         minHeight: "100vh",
         padding: "40px 20px",
         position: "relative",
-        background: "radial-gradient(circle at 50% 50%, #0F2F1F 0%, #0A1A0F 100%)",
         overflow: "hidden"
       }}
     >
