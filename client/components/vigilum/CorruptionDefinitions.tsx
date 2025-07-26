@@ -20,7 +20,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Lobbying is not classified as corruption unless linked to illegal payment (see FCPA Guidance, 2020). This boundary enables legal influence operations outside anti-corruption prosecution. [DG]', typology: ['DG'] },
         privateSector: { state: '?', tooltip: 'Private sector corruption only recognized by DOJ when it affects foreign officials or involves government procurement.', typology: ['RT'] },
         influencePeddling: { state: '✓', tooltip: 'Covered under FCPA when involving government officials or foreign public officials.', typology: ['CI'] },
-        conflictOfInterest: { state: '��', tooltip: 'Not directly addressed in federal criminal statutes unless constituting bribery.', typology: ['SB'] },
+        conflictOfInterest: { state: '–', tooltip: 'Not directly addressed in federal criminal statutes unless constituting bribery.', typology: ['SB'] },
         fraud: { state: '✓', tooltip: 'Covered under separate federal fraud statutes when involving government programs.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Covered when involving public funds, officials, or federal programs.', typology: ['RT'] },
         nepotism: { state: '–', tooltip: 'Not criminalized unless involving quid pro quo or bribery elements.', typology: ['SB'] }
@@ -705,7 +705,7 @@ const BoundaryLogicCarousel = () => {
         justifyContent: 'flex-start',
         marginBottom: '16px',
         padding: '8px',
-        marginLeft: '64px'
+        marginLeft: '80px'
       }}>
         <button
           onClick={() => setActiveGroup('regulatory')}
