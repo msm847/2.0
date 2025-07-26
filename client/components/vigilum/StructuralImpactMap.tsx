@@ -601,21 +601,15 @@ const StructuralImpactMap = () => {
           right: 0,
           bottom: 0,
           backgroundImage: `
-            radial-gradient(circle at 20% 80%, rgba(157, 230, 198, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(157, 230, 198, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 40% 40%, rgba(157, 230, 198, 0.03) 0%, transparent 50%)
+            radial-gradient(circle at 25% 75%, rgba(157, 230, 198, 0.06) 0%, transparent 40%),
+            radial-gradient(circle at 75% 25%, rgba(157, 230, 198, 0.04) 0%, transparent 40%)
           `
         }}
         animate={{
-          transform: [
-            "translateY(0px) rotate(0deg)",
-            "translateY(-10px) rotate(1deg)",
-            "translateY(5px) rotate(-1deg)",
-            "translateY(0px) rotate(0deg)"
-          ]
+          opacity: [0.7, 1, 0.7]
         }}
         transition={{
-          duration: 20,
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut"
         }}
