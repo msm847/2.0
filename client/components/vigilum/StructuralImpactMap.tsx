@@ -1445,11 +1445,11 @@ const StructuralImpactMap = ({ onNavigate }) => {
         </div>
         <p
           style={{
-            fontSize: "18px",
+            fontSize: "16px",
             color: "#E5E5E5",
-            maxWidth: "600px",
             margin: "0 0 24px 0",
             lineHeight: "1.6",
+            whiteSpace: "nowrap",
           }}
         >
           Corruption is not isolated incidents—it's a living system of cascading
