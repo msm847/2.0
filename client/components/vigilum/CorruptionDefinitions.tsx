@@ -1623,59 +1623,60 @@ const InstitutionCard = ({ institution }) => {
       style={{
         backgroundColor: "rgba(16, 32, 28, 0.8)",
         border: "1px solid rgba(157, 230, 198, 0.2)",
-        borderRadius: "12px",
-        padding: "20px",
+        borderRadius: "16px",
+        padding: "24px",
         marginBottom: "16px",
+        minHeight: "200px",
+        maxWidth: "380px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        textAlign: "center"
       }}
     >
+      {/* Centered Logo */}
       <div
         style={{
+          fontSize: "40px",
+          width: "60px",
+          height: "60px",
           display: "flex",
-          alignItems: "flex-start",
-          gap: "16px",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "12px",
           marginBottom: "16px",
         }}
       >
-        <div
-          style={{
-            fontSize: "32px",
-            width: "48px",
-            height: "48px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: "8px",
-          }}
-        >
-          {institution.logo}
-        </div>
-        <div style={{ flex: 1 }}>
-          <h4
-            style={{
-              fontSize: "18px",
-              fontWeight: "600",
-              color: "#FFFFFF",
-              margin: "0 0 8px 0",
-            }}
-          >
-            {institution.name}
-          </h4>
-          <p
-            style={{
-              fontSize: "14px",
-              fontStyle: "italic",
-              color: "#E5E5E5",
-              lineHeight: "1.5",
-              margin: "0 0 8px 0",
-            }}
-          >
-            "{institution.definition}"
-          </p>
-
-        </div>
+        {institution.logo}
       </div>
 
+      {/* Centered Institution Name */}
+      <h4
+        style={{
+          fontSize: "20px",
+          fontWeight: "600",
+          color: "#FFFFFF",
+          margin: "0 0 20px 0",
+          textAlign: "center",
+        }}
+      >
+        {institution.name}
+      </h4>
 
+      {/* Left-aligned Definition */}
+      <p
+        style={{
+          fontSize: "15px",
+          fontStyle: "italic",
+          color: "#E5E5E5",
+          lineHeight: "1.6",
+          margin: "0",
+          textAlign: "left",
+          width: "100%",
+        }}
+      >
+        "{institution.definition}"
+      </p>
     </div>
   );
 };
