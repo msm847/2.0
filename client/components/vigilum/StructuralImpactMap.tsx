@@ -1211,8 +1211,7 @@ const StructuralImpactMap = () => {
       }}>
 
 
-        {/* User Path Visualization */}
-        <UserPathVisualization userPath={userPath} nodes={nodes} />
+
 
         {/* Nodes */}
         {nodes.map((node, index) => (
