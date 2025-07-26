@@ -796,7 +796,7 @@ const BoundaryLogicCarousel = () => {
               paddingBottom: '12px',
               scrollbarWidth: 'thin',
               maxWidth: '658px', // 2 cards (320px each) + 1 gap (18px) = 658px
-              margin: '0 auto'
+              margin: '0'
             }}
           >
             {currentData.map(institution => (
