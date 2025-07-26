@@ -165,7 +165,7 @@ const impactNetworkData = {
         displayFormat: "number"
       },
       facts: [
-        { text: "Corruption predicts willingness to migrate", source: "UNDP", icon: "🚶" },
+        { text: "Corruption predicts willingness to migrate", source: "UNDP", icon: "����" },
         { text: "Security forces compromised", source: "UNODC", icon: "🛡️" },
         { text: "Civil conflict risk doubles", source: "World Bank", icon: "⚔️" }
       ],
@@ -1141,10 +1141,7 @@ const StructuralImpactMap = () => {
         >
           Structural Impact Map
         </h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+        <p
           style={{
             fontSize: "18px",
             color: "#E5E5E5",
