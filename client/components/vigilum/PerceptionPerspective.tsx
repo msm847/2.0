@@ -471,7 +471,7 @@ const PerceptionPerspective = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {selectedButton === "Cultural" ? "✓ " : ""}What is Corruption?
+                    {selectedButton === "Cultural" ? "✓ " : "→ "}What is Corruption?
                   </motion.button>
 
                   <motion.button
