@@ -14,7 +14,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪🇺",
+          logo: "🇪��",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
@@ -809,25 +809,40 @@ const CorruptionDefinitions = ({ onNavigate }) => {
     >
       {/* Header */}
       <div style={{ textAlign: "left", marginBottom: "32px" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            marginBottom: "12px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "clamp(2rem, 4vw, 2.5rem)",
-              fontWeight: "600",
-              color: "#9DE6C6",
-              margin: "0",
-              fontFamily: "var(--font-display)",
-            }}
-          >
-            What is Corruption?
-          </h2>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>
+          <div style={{ maxWidth: "50%" }}>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 2.5rem)",
+                fontWeight: "600",
+                color: "#9DE6C6",
+                margin: "0 0 12px 0",
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              What is Corruption?
+            </h2>
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#9DE6C6",
+                margin: "0 0 8px 0",
+                fontStyle: "italic",
+              }}
+            >
+              Every institution defines corruption in its own terms.
+            </p>
+            <p
+              style={{
+                fontSize: "16px",
+                color: "#E5E5E5",
+                margin: "0",
+                lineHeight: "1.6",
+              }}
+            >
+              Explore how the world's leading authorities describe and classify corruption.
+            </p>
+          </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             <button
               onClick={() => onNavigate && onNavigate("Social")}
