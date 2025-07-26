@@ -64,7 +64,7 @@ const boundaryLogicData = {
         influencePeddling: { state: '✓', tooltip: 'Covered under "trading in influence" provisions (Article 12).', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Addressed in public ethics recommendations and evaluation reports.', typology: ['RT'] },
         fraud: { state: '–', tooltip: 'Outside core corruption mandate. Not systematically evaluated.', typology: ['SB'] },
-        embezzlement: { state: '✓', tooltip: 'Included in "abuse of functions" category under Article 10.', typology: ['RT'] },
+        embezzlement: { state: '��', tooltip: 'Included in "abuse of functions" category under Article 10.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Addressed through conflict of interest measures rather than direct criminalization.', typology: ['DG'] }
       }
     },
@@ -566,17 +566,7 @@ const BoundaryLogicCarousel = () => {
         {/* Spacer to push tags to bottom */}
         <div style={{ flex: 1 }}></div>
 
-        {/* Citation */}
-        <p style={{
-          fontSize: '11px',
-          color: '#9DE6C6',
-          fontFamily: 'SF Mono, Monaco, monospace',
-          margin: '0 0 8px 0',
-          letterSpacing: '0.04em',
-          textTransform: 'uppercase'
-        }}>
-          {institution.citation.text}
-        </p>
+
 
         {/* Boundary Tag Grid */}
         <div style={{
