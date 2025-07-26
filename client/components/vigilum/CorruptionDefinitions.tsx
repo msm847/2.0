@@ -463,12 +463,6 @@ const BoundaryLogicCarousel = () => {
 
   // Institution Card Component - Boundary Object Architecture
   const InstitutionCard = ({ institution, isActive }) => {
-    const [expanded, setExpanded] = useState(false);
-    const shouldTruncate = institution.definition.length > 180;
-    const displayDefinition = expanded || !shouldTruncate
-      ? institution.definition
-      : institution.definition.substring(0, 150) + '...';
-
     return (
       <motion.div
         style={{
@@ -483,7 +477,7 @@ const BoundaryLogicCarousel = () => {
             : '0 2px 6px rgba(24,41,27,0.04)',
           cursor: 'pointer',
           width: '320px',
-          height: expanded ? 'auto' : '470px',
+          height: 'auto',
           minHeight: '470px',
           flexShrink: 0,
           transform: isActive ? 'scale(1.04)' : 'scale(1)',
