@@ -105,6 +105,53 @@ const ProgressBar = ({ steps, currentStep, completedSteps, onStepClick }) => {
   );
 };
 
+// Navigation Controls Component
+const NavigationControls = ({ currentStep, totalSteps, completedSteps, onPrevious, onNext, steps }) => {
+  const canGoNext = completedSteps.has(steps[currentStep].key) && currentStep < totalSteps - 1;
+  const canGoPrevious = currentStep > 0;
+
+  return (
+    <div className="flex justify-between items-center mt-12 px-8">
+      <motion.button
+        onClick={onPrevious}
+        disabled={!canGoPrevious}
+        className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+          canGoPrevious
+            ? "bg-gray-600 hover:bg-gray-500 text-white cursor-pointer"
+            : "bg-gray-800 text-gray-500 cursor-not-allowed"
+        }`}
+        whileHover={canGoPrevious ? { scale: 1.05 } : {}}
+        whileTap={canGoPrevious ? { scale: 0.98 } : {}}
+      >
+        ← Previous
+      </motion.button>
+
+      <div className="text-center">
+        <p className="text-sm text-gray-400">
+          {completedSteps.has(steps[currentStep].key)
+            ? "Section Complete - You can continue"
+            : "Scroll through the section to continue"
+          }
+        </p>
+      </div>
+
+      <motion.button
+        onClick={onNext}
+        disabled={!canGoNext}
+        className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+          canGoNext
+            ? "bg-blue-600 hover:bg-blue-500 text-white cursor-pointer"
+            : "bg-gray-800 text-gray-500 cursor-not-allowed"
+        }`}
+        whileHover={canGoNext ? { scale: 1.05 } : {}}
+        whileTap={canGoNext ? { scale: 0.98 } : {}}
+      >
+        Next →
+      </motion.button>
+    </div>
+  );
+};
+
 // Inject the styles into the head
 if (typeof document !== "undefined") {
   const existingStyle = document.getElementById("button-pulse-styles");
