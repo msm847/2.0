@@ -38,7 +38,7 @@ const impactNetworkData = {
         {
           step: "Growth slows",
           description: "National productivity stagnates",
-          icon: "��",
+          icon: "📉",
         },
       ],
       microCase: {
@@ -1407,12 +1407,12 @@ const StructuralImpactMap = ({ onNavigate }) => {
           </div>
         )}
 
-        {/* Global Live Ticker - positioned correctly */}
+        {/* Global Live Ticker - positioned at top right of page */}
         <div
           style={{
-            position: "absolute",
-            top: "0px",
-            right: "0px",
+            position: "fixed",
+            top: "80px",
+            right: "20px",
             backdropFilter: "blur(20px) saturate(180%)",
             background: "rgba(255, 255, 255, 0.05)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
