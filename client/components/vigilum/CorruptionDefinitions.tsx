@@ -272,7 +272,7 @@ const boundaryLogicData = {
       tags: {
         bribery: { state: '✓', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
+        privateSector: { state: '���', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence covered under prohibited practices policy.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Managed through disclosure and mitigation in procurement processes.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practices explicitly prohibited in operational procedures.', typology: ['RT'] },
@@ -475,7 +475,7 @@ const BoundaryLogicCarousel = () => {
           boxShadow: isActive
             ? `0 12px 30px rgba(24,41,27,0.08)`
             : '0 2px 6px rgba(24,41,27,0.04)',
-          cursor: 'pointer',
+          cursor: 'default',
           width: '320px',
           height: 'auto',
           minHeight: '470px',
@@ -488,10 +488,9 @@ const BoundaryLogicCarousel = () => {
           flexDirection: 'column'
         }}
         whileHover={{
-          scale: isActive ? 1.04 : 1.01,
+          scale: 1,
           transition: { duration: 0.2 }
         }}
-        onClick={() => setSelectedCard(selectedCard === institution.id ? null : institution.id)}
       >
         {/* Logo and Institution Header */}
         <div style={{
