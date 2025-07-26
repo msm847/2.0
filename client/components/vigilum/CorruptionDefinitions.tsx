@@ -1671,15 +1671,7 @@ const InstitutionCard = ({ institution }) => {
           >
             "{institution.definition}"
           </p>
-          <p
-            style={{
-              fontSize: "12px",
-              color: "#9CA3AF",
-              margin: "0",
-            }}
-          >
-            Source: {institution.source}
-          </p>
+
         </div>
       </div>
 
