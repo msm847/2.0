@@ -450,8 +450,9 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-                {/* Floating Contextual Navigation */}
-                <div className="fixed bottom-8 right-8 z-30 flex flex-col gap-3">
+                {/* Floating Contextual Navigation - Only show when in perception/perspective sections */}
+                {(activeSection !== null || selectedButton) && (
+                  <div className="fixed bottom-8 right-8 z-30 flex flex-col gap-3">
                   <motion.button
                     onClick={() => {
                       setSelectedButton("Cultural");
