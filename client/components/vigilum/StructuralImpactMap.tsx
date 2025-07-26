@@ -1366,23 +1366,24 @@ const StructuralImpactMap = ({ onNavigate }) => {
   });
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        padding: "40px 20px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-      `}</style>
-
-      {/* Global Live Ticker */}
+    <>
+      {/* Global Live Ticker - rendered independently */}
       <StaticGlobalTicker totalLoss={globalLoss} />
+
+      <div
+        style={{
+          minHeight: "100vh",
+          padding: "40px 20px",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <style>{`
+          @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+          }
+        `}</style>
 
       {/* Header */}
       <div
