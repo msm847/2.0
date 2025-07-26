@@ -22,7 +22,7 @@ const impactNetworkData = {
       ],
       case_timeline: [
         { title: "Bribe Paid", description: "Funds diverted from national budget", icon: "💸" },
-        { title: "Project Collapses", description: "Infrastructure fails, jobs lost", icon: "🏗️" },
+        { title: "Project Collapses", description: "Infrastructure fails, jobs lost", icon: "🏗��" },
         { title: "Recession", description: "National growth stalls; recovery delayed", icon: "📉" }
       ],
       connections: ["inequality", "markets"],
@@ -39,7 +39,7 @@ const impactNetworkData = {
       ],
       case_timeline: [
         { title: "Judge Bribed", description: "Legal system compromised", icon: "⚖️" },
-        { title: "Reforms Blocked", description: "Progress stalls", icon: "����" },
+        { title: "Reforms Blocked", description: "Progress stalls", icon: "🚫" },
         { title: "Rights Unprotected", description: "Citizens lose legal recourse", icon: "🛡️" }
       ],
       connections: ["trust", "inequality"],
@@ -47,7 +47,7 @@ const impactNetworkData = {
     },
     {
       id: "inequality",
-      label: "Inequality", 
+      label: "Inequality",
       position: { x: 80, y: 20 },
       headline: "Corruption widens the gap between rich and poor, excluding millions from essential services.",
       facts: [
@@ -118,7 +118,7 @@ const impactNetworkData = {
 
 const NetworkNode = ({ node, isActive, isVisited, onActivate, scale = 1 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const nodeStyle = {
     position: "absolute" as const,
     left: `${node.position.x}%`,
@@ -127,16 +127,16 @@ const NetworkNode = ({ node, isActive, isVisited, onActivate, scale = 1 }) => {
     width: "120px",
     height: "120px",
     borderRadius: "50%",
-    background: isActive 
+    background: isActive
       ? `radial-gradient(circle, ${node.color}40, ${node.color}20)`
-      : isVisited 
+      : isVisited
         ? `radial-gradient(circle, ${node.color}20, ${node.color}10)`
         : "rgba(255, 255, 255, 0.05)",
     border: `2px solid ${isActive ? node.color : isVisited ? `${node.color}80` : "rgba(255, 255, 255, 0.1)"}`,
     cursor: "pointer",
     transition: "all 0.3s ease",
     backdropFilter: "blur(10px)",
-    boxShadow: isActive 
+    boxShadow: isActive
       ? `0 0 30px ${node.color}60, 0 8px 32px rgba(0, 0, 0, 0.2)`
       : isHovered
         ? `0 0 20px ${node.color}40, 0 4px 16px rgba(0, 0, 0, 0.1)`
@@ -196,7 +196,7 @@ const NetworkNode = ({ node, isActive, isVisited, onActivate, scale = 1 }) => {
           </motion.div>
         )}
       </div>
-      
+
       {/* Pulsing animation for active nodes */}
       {isActive && (
         <motion.div
@@ -231,10 +231,10 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited }) => {
   const fromY = fromNode.position.y;
   const toX = toNode.position.x;
   const toY = toNode.position.y;
-  
+
   const length = Math.sqrt(Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2));
   const angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
-  
+
   return (
     <div
       style={{
@@ -243,7 +243,7 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited }) => {
         top: `${fromY}%`,
         width: `${length}%`,
         height: "2px",
-        background: isActive 
+        background: isActive
           ? `linear-gradient(90deg, ${fromNode.color}80, ${toNode.color}80)`
           : visited
             ? `linear-gradient(90deg, ${fromNode.color}40, ${toNode.color}40)`
@@ -281,7 +281,7 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited }) => {
 
 const NodeDetailModal = ({ node, onClose }) => {
   const [currentCounter, setCurrentCounter] = useState(0);
-  
+
   useEffect(() => {
     if (node?.live_counter) {
       const interval = setInterval(() => {
@@ -491,7 +491,7 @@ const NodeDetailModal = ({ node, onClose }) => {
                   }}>
                     {step.description}
                   </div>
-                  
+
                   {/* Arrow to next step */}
                   {idx < node.case_timeline.length - 1 && (
                     <div style={{
@@ -562,7 +562,7 @@ const StructuralImpactMap = () => {
   const [selectedNode, setSelectedNode] = useState(null);
   const [globalLoss, setGlobalLoss] = useState(0);
   const [isIntroVisible, setIsIntroVisible] = useState(true);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setGlobalLoss(prev => prev + 31666); // $1.9M per minute = ~$31,666 per second
@@ -578,7 +578,7 @@ const StructuralImpactMap = () => {
   };
 
   const nodes = impactNetworkData.nodes;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -635,10 +635,10 @@ const StructuralImpactMap = () => {
             lineHeight: "1.6"
           }}
         >
-          Corruption is not isolated incidents—it's a living system of cascading harms. 
+          Corruption is not isolated incidents—it's a living system of cascading harms.
           Explore how damage propagates across domains.
         </motion.p>
-        
+
         {isIntroVisible && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -684,14 +684,14 @@ const StructuralImpactMap = () => {
         border: "1px solid rgba(255, 255, 255, 0.1)"
       }}>
         {/* Connection Lines */}
-        {nodes.map(fromNode => 
+        {nodes.map(fromNode =>
           fromNode.connections.map(toNodeId => {
             const toNode = nodes.find(n => n.id === toNodeId);
             if (!toNode) return null;
-            
+
             const isActive = activeNode === fromNode.id || activeNode === toNodeId;
             const visited = visitedNodes.has(fromNode.id) && visitedNodes.has(toNodeId);
-            
+
             return (
               <ConnectionLine
                 key={`${fromNode.id}-${toNodeId}`}
@@ -723,7 +723,7 @@ const StructuralImpactMap = () => {
       </div>
 
       {/* Cumulative Tally */}
-      <CumulativeTally 
+      <CumulativeTally
         visitedNodes={visitedNodes.size}
         totalLoss={globalLoss}
       />
@@ -767,19 +767,13 @@ const StructuralImpactMap = () => {
             lineHeight: "1.6",
             margin: "0"
           }}>
-            Corruption's damage is never isolated—it is cumulative, structural, and always systemic. 
+            Corruption's damage is never isolated—it is cumulative, structural, and always systemic.
             While you explored, the world lost ${globalLoss.toLocaleString()} to corruption.
           </p>
         </motion.div>
       )}
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-10px) rotate(1deg); }
-          66% { transform: translateY(5px) rotate(-1deg); }
-        }
-      `}</style>
+
     </motion.div>
   );
 };
