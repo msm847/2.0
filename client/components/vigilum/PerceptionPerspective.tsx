@@ -527,7 +527,7 @@ const PerceptionPerspective = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {visitedSections.has("Economic") ? "✓ " : "→→→ "}Try a Simulation
+                    {visitedSections.has("Economic") ? "✓ " : "→ "}Try a Simulation
                   </motion.button>
                 </div>
               </>
