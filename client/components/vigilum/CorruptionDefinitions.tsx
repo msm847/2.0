@@ -880,9 +880,9 @@ const BoundaryLogicCarousel = () => {
                   onClick={() => setSelectedTerm(term)}
                   style={{
                     padding: '8px 12px',
-                    border: `2px solid ${selectedTerm === term ? theme.secondary : '#E5E7EB'}`,
+                    border: `2px solid ${selectedTerm === term ? theme.secondary : 'rgba(157, 230, 198, 0.3)'}`,
                     background: selectedTerm === term ? `${theme.secondary}22` : 'transparent',
-                    color: selectedTerm === term ? theme.primary : '#6B7280',
+                    color: selectedTerm === term ? theme.primary : '#9DE6C6',
                     borderRadius: '8px',
                     fontSize: '12px',
                     fontWeight: '500',
