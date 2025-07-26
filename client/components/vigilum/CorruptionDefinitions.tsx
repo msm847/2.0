@@ -674,7 +674,7 @@ const BoundaryLogicCarousel = () => {
         minWidth: '1100px',
         margin: '0 auto',
         borderRadius: '24px',
-        padding: '36px 64px',
+        padding: '40px 32px',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         position: 'relative'
       }}
