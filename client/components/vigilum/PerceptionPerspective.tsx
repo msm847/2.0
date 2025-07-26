@@ -449,51 +449,52 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-                {/* Simple Navigation Controls */}
-                <div className="flex justify-between items-center mt-4 px-8">
+                {/* Floating Contextual Navigation */}
+                <div className="fixed bottom-8 right-8 z-30 flex flex-col gap-3">
                   <motion.button
-                    onClick={goToPreviousStep}
-                    disabled={!canGoPrevious}
-                    className="px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                    onClick={() => setSelectedButton("Economic")}
+                    className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                     style={{
-                      background: canGoPrevious ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.03)",
-                      color: canGoPrevious ? "#F5F5F5" : "#666",
-                      border: canGoPrevious ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid rgba(255, 255, 255, 0.05)",
-                      cursor: canGoPrevious ? "pointer" : "not-allowed",
-                      backdropFilter: "blur(10px)"
+                      background: "rgba(16, 185, 129, 0.15)",
+                      color: "#9DE6C6",
+                      border: "1px solid rgba(157, 230, 198, 0.4)",
+                      backdropFilter: "blur(15px)",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+                      fontFamily: "var(--font-display)",
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase"
                     }}
-                    whileHover={canGoPrevious ? { scale: 1.02, background: "rgba(255, 255, 255, 0.15)" } : {}}
-                    whileTap={canGoPrevious ? { scale: 0.98 } : {}}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(16, 185, 129, 0.25)",
+                      boxShadow: "0 12px 40px rgba(16, 185, 129, 0.2)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    ← Previous
+                    Explore Economic Impact →
                   </motion.button>
 
-                  <div className="text-center">
-                    <div className="text-sm" style={{ color: "#9CA3AF" }}>
-                      Step {currentStepIndex + 1} of {perspectiveSteps.length}
-                    </div>
-                    <div className="text-xs mt-1" style={{ color: "#6B7280" }}>
-                      {selectedButton === "Cultural" && "What is Corruption?"}
-                      {selectedButton === "Social" && "Structural Impact Map"}
-                      {selectedButton === "Economic" && "Cognition Chamber"}
-                    </div>
-                  </div>
-
                   <motion.button
-                    onClick={goToNextStep}
-                    disabled={!canGoNext}
-                    className="px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                    onClick={() => setSelectedButton("Social")}
+                    className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                     style={{
-                      background: canGoNext ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.03)",
-                      color: canGoNext ? "#F5F5F5" : "#666",
-                      border: canGoNext ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid rgba(255, 255, 255, 0.05)",
-                      cursor: canGoNext ? "pointer" : "not-allowed",
-                      backdropFilter: "blur(10px)"
+                      background: "rgba(255, 255, 255, 0.08)",
+                      color: "#E5E5E5",
+                      border: "1px solid rgba(255, 255, 255, 0.15)",
+                      backdropFilter: "blur(15px)",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+                      fontFamily: "var(--font-display)",
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase"
                     }}
-                    whileHover={canGoNext ? { scale: 1.02, background: "rgba(255, 255, 255, 0.15)" } : {}}
-                    whileTap={canGoNext ? { scale: 0.98 } : {}}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      boxShadow: "0 12px 40px rgba(255, 255, 255, 0.1)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    Next →
+                    View Structural Analysis →
                   </motion.button>
                 </div>
               </>
