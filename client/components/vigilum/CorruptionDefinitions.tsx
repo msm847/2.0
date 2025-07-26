@@ -949,7 +949,8 @@ const BoundaryLogicCarousel = () => {
                 color: '#FFFFFF',
                 margin: 0,
                 lineHeight: '1.5',
-                fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
+                fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+                textAlign: 'left'
               }}>
                 {termDefinitions[selectedTerm]?.consequence || 'Boundary effects on recognition and transfer systems.'}
               </p>
