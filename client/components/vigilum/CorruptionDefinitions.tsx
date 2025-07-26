@@ -251,7 +251,7 @@ const boundaryLogicData = {
       tags: {
         bribery: { state: '✓', tooltip: 'Core violation in ADB integrity framework and sanctions procedures.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Outside ADB operational mandate and enforcement scope.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity due diligence.', typology: ['CI'] },
+        privateSector: { state: '���', tooltip: 'Private sector operations covered under integrity due diligence.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational procedures.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Covered in integrity and procurement policies across operations.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practice prohibited in operations and project implementation.', typology: ['RT'] },
@@ -495,11 +495,10 @@ const BoundaryLogicCarousel = () => {
         {/* Logo and Institution Header */}
         <div style={{
           display: 'flex',
-          justifyContent: 'center',
+          flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: '12px',
-          position: 'relative',
-          height: '54px'
+          marginBottom: '16px',
+          textAlign: 'center'
         }}>
           <div
             style={{
@@ -515,8 +514,7 @@ const BoundaryLogicCarousel = () => {
               padding: '6px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
               cursor: 'pointer',
-              position: 'absolute',
-              left: '0'
+              marginBottom: '12px'
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -528,24 +526,16 @@ const BoundaryLogicCarousel = () => {
           >
             {institution.logo}
           </div>
-          <div style={{
-            position: 'absolute',
-            right: '0',
-            display: 'flex',
-            alignItems: 'center',
-            height: '54px'
+          <h4 style={{
+            margin: 0,
+            fontSize: '19px',
+            fontWeight: 'bold',
+            color: '#FFFFFF',
+            lineHeight: '24px',
+            textAlign: 'center'
           }}>
-            <h4 style={{
-              margin: 0,
-              fontSize: '19px',
-              fontWeight: 'bold',
-              color: '#FFFFFF',
-              lineHeight: '24px',
-              textAlign: 'right'
-            }}>
-              {institution.name}
-            </h4>
-          </div>
+            {institution.name}
+          </h4>
         </div>
 
         {/* Definition Section */}
