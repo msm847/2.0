@@ -177,7 +177,7 @@ const ModuleGrid = () => {
 
   return (
     <div
-      className="py-20 px-4"
+      className="pt-20 pb-32 px-4"
       style={{ background: "linear-gradient(180deg, #151A13, #1C2E22)" }}
     >
       <div className="container mx-auto max-w-7xl">
