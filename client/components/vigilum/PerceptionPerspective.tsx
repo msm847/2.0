@@ -333,11 +333,13 @@ const PerceptionPerspective = () => {
                       color: currentTheme.textColor,
                     }}
                   >
-                    <div style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
                       <style>{`
                         .instruction-section .focus-word {
                           margin-right: 4rem !important;
