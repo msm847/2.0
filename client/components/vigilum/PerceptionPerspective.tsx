@@ -333,17 +333,19 @@ const PerceptionPerspective = () => {
                       color: currentTheme.textColor,
                     }}
                   >
-                    <ClickableTrueFocus
-                      sentence="Perception Perspective"
-                      manualMode={true}
-                      blurAmount={3}
-                      borderColor={currentTheme.borderColor}
-                      glowColor={currentTheme.glowColor}
-                      animationDuration={0.8}
-                      pauseBetweenAnimations={2}
-                      onWordClick={handleWordClick}
-                      activeSection={activeSection}
-                    />
+                    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "4rem" }}>
+                      <ClickableTrueFocus
+                        sentence="Perception Perspective"
+                        manualMode={true}
+                        blurAmount={3}
+                        borderColor={currentTheme.borderColor}
+                        glowColor={currentTheme.glowColor}
+                        animationDuration={0.8}
+                        pauseBetweenAnimations={2}
+                        onWordClick={handleWordClick}
+                        activeSection={activeSection}
+                      />
+                    </div>
                   </div>
 
                   <div
