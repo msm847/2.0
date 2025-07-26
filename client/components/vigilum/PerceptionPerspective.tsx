@@ -340,6 +340,7 @@ const PerceptionPerspective = () => {
 
   return (
     <section
+      id="perception-perspective"
       className="min-h-screen pt-20 pb-20 pl-12 pr-12"
       style={{
         background: currentTheme.backgroundColor,
