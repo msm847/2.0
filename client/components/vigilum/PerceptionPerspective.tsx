@@ -184,7 +184,7 @@ const ClickableTrueFocus = ({
 
 const PerceptionPerspective = () => {
   const [activeSection, setActiveSection] = useState("perception"); // Start with perception selected
-  const [selectedButton, setSelectedButton] = useState("Economic"); // Auto-select Economic
+  const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
 
   // Theme configurations
   const themes = {
