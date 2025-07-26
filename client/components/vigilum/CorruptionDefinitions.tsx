@@ -148,7 +148,7 @@ const boundaryLogicData = {
         influencePeddling: { state: '✓', tooltip: 'Covered when involving foreign officials or securing government business.', typology: ['CI'] },
         conflictOfInterest: { state: '–', tooltip: 'Not within FCPA scope unless involving prohibited payments.', typology: ['SB'] },
         fraud: { state: '?', tooltip: 'Accounting fraud covered under books and records provisions.', typology: ['RT'] },
-        embezzlement: { state: '��', tooltip: 'Outside FCPA scope unless involving foreign official payments.', typology: ['SB'] },
+        embezzlement: { state: '–', tooltip: 'Outside FCPA scope unless involving foreign official payments.', typology: ['SB'] },
         nepotism: { state: '–', tooltip: 'Not covered unless involving improper payments to foreign officials.', typology: ['SB'] }
       }
     },
@@ -817,9 +817,8 @@ const BoundaryLogicCarousel = () => {
           padding: '24px',
           boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
           borderTop: `3px solid ${theme.secondary}`,
-          height: '470px', // Match card height
-          display: 'flex',
-          flexDirection: 'column'
+          height: '470px',
+          overflowY: 'auto'
         }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
@@ -1084,7 +1083,7 @@ const institutionalData = {
         },
         {
           name: "IMF",
-          logo: "💰",
+          logo: "��",
           definition:
             "Corruption is the abuse of public power for private benefit, including bribery, embezzlement, and fraud.",
           source: "IMF, official website",
