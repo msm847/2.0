@@ -24,22 +24,22 @@ const buttonPulseStyles = `
   @keyframes pulse-economic {
     0%, 100% {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0px 0px 60px rgba(123, 116, 85, 0.9), 0px 0px 40px rgba(123, 116, 85, 0.7), 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset;
+      box-shadow: 0px 0px 12px rgba(123, 116, 85, 0.6), 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
     50% {
       transform: translateY(-4px) scale(1.04);
-      box-shadow: 0px 0px 80px rgba(123, 116, 85, 1), 0px 0px 60px rgba(123, 116, 85, 0.8), 0px 16px 50px rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+      box-shadow: 0px 0px 16px rgba(123, 116, 85, 0.8), 0px 6px 16px rgba(0, 0, 0, 0.3);
     }
   }
 
   @keyframes pulse-social {
     0%, 100% {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0px 0px 60px rgba(139, 92, 87, 0.9), 0px 0px 40px rgba(139, 92, 87, 0.7), 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset;
+      box-shadow: 0px 0px 12px rgba(139, 92, 87, 0.6), 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
     50% {
       transform: translateY(-4px) scale(1.04);
-      box-shadow: 0px 0px 80px rgba(139, 92, 87, 1), 0px 0px 60px rgba(139, 92, 87, 0.8), 0px 16px 50px rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+      box-shadow: 0px 0px 16px rgba(139, 92, 87, 0.8), 0px 6px 16px rgba(0, 0, 0, 0.3);
     }
   }
 `;
