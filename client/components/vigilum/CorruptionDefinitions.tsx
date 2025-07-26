@@ -601,12 +601,15 @@ const BoundaryLogicCarousel = () => {
           </p>
         </div>
 
+        {/* Spacer to push tags to bottom */}
+        <div style={{ flex: 1 }}></div>
+
         {/* Boundary Tag Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '6px',
-          marginTop: '12px'
+          gap: '4px',
+          marginTop: 'auto'
         }}>
           {allTerms.map(term => {
             const tag = institution.tags[term];
@@ -617,18 +620,16 @@ const BoundaryLogicCarousel = () => {
               <div
                 key={term}
                 style={{
-                  height: '26px',
-                  minWidth: '74px',
-                  maxWidth: '132px',
-                  padding: '6px 8px',
+                  height: '24px',
+                  padding: '4px 6px',
                   border: `2px solid ${getTagColor(tag.state)}`,
-                  borderRadius: '8px',
+                  borderRadius: '6px',
                   background: getTagBackground(tag.state),
                   color: getTagColor(tag.state),
-                  fontSize: '11px',
+                  fontSize: '10px',
                   fontWeight: '600',
                   fontFamily: 'SF Mono, Monaco, monospace',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.02em',
                   textAlign: 'center',
                   cursor: 'pointer',
                   textTransform: 'capitalize',
@@ -637,7 +638,10 @@ const BoundaryLogicCarousel = () => {
                   justifyContent: 'center',
                   transition: 'all 0.2s ease',
                   transform: isSelected ? 'scale(1.05)' : 'scale(1)',
-                  boxShadow: isSelected ? `0 0 8px ${getTagColor(tag.state)}44` : 'none'
+                  boxShadow: isSelected ? `0 0 8px ${getTagColor(tag.state)}44` : 'none',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
                 }}
                 onMouseEnter={() => setHoveredTag(`${institution.id}-${term}`)}
                 onMouseLeave={() => setHoveredTag(null)}
