@@ -557,7 +557,7 @@ const PerceptionPerspective = () => {
                   >
                     {visitedSections.has("Economic") ? "✓ " : "→ "}Try a Simulation
                   </motion.button>
-                  </div>
+                  </motion.div>
                 )}
               </>
             )}
