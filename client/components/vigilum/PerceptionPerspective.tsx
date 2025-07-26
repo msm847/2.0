@@ -478,7 +478,7 @@ const PerceptionPerspective = () => {
                   {selectedButton !== "Social" && (
                     <>
                       <motion.button
-                        onClick={() => setSelectedButton("Economic")}
+                        onClick={() => setSelectedButton("Social")}
                         className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                         style={{
                           background: "rgba(16, 185, 129, 0.15)",
@@ -497,11 +497,11 @@ const PerceptionPerspective = () => {
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        Explore Economic Impact →
+                        The Consequences of Corruption →
                       </motion.button>
 
                       <motion.button
-                        onClick={() => setSelectedButton("Social")}
+                        onClick={() => setSelectedButton("Economic")}
                         className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                         style={{
                           background: "rgba(255, 255, 255, 0.08)",
@@ -520,7 +520,7 @@ const PerceptionPerspective = () => {
                         }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        Explore Corruption Consequences →
+                        Try a Simulation →
                       </motion.button>
                     </>
                   )}
