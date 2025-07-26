@@ -104,7 +104,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting improper influence or advantage.', typology: ['DG'] },
         privateSector: { state: '✓', tooltip: 'Private sector bribery fully covered under Sections 1-2.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Covered under general bribery provisions when involving improper influence.', typology: ['CI'] },
-        conflictOfInterest: { state: '���', tooltip: 'Not directly criminalized unless involving bribery elements.', typology: ['SB'] },
+        conflictOfInterest: { state: '–', tooltip: 'Not directly criminalized unless involving bribery elements.', typology: ['SB'] },
         fraud: { state: '–', tooltip: 'Covered under separate Fraud Act 2006, not Bribery Act.', typology: ['SB'] },
         embezzlement: { state: '–', tooltip: 'Outside Bribery Act scope. Covered under other legislation.', typology: ['SB'] },
         nepotism: { state: '–', tooltip: 'Not specifically criminalized unless involving bribery or advantage.', typology: ['SB'] }
@@ -994,7 +994,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪��",
+          logo: "🇪🇺",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
