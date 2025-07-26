@@ -441,7 +441,7 @@ const institutionalData = {
         },
         {
           name: "ICIJ",
-          logo: "���",
+          logo: "📊",
           definition:
             "Corruption includes bribery, money laundering, tax evasion, embezzlement, and systematic abuse of power for private benefit.",
           source: "ICIJ, investigative methodology",
@@ -852,6 +852,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
               Economic
             </button>
             <button
+              onClick={() => onNavigate && onNavigate("Social")}
               style={{
                 backdropFilter: "blur(20px) saturate(180%)",
                 background: "rgba(255, 255, 255, 0.05)",
