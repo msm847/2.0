@@ -453,7 +453,10 @@ const PerceptionPerspective = () => {
                 {/* Floating Contextual Navigation */}
                 <div className="fixed bottom-8 right-8 z-30 flex flex-col gap-3">
                   <motion.button
-                    onClick={() => setSelectedButton("Cultural")}
+                    onClick={() => {
+                      setSelectedButton("Cultural");
+                      setVisitedSections(prev => new Set([...prev, "Cultural"]));
+                    }}
                     className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                     style={{
                       background: selectedButton === "Cultural" ? "rgba(16, 185, 129, 0.25)" : "rgba(16, 185, 129, 0.15)",
