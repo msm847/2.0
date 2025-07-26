@@ -1907,11 +1907,12 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   gap: "20px",
                 }}
               >
-                {institutionalData.groups.flatMap((group) =>
-                  group.institutions.map((institution, index) => (
+                {Object.entries(boundaryLogicData).flatMap(([groupKey, institutions]) =>
+                  institutions.map((institution, index) => (
                     <InstitutionCard
-                      key={`${group.id}-${index}`}
+                      key={`${groupKey}-${index}`}
                       institution={institution}
+                      isActive={false}
                     />
                   )),
                 )}
