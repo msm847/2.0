@@ -271,7 +271,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: { state: '✓', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
-        lobbying: { state: '��', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
+        lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
         privateSector: { state: '��', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence covered under prohibited practices policy.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Managed through disclosure and mitigation in procurement processes.', typology: ['RT'] },
