@@ -30,7 +30,7 @@ const boundaryLogicData = {
       id: 'oecd',
       name: 'OECD',
       logoUrl: '/logos/oecd.svg',
-      logo: '🌐',
+      logo: '����',
       definition: 'The active bribery of foreign public officials, as well as the failure to prevent such bribery by persons associated with a commercial organization.',
       citation: {
         text: 'OECD Anti-Bribery Convention, Article 1, 1997',
@@ -818,7 +818,9 @@ const BoundaryLogicCarousel = () => {
           boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
           borderTop: `3px solid ${theme.secondary}`,
           height: '470px',
-          overflowY: 'auto'
+          overflowY: 'auto',
+          marginLeft: '-16px',
+          marginTop: '8px'
         }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
