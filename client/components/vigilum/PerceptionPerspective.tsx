@@ -43,6 +43,68 @@ const buttonPulseStyles = `
   }
 `;
 
+// Progress Bar Component
+const ProgressBar = ({ steps, currentStep, completedSteps, onStepClick }) => {
+  return (
+    <div className="w-full max-w-4xl mx-auto mb-8">
+      <div className="flex items-center justify-between">
+        {steps.map((step, index) => {
+          const isCompleted = completedSteps.has(step.key);
+          const isCurrent = index === currentStep;
+          const isAccessible = index === 0 || completedSteps.has(steps[index - 1].key);
+
+          return (
+            <div key={step.key} className="flex items-center">
+              {/* Step Circle */}
+              <div
+                className={`relative flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-all duration-300 ${
+                  isCompleted
+                    ? "bg-green-500 border-green-500 text-white"
+                    : isCurrent
+                    ? "bg-blue-500 border-blue-500 text-white animate-pulse"
+                    : isAccessible
+                    ? "bg-gray-600 border-gray-400 text-gray-200 hover:bg-gray-500"
+                    : "bg-gray-800 border-gray-600 text-gray-500 cursor-not-allowed"
+                }`}
+                onClick={() => isAccessible && onStepClick(index)}
+              >
+                {isCompleted ? (
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                ) : (
+                  <span className="text-sm font-semibold">{index + 1}</span>
+                )}
+              </div>
+
+              {/* Step Label */}
+              <div className="ml-3 min-w-0">
+                <p className={`text-sm font-medium ${
+                  isCompleted ? "text-green-400" : isCurrent ? "text-blue-400" : isAccessible ? "text-gray-300" : "text-gray-500"
+                }`}>
+                  Step {index + 1}
+                </p>
+                <p className={`text-xs ${
+                  isCompleted ? "text-green-300" : isCurrent ? "text-blue-300" : isAccessible ? "text-gray-400" : "text-gray-600"
+                }`}>
+                  {step.title}
+                </p>
+              </div>
+
+              {/* Connection Line */}
+              {index < steps.length - 1 && (
+                <div className={`flex-1 h-0.5 mx-4 ${
+                  completedSteps.has(step.key) ? "bg-green-500" : "bg-gray-600"
+                }`} />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 // Inject the styles into the head
 if (typeof document !== "undefined") {
   const existingStyle = document.getElementById("button-pulse-styles");
