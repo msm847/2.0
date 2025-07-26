@@ -1180,7 +1180,7 @@ const StructuralImpactMap = () => {
             >
               ✕
             </button>
-          </motion.div>
+          </div>
         )}
       </div>
 
