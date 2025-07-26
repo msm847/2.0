@@ -1242,13 +1242,7 @@ const StructuralImpactMap = ({ onNavigate }) => {
 
   const nodes = impactNetworkData.nodes;
 
-  // Global loss counter
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGlobalLoss((prev) => prev + 31666); // $1.9M per minute = ~$31,666 per second
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+
 
   // Handle node activation
   const handleNodeActivate = (nodeId) => {
