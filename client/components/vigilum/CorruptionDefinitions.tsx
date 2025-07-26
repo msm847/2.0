@@ -824,7 +824,7 @@ const BoundaryLogicCarousel = () => {
           overflowY: 'auto',
           transform: 'translateX(-100px) translateY(16px)',
           width: 'calc(100% + 40px)',
-          gridRow: '1'
+          gridRow: '2'
         }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
