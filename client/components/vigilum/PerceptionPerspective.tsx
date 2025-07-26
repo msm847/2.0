@@ -188,6 +188,11 @@ const PerceptionPerspective = () => {
   const [activeSection, setActiveSection] = useState(null); // Start with no section selected
   const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
 
+  // Ensure the instruction section always loads first
+  useEffect(() => {
+    setActiveSection(null);
+  }, []);
+
   // Theme configurations
   const themes = {
     perception: {
