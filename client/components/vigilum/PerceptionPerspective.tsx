@@ -5,6 +5,7 @@ import SplitText from "@/components/ui/SplitText";
 import LegalStructuralSimulator from "./LegalStructuralSimulator";
 import CorruptionDefinitions from "./CorruptionDefinitions";
 import StructuralImpactMap from "./StructuralImpactMap";
+import LightRays from './LightRays';
 import "./TrueFocus.css";
 
 // Add CSS-in-JS for 3D pulsating button animations
