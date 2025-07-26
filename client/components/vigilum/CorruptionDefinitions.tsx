@@ -916,33 +916,7 @@ const BoundaryLogicCarousel = () => {
         </div>
       </div>
 
-      {/* Systemic Consequence Bar */}
-      <div style={{
-        width: '100%',
-        height: '54px',
-        background: activeGroup === 'regulatory'
-          ? 'rgba(0,0,0,0.03)'
-          : 'rgba(70, 91, 110, 0.1)',
-        borderRadius: '12px',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '0 24px',
-        gap: '16px',
-        backdropFilter: 'blur(10px)'
-      }}>
-        <div style={{ fontSize: '20px' }}>⚡</div>
-        <p style={{
-          margin: 0,
-          fontSize: '14px',
-          color: activeGroup === 'regulatory' ? '#18291B' : '#465B6E',
-          fontWeight: '500',
-          fontFamily: 'SF Mono, Monaco, monospace',
-          letterSpacing: '0.01em',
-          lineHeight: '1.4'
-        }}>
-          {getSystemicNote(activeGroup, selectedTerm, selectedCard)}
-        </p>
-      </div>
+
     </div>
   );
 };
