@@ -272,7 +272,7 @@ const boundaryLogicData = {
       tags: {
         bribery: { state: '✓', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
+        privateSector: { state: '��', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence covered under prohibited practices policy.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Managed through disclosure and mitigation in procurement processes.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practices explicitly prohibited in operational procedures.', typology: ['RT'] },
@@ -1837,27 +1837,20 @@ const CorruptionDefinitions = ({ onNavigate }) => {
 
       {/* Key Insight */}
       <div style={{
-        marginTop: '16px',
-        padding: '8px 12px',
-        background: 'rgba(255, 255, 255, 0.03)',
-        borderRadius: '6px',
-        border: '1px solid rgba(255, 255, 255, 0.08)',
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: '8px',
-        maxWidth: '800px',
-        margin: '16px auto 0 auto'
+        textAlign: 'center',
+        marginTop: '24px',
+        maxWidth: '600px',
+        margin: '24px auto 0 auto'
       }}>
-        <div style={{ fontSize: '14px', marginTop: '1px' }}>💡</div>
         <p style={{
           margin: 0,
-          fontSize: '12px',
-          color: '#F5F5F5',
+          fontSize: '13px',
+          color: '#E5E5E5',
           fontWeight: '400',
-          lineHeight: '1.4',
-          opacity: 0.9
+          lineHeight: '1.5',
+          opacity: 0.8
         }}>
-          Institutional boundaries determine what can be prosecuted, managed, or ignored.<br />
+          💡 Institutional boundaries determine what can be prosecuted, managed, or ignored.<br />
           Vigilum models how these definitions produce blindspots and transfer structural risk.
         </p>
       </div>
