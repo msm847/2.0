@@ -332,7 +332,7 @@ const StaticGlobalTicker = ({ totalLoss }) => (
   <div
     style={{
       position: "fixed",
-      top: "80px",
+      top: "100px",
       right: "20px",
       backdropFilter: "blur(20px) saturate(180%)",
       background: "rgba(255, 255, 255, 0.05)",
@@ -341,10 +341,12 @@ const StaticGlobalTicker = ({ totalLoss }) => (
       boxShadow:
         "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
       padding: "16px 24px",
-      zIndex: 1000,
+      zIndex: 1001,
       minWidth: "280px",
-      transform: "none", // Explicitly prevent any transforms
-      opacity: 1, // Explicitly set opacity
+      transform: "translate3d(0, 0, 0)", // Force hardware acceleration and explicit positioning
+      opacity: 1,
+      willChange: "auto", // Prevent any automatic optimizations
+      pointerEvents: "auto", // Ensure it's fully rendered
     }}
   >
     <div
