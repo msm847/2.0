@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import SplitText from "@/components/ui/SplitText";
-import LegalStructuralSimulator from "./LegalStructuralSimulator";
+
 import CorruptionDefinitions from "./CorruptionDefinitions";
 import StructuralImpactMap from "./StructuralImpactMap";
 import LightRays from "./LightRays";
@@ -523,7 +523,11 @@ const PerceptionPerspective = () => {
                     transition={{ duration: 0.6 }}
                     className="mt-8 -mx-32 max-w-none"
                   >
-                    <LegalStructuralSimulator embedded={true} />
+                    <div className="text-center py-16">
+                      <div className="text-xl text-gray-300 font-mono">
+                        Economic analysis interface coming soon...
+                      </div>
+                    </div>
                   </motion.div>
                 )}
 
