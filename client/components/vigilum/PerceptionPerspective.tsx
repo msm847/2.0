@@ -614,56 +614,7 @@ const PerceptionPerspective = () => {
                       of Corruption
                     </motion.button>
 
-                    <motion.button
-                      onClick={() => {
-                        setSelectedButton("Economic");
-                        setVisitedSections(
-                          (prev) =>
-                            new Set([
-                              ...prev,
-                              "Cultural",
-                              "Social",
-                              "Economic",
-                            ]),
-                        );
-                      }}
-                      className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
-                      style={{
-                        background:
-                          selectedButton === "Economic"
-                            ? "rgba(16, 185, 129, 0.25)"
-                            : "rgba(255, 255, 255, 0.08)",
-                        color:
-                          selectedButton === "Economic" ? "#9DE6C6" : "#E5E5E5",
-                        border:
-                          selectedButton === "Economic"
-                            ? "2px solid rgba(157, 230, 198, 0.6)"
-                            : "1px solid rgba(255, 255, 255, 0.15)",
-                        backdropFilter: "blur(15px)",
-                        boxShadow:
-                          selectedButton === "Economic"
-                            ? "0 8px 32px rgba(16, 185, 129, 0.3)"
-                            : "0 8px 32px rgba(0,0,0,0.2)",
-                        fontFamily: "var(--font-display)",
-                        letterSpacing: "0.5px",
-                        textTransform: "uppercase",
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        backgroundColor:
-                          selectedButton === "Economic"
-                            ? "rgba(16, 185, 129, 0.25)"
-                            : "rgba(255, 255, 255, 0.15)",
-                        boxShadow:
-                          selectedButton === "Economic"
-                            ? "0 12px 40px rgba(16, 185, 129, 0.2)"
-                            : "0 12px 40px rgba(255, 255, 255, 0.1)",
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {visitedSections.has("Economic") ? "✓ " : "→ "}Try a
-                      Simulation
-                    </motion.button>
+
                   </motion.div>
                 )}
               </>
