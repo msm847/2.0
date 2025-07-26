@@ -501,7 +501,7 @@ const PerceptionPerspective = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {visitedSections.has("Social") ? "✓ " : "→→ "}Consequences of Corruption
+                    {visitedSections.has("Social") ? "✓ " : "→ "}Consequences of Corruption
                   </motion.button>
 
                   <motion.button
