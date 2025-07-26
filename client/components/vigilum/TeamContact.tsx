@@ -435,7 +435,7 @@ const TeamContact = () => {
       }}
     >
       {/* TEAM SECTION */}
-      <section className="py-20" aria-labelledby="team-heading">
+      <section className="pt-20 pb-32" aria-labelledby="team-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
