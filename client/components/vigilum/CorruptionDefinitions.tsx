@@ -232,7 +232,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Not within EBRD enforcement scope unless constituting prohibited practice.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector conduct covered in project finance and investment operations.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence prohibited in procurement and project implementation.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
+        conflictOfInterest: { state: '���', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practices covered in enforcement and sanctions framework.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation prohibited in project funds and operational resources.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Addressed through conflict of interest policies rather than direct prohibition.', typology: ['DG'] }
@@ -338,7 +338,7 @@ const boundaryLogicData = {
         privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity screening procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational guidelines.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Addressed in procurement and operational integrity procedures.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Fraudulent practices prohibited in project implementation and financing.', typology: ['RT'] },
+        fraud: { state: '���', tooltip: 'Fraudulent practices prohibited in project implementation and financing.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation covered in prohibited practices and sanctions framework.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Managed through transparency and conflict of interest procedures.', typology: ['DG'] }
       }
@@ -1767,6 +1767,32 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             >
               Explore how the world's leading authorities describe and classify
               corruption.
+            </p>
+          </div>
+
+          {/* Key Insight Bar */}
+          <div style={{
+            width: '100%',
+            marginTop: '20px',
+            padding: '16px 24px',
+            background: 'rgba(255, 255, 255, 0.05)',
+            borderRadius: '12px',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ fontSize: '20px' }}>💡</div>
+            <p style={{
+              margin: 0,
+              fontSize: '14px',
+              color: '#F5F5F5',
+              fontWeight: '500',
+              lineHeight: '1.4'
+            }}>
+              Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored.
+              Vigilum models how these definitions produce blindspots and transfer structural risk.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
