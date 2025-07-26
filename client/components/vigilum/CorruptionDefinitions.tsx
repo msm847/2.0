@@ -1704,7 +1704,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       style={{
-        padding: "40px 32px",
+        padding: "40px 32px 0px 32px",
         marginTop: "32px",
       }}
     >
