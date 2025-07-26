@@ -592,28 +592,7 @@ const StructuralImpactMap = () => {
         overflow: "hidden"
       }}
     >
-      {/* Animated Background */}
-      <motion.div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `
-            radial-gradient(circle at 25% 75%, rgba(157, 230, 198, 0.06) 0%, transparent 40%),
-            radial-gradient(circle at 75% 25%, rgba(157, 230, 198, 0.04) 0%, transparent 40%)
-          `
-        }}
-        animate={{
-          opacity: [0.7, 1, 0.7]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "60px", position: "relative", zIndex: 10 }}>
