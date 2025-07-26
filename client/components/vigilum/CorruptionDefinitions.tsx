@@ -809,7 +809,14 @@ const CorruptionDefinitions = ({ onNavigate }) => {
     >
       {/* Header */}
       <div style={{ textAlign: "left", marginBottom: "32px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            marginBottom: "12px",
+          }}
+        >
           <div style={{ maxWidth: "50%" }}>
             <h2
               style={{
@@ -841,7 +848,8 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              Explore how the world's leading authorities describe and classify corruption.
+              Explore how the world's leading authorities describe and classify
+              corruption.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>

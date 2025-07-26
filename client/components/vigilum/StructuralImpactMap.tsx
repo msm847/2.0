@@ -328,8 +328,6 @@ const impactNetworkData = {
   ],
 };
 
-
-
 // Enhanced connection line with propagation animations
 const ConnectionLine = ({
   fromNode,
@@ -500,7 +498,7 @@ const NetworkNode = ({
         stiffness: 400,
         damping: 25,
         mass: 0.8,
-        duration: 0.6
+        duration: 0.6,
       }}
     >
       <div
@@ -1279,8 +1277,6 @@ const StructuralImpactMap = ({ onNavigate }) => {
     return () => clearInterval(interval);
   }, []);
 
-
-
   // Handle node activation
   const handleNodeActivate = (nodeId) => {
     const node = nodes.find((n) => n.id === nodeId);
@@ -1333,14 +1329,14 @@ const StructuralImpactMap = ({ onNavigate }) => {
 
   return (
     <div
-        style={{
-          minHeight: "100vh",
-          padding: "40px 20px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <style>{`
+      style={{
+        minHeight: "100vh",
+        padding: "40px 20px",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      <style>{`
           @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -1446,49 +1442,58 @@ const StructuralImpactMap = ({ onNavigate }) => {
               background: "rgba(255, 255, 255, 0.05)",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               borderRadius: "4px",
-              boxShadow: "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+              boxShadow:
+                "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
               padding: "8px 12px",
               zIndex: 1000,
               minWidth: "200px",
             }}
           >
-            <div style={{
-              fontSize: "12px",
-              color: "#9DE6C6",
-              marginBottom: "4px",
-              textTransform: "uppercase",
-              letterSpacing: "1px",
-              fontWeight: "500"
-            }}>
+            <div
+              style={{
+                fontSize: "12px",
+                color: "#9DE6C6",
+                marginBottom: "4px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                fontWeight: "500",
+              }}
+            >
               Global Corruption Loss
             </div>
-            <div style={{
-              fontSize: "24px",
-              fontWeight: "700",
-              color: "#FFFFFF",
-              fontFamily: "monospace",
-              marginBottom: "2px"
-            }}>
+            <div
+              style={{
+                fontSize: "24px",
+                fontWeight: "700",
+                color: "#FFFFFF",
+                fontFamily: "monospace",
+                marginBottom: "2px",
+              }}
+            >
               ${globalLoss.toLocaleString()}
             </div>
-            <div style={{
-              fontSize: "11px",
-              color: "#9CA3AF",
-              display: "flex",
-              alignItems: "center",
-              gap: "4px"
-            }}>
-              <div style={{
-                width: "6px",
-                height: "6px",
-                borderRadius: "50%",
-                background: "#9DE6C6",
-                animation: "pulse 2s infinite"
-              }} />
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#9CA3AF",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+            >
+              <div
+                style={{
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  background: "#9DE6C6",
+                  animation: "pulse 2s infinite",
+                }}
+              />
               Live since you started exploring
             </div>
           </div>,
-          document.body
+          document.body,
         )}
       </div>
 

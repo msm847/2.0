@@ -152,7 +152,8 @@ const ClickableTrueFocus = ({
             onClick={() => handleWordClick(index)}
             onMouseEnter={(e) => {
               if (!isSelectedSection) {
-                e.target.style.transition = "filter 0.15s ease, color 0.15s ease, text-shadow 0.15s ease";
+                e.target.style.transition =
+                  "filter 0.15s ease, color 0.15s ease, text-shadow 0.15s ease";
                 e.target.style.color = "#FFFFFF";
                 e.target.style.filter = "blur(0px)";
                 e.target.style.textShadow = "0 0 20px rgba(255, 255, 255, 0.8)";
@@ -160,7 +161,8 @@ const ClickableTrueFocus = ({
             }}
             onMouseLeave={(e) => {
               if (!isSelectedSection) {
-                e.target.style.transition = "filter 0.2s ease, color 0.2s ease, text-shadow 0.2s ease";
+                e.target.style.transition =
+                  "filter 0.2s ease, color 0.2s ease, text-shadow 0.2s ease";
                 e.target.style.color = "inherit";
                 e.target.style.filter = `blur(${blurAmount}px)`;
                 e.target.style.textShadow = "none";
@@ -333,8 +335,10 @@ const PerceptionPerspective = () => {
                     className="text-base leading-relaxed transition-colors duration-1000"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
-                    Click either word above to explore how institutional structures reveal <br />
-                    their vulnerabilities through different analytical frameworks.
+                    Click either word above to explore how institutional
+                    structures reveal <br />
+                    their vulnerabilities through different analytical
+                    frameworks.
                   </div>
                 </div>
               </div>
