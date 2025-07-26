@@ -316,7 +316,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting undue influence in operations.', typology: ['SB'] },
         privateSector: { state: '?', tooltip: 'Private sector corruption only recognized when affecting EIB-financed projects.', typology: ['RT'] },
         influencePeddling: { state: '✓', tooltip: 'Undue influence prohibited in procurement and project evaluation.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Covered in professional ethics and operational procedures.', typology: ['RT'] },
+        conflictOfInterest: { state: '��', tooltip: 'Covered in professional ethics and operational procedures.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Central focus of EIB anti-fraud policy and investigations.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation covered in anti-fraud framework and sanctions.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Addressed through conflict of interest and ethics policies.', typology: ['DG'] }
@@ -940,7 +940,8 @@ const BoundaryLogicCarousel = () => {
                 margin: '0 0 8px 0',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontFamily: 'SF Mono, Monaco, monospace'
+                fontFamily: 'SF Mono, Monaco, monospace',
+                textAlign: 'left'
               }}>
                 STRUCTURAL CONSEQUENCE
               </p>
