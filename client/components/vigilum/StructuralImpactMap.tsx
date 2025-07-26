@@ -190,9 +190,7 @@ const impactNetworkData = {
 // Live counter component for global tracking
 const GlobalLiveTicker = ({ totalLoss, isActive }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+    <div
       style={{
         position: "fixed",
         top: "80px",
