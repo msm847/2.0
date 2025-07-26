@@ -43,7 +43,7 @@ const boundaryLogicData = {
         influencePeddling: { state: '✓', tooltip: 'Included when involving foreign public officials (Article 1 interpretation).', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
         fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
-        embezzlement: { state: '–', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
+        embezzlement: { state: '���', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
         nepotism: { state: '–', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
       }
     },
@@ -1858,7 +1858,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
           fontWeight: '500',
           lineHeight: '1.3'
         }}>
-          Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored.
+          Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored. <br />
           Vigilum models how these definitions produce blindspots and transfer structural risk.
         </p>
       </div>
