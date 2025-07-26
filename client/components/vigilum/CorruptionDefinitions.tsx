@@ -193,7 +193,7 @@ const boundaryLogicData = {
         conflictOfInterest: { state: '✓', tooltip: 'Addressed in governance and procurement standards across operations.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Included in financial crime prevention and project supervision.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Explicitly included in Bank corruption typology and sanctions framework.', typology: ['RT'] },
-        nepotism: { state: '��', tooltip: 'Recognized as form of corruption affecting governance quality.', typology: ['RT'] }
+        nepotism: { state: '✓', tooltip: 'Recognized as form of corruption affecting governance quality.', typology: ['RT'] }
       }
     },
     {
@@ -757,7 +757,7 @@ const BoundaryLogicCarousel = () => {
       {/* Main Carousel Panel */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '60% 40%',
+        gridTemplateColumns: '70% 30%',
         gap: '32px',
         marginBottom: '24px'
       }}>
