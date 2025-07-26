@@ -245,6 +245,31 @@ const PerceptionPerspective = () => {
     }
   }, [location]);
 
+  // Hide floating nav when scrolling away from perception/perspective section
+  useEffect(() => {
+    const handleScroll = () => {
+      const perceptionSection = document.getElementById('perception-perspective');
+      if (perceptionSection) {
+        const rect = perceptionSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Hide if the section is mostly out of view (less than 30% visible)
+        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        const sectionHeight = rect.height;
+        const visibilityRatio = visibleHeight / sectionHeight;
+
+        if (visibilityRatio < 0.3 || rect.bottom < 0) {
+          setShowFloatingNav(false);
+        } else if (activeSection !== null && visibilityRatio > 0.5) {
+          setShowFloatingNav(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeSection]);
+
   // Theme configurations
   const themes = {
     perception: {
