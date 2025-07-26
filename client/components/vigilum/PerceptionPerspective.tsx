@@ -209,8 +209,58 @@ const PerceptionPerspective = () => {
   useEffect(() => {
     if (location.hash === "#perception-perspective") {
       setActiveSection(null);
+      setCompletedSteps(new Set());
+      setCurrentStep(0);
     }
   }, [location.hash]);
+
+  // Scroll detection for section completion
+  useEffect(() => {
+    if (activeSection !== "perspective") return;
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+      // Mark current step as complete when user scrolls 80% through the section
+      if (scrollPercentage > 80 && !completedSteps.has(perspectiveSteps[currentStep].key)) {
+        setCompletedSteps(prev => new Set([...prev, perspectiveSteps[currentStep].key]));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeSection, currentStep, completedSteps, perspectiveSteps]);
+
+  // Navigation functions
+  const canNavigateToStep = (stepIndex) => {
+    if (stepIndex === 0) return true; // First step always available
+    return completedSteps.has(perspectiveSteps[stepIndex - 1].key); // Can access if previous step is complete
+  };
+
+  const navigateToStep = (stepIndex) => {
+    if (canNavigateToStep(stepIndex)) {
+      setCurrentStep(stepIndex);
+      setSelectedButton(perspectiveSteps[stepIndex].key);
+    }
+  };
+
+  const goToNextStep = () => {
+    if (currentStep < perspectiveSteps.length - 1 && completedSteps.has(perspectiveSteps[currentStep].key)) {
+      const nextStep = currentStep + 1;
+      setCurrentStep(nextStep);
+      setSelectedButton(perspectiveSteps[nextStep].key);
+    }
+  };
+
+  const goToPreviousStep = () => {
+    if (currentStep > 0) {
+      const prevStep = currentStep - 1;
+      setCurrentStep(prevStep);
+      setSelectedButton(perspectiveSteps[prevStep].key);
+    }
+  };
 
   // Theme configurations
   const themes = {
