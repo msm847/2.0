@@ -6,414 +6,1085 @@ import Carousel from "@/components/ui/Carousel";
 const boundaryLogicData = {
   regulatory: [
     {
-      id: 'doj',
-      name: 'US DOJ',
-      logoUrl: '/logos/doj.svg',
-      logo: '🏛️',
-      definition: 'The offering, giving, receiving, or soliciting of anything of value to influence the actions of an official in the discharge of public or commercial duties.',
+      id: "doj",
+      name: "US DOJ",
+      logoUrl: "/logos/doj.svg",
+      logo: "🏛️",
+      definition:
+        "The offering, giving, receiving, or soliciting of anything of value to influence the actions of an official in the discharge of public or commercial duties.",
       citation: {
-        text: 'DOJ, Foreign Corrupt Practices Act Resource Guide, 2020, p.7',
-        url: 'https://www.justice.gov/criminal-fraud/file/1292051/download'
+        text: "DOJ, Foreign Corrupt Practices Act Resource Guide, 2020, p.7",
+        url: "https://www.justice.gov/criminal-fraud/file/1292051/download",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Explicitly included under the Foreign Corrupt Practices Act. [CI]', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Lobbying is not classified as corruption unless linked to illegal payment (see FCPA Guidance, 2020). This boundary enables legal influence operations outside anti-corruption prosecution. [DG]', typology: ['DG'] },
-        privateSector: { state: '?', tooltip: 'Private sector corruption only recognized by DOJ when it affects foreign officials or involves government procurement.', typology: ['RT'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered under FCPA when involving government officials or foreign public officials.', typology: ['CI'] },
-        conflictOfInterest: { state: '–', tooltip: 'Not directly addressed in federal criminal statutes unless constituting bribery.', typology: ['SB'] },
-        fraud: { state: '✓', tooltip: 'Covered under separate federal fraud statutes when involving government programs.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Covered when involving public funds, officials, or federal programs.', typology: ['RT'] },
-        nepotism: { state: '–', tooltip: 'Not criminalized unless involving quid pro quo or bribery elements.', typology: ['SB'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly included under the Foreign Corrupt Practices Act. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Lobbying is not classified as corruption unless linked to illegal payment (see FCPA Guidance, 2020). This boundary enables legal influence operations outside anti-corruption prosecution. [DG]",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "?",
+          tooltip:
+            "Private sector corruption only recognized by DOJ when it affects foreign officials or involves government procurement.",
+          typology: ["RT"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Covered under FCPA when involving government officials or foreign public officials.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "–",
+          tooltip:
+            "Not directly addressed in federal criminal statutes unless constituting bribery.",
+          typology: ["SB"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Covered under separate federal fraud statutes when involving government programs.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Covered when involving public funds, officials, or federal programs.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "–",
+          tooltip:
+            "Not criminalized unless involving quid pro quo or bribery elements.",
+          typology: ["SB"],
+        },
+      },
     },
     {
-      id: 'oecd',
-      name: 'OECD',
-      logoUrl: '/logos/oecd.svg',
-      logo: '🌐',
-      definition: 'The active bribery of foreign public officials, as well as the failure to prevent such bribery by persons associated with a commercial organization.',
+      id: "oecd",
+      name: "OECD",
+      logoUrl: "/logos/oecd.svg",
+      logo: "🌐",
+      definition:
+        "The active bribery of foreign public officials, as well as the failure to prevent such bribery by persons associated with a commercial organization.",
       citation: {
-        text: 'OECD Anti-Bribery Convention, Article 1, 1997',
-        url: 'https://www.oecd.org/corruption/oecdantibriberyconvention.htm'
+        text: "OECD Anti-Bribery Convention, Article 1, 1997",
+        url: "https://www.oecd.org/corruption/oecdantibriberyconvention.htm",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Central focus on active bribery of foreign officials under Article 1.', typology: ['CI'] },
-        lobbying: { state: '?', tooltip: 'Lobbying is only problematic when crossing into bribery territory (OECD Guidelines, 2011). Legal advocacy remains excluded.', typology: ['DG'] },
-        privateSector: { state: '–', tooltip: 'OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.', typology: ['SB'] },
-        influencePeddling: { state: '✓', tooltip: 'Included when involving foreign public officials (Article 1 interpretation).', typology: ['CI'] },
-        conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
-        fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
-        embezzlement: { state: '–', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
-        nepotism: { state: '–', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Central focus on active bribery of foreign officials under Article 1.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "?",
+          tooltip:
+            "Lobbying is only problematic when crossing into bribery territory (OECD Guidelines, 2011). Legal advocacy remains excluded.",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "–",
+          tooltip:
+            "OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.",
+          typology: ["SB"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Included when involving foreign public officials (Article 1 interpretation).",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "?",
+          tooltip:
+            "Addressed in Recommendation but not binding convention obligations.",
+          typology: ["DG"],
+        },
+        fraud: {
+          state: "–",
+          tooltip:
+            "Not central to anti-bribery framework. Outside convention scope.",
+          typology: ["SB"],
+        },
+        embezzlement: {
+          state: "–",
+          tooltip:
+            "Outside scope of bribery convention. No criminalization requirement.",
+          typology: ["SB"],
+        },
+        nepotism: {
+          state: "–",
+          tooltip:
+            "Not addressed in convention framework. Left to domestic discretion.",
+          typology: ["SB"],
+        },
+      },
     },
     {
-      id: 'greco',
-      name: 'GRECO',
-      logoUrl: '/logos/greco.svg',
-      logo: '🇪🇺',
-      definition: 'Criminal or disciplinary offences of corruption, comprising active and passive bribery, abuse of functions, and related offences.',
+      id: "greco",
+      name: "GRECO",
+      logoUrl: "/logos/greco.svg",
+      logo: "🇪🇺",
+      definition:
+        "Criminal or disciplinary offences of corruption, comprising active and passive bribery, abuse of functions, and related offences.",
       citation: {
-        text: 'GRECO, Evaluation Methodology, Article 2, 2019',
-        url: 'https://www.coe.int/en/web/greco/evaluation-procedure'
+        text: "GRECO, Evaluation Methodology, Article 2, 2019",
+        url: "https://www.coe.int/en/web/greco/evaluation-procedure",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Core focus on both active and passive bribery under Criminal Law Convention.', typology: ['CI'] },
-        lobbying: { state: '?', tooltip: 'Transparency required but lobbying not inherently corrupt unless involving improper influence.', typology: ['DG'] },
-        privateSector: { state: '✓', tooltip: 'Private sector bribery explicitly addressed in Additional Protocol Article 7.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered under "trading in influence" provisions (Article 12).', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Addressed in public ethics recommendations and evaluation reports.', typology: ['RT'] },
-        fraud: { state: '–', tooltip: 'Outside core corruption mandate. Not systematically evaluated.', typology: ['SB'] },
-        embezzlement: { state: '��', tooltip: 'Included in "abuse of functions" category under Article 10.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Addressed through conflict of interest measures rather than direct criminalization.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core focus on both active and passive bribery under Criminal Law Convention.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "?",
+          tooltip:
+            "Transparency required but lobbying not inherently corrupt unless involving improper influence.",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector bribery explicitly addressed in Additional Protocol Article 7.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            'Covered under "trading in influence" provisions (Article 12).',
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Addressed in public ethics recommendations and evaluation reports.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "–",
+          tooltip:
+            "Outside core corruption mandate. Not systematically evaluated.",
+          typology: ["SB"],
+        },
+        embezzlement: {
+          state: "��",
+          tooltip:
+            'Included in "abuse of functions" category under Article 10.',
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest measures rather than direct criminalization.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'uncac',
-      name: 'UN UNCAC',
-      logoUrl: '/logos/un.svg',
-      logo: '🌍',
-      definition: 'Solicitation or acceptance by a public official of an undue advantage and the offering or granting of an undue advantage to a public official.',
+      id: "uncac",
+      name: "UN UNCAC",
+      logoUrl: "/logos/un.svg",
+      logo: "🌍",
+      definition:
+        "Solicitation or acceptance by a public official of an undue advantage and the offering or granting of an undue advantage to a public official.",
       citation: {
-        text: 'UN Convention Against Corruption, Article 15, 2003',
-        url: 'https://www.unodc.org/documents/brussels/UN_Convention_Against_Corruption.pdf'
+        text: "UN Convention Against Corruption, Article 15, 2003",
+        url: "https://www.unodc.org/documents/brussels/UN_Convention_Against_Corruption.pdf",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Comprehensive bribery provisions for public (Article 15) and private sectors (Article 21).', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Not explicitly addressed in convention text. Legal advocacy generally excluded.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector bribery covered in Article 21 as mandatory criminalization.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Trading in influence covered in Article 18 with mandatory criminalization.', typology: ['CI'] },
-        conflictOfInterest: { state: '?', tooltip: 'Addressed in preventive measures (Chapter II) but not criminal provisions.', typology: ['DG'] },
-        fraud: { state: '✓', tooltip: 'Fraud against public administration covered under Article 17.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Embezzlement explicitly criminalized in Article 17.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Addressed through public sector ethics provisions rather than direct criminalization.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Comprehensive bribery provisions for public (Article 15) and private sectors (Article 21).",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Not explicitly addressed in convention text. Legal advocacy generally excluded.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector bribery covered in Article 21 as mandatory criminalization.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Trading in influence covered in Article 18 with mandatory criminalization.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "?",
+          tooltip:
+            "Addressed in preventive measures (Chapter II) but not criminal provisions.",
+          typology: ["DG"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Fraud against public administration covered under Article 17.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip: "Embezzlement explicitly criminalized in Article 17.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Addressed through public sector ethics provisions rather than direct criminalization.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'uk-bribery',
-      name: 'UK Bribery Act',
-      logoUrl: '/logos/uk.svg',
-      logo: '🇬🇧',
-      definition: 'Offering, promising or giving a financial or other advantage to another person, and requesting, agreeing to receive or accepting a financial or other advantage.',
+      id: "uk-bribery",
+      name: "UK Bribery Act",
+      logoUrl: "/logos/uk.svg",
+      logo: "🇬🇧",
+      definition:
+        "Offering, promising or giving a financial or other advantage to another person, and requesting, agreeing to receive or accepting a financial or other advantage.",
       citation: {
-        text: 'UK Bribery Act 2010, Sections 1-2',
-        url: 'https://www.legislation.gov.uk/ukpga/2010/23/contents'
+        text: "UK Bribery Act 2010, Sections 1-2",
+        url: "https://www.legislation.gov.uk/ukpga/2010/23/contents",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Comprehensive coverage including active, passive, and failure to prevent bribery.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting improper influence or advantage.', typology: ['DG'] },
-        privateSector: { state: '✓', tooltip: 'Private sector bribery fully covered under Sections 1-2.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered under general bribery provisions when involving improper influence.', typology: ['CI'] },
-        conflictOfInterest: { state: '–', tooltip: 'Not directly criminalized unless involving bribery elements.', typology: ['SB'] },
-        fraud: { state: '–', tooltip: 'Covered under separate Fraud Act 2006, not Bribery Act.', typology: ['SB'] },
-        embezzlement: { state: '–', tooltip: 'Outside Bribery Act scope. Covered under other legislation.', typology: ['SB'] },
-        nepotism: { state: '–', tooltip: 'Not specifically criminalized unless involving bribery or advantage.', typology: ['SB'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Comprehensive coverage including active, passive, and failure to prevent bribery.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal lobbying excluded unless constituting improper influence or advantage.",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip: "Private sector bribery fully covered under Sections 1-2.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Covered under general bribery provisions when involving improper influence.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "–",
+          tooltip:
+            "Not directly criminalized unless involving bribery elements.",
+          typology: ["SB"],
+        },
+        fraud: {
+          state: "–",
+          tooltip: "Covered under separate Fraud Act 2006, not Bribery Act.",
+          typology: ["SB"],
+        },
+        embezzlement: {
+          state: "–",
+          tooltip:
+            "Outside Bribery Act scope. Covered under other legislation.",
+          typology: ["SB"],
+        },
+        nepotism: {
+          state: "–",
+          tooltip:
+            "Not specifically criminalized unless involving bribery or advantage.",
+          typology: ["SB"],
+        },
+      },
     },
     {
-      id: 'transparency',
-      name: 'Transparency Intl',
-      logoUrl: '/logos/ti.svg',
-      logo: '🔍',
-      definition: 'The abuse of entrusted power for private gain, encompassing grand, petty and political corruption.',
+      id: "transparency",
+      name: "Transparency Intl",
+      logoUrl: "/logos/ti.svg",
+      logo: "🔍",
+      definition:
+        "The abuse of entrusted power for private gain, encompassing grand, petty and political corruption.",
       citation: {
-        text: 'Transparency International, Anti-Corruption Glossary, 2023',
-        url: 'https://www.transparency.org/en/corruptionary'
+        text: "Transparency International, Anti-Corruption Glossary, 2023",
+        url: "https://www.transparency.org/en/corruptionary",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Explicitly included as core form of corruption across all contexts.', typology: ['CI'] },
-        lobbying: { state: '?', tooltip: 'Problematic when lacking transparency or involving undue influence (TI Policy Position, 2015).', typology: ['DG'] },
-        privateSector: { state: '✓', tooltip: 'Private sector corruption explicitly recognized in definition and measurement.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered under political corruption and access monetization.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Recognized as corruption risk requiring management and disclosure.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Included when involving abuse of entrusted power for private gain.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Classic example of abuse of entrusted power in TI framework.', typology: ['RT'] },
-        nepotism: { state: '✓', tooltip: 'Recognized as form of political and administrative corruption.', typology: ['RT'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly included as core form of corruption across all contexts.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "?",
+          tooltip:
+            "Problematic when lacking transparency or involving undue influence (TI Policy Position, 2015).",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector corruption explicitly recognized in definition and measurement.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Covered under political corruption and access monetization.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Recognized as corruption risk requiring management and disclosure.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Included when involving abuse of entrusted power for private gain.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Classic example of abuse of entrusted power in TI framework.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Recognized as form of political and administrative corruption.",
+          typology: ["RT"],
+        },
+      },
     },
     {
-      id: 'fcpa',
-      name: 'SEC FCPA',
-      logoUrl: '/logos/sec.svg',
-      logo: '📊',
-      definition: 'Payments to foreign officials to assist in obtaining or retaining business or securing any improper advantage.',
+      id: "fcpa",
+      name: "SEC FCPA",
+      logoUrl: "/logos/sec.svg",
+      logo: "📊",
+      definition:
+        "Payments to foreign officials to assist in obtaining or retaining business or securing any improper advantage.",
       citation: {
-        text: 'SEC, Foreign Corrupt Practices Act Guidance, 2020',
-        url: 'https://www.sec.gov/spotlight/foreign-corrupt-practices-act.shtml'
+        text: "SEC, Foreign Corrupt Practices Act Guidance, 2020",
+        url: "https://www.sec.gov/spotlight/foreign-corrupt-practices-act.shtml",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Core FCPA violation with both anti-bribery and accounting provisions.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal lobbying explicitly excluded from FCPA scope (SEC Guidance, 2012).', typology: ['DG'] },
-        privateSector: { state: '?', tooltip: 'Only covers private sector when involving foreign officials or government business.', typology: ['RT'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered when involving foreign officials or securing government business.', typology: ['CI'] },
-        conflictOfInterest: { state: '–', tooltip: 'Not within FCPA scope unless involving prohibited payments.', typology: ['SB'] },
-        fraud: { state: '?', tooltip: 'Accounting fraud covered under books and records provisions.', typology: ['RT'] },
-        embezzlement: { state: '–', tooltip: 'Outside FCPA scope unless involving foreign official payments.', typology: ['SB'] },
-        nepotism: { state: '–', tooltip: 'Not covered unless involving improper payments to foreign officials.', typology: ['SB'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core FCPA violation with both anti-bribery and accounting provisions.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal lobbying explicitly excluded from FCPA scope (SEC Guidance, 2012).",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "?",
+          tooltip:
+            "Only covers private sector when involving foreign officials or government business.",
+          typology: ["RT"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Covered when involving foreign officials or securing government business.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "–",
+          tooltip:
+            "Not within FCPA scope unless involving prohibited payments.",
+          typology: ["SB"],
+        },
+        fraud: {
+          state: "?",
+          tooltip:
+            "Accounting fraud covered under books and records provisions.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "–",
+          tooltip:
+            "Outside FCPA scope unless involving foreign official payments.",
+          typology: ["SB"],
+        },
+        nepotism: {
+          state: "–",
+          tooltip:
+            "Not covered unless involving improper payments to foreign officials.",
+          typology: ["SB"],
+        },
+      },
     },
     {
-      id: 'canada-cfpoa',
-      name: 'Canada CFPOA',
-      logoUrl: '/logos/canada.svg',
-      logo: '🍁',
-      definition: 'Giving or offering a loan, reward, advantage or benefit of any kind to a foreign public official as consideration for cooperation, assistance, exercise of influence or an act or omission.',
+      id: "canada-cfpoa",
+      name: "Canada CFPOA",
+      logoUrl: "/logos/canada.svg",
+      logo: "🍁",
+      definition:
+        "Giving or offering a loan, reward, advantage or benefit of any kind to a foreign public official as consideration for cooperation, assistance, exercise of influence or an act or omission.",
       citation: {
-        text: 'Corruption of Foreign Public Officials Act, Section 3, 1998',
-        url: 'https://laws-lois.justice.gc.ca/eng/acts/c-45.2/'
+        text: "Corruption of Foreign Public Officials Act, Section 3, 1998",
+        url: "https://laws-lois.justice.gc.ca/eng/acts/c-45.2/",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Focus on bribery of foreign public officials under Section 3.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal lobbying activities excluded from CFPOA scope.', typology: ['DG'] },
-        privateSector: { state: '–', tooltip: 'Limited to foreign public officials. Private-to-private excluded.', typology: ['SB'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered when involving foreign public officials and improper influence.', typology: ['CI'] },
-        conflictOfInterest: { state: '–', tooltip: 'Not within CFPOA mandate unless involving prohibited payments.', typology: ['SB'] },
-        fraud: { state: '–', tooltip: 'Outside CFPOA scope. Covered under Criminal Code provisions.', typology: ['SB'] },
-        embezzlement: { state: '–', tooltip: 'Not covered unless involving foreign public official bribery.', typology: ['SB'] },
-        nepotism: { state: '–', tooltip: 'Outside CFPOA scope unless involving foreign public officials.', typology: ['SB'] }
-      }
-    }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Focus on bribery of foreign public officials under Section 3.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip: "Legal lobbying activities excluded from CFPOA scope.",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "–",
+          tooltip:
+            "Limited to foreign public officials. Private-to-private excluded.",
+          typology: ["SB"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Covered when involving foreign public officials and improper influence.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "–",
+          tooltip:
+            "Not within CFPOA mandate unless involving prohibited payments.",
+          typology: ["SB"],
+        },
+        fraud: {
+          state: "–",
+          tooltip:
+            "Outside CFPOA scope. Covered under Criminal Code provisions.",
+          typology: ["SB"],
+        },
+        embezzlement: {
+          state: "–",
+          tooltip:
+            "Not covered unless involving foreign public official bribery.",
+          typology: ["SB"],
+        },
+        nepotism: {
+          state: "–",
+          tooltip:
+            "Outside CFPOA scope unless involving foreign public officials.",
+          typology: ["SB"],
+        },
+      },
+    },
   ],
   international: [
     {
-      id: 'worldbank',
-      name: 'World Bank',
-      logoUrl: '/logos/worldbank.svg',
-      logo: '🏦',
-      definition: 'The abuse of public office for private gain, including both grand and petty corruption, and capture of the state by elites and private interests.',
+      id: "worldbank",
+      name: "World Bank",
+      logoUrl: "/logos/worldbank.svg",
+      logo: "🏦",
+      definition:
+        "The abuse of public office for private gain, including both grand and petty corruption, and capture of the state by elites and private interests.",
       citation: {
-        text: 'World Bank, Helping Countries Combat Corruption, 1997, Chapter 1',
-        url: 'https://openknowledge.worldbank.org/handle/10986/11957'
+        text: "World Bank, Helping Countries Combat Corruption, 1997, Chapter 1",
+        url: "https://openknowledge.worldbank.org/handle/10986/11957",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Explicitly included as core corruption type in Bank operational policies.', typology: ['CI'] },
-        lobbying: { state: '?', tooltip: 'Problematic when it constitutes state capture or undermines governance (WB 2017 Framework).', typology: ['DG'] },
-        privateSector: { state: '✓', tooltip: 'Private sector corruption explicitly recognized in governance indicators.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Covered under state capture framework and governance diagnostics.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Addressed in governance and procurement standards across operations.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Included in financial crime prevention and project supervision.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Explicitly included in Bank corruption typology and sanctions framework.', typology: ['RT'] },
-        nepotism: { state: '✓', tooltip: 'Recognized as form of corruption affecting governance quality.', typology: ['RT'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly included as core corruption type in Bank operational policies.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "?",
+          tooltip:
+            "Problematic when it constitutes state capture or undermines governance (WB 2017 Framework).",
+          typology: ["DG"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector corruption explicitly recognized in governance indicators.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Covered under state capture framework and governance diagnostics.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Addressed in governance and procurement standards across operations.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Included in financial crime prevention and project supervision.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Explicitly included in Bank corruption typology and sanctions framework.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Recognized as form of corruption affecting governance quality.",
+          typology: ["RT"],
+        },
+      },
     },
     {
-      id: 'imf',
-      name: 'IMF',
-      logoUrl: '/logos/imf.svg',
-      logo: '💰',
-      definition: 'The abuse of public office for private gain, with emphasis on fiscal corruption and misuse of public resources.',
+      id: "imf",
+      name: "IMF",
+      logoUrl: "/logos/imf.svg",
+      logo: "💰",
+      definition:
+        "The abuse of public office for private gain, with emphasis on fiscal corruption and misuse of public resources.",
       citation: {
-        text: 'IMF, The Role of the IMF in Governance Issues, 1997, Section II',
-        url: 'https://www.imf.org/external/pubs/ft/exrp/govern/govern.pdf'
+        text: "IMF, The Role of the IMF in Governance Issues, 1997, Section II",
+        url: "https://www.imf.org/external/pubs/ft/exrp/govern/govern.pdf",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Included when affecting fiscal governance and macroeconomic stability.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Generally not within IMF mandate unless affecting fiscal policy implementation.', typology: ['SB'] },
-        privateSector: { state: '?', tooltip: 'Relevant only when affecting public financial management or fiscal outcomes.', typology: ['RT'] },
-        influencePeddling: { state: '?', tooltip: 'Addressed when impacting economic governance and policy implementation.', typology: ['DG'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Critical in financial sector oversight and central bank governance.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Central concern in public financial management and fiscal reporting.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Core focus in public resource management and fiscal accountability.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Relevant when affecting financial governance quality and institutional capacity.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Included when affecting fiscal governance and macroeconomic stability.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Generally not within IMF mandate unless affecting fiscal policy implementation.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "?",
+          tooltip:
+            "Relevant only when affecting public financial management or fiscal outcomes.",
+          typology: ["RT"],
+        },
+        influencePeddling: {
+          state: "?",
+          tooltip:
+            "Addressed when impacting economic governance and policy implementation.",
+          typology: ["DG"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Critical in financial sector oversight and central bank governance.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Central concern in public financial management and fiscal reporting.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Core focus in public resource management and fiscal accountability.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Relevant when affecting financial governance quality and institutional capacity.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'ebrd',
-      name: 'EBRD',
-      logoUrl: '/logos/ebrd.svg',
-      logo: '🏛️',
-      definition: 'Improper use of official position for personal or private advantage in connection with EBRD operations.',
+      id: "ebrd",
+      name: "EBRD",
+      logoUrl: "/logos/ebrd.svg",
+      logo: "🏛️",
+      definition:
+        "Improper use of official position for personal or private advantage in connection with EBRD operations.",
       citation: {
-        text: 'EBRD, Enforcement Policy and Procedures, 2020, Section 2.1',
-        url: 'https://www.ebrd.com/integrity-compliance/enforcement-policy.pdf'
+        text: "EBRD, Enforcement Policy and Procedures, 2020, Section 2.1",
+        url: "https://www.ebrd.com/integrity-compliance/enforcement-policy.pdf",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Prohibited practice in all EBRD-financed projects and operations.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Not within EBRD enforcement scope unless constituting prohibited practice.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector conduct covered in project finance and investment operations.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Improper influence prohibited in procurement and project implementation.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Fraudulent practices covered in enforcement and sanctions framework.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Misappropriation prohibited in project funds and operational resources.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Addressed through conflict of interest policies rather than direct prohibition.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Prohibited practice in all EBRD-financed projects and operations.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Not within EBRD enforcement scope unless constituting prohibited practice.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector conduct covered in project finance and investment operations.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Improper influence prohibited in procurement and project implementation.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Strictly regulated in procurement and operational procedures.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Fraudulent practices covered in enforcement and sanctions framework.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Misappropriation prohibited in project funds and operational resources.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest policies rather than direct prohibition.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'adb',
-      name: 'ADB',
-      logoUrl: '/logos/adb.svg',
-      logo: '🌏',
-      definition: 'Offering, giving, receiving, or soliciting of anything of value to influence improperly the actions of another party.',
+      id: "adb",
+      name: "ADB",
+      logoUrl: "/logos/adb.svg",
+      logo: "🌏",
+      definition:
+        "Offering, giving, receiving, or soliciting of anything of value to influence improperly the actions of another party.",
       citation: {
-        text: 'ADB, Anticorruption and Integrity Policy, 2020, Section 2',
-        url: 'https://www.adb.org/sites/default/files/institutional-document/31317/anticorruption-integrity-policy.pdf'
+        text: "ADB, Anticorruption and Integrity Policy, 2020, Section 2",
+        url: "https://www.adb.org/sites/default/files/institutional-document/31317/anticorruption-integrity-policy.pdf",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Core violation in ADB integrity framework and sanctions procedures.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Outside ADB operational mandate and enforcement scope.', typology: ['SB'] },
-        privateSector: { state: '���', tooltip: 'Private sector operations covered under integrity due diligence.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational procedures.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Covered in integrity and procurement policies across operations.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Fraudulent practice prohibited in operations and project implementation.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Misappropriation covered in enforcement and sanctions framework.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Addressed through transparency and ethics measures in procurement.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core violation in ADB integrity framework and sanctions procedures.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip: "Outside ADB operational mandate and enforcement scope.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "���",
+          tooltip:
+            "Private sector operations covered under integrity due diligence.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Improper influence explicitly prohibited in operational procedures.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Covered in integrity and procurement policies across operations.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Fraudulent practice prohibited in operations and project implementation.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Misappropriation covered in enforcement and sanctions framework.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Addressed through transparency and ethics measures in procurement.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'iadb',
-      name: 'IDB',
-      logoUrl: '/logos/iadb.svg',
-      logo: '🌎',
-      definition: 'Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.',
+      id: "iadb",
+      name: "IDB",
+      logoUrl: "/logos/iadb.svg",
+      logo: "🌎",
+      definition:
+        "Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
-        text: 'IDB, Policy on Prohibited Practices, 2020, Section II',
-        url: 'https://www.iadb.org/en/about-us/policy-prohibited-practices'
+        text: "IDB, Policy on Prohibited Practices, 2020, Section II",
+        url: "https://www.iadb.org/en/about-us/policy-prohibited-practices",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
-        privateSector: { state: '���', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Improper influence covered under prohibited practices policy.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Managed through disclosure and mitigation in procurement processes.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Fraudulent practices explicitly prohibited in operational procedures.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Misappropriation prohibited in project funds and resource management.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Addressed through conflict of interest and transparency requirements.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly prohibited in all IDB-financed operations and contracts.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal advocacy excluded from prohibited practices framework.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "���",
+          tooltip:
+            "Private sector operations covered under integrity due diligence procedures.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Improper influence covered under prohibited practices policy.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Managed through disclosure and mitigation in procurement processes.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Fraudulent practices explicitly prohibited in operational procedures.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Misappropriation prohibited in project funds and resource management.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest and transparency requirements.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'afdb',
-      name: 'AfDB',
-      logoUrl: '/logos/afdb.svg',
-      logo: '🌍',
-      definition: 'Offering, giving, receiving, or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.',
+      id: "afdb",
+      name: "AfDB",
+      logoUrl: "/logos/afdb.svg",
+      logo: "🌍",
+      definition:
+        "Offering, giving, receiving, or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
-        text: 'AfDB, Sanctions Procedures, 2020, Annex 1',
-        url: 'https://www.afdb.org/en/about-us/organisational-structure/integrity-and-anti-corruption/sanctions-procedures'
+        text: "AfDB, Sanctions Procedures, 2020, Annex 1",
+        url: "https://www.afdb.org/en/about-us/organisational-structure/integrity-and-anti-corruption/sanctions-procedures",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Core prohibited practice in AfDB operations and project financing.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal advocacy activities excluded from sanctions framework.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector conduct covered in integrity and due diligence procedures.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Improper influence prohibited in procurement and project implementation.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Addressed in procurement guidelines and operational procedures.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Fraudulent practices covered in sanctions and enforcement procedures.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Misappropriation prohibited in project resources and fund management.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Managed through conflict of interest disclosure and mitigation.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core prohibited practice in AfDB operations and project financing.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal advocacy activities excluded from sanctions framework.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector conduct covered in integrity and due diligence procedures.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Improper influence prohibited in procurement and project implementation.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Addressed in procurement guidelines and operational procedures.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Fraudulent practices covered in sanctions and enforcement procedures.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Misappropriation prohibited in project resources and fund management.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Managed through conflict of interest disclosure and mitigation.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'eib',
-      name: 'EIB',
-      logoUrl: '/logos/eib.svg',
-      logo: '🇪🇺',
-      definition: 'Any active or passive corrupt behavior in relation to EIB operations, including offering, promising, giving, accepting or soliciting an undue advantage.',
+      id: "eib",
+      name: "EIB",
+      logoUrl: "/logos/eib.svg",
+      logo: "🇪🇺",
+      definition:
+        "Any active or passive corrupt behavior in relation to EIB operations, including offering, promising, giving, accepting or soliciting an undue advantage.",
       citation: {
-        text: 'EIB, Anti-Fraud Policy, 2019, Section 3.1',
-        url: 'https://www.eib.org/en/about/accountability/anti-fraud/index.htm'
+        text: "EIB, Anti-Fraud Policy, 2019, Section 3.1",
+        url: "https://www.eib.org/en/about/accountability/anti-fraud/index.htm",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Explicitly covered in EIB anti-fraud policy and operational procedures.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting undue influence in operations.', typology: ['SB'] },
-        privateSector: { state: '?', tooltip: 'Private sector corruption only recognized when affecting EIB-financed projects.', typology: ['RT'] },
-        influencePeddling: { state: '✓', tooltip: 'Undue influence prohibited in procurement and project evaluation.', typology: ['CI'] },
-        conflictOfInterest: { state: '��', tooltip: 'Covered in professional ethics and operational procedures.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Central focus of EIB anti-fraud policy and investigations.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Misappropriation covered in anti-fraud framework and sanctions.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Addressed through conflict of interest and ethics policies.', typology: ['DG'] }
-      }
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly covered in EIB anti-fraud policy and operational procedures.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal lobbying excluded unless constituting undue influence in operations.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "?",
+          tooltip:
+            "Private sector corruption only recognized when affecting EIB-financed projects.",
+          typology: ["RT"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Undue influence prohibited in procurement and project evaluation.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "��",
+          tooltip: "Covered in professional ethics and operational procedures.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip: "Central focus of EIB anti-fraud policy and investigations.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Misappropriation covered in anti-fraud framework and sanctions.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest and ethics policies.",
+          typology: ["DG"],
+        },
+      },
     },
     {
-      id: 'aiib',
-      name: 'AIIB',
-      logoUrl: '/logos/aiib.svg',
-      logo: '🏗️',
-      definition: 'Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.',
+      id: "aiib",
+      name: "AIIB",
+      logoUrl: "/logos/aiib.svg",
+      logo: "🏗️",
+      definition:
+        "Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
-        text: 'AIIB, Policy on Prohibited Practices for Borrowers, 2019',
-        url: 'https://www.aiib.org/en/policies-strategies/policies/prohibited-practices.html'
+        text: "AIIB, Policy on Prohibited Practices for Borrowers, 2019",
+        url: "https://www.aiib.org/en/policies-strategies/policies/prohibited-practices.html",
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Core prohibited practice in AIIB-financed projects and operations.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity screening procedures.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational guidelines.', typology: ['CI'] },
-        conflictOfInterest: { state: '✓', tooltip: 'Addressed in procurement and operational integrity procedures.', typology: ['RT'] },
-        fraud: { state: '✓', tooltip: 'Fraudulent practices prohibited in project implementation and financing.', typology: ['RT'] },
-        embezzlement: { state: '✓', tooltip: 'Misappropriation covered in prohibited practices and sanctions framework.', typology: ['RT'] },
-        nepotism: { state: '?', tooltip: 'Managed through transparency and conflict of interest procedures.', typology: ['DG'] }
-      }
-    }
-  ]
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core prohibited practice in AIIB-financed projects and operations.",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal advocacy excluded from prohibited practices framework.",
+          typology: ["SB"],
+        },
+        privateSector: {
+          state: "✓",
+          tooltip:
+            "Private sector operations covered under integrity screening procedures.",
+          typology: ["CI"],
+        },
+        influencePeddling: {
+          state: "✓",
+          tooltip:
+            "Improper influence explicitly prohibited in operational guidelines.",
+          typology: ["CI"],
+        },
+        conflictOfInterest: {
+          state: "✓",
+          tooltip:
+            "Addressed in procurement and operational integrity procedures.",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Fraudulent practices prohibited in project implementation and financing.",
+          typology: ["RT"],
+        },
+        embezzlement: {
+          state: "✓",
+          tooltip:
+            "Misappropriation covered in prohibited practices and sanctions framework.",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Managed through transparency and conflict of interest procedures.",
+          typology: ["DG"],
+        },
+      },
+    },
+  ],
 };
 
 // Term Analysis Framework - Structural Boundary Intelligence
 const termDefinitions = {
   bribery: {
-    title: 'Bribery: Convergence and Divergence Logic',
-    analysis: 'Bribery definitions converge on quid pro quo exchange but diverge critically on actor scope, enforcement thresholds, and jurisdictional boundaries. Regulatory frameworks limit bribery to government interfaces while financial institutions recognize broader corrupt exchange networks. This structural divergence creates prosecutorial gaps and enables regulatory arbitrage across boundary systems.',
-    consequence: 'Boundary divergence produces legal extraction channels where non-criminalized exchange operates as compliant corruption.'
+    title: "Bribery: Convergence and Divergence Logic",
+    analysis:
+      "Bribery definitions converge on quid pro quo exchange but diverge critically on actor scope, enforcement thresholds, and jurisdictional boundaries. Regulatory frameworks limit bribery to government interfaces while financial institutions recognize broader corrupt exchange networks. This structural divergence creates prosecutorial gaps and enables regulatory arbitrage across boundary systems.",
+    consequence:
+      "Boundary divergence produces legal extraction channels where non-criminalized exchange operates as compliant corruption.",
   },
   lobbying: {
-    title: 'Lobbying: The Exclusion Mechanism',
-    analysis: 'Lobbying occupies the structural blindspot of anti-corruption frameworks. Most institutions exclude lobbying unless directly tied to illegal payment, creating systematic legal channels for influence monetization. This boundary design enables access-to-power markets while maintaining compliance facades across regulatory architectures.',
-    consequence: 'Lobbying exclusion boundaries produce influence extraction systems operating within legal compliance frameworks.'
+    title: "Lobbying: The Exclusion Mechanism",
+    analysis:
+      "Lobbying occupies the structural blindspot of anti-corruption frameworks. Most institutions exclude lobbying unless directly tied to illegal payment, creating systematic legal channels for influence monetization. This boundary design enables access-to-power markets while maintaining compliance facades across regulatory architectures.",
+    consequence:
+      "Lobbying exclusion boundaries produce influence extraction systems operating within legal compliance frameworks.",
   },
   privateSector: {
-    title: 'Private Sector: Sectoral Boundary Operations',
-    analysis: 'Private sector corruption recognition operates through institutional mandate boundaries rather than risk logic. Regulatory bodies focus on government interface corruption while development finance institutions recognize comprehensive private corruption networks. This creates enforcement gaps enabling risk migration between sectoral domains.',
-    consequence: 'Sectoral boundaries create regulatory voids where private corruption operates outside institutional recognition systems.'
+    title: "Private Sector: Sectoral Boundary Operations",
+    analysis:
+      "Private sector corruption recognition operates through institutional mandate boundaries rather than risk logic. Regulatory bodies focus on government interface corruption while development finance institutions recognize comprehensive private corruption networks. This creates enforcement gaps enabling risk migration between sectoral domains.",
+    consequence:
+      "Sectoral boundaries create regulatory voids where private corruption operates outside institutional recognition systems.",
   },
   influencePeddling: {
-    title: 'Influence Peddling: Access Monetization Logic',
-    analysis: 'Influence peddling boundaries distinguish between direct trading and broader access monetization, with international frameworks typically more comprehensive than domestic enforcement. This divergence enables influence extraction through legal channels excluded from enforcement scope while maintaining institutional compliance.',
-    consequence: 'Influence boundaries enable access-to-power monetization through legally compliant extraction channels.'
+    title: "Influence Peddling: Access Monetization Logic",
+    analysis:
+      "Influence peddling boundaries distinguish between direct trading and broader access monetization, with international frameworks typically more comprehensive than domestic enforcement. This divergence enables influence extraction through legal channels excluded from enforcement scope while maintaining institutional compliance.",
+    consequence:
+      "Influence boundaries enable access-to-power monetization through legally compliant extraction channels.",
   },
   conflictOfInterest: {
-    title: 'Conflict of Interest: Management Versus Prevention',
-    analysis: 'Conflict of interest operates primarily through disclosure and management rather than prohibition, creating structural acceptance of interest misalignment. Institutional boundaries focus on process compliance rather than elimination, enabling continued operation of conflicted decision-making within managed frameworks.',
-    consequence: 'Conflict boundaries normalize interest misalignment through procedural compliance rather than structural prevention.'
+    title: "Conflict of Interest: Management Versus Prevention",
+    analysis:
+      "Conflict of interest operates primarily through disclosure and management rather than prohibition, creating structural acceptance of interest misalignment. Institutional boundaries focus on process compliance rather than elimination, enabling continued operation of conflicted decision-making within managed frameworks.",
+    consequence:
+      "Conflict boundaries normalize interest misalignment through procedural compliance rather than structural prevention.",
   },
   fraud: {
-    title: 'Fraud: Scope and Connectivity Logic',
-    analysis: 'Fraud boundaries vary significantly across institutional mandates, with some frameworks treating fraud as separate from corruption while others recognize interconnected corrupt networks. This boundary inconsistency creates enforcement gaps where fraudulent practices operate outside anti-corruption recognition systems.',
-    consequence: 'Fraud boundary inconsistency enables financial crime networks to operate across institutional recognition gaps.'
+    title: "Fraud: Scope and Connectivity Logic",
+    analysis:
+      "Fraud boundaries vary significantly across institutional mandates, with some frameworks treating fraud as separate from corruption while others recognize interconnected corrupt networks. This boundary inconsistency creates enforcement gaps where fraudulent practices operate outside anti-corruption recognition systems.",
+    consequence:
+      "Fraud boundary inconsistency enables financial crime networks to operate across institutional recognition gaps.",
   },
   embezzlement: {
-    title: 'Embezzlement: Resource Misappropriation Boundaries',
-    analysis: 'Embezzlement recognition varies based on resource type and institutional mandate, with comprehensive coverage in development finance but limited recognition in regulatory frameworks focused on influence corruption. This boundary design creates gaps in resource protection across institutional systems.',
-    consequence: 'Embezzlement boundaries create resource protection gaps enabling misappropriation outside institutional mandate scope.'
+    title: "Embezzlement: Resource Misappropriation Boundaries",
+    analysis:
+      "Embezzlement recognition varies based on resource type and institutional mandate, with comprehensive coverage in development finance but limited recognition in regulatory frameworks focused on influence corruption. This boundary design creates gaps in resource protection across institutional systems.",
+    consequence:
+      "Embezzlement boundaries create resource protection gaps enabling misappropriation outside institutional mandate scope.",
   },
   nepotism: {
-    title: 'Nepotism: Relationship-Based Advantage Logic',
-    analysis: 'Nepotism operates primarily through conflict of interest and transparency measures rather than direct prohibition, creating structural acceptance of relationship-based advantage systems. Most frameworks manage rather than eliminate nepotistic practices, enabling continued operation within procedural compliance.',
-    consequence: 'Nepotism boundaries normalize relationship-based advantage through procedural management rather than systematic prevention.'
-  }
+    title: "Nepotism: Relationship-Based Advantage Logic",
+    analysis:
+      "Nepotism operates primarily through conflict of interest and transparency measures rather than direct prohibition, creating structural acceptance of relationship-based advantage systems. Most frameworks manage rather than eliminate nepotistic practices, enabling continued operation within procedural compliance.",
+    consequence:
+      "Nepotism boundaries normalize relationship-based advantage through procedural management rather than systematic prevention.",
+  },
 };
 
 // Systemic Consequence Generator - Context-Sensitive Analysis
 const getSystemicNote = (activeGroup, selectedTerm, selectedCard) => {
   const notes = {
-    default: "Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored. Vigilum renders these boundary operations as system intelligence.",
-    regulatory: "Regulatory boundaries create legal extraction channels through systematic exclusion of influence operations, enabling compliant corruption within enforcement frameworks.",
-    international: "Development finance boundaries focus on operational compliance while structural corruption networks operate across institutional mandate gaps and jurisdictional voids.",
-    bribery_focus: "Bribery boundary convergence masks underlying divergence in scope and enforcement, creating regulatory arbitrage opportunities across jurisdictional systems.",
-    lobbying_focus: "Lobbying exclusion boundaries systematically enable influence monetization through legal advocacy channels outside anti-corruption recognition systems.",
-    private_focus: "Private sector boundary gaps enable corruption network migration between regulatory domains, operating through institutional mandate limitations."
+    default:
+      "Institutional boundaries are not technicalities—they determine what can be prosecuted, managed, or ignored. Vigilum renders these boundary operations as system intelligence.",
+    regulatory:
+      "Regulatory boundaries create legal extraction channels through systematic exclusion of influence operations, enabling compliant corruption within enforcement frameworks.",
+    international:
+      "Development finance boundaries focus on operational compliance while structural corruption networks operate across institutional mandate gaps and jurisdictional voids.",
+    bribery_focus:
+      "Bribery boundary convergence masks underlying divergence in scope and enforcement, creating regulatory arbitrage opportunities across jurisdictional systems.",
+    lobbying_focus:
+      "Lobbying exclusion boundaries systematically enable influence monetization through legal advocacy channels outside anti-corruption recognition systems.",
+    private_focus:
+      "Private sector boundary gaps enable corruption network migration between regulatory domains, operating through institutional mandate limitations.",
   };
 
-  if (selectedTerm === 'bribery') return notes.bribery_focus;
-  if (selectedTerm === 'lobbying') return notes.lobbying_focus;
-  if (selectedTerm === 'privateSector') return notes.private_focus;
-  if (activeGroup === 'regulatory') return notes.regulatory;
-  if (activeGroup === 'international') return notes.international;
+  if (selectedTerm === "bribery") return notes.bribery_focus;
+  if (selectedTerm === "lobbying") return notes.lobbying_focus;
+  if (selectedTerm === "privateSector") return notes.private_focus;
+  if (activeGroup === "regulatory") return notes.regulatory;
+  if (activeGroup === "international") return notes.international;
   return notes.default;
 };
 
 // Boundary Logic Carousel - Epistemic Intelligence Interface
 const BoundaryLogicCarousel = () => {
-  const [activeGroup, setActiveGroup] = useState('international');
+  const [activeGroup, setActiveGroup] = useState("international");
   const [selectedCard, setSelectedCard] = useState(null);
-  const [selectedTerm, setSelectedTerm] = useState('bribery');
+  const [selectedTerm, setSelectedTerm] = useState("bribery");
   const [showCompareMode, setShowCompareMode] = useState(false);
   const [hoveredTag, setHoveredTag] = useState(null);
 
@@ -422,42 +1093,59 @@ const BoundaryLogicCarousel = () => {
   // Theme Configuration - Vigilum Brand Tokens
   const groupTheme = {
     regulatory: {
-      primary: '#18291B',
-      secondary: '#10B981',
-      background: 'linear-gradient(135deg, #18291B, #0F1E14)',
-      cardBg: '#FFFFFF',
-      textPrimary: '#2D3329',
-      accent: '#22C55E'
+      primary: "#18291B",
+      secondary: "#10B981",
+      background: "linear-gradient(135deg, #18291B, #0F1E14)",
+      cardBg: "#FFFFFF",
+      textPrimary: "#2D3329",
+      accent: "#22C55E",
     },
     international: {
-      primary: '#465B6E',
-      secondary: '#60A5FA',
-      background: 'linear-gradient(135deg, #EAEEF2, #465B6E)',
-      cardBg: '#F8FAFC',
-      textPrimary: '#1E293B',
-      accent: '#3B82F6'
-    }
+      primary: "#465B6E",
+      secondary: "#60A5FA",
+      background: "linear-gradient(135deg, #EAEEF2, #465B6E)",
+      cardBg: "#F8FAFC",
+      textPrimary: "#1E293B",
+      accent: "#3B82F6",
+    },
   };
 
   const theme = groupTheme[activeGroup];
-  const allTerms = ['bribery', 'lobbying', 'privateSector', 'influencePeddling', 'conflictOfInterest', 'fraud', 'embezzlement', 'nepotism'];
+  const allTerms = [
+    "bribery",
+    "lobbying",
+    "privateSector",
+    "influencePeddling",
+    "conflictOfInterest",
+    "fraud",
+    "embezzlement",
+    "nepotism",
+  ];
 
   // Tag State Logic - Boundary Recognition System
   const getTagColor = (state) => {
-    switch(state) {
-      case '✓': return '#10B981'; // Included
-      case '–': return '#9CA3AF'; // Excluded
-      case '?': return '#F59E0B'; // Ambiguous
-      default: return '#9CA3AF';
+    switch (state) {
+      case "✓":
+        return "#10B981"; // Included
+      case "–":
+        return "#9CA3AF"; // Excluded
+      case "?":
+        return "#F59E0B"; // Ambiguous
+      default:
+        return "#9CA3AF";
     }
   };
 
   const getTagBackground = (state) => {
-    switch(state) {
-      case '✓': return 'rgba(16, 185, 129, 0.15)';
-      case '–': return 'transparent';
-      case '?': return 'rgba(245, 158, 11, 0.15)';
-      default: return 'transparent';
+    switch (state) {
+      case "✓":
+        return "rgba(16, 185, 129, 0.15)";
+      case "–":
+        return "transparent";
+      case "?":
+        return "rgba(245, 158, 11, 0.15)";
+      default:
+        return "transparent";
     }
   };
 
@@ -466,106 +1154,119 @@ const BoundaryLogicCarousel = () => {
     return (
       <motion.div
         style={{
-          background: activeGroup === 'regulatory'
-            ? 'rgba(16, 185, 129, 0.1)'
-            : 'rgba(59, 130, 246, 0.1)',
-          borderRadius: '20px',
-          padding: '24px',
-          border: `2px solid ${isActive ? theme.secondary : 'rgba(0,0,0,0.1)'}`,
+          background:
+            activeGroup === "regulatory"
+              ? "rgba(16, 185, 129, 0.1)"
+              : "rgba(59, 130, 246, 0.1)",
+          borderRadius: "20px",
+          padding: "24px",
+          border: `2px solid ${isActive ? theme.secondary : "rgba(0,0,0,0.1)"}`,
           boxShadow: isActive
             ? `0 12px 30px rgba(24,41,27,0.08)`
-            : '0 2px 6px rgba(24,41,27,0.04)',
-          cursor: 'default',
-          width: '320px',
-          height: 'auto',
-          minHeight: '470px',
+            : "0 2px 6px rgba(24,41,27,0.04)",
+          cursor: "default",
+          width: "320px",
+          height: "auto",
+          minHeight: "470px",
           flexShrink: 0,
-          transform: isActive ? 'scale(1.04)' : 'scale(1)',
+          transform: isActive ? "scale(1.04)" : "scale(1)",
           zIndex: isActive ? 2 : 1,
-          transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
-          position: 'relative',
-          display: 'flex',
-          flexDirection: 'column'
+          transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
         }}
         whileHover={{
           scale: 1,
-          transition: { duration: 0.2 }
+          transition: { duration: 0.2 },
         }}
       >
         {/* Logo and Institution Header */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          marginBottom: '16px',
-          textAlign: 'center'
-        }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginBottom: "16px",
+            textAlign: "center",
+          }}
+        >
           <div
             style={{
-              fontSize: '32px',
-              width: '54px',
-              height: '54px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: '#FFFFFF',
-              border: '1px solid #D6DBE3',
-              borderRadius: '8px',
-              padding: '6px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-              cursor: 'pointer',
-              marginBottom: '12px'
+              fontSize: "32px",
+              width: "54px",
+              height: "54px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#FFFFFF",
+              border: "1px solid #D6DBE3",
+              borderRadius: "8px",
+              padding: "6px",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+              cursor: "pointer",
+              marginBottom: "12px",
             }}
             onClick={(e) => {
               e.stopPropagation();
               if (institution.citation.url) {
-                window.open(institution.citation.url, '_blank');
+                window.open(institution.citation.url, "_blank");
               }
             }}
             title={`View source: ${institution.citation.text}`}
           >
             {institution.logo}
           </div>
-          <h4 style={{
-            margin: 0,
-            fontSize: '19px',
-            fontWeight: 'bold',
-            color: '#FFFFFF',
-            lineHeight: '24px',
-            textAlign: 'center'
-          }}>
+          <h4
+            style={{
+              margin: 0,
+              fontSize: "19px",
+              fontWeight: "bold",
+              color: "#FFFFFF",
+              lineHeight: "24px",
+              textAlign: "center",
+            }}
+          >
             {institution.name}
           </h4>
         </div>
 
         {/* Definition Section */}
-        <div style={{ marginTop: '12px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <blockquote style={{
-            fontSize: '17px',
-            fontStyle: 'italic',
-            color: '#9DE6C6',
-            margin: '0 0 8px 0',
-            lineHeight: '26px',
-            fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
-          }}>
+        <div
+          style={{
+            marginTop: "12px",
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <blockquote
+            style={{
+              fontSize: "17px",
+              fontStyle: "italic",
+              color: "#9DE6C6",
+              margin: "0 0 8px 0",
+              lineHeight: "26px",
+              fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+            }}
+          >
             "{institution.definition}"
           </blockquote>
-
         </div>
 
         {/* Spacer to push tags to bottom */}
         <div style={{ flex: 1 }}></div>
 
-
-
         {/* Boundary Tag Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '4px',
-          marginTop: 'auto'
-        }}>
-          {allTerms.map(term => {
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "4px",
+            marginTop: "auto",
+          }}
+        >
+          {allTerms.map((term) => {
             const tag = institution.tags[term];
             const isHovered = hoveredTag === `${institution.id}-${term}`;
             const isSelected = selectedTerm === term;
@@ -574,25 +1275,29 @@ const BoundaryLogicCarousel = () => {
               <div
                 key={term}
                 style={{
-                  height: '28px',
-                  padding: '4px 8px',
-                  border: `2px solid ${isSelected ? '#FFFFFF' : getTagColor(tag.state)}`,
-                  borderRadius: '6px',
-                  background: isSelected ? getTagColor(tag.state) : getTagBackground(tag.state),
-                  color: isSelected ? '#FFFFFF' : getTagColor(tag.state),
-                  fontSize: '11px',
-                  fontWeight: '600',
-                  fontFamily: 'SF Mono, Monaco, monospace',
-                  letterSpacing: '0.02em',
-                  textAlign: 'center',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '4px',
-                  transition: 'all 0.2s ease',
-                  transform: isSelected ? 'scale(1.05)' : 'scale(1)',
-                  boxShadow: isSelected ? `0 0 12px ${getTagColor(tag.state)}66` : 'none'
+                  height: "28px",
+                  padding: "4px 8px",
+                  border: `2px solid ${isSelected ? "#FFFFFF" : getTagColor(tag.state)}`,
+                  borderRadius: "6px",
+                  background: isSelected
+                    ? getTagColor(tag.state)
+                    : getTagBackground(tag.state),
+                  color: isSelected ? "#FFFFFF" : getTagColor(tag.state),
+                  fontSize: "11px",
+                  fontWeight: "600",
+                  fontFamily: "SF Mono, Monaco, monospace",
+                  letterSpacing: "0.02em",
+                  textAlign: "center",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "4px",
+                  transition: "all 0.2s ease",
+                  transform: isSelected ? "scale(1.05)" : "scale(1)",
+                  boxShadow: isSelected
+                    ? `0 0 12px ${getTagColor(tag.state)}66`
+                    : "none",
                 }}
                 onMouseEnter={() => setHoveredTag(`${institution.id}-${term}`)}
                 onMouseLeave={() => setHoveredTag(null)}
@@ -601,31 +1306,40 @@ const BoundaryLogicCarousel = () => {
                   setSelectedTerm(term);
 
                   // Animate all similar tags
-                  const similarTags = document.querySelectorAll(`[data-term="${term}"]`);
-                  similarTags.forEach(el => {
-                    el.style.animation = 'none';
+                  const similarTags = document.querySelectorAll(
+                    `[data-term="${term}"]`,
+                  );
+                  similarTags.forEach((el) => {
+                    el.style.animation = "none";
                     setTimeout(() => {
-                      el.style.animation = 'pulse 0.7s ease-in-out';
+                      el.style.animation = "pulse 0.7s ease-in-out";
                     }, 10);
                   });
                 }}
                 data-term={term}
                 title={tag.tooltip}
               >
-                <span style={{ fontSize: '12px', fontWeight: '700' }}>{tag.state}</span>
-                <span style={{
-                  textTransform: 'uppercase',
-                  fontSize: '9px',
-                  fontWeight: '600',
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  maxWidth: '80px'
-                }}>
-                  {term === 'privateSector' ? 'PRIVATE' :
-                   term === 'influencePeddling' ? 'INFLUENCE' :
-                   term === 'conflictOfInterest' ? 'CONFLICT' :
-                   term.toUpperCase()}
+                <span style={{ fontSize: "12px", fontWeight: "700" }}>
+                  {tag.state}
+                </span>
+                <span
+                  style={{
+                    textTransform: "uppercase",
+                    fontSize: "9px",
+                    fontWeight: "600",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: "80px",
+                  }}
+                >
+                  {term === "privateSector"
+                    ? "PRIVATE"
+                    : term === "influencePeddling"
+                      ? "INFLUENCE"
+                      : term === "conflictOfInterest"
+                        ? "CONFLICT"
+                        : term.toUpperCase()}
                 </span>
               </div>
             );
@@ -634,15 +1348,17 @@ const BoundaryLogicCarousel = () => {
 
         {/* Active Card Indicator */}
         {isActive && (
-          <div style={{
-            position: 'absolute',
-            bottom: '0',
-            left: '0',
-            right: '0',
-            height: '5px',
-            background: theme.secondary,
-            borderRadius: '0 0 18px 18px'
-          }} />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "0",
+              left: "0",
+              right: "0",
+              height: "5px",
+              background: theme.secondary,
+              borderRadius: "0 0 18px 18px",
+            }}
+          />
         )}
       </motion.div>
     );
@@ -651,12 +1367,12 @@ const BoundaryLogicCarousel = () => {
   return (
     <div
       style={{
-        minWidth: '1100px',
-        margin: '0 auto',
-        borderRadius: '24px',
-        padding: '0',
-        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        position: 'relative'
+        minWidth: "1100px",
+        margin: "0 auto",
+        borderRadius: "24px",
+        padding: "0",
+        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        position: "relative",
       }}
     >
       {/* CSS Animations */}
@@ -680,109 +1396,128 @@ const BoundaryLogicCarousel = () => {
       `}</style>
 
       {/* Navigation Tabs - Positioned Above Carousel */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-        marginBottom: '16px',
-        padding: '8px',
-        marginLeft: '80px'
-      }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          marginBottom: "16px",
+          padding: "8px",
+          marginLeft: "80px",
+        }}
+      >
         <button
-          onClick={() => setActiveGroup('regulatory')}
+          onClick={() => setActiveGroup("regulatory")}
           style={{
-            width: 'auto',
-            height: '48px',
-            padding: '16px 24px',
-            background: 'transparent',
-            color: activeGroup === 'regulatory' ? groupTheme.regulatory.secondary : 'rgba(255,255,255,0.68)',
-            border: 'none',
-            borderRadius: '12px',
-            fontSize: '16px',
-            fontWeight: '600',
-            fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            borderBottom: activeGroup === 'regulatory' ? `3px solid ${groupTheme.regulatory.secondary}` : '3px solid transparent',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-            whiteSpace: 'nowrap'
+            width: "auto",
+            height: "48px",
+            padding: "16px 24px",
+            background: "transparent",
+            color:
+              activeGroup === "regulatory"
+                ? groupTheme.regulatory.secondary
+                : "rgba(255,255,255,0.68)",
+            border: "none",
+            borderRadius: "12px",
+            fontSize: "16px",
+            fontWeight: "600",
+            fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            borderBottom:
+              activeGroup === "regulatory"
+                ? `3px solid ${groupTheme.regulatory.secondary}`
+                : "3px solid transparent",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px",
+            whiteSpace: "nowrap",
           }}
         >
           REGULATORY / JUDICIAL
         </button>
         <button
-          onClick={() => setActiveGroup('international')}
+          onClick={() => setActiveGroup("international")}
           style={{
-            width: 'auto',
-            height: '48px',
-            padding: '16px 24px',
-            background: 'transparent',
-            color: activeGroup === 'international' ? groupTheme.international.secondary : 'rgba(255,255,255,0.68)',
-            border: 'none',
-            borderRadius: '12px',
-            fontSize: '16px',
-            fontWeight: '600',
-            fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            borderBottom: activeGroup === 'international' ? `3px solid ${groupTheme.international.secondary}` : '3px solid transparent',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-            whiteSpace: 'nowrap'
+            width: "auto",
+            height: "48px",
+            padding: "16px 24px",
+            background: "transparent",
+            color:
+              activeGroup === "international"
+                ? groupTheme.international.secondary
+                : "rgba(255,255,255,0.68)",
+            border: "none",
+            borderRadius: "12px",
+            fontSize: "16px",
+            fontWeight: "600",
+            fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            borderBottom:
+              activeGroup === "international"
+                ? `3px solid ${groupTheme.international.secondary}`
+                : "3px solid transparent",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px",
+            whiteSpace: "nowrap",
           }}
         >
           IFI / MULTILATERAL
         </button>
-
       </div>
 
       {/* Main Carousel Panel */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '70% 30%',
-        gap: '32px',
-        marginBottom: '24px'
-      }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "70% 30%",
+          gap: "32px",
+          marginBottom: "24px",
+        }}
+      >
         {/* Carousel Container */}
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: "relative" }}>
           {/* Fade Overlays */}
-          <div style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            bottom: 0,
-            width: '30px',
-            background: `linear-gradient(to right, ${theme.background}, transparent)`,
-            zIndex: 3,
-            pointerEvents: 'none'
-          }} />
-          <div style={{
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            bottom: 0,
-            width: '30px',
-            background: `linear-gradient(to left, ${theme.background}, transparent)`,
-            zIndex: 3,
-            pointerEvents: 'none'
-          }} />
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: "30px",
+              background: `linear-gradient(to right, ${theme.background}, transparent)`,
+              zIndex: 3,
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+              bottom: 0,
+              width: "30px",
+              background: `linear-gradient(to left, ${theme.background}, transparent)`,
+              zIndex: 3,
+              pointerEvents: "none",
+            }}
+          />
 
           {/* Carousel */}
           <div
             className="carousel-container"
             style={{
-              display: 'flex',
-              gap: '18px',
-              overflowX: 'auto',
-              scrollSnapType: 'x mandatory',
-              paddingBottom: '12px',
-              scrollbarWidth: 'thin',
-              maxWidth: '660px', // 2 cards (320px each) visible with proper spacing
-              margin: '0'
+              display: "flex",
+              gap: "18px",
+              overflowX: "auto",
+              scrollSnapType: "x mandatory",
+              paddingBottom: "12px",
+              scrollbarWidth: "thin",
+              maxWidth: "660px", // 2 cards (320px each) visible with proper spacing
+              margin: "0",
             }}
           >
-            {currentData.map(institution => (
-              <div key={institution.id} style={{ scrollSnapAlign: 'start' }}>
+            {currentData.map((institution) => (
+              <div key={institution.id} style={{ scrollSnapAlign: "start" }}>
                 <InstitutionCard
                   institution={institution}
                   isActive={selectedCard === institution.id}
@@ -793,58 +1528,76 @@ const BoundaryLogicCarousel = () => {
         </div>
 
         {/* Right Analytics Panel */}
-        <div style={{
-          background: 'rgba(29, 51, 40, 0.8)',
-          borderRadius: '16px',
-          padding: '24px',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
-          borderTop: `3px solid ${theme.secondary}`,
-          borderRight: '1px solid rgba(157, 230, 198, 0.2)',
-          borderBottom: '1px solid rgba(157, 230, 198, 0.2)',
-          borderLeft: '1px solid rgba(157, 230, 198, 0.2)',
-          height: '470px',
-          overflowY: 'auto',
-          transform: 'translateX(-100px) translateY(16px)',
-          width: 'calc(100% + 40px)',
-          position: 'relative'
-        }}>
+        <div
+          style={{
+            background: "rgba(29, 51, 40, 0.8)",
+            borderRadius: "16px",
+            padding: "24px",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.3)",
+            borderTop: `3px solid ${theme.secondary}`,
+            borderRight: "1px solid rgba(157, 230, 198, 0.2)",
+            borderBottom: "1px solid rgba(157, 230, 198, 0.2)",
+            borderLeft: "1px solid rgba(157, 230, 198, 0.2)",
+            height: "470px",
+            overflowY: "auto",
+            transform: "translateX(-100px) translateY(16px)",
+            width: "calc(100% + 40px)",
+            position: "relative",
+          }}
+        >
           {/* Term Navigation Row */}
-          <div style={{ marginBottom: '24px' }}>
-            <h4 style={{
-              margin: '0 0 16px 0',
-              fontSize: '14px',
-              fontWeight: '600',
-              color: '#9DE6C6',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px',
-              fontFamily: 'SF Mono, Monaco, monospace'
-            }}>
+          <div style={{ marginBottom: "24px" }}>
+            <h4
+              style={{
+                margin: "0 0 16px 0",
+                fontSize: "14px",
+                fontWeight: "600",
+                color: "#9DE6C6",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+                fontFamily: "SF Mono, Monaco, monospace",
+              }}
+            >
               BOUNDARY ANALYSIS
             </h4>
-            <div style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '8px'
-            }}>
-              {['bribery', 'lobbying', 'privateSector', 'influencePeddling', 'conflictOfInterest', 'fraud', 'embezzlement', 'nepotism'].map(term => (
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "8px",
+              }}
+            >
+              {[
+                "bribery",
+                "lobbying",
+                "privateSector",
+                "influencePeddling",
+                "conflictOfInterest",
+                "fraud",
+                "embezzlement",
+                "nepotism",
+              ].map((term) => (
                 <button
                   key={term}
                   onClick={() => setSelectedTerm(term)}
                   style={{
-                    padding: '8px 12px',
-                    border: `2px solid ${selectedTerm === term ? theme.secondary : 'rgba(157, 230, 198, 0.3)'}`,
-                    background: selectedTerm === term ? `${theme.secondary}22` : 'transparent',
-                    color: '#FFFFFF',
-                    borderRadius: '8px',
-                    fontSize: '12px',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    textTransform: 'capitalize',
-                    transition: 'all 0.2s ease',
-                    fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
+                    padding: "8px 12px",
+                    border: `2px solid ${selectedTerm === term ? theme.secondary : "rgba(157, 230, 198, 0.3)"}`,
+                    background:
+                      selectedTerm === term
+                        ? `${theme.secondary}22`
+                        : "transparent",
+                    color: "#FFFFFF",
+                    borderRadius: "8px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                    cursor: "pointer",
+                    textTransform: "capitalize",
+                    transition: "all 0.2s ease",
+                    fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
                   }}
                 >
-                  {term.replace(/([A-Z])/g, ' $1').trim()}
+                  {term.replace(/([A-Z])/g, " $1").trim()}
                 </button>
               ))}
             </div>
@@ -852,65 +1605,76 @@ const BoundaryLogicCarousel = () => {
 
           {/* Structural Explanation Block */}
           <div>
-            <h3 style={{
-              margin: '0 0 16px 0',
-              fontSize: '18px',
-              fontWeight: '700',
-              color: '#FFFFFF',
-              lineHeight: '1.3',
-              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-              textAlign: 'left'
-            }}>
-              {termDefinitions[selectedTerm]?.title || 'Boundary Analysis'}
+            <h3
+              style={{
+                margin: "0 0 16px 0",
+                fontSize: "18px",
+                fontWeight: "700",
+                color: "#FFFFFF",
+                lineHeight: "1.3",
+                fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+                textAlign: "left",
+              }}
+            >
+              {termDefinitions[selectedTerm]?.title || "Boundary Analysis"}
             </h3>
 
-            <p style={{
-              fontSize: '15px',
-              lineHeight: '1.4',
-              color: '#A1B5C1',
-              marginBottom: '16px',
-              fontFamily: 'SF Mono, Monaco, monospace',
-              letterSpacing: '0.01em',
-              textAlign: 'left'
-            }}>
-              {termDefinitions[selectedTerm]?.analysis || 'Structural analysis of boundary operations.'}
+            <p
+              style={{
+                fontSize: "15px",
+                lineHeight: "1.4",
+                color: "#A1B5C1",
+                marginBottom: "16px",
+                fontFamily: "SF Mono, Monaco, monospace",
+                letterSpacing: "0.01em",
+                textAlign: "left",
+              }}
+            >
+              {termDefinitions[selectedTerm]?.analysis ||
+                "Structural analysis of boundary operations."}
             </p>
 
             {/* Boundary Consequence Footer */}
-            <div style={{
-              padding: '16px',
-              background: 'rgba(157, 230, 198, 0.1)',
-              borderRadius: '8px',
-              border: `1px solid rgba(157, 230, 198, 0.3)`,
-              marginTop: '16px'
-            }}>
-              <p style={{
-                fontSize: '12px',
-                fontWeight: '600',
-                color: '#9DE6C6',
-                margin: '0 0 8px 0',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                fontFamily: 'SF Mono, Monaco, monospace',
-                textAlign: 'left'
-              }}>
+            <div
+              style={{
+                padding: "16px",
+                background: "rgba(157, 230, 198, 0.1)",
+                borderRadius: "8px",
+                border: `1px solid rgba(157, 230, 198, 0.3)`,
+                marginTop: "16px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  color: "#9DE6C6",
+                  margin: "0 0 8px 0",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                  fontFamily: "SF Mono, Monaco, monospace",
+                  textAlign: "left",
+                }}
+              >
                 STRUCTURAL CONSEQUENCE
               </p>
-              <p style={{
-                fontSize: '13px',
-                color: '#FFFFFF',
-                margin: 0,
-                lineHeight: '1.5',
-                fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-                textAlign: 'left'
-              }}>
-                {termDefinitions[selectedTerm]?.consequence || 'Boundary effects on recognition and transfer systems.'}
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: "#FFFFFF",
+                  margin: 0,
+                  lineHeight: "1.5",
+                  fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+                  textAlign: "left",
+                }}
+              >
+                {termDefinitions[selectedTerm]?.consequence ||
+                  "Boundary effects on recognition and transfer systems."}
               </p>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 };
@@ -1621,7 +2385,7 @@ const InstitutionCard = ({ institution }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       {/* Centered Logo */}
@@ -1673,7 +2437,7 @@ const InstitutionCard = ({ institution }) => {
 
 const CorruptionDefinitions = ({ onNavigate }) => {
   const [showCompareAll, setShowCompareAll] = useState(false);
-  const [modalActiveGroup, setModalActiveGroup] = useState('regulatory'); // For modal group selection
+  const [modalActiveGroup, setModalActiveGroup] = useState("regulatory"); // For modal group selection
   const [activeCarousel, setActiveCarousel] = useState(0);
   const [carouselCycles, setCarouselCycles] = useState([0, 0, 0, 0]); // Track cycles for each carousel
   const [allCarouselsReset, setAllCarouselsReset] = useState(false);
@@ -1754,20 +2518,27 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             </p>
 
             {/* Key Insight */}
-            <div style={{
-              marginTop: '16px',
-              marginBottom: '8px'
-            }}>
-              <p style={{
-                margin: 0,
-                fontSize: '13px',
-                color: '#E5E5E5',
-                fontWeight: '400',
-                lineHeight: '1.5',
-                opacity: 0.8
-              }}>
-                💡 Institutional boundaries determine what can be prosecuted, managed, or ignored.<br />
-                Vigilum models how these definitions produce blindspots and transfer structural risk.
+            <div
+              style={{
+                marginTop: "16px",
+                marginBottom: "8px",
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "13px",
+                  color: "#E5E5E5",
+                  fontWeight: "400",
+                  lineHeight: "1.5",
+                  opacity: 0.8,
+                }}
+              >
+                💡 Institutional boundaries determine what can be prosecuted,
+                managed, or ignored.
+                <br />
+                Vigilum models how these definitions produce blindspots and
+                transfer structural risk.
               </p>
             </div>
           </div>
@@ -1787,7 +2558,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 textAlign: "center",
                 fontFamily: "var(--font-display)",
                 letterSpacing: "1px",
-                textTransform: "uppercase"
+                textTransform: "uppercase",
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
@@ -1800,7 +2571,6 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             >
               Compare All Definitions
             </button>
-
           </div>
         </div>
       </div>
@@ -1871,46 +2641,58 @@ const CorruptionDefinitions = ({ onNavigate }) => {
               </div>
 
               {/* Group Selection Tabs */}
-              <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginBottom: '32px',
-                gap: '16px'
-              }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "32px",
+                  gap: "16px",
+                }}
+              >
                 <button
-                  onClick={() => setModalActiveGroup('regulatory')}
+                  onClick={() => setModalActiveGroup("regulatory")}
                   style={{
-                    padding: '12px 24px',
-                    background: modalActiveGroup === 'regulatory' ? 'rgba(16, 185, 129, 0.2)' : 'transparent',
-                    color: modalActiveGroup === 'regulatory' ? '#10B981' : '#9DE6C6',
-                    border: `2px solid ${modalActiveGroup === 'regulatory' ? '#10B981' : 'rgba(157, 230, 198, 0.3)'}`,
-                    borderRadius: '12px',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
+                    padding: "12px 24px",
+                    background:
+                      modalActiveGroup === "regulatory"
+                        ? "rgba(16, 185, 129, 0.2)"
+                        : "transparent",
+                    color:
+                      modalActiveGroup === "regulatory" ? "#10B981" : "#9DE6C6",
+                    border: `2px solid ${modalActiveGroup === "regulatory" ? "#10B981" : "rgba(157, 230, 198, 0.3)"}`,
+                    borderRadius: "12px",
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
                   }}
                 >
                   Regulatory / Judicial
                 </button>
                 <button
-                  onClick={() => setModalActiveGroup('international')}
+                  onClick={() => setModalActiveGroup("international")}
                   style={{
-                    padding: '12px 24px',
-                    background: modalActiveGroup === 'international' ? 'rgba(59, 130, 246, 0.2)' : 'transparent',
-                    color: modalActiveGroup === 'international' ? '#3B82F6' : '#9DE6C6',
-                    border: `2px solid ${modalActiveGroup === 'international' ? '#3B82F6' : 'rgba(157, 230, 198, 0.3)'}`,
-                    borderRadius: '12px',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px'
+                    padding: "12px 24px",
+                    background:
+                      modalActiveGroup === "international"
+                        ? "rgba(59, 130, 246, 0.2)"
+                        : "transparent",
+                    color:
+                      modalActiveGroup === "international"
+                        ? "#3B82F6"
+                        : "#9DE6C6",
+                    border: `2px solid ${modalActiveGroup === "international" ? "#3B82F6" : "rgba(157, 230, 198, 0.3)"}`,
+                    borderRadius: "12px",
+                    fontSize: "16px",
+                    fontWeight: "600",
+                    fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
                   }}
                 >
                   IFI / Multilateral
@@ -1925,16 +2707,18 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   gridTemplateRows: "repeat(2, 1fr)",
                   gap: "20px",
                   maxWidth: "1200px",
-                  margin: "0 auto"
+                  margin: "0 auto",
                 }}
               >
-                {boundaryLogicData[modalActiveGroup].map((institution, index) => (
-                  <InstitutionCard
-                    key={`${modalActiveGroup}-${index}`}
-                    institution={institution}
-                    isActive={false}
-                  />
-                ))}
+                {boundaryLogicData[modalActiveGroup].map(
+                  (institution, index) => (
+                    <InstitutionCard
+                      key={`${modalActiveGroup}-${index}`}
+                      institution={institution}
+                      isActive={false}
+                    />
+                  ),
+                )}
               </div>
             </motion.div>
           </motion.div>

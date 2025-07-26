@@ -1371,7 +1371,6 @@ const StructuralImpactMap = ({ onNavigate }) => {
           >
             Structural Impact Map
           </h1>
-
         </div>
         <p
           style={{
