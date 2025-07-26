@@ -44,7 +44,7 @@ const boundaryLogicData = {
         conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
         fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
         embezzlement: { state: '–', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
-        nepotism: { state: '–', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
+        nepotism: { state: '��', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
       }
     },
     {
@@ -82,7 +82,7 @@ const boundaryLogicData = {
         bribery: { state: '✓', tooltip: 'Comprehensive bribery provisions for public (Article 15) and private sectors (Article 21).', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Not explicitly addressed in convention text. Legal advocacy generally excluded.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector bribery covered in Article 21 as mandatory criminalization.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Trading in influence covered in Article 18 with mandatory criminalization.', typology: ['CI'] },
+        influencePeddling: { state: '��', tooltip: 'Trading in influence covered in Article 18 with mandatory criminalization.', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in preventive measures (Chapter II) but not criminal provisions.', typology: ['DG'] },
         fraud: { state: '✓', tooltip: 'Fraud against public administration covered under Article 17.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Embezzlement explicitly criminalized in Article 17.', typology: ['RT'] },
@@ -735,11 +735,11 @@ const BoundaryLogicCarousel = () => {
         <button
           onClick={() => setActiveGroup('international')}
           style={{
-            width: '228px',
+            width: 'auto',
             height: '48px',
             padding: '16px 24px',
-            background: activeGroup === 'international' ? '#FFFFFF' : 'transparent',
-            color: activeGroup === 'international' ? groupTheme.international.primary : 'rgba(255,255,255,0.68)',
+            background: 'transparent',
+            color: activeGroup === 'international' ? groupTheme.international.secondary : 'rgba(255,255,255,0.68)',
             border: 'none',
             borderRadius: '12px',
             fontSize: '16px',
@@ -749,7 +749,8 @@ const BoundaryLogicCarousel = () => {
             transition: 'all 0.3s ease',
             borderBottom: activeGroup === 'international' ? `3px solid ${groupTheme.international.secondary}` : '3px solid transparent',
             textTransform: 'uppercase',
-            letterSpacing: '0.5px'
+            letterSpacing: '0.5px',
+            whiteSpace: 'nowrap'
           }}
         >
           IFI / MULTILATERAL
