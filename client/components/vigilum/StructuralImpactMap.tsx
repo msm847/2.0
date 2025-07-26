@@ -1443,7 +1443,7 @@ const StructuralImpactMap = ({ onNavigate }) => {
       {/* Final Summary Overlay */}
       {showFinalSummary && (
         <FinalSummaryOverlay
-          totalLoss={globalLoss}
+          totalLoss={0}
           userPath={userPath}
           onClose={() => setShowFinalSummary(false)}
         />
