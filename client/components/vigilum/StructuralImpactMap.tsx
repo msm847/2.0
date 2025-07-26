@@ -1209,25 +1209,7 @@ const StructuralImpactMap = () => {
         border: "1px solid rgba(255, 255, 255, 0.1)",
         backdropFilter: "blur(10px)"
       }}>
-        {/* Connection Lines */}
-        {allConnections.map(({ fromNode, toNode }) => {
-          const connectionKey = `${fromNode.id}-${toNode.id}`;
-          const reverseKey = `${toNode.id}-${fromNode.id}`;
-          const isPropagating = propagatingConnections.has(connectionKey) || propagatingConnections.has(reverseKey);
-          const isActive = activeNode === fromNode.id || activeNode === toNode.id;
-          const visited = visitedNodes.has(fromNode.id) && visitedNodes.has(toNode.id);
 
-          return (
-            <ConnectionLine
-              key={connectionKey}
-              fromNode={fromNode}
-              toNode={toNode}
-              isActive={isActive}
-              visited={visited}
-              isPropagating={isPropagating}
-            />
-          );
-        })}
 
         {/* User Path Visualization */}
         <UserPathVisualization userPath={userPath} nodes={nodes} />
