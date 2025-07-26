@@ -1403,12 +1403,11 @@ const StructuralImpactMap = ({ onNavigate }) => {
         >
           <h1
             style={{
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              fontWeight: "700",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
+              fontWeight: "600",
               color: "#9DE6C6",
               margin: "0",
               fontFamily: "var(--font-display)",
-              textShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
             }}
           >
             Structural Impact Map
