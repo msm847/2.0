@@ -434,19 +434,11 @@ const NetworkNode = ({
           : `radial-gradient(circle at 30% 30%, ${node.color}40, ${node.color}25, ${node.color}10)`,
     border: `2px solid ${node.color}40`,
     cursor: "pointer",
-    backdropFilter: "blur(20px) saturate(180%) brightness(120%)",
+    backdropFilter: "blur(10px)",
     boxShadow: isActive
-      ? `
-        0 0 60px ${node.color}80,
-        0 0 30px ${node.color}60,
-        0 16px 64px rgba(0, 0, 0, 0.4),
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.2)
-      `
+      ? `0 0 30px ${node.color}60, 0 8px 16px rgba(0, 0, 0, 0.3)`
       : isHovered
-        ? `
-          0 0 40px ${node.color}60,
+        ? `0 0 20px ${node.color}40,
           0 0 20px ${node.color}40,
           0 12px 48px rgba(0, 0, 0, 0.3),
           0 6px 24px rgba(0, 0, 0, 0.2),
