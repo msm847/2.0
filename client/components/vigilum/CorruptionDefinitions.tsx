@@ -925,15 +925,16 @@ const BoundaryLogicCarousel = () => {
             {/* Boundary Consequence Footer */}
             <div style={{
               padding: '16px',
-              background: '#F3F4F6',
+              background: 'rgba(157, 230, 198, 0.1)',
               borderRadius: '8px',
-              borderLeft: `4px solid ${theme.secondary}`
+              border: `1px solid rgba(157, 230, 198, 0.3)`,
+              marginTop: '16px'
             }}>
               <p style={{
                 fontSize: '12px',
                 fontWeight: '600',
-                color: theme.primary,
-                margin: '0 0 4px 0',
+                color: '#9DE6C6',
+                margin: '0 0 8px 0',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontFamily: 'SF Mono, Monaco, monospace'
@@ -942,9 +943,9 @@ const BoundaryLogicCarousel = () => {
               </p>
               <p style={{
                 fontSize: '13px',
-                color: '#4B5563',
+                color: '#FFFFFF',
                 margin: 0,
-                lineHeight: '1.4',
+                lineHeight: '1.5',
                 fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
               }}>
                 {termDefinitions[selectedTerm]?.consequence || 'Boundary effects on recognition and transfer systems.'}
