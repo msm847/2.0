@@ -13,11 +13,11 @@ const buttonPulseStyles = `
   @keyframes pulse-cultural {
     0%, 100% {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0px 0px 60px rgba(72, 110, 96, 0.9), 0px 0px 40px rgba(72, 110, 96, 0.7), 0px 12px 40px rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.15) 0px -1px 0px 0px inset;
+      box-shadow: 0px 0px 12px rgba(72, 110, 96, 0.6), 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
     50% {
       transform: translateY(-4px) scale(1.04);
-      box-shadow: 0px 0px 80px rgba(72, 110, 96, 1), 0px 0px 60px rgba(72, 110, 96, 0.8), 0px 16px 50px rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+      box-shadow: 0px 0px 16px rgba(72, 110, 96, 0.8), 0px 6px 16px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -369,7 +369,7 @@ const PerceptionPerspective = () => {
       <div className="max-w-screen-xl mx-auto">
         <div className="text-center mb-16 mt-20">
           <motion.div
-            className="mb-8 transition-colors duration-300 font-semibold leading-tight"
+            className="mb-8 transition-colors duration-1000 font-semibold leading-tight"
             style={{
               fontFamily: "IBM Plex Sans, sans-serif",
               fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
@@ -437,7 +437,7 @@ const PerceptionPerspective = () => {
                 >
                   {/* Original Perception Perspective words positioned above instruction */}
                   <div
-                    className="mb-12 transition-colors duration-300 font-semibold leading-tight"
+                    className="mb-12 transition-colors duration-1000 font-semibold leading-tight"
                     style={{
                       fontFamily: "IBM Plex Sans, sans-serif",
                       fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
@@ -476,13 +476,13 @@ const PerceptionPerspective = () => {
                   </div>
 
                   <div
-                    className="text-lg font-semibold mb-6 transition-colors duration-300"
+                    className="text-lg font-semibold mb-6 transition-colors duration-1000"
                     style={{ color: currentTheme.textColor }}
                   >
                     Choose Your Lens.
                   </div>
                   <div
-                    className="text-base leading-relaxed transition-colors duration-300"
+                    className="text-base leading-relaxed transition-colors duration-1000"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
                     Click either lens above to observe risk, meaning, and
@@ -494,7 +494,7 @@ const PerceptionPerspective = () => {
 
             {activeSection && (
               <div
-                className="text-body-lg mb-6 leading-relaxed transition-colors duration-300 text-center"
+                className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
                 style={{ color: currentTheme.textColor }}
               >
                 {currentContent.description.replace("\n", " ")}
