@@ -505,7 +505,10 @@ const PerceptionPerspective = () => {
                   </motion.button>
 
                   <motion.button
-                    onClick={() => setSelectedButton("Economic")}
+                    onClick={() => {
+                      setSelectedButton("Economic");
+                      setVisitedSections(prev => new Set([...prev, "Cultural", "Social", "Economic"]));
+                    }}
                     className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                     style={{
                       background: selectedButton === "Economic" ? "rgba(16, 185, 129, 0.25)" : "rgba(255, 255, 255, 0.08)",
