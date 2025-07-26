@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Enhanced data model for the structural impact map
+// Enhanced data model for the immersive structural impact map
 const impactNetworkData = {
   nodes: [
     {
@@ -9,224 +9,244 @@ const impactNetworkData = {
       label: "Economy",
       position: { x: 50, y: 50 }, // Center node
       headline: "Every minute, corruption drains $1.9 million from the global economy.",
-      live_counter: {
-        start_value: 0,
-        rate_per_second: 31666,
+      domainCounter: {
+        ratePerSecond: 31666,
         unit: "USD",
-        display_format: "currency"
+        displayFormat: "currency"
       },
       facts: [
         { text: "Over $1 trillion lost annually", source: "World Bank", icon: "💰" },
         { text: "GDP growth up to 2% lower", source: "IMF", icon: "📉" },
         { text: "Investment falls by 20%", source: "WEF", icon: "📊" }
       ],
-      case_timeline: [
-        { title: "Bribe Paid", description: "Funds diverted from national budget", icon: "💸" },
-        { title: "Project Collapses", description: "Infrastructure fails, jobs lost", icon: "🏗️" },
-        { title: "Recession", description: "National growth stalls; recovery delayed", icon: "📉" }
+      timeline: [
+        { step: "Bribe paid", description: "Funds diverted from national budget", icon: "💸" },
+        { step: "Funds lost", description: "Investment capital disappears", icon: "🕳️" },
+        { step: "Growth slows", description: "National productivity stagnates", icon: "📉" }
       ],
-      connections: ["inequality", "markets"],
+      microCase: {
+        text: "Petrobras: $8B lost, national recession triggered.",
+        source: "World Bank"
+      },
+      propagation: [
+        { toNode: "markets", effect: "Drives market distortion and unfair competition" },
+        { toNode: "inequality", effect: "Deepens social exclusion and poverty" }
+      ],
       color: "#DC2626"
     },
     {
       id: "institutions",
       label: "Institutions",
       position: { x: 20, y: 20 },
-      headline: "Corruption weakens law, derails justice, and erodes public legitimacy.",
+      headline: "Corruption weakens law, derails justice, erodes legitimacy.",
+      domainCounter: {
+        ratePerSecond: 8400,
+        unit: "Trust Points",
+        displayFormat: "number"
+      },
       facts: [
         { text: "Law enforcement weakens, impunity rises", source: "UNODC", icon: "⚖️" },
-        { text: "Trust in institutions 2–3x lower", source: "OECD", icon: "🏛️" }
+        { text: "Trust in institutions 2–3x lower", source: "OECD", icon: "🏛️" },
+        { text: "Democratic processes undermined", source: "Freedom House", icon: "🗳️" }
       ],
-      case_timeline: [
-        { title: "Judge Bribed", description: "Legal system compromised", icon: "⚖️" },
-        { title: "Reforms Blocked", description: "Progress stalls", icon: "🚫" },
-        { title: "Rights Unprotected", description: "Citizens lose legal recourse", icon: "🛡️" }
+      timeline: [
+        { step: "Judge bribed", description: "Legal system compromised", icon: "⚖️" },
+        { step: "Reforms blocked", description: "Progress stalls indefinitely", icon: "🚫" },
+        { step: "Rights unprotected", description: "Citizens lose legal recourse", icon: "🛡️" }
       ],
-      connections: ["trust", "inequality"],
+      microCase: {
+        text: "Eastern Europe: Judicial bribery stalled legal reforms for decades.",
+        source: "GRECO"
+      },
+      propagation: [
+        { toNode: "trust", effect: "Leads to weakened social trust" },
+        { toNode: "inequality", effect: "Enables persistent structural inequality" }
+      ],
       color: "#7C3AED"
     },
     {
       id: "inequality",
       label: "Inequality",
       position: { x: 80, y: 20 },
-      headline: "Corruption widens the gap between rich and poor, excluding millions from essential services.",
+      headline: "Corruption widens the gap, excludes millions from essential services.",
+      domainCounter: {
+        ratePerSecond: 15200,
+        unit: "People Affected",
+        displayFormat: "number"
+      },
       facts: [
         { text: "Public services cost up to 30% more", source: "Transparency International", icon: "💊" },
-        { text: "Petty corruption hurts the poor most", source: "UNDP", icon: "👥" }
+        { text: "Petty corruption hurts the poor most", source: "UNDP", icon: "👥" },
+        { text: "Educational access reduced by 25%", source: "UNESCO", icon: "🎓" }
       ],
-      case_timeline: [
-        { title: "Health Bribe Demanded", description: "Payment required for basic care", icon: "🏥" },
-        { title: "Patient Excluded", description: "Cannot afford treatment", icon: "❌" },
-        { title: "Poverty Deepens", description: "Long-term exclusion from services", icon: "📉" }
+      timeline: [
+        { step: "Health bribe demanded", description: "Payment required for basic care", icon: "🏥" },
+        { step: "Patient excluded", description: "Cannot afford treatment", icon: "❌" },
+        { step: "Poverty entrenched", description: "Long-term exclusion cycle begins", icon: "🔄" }
       ],
-      connections: ["economy", "institutions"],
+      microCase: {
+        text: "South Asia: Informal fees for medical care deepen inequality gaps.",
+        source: "WHO"
+      },
+      propagation: [
+        { toNode: "economy", effect: "Reduces economic productivity and growth" },
+        { toNode: "trust", effect: "Increases social exclusion and distrust" }
+      ],
       color: "#EA580C"
     },
     {
       id: "markets",
       label: "Markets",
       position: { x: 80, y: 80 },
-      headline: "Corruption distorts markets, blocks fair competition, and repels honest business.",
+      headline: "Corruption blocks fair competition, repels honest business.",
+      domainCounter: {
+        ratePerSecond: 12800,
+        unit: "Business Deals Lost",
+        displayFormat: "number"
+      },
       facts: [
         { text: "Business costs rise 10%", source: "OECD", icon: "💼" },
-        { text: "1 in 3 firms lose to bribing competitors", source: "World Bank", icon: "🤝" }
+        { text: "1 in 3 firms lose to bribing competitors", source: "World Bank", icon: "🤝" },
+        { text: "Foreign investment drops 40%", source: "IMF", icon: "🌍" }
       ],
-      case_timeline: [
-        { title: "Tender Rigged", description: "Contracts awarded illegally", icon: "📋" },
-        { title: "Unqualified Winner", description: "Project given to incapable bidder", icon: "⚠️" },
-        { title: "Market Failure", description: "System loses integrity", icon: "💔" }
+      timeline: [
+        { step: "Tender rigged", description: "Contracts awarded illegally", icon: "📋" },
+        { step: "Unqualified winner", description: "Project given to incapable bidder", icon: "⚠️" },
+        { step: "Project fails", description: "Infrastructure collapses, jobs lost", icon: "💔" }
       ],
-      connections: ["economy", "trust"],
+      microCase: {
+        text: "Southeast Asia: Infrastructure collapse due to corrupt tenders, 1M jobs lost.",
+        source: "ADB"
+      },
+      propagation: [
+        { toNode: "economy", effect: "Distorts economic growth and productivity" },
+        { toNode: "trust", effect: "Undermines business confidence" }
+      ],
       color: "#059669"
     },
     {
       id: "environment",
       label: "Environment",
       position: { x: 20, y: 80 },
-      headline: "Corruption undermines environmental protection and fuels human suffering.",
+      headline: "Corruption undermines protection, fuels human suffering.",
+      domainCounter: {
+        ratePerSecond: 950,
+        unit: "Hectares Destroyed",
+        displayFormat: "number"
+      },
       facts: [
         { text: "50% of illegal logging enabled by corruption", source: "UNODC", icon: "🌳" },
-        { text: "Disaster relief funds diverted", source: "World Bank", icon: "🌪️" }
+        { text: "Disaster relief funds diverted", source: "World Bank", icon: "🌪️" },
+        { text: "Climate targets missed by 60%", source: "UNEP", icon: "🌡️" }
       ],
-      case_timeline: [
-        { title: "Permit Bought", description: "Illegal logging authorized", icon: "📄" },
-        { title: "Forest Destroyed", description: "Biodiversity lost", icon: "🌲" },
-        { title: "Climate Impact", description: "Global consequences", icon: "🌍" }
+      timeline: [
+        { step: "Permit bought", description: "Illegal logging authorized", icon: "📄" },
+        { step: "Forest destroyed", description: "Biodiversity lost forever", icon: "🌲" },
+        { step: "Climate impact", description: "Global consequences accelerate", icon: "🌍" }
       ],
-      connections: ["trust", "economy"],
+      microCase: {
+        text: "Indonesia: Corrupt permitting led to massive rainforest destruction.",
+        source: "Global Forest Watch"
+      },
+      propagation: [
+        { toNode: "trust", effect: "Leads to weakened environmental trust" },
+        { toNode: "economy", effect: "Creates future economic instability" }
+      ],
       color: "#16A34A"
     },
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 50, y: 10 },
-      headline: "Corruption fuels distrust, migration, and global security threats.",
+      position: { x: 35, y: 65 },
+      headline: "Corruption fuels distrust, migration, global instability.",
+      domainCounter: {
+        ratePerSecond: 240,
+        unit: "Refugees Created",
+        displayFormat: "number"
+      },
       facts: [
-        { text: "Corruption predicts willingness to migrate", source: "Gallup", icon: "🚶" },
-        { text: "Enables crime, laundering, terrorism", source: "FATF", icon: "🔒" }
+        { text: "Corruption predicts willingness to migrate", source: "UNDP", icon: "🚶" },
+        { text: "Security forces compromised", source: "UNODC", icon: "🛡️" },
+        { text: "Civil conflict risk doubles", source: "World Bank", icon: "⚔️" }
       ],
-      case_timeline: [
-        { title: "Security Sector Bribed", description: "Protection compromised", icon: "🛡️" },
-        { title: "Border Control Fails", description: "Illegal activity increases", icon: "🚪" },
-        { title: "Instability", description: "Organized crime, social breakdown", icon: "⚡" }
+      timeline: [
+        { step: "Security bribed", description: "Border control fails", icon: "🚨" },
+        { step: "Control lost", description: "Institutional collapse begins", icon: "🏗️" },
+        { step: "Instability spreads", description: "Regional consequences cascade", icon: "🌊" }
       ],
-      connections: ["institutions", "economy"],
-      color: "#DC2626"
+      microCase: {
+        text: "Afghanistan: Systemic corruption led to institutional collapse.",
+        source: "SIGAR"
+      },
+      propagation: [
+        { toNode: "institutions", effect: "Disrupts institutional legitimacy" },
+        { toNode: "economy", effect: "Creates economic uncertainty and flight" }
+      ],
+      color: "#8B5CF6"
     }
   ]
 };
 
-const NetworkNode = ({ node, isActive, isVisited, onActivate, scale = 1 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const nodeStyle = {
-    position: "absolute" as const,
-    left: `${node.position.x}%`,
-    top: `${node.position.y}%`,
-    transform: `translate(-50%, -50%) scale(${scale})`,
-    width: "120px",
-    height: "120px",
-    borderRadius: "50%",
-    background: isActive
-      ? `radial-gradient(circle, ${node.color}40, ${node.color}20)`
-      : isVisited
-        ? `radial-gradient(circle, ${node.color}20, ${node.color}10)`
-        : "rgba(255, 255, 255, 0.05)",
-    border: `2px solid ${isActive ? node.color : isVisited ? `${node.color}80` : "rgba(255, 255, 255, 0.1)"}`,
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-    backdropFilter: "blur(10px)",
-    boxShadow: isActive
-      ? `0 0 30px ${node.color}60, 0 8px 32px rgba(0, 0, 0, 0.2)`
-      : isHovered
-        ? `0 0 20px ${node.color}40, 0 4px 16px rgba(0, 0, 0, 0.1)`
-        : "0 4px 16px rgba(0, 0, 0, 0.1)",
-    zIndex: isActive ? 20 : isHovered ? 15 : 10
-  };
-
+// Live counter component for global tracking
+const GlobalLiveTicker = ({ totalLoss, isActive }) => {
   return (
     <motion.div
-      style={nodeStyle}
-      onClick={() => onActivate(node.id)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      animate={{
-        scale: isActive ? 1.2 : isHovered ? 1.1 : 1,
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      style={{
+        position: "fixed",
+        top: "80px",
+        right: "20px",
+        background: "rgba(0, 0, 0, 0.9)",
+        backdropFilter: "blur(20px)",
+        border: "1px solid rgba(157, 230, 198, 0.3)",
+        borderRadius: "16px",
+        padding: "16px 24px",
+        zIndex: 1000,
+        minWidth: "280px"
       }}
-      transition={{ duration: 0.3 }}
     >
       <div style={{
-        width: "100%",
-        height: "100%",
+        fontSize: "12px",
+        color: "#9DE6C6",
+        marginBottom: "4px",
+        textTransform: "uppercase",
+        letterSpacing: "1px",
+        fontWeight: "500"
+      }}>
+        Global Corruption Loss
+      </div>
+      <div style={{
+        fontSize: "24px",
+        fontWeight: "700",
+        color: "#FFFFFF",
+        fontFamily: "monospace",
+        marginBottom: "2px"
+      }}>
+        ${totalLoss.toLocaleString()}
+      </div>
+      <div style={{
+        fontSize: "11px",
+        color: "#9CA3AF",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "16px",
-        textAlign: "center"
+        gap: "4px"
       }}>
         <div style={{
-          fontSize: "18px",
-          fontWeight: "600",
-          color: "#FFFFFF",
-          marginBottom: "4px",
-          fontFamily: "var(--font-display)"
-        }}>
-          {node.label}
-        </div>
-        {isActive && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{
-              position: "absolute",
-              top: "100%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              marginTop: "8px",
-              padding: "4px 8px",
-              background: "rgba(0, 0, 0, 0.8)",
-              borderRadius: "4px",
-              fontSize: "10px",
-              color: "#FFFFFF",
-              whiteSpace: "nowrap"
-            }}
-          >
-            Click to explore
-          </motion.div>
-        )}
+          width: "6px",
+          height: "6px",
+          borderRadius: "50%",
+          background: "#9DE6C6",
+          animation: "pulse 2s infinite"
+        }} />
+        Live since you started exploring
       </div>
-
-      {/* Pulsing animation for active nodes */}
-      {isActive && (
-        <motion.div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            border: `1px solid ${node.color}`,
-            pointerEvents: "none"
-          }}
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.8, 0, 0.8]
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      )}
     </motion.div>
   );
 };
 
-const ConnectionLine = ({ fromNode, toNode, isActive, visited }) => {
+// Enhanced connection line with propagation animations
+const ConnectionLine = ({ fromNode, toNode, isActive, visited, isPropagating }) => {
   const fromX = fromNode.position.x;
   const fromY = fromNode.position.y;
   const toX = toNode.position.x;
@@ -242,34 +262,39 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited }) => {
         left: `${fromX}%`,
         top: `${fromY}%`,
         width: `${length}%`,
-        height: "2px",
-        background: isActive
-          ? `linear-gradient(90deg, ${fromNode.color}80, ${toNode.color}80)`
-          : visited
-            ? `linear-gradient(90deg, ${fromNode.color}40, ${toNode.color}40)`
-            : "rgba(255, 255, 255, 0.1)",
+        height: "3px",
+        background: isPropagating
+          ? `linear-gradient(90deg, ${fromNode.color}, ${toNode.color})`
+          : isActive
+            ? `linear-gradient(90deg, ${fromNode.color}80, ${toNode.color}80)`
+            : visited
+              ? `linear-gradient(90deg, ${fromNode.color}40, ${toNode.color}40)`
+              : "rgba(157, 230, 198, 0.15)",
         transformOrigin: "0 50%",
         transform: `rotate(${angle}deg)`,
-        transition: "all 0.5s ease",
-        zIndex: 5
+        transition: "all 0.6s ease",
+        zIndex: 5,
+        borderRadius: "2px",
+        boxShadow: isPropagating ? `0 0 12px ${fromNode.color}60` : "none"
       }}
     >
-      {isActive && (
+      {isPropagating && (
         <motion.div
           style={{
-            width: "6px",
-            height: "6px",
+            width: "8px",
+            height: "8px",
             borderRadius: "50%",
             background: fromNode.color,
             position: "absolute",
             top: "50%",
-            transform: "translateY(-50%)"
+            transform: "translateY(-50%)",
+            boxShadow: `0 0 12px ${fromNode.color}`
           }}
           animate={{
-            left: ["0%", "100%", "0%"]
+            left: ["0%", "100%"]
           }}
           transition={{
-            duration: 2,
+            duration: 1.5,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -279,17 +304,180 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited }) => {
   );
 };
 
-const NodeDetailModal = ({ node, onClose }) => {
-  const [currentCounter, setCurrentCounter] = useState(0);
+// Enhanced network node with full container functionality
+const NetworkNode = ({ node, isActive, isVisited, onActivate, isPropagationTarget, userPath }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [nodeCounter, setNodeCounter] = useState(0);
 
   useEffect(() => {
-    if (node?.live_counter) {
+    if (node.domainCounter && isActive) {
       const interval = setInterval(() => {
-        setCurrentCounter(prev => prev + node.live_counter.rate_per_second);
+        setNodeCounter(prev => prev + node.domainCounter.ratePerSecond);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [isActive, node.domainCounter]);
+
+  const nodeStyle = {
+    position: "absolute" as const,
+    left: `${node.position.x}%`,
+    top: `${node.position.y}%`,
+    transform: "translate(-50%, -50%)",
+    width: isActive ? "160px" : "120px",
+    height: isActive ? "160px" : "120px",
+    borderRadius: "50%",
+    background: isActive
+      ? `radial-gradient(circle, ${node.color}40, ${node.color}20)`
+      : isVisited
+        ? `radial-gradient(circle, ${node.color}25, ${node.color}10)`
+        : isPropagationTarget
+          ? `radial-gradient(circle, ${node.color}30, ${node.color}15)`
+          : "rgba(255, 255, 255, 0.05)",
+    border: `3px solid ${
+      isActive 
+        ? node.color 
+        : isVisited 
+          ? `${node.color}80` 
+          : isPropagationTarget
+            ? `${node.color}60`
+            : "rgba(255, 255, 255, 0.1)"
+    }`,
+    cursor: "pointer",
+    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+    backdropFilter: "blur(15px)",
+    boxShadow: isActive
+      ? `0 0 40px ${node.color}60, 0 12px 48px rgba(0, 0, 0, 0.3)`
+      : isHovered
+        ? `0 0 24px ${node.color}40, 0 8px 32px rgba(0, 0, 0, 0.2)`
+        : isPropagationTarget
+          ? `0 0 20px ${node.color}30, 0 6px 24px rgba(0, 0, 0, 0.15)`
+          : "0 6px 24px rgba(0, 0, 0, 0.1)",
+    zIndex: isActive ? 30 : isHovered ? 25 : isPropagationTarget ? 20 : 15
+  };
+
+  const pathIndex = userPath.indexOf(node.id);
+  const showPathNumber = pathIndex !== -1;
+
+  return (
+    <motion.div
+      style={nodeStyle}
+      onClick={() => onActivate(node.id)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      animate={{
+        scale: isActive ? 1.1 : isHovered ? 1.05 : isPropagationTarget ? 1.02 : 1,
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <div style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "16px",
+        textAlign: "center",
+        position: "relative"
+      }}>
+        {showPathNumber && (
+          <div style={{
+            position: "absolute",
+            top: "-8px",
+            right: "-8px",
+            width: "24px",
+            height: "24px",
+            borderRadius: "50%",
+            background: node.color,
+            color: "#FFFFFF",
+            fontSize: "12px",
+            fontWeight: "700",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: `0 0 12px ${node.color}60`
+          }}>
+            {pathIndex + 1}
+          </div>
+        )}
+        
+        <div style={{
+          fontSize: isActive ? "16px" : "14px",
+          fontWeight: "600",
+          color: "#FFFFFF",
+          marginBottom: isActive ? "8px" : "4px",
+          fontFamily: "var(--font-display)",
+          lineHeight: "1.2"
+        }}>
+          {node.label}
+        </div>
+
+        {isActive && node.domainCounter && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{
+              fontSize: "12px",
+              color: node.color,
+              fontFamily: "monospace",
+              fontWeight: "700",
+              textAlign: "center"
+            }}
+          >
+            {node.domainCounter.displayFormat === "currency" 
+              ? `$${nodeCounter.toLocaleString()}`
+              : `${nodeCounter.toLocaleString()} ${node.domainCounter.unit}`
+            }
+          </motion.div>
+        )}
+
+        {isPropagationTarget && !isActive && (
+          <motion.div
+            animate={{
+              opacity: [0.5, 1, 0.5]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            style={{
+              fontSize: "12px",
+              color: node.color,
+              fontWeight: "500",
+              marginTop: "4px"
+            }}
+          >
+            Explore
+          </motion.div>
+        )}
+      </div>
+    </motion.div>
+  );
+};
+
+// Node detail modal with timeline and micro-case
+const NodeDetailModal = ({ node, onClose, userPath }) => {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [nodeCounter, setNodeCounter] = useState(0);
+
+  useEffect(() => {
+    if (node?.domainCounter) {
+      const interval = setInterval(() => {
+        setNodeCounter(prev => prev + node.domainCounter.ratePerSecond);
       }, 1000);
       return () => clearInterval(interval);
     }
   }, [node]);
+
+  useEffect(() => {
+    if (node?.timeline) {
+      const timer = setTimeout(() => {
+        setCurrentStep(prev => (prev + 1) % node.timeline.length);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentStep, node]);
 
   if (!node) return null;
 
@@ -305,8 +493,8 @@ const NodeDetailModal = ({ node, onClose }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: "rgba(0, 0, 0, 0.9)",
-          backdropFilter: "blur(10px)",
+          background: "rgba(0, 0, 0, 0.8)",
+          backdropFilter: "blur(8px)",
           zIndex: 1000,
           display: "flex",
           alignItems: "center",
@@ -316,34 +504,36 @@ const NodeDetailModal = ({ node, onClose }) => {
         onClick={onClose}
       >
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.8, opacity: 0 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.9, y: 20 }}
+          onClick={e => e.stopPropagation()}
           style={{
-            background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(20px) saturate(180%)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: "20px",
-            padding: "40px",
+            background: "rgba(0, 0, 0, 0.95)",
+            backdropFilter: "blur(20px)",
+            border: `2px solid ${node.color}40`,
+            borderRadius: "24px",
+            padding: "32px",
             maxWidth: "600px",
             width: "100%",
             maxHeight: "80vh",
-            overflow: "auto"
+            overflowY: "auto",
+            position: "relative"
           }}
-          onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button */}
+          {/* Close button */}
           <button
             onClick={onClose}
             style={{
               position: "absolute",
-              top: "20px",
-              right: "20px",
+              top: "16px",
+              right: "16px",
               background: "transparent",
               border: "none",
-              color: "#FFFFFF",
-              fontSize: "24px",
-              cursor: "pointer"
+              color: "#9CA3AF",
+              cursor: "pointer",
+              fontSize: "20px",
+              padding: "8px"
             }}
           >
             ✕
@@ -372,102 +562,67 @@ const NodeDetailModal = ({ node, onClose }) => {
           </div>
 
           {/* Live Counter */}
-          {node.live_counter && (
+          {node.domainCounter && (
             <div style={{
               background: `${node.color}20`,
               border: `1px solid ${node.color}40`,
-              borderRadius: "12px",
-              padding: "20px",
-              marginBottom: "24px",
+              borderRadius: "16px",
+              padding: "24px",
+              marginBottom: "32px",
               textAlign: "center"
             }}>
               <div style={{
-                fontSize: "32px",
+                fontSize: "36px",
                 fontWeight: "700",
                 color: node.color,
-                fontFamily: "monospace"
+                fontFamily: "monospace",
+                marginBottom: "8px"
               }}>
-                ${currentCounter.toLocaleString()}
+                {node.domainCounter.displayFormat === "currency" 
+                  ? `$${nodeCounter.toLocaleString()}`
+                  : `${nodeCounter.toLocaleString()}`
+                }
               </div>
               <div style={{
                 fontSize: "14px",
                 color: "#E5E5E5",
-                marginTop: "4px"
+                fontWeight: "500"
               }}>
-                Lost since you started exploring
+                {node.domainCounter.unit} lost since you started exploring
               </div>
             </div>
           )}
 
-          {/* Facts */}
-          <div style={{ marginBottom: "24px" }}>
-            {node.facts.map((fact, idx) => (
-              <div key={idx} style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "12px",
-                marginBottom: "16px"
-              }}>
-                <div style={{
-                  fontSize: "20px",
-                  marginTop: "2px"
-                }}>
-                  {fact.icon}
-                </div>
-                <div>
-                  <span style={{
-                    fontSize: "16px",
-                    color: "#E5E5E5",
-                    fontWeight: "500"
-                  }}>
-                    {fact.text}
-                  </span>
-                  <span style={{
-                    fontSize: "14px",
-                    color: "#9CA3AF",
-                    marginLeft: "8px",
-                    fontStyle: "italic"
-                  }}>
-                    [{fact.source}]
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Case Timeline */}
+          {/* Timeline Animation */}
           <div style={{
+            marginBottom: "32px",
             background: "rgba(255, 255, 255, 0.02)",
-            borderRadius: "12px",
-            padding: "20px"
+            borderRadius: "16px",
+            padding: "24px"
           }}>
             <h3 style={{
               fontSize: "18px",
               color: "#9DE6C6",
-              margin: "0 0 16px 0",
+              margin: "0 0 20px 0",
               fontWeight: "600"
             }}>
-              How Damage Spreads
+              Process Timeline
             </h3>
             <div style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              position: "relative"
+              gap: "16px"
             }}>
-              {node.case_timeline.map((step, idx) => (
+              {node.timeline.map((step, index) => (
                 <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.2 }}
+                  key={index}
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    textAlign: "center",
                     flex: 1,
-                    position: "relative"
+                    textAlign: "center",
+                    opacity: index <= currentStep ? 1 : 0.3,
+                    transform: index <= currentStep ? "scale(1)" : "scale(0.9)",
+                    transition: "all 0.3s ease"
                   }}
                 >
                   <div style={{
@@ -479,10 +634,10 @@ const NodeDetailModal = ({ node, onClose }) => {
                   <div style={{
                     fontSize: "14px",
                     fontWeight: "600",
-                    color: "#FFFFFF",
+                    color: index <= currentStep ? node.color : "#9CA3AF",
                     marginBottom: "4px"
                   }}>
-                    {step.title}
+                    {step.step}
                   </div>
                   <div style={{
                     fontSize: "12px",
@@ -491,15 +646,13 @@ const NodeDetailModal = ({ node, onClose }) => {
                   }}>
                     {step.description}
                   </div>
-
-                  {/* Arrow to next step */}
-                  {idx < node.case_timeline.length - 1 && (
+                  {index < node.timeline.length - 1 && (
                     <div style={{
                       position: "absolute",
-                      right: "-20px",
+                      right: "-12px",
                       top: "20px",
                       fontSize: "16px",
-                      color: node.color
+                      color: index < currentStep ? node.color : "#9CA3AF"
                     }}>
                       →
                     </div>
@@ -508,61 +661,394 @@ const NodeDetailModal = ({ node, onClose }) => {
               ))}
             </div>
           </div>
+
+          {/* Facts */}
+          <div style={{ marginBottom: "32px" }}>
+            <h3 style={{
+              fontSize: "18px",
+              color: "#9DE6C6",
+              margin: "0 0 16px 0",
+              fontWeight: "600"
+            }}>
+              Key Facts
+            </h3>
+            {node.facts.map((fact, idx) => (
+              <div key={idx} style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "12px",
+                marginBottom: "16px",
+                padding: "12px",
+                background: "rgba(255, 255, 255, 0.02)",
+                borderRadius: "8px"
+              }}>
+                <div style={{
+                  fontSize: "20px",
+                  marginTop: "2px"
+                }}>
+                  {fact.icon}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <span style={{
+                    fontSize: "16px",
+                    color: "#E5E5E5",
+                    fontWeight: "500",
+                    lineHeight: "1.4"
+                  }}>
+                    {fact.text}
+                  </span>
+                  <div style={{
+                    fontSize: "12px",
+                    color: "#9CA3AF",
+                    marginTop: "4px",
+                    fontStyle: "italic"
+                  }}>
+                    Source: {fact.source}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Micro-case */}
+          <div style={{
+            background: `${node.color}10`,
+            border: `1px solid ${node.color}30`,
+            borderRadius: "12px",
+            padding: "20px",
+            marginBottom: "24px"
+          }}>
+            <h3 style={{
+              fontSize: "16px",
+              color: node.color,
+              margin: "0 0 12px 0",
+              fontWeight: "600"
+            }}>
+              Real-World Case
+            </h3>
+            <p style={{
+              fontSize: "16px",
+              color: "#E5E5E5",
+              lineHeight: "1.5",
+              margin: "0 0 8px 0"
+            }}>
+              {node.microCase.text}
+            </p>
+            <div style={{
+              fontSize: "12px",
+              color: "#9CA3AF",
+              fontStyle: "italic"
+            }}>
+              Source: {node.microCase.source}
+            </div>
+          </div>
+
+          {/* Propagation Effects */}
+          <div>
+            <h3 style={{
+              fontSize: "16px",
+              color: "#9DE6C6",
+              margin: "0 0 16px 0",
+              fontWeight: "600"
+            }}>
+              This Leads To
+            </h3>
+            {node.propagation.map((prop, idx) => (
+              <div key={idx} style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                marginBottom: "12px",
+                padding: "12px",
+                background: "rgba(157, 230, 198, 0.05)",
+                borderRadius: "8px",
+                border: "1px solid rgba(157, 230, 198, 0.1)"
+              }}>
+                <div style={{
+                  fontSize: "16px",
+                  color: "#9DE6C6"
+                }}>
+                  →
+                </div>
+                <div>
+                  <span style={{
+                    fontSize: "14px",
+                    color: "#9DE6C6",
+                    fontWeight: "600",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px"
+                  }}>
+                    {impactNetworkData.nodes.find(n => n.id === prop.toNode)?.label}:
+                  </span>
+                  <span style={{
+                    fontSize: "14px",
+                    color: "#E5E5E5",
+                    marginLeft: "8px"
+                  }}>
+                    {prop.effect}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>
   );
 };
 
-const CumulativeTally = ({ visitedNodes, totalLoss }) => {
+// Path visualization component
+const UserPathVisualization = ({ userPath, nodes }) => {
+  if (userPath.length < 2) return null;
+
+  return (
+    <>
+      {userPath.slice(0, -1).map((nodeId, index) => {
+        const fromNode = nodes.find(n => n.id === nodeId);
+        const toNode = nodes.find(n => n.id === userPath[index + 1]);
+        if (!fromNode || !toNode) return null;
+
+        const fromX = fromNode.position.x;
+        const fromY = fromNode.position.y;
+        const toX = toNode.position.x;
+        const toY = toNode.position.y;
+
+        const length = Math.sqrt(Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2));
+        const angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
+
+        return (
+          <motion.div
+            key={`path-${index}`}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            style={{
+              position: "absolute",
+              left: `${fromX}%`,
+              top: `${fromY}%`,
+              width: `${length}%`,
+              height: "4px",
+              background: `linear-gradient(90deg, ${fromNode.color}, ${toNode.color})`,
+              transformOrigin: "0 50%",
+              transform: `rotate(${angle}deg)`,
+              zIndex: 25,
+              borderRadius: "2px",
+              boxShadow: `0 0 16px ${fromNode.color}60`
+            }}
+          />
+        );
+      })}
+    </>
+  );
+};
+
+// System shockwave component
+const SystemShockwave = ({ nodes, onComplete }) => {
+  useEffect(() => {
+    const timer = setTimeout(onComplete, 4000);
+    return () => clearTimeout(timer);
+  }, [onComplete]);
+
+  return (
+    <>
+      {nodes.map((node, index) => (
+        <motion.div
+          key={`shockwave-${node.id}`}
+          style={{
+            position: "absolute",
+            left: `${node.position.x}%`,
+            top: `${node.position.y}%`,
+            transform: "translate(-50%, -50%)",
+            width: "120px",
+            height: "120px",
+            borderRadius: "50%",
+            border: `3px solid ${node.color}`,
+            pointerEvents: "none",
+            zIndex: 40
+          }}
+          animate={{
+            scale: [1, 3, 1],
+            opacity: [0.8, 0.2, 0.8]
+          }}
+          transition={{
+            duration: 1,
+            delay: index * 0.1,
+            repeat: 3,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
+    </>
+  );
+};
+
+// Final summary overlay
+const FinalSummaryOverlay = ({ totalLoss, userPath, onClose }) => {
+  const pathNames = userPath.map(nodeId => 
+    impactNetworkData.nodes.find(n => n.id === nodeId)?.label
+  ).join(" → ");
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: visitedNodes > 0 ? 1 : 0, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       style={{
         position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        background: "rgba(0, 0, 0, 0.8)",
-        backdropFilter: "blur(10px)",
-        border: "1px solid rgba(157, 230, 198, 0.3)",
-        borderRadius: "12px",
-        padding: "16px 20px",
-        zIndex: 100
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: "rgba(0, 0, 0, 0.95)",
+        backdropFilter: "blur(12px)",
+        zIndex: 2000,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px"
       }}
+      onClick={onClose}
     >
-      <div style={{
-        fontSize: "14px",
-        color: "#9DE6C6",
-        marginBottom: "4px"
-      }}>
-        While you explored
-      </div>
-      <div style={{
-        fontSize: "20px",
-        fontWeight: "700",
-        color: "#FFFFFF",
-        fontFamily: "monospace"
-      }}>
-        ${totalLoss.toLocaleString()}
-      </div>
-      <div style={{
-        fontSize: "12px",
-        color: "#9CA3AF"
-      }}>
-        lost to corruption
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 40 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        onClick={e => e.stopPropagation()}
+        style={{
+          background: "rgba(0, 0, 0, 0.9)",
+          border: "2px solid rgba(157, 230, 198, 0.3)",
+          borderRadius: "24px",
+          padding: "48px",
+          maxWidth: "800px",
+          width: "100%",
+          textAlign: "center"
+        }}
+      >
+        <h2 style={{
+          fontSize: "36px",
+          fontWeight: "700",
+          color: "#9DE6C6",
+          margin: "0 0 24px 0",
+          fontFamily: "var(--font-display)"
+        }}>
+          System Analysis Complete
+        </h2>
+        
+        <div style={{
+          fontSize: "48px",
+          fontWeight: "700",
+          color: "#DC2626",
+          fontFamily: "monospace",
+          marginBottom: "16px"
+        }}>
+          ${totalLoss.toLocaleString()}
+        </div>
+        
+        <p style={{
+          fontSize: "18px",
+          color: "#E5E5E5",
+          marginBottom: "32px",
+          lineHeight: "1.6"
+        }}>
+          Lost to corruption while you explored the network.
+        </p>
+
+        <div style={{
+          background: "rgba(157, 230, 198, 0.1)",
+          border: "1px solid rgba(157, 230, 198, 0.2)",
+          borderRadius: "16px",
+          padding: "24px",
+          marginBottom: "32px"
+        }}>
+          <h3 style={{
+            fontSize: "20px",
+            color: "#9DE6C6",
+            margin: "0 0 16px 0",
+            fontWeight: "600"
+          }}>
+            Your Path Through the System
+          </h3>
+          <p style={{
+            fontSize: "16px",
+            color: "#E5E5E5",
+            margin: "0 0 16px 0"
+          }}>
+            {pathNames}
+          </p>
+          <p style={{
+            fontSize: "14px",
+            color: "#9CA3AF",
+            margin: "0",
+            fontStyle: "italic"
+          }}>
+            This sequence reflects real patterns of structural damage worldwide.
+          </p>
+        </div>
+
+        <div style={{
+          background: "rgba(220, 38, 38, 0.1)",
+          border: "1px solid rgba(220, 38, 38, 0.2)",
+          borderRadius: "16px",
+          padding: "24px",
+          marginBottom: "32px"
+        }}>
+          <h3 style={{
+            fontSize: "24px",
+            color: "#DC2626",
+            margin: "0 0 16px 0",
+            fontWeight: "600"
+          }}>
+            This is not a list. It is a map of extraction.
+          </h3>
+          <p style={{
+            fontSize: "18px",
+            color: "#E5E5E5",
+            lineHeight: "1.6",
+            margin: "0"
+          }}>
+            Corruption's damage is never isolated—it is cumulative, structural, and always systemic. 
+            Every node you explored is both a source and an effect in the recursive system of harm.
+          </p>
+        </div>
+
+        <button
+          onClick={onClose}
+          style={{
+            background: "linear-gradient(135deg, #9DE6C6, #059669)",
+            border: "none",
+            borderRadius: "12px",
+            padding: "16px 32px",
+            fontSize: "16px",
+            fontWeight: "600",
+            color: "#000",
+            cursor: "pointer",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+            transition: "all 0.3s ease"
+          }}
+        >
+          Simulate the Clauses that Produce These Outcomes
+        </button>
+      </motion.div>
     </motion.div>
   );
 };
 
+// Main component
 const StructuralImpactMap = () => {
   const [activeNode, setActiveNode] = useState(null);
   const [visitedNodes, setVisitedNodes] = useState(new Set());
   const [selectedNode, setSelectedNode] = useState(null);
   const [globalLoss, setGlobalLoss] = useState(0);
   const [isIntroVisible, setIsIntroVisible] = useState(true);
+  const [userPath, setUserPath] = useState([]);
+  const [propagatingConnections, setPropagatingConnections] = useState(new Set());
+  const [propagationTargets, setPropagationTargets] = useState(new Set());
+  const [showSystemShockwave, setShowSystemShockwave] = useState(false);
+  const [showFinalSummary, setShowFinalSummary] = useState(false);
 
+  const nodes = impactNetworkData.nodes;
+
+  // Global loss counter
   useEffect(() => {
     const interval = setInterval(() => {
       setGlobalLoss(prev => prev + 31666); // $1.9M per minute = ~$31,666 per second
@@ -570,20 +1056,61 @@ const StructuralImpactMap = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle node activation
   const handleNodeActivate = (nodeId) => {
-    const node = impactNetworkData.nodes.find(n => n.id === nodeId);
+    const node = nodes.find(n => n.id === nodeId);
+    if (!node) return;
+
     setActiveNode(nodeId);
     setSelectedNode(node);
     setVisitedNodes(prev => new Set([...prev, nodeId]));
+    setUserPath(prev => [...prev, nodeId]);
+
+    // Clear previous propagation state
+    setPropagatingConnections(new Set());
+    setPropagationTargets(new Set());
+
+    // Set up propagation effects
+    const newPropagatingConnections = new Set();
+    const newPropagationTargets = new Set();
+
+    node.propagation.forEach(prop => {
+      newPropagatingConnections.add(`${nodeId}-${prop.toNode}`);
+      newPropagationTargets.add(prop.toNode);
+    });
+
+    // Animate propagation with delay
+    setTimeout(() => {
+      setPropagatingConnections(newPropagatingConnections);
+      setPropagationTargets(newPropagationTargets);
+    }, 500);
   };
 
-  const nodes = impactNetworkData.nodes;
+  // Check if all nodes have been visited
+  useEffect(() => {
+    if (visitedNodes.size === nodes.length && !showSystemShockwave) {
+      setShowSystemShockwave(true);
+    }
+  }, [visitedNodes, nodes.length, showSystemShockwave]);
+
+  const handleShockwaveComplete = () => {
+    setShowSystemShockwave(false);
+    setShowFinalSummary(true);
+  };
+
+  // Generate all possible connections (full mesh)
+  const allConnections = [];
+  nodes.forEach((fromNode, i) => {
+    nodes.slice(i + 1).forEach(toNode => {
+      allConnections.push({ fromNode, toNode });
+    });
+  });
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1 }}
       style={{
         minHeight: "100vh",
         padding: "40px 20px",
@@ -592,7 +1119,15 @@ const StructuralImpactMap = () => {
         overflow: "hidden"
       }}
     >
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
 
+      {/* Global Live Ticker */}
+      <GlobalLiveTicker totalLoss={globalLoss} isActive={true} />
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "60px", position: "relative", zIndex: 10 }}>
@@ -663,30 +1198,36 @@ const StructuralImpactMap = () => {
       <div style={{
         position: "relative",
         width: "100%",
-        height: "500px",
-        maxWidth: "800px",
+        height: "600px",
+        maxWidth: "1000px",
         margin: "0 auto",
         background: "rgba(255, 255, 255, 0.02)",
-        borderRadius: "20px",
-        border: "1px solid rgba(255, 255, 255, 0.1)"
+        borderRadius: "24px",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(10px)"
       }}>
         {/* Connection Lines */}
-        {nodes.map((fromNode, i) =>
-          nodes.slice(i + 1).map(toNode => {
-            const isActive = activeNode === fromNode.id || activeNode === toNode.id;
-            const visited = visitedNodes.has(fromNode.id) && visitedNodes.has(toNode.id);
+        {allConnections.map(({ fromNode, toNode }) => {
+          const connectionKey = `${fromNode.id}-${toNode.id}`;
+          const reverseKey = `${toNode.id}-${fromNode.id}`;
+          const isPropagating = propagatingConnections.has(connectionKey) || propagatingConnections.has(reverseKey);
+          const isActive = activeNode === fromNode.id || activeNode === toNode.id;
+          const visited = visitedNodes.has(fromNode.id) && visitedNodes.has(toNode.id);
 
-            return (
-              <ConnectionLine
-                key={`${fromNode.id}-${toNode.id}`}
-                fromNode={fromNode}
-                toNode={toNode}
-                isActive={isActive}
-                visited={visited}
-              />
-            );
-          })
-        )}
+          return (
+            <ConnectionLine
+              key={connectionKey}
+              fromNode={fromNode}
+              toNode={toNode}
+              isActive={isActive}
+              visited={visited}
+              isPropagating={isPropagating}
+            />
+          );
+        })}
+
+        {/* User Path Visualization */}
+        <UserPathVisualization userPath={userPath} nodes={nodes} />
 
         {/* Nodes */}
         {nodes.map((node, index) => (
@@ -701,16 +1242,20 @@ const StructuralImpactMap = () => {
               isActive={activeNode === node.id}
               isVisited={visitedNodes.has(node.id)}
               onActivate={handleNodeActivate}
+              isPropagationTarget={propagationTargets.has(node.id)}
+              userPath={userPath}
             />
           </motion.div>
         ))}
-      </div>
 
-      {/* Cumulative Tally */}
-      <CumulativeTally
-        visitedNodes={visitedNodes.size}
-        totalLoss={globalLoss}
-      />
+        {/* System Shockwave */}
+        {showSystemShockwave && (
+          <SystemShockwave 
+            nodes={nodes} 
+            onComplete={handleShockwaveComplete}
+          />
+        )}
+      </div>
 
       {/* Node Detail Modal */}
       <NodeDetailModal
@@ -718,46 +1263,20 @@ const StructuralImpactMap = () => {
         onClose={() => {
           setSelectedNode(null);
           setActiveNode(null);
+          setPropagatingConnections(new Set());
+          setPropagationTargets(new Set());
         }}
+        userPath={userPath}
       />
 
-      {/* Closing Statement */}
-      {visitedNodes.size >= 6 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          style={{
-            textAlign: "center",
-            marginTop: "80px",
-            padding: "40px",
-            background: "rgba(157, 230, 198, 0.05)",
-            borderRadius: "20px",
-            border: "1px solid rgba(157, 230, 198, 0.2)",
-            maxWidth: "800px",
-            margin: "80px auto 0"
-          }}
-        >
-          <h3 style={{
-            fontSize: "24px",
-            color: "#9DE6C6",
-            margin: "0 0 16px 0",
-            fontWeight: "600"
-          }}>
-            This is not a list. It is a map of extraction.
-          </h3>
-          <p style={{
-            fontSize: "18px",
-            color: "#E5E5E5",
-            lineHeight: "1.6",
-            margin: "0"
-          }}>
-            Corruption's damage is never isolated—it is cumulative, structural, and always systemic.
-            While you explored, the world lost ${globalLoss.toLocaleString()} to corruption.
-          </p>
-        </motion.div>
+      {/* Final Summary Overlay */}
+      {showFinalSummary && (
+        <FinalSummaryOverlay
+          totalLoss={globalLoss}
+          userPath={userPath}
+          onClose={() => setShowFinalSummary(false)}
+        />
       )}
-
-
     </motion.div>
   );
 };
