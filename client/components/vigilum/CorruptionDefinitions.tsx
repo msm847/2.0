@@ -884,7 +884,7 @@ const BoundaryLogicCarousel = () => {
                     padding: '8px 12px',
                     border: `2px solid ${selectedTerm === term ? theme.secondary : 'rgba(157, 230, 198, 0.3)'}`,
                     background: selectedTerm === term ? `${theme.secondary}22` : 'transparent',
-                    color: selectedTerm === term ? theme.primary : '#FFFFFF',
+                    color: '#FFFFFF',
                     borderRadius: '8px',
                     fontSize: '12px',
                     fontWeight: '500',
