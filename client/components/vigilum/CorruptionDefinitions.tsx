@@ -1673,6 +1673,7 @@ const InstitutionCard = ({ institution }) => {
 
 const CorruptionDefinitions = ({ onNavigate }) => {
   const [showCompareAll, setShowCompareAll] = useState(false);
+  const [modalActiveGroup, setModalActiveGroup] = useState('regulatory'); // For modal group selection
   const [activeCarousel, setActiveCarousel] = useState(0);
   const [carouselCycles, setCarouselCycles] = useState([0, 0, 0, 0]); // Track cycles for each carousel
   const [allCarouselsReset, setAllCarouselsReset] = useState(false);
