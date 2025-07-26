@@ -404,7 +404,7 @@ const PerceptionPerspective = () => {
                 }}>
                   <LightRays
                     raysOrigin="top-center"
-                    raysColor="#00ffff"
+                    raysColor="#E8F5E8"
                     raysSpeed={1.5}
                     lightSpread={0.8}
                     rayLength={1.2}
