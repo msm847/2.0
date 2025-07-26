@@ -907,7 +907,8 @@ const BoundaryLogicCarousel = () => {
               fontWeight: '700',
               color: '#FFFFFF',
               lineHeight: '1.3',
-              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
+              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+              textAlign: 'left'
             }}>
               {termDefinitions[selectedTerm]?.title || 'Boundary Analysis'}
             </h3>
