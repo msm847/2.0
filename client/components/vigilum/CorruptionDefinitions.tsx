@@ -312,7 +312,7 @@ const boundaryLogicData = {
         url: 'https://www.eib.org/en/about/accountability/anti-fraud/index.htm'
       },
       tags: {
-        bribery: { state: '���', tooltip: 'Explicitly covered in EIB anti-fraud policy and operational procedures.', typology: ['CI'] },
+        bribery: { state: '✓', tooltip: 'Explicitly covered in EIB anti-fraud policy and operational procedures.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting undue influence in operations.', typology: ['SB'] },
         privateSector: { state: '?', tooltip: 'Private sector corruption only recognized when affecting EIB-financed projects.', typology: ['RT'] },
         influencePeddling: { state: '✓', tooltip: 'Undue influence prohibited in procurement and project evaluation.', typology: ['CI'] },
@@ -823,7 +823,8 @@ const BoundaryLogicCarousel = () => {
           height: '470px',
           overflowY: 'auto',
           transform: 'translateX(-100px) translateY(16px)',
-          width: 'calc(100% + 40px)'
+          width: 'calc(100% + 40px)',
+          gridRow: '1'
         }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
