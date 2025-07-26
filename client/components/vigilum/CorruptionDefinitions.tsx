@@ -1870,22 +1870,71 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 </button>
               </div>
 
+              {/* Group Selection Tabs */}
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginBottom: '32px',
+                gap: '16px'
+              }}>
+                <button
+                  onClick={() => setModalActiveGroup('regulatory')}
+                  style={{
+                    padding: '12px 24px',
+                    background: modalActiveGroup === 'regulatory' ? 'rgba(16, 185, 129, 0.2)' : 'transparent',
+                    color: modalActiveGroup === 'regulatory' ? '#10B981' : '#9DE6C6',
+                    border: `2px solid ${modalActiveGroup === 'regulatory' ? '#10B981' : 'rgba(157, 230, 198, 0.3)'}`,
+                    borderRadius: '12px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}
+                >
+                  Regulatory / Judicial
+                </button>
+                <button
+                  onClick={() => setModalActiveGroup('international')}
+                  style={{
+                    padding: '12px 24px',
+                    background: modalActiveGroup === 'international' ? 'rgba(59, 130, 246, 0.2)' : 'transparent',
+                    color: modalActiveGroup === 'international' ? '#3B82F6' : '#9DE6C6',
+                    border: `2px solid ${modalActiveGroup === 'international' ? '#3B82F6' : 'rgba(157, 230, 198, 0.3)'}`,
+                    borderRadius: '12px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}
+                >
+                  IFI / Multilateral
+                </button>
+              </div>
+
+              {/* 2x4 Grid Layout */}
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                  gridTemplateColumns: "repeat(4, 1fr)",
+                  gridTemplateRows: "repeat(2, 1fr)",
                   gap: "20px",
+                  maxWidth: "1200px",
+                  margin: "0 auto"
                 }}
               >
-                {Object.entries(boundaryLogicData).flatMap(([groupKey, institutions]) =>
-                  institutions.map((institution, index) => (
-                    <InstitutionCard
-                      key={`${groupKey}-${index}`}
-                      institution={institution}
-                      isActive={false}
-                    />
-                  )),
-                )}
+                {boundaryLogicData[modalActiveGroup].map((institution, index) => (
+                  <InstitutionCard
+                    key={`${modalActiveGroup}-${index}`}
+                    institution={institution}
+                    isActive={false}
+                  />
+                ))}
               </div>
             </motion.div>
           </motion.div>
