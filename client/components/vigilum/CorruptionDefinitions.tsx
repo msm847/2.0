@@ -179,7 +179,7 @@ const boundaryLogicData = {
       id: 'worldbank',
       name: 'World Bank',
       logoUrl: '/logos/worldbank.svg',
-      logo: '🏦',
+      logo: '����',
       definition: 'The abuse of public office for private gain, including both grand and petty corruption, and capture of the state by elites and private interests.',
       citation: {
         text: 'World Bank, Helping Countries Combat Corruption, 1997, Chapter 1',
@@ -232,7 +232,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Not within EBRD enforcement scope unless constituting prohibited practice.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector conduct covered in project finance and investment operations.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence prohibited in procurement and project implementation.', typology: ['CI'] },
-        conflictOfInterest: { state: '���', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
+        conflictOfInterest: { state: '✓', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practices covered in enforcement and sanctions framework.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation prohibited in project funds and operational resources.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Addressed through conflict of interest policies rather than direct prohibition.', typology: ['DG'] }
