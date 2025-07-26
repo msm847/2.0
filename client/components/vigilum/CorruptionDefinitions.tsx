@@ -556,7 +556,7 @@ const BoundaryLogicCarousel = () => {
         </div>
 
         {/* Definition Section */}
-        <div style={{ marginTop: '12px' }}>
+        <div style={{ marginTop: '12px', flex: 1, display: 'flex', flexDirection: 'column' }}>
           <blockquote style={{
             fontSize: '17px',
             fontStyle: 'italic',
