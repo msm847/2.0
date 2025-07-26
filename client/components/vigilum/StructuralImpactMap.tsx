@@ -1125,7 +1125,7 @@ const StructuralImpactMap = () => {
       `}</style>
 
       {/* Global Live Ticker */}
-      <GlobalLiveTicker totalLoss={globalLoss} isActive={true} />
+      <StaticGlobalTicker totalLoss={globalLoss} />
 
       {/* Header */}
       <div style={{ textAlign: "left", marginBottom: "60px", position: "relative", zIndex: 10 }}>
