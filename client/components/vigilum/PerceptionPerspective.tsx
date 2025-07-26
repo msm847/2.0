@@ -316,7 +316,7 @@ const PerceptionPerspective = () => {
             transition={{ duration: 0.6 }}
           >
             {!activeSection && (
-              <div className="text-center mt-16 mb-8">
+              <div className="text-center flex items-center justify-center min-h-[60vh]">
                 {/* Instruction text */}
                 <div className="max-w-2xl mx-auto">
                   <div
