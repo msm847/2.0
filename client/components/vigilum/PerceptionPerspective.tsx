@@ -186,6 +186,7 @@ const ClickableTrueFocus = ({
 };
 
 const PerceptionPerspective = () => {
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState(null); // Start with no section selected
   const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
 
@@ -193,6 +194,13 @@ const PerceptionPerspective = () => {
   useEffect(() => {
     setActiveSection(null);
   }, []);
+
+  // Reset to instruction section when navigating via hash to this section
+  useEffect(() => {
+    if (location.hash === "#perception-perspective") {
+      setActiveSection(null);
+    }
+  }, [location.hash]);
 
   // Theme configurations
   const themes = {
