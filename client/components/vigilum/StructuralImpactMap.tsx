@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 27, y: 30 }, // Top left of circle
+      position: { x: 15, y: 25 }, // Top left of circle - expanded
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
