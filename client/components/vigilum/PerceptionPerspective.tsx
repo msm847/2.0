@@ -174,30 +174,7 @@ const ClickableTrueFocus = ({
         );
       })}
 
-      {activeSection && (
-        <motion.div
-          className="focus-frame"
-          animate={{
-            x: focusRect.x,
-            y: focusRect.y,
-            width: focusRect.width,
-            height: focusRect.height,
-            opacity: 0.4,
-          }}
-          transition={{
-            duration: animationDuration,
-          }}
-          style={{
-            "--border-color": borderColor,
-            "--glow-color": glowColor,
-          }}
-        >
-          <span className="corner top-left"></span>
-          <span className="corner top-right"></span>
-          <span className="corner bottom-left"></span>
-          <span className="corner bottom-right"></span>
-        </motion.div>
-      )}
+
     </div>
   );
 };
