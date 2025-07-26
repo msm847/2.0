@@ -703,7 +703,7 @@ const BoundaryLogicCarousel = () => {
       <div style={{
         display: 'flex',
         justifyContent: 'center',
-        marginBottom: '32px',
+        marginBottom: '16px',
         padding: '8px'
       }}>
         <button
