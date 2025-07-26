@@ -1523,7 +1523,8 @@ const StructuralImpactMap = ({ onNavigate }) => {
           onClose={() => setShowFinalSummary(false)}
         />
       )}
-    </div>
+      </div>
+    </>
   );
 };
 
