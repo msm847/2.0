@@ -326,7 +326,7 @@ const boundaryLogicData = {
       id: 'aiib',
       name: 'AIIB',
       logoUrl: '/logos/aiib.svg',
-      logo: '��️',
+      logo: '🏗️',
       definition: 'Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.',
       citation: {
         text: 'AIIB, Policy on Prohibited Practices for Borrowers, 2019',
@@ -819,7 +819,7 @@ const BoundaryLogicCarousel = () => {
           borderTop: `3px solid ${theme.secondary}`,
           height: '470px',
           overflowY: 'auto',
-          marginLeft: '-24px',
+          marginLeft: '-40px',
           marginTop: '16px'
         }}>
           {/* Term Navigation Row */}
@@ -1340,7 +1340,7 @@ const institutionalData = {
         },
         {
           name: "Global Witness",
-          logo: "👁���",
+          logo: "👁️",
           definition:
             "Corruption encompasses bribery, embezzlement, abuse of power, and any misuse of position for personal, political, or commercial advantage.",
           source: "Global Witness, investigative reports",
