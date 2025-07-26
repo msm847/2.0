@@ -252,7 +252,7 @@ const boundaryLogicData = {
         bribery: { state: '✓', tooltip: 'Core violation in ADB integrity framework and sanctions procedures.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Outside ADB operational mandate and enforcement scope.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity due diligence.', typology: ['CI'] },
-        influencePeddling: { state: '��', tooltip: 'Improper influence explicitly prohibited in operational procedures.', typology: ['CI'] },
+        influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational procedures.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Covered in integrity and procurement policies across operations.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practice prohibited in operations and project implementation.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation covered in enforcement and sanctions framework.', typology: ['RT'] },
