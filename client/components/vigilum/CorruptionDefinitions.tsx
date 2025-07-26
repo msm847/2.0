@@ -336,7 +336,7 @@ const boundaryLogicData = {
         bribery: { state: '✓', tooltip: 'Core prohibited practice in AIIB-financed projects and operations.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity screening procedures.', typology: ['CI'] },
-        influencePeddling: { state: '��', tooltip: 'Improper influence explicitly prohibited in operational guidelines.', typology: ['CI'] },
+        influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational guidelines.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Addressed in procurement and operational integrity procedures.', typology: ['RT'] },
         fraud: { state: '���', tooltip: 'Fraudulent practices prohibited in project implementation and financing.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation covered in prohibited practices and sanctions framework.', typology: ['RT'] },
@@ -568,7 +568,7 @@ const BoundaryLogicCarousel = () => {
               style={{
                 background: 'none',
                 border: 'none',
-                color: theme.secondary,
+                color: '#FFFFFF',
                 fontSize: '14px',
                 cursor: 'pointer',
                 padding: '4px 0',
