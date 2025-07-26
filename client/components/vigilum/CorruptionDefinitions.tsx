@@ -875,7 +875,7 @@ const BoundaryLogicCarousel = () => {
               flexWrap: 'wrap',
               gap: '8px'
             }}>
-              {['bribery', 'lobbying', 'privateSector', 'influencePeddling'].map(term => (
+              {['bribery', 'lobbying', 'privateSector', 'influencePeddling', 'conflictOfInterest', 'fraud', 'embezzlement', 'nepotism'].map(term => (
                 <button
                   key={term}
                   onClick={() => setSelectedTerm(term)}
