@@ -67,6 +67,7 @@ const ClickableTrueFocus = ({
   const words = sentence.split(" ");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lastActiveIndex, setLastActiveIndex] = useState(null);
+  const [hoveredWord, setHoveredWord] = useState(null);
   const containerRef = useRef(null);
   const wordRefs = useRef([]);
   const [focusRect, setFocusRect] = useState({
