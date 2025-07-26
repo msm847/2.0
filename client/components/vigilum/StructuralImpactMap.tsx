@@ -7,7 +7,7 @@ const impactNetworkData = {
     {
       id: "economy",
       label: "Economy",
-      position: { x: 50, y: 45 }, // Center node
+      position: { x: 50, y: 50 }, // Center node
       headline: "Every minute, corruption drains $1.9 million from the global economy.",
       domainCounter: {
         ratePerSecond: 31666,
