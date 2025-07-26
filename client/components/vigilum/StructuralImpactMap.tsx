@@ -1156,7 +1156,7 @@ const StructuralImpactMap = () => {
             fontSize: "18px",
             color: "#E5E5E5",
             maxWidth: "600px",
-            margin: "0 auto 24px",
+            margin: "0 0 24px 0",
             lineHeight: "1.6"
           }}
         >
