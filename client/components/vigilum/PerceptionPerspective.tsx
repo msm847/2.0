@@ -448,6 +448,54 @@ const PerceptionPerspective = () => {
                     <StructuralImpactMap onNavigate={setSelectedButton} />
                   </motion.div>
                 )}
+
+                {/* Simple Navigation Controls */}
+                <div className="flex justify-between items-center mt-16 px-8">
+                  <motion.button
+                    onClick={goToPreviousStep}
+                    disabled={!canGoPrevious}
+                    className="px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                    style={{
+                      background: canGoPrevious ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.03)",
+                      color: canGoPrevious ? "#F5F5F5" : "#666",
+                      border: canGoPrevious ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid rgba(255, 255, 255, 0.05)",
+                      cursor: canGoPrevious ? "pointer" : "not-allowed",
+                      backdropFilter: "blur(10px)"
+                    }}
+                    whileHover={canGoPrevious ? { scale: 1.02, background: "rgba(255, 255, 255, 0.15)" } : {}}
+                    whileTap={canGoPrevious ? { scale: 0.98 } : {}}
+                  >
+                    ← Previous
+                  </motion.button>
+
+                  <div className="text-center">
+                    <div className="text-sm" style={{ color: "#9CA3AF" }}>
+                      Step {currentStepIndex + 1} of {perspectiveSteps.length}
+                    </div>
+                    <div className="text-xs mt-1" style={{ color: "#6B7280" }}>
+                      {selectedButton === "Cultural" && "What is Corruption?"}
+                      {selectedButton === "Social" && "Structural Impact Map"}
+                      {selectedButton === "Economic" && "Cognition Chamber"}
+                    </div>
+                  </div>
+
+                  <motion.button
+                    onClick={goToNextStep}
+                    disabled={!canGoNext}
+                    className="px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                    style={{
+                      background: canGoNext ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.03)",
+                      color: canGoNext ? "#F5F5F5" : "#666",
+                      border: canGoNext ? "1px solid rgba(255, 255, 255, 0.2)" : "1px solid rgba(255, 255, 255, 0.05)",
+                      cursor: canGoNext ? "pointer" : "not-allowed",
+                      backdropFilter: "blur(10px)"
+                    }}
+                    whileHover={canGoNext ? { scale: 1.02, background: "rgba(255, 255, 255, 0.15)" } : {}}
+                    whileTap={canGoNext ? { scale: 0.98 } : {}}
+                  >
+                    Next →
+                  </motion.button>
+                </div>
               </>
             )}
           </motion.div>
