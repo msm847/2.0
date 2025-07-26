@@ -324,6 +324,28 @@ const PerceptionPerspective = () => {
               <div className="text-center flex items-center justify-center min-h-[60vh]">
                 {/* Instruction text */}
                 <div className="max-w-2xl mx-auto">
+                  {/* Original Perception Perspective words positioned above instruction */}
+                  <div
+                    className="mb-12 transition-colors duration-1000 font-semibold leading-tight"
+                    style={{
+                      fontFamily: "IBM Plex Sans, sans-serif",
+                      fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
+                      color: currentTheme.textColor,
+                    }}
+                  >
+                    <ClickableTrueFocus
+                      sentence="Perception Perspective"
+                      manualMode={true}
+                      blurAmount={3}
+                      borderColor={currentTheme.borderColor}
+                      glowColor={currentTheme.glowColor}
+                      animationDuration={0.8}
+                      pauseBetweenAnimations={2}
+                      onWordClick={handleWordClick}
+                      activeSection={activeSection}
+                    />
+                  </div>
+
                   <div
                     className="text-lg font-semibold mb-6 transition-colors duration-1000"
                     style={{ color: currentTheme.textColor }}
