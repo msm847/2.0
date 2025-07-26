@@ -241,13 +241,14 @@ const PerceptionPerspective = () => {
 
   const handleWordClick = (wordIndex) => {
     if (wordIndex === 0) {
-      setActiveSection(activeSection === "perception" ? null : "perception");
+      // Only switch to perception, never back to null
+      if (activeSection !== "perception") {
+        setActiveSection("perception");
+      }
     } else if (wordIndex === 1) {
-      const newPerspectiveState =
-        activeSection === "perspective" ? null : "perspective";
-      setActiveSection(newPerspectiveState);
-      // Auto-select Cultural when perspective is clicked
-      if (newPerspectiveState === "perspective") {
+      // Only switch to perspective, never back to null
+      if (activeSection !== "perspective") {
+        setActiveSection("perspective");
         setSelectedButton("Cultural");
       }
     }
