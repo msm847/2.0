@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 65, y: 10 },
+      position: { x: 27, y: 30 }, // Top left of circle
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
@@ -673,7 +673,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
               padding: "8px",
             }}
           >
-            ✕
+            ���
           </button>
 
           {/* Header */}
