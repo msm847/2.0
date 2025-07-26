@@ -419,13 +419,13 @@ const PerceptionPerspective = () => {
                   <LightRays
                     raysOrigin="top-center"
                     raysColor="#E8F5E8"
-                    raysSpeed={1.5}
-                    lightSpread={0.8}
-                    rayLength={1.2}
+                    raysSpeed={1.2}
+                    lightSpread={0.6}
+                    rayLength={1.0}
                     followMouse={true}
-                    mouseInfluence={0.1}
-                    noiseAmount={0.1}
-                    distortion={0.05}
+                    mouseInfluence={0.05}
+                    noiseAmount={0.05}
+                    distortion={0.02}
                     className="custom-rays"
                   />
                 </div>
