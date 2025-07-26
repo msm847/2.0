@@ -699,61 +699,6 @@ const BoundaryLogicCarousel = () => {
         }
       `}</style>
 
-      {/* Navigation Tabs Row */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        marginBottom: '16px',
-        padding: '8px'
-      }}>
-        <button
-          onClick={() => setActiveGroup('regulatory')}
-          style={{
-            width: 'auto',
-            height: '48px',
-            padding: '16px 24px',
-            background: 'transparent',
-            color: activeGroup === 'regulatory' ? groupTheme.regulatory.secondary : 'rgba(255,255,255,0.68)',
-            border: 'none',
-            borderRadius: '12px',
-            fontSize: '16px',
-            fontWeight: '600',
-            fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            borderBottom: activeGroup === 'regulatory' ? `3px solid ${groupTheme.regulatory.secondary}` : '3px solid transparent',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-            whiteSpace: 'nowrap'
-          }}
-        >
-          REGULATORY / JUDICIAL
-        </button>
-        <button
-          onClick={() => setActiveGroup('international')}
-          style={{
-            width: 'auto',
-            height: '48px',
-            padding: '16px 24px',
-            background: 'transparent',
-            color: activeGroup === 'international' ? groupTheme.international.secondary : 'rgba(255,255,255,0.68)',
-            border: 'none',
-            borderRadius: '12px',
-            fontSize: '16px',
-            fontWeight: '600',
-            fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            borderBottom: activeGroup === 'international' ? `3px solid ${groupTheme.international.secondary}` : '3px solid transparent',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-            whiteSpace: 'nowrap'
-          }}
-        >
-          IFI / MULTILATERAL
-        </button>
-      </div>
-
       {/* Main Carousel Panel */}
       <div style={{
         display: 'grid',
@@ -761,6 +706,61 @@ const BoundaryLogicCarousel = () => {
         gap: '32px',
         marginBottom: '24px'
       }}>
+        {/* Navigation Tabs Row - Centered in Main Panel */}
+        <div style={{
+          gridColumn: '1 / -1',
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '16px',
+          padding: '8px'
+        }}>
+          <button
+            onClick={() => setActiveGroup('regulatory')}
+            style={{
+              width: 'auto',
+              height: '48px',
+              padding: '16px 24px',
+              background: 'transparent',
+              color: activeGroup === 'regulatory' ? groupTheme.regulatory.secondary : 'rgba(255,255,255,0.68)',
+              border: 'none',
+              borderRadius: '12px',
+              fontSize: '16px',
+              fontWeight: '600',
+              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              borderBottom: activeGroup === 'regulatory' ? `3px solid ${groupTheme.regulatory.secondary}` : '3px solid transparent',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            REGULATORY / JUDICIAL
+          </button>
+          <button
+            onClick={() => setActiveGroup('international')}
+            style={{
+              width: 'auto',
+              height: '48px',
+              padding: '16px 24px',
+              background: 'transparent',
+              color: activeGroup === 'international' ? groupTheme.international.secondary : 'rgba(255,255,255,0.68)',
+              border: 'none',
+              borderRadius: '12px',
+              fontSize: '16px',
+              fontWeight: '600',
+              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              borderBottom: activeGroup === 'international' ? `3px solid ${groupTheme.international.secondary}` : '3px solid transparent',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            IFI / MULTILATERAL
+          </button>
+        </div>
         {/* Carousel Container */}
         <div style={{ position: 'relative' }}>
           {/* Fade Overlays */}
