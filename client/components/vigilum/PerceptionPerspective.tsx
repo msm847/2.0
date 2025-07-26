@@ -190,6 +190,16 @@ const PerceptionPerspective = () => {
   const [activeSection, setActiveSection] = useState(null); // Start with no section selected
   const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
 
+  // Progress tracking for Perspective section
+  const [completedSteps, setCompletedSteps] = useState(new Set());
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const perspectiveSteps = [
+    { key: "Cultural", title: "What is Corruption", component: "CorruptionDefinitions" },
+    { key: "Social", title: "Structural Impact", component: "StructuralImpactMap" },
+    { key: "Economic", title: "Cognition Chamber", component: "LegalStructuralSimulator" }
+  ];
+
   // Ensure the instruction section always loads first
   useEffect(() => {
     setActiveSection(null);
