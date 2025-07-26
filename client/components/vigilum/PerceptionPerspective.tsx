@@ -355,7 +355,7 @@ const PerceptionPerspective = () => {
       }}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="text-center mb-16 mt-8">
+        <div className="text-center mb-16 mt-20">
           <motion.div
             className="mb-8 transition-colors duration-1000 font-semibold leading-tight"
             style={{
