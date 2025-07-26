@@ -712,11 +712,11 @@ const BoundaryLogicCarousel = () => {
         <button
           onClick={() => setActiveGroup('regulatory')}
           style={{
-            width: '228px',
+            width: 'auto',
             height: '48px',
             padding: '16px 24px',
-            background: activeGroup === 'regulatory' ? '#FFFFFF' : 'transparent',
-            color: activeGroup === 'regulatory' ? groupTheme.regulatory.primary : 'rgba(255,255,255,0.68)',
+            background: 'transparent',
+            color: activeGroup === 'regulatory' ? groupTheme.regulatory.secondary : 'rgba(255,255,255,0.68)',
             border: 'none',
             borderRadius: '12px',
             fontSize: '16px',
@@ -726,7 +726,8 @@ const BoundaryLogicCarousel = () => {
             transition: 'all 0.3s ease',
             borderBottom: activeGroup === 'regulatory' ? `3px solid ${groupTheme.regulatory.secondary}` : '3px solid transparent',
             textTransform: 'uppercase',
-            letterSpacing: '0.5px'
+            letterSpacing: '0.5px',
+            whiteSpace: 'nowrap'
           }}
         >
           REGULATORY / JUDICIAL
