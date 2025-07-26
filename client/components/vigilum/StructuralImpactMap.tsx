@@ -1424,10 +1424,10 @@ const StructuralImpactMap = ({ onNavigate }) => {
             style={{
               background: "rgba(157, 230, 198, 0.1)",
               border: "1px solid rgba(157, 230, 198, 0.3)",
-              borderRadius: "8px",
-              padding: "12px 16px",
+              borderRadius: "6px",
+              padding: "8px 12px",
               display: "inline-block",
-              fontSize: "14px",
+              fontSize: "13px",
               color: "#9DE6C6",
             }}
           >
