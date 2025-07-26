@@ -450,7 +450,7 @@ const PerceptionPerspective = () => {
                 )}
 
                 {/* Simple Navigation Controls */}
-                <div className="flex justify-between items-center mt-8 px-8">
+                <div className="flex justify-between items-center mt-4 px-8">
                   <motion.button
                     onClick={goToPreviousStep}
                     disabled={!canGoPrevious}
