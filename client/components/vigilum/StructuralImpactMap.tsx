@@ -1129,18 +1129,49 @@ const StructuralImpactMap = ({ onNavigate }) => {
 
       {/* Header */}
       <div style={{ textAlign: "left", marginBottom: "60px", position: "relative", zIndex: 10 }}>
-        <h1
-          style={{
-            fontSize: "clamp(2.5rem, 5vw, 4rem)",
-            fontWeight: "700",
-            color: "#9DE6C6",
-            margin: "0 0 16px 0",
-            fontFamily: "var(--font-display)",
-            textShadow: "0 4px 8px rgba(0, 0, 0, 0.3)"
-          }}
-        >
-          Structural Impact Map
-        </h1>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+          <h1
+            style={{
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+              fontWeight: "700",
+              color: "#9DE6C6",
+              margin: "0",
+              fontFamily: "var(--font-display)",
+              textShadow: "0 4px 8px rgba(0, 0, 0, 0.3)"
+            }}
+          >
+            Structural Impact Map
+          </h1>
+          <button
+            onClick={() => onNavigate && onNavigate("Economic")}
+            style={{
+              backdropFilter: "blur(20px) saturate(180%)",
+              background: "rgba(255, 255, 255, 0.05)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "8px",
+              boxShadow: "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+              padding: "12px 24px",
+              fontSize: "14px",
+              fontWeight: "500",
+              color: "#E5E5E5",
+              cursor: "pointer",
+              fontFamily: "var(--font-display)",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              transition: "all 0.3s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.1)";
+              e.target.style.borderColor = "rgba(255, 255, 255, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.05)";
+              e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            }}
+          >
+            Economic
+          </button>
+        </div>
         <p
           style={{
             fontSize: "18px",
