@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 80, y: 10 },
+      position: { x: 50, y: 85 }, // Bottom center of circle
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
@@ -673,7 +673,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
               padding: "8px",
             }}
           >
-            ���
+            ✕
           </button>
 
           {/* Header */}
