@@ -1140,7 +1140,7 @@ const StructuralImpactMap = () => {
           }}
         >
           Structural Impact Map
-        </motion.h1>
+        </h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
