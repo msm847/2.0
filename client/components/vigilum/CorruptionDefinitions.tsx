@@ -271,7 +271,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: { state: '✓', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
-        lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
+        lobbying: { state: '��', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
         privateSector: { state: '��', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence covered under prohibited practices policy.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Managed through disclosure and mitigation in procurement processes.', typology: ['RT'] },
@@ -811,18 +811,53 @@ const BoundaryLogicCarousel = () => {
           </div>
         </div>
 
-        {/* Right Analytics Panel */}
-        <div style={{
-          background: '#F6F7F9',
-          borderRadius: '16px',
-          padding: '24px',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-          borderTop: `3px solid ${theme.secondary}`,
-          height: '470px',
-          overflowY: 'auto',
-          transform: 'translateX(-100px) translateY(16px)',
-          width: 'calc(100% + 40px)'
-        }}>
+        {/* Right Column - Button and Analytics Panel */}
+        <div>
+          {/* Compare All Definitions Button */}
+          <button
+            onClick={() => setShowCompareAll(true)}
+            style={{
+              backgroundColor: "rgba(157, 230, 198, 0.1)",
+              border: "1px solid rgba(157, 230, 198, 0.3)",
+              borderRadius: "8px",
+              padding: "12px 24px",
+              color: "#9DE6C6",
+              fontSize: "14px",
+              fontWeight: "500",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              textAlign: "center",
+              fontFamily: "var(--font-display)",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              width: "100%",
+              marginBottom: "16px",
+              transform: 'translateX(-100px)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+              e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+              e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+            }}
+          >
+            Compare All Definitions
+          </button>
+
+          {/* Right Analytics Panel */}
+          <div style={{
+            background: '#F6F7F9',
+            borderRadius: '16px',
+            padding: '24px',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+            borderTop: `3px solid ${theme.secondary}`,
+            height: '470px',
+            overflowY: 'auto',
+            transform: 'translateX(-100px)',
+            width: 'calc(100% + 40px)'
+          }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
             <h4 style={{
