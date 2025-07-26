@@ -671,17 +671,14 @@ const StructuralImpactMap = () => {
         border: "1px solid rgba(255, 255, 255, 0.1)"
       }}>
         {/* Connection Lines */}
-        {nodes.map(fromNode =>
-          fromNode.connections.map(toNodeId => {
-            const toNode = nodes.find(n => n.id === toNodeId);
-            if (!toNode) return null;
-
-            const isActive = activeNode === fromNode.id || activeNode === toNodeId;
-            const visited = visitedNodes.has(fromNode.id) && visitedNodes.has(toNodeId);
+        {nodes.map((fromNode, i) =>
+          nodes.slice(i + 1).map(toNode => {
+            const isActive = activeNode === fromNode.id || activeNode === toNode.id;
+            const visited = visitedNodes.has(fromNode.id) && visitedNodes.has(toNode.id);
 
             return (
               <ConnectionLine
-                key={`${fromNode.id}-${toNodeId}`}
+                key={`${fromNode.id}-${toNode.id}`}
                 fromNode={fromNode}
                 toNode={toNode}
                 isActive={isActive}
