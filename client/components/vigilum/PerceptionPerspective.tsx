@@ -371,6 +371,14 @@ const PerceptionPerspective = () => {
     }
   };
 
+  // Sync currentStep with selectedButton when selectedButton changes externally
+  useEffect(() => {
+    const stepIndex = perspectiveSteps.findIndex(step => step.key === selectedButton);
+    if (stepIndex !== -1 && stepIndex !== currentStep) {
+      setCurrentStep(stepIndex);
+    }
+  }, [selectedButton, perspectiveSteps, currentStep]);
+
   // Theme configurations
   const themes = {
     perception: {
