@@ -1823,34 +1823,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             >
               Explore the Consequences of Corruption
             </button>
-            <button
-              onClick={() => setShowCompareAll(true)}
-              style={{
-                backgroundColor: "rgba(157, 230, 198, 0.1)",
-                border: "1px solid rgba(157, 230, 198, 0.3)",
-                borderRadius: "8px",
-                padding: "12px 24px",
-                color: "#9DE6C6",
-                fontSize: "14px",
-                fontWeight: "500",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                textAlign: "center",
-                fontFamily: "var(--font-display)",
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
-              }}
-            >
-              Compare All Definitions
-            </button>
+
           </div>
         </div>
       </div>
