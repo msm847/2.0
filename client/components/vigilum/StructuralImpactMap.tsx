@@ -436,7 +436,6 @@ const NetworkNode = ({
           : `radial-gradient(circle at 30% 30%, ${node.color}25, ${node.color}15, ${node.color}05)`,
     border: `2px solid ${node.color}40`,
     cursor: "pointer",
-    transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     backdropFilter: "blur(20px) saturate(180%) brightness(120%)",
     boxShadow: isActive
       ? `
