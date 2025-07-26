@@ -22,7 +22,7 @@ const impactNetworkData = {
       ],
       case_timeline: [
         { title: "Bribe Paid", description: "Funds diverted from national budget", icon: "💸" },
-        { title: "Project Collapses", description: "Infrastructure fails, jobs lost", icon: "🏗��" },
+        { title: "Project Collapses", description: "Infrastructure fails, jobs lost", icon: "🏗️" },
         { title: "Recession", description: "National growth stalls; recovery delayed", icon: "📉" }
       ],
       connections: ["inequality", "markets"],
@@ -593,19 +593,33 @@ const StructuralImpactMap = () => {
       }}
     >
       {/* Animated Background */}
-      <div style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundImage: `
-          radial-gradient(circle at 20% 80%, rgba(157, 230, 198, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(157, 230, 198, 0.05) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(157, 230, 198, 0.03) 0%, transparent 50%)
-        `,
-        animation: "float 20s ease-in-out infinite"
-      }} />
+      <motion.div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `
+            radial-gradient(circle at 20% 80%, rgba(157, 230, 198, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(157, 230, 198, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(157, 230, 198, 0.03) 0%, transparent 50%)
+          `
+        }}
+        animate={{
+          transform: [
+            "translateY(0px) rotate(0deg)",
+            "translateY(-10px) rotate(1deg)",
+            "translateY(5px) rotate(-1deg)",
+            "translateY(0px) rotate(0deg)"
+          ]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "60px", position: "relative", zIndex: 10 }}>
