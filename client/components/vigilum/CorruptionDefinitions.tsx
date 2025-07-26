@@ -44,7 +44,7 @@ const boundaryLogicData = {
         conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
         fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
         embezzlement: { state: '–', tooltip: 'Outside scope of bribery convention. No criminalization requirement.', typology: ['SB'] },
-        nepotism: { state: '–', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
+        nepotism: { state: '���', tooltip: 'Not addressed in convention framework. Left to domestic discretion.', typology: ['SB'] }
       }
     },
     {
@@ -82,7 +82,7 @@ const boundaryLogicData = {
         bribery: { state: '✓', tooltip: 'Comprehensive bribery provisions for public (Article 15) and private sectors (Article 21).', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Not explicitly addressed in convention text. Legal advocacy generally excluded.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector bribery covered in Article 21 as mandatory criminalization.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Trading in influence covered in Article 18 with mandatory criminalization.', typology: ['CI'] },
+        influencePeddling: { state: '���', tooltip: 'Trading in influence covered in Article 18 with mandatory criminalization.', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in preventive measures (Chapter II) but not criminal provisions.', typology: ['DG'] },
         fraud: { state: '✓', tooltip: 'Fraud against public administration covered under Article 17.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Embezzlement explicitly criminalized in Article 17.', typology: ['RT'] },
@@ -230,7 +230,7 @@ const boundaryLogicData = {
       tags: {
         bribery: { state: '✓', tooltip: 'Prohibited practice in all EBRD-financed projects and operations.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Not within EBRD enforcement scope unless constituting prohibited practice.', typology: ['SB'] },
-        privateSector: { state: '✓', tooltip: 'Private sector conduct covered in project finance and investment operations.', typology: ['CI'] },
+        privateSector: { state: '���', tooltip: 'Private sector conduct covered in project finance and investment operations.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence prohibited in procurement and project implementation.', typology: ['CI'] },
         conflictOfInterest: { state: '���', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practices covered in enforcement and sanctions framework.', typology: ['RT'] },
@@ -445,7 +445,7 @@ const BoundaryLogicCarousel = () => {
   // Tag State Logic - Boundary Recognition System
   const getTagColor = (state) => {
     switch(state) {
-      case '✓': return '#10B981'; // Included
+      case '��': return '#10B981'; // Included
       case '–': return '#9CA3AF'; // Excluded
       case '?': return '#F59E0B'; // Ambiguous
       default: return '#9CA3AF';
@@ -551,7 +551,7 @@ const BoundaryLogicCarousel = () => {
           <blockquote style={{
             fontSize: '17px',
             fontStyle: 'italic',
-            color: theme.textPrimary,
+            color: '#9DE6C6',
             margin: '0 0 8px 0',
             lineHeight: '26px',
             fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
@@ -1118,7 +1118,7 @@ const institutionalData = {
         },
         {
           name: "IMF",
-          logo: "����",
+          logo: "💰",
           definition:
             "Corruption is the abuse of public power for private benefit, including bribery, embezzlement, and fraud.",
           source: "IMF, official website",
