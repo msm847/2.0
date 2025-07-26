@@ -771,7 +771,7 @@ const InstitutionCard = ({ institution }) => {
   );
 };
 
-const CorruptionDefinitions = () => {
+const CorruptionDefinitions = ({ onNavigate }) => {
   const [showCompareAll, setShowCompareAll] = useState(false);
   const [activeCarousel, setActiveCarousel] = useState(0);
   const [carouselCycles, setCarouselCycles] = useState([0, 0, 0, 0]); // Track cycles for each carousel
