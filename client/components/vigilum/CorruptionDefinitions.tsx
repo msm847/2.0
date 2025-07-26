@@ -559,28 +559,8 @@ const BoundaryLogicCarousel = () => {
             lineHeight: '26px',
             fontFamily: 'Alliance No2, Helvetica Neue, sans-serif'
           }}>
-            "{displayDefinition}"
+            "{institution.definition}"
           </blockquote>
-
-          {shouldTruncate && !expanded && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setExpanded(true);
-              }}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#FFFFFF',
-                fontSize: '14px',
-                cursor: 'pointer',
-                padding: '4px 0',
-                textDecoration: 'underline'
-              }}
-            >
-              Show Full ↓
-            </button>
-          )}
 
         </div>
 
