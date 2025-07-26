@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 27, y: 70 }, // Bottom left of circle
+      position: { x: 15, y: 75 }, // Bottom left of circle - expanded
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
