@@ -150,6 +150,20 @@ const ClickableTrueFocus = ({
               fontWeight: isSelectedSection ? "600" : "inherit", // Semibold when selected
             }}
             onClick={() => handleWordClick(index)}
+            onMouseEnter={(e) => {
+              if (!isSelectedSection) {
+                e.target.style.color = "#FFFFFF";
+                e.target.style.filter = `blur(${blurAmount * 0.7}px)`;
+                e.target.style.textShadow = "0 0 20px rgba(255, 255, 255, 0.8)";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isSelectedSection) {
+                e.target.style.color = "inherit";
+                e.target.style.filter = `blur(${blurAmount}px)`;
+                e.target.style.textShadow = "none";
+              }
+            }}
           >
             {word}
           </span>
