@@ -165,7 +165,7 @@ const impactNetworkData = {
         displayFormat: "number"
       },
       facts: [
-        { text: "Corruption predicts willingness to migrate", source: "UNDP", icon: "����" },
+        { text: "Corruption predicts willingness to migrate", source: "UNDP", icon: "🚶" },
         { text: "Security forces compromised", source: "UNODC", icon: "🛡️" },
         { text: "Civil conflict risk doubles", source: "World Bank", icon: "⚔️" }
       ],
@@ -1152,7 +1152,7 @@ const StructuralImpactMap = () => {
         >
           Corruption is not isolated incidents—it's a living system of cascading harms.
           Explore how damage propagates across domains.
-        </motion.p>
+        </p>
 
         {isIntroVisible && (
           <motion.div
