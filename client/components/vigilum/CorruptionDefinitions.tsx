@@ -753,7 +753,7 @@ const BoundaryLogicCarousel = () => {
         >
           IFI / MULTILATERAL
         </button>
-        <div style={{ marginLeft: "auto", transform: "translateX(-50px)" }}>
+        <div style={{ marginLeft: "auto", transform: "translateX(-25px)" }}>
           <button
             onClick={() => setShowCompareAll(true)}
             style={{
