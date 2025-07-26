@@ -301,12 +301,46 @@ const PerceptionPerspective = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div
-              className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
-              style={{ color: currentTheme.textColor }}
-            >
-              {currentContent.description.replace("\n", " ")}
-            </div>
+            {!activeSection && (
+              <div className="text-center mt-16 mb-8">
+                {/* Visual indicators pointing up */}
+                <div className="flex justify-center items-center gap-32 mb-8">
+                  <div className="flex flex-col items-center">
+                    <div style={{ color: currentTheme.textColor, fontSize: "24px", marginBottom: "8px" }}>↑</div>
+                    <div style={{ color: currentTheme.textColor, fontSize: "14px", opacity: 0.8 }}>PERCEPTION</div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div style={{ color: currentTheme.textColor, fontSize: "24px", marginBottom: "8px" }}>↑</div>
+                    <div style={{ color: currentTheme.textColor, fontSize: "14px", opacity: 0.8 }}>PERSPECTIVE</div>
+                  </div>
+                </div>
+
+                {/* Instruction text */}
+                <div className="max-w-2xl mx-auto">
+                  <div
+                    className="text-lg font-semibold mb-4 transition-colors duration-1000"
+                    style={{ color: currentTheme.textColor }}
+                  >
+                    Choose Your Approach
+                  </div>
+                  <div
+                    className="text-base leading-relaxed transition-colors duration-1000"
+                    style={{ color: currentTheme.textColor, opacity: 0.9 }}
+                  >
+                    Click either word above to explore how institutional structures reveal their vulnerabilities through different analytical frameworks.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection && (
+              <div
+                className="text-body-lg mb-6 leading-relaxed transition-colors duration-1000 text-center"
+                style={{ color: currentTheme.textColor }}
+              >
+                {currentContent.description.replace("\n", " ")}
+              </div>
+            )}
 
             {activeSection === "perspective" && (
               <>
