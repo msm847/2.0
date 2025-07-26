@@ -404,8 +404,7 @@ const PerceptionPerspective = () => {
           >
             {!activeSection && (
               <div className="text-center flex items-center justify-center min-h-[60vh]">
-                {/* Light Rays Animation - Temporarily disabled for performance */}
-                {false && (
+                {/* Light Rays Animation */}
                 <div
                   style={{
                     position: "absolute",
@@ -430,7 +429,6 @@ const PerceptionPerspective = () => {
                     className="custom-rays"
                   />
                 </div>
-                )}
 
                 {/* Instruction text */}
                 <div
