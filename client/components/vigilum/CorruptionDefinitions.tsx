@@ -211,7 +211,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Generally not within IMF mandate unless affecting fiscal policy implementation.', typology: ['SB'] },
         privateSector: { state: '?', tooltip: 'Relevant only when affecting public financial management or fiscal outcomes.', typology: ['RT'] },
         influencePeddling: { state: '?', tooltip: 'Addressed when impacting economic governance and policy implementation.', typology: ['DG'] },
-        conflictOfInterest: { state: '��', tooltip: 'Critical in financial sector oversight and central bank governance.', typology: ['RT'] },
+        conflictOfInterest: { state: '✓', tooltip: 'Critical in financial sector oversight and central bank governance.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Central concern in public financial management and fiscal reporting.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Core focus in public resource management and fiscal accountability.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Relevant when affecting financial governance quality and institutional capacity.', typology: ['DG'] }
@@ -252,7 +252,7 @@ const boundaryLogicData = {
         bribery: { state: '✓', tooltip: 'Core violation in ADB integrity framework and sanctions procedures.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Outside ADB operational mandate and enforcement scope.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector operations covered under integrity due diligence.', typology: ['CI'] },
-        influencePeddling: { state: '✓', tooltip: 'Improper influence explicitly prohibited in operational procedures.', typology: ['CI'] },
+        influencePeddling: { state: '��', tooltip: 'Improper influence explicitly prohibited in operational procedures.', typology: ['CI'] },
         conflictOfInterest: { state: '✓', tooltip: 'Covered in integrity and procurement policies across operations.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practice prohibited in operations and project implementation.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation covered in enforcement and sanctions framework.', typology: ['RT'] },
