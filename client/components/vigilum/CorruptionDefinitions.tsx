@@ -538,7 +538,7 @@ const BoundaryLogicCarousel = () => {
               margin: 0,
               fontSize: '19px',
               fontWeight: 'bold',
-              color: theme.textPrimary,
+              color: '#FFFFFF',
               lineHeight: '24px'
             }}>
               {institution.name}
@@ -1118,7 +1118,7 @@ const institutionalData = {
         },
         {
           name: "IMF",
-          logo: "💰",
+          logo: "����",
           definition:
             "Corruption is the abuse of public power for private benefit, including bribery, embezzlement, and fraud.",
           source: "IMF, official website",
