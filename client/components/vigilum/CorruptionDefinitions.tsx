@@ -39,7 +39,7 @@ const boundaryLogicData = {
       tags: {
         bribery: { state: '✓', tooltip: 'Central focus on active bribery of foreign officials under Article 1.', typology: ['CI'] },
         lobbying: { state: '?', tooltip: 'Lobbying is only problematic when crossing into bribery territory (OECD Guidelines, 2011). Legal advocacy remains excluded.', typology: ['DG'] },
-        privateSector: { state: '��', tooltip: 'OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.', typology: ['SB'] },
+        privateSector: { state: '–', tooltip: 'OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.', typology: ['SB'] },
         influencePeddling: { state: '✓', tooltip: 'Included when involving foreign public officials (Article 1 interpretation).', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in Recommendation but not binding convention obligations.', typology: ['DG'] },
         fraud: { state: '–', tooltip: 'Not central to anti-bribery framework. Outside convention scope.', typology: ['SB'] },
