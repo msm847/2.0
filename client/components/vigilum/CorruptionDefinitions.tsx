@@ -914,7 +914,7 @@ const BoundaryLogicCarousel = () => {
             <p style={{
               fontSize: '15px',
               lineHeight: '1.4',
-              color: '#374151',
+              color: '#A1B5C1',
               marginBottom: '16px',
               fontFamily: 'SF Mono, Monaco, monospace',
               letterSpacing: '0.01em'
