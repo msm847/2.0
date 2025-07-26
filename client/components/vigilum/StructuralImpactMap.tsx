@@ -1231,7 +1231,6 @@ const StructuralImpactMap = ({ onNavigate }) => {
   const [activeNode, setActiveNode] = useState(null);
   const [visitedNodes, setVisitedNodes] = useState(new Set());
   const [selectedNode, setSelectedNode] = useState(null);
-  const [globalLoss, setGlobalLoss] = useState(0);
   const [isIntroVisible, setIsIntroVisible] = useState(true);
   const [userPath, setUserPath] = useState([]);
   const [propagatingConnections, setPropagatingConnections] = useState(
