@@ -37,7 +37,7 @@ const boundaryLogicData = {
         url: 'https://www.oecd.org/corruption/oecdantibriberyconvention.htm'
       },
       tags: {
-        bribery: { state: '��', tooltip: 'Central focus on active bribery of foreign officials under Article 1.', typology: ['CI'] },
+        bribery: { state: '✓', tooltip: 'Central focus on active bribery of foreign officials under Article 1.', typology: ['CI'] },
         lobbying: { state: '?', tooltip: 'Lobbying is only problematic when crossing into bribery territory (OECD Guidelines, 2011). Legal advocacy remains excluded.', typology: ['DG'] },
         privateSector: { state: '��', tooltip: 'OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.', typology: ['SB'] },
         influencePeddling: { state: '✓', tooltip: 'Included when involving foreign public officials (Article 1 interpretation).', typology: ['CI'] },
@@ -232,7 +232,7 @@ const boundaryLogicData = {
         lobbying: { state: '–', tooltip: 'Not within EBRD enforcement scope unless constituting prohibited practice.', typology: ['SB'] },
         privateSector: { state: '✓', tooltip: 'Private sector conduct covered in project finance and investment operations.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence prohibited in procurement and project implementation.', typology: ['CI'] },
-        conflictOfInterest: { state: '�����', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
+        conflictOfInterest: { state: '���', tooltip: 'Strictly regulated in procurement and operational procedures.', typology: ['RT'] },
         fraud: { state: '✓', tooltip: 'Fraudulent practices covered in enforcement and sanctions framework.', typology: ['RT'] },
         embezzlement: { state: '✓', tooltip: 'Misappropriation prohibited in project funds and operational resources.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Addressed through conflict of interest policies rather than direct prohibition.', typology: ['DG'] }
@@ -762,7 +762,7 @@ const BoundaryLogicCarousel = () => {
         marginBottom: '24px'
       }}>
         {/* Carousel Container */}
-        <div style={{ position: 'relative', width: '320px', height: '470px' }}>
+        <div style={{ position: 'relative' }}>
           {/* Fade Overlays */}
           <div style={{
             position: 'absolute',
