@@ -1449,11 +1449,11 @@ const StructuralImpactMap = ({ onNavigate }) => {
             color: "#E5E5E5",
             margin: "0 0 24px 0",
             lineHeight: "1.6",
-            whiteSpace: "nowrap",
           }}
         >
-          Corruption is not isolated incidents—it's a living system of cascading
-          harms. Explore how damage propagates across domains.
+          Corruption is not an incident—it's a living system of cascading harms.
+          <br />
+          Explore how damage propagates across domains.
         </p>
 
         {isIntroVisible && (
