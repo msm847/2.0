@@ -38,7 +38,7 @@ const impactNetworkData = {
         {
           step: "Growth slows",
           description: "National productivity stagnates",
-          icon: "📉",
+          icon: "��",
         },
       ],
       microCase: {
@@ -1505,7 +1505,7 @@ const StructuralImpactMap = ({ onNavigate }) => {
       {/* Final Summary Overlay */}
       {showFinalSummary && (
         <FinalSummaryOverlay
-          totalLoss={0}
+          totalLoss={globalLoss}
           userPath={userPath}
           onClose={() => setShowFinalSummary(false)}
         />
