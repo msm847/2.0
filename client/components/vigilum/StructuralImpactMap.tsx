@@ -428,12 +428,12 @@ const NetworkNode = ({
     height: isActive ? "160px" : "120px",
     borderRadius: "50%",
     background: isActive
-      ? `radial-gradient(circle at 30% 30%, ${node.color}60, ${node.color}30, ${node.color}15)`
+      ? `radial-gradient(circle at 30% 30%, ${node.color}70, ${node.color}40, ${node.color}20)`
       : isVisited
-        ? `radial-gradient(circle at 30% 30%, ${node.color}45, ${node.color}25, ${node.color}10)`
+        ? `radial-gradient(circle at 30% 30%, ${node.color}50, ${node.color}30, ${node.color}15)`
         : isPropagationTarget
-          ? `radial-gradient(circle at 30% 30%, ${node.color}35, ${node.color}20, ${node.color}08)`
-          : `radial-gradient(circle at 30% 30%, ${node.color}25, ${node.color}15, ${node.color}05)`,
+          ? `radial-gradient(circle at 30% 30%, ${node.color}45, ${node.color}25, ${node.color}12)`
+          : `radial-gradient(circle at 30% 30%, ${node.color}40, ${node.color}25, ${node.color}10)`,
     border: `2px solid ${node.color}40`,
     cursor: "pointer",
     backdropFilter: "blur(20px) saturate(180%) brightness(120%)",
