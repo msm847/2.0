@@ -335,7 +335,7 @@ const PerceptionPerspective = () => {
                     className="text-base leading-relaxed transition-colors duration-1000"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
-                    Click either lens above to see how risk, discretion, and oversight realign.
+                    Click either lens above to observe risk, meaning, and 'truth' in motion.
                   </div>
                 </div>
               </div>
