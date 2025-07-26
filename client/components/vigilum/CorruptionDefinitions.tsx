@@ -588,21 +588,22 @@ const BoundaryLogicCarousel = () => {
             </button>
           )}
 
-          {/* Citation */}
-          <p style={{
-            fontSize: '11px',
-            color: '#A1B5C1',
-            fontFamily: 'SF Mono, Monaco, monospace',
-            margin: '8px 0 16px 0',
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase'
-          }}>
-            {institution.citation.text}
-          </p>
         </div>
 
         {/* Spacer to push tags to bottom */}
         <div style={{ flex: 1 }}></div>
+
+        {/* Citation */}
+        <p style={{
+          fontSize: '11px',
+          color: '#9DE6C6',
+          fontFamily: 'SF Mono, Monaco, monospace',
+          margin: '0 0 8px 0',
+          letterSpacing: '0.04em',
+          textTransform: 'uppercase'
+        }}>
+          {institution.citation.text}
+        </p>
 
         {/* Boundary Tag Grid */}
         <div style={{
