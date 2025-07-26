@@ -1036,7 +1036,7 @@ const FinalSummaryOverlay = ({ totalLoss, userPath, onClose }) => {
 };
 
 // Main component
-const StructuralImpactMap = () => {
+const StructuralImpactMap = ({ onNavigate }) => {
   const [activeNode, setActiveNode] = useState(null);
   const [visitedNodes, setVisitedNodes] = useState(new Set());
   const [selectedNode, setSelectedNode] = useState(null);
