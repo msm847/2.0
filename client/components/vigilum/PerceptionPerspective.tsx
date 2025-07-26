@@ -524,9 +524,29 @@ const PerceptionPerspective = () => {
                     className="mt-8 -mx-32 max-w-none"
                   >
                     <div className="text-center py-16">
-                      <div className="text-xl text-gray-300 font-mono">
-                        Economic analysis interface coming soon...
-                      </div>
+                      <button
+                        className="px-8 py-4 rounded-xl font-medium transition-all duration-300 text-lg"
+                        style={{
+                          background: "linear-gradient(135deg, #1e1f1c, #4d4b38, #7b7455)",
+                          border: "1px solid rgba(255, 255, 255, 0.2)",
+                          color: "#eae2cc",
+                          boxShadow: "0px 0px 15px rgba(123, 116, 85, 0.3)",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.05)";
+                          e.currentTarget.style.boxShadow = "0px 0px 25px rgba(123, 116, 85, 0.5)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.boxShadow = "0px 0px 15px rgba(123, 116, 85, 0.3)";
+                        }}
+                        onClick={() => {
+                          // Navigate to simulation or open modal
+                          window.open('/core-intelligence/problem', '_blank');
+                        }}
+                      >
+                        Try a Simulation
+                      </button>
                     </div>
                   </motion.div>
                 )}
