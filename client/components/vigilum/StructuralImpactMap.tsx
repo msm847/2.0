@@ -1445,11 +1445,11 @@ const StructuralImpactMap = ({ onNavigate }) => {
               backdropFilter: "blur(20px) saturate(180%)",
               background: "rgba(255, 255, 255, 0.05)",
               border: "1px solid rgba(255, 255, 255, 0.1)",
-              borderRadius: "8px",
-              boxShadow: "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-              padding: "16px 24px",
+              borderRadius: "6px",
+              boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 16px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+              padding: "12px 16px",
               zIndex: 1000,
-              minWidth: "280px",
+              minWidth: "240px",
             }}
           >
             <div style={{
