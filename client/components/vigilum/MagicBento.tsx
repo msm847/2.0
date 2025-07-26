@@ -1026,7 +1026,7 @@ const MagicBento = ({
                     left: ${x - maxDistance}px;
                     top: ${y - maxDistance}px;
                     pointer-events: none;
-                    z-index: 1000;
+                    z-index: 5;
                   `;
 
                   el.appendChild(ripple);
