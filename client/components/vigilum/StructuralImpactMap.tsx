@@ -239,7 +239,7 @@ const GlobalLiveTicker = ({ totalLoss, isActive }) => {
         }} />
         Live since you started exploring
       </div>
-    </motion.div>
+    </div>
   );
 };
 
