@@ -1061,7 +1061,6 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "rgba(157, 230, 198, 0.1)",
                   borderRadius: "10px",
                 }}
               >
@@ -1071,7 +1070,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 style={{
                   fontSize: "22px",
                   fontWeight: "700",
-                  color: "#9DE6C6",
+                  color: "#F5F5F5",
                   margin: "0",
                   fontFamily: "var(--font-display)",
                   textAlign: "center",
