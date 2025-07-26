@@ -131,13 +131,20 @@ const ClickableTrueFocus = ({
         const isSelectedSection =
           (index === 0 && activeSection === "perception") ||
           (index === 1 && activeSection === "perspective");
+
+        // If something is being hovered, only the hovered word should be unblurred
+        // If nothing is hovered, use the original selected section logic
+        const shouldBlur = hoveredWord !== null
+          ? hoveredWord !== index
+          : !isSelectedSection;
+
         return (
           <span
             key={index}
             ref={(el) => (wordRefs.current[index] = el)}
             className="focus-word manual"
             style={{
-              filter: isSelectedSection ? "blur(0px)" : `blur(${blurAmount}px)`,
+              filter: shouldBlur ? `blur(${blurAmount}px)` : "blur(0px)",
               "--border-color": borderColor,
               "--glow-color": glowColor,
               transition: `filter ${animationDuration}s ease, color 0.6s ease`,
