@@ -489,7 +489,9 @@ const BoundaryLogicCarousel = () => {
           transform: isActive ? 'scale(1.04)' : 'scale(1)',
           zIndex: isActive ? 2 : 1,
           transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
-          position: 'relative'
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column'
         }}
         whileHover={{
           scale: isActive ? 1.04 : 1.01,
