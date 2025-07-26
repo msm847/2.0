@@ -809,7 +809,14 @@ const CorruptionDefinitions = ({ onNavigate }) => {
     >
       {/* Header */}
       <div style={{ textAlign: "left", marginBottom: "48px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "16px",
+          }}
+        >
           <h2
             style={{
               fontSize: "clamp(2rem, 4vw, 2.5rem)",
@@ -830,7 +837,8 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   background: "rgba(255, 255, 255, 0.05)",
                   border: "1px solid rgba(255, 255, 255, 0.1)",
                   borderRadius: "8px",
-                  boxShadow: "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                  boxShadow:
+                    "rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
                   padding: "12px 24px",
                   fontSize: "14px",
                   fontWeight: "500",
@@ -839,7 +847,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   fontFamily: "var(--font-display)",
                   letterSpacing: "1px",
                   textTransform: "uppercase",
-                  transition: "all 0.3s ease"
+                  transition: "all 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = "rgba(255, 255, 255, 0.1)";
@@ -869,7 +877,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                   textAlign: "center",
                   fontFamily: "var(--font-display)",
                   letterSpacing: "1px",
-                  textTransform: "uppercase"
+                  textTransform: "uppercase",
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
@@ -973,8 +981,6 @@ const CorruptionDefinitions = ({ onNavigate }) => {
               />
             </div>
           ))}
-
-
 
           {/* Bottom Center: Private/Corporate (3rd group) */}
           <div
