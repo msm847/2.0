@@ -844,11 +844,12 @@ const BoundaryLogicCarousel = () => {
 
         {/* Right Analytics Panel */}
         <div style={{
-          background: '#F6F7F9',
+          background: 'rgba(29, 51, 40, 0.8)',
           borderRadius: '16px',
           padding: '24px',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
           borderTop: `3px solid ${theme.secondary}`,
+          border: '1px solid rgba(157, 230, 198, 0.2)',
           height: '470px',
           overflowY: 'auto',
           transform: 'translateX(-100px) translateY(16px)',
