@@ -451,79 +451,74 @@ const PerceptionPerspective = () => {
 
                 {/* Floating Contextual Navigation */}
                 <div className="fixed bottom-8 right-8 z-30 flex flex-col gap-3">
-                  {selectedButton === "Cultural" && (
-                    <motion.button
-                      onClick={() => setSelectedButton("Cultural")}
-                      className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
-                      style={{
-                        background: "rgba(16, 185, 129, 0.25)",
-                        color: "#9DE6C6",
-                        border: "2px solid rgba(157, 230, 198, 0.6)",
-                        backdropFilter: "blur(15px)",
-                        boxShadow: "0 8px 32px rgba(16, 185, 129, 0.3)",
-                        fontFamily: "var(--font-display)",
-                        letterSpacing: "0.5px",
-                        textTransform: "uppercase"
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 12px 40px rgba(16, 185, 129, 0.4)"
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      ✓ What is Corruption?
-                    </motion.button>
-                  )}
+                  <motion.button
+                    onClick={() => setSelectedButton("Cultural")}
+                    className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
+                    style={{
+                      background: selectedButton === "Cultural" ? "rgba(16, 185, 129, 0.25)" : "rgba(16, 185, 129, 0.15)",
+                      color: "#9DE6C6",
+                      border: selectedButton === "Cultural" ? "2px solid rgba(157, 230, 198, 0.6)" : "1px solid rgba(157, 230, 198, 0.4)",
+                      backdropFilter: "blur(15px)",
+                      boxShadow: selectedButton === "Cultural" ? "0 8px 32px rgba(16, 185, 129, 0.3)" : "0 8px 32px rgba(0,0,0,0.2)",
+                      fontFamily: "var(--font-display)",
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase"
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(16, 185, 129, 0.25)",
+                      boxShadow: "0 12px 40px rgba(16, 185, 129, 0.2)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {selectedButton === "Cultural" ? "✓ " : ""}What is Corruption?
+                  </motion.button>
 
-                  {selectedButton !== "Social" && (
-                    <>
-                      <motion.button
-                        onClick={() => setSelectedButton("Social")}
-                        className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
-                        style={{
-                          background: "rgba(16, 185, 129, 0.15)",
-                          color: "#9DE6C6",
-                          border: "1px solid rgba(157, 230, 198, 0.4)",
-                          backdropFilter: "blur(15px)",
-                          boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-                          fontFamily: "var(--font-display)",
-                          letterSpacing: "0.5px",
-                          textTransform: "uppercase"
-                        }}
-                        whileHover={{
-                          scale: 1.05,
-                          backgroundColor: "rgba(16, 185, 129, 0.25)",
-                          boxShadow: "0 12px 40px rgba(16, 185, 129, 0.2)"
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        Consequences of Corruption →
-                      </motion.button>
+                  <motion.button
+                    onClick={() => setSelectedButton("Social")}
+                    className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
+                    style={{
+                      background: selectedButton === "Social" ? "rgba(16, 185, 129, 0.25)" : "rgba(16, 185, 129, 0.15)",
+                      color: "#9DE6C6",
+                      border: selectedButton === "Social" ? "2px solid rgba(157, 230, 198, 0.6)" : "1px solid rgba(157, 230, 198, 0.4)",
+                      backdropFilter: "blur(15px)",
+                      boxShadow: selectedButton === "Social" ? "0 8px 32px rgba(16, 185, 129, 0.3)" : "0 8px 32px rgba(0,0,0,0.2)",
+                      fontFamily: "var(--font-display)",
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase"
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(16, 185, 129, 0.25)",
+                      boxShadow: "0 12px 40px rgba(16, 185, 129, 0.2)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {selectedButton === "Social" ? "✓ " : ""}Consequences of Corruption →
+                  </motion.button>
 
-                      <motion.button
-                        onClick={() => setSelectedButton("Economic")}
-                        className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
-                        style={{
-                          background: "rgba(255, 255, 255, 0.08)",
-                          color: "#E5E5E5",
-                          border: "1px solid rgba(255, 255, 255, 0.15)",
-                          backdropFilter: "blur(15px)",
-                          boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-                          fontFamily: "var(--font-display)",
-                          letterSpacing: "0.5px",
-                          textTransform: "uppercase"
-                        }}
-                        whileHover={{
-                          scale: 1.05,
-                          backgroundColor: "rgba(255, 255, 255, 0.15)",
-                          boxShadow: "0 12px 40px rgba(255, 255, 255, 0.1)"
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        Try a Simulation →
-                      </motion.button>
-                    </>
-                  )}
+                  <motion.button
+                    onClick={() => setSelectedButton("Economic")}
+                    className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
+                    style={{
+                      background: selectedButton === "Economic" ? "rgba(16, 185, 129, 0.25)" : "rgba(255, 255, 255, 0.08)",
+                      color: selectedButton === "Economic" ? "#9DE6C6" : "#E5E5E5",
+                      border: selectedButton === "Economic" ? "2px solid rgba(157, 230, 198, 0.6)" : "1px solid rgba(255, 255, 255, 0.15)",
+                      backdropFilter: "blur(15px)",
+                      boxShadow: selectedButton === "Economic" ? "0 8px 32px rgba(16, 185, 129, 0.3)" : "0 8px 32px rgba(0,0,0,0.2)",
+                      fontFamily: "var(--font-display)",
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase"
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: selectedButton === "Economic" ? "rgba(16, 185, 129, 0.25)" : "rgba(255, 255, 255, 0.15)",
+                      boxShadow: selectedButton === "Economic" ? "0 12px 40px rgba(16, 185, 129, 0.2)" : "0 12px 40px rgba(255, 255, 255, 0.1)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {selectedButton === "Economic" ? "✓ " : ""}Try a Simulation →
+                  </motion.button>
                 </div>
               </>
             )}
