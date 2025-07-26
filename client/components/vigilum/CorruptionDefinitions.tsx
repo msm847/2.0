@@ -312,7 +312,7 @@ const boundaryLogicData = {
         url: 'https://www.eib.org/en/about/accountability/anti-fraud/index.htm'
       },
       tags: {
-        bribery: { state: '✓', tooltip: 'Explicitly covered in EIB anti-fraud policy and operational procedures.', typology: ['CI'] },
+        bribery: { state: '���', tooltip: 'Explicitly covered in EIB anti-fraud policy and operational procedures.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Legal lobbying excluded unless constituting undue influence in operations.', typology: ['SB'] },
         privateSector: { state: '?', tooltip: 'Private sector corruption only recognized when affecting EIB-financed projects.', typology: ['RT'] },
         influencePeddling: { state: '✓', tooltip: 'Undue influence prohibited in procurement and project evaluation.', typology: ['CI'] },
@@ -707,8 +707,65 @@ const BoundaryLogicCarousel = () => {
         gap: '32px',
         marginBottom: '24px'
       }}>
+        {/* Navigation Tabs Row - Positioned in Middle */}
+        <div style={{
+          gridColumn: '1 / -1',
+          gridRow: '2',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '16px 0'
+        }}>
+          <button
+            onClick={() => setActiveGroup('regulatory')}
+            style={{
+              width: 'auto',
+              height: '48px',
+              padding: '16px 24px',
+              background: 'transparent',
+              color: activeGroup === 'regulatory' ? groupTheme.regulatory.secondary : 'rgba(255,255,255,0.68)',
+              border: 'none',
+              borderRadius: '12px',
+              fontSize: '16px',
+              fontWeight: '600',
+              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              borderBottom: activeGroup === 'regulatory' ? `3px solid ${groupTheme.regulatory.secondary}` : '3px solid transparent',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            REGULATORY / JUDICIAL
+          </button>
+          <button
+            onClick={() => setActiveGroup('international')}
+            style={{
+              width: 'auto',
+              height: '48px',
+              padding: '16px 24px',
+              background: 'transparent',
+              color: activeGroup === 'international' ? groupTheme.international.secondary : 'rgba(255,255,255,0.68)',
+              border: 'none',
+              borderRadius: '12px',
+              fontSize: '16px',
+              fontWeight: '600',
+              fontFamily: 'Alliance No2, Helvetica Neue, sans-serif',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              borderBottom: activeGroup === 'international' ? `3px solid ${groupTheme.international.secondary}` : '3px solid transparent',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            IFI / MULTILATERAL
+          </button>
+        </div>
+
         {/* Carousel Container */}
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: 'relative', gridRow: '1' }}>
           {/* Fade Overlays */}
           <div style={{
             position: 'absolute',
