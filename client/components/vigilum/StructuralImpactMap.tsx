@@ -1368,11 +1368,7 @@ const StructuralImpactMap = ({ onNavigate }) => {
   });
 
   return (
-    <>
-      {/* Global Live Ticker - rendered independently */}
-      <StaticGlobalTicker totalLoss={globalLoss} />
-
-      <div
+    <div
         style={{
           minHeight: "100vh",
           padding: "40px 20px",
