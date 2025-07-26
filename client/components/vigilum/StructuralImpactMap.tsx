@@ -252,8 +252,11 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited, isPropagating }) 
   const toX = toNode.position.x;
   const toY = toNode.position.y;
 
-  const length = Math.sqrt(Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2));
-  const angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
+  // Calculate the actual distance in percentage units
+  const deltaX = toX - fromX;
+  const deltaY = toY - fromY;
+  const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+  const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
 
   return (
     <div
@@ -262,33 +265,33 @@ const ConnectionLine = ({ fromNode, toNode, isActive, visited, isPropagating }) 
         left: `${fromX}%`,
         top: `${fromY}%`,
         width: `${length}%`,
-        height: "3px",
+        height: "2px",
         background: isPropagating
           ? `linear-gradient(90deg, ${fromNode.color}, ${toNode.color})`
           : isActive
-            ? `linear-gradient(90deg, ${fromNode.color}80, ${toNode.color}80)`
+            ? `linear-gradient(90deg, ${fromNode.color}60, ${toNode.color}60)`
             : visited
-              ? `linear-gradient(90deg, ${fromNode.color}40, ${toNode.color}40)`
-              : "rgba(157, 230, 198, 0.15)",
+              ? `linear-gradient(90deg, ${fromNode.color}30, ${toNode.color}30)`
+              : "rgba(157, 230, 198, 0.2)",
         transformOrigin: "0 50%",
         transform: `rotate(${angle}deg)`,
         transition: "all 0.6s ease",
         zIndex: 5,
-        borderRadius: "2px",
-        boxShadow: isPropagating ? `0 0 12px ${fromNode.color}60` : "none"
+        borderRadius: "1px",
+        boxShadow: isPropagating ? `0 0 8px ${fromNode.color}40` : "none"
       }}
     >
       {isPropagating && (
         <motion.div
           style={{
-            width: "8px",
-            height: "8px",
+            width: "6px",
+            height: "6px",
             borderRadius: "50%",
             background: fromNode.color,
             position: "absolute",
             top: "50%",
             transform: "translateY(-50%)",
-            boxShadow: `0 0 12px ${fromNode.color}`
+            boxShadow: `0 0 8px ${fromNode.color}`
           }}
           animate={{
             left: ["0%", "100%"]
@@ -334,10 +337,10 @@ const NetworkNode = ({ node, isActive, isVisited, onActivate, isPropagationTarge
           ? `radial-gradient(circle, ${node.color}30, ${node.color}15)`
           : "rgba(255, 255, 255, 0.05)",
     border: `3px solid ${
-      isActive 
-        ? node.color 
-        : isVisited 
-          ? `${node.color}80` 
+      isActive
+        ? node.color
+        : isVisited
+          ? `${node.color}80`
           : isPropagationTarget
             ? `${node.color}60`
             : "rgba(255, 255, 255, 0.1)"
@@ -400,7 +403,7 @@ const NetworkNode = ({ node, isActive, isVisited, onActivate, isPropagationTarge
             {pathIndex + 1}
           </div>
         )}
-        
+
         <div style={{
           fontSize: isActive ? "16px" : "14px",
           fontWeight: "600",
@@ -424,7 +427,7 @@ const NetworkNode = ({ node, isActive, isVisited, onActivate, isPropagationTarge
               textAlign: "center"
             }}
           >
-            {node.domainCounter.displayFormat === "currency" 
+            {node.domainCounter.displayFormat === "currency"
               ? `$${nodeCounter.toLocaleString()}`
               : `${nodeCounter.toLocaleString()} ${node.domainCounter.unit}`
             }
@@ -578,7 +581,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                 fontFamily: "monospace",
                 marginBottom: "8px"
               }}>
-                {node.domainCounter.displayFormat === "currency" 
+                {node.domainCounter.displayFormat === "currency"
                   ? `$${nodeCounter.toLocaleString()}`
                   : `${nodeCounter.toLocaleString()}`
                 }
@@ -884,7 +887,7 @@ const SystemShockwave = ({ nodes, onComplete }) => {
 
 // Final summary overlay
 const FinalSummaryOverlay = ({ totalLoss, userPath, onClose }) => {
-  const pathNames = userPath.map(nodeId => 
+  const pathNames = userPath.map(nodeId =>
     impactNetworkData.nodes.find(n => n.id === nodeId)?.label
   ).join(" → ");
 
@@ -932,7 +935,7 @@ const FinalSummaryOverlay = ({ totalLoss, userPath, onClose }) => {
         }}>
           System Analysis Complete
         </h2>
-        
+
         <div style={{
           fontSize: "48px",
           fontWeight: "700",
@@ -942,7 +945,7 @@ const FinalSummaryOverlay = ({ totalLoss, userPath, onClose }) => {
         }}>
           ${totalLoss.toLocaleString()}
         </div>
-        
+
         <p style={{
           fontSize: "18px",
           color: "#E5E5E5",
@@ -1005,7 +1008,7 @@ const FinalSummaryOverlay = ({ totalLoss, userPath, onClose }) => {
             lineHeight: "1.6",
             margin: "0"
           }}>
-            Corruption's damage is never isolated—it is cumulative, structural, and always systemic. 
+            Corruption's damage is never isolated—it is cumulative, structural, and always systemic.
             Every node you explored is both a source and an effect in the recursive system of harm.
           </p>
         </div>
@@ -1250,8 +1253,8 @@ const StructuralImpactMap = () => {
 
         {/* System Shockwave */}
         {showSystemShockwave && (
-          <SystemShockwave 
-            nodes={nodes} 
+          <SystemShockwave
+            nodes={nodes}
             onComplete={handleShockwaveComplete}
           />
         )}
