@@ -329,16 +329,13 @@ const PerceptionPerspective = () => {
                     className="text-lg font-semibold mb-6 transition-colors duration-1000"
                     style={{ color: currentTheme.textColor }}
                   >
-                    Choose Your Approach
+                    Choose Your Lens.
                   </div>
                   <div
                     className="text-base leading-relaxed transition-colors duration-1000"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
-                    Click either word above to explore how institutional
-                    structures reveal <br />
-                    their vulnerabilities through different analytical
-                    frameworks.
+                    Click either lens above to see how risk, discretion, and oversight realign.
                   </div>
                 </div>
               </div>
