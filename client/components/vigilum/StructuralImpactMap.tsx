@@ -486,14 +486,22 @@ const NetworkNode = ({
       onMouseLeave={() => setIsHovered(false)}
       animate={{
         scale: isActive
-          ? 1.1
+          ? 1.15
           : isHovered
-            ? 1.05
+            ? 1.08
             : isPropagationTarget
-              ? 1.02
+              ? 1.03
               : 1,
+        rotateY: isHovered ? 2 : 0,
+        rotateX: isActive ? -2 : 0,
       }}
-      transition={{ duration: 0.3 }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 25,
+        mass: 0.8,
+        duration: 0.6
+      }}
     >
       <div
         style={{
