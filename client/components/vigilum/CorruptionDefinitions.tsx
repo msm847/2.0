@@ -707,14 +707,14 @@ const BoundaryLogicCarousel = () => {
         gap: '32px',
         marginBottom: '24px'
       }}>
-        {/* Navigation Tabs Row - Positioned in Middle */}
+        {/* Navigation Tabs Row - Above Carousel */}
         <div style={{
           gridColumn: '1 / -1',
-          gridRow: '2',
+          gridRow: '1',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: '16px 0'
+          padding: '0 0 16px 0'
         }}>
           <button
             onClick={() => setActiveGroup('regulatory')}
@@ -765,7 +765,7 @@ const BoundaryLogicCarousel = () => {
         </div>
 
         {/* Carousel Container */}
-        <div style={{ position: 'relative', gridRow: '1' }}>
+        <div style={{ position: 'relative', gridRow: '2' }}>
           {/* Fade Overlays */}
           <div style={{
             position: 'absolute',
