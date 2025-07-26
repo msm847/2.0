@@ -246,9 +246,9 @@ const PerceptionPerspective = () => {
       const newPerspectiveState =
         activeSection === "perspective" ? null : "perspective";
       setActiveSection(newPerspectiveState);
-      // Auto-select Economic when perspective is clicked
+      // Auto-select Cultural when perspective is clicked
       if (newPerspectiveState === "perspective") {
-        setSelectedButton("Economic");
+        setSelectedButton("Cultural");
       }
     }
   };
