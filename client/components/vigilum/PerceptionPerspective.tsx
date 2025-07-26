@@ -134,9 +134,8 @@ const ClickableTrueFocus = ({
 
         // If something is being hovered, only the hovered word should be unblurred
         // If nothing is hovered, use the original selected section logic
-        const shouldBlur = hoveredWord !== null
-          ? hoveredWord !== index
-          : !isSelectedSection;
+        const shouldBlur =
+          hoveredWord !== null ? hoveredWord !== index : !isSelectedSection;
 
         return (
           <span
@@ -181,8 +180,6 @@ const ClickableTrueFocus = ({
           </span>
         );
       })}
-
-
     </div>
   );
 };
@@ -320,7 +317,8 @@ const PerceptionPerspective = () => {
                     className="text-base leading-relaxed transition-colors duration-1000"
                     style={{ color: currentTheme.textColor, opacity: 0.9 }}
                   >
-                    Click either lens above to observe risk, meaning, and 'truth' in motion.
+                    Click either lens above to observe risk, meaning, and
+                    'truth' in motion.
                   </div>
                 </div>
               </div>
