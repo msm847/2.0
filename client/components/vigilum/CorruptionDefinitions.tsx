@@ -954,7 +954,6 @@ const BoundaryLogicCarousel = () => {
           </div>
         </div>
       </div>
-        </div>
 
     </div>
   );
@@ -1324,7 +1323,7 @@ const institutionalData = {
       institutions: [
         {
           name: "Transparency International",
-          logo: "��",
+          logo: "🔍",
           definition:
             "Corruption is the abuse of entrusted power for private gain.",
           source: "Transparency International, official website",
