@@ -85,7 +85,7 @@ const boundaryLogicData = {
         influencePeddling: { state: '✓', tooltip: 'Trading in influence covered in Article 18 with mandatory criminalization.', typology: ['CI'] },
         conflictOfInterest: { state: '?', tooltip: 'Addressed in preventive measures (Chapter II) but not criminal provisions.', typology: ['DG'] },
         fraud: { state: '✓', tooltip: 'Fraud against public administration covered under Article 17.', typology: ['RT'] },
-        embezzlement: { state: '��', tooltip: 'Embezzlement explicitly criminalized in Article 17.', typology: ['RT'] },
+        embezzlement: { state: '✓', tooltip: 'Embezzlement explicitly criminalized in Article 17.', typology: ['RT'] },
         nepotism: { state: '?', tooltip: 'Addressed through public sector ethics provisions rather than direct criminalization.', typology: ['DG'] }
       }
     },
@@ -270,7 +270,7 @@ const boundaryLogicData = {
         url: 'https://www.iadb.org/en/about-us/policy-prohibited-practices'
       },
       tags: {
-        bribery: { state: '���', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
+        bribery: { state: '✓', tooltip: 'Explicitly prohibited in all IDB-financed operations and contracts.', typology: ['CI'] },
         lobbying: { state: '–', tooltip: 'Legal advocacy excluded from prohibited practices framework.', typology: ['SB'] },
         privateSector: { state: '��', tooltip: 'Private sector operations covered under integrity due diligence procedures.', typology: ['CI'] },
         influencePeddling: { state: '✓', tooltip: 'Improper influence covered under prohibited practices policy.', typology: ['CI'] },
@@ -573,7 +573,7 @@ const BoundaryLogicCarousel = () => {
                 textDecoration: 'underline'
               }}
             >
-              Show Full ↓
+              Show Full ���
             </button>
           )}
 
@@ -702,7 +702,7 @@ const BoundaryLogicCarousel = () => {
       {/* Navigation Tabs - Positioned Above Carousel */}
       <div style={{
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         marginBottom: '16px',
         padding: '8px'
       }}>
