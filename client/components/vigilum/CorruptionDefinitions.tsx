@@ -819,7 +819,8 @@ const BoundaryLogicCarousel = () => {
           borderTop: `3px solid ${theme.secondary}`,
           height: '470px',
           overflowY: 'auto',
-          transform: 'translateX(-60px) translateY(16px)'
+          transform: 'translateX(-60px) translateY(16px)',
+          width: 'calc(100% + 40px)'
         }}>
           {/* Term Navigation Row */}
           <div style={{ marginBottom: '24px' }}>
