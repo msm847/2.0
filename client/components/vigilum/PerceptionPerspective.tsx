@@ -229,7 +229,7 @@ const PerceptionPerspective = () => {
     default: {
       title: "PERCEPTION PERSPECTIVE",
       description:
-        "Understanding begins with recognizing the lens through which we observe institutional structures and their embedded vulnerabilities.",
+        "Choose your approach: Click either PERCEPTION or PERSPECTIVE to explore how institutional structures reveal their vulnerabilities through different analytical frameworks.",
       details: [],
     },
   };
