@@ -153,7 +153,7 @@ const ClickableTrueFocus = ({
             onMouseEnter={(e) => {
               if (!isSelectedSection) {
                 e.target.style.color = "#FFFFFF";
-                e.target.style.filter = `blur(${blurAmount * 0.7}px)`;
+                e.target.style.filter = "blur(0px)";
                 e.target.style.textShadow = "0 0 20px rgba(255, 255, 255, 0.8)";
               }
             }}
