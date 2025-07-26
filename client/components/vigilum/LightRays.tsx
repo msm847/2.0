@@ -270,8 +270,8 @@ void main() {
           return;
         }
 
-        // Throttle to 30fps instead of 60fps for better performance
-        const targetFPS = 30;
+        // Throttle to 20fps instead of 60fps for better performance
+        const targetFPS = 20;
         const frameDelay = 1000 / targetFPS;
 
         if (t - (loop.lastTime || 0) < frameDelay) {
@@ -283,7 +283,7 @@ void main() {
         uniforms.iTime.value = t * 0.001;
 
         if (followMouse && mouseInfluence > 0.0) {
-          const smoothing = 0.95; // More smoothing for less frequent updates
+          const smoothing = 0.98; // More smoothing for less frequent updates
 
           smoothMouseRef.current.x =
             smoothMouseRef.current.x * smoothing +

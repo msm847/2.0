@@ -87,7 +87,7 @@ const TierComponent: React.FC<{
           : `linear-gradient(135deg,
                rgba(255, 255, 255, 0.03) 0%,
                rgba(255, 255, 255, 0.01) 100%)`,
-        backdropFilter: "blur(40px) saturate(1.8)",
+        backdropFilter: "blur(12px) saturate(1.8)",
         WebkitBackdropFilter: "blur(40px) saturate(1.8)",
         border: `1px solid ${tier.highlightColor ? `${tier.highlightColor}25` : "rgba(255, 255, 255, 0.15)"}`,
         borderTop: `1px solid ${tier.highlightColor ? `${tier.highlightColor}40` : "rgba(255, 255, 255, 0.25)"}`,

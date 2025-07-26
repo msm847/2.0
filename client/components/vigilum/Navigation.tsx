@@ -97,7 +97,7 @@ const Navigation = () => {
               onClick={() => navigate("/")}
               className="flex items-center font-display text-sm uppercase tracking-wider transition-all duration-300"
               style={{
-                backdropFilter: "blur(20px) saturate(180%)",
+                backdropFilter: "blur(8px)",
                 background: "rgba(255, 255, 255, 0.05)",
                 borderColor: "rgba(255, 255, 255, 0.1)",
                 borderRadius: "8px",
@@ -141,7 +141,7 @@ const Navigation = () => {
               <button
                 className="font-display text-sm uppercase tracking-wider transition-all duration-300"
                 style={{
-                  backdropFilter: "blur(20px) saturate(180%)",
+                  backdropFilter: "blur(8px)",
                   background: "rgba(255, 255, 255, 0.05)",
                   borderColor: "rgba(255, 255, 255, 0.1)",
                   borderRadius: "8px",
@@ -196,7 +196,7 @@ const Navigation = () => {
                     onClick={() => handleNavigation("#perception-perspective")}
                     className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
+                      backdropFilter: "blur(8px)",
                       background:
                         activeSection === "perception-perspective"
                           ? "rgba(34, 197, 94, 0.15)"
@@ -246,7 +246,7 @@ const Navigation = () => {
                     onClick={() => handleNavigation("#modules")}
                     className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
+                      backdropFilter: "blur(8px)",
                       background:
                         activeSection === "modules"
                           ? "rgba(34, 197, 94, 0.15)"
@@ -296,7 +296,7 @@ const Navigation = () => {
                     onClick={() => handleNavigation("#demo")}
                     className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
+                      backdropFilter: "blur(8px)",
                       background:
                         activeSection === "demo" || activeSection === "clavis"
                           ? "rgba(34, 197, 94, 0.15)"
@@ -346,7 +346,7 @@ const Navigation = () => {
                     onClick={() => handleNavigation("#cases")}
                     className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
+                      backdropFilter: "blur(8px)",
                       background:
                         activeSection === "cases"
                           ? "rgba(34, 197, 94, 0.15)"
@@ -396,7 +396,7 @@ const Navigation = () => {
                     onClick={() => handleNavigation("#team")}
                     className="w-full text-left text-sm font-display transition-all duration-200 mb-2"
                     style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
+                      backdropFilter: "blur(8px)",
                       background:
                         activeSection === "team"
                           ? "rgba(34, 197, 94, 0.15)"
@@ -446,7 +446,7 @@ const Navigation = () => {
                     onClick={() => handleNavigation("#stakeholders")}
                     className="w-full text-left text-sm font-display transition-all duration-200"
                     style={{
-                      backdropFilter: "blur(20px) saturate(180%)",
+                      backdropFilter: "blur(8px)",
                       background:
                         activeSection === "stakeholders"
                           ? "rgba(34, 197, 94, 0.15)"

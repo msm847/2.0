@@ -1062,7 +1062,7 @@ const SemanticPermutationEngine = () => {
                     className="h-10 text-center px-1 rounded flex items-center justify-center border transition-all duration-200 hover:scale-105"
                     style={{
                       backgroundColor: "rgba(255, 255, 255, 0.03)",
-                      backdropFilter: "blur(20px)",
+                      backdropFilter: "blur(8px)",
                       border: "1px solid rgba(255, 255, 255, 0.08)",
                     }}
                   >
@@ -1085,7 +1085,7 @@ const SemanticPermutationEngine = () => {
                       className="text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded border transition-all duration-200 hover:scale-105"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.03)",
-                        backdropFilter: "blur(20px)",
+                        backdropFilter: "blur(8px)",
                         border: "1px solid rgba(255, 255, 255, 0.08)",
                         minHeight: "3rem",
                       }}
@@ -1169,7 +1169,7 @@ const SemanticPermutationEngine = () => {
                     className="text-center p-2 rounded border transition-all duration-200 hover:scale-105"
                     style={{
                       backgroundColor: "rgba(255, 255, 255, 0.03)",
-                      backdropFilter: "blur(20px)",
+                      backdropFilter: "blur(8px)",
                       border: "1px solid rgba(255, 255, 255, 0.08)",
                     }}
                   >
@@ -1316,7 +1316,7 @@ const SemanticPermutationEngine = () => {
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
+                    backdropFilter: "blur(8px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)",
                   }}
                 >
@@ -1329,7 +1329,7 @@ const SemanticPermutationEngine = () => {
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
+                    backdropFilter: "blur(8px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)",
                   }}
                 >
@@ -1342,7 +1342,7 @@ const SemanticPermutationEngine = () => {
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
+                    backdropFilter: "blur(8px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)",
                   }}
                 >
@@ -1357,7 +1357,7 @@ const SemanticPermutationEngine = () => {
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
+                    backdropFilter: "blur(8px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)",
                   }}
                 >
@@ -1370,7 +1370,7 @@ const SemanticPermutationEngine = () => {
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.03)",
-                    backdropFilter: "blur(20px)",
+                    backdropFilter: "blur(8px)",
                     border: "1px solid rgba(255, 255, 255, 0.08)",
                   }}
                 >
@@ -1394,7 +1394,7 @@ const SemanticPermutationEngine = () => {
                     backgroundColor: showTrace
                       ? "rgba(52, 211, 153, 0.15)"
                       : "rgba(255, 255, 255, 0.05)",
-                    backdropFilter: "blur(20px)",
+                    backdropFilter: "blur(8px)",
                     border: `1px solid ${showTrace ? "rgba(52, 211, 153, 0.3)" : "rgba(255, 255, 255, 0.1)"}`,
                     color: showTrace ? "#10b981" : "#ffffff",
                   }}
@@ -1430,7 +1430,7 @@ const SemanticPermutationEngine = () => {
                       backgroundColor: showJSON
                         ? "rgba(52, 211, 153, 0.15)"
                         : "rgba(255, 255, 255, 0.05)",
-                      backdropFilter: "blur(20px)",
+                      backdropFilter: "blur(8px)",
                       border: `1px solid ${showJSON ? "rgba(52, 211, 153, 0.3)" : "rgba(255, 255, 255, 0.1)"}`,
                       color: showJSON ? "#10b981" : "#ffffff",
                     }}
@@ -1458,7 +1458,7 @@ const SemanticPermutationEngine = () => {
                     className="p-3 rounded-xl font-mono text-sm font-medium transition-all duration-200 flex items-center justify-center space-x-2"
                     style={{
                       backgroundColor: "rgba(255, 255, 255, 0.05)",
-                      backdropFilter: "blur(20px)",
+                      backdropFilter: "blur(8px)",
                       border: "1px solid rgba(255, 255, 255, 0.1)",
                       color: "#ffffff",
                     }}
