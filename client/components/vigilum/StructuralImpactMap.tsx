@@ -854,7 +854,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                         color: index < currentStep ? node.color : "#9CA3AF",
                       }}
                     >
-                      →
+                      ��
                     </div>
                   )}
                 </motion.div>
@@ -1521,8 +1521,7 @@ const StructuralImpactMap = ({ onNavigate }) => {
           onClose={() => setShowFinalSummary(false)}
         />
       )}
-      </div>
-    </>
+    </div>
   );
 };
 
