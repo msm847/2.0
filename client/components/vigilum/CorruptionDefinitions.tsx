@@ -573,7 +573,7 @@ const BoundaryLogicCarousel = () => {
                 textDecoration: 'underline'
               }}
             >
-              Show Full ���
+              Show Full ↓
             </button>
           )}
 
@@ -704,7 +704,8 @@ const BoundaryLogicCarousel = () => {
         display: 'flex',
         justifyContent: 'flex-start',
         marginBottom: '16px',
-        padding: '8px'
+        padding: '8px',
+        marginLeft: '32px'
       }}>
         <button
           onClick={() => setActiveGroup('regulatory')}
