@@ -253,14 +253,14 @@ const PerceptionPerspective = () => {
         const rect = perceptionSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
 
-        // Hide when the section is mostly scrolled past (less than 10% visible)
+        // Hide when the section is half scrolled past (less than 50% visible)
         const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
         const sectionHeight = rect.height;
         const visibilityRatio = Math.max(0, visibleHeight / sectionHeight);
 
-        if (visibilityRatio < 0.1 || rect.bottom < 100) {
+        if (visibilityRatio < 0.5 || rect.bottom < viewportHeight * 0.6) {
           setShowFloatingNav(false);
-        } else if (activeSection !== null && visibilityRatio > 0.2) {
+        } else if (activeSection !== null && visibilityRatio > 0.6) {
           setShowFloatingNav(true);
         }
       }
