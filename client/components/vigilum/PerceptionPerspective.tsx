@@ -319,20 +319,71 @@ const PerceptionPerspective = () => {
           >
             {!activeSection && (
               <div className="text-center flex items-center justify-center min-h-[60vh]">
-                {/* Instruction text */}
-                <div className="max-w-2xl mx-auto">
-                  <div
-                    className="text-lg font-semibold mb-6 transition-colors duration-1000"
-                    style={{ color: currentTheme.textColor }}
-                  >
-                    Choose Your Lens.
+                {/* CTA buttons positioned above instruction text */}
+                <div className="max-w-4xl mx-auto relative">
+                  <div className="flex justify-between items-center mb-12 px-8">
+                    {/* Perception button - left side */}
+                    <motion.button
+                      onClick={() => handleWordClick(0)}
+                      className="px-8 py-4 rounded-lg transition-all duration-300 cursor-pointer"
+                      style={{
+                        background: "rgba(255, 255, 255, 0.05)",
+                        borderColor: "#E5F3ED",
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        color: "#E5F3ED",
+                        fontSize: "18px",
+                        fontWeight: "600",
+                        backdropFilter: "blur(10px)",
+                      }}
+                      whileHover={{
+                        scale: 1.05,
+                        boxShadow: "0 0 25px rgba(229, 243, 237, 0.4)"
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Perception
+                    </motion.button>
+
+                    {/* Perspective button - right side */}
+                    <motion.button
+                      onClick={() => handleWordClick(1)}
+                      className="px-8 py-4 rounded-lg transition-all duration-300 cursor-pointer"
+                      style={{
+                        background: "rgba(255, 255, 255, 0.05)",
+                        borderColor: "#EAE2CC",
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        color: "#EAE2CC",
+                        fontSize: "18px",
+                        fontWeight: "600",
+                        backdropFilter: "blur(10px)",
+                      }}
+                      whileHover={{
+                        scale: 1.05,
+                        boxShadow: "0 0 25px rgba(234, 226, 204, 0.4)"
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Perspective
+                    </motion.button>
                   </div>
-                  <div
-                    className="text-base leading-relaxed transition-colors duration-1000"
-                    style={{ color: currentTheme.textColor, opacity: 0.9 }}
-                  >
-                    Click either lens above to observe risk, meaning, and
-                    'truth' in motion.
+
+                  {/* Instruction text */}
+                  <div className="max-w-2xl mx-auto">
+                    <div
+                      className="text-lg font-semibold mb-6 transition-colors duration-1000"
+                      style={{ color: currentTheme.textColor }}
+                    >
+                      Choose Your Lens.
+                    </div>
+                    <div
+                      className="text-base leading-relaxed transition-colors duration-1000"
+                      style={{ color: currentTheme.textColor, opacity: 0.9 }}
+                    >
+                      Click either lens above to observe risk, meaning, and
+                      'truth' in motion.
+                    </div>
                   </div>
                 </div>
               </div>
