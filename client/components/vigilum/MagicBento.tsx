@@ -1052,7 +1052,7 @@ const MagicBento = ({
                 el.addEventListener("click", handleClick);
               }}
             >
-              <div className="card__content">
+              <div className="card__content" style={{display: "flex", flexDirection: "column", justifyContent: "center", height: "100%"}}>
                 {card.isVision ? (
                   <>
                     <h2
