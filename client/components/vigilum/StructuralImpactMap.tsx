@@ -8,7 +8,7 @@ const impactNetworkData = {
     {
       id: "economy",
       label: "Economy",
-      position: { x: 45, y: 0 }, // Top center of circle - moved higher and left
+      position: { x: 50, y: 10 }, // 12 o'clock position
       headline:
         "Every minute, corruption drains $1.9 million from the global economy.",
       domainCounter: {
@@ -61,7 +61,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 75, y: 15 }, // Top right of circle - moved higher and left
+      position: { x: 75, y: 25 }, // 2 o'clock position
       headline: "Corruption weakens law, derails justice, erodes legitimacy.",
       domainCounter: {
         ratePerSecond: 8400,
@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 75, y: 60 }, // Bottom right of circle - moved higher and left
+      position: { x: 75, y: 55 }, // 4 o'clock position
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 15, y: 60 }, // Bottom left of circle - moved higher
+      position: { x: 25, y: 55 }, // 8 o'clock position
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 15, y: 15 }, // Top left of circle - moved higher
+      position: { x: 25, y: 25 }, // 10 o'clock position
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 45, y: 75 }, // Bottom center of circle - moved much higher and left
+      position: { x: 50, y: 70 }, // 6 o'clock position
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
