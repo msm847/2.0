@@ -38,7 +38,7 @@ const cardData = [
     teamMembers: [
       {
         name: "Adam Kovarskas",
-        role: "Founder / CEO",
+        role: "Founder & System Architect",
         description:
           "Leading technical innovation and system architecture to transform governance through advanced analytics.",
         imageUrl: "/placeholder.svg",
