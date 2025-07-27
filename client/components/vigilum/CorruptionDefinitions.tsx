@@ -256,7 +256,7 @@ const boundaryLogicData = {
     {
       id: "fatf",
       name: "FATF",
-      logoUrl: "/logos/fatf.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff061f91c60ef44018b2fc913e75f31a6?format=webp&width=800",
       logo: "💰",
       definition:
         "Corruption offences such as bribery, embezzlement, trading in influence, abuse of functions and other offences are generally committed for private gain…",
@@ -1269,7 +1269,7 @@ const BoundaryLogicCarousel = () => {
     switch (state) {
       case "✓":
         return "#10B981"; // Included
-      case "–":
+      case "���":
         return "#9CA3AF"; // Excluded
       case "?":
         return "#F59E0B"; // Ambiguous
