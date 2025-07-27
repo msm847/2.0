@@ -813,7 +813,7 @@ const boundaryLogicData = {
     {
       id: "adb",
       name: "ADB",
-      logoUrl: "/logos/adb.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
       logo: "🌏",
       definition:
         "ADB defines corruption as the abuse of public or private office for personal gain.",
