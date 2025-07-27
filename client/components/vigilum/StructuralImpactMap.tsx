@@ -322,7 +322,7 @@ const impactNetworkData = {
         {
           text: "Corruption predicts willingness to migrate",
           source: "UNDP",
-          icon: "����",
+          icon: "🚶",
         },
         { text: "Security forces compromised", source: "UNODC", icon: "🛡️" },
         {
@@ -1501,13 +1501,22 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         <p
           style={{
             fontSize: "16px",
+            color: "#FFFFFF",
+            margin: "0 0 12px 0",
+            lineHeight: "1.6",
+            fontWeight: "500"
+          }}
+        >
+          What appears as isolated harm is, in fact, systemic propagation.
+        </p>
+        <p
+          style={{
+            fontSize: "16px",
             color: "#E5E5E5",
             margin: "0 0 24px 0",
             lineHeight: "1.6",
           }}
         >
-          What appears as isolated harm is, in fact, systemic propagation.
-          <br />
           Examine how design-level risk migrates across the economy, institutions,
           <br />
           and public trust, producing consequences that outpace any single event.
