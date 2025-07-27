@@ -299,7 +299,7 @@ const boundaryLogicData = {
           typology: ["SB"],
         },
         embezzlement: {
-          state: "–",
+          state: "���",
           tooltip:
             "Outside Bribery Act scope. Covered under other legislation.",
           typology: ["SB"],
@@ -1133,7 +1133,7 @@ const BoundaryLogicCarousel = () => {
       assetLaundering: "Asset Laundering",
       cronyism: "Cronyism",
       regulatoryArbitrage: "Regulatory Arbitrage",
-      shellCompany: "Shell Company",
+      shellCompany: "Opaque Entities",
     };
     return nameMap[term] || term;
   };
