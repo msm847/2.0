@@ -1487,7 +1487,7 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             fontFamily: "var(--font-display)",
           }}
         >
-          Systemic Harm Propagation
+          Systemic Corruption Dynamics
         </h2>
         <p
           style={{
