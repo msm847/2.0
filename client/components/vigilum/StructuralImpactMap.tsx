@@ -77,7 +77,7 @@ const impactNetworkData = {
         {
           text: "Trust in institutions 2–3x lower",
           source: "OECD",
-          icon: "���️",
+          icon: "🏛️",
         },
         {
           text: "Democratic processes undermined",
@@ -254,7 +254,7 @@ const impactNetworkData = {
         {
           step: "Forest destroyed",
           description: "Biodiversity lost forever",
-          icon: "��",
+          icon: "🌲",
         },
         {
           step: "Climate impact",
@@ -1463,11 +1463,10 @@ const StructuralImpactMap = ({ onNavigate }) => {
       <div
         style={{
           position: "relative",
-          width: "60%",
-          height: "500px",
-          maxWidth: "600px",
+          width: "100%",
+          height: "700px",
+          maxWidth: "800px",
           margin: "20px 0 0 0",
-          float: "left",
         }}
       >
         {/* Nodes */}
