@@ -699,28 +699,77 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
 
           {/* Header */}
           <div style={{ marginBottom: "32px" }}>
-            <h2
+            <div style={{ marginBottom: "12px", display: "flex", alignItems: "center", gap: "12px" }}>
+              <h2
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "700",
+                  color: "#FFFFFF",
+                  margin: "0",
+                  fontFamily: "var(--font-display)",
+                }}
+              >
+                {node.label}
+              </h2>
+              <div
+                style={{
+                  padding: "4px 8px",
+                  background: `${node.color}20`,
+                  border: `1px solid ${node.color}40`,
+                  borderRadius: "6px",
+                  fontSize: "10px",
+                  color: node.color,
+                  fontWeight: "600",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px"
+                }}
+              >
+                {node.structuralType || "AXIS"}
+              </div>
+            </div>
+            <h3
               style={{
-                fontSize: "28px",
-                fontWeight: "700",
+                fontSize: "20px",
+                fontWeight: "600",
                 color: node.color,
                 margin: "0 0 16px 0",
                 fontFamily: "var(--font-display)",
               }}
             >
-              {node.label}
-            </h2>
+              {node.axisTitle}
+            </h3>
             <p
               style={{
-                fontSize: "18px",
-                color: "#FFFFFF",
-                fontWeight: "600",
-                lineHeight: "1.4",
-                margin: "0",
+                fontSize: "16px",
+                color: "#E5E5E5",
+                fontWeight: "400",
+                lineHeight: "1.5",
+                margin: "0 0 16px 0",
               }}
             >
-              {node.headline}
+              {node.structuralLogic}
             </p>
+            <div
+              style={{
+                padding: "12px 16px",
+                background: "rgba(239, 68, 68, 0.1)",
+                border: "1px solid rgba(239, 68, 68, 0.3)",
+                borderRadius: "8px",
+                borderLeft: `4px solid ${node.color}`
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "#FFFFFF",
+                  fontWeight: "500",
+                  margin: "0",
+                  fontStyle: "italic"
+                }}
+              >
+                💥 {node.shockingFact}
+              </p>
+            </div>
           </div>
 
           {/* Live Counter */}
