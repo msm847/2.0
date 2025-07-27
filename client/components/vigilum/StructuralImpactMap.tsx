@@ -97,7 +97,7 @@ const impactNetworkData = {
       shockingFact:
         "EU countries with the fastest uptick in anti-corruption laws saw no drop in procurement anomalies—just a shift in method.",
       dataPoint:
-        "Following major anti-corruption 'reforms,' enforcement actions may drop 30%—not because risk fell, but because simulation logic absorbed real oversight (see Romania, 2016–2019).",
+        "Following major anti-corruption 'reforms,' enforcement actions may drop 30%��not because risk fell, but because simulation logic absorbed real oversight (see Romania, 2016–2019).",
       actionableOutput:
         "Surface clusters where legal change correlates with increased uninvestigated procurement anomalies.",
       headline:
@@ -1698,8 +1698,8 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         <div
           style={{
             position: "absolute",
-            top: "28%",
-            left: "38%",
+            top: "32%",
+            left: "42%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
             zIndex: 5,
