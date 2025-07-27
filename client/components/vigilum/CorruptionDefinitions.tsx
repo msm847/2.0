@@ -352,7 +352,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         fraud: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Within STT mandate when involving public officials or public interest. [CI]",
           typology: ["CI"],
@@ -1170,7 +1170,7 @@ const termDefinitions = {
     analysis:
       'Regulatory arbitrage is defined by the strategic exploitation of inconsistencies, gaps, or slow adaptation in legal regimes. Divergence is found in the clarity of anti-abuse rules, the speed of regulatory adaptation, and the global mobility of capital. Actors recast risk or extraction as compliance through relocation, reclassification, or product redesign—moving financial products, tax structures, or even entire businesses to friendlier jurisdictions. Shadow banking, tax havens, and cross-border structuring exemplify arbitrage as a core system feature, not an anomaly. Regulatory arbitrage triggers "race to the bottom" dynamics, undermining enforcement and creating persistent fragility that regulators struggle to address without global coordination.',
     consequence:
-      "Persistent arbitrage embeds structural risk in the global financial system, destabilizing regulation and pricing of risk across borders.",
+      "STRUCTURAL CONSEQUENCE: Regulatory arbitrage encodes risk migration as a design feature, not a flaw. By sequencing operations to exploit the most permissive regimes, actors transform systemic fragility into routine efficiency. Oversight is disassembled into procedural fragments, with no node able to compute or constrain total exposure. The result is a dynamic equilibrium of non-accountability—where the system's very complexity ensures its continuous circumvention.",
   },
   shellCompany: {
     title:
