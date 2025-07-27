@@ -881,7 +881,7 @@ const boundaryLogicData = {
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
         text: "IFC Definitions and Interpretive Guidelines",
-        url: "https://www.ifc.org/content/dam/ifc/doc/2010/definitions-interpretive-guidelines.pdf",
+        url: "https://www.ifc.org/en/about/combating-corruption",
       },
       tags: {
         bribery: {
@@ -1061,7 +1061,7 @@ const boundaryLogicData = {
       id: "nib",
       name: "NIB",
       logoUrl: "/logos/nib.svg",
-      logo: "🇳����",
+      logo: "🇳🇴",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
