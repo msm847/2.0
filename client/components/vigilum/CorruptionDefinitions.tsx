@@ -425,7 +425,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Addressed through international cooperation and regulatory harmonization under UNCAC. [CI]",
           typology: ["CI"],
@@ -566,7 +566,7 @@ const boundaryLogicData = {
     {
       id: "imf",
       name: "IMF",
-      logoUrl: "/logos/imf.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd90d804729d2429aa2af488e9a85fa01?format=webp&width=800",
       logo: "💰",
       definition:
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another person or entity, including bribes or facilitation payments.",
