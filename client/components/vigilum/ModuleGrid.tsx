@@ -288,33 +288,35 @@ const ModuleGrid = () => {
                   </div>
 
                   {/* Module Info */}
-                  <div className="flex-1 mb-6">
-                    <h3
-                      className={`text-xl font-bold mb-2 font-mono ${
-                        isPhantom ? "opacity-70" : ""
-                      }`}
-                      style={{ color: module.textColor }}
-                    >
-                      {module.name}
-                    </h3>
-                    <p
-                      className={`text-sm mb-3 ${isPhantom ? "opacity-60" : "opacity-80"}`}
-                      style={{ color: module.textColor }}
-                    >
-                      {module.subtitle}
-                    </p>
-                    <p
-                      className={`text-xs leading-relaxed mb-4 ${
-                        isPhantom ? "opacity-50" : "opacity-70"
-                      }`}
-                      style={{ color: module.textColor }}
-                    >
-                      {module.description}
-                    </p>
+                  <div className="flex-1 flex flex-col mb-6">
+                    <div className="flex-grow">
+                      <h3
+                        className={`text-xl font-bold mb-2 font-mono ${
+                          isPhantom ? "opacity-70" : ""
+                        }`}
+                        style={{ color: module.textColor }}
+                      >
+                        {module.name}
+                      </h3>
+                      <p
+                        className={`text-sm mb-3 ${isPhantom ? "opacity-60" : "opacity-80"}`}
+                        style={{ color: module.textColor }}
+                      >
+                        {module.subtitle}
+                      </p>
+                      <p
+                        className={`text-xs leading-relaxed mb-4 ${
+                          isPhantom ? "opacity-50" : "opacity-70"
+                        }`}
+                        style={{ color: module.textColor }}
+                      >
+                        {module.description}
+                      </p>
+                    </div>
 
-                    {/* Tagline */}
+                    {/* Tagline - always at bottom of content area */}
                     <p
-                      className={`text-xs italic font-mono mb-4 ${
+                      className={`text-xs italic font-mono ${
                         isPhantom ? "opacity-40" : ""
                       }`}
                       style={{ color: module.accentColor }}
