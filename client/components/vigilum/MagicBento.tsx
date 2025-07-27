@@ -47,7 +47,7 @@ const cardData = [
         name: "Misha Martynov",
         role: "Founding Team / Chief of Staff",
         description:
-          "Drives web implementation and cross-team integration",
+          "Drives web implementation, integration across teams, and external partnerships.",
         imageUrl: "/placeholder.svg",
       },
       {
