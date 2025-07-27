@@ -226,7 +226,7 @@ const impactNetworkData = {
         {
           step: "Unqualified winner",
           description: "Project given to incapable bidder",
-          icon: "⚠️",
+          icon: "���️",
         },
         {
           step: "Project fails",
@@ -1486,25 +1486,25 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             marginBottom: "16px",
           }}
         >
-          <h1
+          <h2
             style={{
-              fontSize: "clamp(2rem, 4vw, 2.5rem)",
-              fontWeight: "600",
-              color: "#9DE6C6",
-              margin: "0",
-              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
+              fontWeight: "700",
+              color: "#E5F3ED",
+              margin: "0 0 16px 0",
+              fontFamily: "IBM Plex Sans, sans-serif",
+              lineHeight: "1.1",
             }}
           >
             Structural Impact Map
-          </h1>
+          </h2>
         </div>
         <p
           style={{
-            fontSize: "16px",
+            fontSize: "18px",
             color: "#FFFFFF",
-            margin: "0 0 12px 0",
-            lineHeight: "1.6",
-            fontWeight: "500"
+            margin: "0 0 8px 0",
+            fontStyle: "italic",
           }}
         >
           What appears as isolated harm is, in fact, systemic propagation.
@@ -1513,8 +1513,9 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           style={{
             fontSize: "16px",
             color: "#E5E5E5",
-            margin: "0 0 24px 0",
+            margin: "0",
             lineHeight: "1.6",
+            whiteSpace: "nowrap",
           }}
         >
           Examine how design-level risk migrates across the economy, institutions,
