@@ -2569,7 +2569,6 @@ const CorruptionDefinitions = ({ onNavigate }) => {
               </p>
             </div>
           </div>
-
         </div>
       </div>
 

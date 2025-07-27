@@ -615,7 +615,12 @@ const PerceptionPerspective = () => {
                       ) : (
                         <>
                           What is Corruption?{" "}
-                          <span style={{ transform: "rotate(180deg)", display: "inline-block" }}>
+                          <span
+                            style={{
+                              transform: "rotate(180deg)",
+                              display: "inline-block",
+                            }}
+                          >
                             →
                           </span>
                         </>
