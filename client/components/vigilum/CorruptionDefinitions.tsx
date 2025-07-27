@@ -122,7 +122,7 @@ const boundaryLogicData = {
           typology: ["SB"],
         },
         nepotism: {
-          state: "��",
+          state: "–",
           tooltip:
             "Not addressed in convention framework. Left to domestic discretion.",
           typology: ["SB"],
@@ -1339,7 +1339,7 @@ const BoundaryLogicCarousel = () => {
                 data-term={term}
                 title={tag.tooltip}
               >
-                <span style={{ fontSize: "12px", fontWeight: "700" }}>
+                <span style={{ fontSize: "12px", fontWeight: "700", width: "16px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   {tag.state}
                 </span>
                 <span
