@@ -240,7 +240,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Central concern in EU regulatory coherence and harmonization efforts. [CI]",
           typology: ["CI"],
@@ -1142,7 +1142,7 @@ const termDefinitions = {
     analysis:
       'Nepotism is universally recognized as allocating advantage based on kinship or personal ties, in conflict with meritocratic principles. Divergence arises in how the practice is criminalized, normalized, or left to managerial discretion across sectors and cultures. Public rules may prohibit nepotism in specific offices but leave broad gaps, while private organizations often frame family hiring as trust or tradition. Disclosure, recusal, and "fit and proper" tests simulate integrity but rarely challenge underlying network advantage. In markets where nepotism is normalized, governance signals are distorted and opportunity allocation shifts from open competition to closed networks—especially in family-controlled conglomerates, state enterprises, or emerging market firms.',
     consequence:
-      "Nepotism entrenches structural privilege, undermining institutional credibility and deterring external investment and talent.",
+      "STRUCTURAL CONSEQUENCE: Nepotism embeds privilege as a logic gate, replacing formal meritocracy with recursive self-reinforcement. By cloaking selection bias as trust or cultural fit, institutions nullify accountability and lock alternative talent out of circulation. Oversight mechanisms are structurally defanged—performance is simulated, but network continuity is guaranteed. Over time, nepotism produces self-insulating systems where exclusion, erosion of trust, and strategic blindness are endemic, not accidental.",
   },
   lobbying: {
     title: "Lobbying: Influence, Transparency, and Regulatory Simulation",
@@ -2012,7 +2012,7 @@ const institutionalData = {
       name: "International Financial",
       description:
         "Leading global financial institutions with their corruption frameworks.",
-      emblem: "���",
+      emblem: "🏦",
       institutions: [
         {
           name: "World Bank",
