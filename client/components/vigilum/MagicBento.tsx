@@ -935,8 +935,6 @@ const MagicBento = ({
               </ParticleCard>
             );
           }
-
-          return (
             <div
               key={index}
               {...cardProps}
