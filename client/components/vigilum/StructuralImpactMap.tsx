@@ -1377,25 +1377,7 @@ const StructuralImpactMap = ({ onNavigate }) => {
           Explore how damage propagates across domains.
         </p>
 
-        {isIntroVisible && (
-          <div
-            style={{
-              background: "rgba(157, 230, 198, 0.1)",
-              border: "1px solid rgba(157, 230, 198, 0.3)",
-              borderRadius: "6px",
-              padding: "8px 12px",
-              display: "inline-block",
-              fontSize: "13px",
-              color: "#9DE6C6",
-              position: "relative",
-              top: "20px",
-              left: "20px",
-              marginBottom: "-10px",
-            }}
-          >
-            Click any node to explore its impacts and connections
-          </div>
-        )}
+
 
         {/* Global Live Ticker - rendered via portal for immediate positioning */}
         {createPortal(
