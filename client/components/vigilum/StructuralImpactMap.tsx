@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 85, y: 65 }, // 4 o'clock position - lowered for equal spacing
+      position: { x: 85, y: 75 }, // 4 o'clock position - lowered even more
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 15, y: 65 }, // 8 o'clock position - lowered for equal spacing
+      position: { x: 15, y: 75 }, // 8 o'clock position - lowered even more
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 50, y: 75 }, // 6 o'clock position - lowered for equal spacing
+      position: { x: 50, y: 85 }, // 6 o'clock position - lowered even more
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
