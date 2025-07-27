@@ -2718,8 +2718,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              Explore how the world's leading authorities describe and classify
-              corruption.
+              Explore how global authorities construct–and limit–the boundaries of corruption.
             </p>
 
             {/* Key Insight */}
