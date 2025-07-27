@@ -690,7 +690,7 @@ const boundaryLogicData = {
     {
       id: "eib",
       name: "EIB",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7185a1e2396f4fa7b1b4a1d3f1144c26?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F409ba1ed70e94d7690619584c21c14c3?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "The EIB defines corruption and fraud as the abuse of public or private office for personal gain. This means any behaviour in which people improperly and unlawfully enrich themselves or those close to them, or induce others to do so, by misusing their position.",
