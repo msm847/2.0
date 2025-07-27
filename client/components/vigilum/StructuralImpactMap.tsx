@@ -1464,9 +1464,9 @@ const StructuralImpactMap = ({ onNavigate }) => {
         style={{
           position: "relative",
           width: "100%",
-          height: "600px",
+          height: "750px",
           maxWidth: "1000px",
-          margin: "0 auto",
+          margin: "0 0 0 0",
         }}
       >
         {/* Nodes */}
