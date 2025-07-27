@@ -122,7 +122,7 @@ const boundaryLogicData = {
           typology: ["SB"],
         },
         nepotism: {
-          state: "–",
+          state: "��",
           tooltip:
             "Not addressed in convention framework. Left to domestic discretion.",
           typology: ["SB"],
@@ -1278,7 +1278,7 @@ const BoundaryLogicCarousel = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "4px",
+            gap: "6px",
             marginTop: "auto",
           }}
         >
@@ -1295,8 +1295,8 @@ const BoundaryLogicCarousel = () => {
               <div
                 key={term}
                 style={{
-                  height: "28px",
-                  padding: "4px 8px",
+                  height: "36px",
+                  padding: "6px 10px",
                   border: `2px solid ${isSelected ? "#FFFFFF" : getTagColor(tag.state)}`,
                   borderRadius: "6px",
                   background: isSelected
@@ -1345,21 +1345,17 @@ const BoundaryLogicCarousel = () => {
                 <span
                   style={{
                     textTransform: "uppercase",
-                    fontSize: "9px",
+                    fontSize: "10px",
                     fontWeight: "600",
-                    whiteSpace: "nowrap",
+                    whiteSpace: "normal",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                    maxWidth: "80px",
+                    maxWidth: "100px",
+                    lineHeight: "1.1",
+                    textAlign: "center",
                   }}
                 >
-                  {term === "privateSector"
-                    ? "PRIVATE"
-                    : term === "influencePeddling"
-                      ? "INFLUENCE"
-                      : term === "conflictOfInterest"
-                        ? "CONFLICT"
-                        : term.toUpperCase()}
+                  {getTermDisplayName(term).toUpperCase().replace(" ", "\n")}
                 </span>
               </div>
             );
