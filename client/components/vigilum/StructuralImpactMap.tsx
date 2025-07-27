@@ -61,7 +61,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 75, y: 25 }, // 2 o'clock position
+      position: { x: 85, y: 25 }, // 2 o'clock position - further right
       headline: "Corruption weakens law, derails justice, erodes legitimacy.",
       domainCounter: {
         ratePerSecond: 8400,
@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 75, y: 55 }, // 4 o'clock position
+      position: { x: 85, y: 55 }, // 4 o'clock position - further right
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 25, y: 55 }, // 8 o'clock position
+      position: { x: 15, y: 55 }, // 8 o'clock position - further left
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 25, y: 25 }, // 10 o'clock position
+      position: { x: 15, y: 25 }, // 10 o'clock position - further left
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
