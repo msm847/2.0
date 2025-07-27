@@ -18,7 +18,7 @@ import DecryptedText from "../ui/DecryptedText";
 const modules = [
   {
     id: "clavis",
-    name: "ϕ CLAVIS",
+    name: "CLAVIS",
     subtitle: "Clause Intelligence",
     tagline: "Structure is intent made computable; inversion exposes its risk topology.",
     description:
@@ -35,7 +35,7 @@ const modules = [
   },
   {
     id: "obscura",
-    name: "⊗ OBSCURA",
+    name: "OBSCURA",
     subtitle: "Procurement Distortion",
     tagline: "Design is camouflage; compression preformats extraction.",
     description:
@@ -52,7 +52,7 @@ const modules = [
   },
   {
     id: "nullum",
-    name: "Δ NULLUM",
+    name: "NULLUM",
     subtitle: "Judicial Stalling",
     tagline: "Delay is the systemic erasure of enforcement logic.",
     description:
@@ -69,7 +69,7 @@ const modules = [
   },
   {
     id: "nexus-potentia",
-    name: "λ NEXUS POTENTIA",
+    name: "NEXUS POTENTIA",
     subtitle: "Influence Network Graph",
     tagline: "Power propagates in recursion; mapping reveals the hidden operator graph.",
     description:
@@ -86,7 +86,7 @@ const modules = [
   },
   {
     id: "vigilo-core",
-    name: "Σ VIGILO CORE",
+    name: "VIGILO CORE",
     subtitle: "Signal Integration",
     tagline: "Pattern resonance is system exposure; escalation is logic actualized.",
     description:
@@ -103,7 +103,7 @@ const modules = [
   },
   {
     id: "veris",
-    name: "τ VERIS",
+    name: "VERIS",
     subtitle: "Structural Risk Index",
     tagline: "Integrity is a projection in risk space—fragility is its spectral collapse.",
     description:
@@ -120,7 +120,7 @@ const modules = [
   },
   {
     id: "sentium",
-    name: "Ω SENTIUM",
+    name: "SENTIUM",
     subtitle: "Civic Signal",
     tagline: "Witness is vectorized; signal emerges through cross-structural resonance.",
     description:
@@ -137,7 +137,7 @@ const modules = [
   },
   {
     id: "unallocated",
-    name: "∅ UNALLOCATED MODULE",
+    name: "UNALLOCATED MODULE",
     subtitle: "Reserved Operator",
     tagline: "Extensibility is preserved as a future operator—capacity remains latent.",
     description:
@@ -312,25 +312,15 @@ const ModuleGrid = () => {
                       {module.description}
                     </p>
 
-                    {/* Operator Label and Tagline */}
-                    <div className="mb-4">
-                      <p
-                        className={`text-xs font-mono mb-1 ${
-                          isPhantom ? "opacity-40" : ""
-                        }`}
-                        style={{ color: module.accentColor }}
-                      >
-                        Operator:
-                      </p>
-                      <p
-                        className={`text-xs italic font-mono ${
-                          isPhantom ? "opacity-40" : ""
-                        }`}
-                        style={{ color: module.accentColor }}
-                      >
-                        "{module.tagline}"
-                      </p>
-                    </div>
+                    {/* Tagline */}
+                    <p
+                      className={`text-xs italic font-mono mb-4 ${
+                        isPhantom ? "opacity-40" : ""
+                      }`}
+                      style={{ color: module.accentColor }}
+                    >
+                      "{module.tagline}"
+                    </p>
                   </div>
 
                   {/* Analyze Button */}
