@@ -236,14 +236,9 @@ const PerceptionPerspective = () => {
 
   // Control floating navigation visibility
   useEffect(() => {
-    // Show floating nav when user has selected a perception/perspective section
-    if (activeSection !== null || selectedButton !== null) {
-      // Add a small delay for smoother transition
-      const timer = setTimeout(() => setShowFloatingNav(true), 200);
-      return () => clearTimeout(timer);
-    } else {
-      setShowFloatingNav(false);
-    }
+    // Always show floating nav when in perception-perspective section
+    const timer = setTimeout(() => setShowFloatingNav(true), 200);
+    return () => clearTimeout(timer);
   }, [activeSection, selectedButton]);
 
   // Hide floating nav when navigating away from this component
