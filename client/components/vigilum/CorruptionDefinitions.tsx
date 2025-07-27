@@ -1399,6 +1399,58 @@ const BoundaryLogicCarousel = () => {
           >
             "{institution.definition}"
           </blockquote>
+
+          {/* Source Link */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              marginTop: "8px",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "12px",
+                color: "#A1B5C1",
+                fontFamily: "SF Mono, Monaco, monospace",
+              }}
+            >
+              Source:
+            </span>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if (institution.citation.url) {
+                  window.open(institution.citation.url, "_blank");
+                }
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                color: "#9DE6C6",
+                fontSize: "12px",
+                cursor: "pointer",
+                padding: "0",
+                textDecoration: "underline",
+                fontFamily: "SF Mono, Monaco, monospace",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                transition: "color 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#FFFFFF";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#9DE6C6";
+              }}
+              title={`View source: ${institution.citation.text}`}
+            >
+              {institution.citation.text}
+              <span style={{ fontSize: "10px" }}>↗</span>
+            </button>
+          </div>
         </div>
 
         {/* Spacer to push tags to bottom */}
