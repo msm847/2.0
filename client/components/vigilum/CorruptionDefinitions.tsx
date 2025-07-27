@@ -1149,7 +1149,7 @@ const termDefinitions = {
     analysis:
       'Lobbying is formally defined as organized advocacy to shape policy or regulation. Divergence appears in registration standards, definitions of "lobbyist," and scope of disclosure, with critical gaps in capturing indirect and informal channels. In the US, rules narrowly regulate direct contact, while industry associations, think-tanks, "astroturfing" campaigns, and campaign finance operate in the shadows. In the EU, public consultation and policy advice blur the lines between advocacy and extractive influence. Globally, the rise of "proxy advocacy," strategic philanthropy, and revolving-door hires enable sustained access without violating formal rules. Legal formatting performs compliance while structurally enabling policy capture: material risk is created when extractive actors operate via formally legal influence, outpacing oversight and market due diligence.',
     consequence:
-      "Lobbying institutionalizes access as the substrate of policy, turning disclosure into simulation and exclusion into process. While formal registration mimics constraint, real influence flows through privileged pathways that fragment recognition and diffuse liability. Policy capture is routinized as \"input,\" allowing extraction logic to be embedded via legal advocacy, shifting the center of power outside public oversight. The system learns to distinguish between \"undue influence\" and routine engagement only after the risk has propagated.",
+      'Lobbying institutionalizes access as the substrate of policy, turning disclosure into simulation and exclusion into process. While formal registration mimics constraint, real influence flows through privileged pathways that fragment recognition and diffuse liability. Policy capture is routinized as "input," allowing extraction logic to be embedded via legal advocacy, shifting the center of power outside public oversight. The system learns to distinguish between "undue influence" and routine engagement only after the risk has propagated.',
   },
   assetLaundering: {
     title: "Asset Laundering: Obfuscation, Integration, and Systemic Risk",
@@ -1163,7 +1163,7 @@ const termDefinitions = {
     analysis:
       'Cronyism centers on the preferential allocation of opportunities or resources to favored associates, often subverting meritocratic or competitive processes. Divergence emerges in legal thresholds, sectoral standards, and the extent of tolerated insider networks. Some markets criminalize cronyism in procurement or state contracting, while others normalize partnership selection and strategic alliances. Formal processes may simulate competition while reproducing insider control—through shortlists, selective tenders, or undisclosed relationships. Market competition is distorted as closed networks capture value, rendering entire sectors or economies "uninvestable" for global capital, and embedding fragility into supply chains and institutional performance.',
     consequence:
-      "Cronyism weaponizes relational proximity as a structural override, bypassing formal rules with informal power. Favor networks embed themselves in procurement, regulation, and oversight, creating a system where compliance is simulated but outcomes are pre-allocated. By formalizing informality, cronyism engineers a permanent split between official process and operational reality—producing an \"insider's market\" and encoding extraction as routine output.",
+      'Cronyism weaponizes relational proximity as a structural override, bypassing formal rules with informal power. Favor networks embed themselves in procurement, regulation, and oversight, creating a system where compliance is simulated but outcomes are pre-allocated. By formalizing informality, cronyism engineers a permanent split between official process and operational reality—producing an "insider\'s market" and encoding extraction as routine output.',
   },
   regulatoryArbitrage: {
     title: "Regulatory Arbitrage: Gap Navigation and Legal Engineering",
@@ -2722,7 +2722,8 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              Explore how global authorities construct–and limit–the boundaries of corruption.
+              Explore how global authorities construct–and limit–the boundaries
+              of corruption.
             </p>
 
             {/* Key Insight */}

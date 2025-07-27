@@ -217,9 +217,7 @@ const PerceptionPerspective = () => {
     if (location.pathname !== "/") {
       // Run on all pages except home page
       interval = setInterval(() => {
-        setGlobalLoss(
-          (prev) => prev + 114169,
-        );
+        setGlobalLoss((prev) => prev + 114169);
       }, 1000);
     }
     return () => {

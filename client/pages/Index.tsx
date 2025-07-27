@@ -238,7 +238,9 @@ export default function Index() {
           <button
             id="connect-button"
             onClick={(e) => {
-              console.log("Connect button clicked - navigating to stakeholders section");
+              console.log(
+                "Connect button clicked - navigating to stakeholders section",
+              );
               e.preventDefault();
               e.stopPropagation();
               navigate("/vigilum#stakeholders");

@@ -78,8 +78,7 @@ const cardData = [
       {
         name: "Name Surname",
         role: "Advisor",
-        description:
-          "Description",
+        description: "Description",
         imageUrl: "/placeholder.svg",
       },
     ],
@@ -759,7 +758,8 @@ const AdvisoryCarousel = ({ card }) => {
     setTimeout(() => {
       setCurrentMember(
         (prev) =>
-          (prev - 1 + card.advisoryMembers.length) % card.advisoryMembers.length,
+          (prev - 1 + card.advisoryMembers.length) %
+          card.advisoryMembers.length,
       );
       setIsTransitioning(false);
     }, 150);
@@ -768,7 +768,14 @@ const AdvisoryCarousel = ({ card }) => {
   const member = card.advisoryMembers[currentMember];
 
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "0" }}>
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        padding: "0",
+      }}
+    >
       <h2
         className="card__title"
         style={{
@@ -830,7 +837,6 @@ const AdvisoryCarousel = ({ card }) => {
               }}
             />
           </div>
-
         </div>
 
         {/* Right side - Name, Role, Description & Navigation */}
@@ -1042,13 +1048,35 @@ const MagicBento = ({
                 key={index}
                 {...cardProps}
                 disableAnimations={
-                  shouldDisableAnimations || card.isTeamCarousel || card.isAdvisoryCarousel || card.isVision || card.isFounder
+                  shouldDisableAnimations ||
+                  card.isTeamCarousel ||
+                  card.isAdvisoryCarousel ||
+                  card.isVision ||
+                  card.isFounder
                 }
                 particleCount={particleCount}
                 glowColor={glowColor}
-                enableTilt={enableTilt && !card.isTeamCarousel && !card.isAdvisoryCarousel && !card.isVision && !card.isFounder}
-                clickEffect={clickEffect && !card.isTeamCarousel && !card.isAdvisoryCarousel && !card.isVision && !card.isFounder}
-                enableMagnetism={enableMagnetism && !card.isTeamCarousel && !card.isAdvisoryCarousel && !card.isVision && !card.isFounder}
+                enableTilt={
+                  enableTilt &&
+                  !card.isTeamCarousel &&
+                  !card.isAdvisoryCarousel &&
+                  !card.isVision &&
+                  !card.isFounder
+                }
+                clickEffect={
+                  clickEffect &&
+                  !card.isTeamCarousel &&
+                  !card.isAdvisoryCarousel &&
+                  !card.isVision &&
+                  !card.isFounder
+                }
+                enableMagnetism={
+                  enableMagnetism &&
+                  !card.isTeamCarousel &&
+                  !card.isAdvisoryCarousel &&
+                  !card.isVision &&
+                  !card.isFounder
+                }
               >
                 <div className="card__content" style={contentStyle}>
                   {card.isVision ? (
@@ -1107,7 +1135,6 @@ const MagicBento = ({
                           color: "#E5E5E5",
                           marginBottom: "8px",
                           fontWeight: "300",
-
                         }}
                       >
                         {card.description}
@@ -1119,7 +1146,6 @@ const MagicBento = ({
                           color: "#D0D0D0",
                           marginBottom: "8px",
                           fontWeight: "200",
-
                         }}
                       >
                         {card.secondaryDescription}
