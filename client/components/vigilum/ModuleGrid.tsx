@@ -70,7 +70,7 @@ const modules = [
   {
     id: "nexus-potentia",
     name: "NEXUS POTENTIA",
-    subtitle: "Influence Network Graph",
+    subtitle: "Influence Network",
     tagline: "Power propagates in recursion; mapping reveals the hidden operator graph.",
     description:
       "Recursively infers indirect control structures, exposing latent influence via relational propagation and hidden override matrices.",
