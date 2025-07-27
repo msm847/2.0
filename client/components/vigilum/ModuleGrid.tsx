@@ -401,7 +401,8 @@ const ModuleGrid = () => {
         {/* Bottom Navigation */}
         <div className="text-center">
           <p className="text-sm text-gray-400 font-mono">
-            Each module is an autonomous semantic operator in Vigilum's risk calculus; their interdependencies compose the logic-space where design, recognition, and evasion intersect.
+            Each module is an operator in Vigilum's risk calculus; <br />
+            their interdependencies compose the logic-space where design, recognition, and evasion intersect.
           </p>
         </div>
       </div>
