@@ -567,34 +567,17 @@ const NetworkNode = ({
 
         <div
           style={{
-            fontSize: isActive ? "16px" : "14px",
+            fontSize: isActive ? "14px" : "12px",
             fontWeight: "600",
             color: "#FFFFFF",
             marginBottom: isActive ? "4px" : "2px",
             fontFamily: "var(--font-display)",
-            lineHeight: "1.2",
+            lineHeight: "1.1",
+            textAlign: "center",
           }}
         >
-          {node.label}
+          {node.axisTitle || node.label}
         </div>
-
-        {isActive && node.axisTitle && (
-          <div
-            style={{
-              fontSize: "11px",
-              fontWeight: "500",
-              color: node.color,
-              marginBottom: "8px",
-              fontFamily: "var(--font-display)",
-              lineHeight: "1.1",
-              textAlign: "center",
-              textTransform: "uppercase",
-              letterSpacing: "0.5px"
-            }}
-          >
-            {node.axisTitle}
-          </div>
-        )}
 
         {isActive && node.domainCounter && (
           <motion.div
@@ -891,7 +874,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   letterSpacing: "0.5px"
                 }}
               >
-                �� Vigilum Output
+                🎯 Vigilum Output
               </h4>
               <p
                 style={{
