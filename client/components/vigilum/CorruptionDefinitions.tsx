@@ -68,15 +68,15 @@ const boundaryLogicData = {
       },
     },
     {
-      id: "oecd",
-      name: "OECD",
-      logoUrl: "/logos/oecd.svg",
-      logo: "🌐",
+      id: "greco",
+      name: "GRECO",
+      logoUrl: "/logos/greco.svg",
+      logo: "🇪🇺",
       definition:
-        "The active bribery of foreign public officials, as well as the failure to prevent such bribery by persons associated with a commercial organization.",
+        "GRECO works with Council of Europe anti-corruption standards. They describe corruption as that which 'threatens the rule of law, democracy and human rights, undermines good governance, fairness and social justice, distorts competition, hinders economic development and endangers the stability of democratic institutions and the moral foundations of society.'",
       citation: {
-        text: "OECD Anti-Bribery Convention, Article 1, 1997",
-        url: "https://www.oecd.org/corruption/oecdantibriberyconvention.htm",
+        text: "GRECO About Page, Council of Europe",
+        url: "https://www.coe.int/en/web/greco/about-greco",
       },
       tags: {
         bribery: {
