@@ -836,7 +836,7 @@ const MagicBento = ({
                           color: "#E5E5E5",
                           marginBottom: "8px",
                           fontWeight: "300",
-                          fontStyle: "italic",
+                          
                         }}
                       >
                         {card.description}
@@ -848,7 +848,7 @@ const MagicBento = ({
                           color: "#D0D0D0",
                           marginBottom: "8px",
                           fontWeight: "200",
-                          fontStyle: "italic",
+                          
                         }}
                       >
                         {card.secondaryDescription}
@@ -1119,7 +1119,7 @@ const MagicBento = ({
                         color: "#E5E5E5",
                         marginBottom: "8px",
                         fontWeight: "300",
-                        fontStyle: "italic",
+                        
                       }}
                     >
                       {card.description}
@@ -1131,7 +1131,7 @@ const MagicBento = ({
                         color: "#D0D0D0",
                         marginBottom: "8px",
                         fontWeight: "200",
-                        fontStyle: "italic",
+                        
                       }}
                     >
                       {card.secondaryDescription}
