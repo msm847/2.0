@@ -125,13 +125,12 @@ const impactNetworkData = {
         source: "GRECO",
       },
       propagation: [
-        { toNode: "trust", effect: "Leads to weakened social trust" },
-        {
-          toNode: "inequality",
-          effect: "Enables persistent structural inequality",
-        },
+        { toNode: "environment", effect: "Enables oversight simulation", intensity: 0.9 },
+        { toNode: "inequality", effect: "Drives behavioral drift", intensity: 0.6 },
+        { toNode: "trust", effect: "Accelerates legitimacy crisis", intensity: 0.8 }
       ],
-      color: "#7C3AED",
+      color: "#3B82F6",
+      structuralType: "simulation"
     },
     {
       id: "inequality",
