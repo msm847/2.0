@@ -502,7 +502,7 @@ const boundaryLogicData = {
     {
       id: "doj",
       name: "US DOJ FCPA",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd13ace4acefa49238b479c2abc49255d?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fbea7129300cb4e3ea7054aab432a3622?format=webp&width=800",
       logo: "🏛️",
       definition:
         "The Foreign Corrupt Practices Act … was enacted for the purpose of making it unlawful … to make payments to foreign government officials to assist in obtaining or retaining business.",
@@ -1479,7 +1479,7 @@ const BoundaryLogicCarousel = () => {
         >
           {allTerms.map((term) => {
             const tag = institution.tags[term] || {
-              state: "–",
+              state: "��",
               tooltip: "Not specified in this framework",
               typology: [],
             };
