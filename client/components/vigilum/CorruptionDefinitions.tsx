@@ -130,15 +130,15 @@ const boundaryLogicData = {
       },
     },
     {
-      id: "greco",
-      name: "GRECO",
-      logoUrl: "/logos/greco.svg",
-      logo: "🇪🇺",
+      id: "transparency",
+      name: "Transparency International",
+      logoUrl: "/logos/transparency.svg",
+      logo: "🔍",
       definition:
-        "Criminal or disciplinary offences of corruption, comprising active and passive bribery, abuse of functions, and related offences.",
+        "We define corruption as the abuse of entrusted power for private gain.",
       citation: {
-        text: "GRECO, Evaluation Methodology, Article 2, 2019",
-        url: "https://www.coe.int/en/web/greco/evaluation-procedure",
+        text: "Transparency International, What is Corruption",
+        url: "https://www.transparency.org/en/what-is-corruption",
       },
       tags: {
         bribery: {
