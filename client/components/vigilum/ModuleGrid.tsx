@@ -312,15 +312,25 @@ const ModuleGrid = () => {
                       {module.description}
                     </p>
 
-                    {/* Tagline */}
-                    <p
-                      className={`text-xs italic font-mono mb-4 ${
-                        isPhantom ? "opacity-40" : ""
-                      }`}
-                      style={{ color: module.accentColor }}
-                    >
-                      "{module.tagline}"
-                    </p>
+                    {/* Operator Label and Tagline */}
+                    <div className="mb-4">
+                      <p
+                        className={`text-xs font-mono mb-1 ${
+                          isPhantom ? "opacity-40" : ""
+                        }`}
+                        style={{ color: module.accentColor }}
+                      >
+                        Operator:
+                      </p>
+                      <p
+                        className={`text-xs italic font-mono ${
+                          isPhantom ? "opacity-40" : ""
+                        }`}
+                        style={{ color: module.accentColor }}
+                      >
+                        "{module.tagline}"
+                      </p>
+                    </div>
                   </div>
 
                   {/* Analyze Button */}
