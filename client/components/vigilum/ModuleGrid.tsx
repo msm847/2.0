@@ -20,7 +20,8 @@ const modules = [
     id: "clavis",
     name: "CLAVIS",
     subtitle: "Clause Intelligence",
-    tagline: "Structure is intent made computable; inversion exposes its risk topology.",
+    tagline:
+      "Structure is intent made computable; inversion exposes its risk topology.",
     description:
       "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields for logic-based risk detection.",
     color: "#1a3d82",
@@ -71,7 +72,8 @@ const modules = [
     id: "nexus-potentia",
     name: "NEXUS POTENTIA",
     subtitle: "Influence Network",
-    tagline: "Power propagates in recursion; mapping reveals the hidden operator graph.",
+    tagline:
+      "Power propagates in recursion; mapping reveals the hidden operator graph.",
     description:
       "Recursively infers indirect control structures, exposing latent influence via relational propagation and hidden override matrices.",
     color: "#4e27a6",
@@ -88,7 +90,8 @@ const modules = [
     id: "vigilo-core",
     name: "VIGILO CORE",
     subtitle: "Signal Integration",
-    tagline: "Pattern resonance is system exposure; escalation is logic actualized.",
+    tagline:
+      "Pattern resonance is system exposure; escalation is logic actualized.",
     description:
       "Aggregates all module outputs into a dynamic risk lattice, triggering escalation when structural resonance achieves system-level coherence.",
     color: "#035e4a",
@@ -105,7 +108,8 @@ const modules = [
     id: "veris",
     name: "VERIS",
     subtitle: "Structural Risk Index",
-    tagline: "Integrity is a projection in risk space—fragility is its spectral collapse.",
+    tagline:
+      "Integrity is a projection in risk space—fragility is its spectral collapse.",
     description:
       "Quantifies risk field intensities as a multidimensional signal, collapsing typology vectors into an integrated structural index.",
     color: "#a65800",
@@ -122,7 +126,8 @@ const modules = [
     id: "sentium",
     name: "SENTIUM",
     subtitle: "Civic Signal",
-    tagline: "Witness is vectorized; signal emerges through cross-structural resonance.",
+    tagline:
+      "Witness is vectorized; signal emerges through cross-structural resonance.",
     description:
       "Encrypts testimonial input as analytic vectors, triangulating with system detections for recursive validation and escalation.",
     color: "#036373",
@@ -403,7 +408,8 @@ const ModuleGrid = () => {
         <div className="text-center">
           <p className="text-sm text-gray-400 font-mono">
             Each module is an operator in Vigilum's risk calculus; <br />
-            their interdependencies compose the logic-space where design, recognition, and evasion intersect.
+            their interdependencies compose the logic-space where design,
+            recognition, and evasion intersect.
           </p>
         </div>
       </div>
