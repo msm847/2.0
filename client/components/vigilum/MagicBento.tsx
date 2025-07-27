@@ -828,37 +828,13 @@ const AdvisoryCarousel = ({ card }) => {
             />
           </div>
 
-          <p
-            style={{
-              fontSize: "11px",
-              lineHeight: "1.4",
-              color: "#E5E5E5",
-              fontWeight: "300",
-              margin: "0",
-              textAlign: "center",
-            }}
-          >
-            {member.description}
-          </p>
-        </div>
-
-        {/* Right side - Name, Role & Navigation */}
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            paddingTop: "12px",
-          }}
-        >
-          <div>
+          <div style={{ textAlign: "center", marginTop: "8px" }}>
             <h3
               style={{
-                fontSize: "22px",
+                fontSize: "16px",
                 fontWeight: "600",
                 color: "#FFFFFF",
-                margin: "0 0 8px 0",
+                margin: "0 0 4px 0",
                 lineHeight: "1.2",
               }}
             >
@@ -866,7 +842,7 @@ const AdvisoryCarousel = ({ card }) => {
             </h3>
             <p
               style={{
-                fontSize: "15px",
+                fontSize: "13px",
                 fontWeight: "500",
                 color: "#9DE6C6",
                 margin: "0",
@@ -876,6 +852,30 @@ const AdvisoryCarousel = ({ card }) => {
               {member.role}
             </p>
           </div>
+        </div>
+
+        {/* Right side - Description & Navigation */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            paddingTop: "12px",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "13px",
+              lineHeight: "1.4",
+              color: "#E5E5E5",
+              fontWeight: "300",
+              margin: "0",
+              textAlign: "left",
+            }}
+          >
+            {member.description}
+          </p>
 
           {/* Navigation at bottom */}
           <div
