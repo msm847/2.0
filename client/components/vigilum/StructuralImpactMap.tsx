@@ -1380,7 +1380,7 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
 
 
         {/* Global Live Ticker - rendered via portal for immediate positioning */}
-        {createPortal(
+        {showGlobalCount && createPortal(
           <div
             style={{
               position: "fixed",
