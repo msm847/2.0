@@ -633,9 +633,9 @@ const PerceptionPerspective = () => {
         createPortal(
           <div
             style={{
-              position: "fixed",
-              top: "80px",
-              right: "20px",
+            position: "fixed",
+            top: "80px",
+            left: "20px",
               backdropFilter: "blur(8px)",
               background: "rgba(0, 0, 0, 0.3)", // More transparent
               border: "1px solid rgba(157, 230, 198, 0.2)", // More transparent border
