@@ -758,7 +758,7 @@ const boundaryLogicData = {
         "The offering, giving, receiving or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
         text: "EBRD Enforcement Policy and Procedures",
-        url: "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/project-procurement/enforcement-policy-and-procedures/Enforcement-Policy-Procedures-English.pdf",
+        url: "https://www.ebrd.com/home/who-we-are/strategies-governance-compliance/ebrd-sanctions-system.html",
       },
       tags: {
         bribery: {
@@ -1061,7 +1061,7 @@ const boundaryLogicData = {
       id: "nib",
       name: "NIB",
       logoUrl: "/logos/nib.svg",
-      logo: "🇳🇴",
+      logo: "🇳����",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
