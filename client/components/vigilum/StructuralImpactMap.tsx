@@ -296,10 +296,12 @@ const impactNetworkData = {
         source: "Global Forest Watch",
       },
       propagation: [
-        { toNode: "trust", effect: "Leads to weakened environmental trust" },
-        { toNode: "economy", effect: "Creates future economic instability" },
+        { toNode: "institutions", effect: "Reinforces compliance inversion", intensity: 0.85 },
+        { toNode: "trust", effect: "Erodes environmental trust", intensity: 0.6 },
+        { toNode: "markets", effect: "Enables shadow flows", intensity: 0.7 }
       ],
-      color: "#16A34A",
+      color: "#3B82F6",
+      structuralType: "simulation"
     },
     {
       id: "trust",
