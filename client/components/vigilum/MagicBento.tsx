@@ -47,7 +47,7 @@ const cardData = [
         name: "Misha Martynov",
         role: "Founding Team / Chief of Staff",
         description:
-          "Drives technical web implementation and collaborative integrations for the Vigilum platform.",
+          "Drives web implementation and cross-team integration",
         imageUrl: "/placeholder.svg",
       },
       {
