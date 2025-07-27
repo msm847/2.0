@@ -2524,7 +2524,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
             <p
               style={{
                 fontSize: "18px",
-                color: "#9DE6C6",
+                color: "#FFFFFF",
                 margin: "0 0 8px 0",
                 fontStyle: "italic",
               }}
