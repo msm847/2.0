@@ -190,8 +190,13 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 3, y: 38 }, // 8 o'clock - moved even higher and further left
-      headline: "Corruption blocks fair competition, repels honest business.",
+      axisTitle: "Shadow Market Creation",
+      position: { x: 3, y: 38 }, // 8 o'clock
+      structuralLogic: "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
+      shockingFact: "In the wake of SOE procurement simulation, shadow banking ballooned to 3x formal lending in Eastern Europe—mostly via shell vehicles.",
+      dataPoint: "In environments with high regulatory arbitrage, shadow banking assets can reach 40% of GDP—up to 4x higher than reported official sector credit.",
+      actionableOutput: "Map clause-induced shadow activity (e.g., shell company use); simulate scale of untraceable flows for each sector.",
+      headline: "Structural corruption warps the playing field—creating shadow markets and parallel finance invisible to standard oversight.",
       domainCounter: {
         ratePerSecond: 12800,
         unit: "Business Deals Lost",
