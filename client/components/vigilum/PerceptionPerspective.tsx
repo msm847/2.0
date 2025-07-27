@@ -218,9 +218,9 @@ const PerceptionPerspective = () => {
       // Run on all pages except home page
       interval = setInterval(() => {
         setGlobalLoss(
-          (prev) => prev + Math.floor(Math.random() * 50000) + 25000,
+          (prev) => prev + 114169,
         );
-      }, 1500);
+      }, 1000);
     }
     return () => {
       if (interval) clearInterval(interval);
