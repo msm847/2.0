@@ -279,7 +279,7 @@ const PerceptionPerspective = () => {
 
             if (visibilityRatio < 0.6 || rect.bottom < viewportHeight * 0.7) {
               setShowFloatingNav(false);
-            } else if (activeSection !== null && visibilityRatio > 0.4) {
+            } else if (visibilityRatio > 0.4) {
               setShowFloatingNav(true);
             }
           }
