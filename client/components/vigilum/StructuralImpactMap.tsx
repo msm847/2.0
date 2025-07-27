@@ -1699,7 +1699,7 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           style={{
             position: "absolute",
             top: "32%",
-            left: "39%",
+            left: "40.5%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
             zIndex: 5,
