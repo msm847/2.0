@@ -874,101 +874,103 @@ const AdvisoryCarousel = ({ card }) => {
           >
             {member.description}
           </p>
-
-          {/* Navigation */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "20px",
-              marginTop: "10px",
-            }}
-          >
-            <button
-              onClick={prevMember}
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                backgroundColor: "rgba(157, 230, 198, 0.1)",
-                border: "1px solid rgba(157, 230, 198, 0.3)",
-                color: "#9DE6C6",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "18px",
-                transition: "all 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
-              }}
-            >
-              ‹
-            </button>
-
-            <div style={{ display: "flex", gap: "8px" }}>
-              {card.advisoryMembers.map((_, index) => (
-                <div
-                  key={index}
-                  onClick={() => {
-                    if (!isTransitioning) {
-                      setIsTransitioning(true);
-                      setTimeout(() => {
-                        setCurrentMember(index);
-                        setIsTransitioning(false);
-                      }, 150);
-                    }
-                  }}
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor:
-                      index === currentMember
-                        ? "#9DE6C6"
-                        : "rgba(157, 230, 198, 0.3)",
-                    cursor: "pointer",
-                    transition: "background-color 0.2s ease",
-                  }}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextMember}
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                backgroundColor: "rgba(157, 230, 198, 0.1)",
-                border: "1px solid rgba(157, 230, 198, 0.3)",
-                color: "#9DE6C6",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "18px",
-                transition: "all 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
-              }}
-            >
-              ›
-            </button>
-          </div>
         </div>
+      </div>
+
+      {/* Navigation at absolute bottom */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "20px",
+          marginTop: "auto",
+          paddingTop: "20px",
+        }}
+      >
+        <button
+          onClick={prevMember}
+          style={{
+            width: "36px",
+            height: "36px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(157, 230, 198, 0.1)",
+            border: "1px solid rgba(157, 230, 198, 0.3)",
+            color: "#9DE6C6",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "18px",
+            transition: "all 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+            e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+            e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+          }}
+        >
+          ‹
+        </button>
+
+        <div style={{ display: "flex", gap: "8px" }}>
+          {card.advisoryMembers.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                if (!isTransitioning) {
+                  setIsTransitioning(true);
+                  setTimeout(() => {
+                    setCurrentMember(index);
+                    setIsTransitioning(false);
+                  }, 150);
+                }
+              }}
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor:
+                  index === currentMember
+                    ? "#9DE6C6"
+                    : "rgba(157, 230, 198, 0.3)",
+                cursor: "pointer",
+                transition: "background-color 0.2s ease",
+              }}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={nextMember}
+          style={{
+            width: "36px",
+            height: "36px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(157, 230, 198, 0.1)",
+            border: "1px solid rgba(157, 230, 198, 0.3)",
+            color: "#9DE6C6",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "18px",
+            transition: "all 0.2s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+            e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+            e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+          }}
+        >
+          ›
+        </button>
       </div>
     </div>
   );
