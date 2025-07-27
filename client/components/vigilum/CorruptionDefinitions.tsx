@@ -423,7 +423,7 @@ const boundaryLogicData = {
           typology: ["RT"],
         },
         embezzlement: {
-          state: "��",
+          state: "–",
           tooltip:
             "Outside FCPA scope unless involving foreign official payments.",
           typology: ["SB"],
@@ -698,7 +698,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Core violation in ADB integrity framework and sanctions procedures.",
           typology: ["CI"],
@@ -1295,8 +1295,8 @@ const BoundaryLogicCarousel = () => {
               <div
                 key={term}
                 style={{
-                  height: "32px",
-                  padding: "4px 8px",
+                  height: "34px",
+                  padding: "5px 9px",
                   border: `2px solid ${isSelected ? "#FFFFFF" : getTagColor(tag.state)}`,
                   borderRadius: "6px",
                   background: isSelected
@@ -1885,7 +1885,7 @@ const institutionalData = {
         },
         {
           name: "European Investment Bank",
-          logo: "🏛️",
+          logo: "����️",
           definition:
             "Corruption includes any abuse of entrusted power for private gain, encompassing bribery, fraud, and embezzlement.",
           source: "EIB, official website",
