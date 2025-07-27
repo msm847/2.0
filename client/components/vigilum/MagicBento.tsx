@@ -69,10 +69,10 @@ const cardData = [
     isAdvisoryCarousel: true,
     advisoryMembers: [
       {
-        name: "Name Surname",
-        role: "Advisor",
+        name: "Matthew Murray",
+        role: "Strategic Advisor",
         description:
-          "Description",
+          "International expert in systemic corruption and governance reform; Adjunct Professor, Columbia University (SIPA/Harriman). Former U.S. Deputy Assistant Secretary of Commerce; 30 years' experience spanning law, policy, business, and anti-corruption strategy across Europe and Eurasia.",
         imageUrl: "/placeholder.svg",
       },
       {
