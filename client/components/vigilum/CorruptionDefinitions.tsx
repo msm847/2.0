@@ -411,7 +411,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         conflictOfInterest: {
-          state: "–",
+          state: "��",
           tooltip:
             "Not within FCPA scope unless involving prohibited payments.",
           typology: ["SB"],
@@ -1113,13 +1113,13 @@ const BoundaryLogicCarousel = () => {
   const theme = groupTheme[activeGroup];
   const allTerms = [
     "bribery",
-    "lobbying",
-    "privateSector",
-    "influencePeddling",
-    "conflictOfInterest",
     "fraud",
-    "embezzlement",
     "nepotism",
+    "lobbying",
+    "assetLaundering",
+    "cronyism",
+    "regulatoryArbitrage",
+    "shellCompany",
   ];
 
   // Tag State Logic - Boundary Recognition System
