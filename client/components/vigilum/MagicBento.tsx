@@ -883,16 +883,15 @@ const AdvisoryCarousel = ({ card }) => {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "12px",
-              justifyContent: "flex-start",
-              marginTop: "20px",
+              gap: "20px",
+              marginTop: "10px",
             }}
           >
             <button
               onClick={prevMember}
               style={{
-                width: "28px",
-                height: "28px",
+                width: "36px",
+                height: "36px",
                 borderRadius: "50%",
                 backgroundColor: "rgba(157, 230, 198, 0.1)",
                 border: "1px solid rgba(157, 230, 198, 0.3)",
@@ -901,7 +900,7 @@ const AdvisoryCarousel = ({ card }) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "14px",
+                fontSize: "18px",
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
@@ -916,7 +915,7 @@ const AdvisoryCarousel = ({ card }) => {
               ‹
             </button>
 
-            <div style={{ display: "flex", gap: "6px" }}>
+            <div style={{ display: "flex", gap: "8px" }}>
               {card.advisoryMembers.map((_, index) => (
                 <div
                   key={index}
@@ -930,8 +929,8 @@ const AdvisoryCarousel = ({ card }) => {
                     }
                   }}
                   style={{
-                    width: "6px",
-                    height: "6px",
+                    width: "8px",
+                    height: "8px",
                     borderRadius: "50%",
                     backgroundColor:
                       index === currentMember
@@ -947,8 +946,8 @@ const AdvisoryCarousel = ({ card }) => {
             <button
               onClick={nextMember}
               style={{
-                width: "28px",
-                height: "28px",
+                width: "36px",
+                height: "36px",
                 borderRadius: "50%",
                 backgroundColor: "rgba(157, 230, 198, 0.1)",
                 border: "1px solid rgba(157, 230, 198, 0.3)",
@@ -957,7 +956,7 @@ const AdvisoryCarousel = ({ card }) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "14px",
+                fontSize: "18px",
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
