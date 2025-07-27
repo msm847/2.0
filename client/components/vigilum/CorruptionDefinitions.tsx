@@ -8,7 +8,7 @@ const boundaryLogicData = {
     {
       id: "oecd",
       name: "OECD",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
       logo: "🌐",
       definition:
         "The OECD deliberately does not define 'corruption' but establishes specific offences for corrupt behavior. For policy purposes, corruption is described as 'the misuse of public office, roles or resources for private benefit.'",
@@ -197,7 +197,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7c0fc3c03a5f47fcb0e7e8664824aaa8?format=webp&width=800",
       logo: "🇪🇺",
       definition:
-        "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon…",
+        "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon���",
       citation: {
         text: "European Commission, Anti-Corruption Policy",
         url: "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/democracy-eu-citizenship-anti-corruption/anti-corruption_en",
