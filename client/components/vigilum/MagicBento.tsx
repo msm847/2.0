@@ -789,7 +789,7 @@ const AdvisoryCarousel = ({ card }) => {
           gap: "24px",
           flex: "1",
           alignItems: "flex-start",
-          marginTop: "24px",
+          marginTop: "32px",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
         }}
