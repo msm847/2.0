@@ -54,7 +54,7 @@ const cardData = [
         name: "Ričardas Blaškevič",
         role: "Marketing Team Lead",
         description:
-          "Transforming complex governance insights into powerful market narratives that accelerate institutional transparency adoption.",
+          "Transforming complex governance insights into powerful market narratives",
         imageUrl: "/placeholder.svg",
       },
     ],
