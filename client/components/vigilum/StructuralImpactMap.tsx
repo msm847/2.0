@@ -1698,8 +1698,8 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         <div
           style={{
             position: "absolute",
-            top: "25%",
-            left: "35%",
+            top: "50%",
+            left: "50%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
             zIndex: 5,
@@ -1716,6 +1716,8 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
               textTransform: "uppercase",
               letterSpacing: "0.5px",
               fontFamily: "var(--font-display)",
+              textShadow: "0 0 8px rgba(157, 230, 198, 0.6), 0 0 16px rgba(157, 230, 198, 0.4), 0 0 24px rgba(157, 230, 198, 0.2)",
+              filter: "drop-shadow(0 0 6px rgba(157, 230, 198, 0.8))",
             }}
           >
             Interactive Map
@@ -1725,7 +1727,9 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
               fontSize: "12px",
               color: "#E5E5E5",
               lineHeight: "1.4",
-              opacity: 0.8,
+              opacity: 0.9,
+              textShadow: "0 0 6px rgba(229, 229, 229, 0.5), 0 0 12px rgba(229, 229, 229, 0.3)",
+              filter: "drop-shadow(0 0 4px rgba(229, 229, 229, 0.6))",
             }}
           >
             Click each sphere to explore structural corruption axes
