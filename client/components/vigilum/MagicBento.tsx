@@ -771,13 +771,13 @@ const MagicBento = ({
                 key={index}
                 {...cardProps}
                 disableAnimations={
-                  shouldDisableAnimations || card.isTeamCarousel
+                  shouldDisableAnimations || card.isTeamCarousel || card.isVision || card.isFounder
                 }
                 particleCount={particleCount}
                 glowColor={glowColor}
-                enableTilt={enableTilt && !card.isTeamCarousel}
-                clickEffect={clickEffect && !card.isTeamCarousel}
-                enableMagnetism={enableMagnetism && !card.isTeamCarousel}
+                enableTilt={enableTilt && !card.isTeamCarousel && !card.isVision && !card.isFounder}
+                clickEffect={clickEffect && !card.isTeamCarousel && !card.isVision && !card.isFounder}
+                enableMagnetism={enableMagnetism && !card.isTeamCarousel && !card.isVision && !card.isFounder}
               >
                 <div className="card__content" style={contentStyle}>
                   {card.isVision ? (
