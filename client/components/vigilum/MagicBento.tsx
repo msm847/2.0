@@ -935,18 +935,13 @@ const MagicBento = ({
               </ParticleCard>
             );
           }
-            <div
-              key={index}
-              {...cardProps}
-              ref={(el) => {
-                if (!el) return;
+        })}
+      </BentoCardGrid>
+    </>
+  );
+};
 
-                const handleMouseMove = (e) => {
-                  if (shouldDisableAnimations || card.isTeamCarousel) return;
-
-                  const rect = el.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
+export default MagicBento;
                   const centerX = rect.width / 2;
                   const centerY = rect.height / 2;
 
