@@ -1004,7 +1004,7 @@ const boundaryLogicData = {
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
         text: "NDB Anti-Corruption Anti-Fraud and Anti-Money Laundering Policy",
-        url: "https://www.ndb.int/wp-content/uploads/2019/12/Anti-Corruption-Anti-Fraud-and-Anti-Money-Laundering-Policy.pdf",
+        url: "https://www.ndb.int/wp-content/uploads/2024/10/IEO-CLE-PolicyFramework.pdf",
       },
       tags: {
         bribery: {
@@ -1896,7 +1896,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪🇺",
+          logo: "🇪��",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
