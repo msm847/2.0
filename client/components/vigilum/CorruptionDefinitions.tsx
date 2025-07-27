@@ -1311,8 +1311,8 @@ const BoundaryLogicCarousel = () => {
                   cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  gap: "4px",
+                  justifyContent: "flex-start",
+                  gap: "6px",
                   transition: "all 0.2s ease",
                   transform: isSelected ? "scale(1.05)" : "scale(1)",
                   boxShadow: isSelected
@@ -1350,9 +1350,10 @@ const BoundaryLogicCarousel = () => {
                     whiteSpace: "normal",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                    maxWidth: "100px",
+                    flex: "1",
                     lineHeight: "1.1",
-                    textAlign: "center",
+                    textAlign: "left",
+                    minWidth: "0",
                   }}
                 >
                   {getTermDisplayName(term).toUpperCase().replace(" ", "\n")}
