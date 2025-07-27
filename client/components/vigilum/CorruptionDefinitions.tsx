@@ -20,49 +20,49 @@ const boundaryLogicData = {
         bribery: {
           state: "✓",
           tooltip:
-            "Explicitly included under the Foreign Corrupt Practices Act. [CI]",
+            "OECD focuses on active bribery of foreign public officials under Anti-Bribery Convention. [CI]",
           typology: ["CI"],
         },
         lobbying: {
-          state: "–",
-          tooltip:
-            "Lobbying is not classified as corruption unless linked to illegal payment (see FCPA Guidance, 2020). This boundary enables legal influence operations outside anti-corruption prosecution. [DG]",
-          typology: ["DG"],
-        },
-        privateSector: {
           state: "?",
           tooltip:
-            "Private sector corruption only recognized by DOJ when it affects foreign officials or involves government procurement.",
-          typology: ["RT"],
+            "Legal lobbying generally excluded, but OECD addresses problematic influence through transparency measures. [DG]",
+          typology: ["DG"],
         },
-        influencePeddling: {
-          state: "✓",
+        shellCompany: {
+          state: "?",
           tooltip:
-            "Covered under FCPA when involving government officials or foreign public officials.",
-          typology: ["CI"],
+            "Addressed indirectly through beneficial ownership and transparency recommendations. [DG]",
+          typology: ["DG"],
         },
-        conflictOfInterest: {
+        cronyism: {
           state: "–",
           tooltip:
-            "Not directly addressed in federal criminal statutes unless constituting bribery.",
+            "Not specifically addressed in OECD anti-corruption framework. [SB]",
           typology: ["SB"],
         },
         fraud: {
-          state: "✓",
+          state: "–",
           tooltip:
-            "Covered under separate federal fraud statutes when involving government programs.",
+            "Outside scope of anti-bribery convention, addressed in separate frameworks. [SB]",
+          typology: ["SB"],
+        },
+        assetLaundering: {
+          state: "?",
+          tooltip:
+            "Addressed through FATF coordination and financial intelligence measures. [RT]",
           typology: ["RT"],
         },
-        embezzlement: {
+        regulatoryArbitrage: {
           state: "✓",
           tooltip:
-            "Covered when involving public funds, officials, or federal programs.",
-          typology: ["RT"],
+            "Central concern in OECD work on regulatory coherence and international coordination. [CI]",
+          typology: ["CI"],
         },
         nepotism: {
           state: "–",
           tooltip:
-            "Not criminalized unless involving quid pro quo or bribery elements.",
+            "Not directly addressed in OECD anti-corruption instruments. [SB]",
           typology: ["SB"],
         },
       },
