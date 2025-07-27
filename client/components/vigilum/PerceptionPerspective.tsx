@@ -403,6 +403,7 @@ const PerceptionPerspective = () => {
           <motion.div
             className="mb-8 transition-colors duration-1000"
             style={{
+              fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
               color: currentTheme.textColor,
             }}
             initial={{ opacity: 0 }}
