@@ -306,6 +306,10 @@ const ModuleGrid = () => {
                     <p
                       className={`text-xs leading-relaxed mb-6 ${
                         isPhantom ? "opacity-50" : "opacity-70"
+                      } ${
+                        ["clavis", "nullum", "nexus-potentia", "veris", "sentium", "unallocated"].includes(module.id)
+                          ? "mt-4"
+                          : ""
                       }`}
                       style={{ color: module.textColor }}
                     >
