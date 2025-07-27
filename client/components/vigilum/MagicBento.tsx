@@ -839,7 +839,8 @@ const AdvisoryCarousel = ({ card }) => {
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            paddingTop: "12px",
+            paddingTop: "0px",
+            marginTop: "-8px",
           }}
         >
           <h3
