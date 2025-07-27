@@ -318,7 +318,7 @@ const boundaryLogicData = {
     {
       id: "stt",
       name: "STT Lithuania",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa83ad062f4a144c1a0e267e4809a9a85?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa5582b7835c0404596752e71575157c9?format=webp&width=800",
       logo: "🇱🇹",
       definition:
         "Mission: to reduce corruption as a threat to human rights and freedoms, the principles of the rule of law and economic development.",
