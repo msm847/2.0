@@ -779,7 +779,7 @@ const MagicBento = ({
                 clickEffect={clickEffect && !card.isTeamCarousel}
                 enableMagnetism={enableMagnetism && !card.isTeamCarousel}
               >
-                <div className="card__content" style={card.isVision ? {display: "flex", flexDirection: "column", height: "100%"} : {}}>
+                <div className="card__content" style={contentStyle}>
                   {card.isVision ? (
                     <>
                       <h2
@@ -1055,7 +1055,7 @@ const MagicBento = ({
                 el.addEventListener("click", handleClick);
               }}
             >
-              <div className="card__content" style={card.isVision ? {display: "flex", flexDirection: "column", height: "100%"} : {}}>
+              <div className="card__content" style={contentStyle}>
                 {card.isVision ? (
                   <>
                     <h2
