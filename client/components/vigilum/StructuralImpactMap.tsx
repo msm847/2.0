@@ -299,8 +299,13 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 25, y: 50 }, // 6 o'clock - moved even higher and further left
-      headline: "Corruption fuels distrust, migration, global instability.",
+      axisTitle: "Systemic Trust Collapse (Feedback Loop)",
+      position: { x: 25, y: 50 }, // 6 o'clock
+      structuralLogic: "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
+      shockingFact: "In markets where anti-corruption action was purely symbolic, FDI inflows collapsed by 67% in 24 months following a major scandal.",
+      dataPoint: "After repeated corruption scandals with no high-level convictions, Lithuania's public trust in national government dropped from 56% to 21% in four years—mirrored by a 5x increase in non-performing loans and youth emigration.",
+      actionableOutput: "Surface early-warning signals for systemic collapse: simultaneous audit failures, market outflows, and rising regulatory amendments in a 12-month period.",
+      headline: "Trust isn't just perception—it's a structural property that can be modeled and lost.",
       domainCounter: {
         ratePerSecond: 240,
         unit: "Refugees Created",
