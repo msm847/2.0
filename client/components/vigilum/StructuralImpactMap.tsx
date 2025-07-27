@@ -8,7 +8,7 @@ const impactNetworkData = {
     {
       id: "economy",
       label: "Economy",
-      position: { x: 50, y: 5 }, // Top center of circle - expanded
+      position: { x: 45, y: 0 }, // Top center of circle - moved higher and left
       headline:
         "Every minute, corruption drains $1.9 million from the global economy.",
       domainCounter: {
@@ -61,7 +61,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 85, y: 25 }, // Top right of circle - expanded
+      position: { x: 75, y: 15 }, // Top right of circle - moved higher and left
       headline: "Corruption weakens law, derails justice, erodes legitimacy.",
       domainCounter: {
         ratePerSecond: 8400,
@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 85, y: 75 }, // Bottom right of circle - expanded
+      position: { x: 75, y: 60 }, // Bottom right of circle - moved higher and left
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 15, y: 75 }, // Bottom left of circle - expanded
+      position: { x: 15, y: 60 }, // Bottom left of circle - moved higher
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 15, y: 25 }, // Top left of circle - expanded
+      position: { x: 15, y: 15 }, // Top left of circle - moved higher
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 50, y: 95 }, // Bottom center of circle - expanded
+      position: { x: 45, y: 75 }, // Bottom center of circle - moved much higher and left
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
