@@ -1282,7 +1282,7 @@ const BoundaryLogicCarousel = () => {
           }}
         >
           {allTerms.map((term) => {
-            const tag = institution.tags[term];
+            const tag = institution.tags[term] || { state: "–", tooltip: "Not specified in this framework", typology: [] };
             const isHovered = hoveredTag === `${institution.id}-${term}`;
             const isSelected = selectedTerm === term;
 
