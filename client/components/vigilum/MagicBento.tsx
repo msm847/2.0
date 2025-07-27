@@ -1092,8 +1092,8 @@ const MagicBento = ({
                     >
                       {card.secondaryDescription}
                     </p>
-                  </>
                     </div>
+                  </>
                 ) : card.isFounder ? (
                   <>
                     <h2
