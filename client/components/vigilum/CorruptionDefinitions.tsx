@@ -262,7 +262,7 @@ const boundaryLogicData = {
         "Corruption offences such as bribery, embezzlement, trading in influence, abuse of functions and other offences are generally committed for private gain…",
       citation: {
         text: "FATF, Reference Guide and Information Note on Fight Against Corruption",
-        url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/brochures/reference%20guide%20and%20information%20note%20on%20fight%20against%20corruption.pdf.coredownload.inline.pdf",
+        url: "https://www.fatf-gafi.org/en/topics/corruption.html",
       },
       tags: {
         bribery: {
