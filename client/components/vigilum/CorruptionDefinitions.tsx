@@ -14,7 +14,7 @@ const boundaryLogicData = {
         "The OECD deliberately does not define 'corruption' but establishes specific offences for corrupt behavior. For policy purposes, corruption is described as 'the misuse of public office, roles or resources for private benefit.'",
       citation: {
         text: "OECD, Corruption: A Glossary of International Standards in Criminal Law, 2008",
-        url: "https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/03/corruption_aaf2a47f/a71d7115-en.pdf",
+        url: "https://www.oecd.org/en/topics/policy-issues/anti-corruption-and-integrity.html",
       },
       tags: {
         bribery: {
@@ -443,7 +443,7 @@ const boundaryLogicData = {
       logoUrl: "/logos/g20.svg",
       logo: "🌐",
       definition:
-        "The G20 ACWG recognizes the negative impact of corruption which 'threatens the integrity of markets, undermines fair competition, distorts resource allocation, destroys public trust, and undermines the rule of law'��",
+        "The G20 ACWG recognizes the negative impact of corruption which 'threatens the integrity of markets, undermines fair competition, distorts resource allocation, destroys public trust, and undermines the rule of law'…",
       citation: {
         text: "G20 Anti-Corruption Working Group, World Bank STAR",
         url: "https://star.worldbank.org/g20-anti-corruption-working-group",
