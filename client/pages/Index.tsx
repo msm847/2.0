@@ -277,7 +277,7 @@ export default function Index() {
               e.target.style.borderColor = "rgba(97, 179, 220, 0.6)";
             }}
           >
-            TEAM
+            CONNECT
           </button>
         </div>
       </div>
