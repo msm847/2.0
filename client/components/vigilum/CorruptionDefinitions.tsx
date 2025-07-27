@@ -998,60 +998,60 @@ const boundaryLogicData = {
 // Term Analysis Framework - Structural Boundary Intelligence
 const termDefinitions = {
   bribery: {
-    title: "Bribery: Convergence and Divergence Logic",
+    title: "Bribery: Boundary Logic and Structural Substitution",
     analysis:
-      "Bribery definitions converge on quid pro quo exchange but diverge critically on actor scope, enforcement thresholds, and jurisdictional boundaries. Regulatory frameworks limit bribery to government interfaces while financial institutions recognize broader corrupt exchange networks. This structural divergence creates prosecutorial gaps and enables regulatory arbitrage across boundary systems.",
+      "Bribery definitions converge on quid pro quo exchange—something of value offered or received to influence official action. Divergence arises in how law, sector, and jurisdiction define the actors, enforcement thresholds, and scope of liability. Public statutes typically confine bribery to government officials and explicit payments (e.g., a contractor paying a minister), while global finance rules expand to include \"facilitation payments\" and commissions routed through intermediaries. Regulatory formats permit practices—such as \"lobbying\" or bundled consultancy fees—that replicate bribery's substance but remain legal by design. This divergence enables legal simulation: benefits delivered through shell companies, asset laundering, or policy influence can bypass narrow definitions, erasing the line between criminal and compliant. Boundary gaps create prosecutorial blind spots and regulatory arbitrage, transforming what is criminal in one system into accepted practice in another.",
     consequence:
-      "Boundary divergence produces legal extraction channels where non-criminalized exchange operates as compliant corruption.",
-  },
-  lobbying: {
-    title: "Lobbying: The Exclusion Mechanism",
-    analysis:
-      "Lobbying occupies the structural blindspot of anti-corruption frameworks. Most institutions exclude lobbying unless directly tied to illegal payment, creating systematic legal channels for influence monetization. This boundary design enables access-to-power markets while maintaining compliance facades across regulatory architectures.",
-    consequence:
-      "Lobbying exclusion boundaries produce influence extraction systems operating within legal compliance frameworks.",
-  },
-  privateSector: {
-    title: "Private Sector: Sectoral Boundary Operations",
-    analysis:
-      "Private sector corruption recognition operates through institutional mandate boundaries rather than risk logic. Regulatory bodies focus on government interface corruption while development finance institutions recognize comprehensive private corruption networks. This creates enforcement gaps enabling risk migration between sectoral domains.",
-    consequence:
-      "Sectoral boundaries create regulatory voids where private corruption operates outside institutional recognition systems.",
-  },
-  influencePeddling: {
-    title: "Influence Peddling: Access Monetization Logic",
-    analysis:
-      "Influence peddling boundaries distinguish between direct trading and broader access monetization, with international frameworks typically more comprehensive than domestic enforcement. This divergence enables influence extraction through legal channels excluded from enforcement scope while maintaining institutional compliance.",
-    consequence:
-      "Influence boundaries enable access-to-power monetization through legally compliant extraction channels.",
-  },
-  conflictOfInterest: {
-    title: "Conflict of Interest: Management Versus Prevention",
-    analysis:
-      "Conflict of interest operates primarily through disclosure and management rather than prohibition, creating structural acceptance of interest misalignment. Institutional boundaries focus on process compliance rather than elimination, enabling continued operation of conflicted decision-making within managed frameworks.",
-    consequence:
-      "Conflict boundaries normalize interest misalignment through procedural compliance rather than structural prevention.",
+      "Bribery's shifting boundaries institutionalize extraction, with risks migrating across legal systems and embedding systemic vulnerability in public procurement and global markets.",
   },
   fraud: {
-    title: "Fraud: Scope and Connectivity Logic",
+    title: "Fraud: Deception, Disclosure, and Structural Blindspots",
     analysis:
-      "Fraud boundaries vary significantly across institutional mandates, with some frameworks treating fraud as separate from corruption while others recognize interconnected corrupt networks. This boundary inconsistency creates enforcement gaps where fraudulent practices operate outside anti-corruption recognition systems.",
+      "Fraud converges on intentional deception for gain, achieved through misrepresentation, concealment, or omission. Divergence emerges in how materiality, intent, and threshold for criminal enforcement are drawn across jurisdictions and industries. While criminal codes prosecute overt schemes—like false invoicing or asset misappropriation—many legal systems allow structural fraud through regulatory loopholes, creative accounting, or misleading disclosures. Complex financial products and off-balance-sheet vehicles can simulate legitimacy, blurring the distinction between regulatory error and criminal intent. Legal formatting reframes fraud as compliance failure or \"market innovation\" rather than extraction, allowing systemic risk to accumulate off-ledger. For institutional investors, latent fraud risk becomes reputational tail risk and regulatory exposure long after the act.",
     consequence:
-      "Fraud boundary inconsistency enables financial crime networks to operate across institutional recognition gaps.",
-  },
-  embezzlement: {
-    title: "Embezzlement: Resource Misappropriation Boundaries",
-    analysis:
-      "Embezzlement recognition varies based on resource type and institutional mandate, with comprehensive coverage in development finance but limited recognition in regulatory frameworks focused on influence corruption. This boundary design creates gaps in resource protection across institutional systems.",
-    consequence:
-      "Embezzlement boundaries create resource protection gaps enabling misappropriation outside institutional mandate scope.",
+      "Structural fraud erodes trust in financial systems and institutional governance, exposing markets and investors to delayed, cascading losses.",
   },
   nepotism: {
-    title: "Nepotism: Relationship-Based Advantage Logic",
+    title: "Nepotism: Embedded Networks and Discretionary Capture",
     analysis:
-      "Nepotism operates primarily through conflict of interest and transparency measures rather than direct prohibition, creating structural acceptance of relationship-based advantage systems. Most frameworks manage rather than eliminate nepotistic practices, enabling continued operation within procedural compliance.",
+      "Nepotism is universally recognized as allocating advantage based on kinship or personal ties, in conflict with meritocratic principles. Divergence arises in how the practice is criminalized, normalized, or left to managerial discretion across sectors and cultures. Public rules may prohibit nepotism in specific offices but leave broad gaps, while private organizations often frame family hiring as trust or tradition. Disclosure, recusal, and \"fit and proper\" tests simulate integrity but rarely challenge underlying network advantage. In markets where nepotism is normalized, governance signals are distorted and opportunity allocation shifts from open competition to closed networks—especially in family-controlled conglomerates, state enterprises, or emerging market firms.",
     consequence:
-      "Nepotism boundaries normalize relationship-based advantage through procedural management rather than systematic prevention.",
+      "Nepotism entrenches structural privilege, undermining institutional credibility and deterring external investment and talent.",
+  },
+  lobbying: {
+    title: "Lobbying: Influence, Transparency, and Regulatory Simulation",
+    analysis:
+      "Lobbying is formally defined as organized advocacy to shape policy or regulation. Divergence appears in registration standards, definitions of \"lobbyist,\" and scope of disclosure, with critical gaps in capturing indirect and informal channels. In the US, rules narrowly regulate direct contact, while industry associations, think-tanks, \"astroturfing\" campaigns, and campaign finance operate in the shadows. In the EU, public consultation and policy advice blur the lines between advocacy and extractive influence. Globally, the rise of \"proxy advocacy,\" strategic philanthropy, and revolving-door hires enable sustained access without violating formal rules. Legal formatting performs compliance while structurally enabling policy capture: material risk is created when extractive actors operate via formally legal influence, outpacing oversight and market due diligence.",
+    consequence:
+      "Opaque lobbying networks undermine market integrity, expose firms to reputational backlash, and drive policy arbitrage that weakens regulatory harmonization.",
+  },
+  assetLaundering: {
+    title: "Asset Laundering: Obfuscation, Integration, and Systemic Risk",
+    analysis:
+      "Asset laundering converges on the transformation of illicit or opaque gains into legitimate assets. Divergence appears in predicate offenses, documentation standards, and thresholds for tracing beneficial ownership. Classic laundering involves layering transactions—shell companies, trusts, offshore flows—but complex investment vehicles, real estate, and even art markets can serve as legal conduits. Many jurisdictions require only minimal \"source of funds\" checks, allowing structural flows to evade scrutiny. Simulation occurs when assets derived from compliant but extractive acts (e.g., regulatory capture, procurement distortion) are legitimized through ordinary wealth management. This neutralizes enforcement and allows laundered value to circulate in global capital markets.",
+    consequence:
+      "Untraceable asset flows embed systemic fragility in financial markets, creating hidden exposure to sanctions, seizure, and reputational damage for institutional investors.",
+  },
+  cronyism: {
+    title: "Cronyism: Preferential Networks and Market Distortion",
+    analysis:
+      "Cronyism centers on the preferential allocation of opportunities or resources to favored associates, often subverting meritocratic or competitive processes. Divergence emerges in legal thresholds, sectoral standards, and the extent of tolerated insider networks. Some markets criminalize cronyism in procurement or state contracting, while others normalize partnership selection and strategic alliances. Formal processes may simulate competition while reproducing insider control—through shortlists, selective tenders, or undisclosed relationships. Market competition is distorted as closed networks capture value, rendering entire sectors or economies \"uninvestable\" for global capital, and embedding fragility into supply chains and institutional performance.",
+    consequence:
+      "Cronyism amplifies systemic risk by eroding market discipline, reducing transparency, and entrenching networks that evade reform and accountability.",
+  },
+  regulatoryArbitrage: {
+    title: "Regulatory Arbitrage: Gap Navigation and Legal Engineering",
+    analysis:
+      "Regulatory arbitrage is defined by the strategic exploitation of inconsistencies, gaps, or slow adaptation in legal regimes. Divergence is found in the clarity of anti-abuse rules, the speed of regulatory adaptation, and the global mobility of capital. Actors recast risk or extraction as compliance through relocation, reclassification, or product redesign—moving financial products, tax structures, or even entire businesses to friendlier jurisdictions. Shadow banking, tax havens, and cross-border structuring exemplify arbitrage as a core system feature, not an anomaly. Regulatory arbitrage triggers \"race to the bottom\" dynamics, undermining enforcement and creating persistent fragility that regulators struggle to address without global coordination.",
+    consequence:
+      "Persistent arbitrage embeds structural risk in the global financial system, destabilizing regulation and pricing of risk across borders.",
+  },
+  shellCompany: {
+    title: "Shell Company Structuring: Opacity, Liability, and Formal Simulation",
+    analysis:
+      "Shell company structuring refers to the use of legal entities with minimal real operations to facilitate transactions, hold assets, or obscure ownership. Divergence occurs in transparency standards, registration requirements, and how easily underlying actors can be linked to shells. While shells are criminalized when linked to clear predicate offenses, most global systems permit their use for asset protection, privacy, or investment structuring. Beneficial ownership disclosure is frequently weak, and mass incorporation is normalized in cross-border deals, funds, and sovereign wealth vehicles. Shells simulate legitimacy via formal compliance but systematically dissolve liability and origin, embedding opacity and enabling flows from bribery, asset laundering, or regulatory arbitrage.",
+    consequence:
+      "Shell companies institutionalize opacity in global finance, undermining due diligence and exposing investors to hidden legal and reputational risks.",
   },
 };
 
