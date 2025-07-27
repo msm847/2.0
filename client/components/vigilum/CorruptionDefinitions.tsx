@@ -696,7 +696,7 @@ const boundaryLogicData = {
         "The EIB defines corruption and fraud as the abuse of public or private office for personal gain. This means any behaviour in which people improperly and unlawfully enrich themselves or those close to them, or induce others to do so, by misusing their position.",
       citation: {
         text: "EIB Anti-Fraud Policy",
-        url: "https://www.eib.org/attachments/thematic/fraud_en.pdf",
+        url: "https://www.eib.org/en/publications/anti-fraud-policy.htm",
       },
       tags: {
         bribery: {
