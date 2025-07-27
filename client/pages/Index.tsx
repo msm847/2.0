@@ -236,12 +236,12 @@ export default function Index() {
 
           {/* Team Button */}
           <button
-            id="team-button"
+            id="connect-button"
             onClick={(e) => {
-              console.log("Team button clicked - navigating to team page");
+              console.log("Connect button clicked - navigating to stakeholders section");
               e.preventDefault();
               e.stopPropagation();
-              navigate("/vigilum#team");
+              navigate("/vigilum#stakeholders");
             }}
             style={{
               width: "180px",
