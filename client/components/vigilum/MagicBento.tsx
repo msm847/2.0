@@ -776,7 +776,7 @@ const AdvisoryCarousel = ({ card }) => {
           marginBottom: "20px",
           color: "#9DE6C6",
           fontWeight: "400",
-          textAlign: "center",
+          textAlign: "left",
         }}
       >
         {card.title}
