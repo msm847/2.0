@@ -542,7 +542,7 @@ const PerceptionPerspective = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 100 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="fixed bottom-8 right-8 z-30 flex flex-col gap-3"
+                    className="absolute top-8 right-8 z-30 flex flex-col gap-3"
                   >
                     <motion.button
                       onClick={() => {
