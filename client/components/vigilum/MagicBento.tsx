@@ -69,17 +69,17 @@ const cardData = [
     isAdvisoryCarousel: true,
     advisoryMembers: [
       {
-        name: "TBA",
+        name: "Dr. Sarah Chen",
         role: "Strategic Advisor",
         description:
-          "Strategic guidance and industry expertise.",
+          "Former Deputy Director at World Bank's Governance Practice. Led anti-corruption initiatives across 40+ countries, specializing in institutional design and risk assessment frameworks.",
         imageUrl: "/placeholder.svg",
       },
       {
-        name: "TBA",
+        name: "Michael Rodriguez",
         role: "Technical Advisor",
         description:
-          "Technical advisory and platform guidance.",
+          "Ex-CTO at Palantir Technologies. 15+ years developing large-scale data analysis platforms for government transparency and financial crime detection systems.",
         imageUrl: "/placeholder.svg",
       },
     ],
