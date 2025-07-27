@@ -707,17 +707,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
 
           {/* Header */}
           <div style={{ marginBottom: "32px" }}>
-            <h2
-              style={{
-                fontSize: "24px",
-                fontWeight: "700",
-                color: "#FFFFFF",
-                margin: "0 0 12px 0",
-                fontFamily: "var(--font-display)",
-              }}
-            >
-              {node.label}
-            </h2>
+
             <h3
               style={{
                 fontSize: "20px",
