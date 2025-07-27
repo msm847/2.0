@@ -186,13 +186,12 @@ const impactNetworkData = {
         source: "WHO",
       },
       propagation: [
-        {
-          toNode: "economy",
-          effect: "Reduces economic productivity and growth",
-        },
-        { toNode: "trust", effect: "Increases social exclusion and distrust" },
+        { toNode: "trust", effect: "Accelerates trust collapse", intensity: 0.95 },
+        { toNode: "economy", effect: "Feeds extraction multipliers", intensity: 0.7 },
+        { toNode: "institutions", effect: "Erodes reform capacity", intensity: 0.6 }
       ],
       color: "#EA580C",
+      structuralType: "drift"
     },
     {
       id: "markets",
