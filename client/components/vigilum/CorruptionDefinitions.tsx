@@ -70,7 +70,7 @@ const boundaryLogicData = {
     {
       id: "greco",
       name: "GRECO",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F4bdc576926184906bd0ebc8ad2da6130?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "GRECO works with Council of Europe anti-corruption standards. They describe corruption as that which 'threatens the rule of law, democracy and human rights, undermines good governance, fairness and social justice, distorts competition, hinders economic development and endangers the stability of democratic institutions and the moral foundations of society.'",
@@ -197,7 +197,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7c0fc3c03a5f47fcb0e7e8664824aaa8?format=webp&width=800",
       logo: "🇪🇺",
       definition:
-        "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon���",
+        "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon…",
       citation: {
         text: "European Commission, Anti-Corruption Policy",
         url: "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/democracy-eu-citizenship-anti-corruption/anti-corruption_en",
