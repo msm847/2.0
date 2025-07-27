@@ -1588,7 +1588,7 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             fontFamily: "var(--font-display)",
           }}
         >
-          Systemic Corruption Dynamics
+          Corruption Impact Topology
         </h2>
         <p
           style={{
