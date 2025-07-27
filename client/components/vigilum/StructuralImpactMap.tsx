@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 50, y: 90 }, // 6 o'clock position
+      position: { x: 50, y: 80 }, // 6 o'clock position - moved up for better proportions
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
