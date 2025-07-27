@@ -572,7 +572,7 @@ const boundaryLogicData = {
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another person or entity, including bribes or facilitation payments.",
       citation: {
         text: "IMF Anti-Fraud Anti-Corruption Policy, January 2025",
-        url: "https://www.imf.org/-/media/Files/About/Ethics/policy/anti-fraud-anti-corruption-011725.ashx",
+        url: "https://www.imf.org/en/Topics/governance-and-anti-corruption",
       },
       tags: {
         bribery: {
