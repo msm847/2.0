@@ -2613,7 +2613,6 @@ const InstitutionCard = ({ institution }) => {
       {/* Centered Logo */}
       <div
         style={{
-          fontSize: "40px",
           width: "60px",
           height: "60px",
           display: "flex",
@@ -2621,9 +2620,25 @@ const InstitutionCard = ({ institution }) => {
           justifyContent: "center",
           borderRadius: "12px",
           marginBottom: "16px",
+          background: "#FFFFFF",
+          padding: "6px",
         }}
       >
-        {institution.logo}
+        <img
+          src={institution.logoUrl}
+          alt={`${institution.name} logo`}
+          style={{
+            height: "60px",
+            width: "auto",
+            maxWidth: "100%",
+            objectFit: "contain"
+          }}
+          onError={(e) => {
+            // Fallback to emoji if image fails to load
+            e.target.style.display = 'none';
+            e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
+          }}
+        />
       </div>
 
       {/* Centered Institution Name */}
