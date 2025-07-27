@@ -352,7 +352,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         fraud: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Within STT mandate when involving public officials or public interest. [CI]",
           typology: ["CI"],
@@ -1163,7 +1163,7 @@ const termDefinitions = {
     analysis:
       'Cronyism centers on the preferential allocation of opportunities or resources to favored associates, often subverting meritocratic or competitive processes. Divergence emerges in legal thresholds, sectoral standards, and the extent of tolerated insider networks. Some markets criminalize cronyism in procurement or state contracting, while others normalize partnership selection and strategic alliances. Formal processes may simulate competition while reproducing insider control—through shortlists, selective tenders, or undisclosed relationships. Market competition is distorted as closed networks capture value, rendering entire sectors or economies "uninvestable" for global capital, and embedding fragility into supply chains and institutional performance.',
     consequence:
-      "Cronyism amplifies systemic risk by eroding market discipline, reducing transparency, and entrenching networks that evade reform and accountability.",
+      "STRUCTURAL CONSEQUENCE: Cronyism weaponizes relational proximity as a structural override, bypassing formal rules with informal power. Favor networks embed themselves in procurement, regulation, and oversight, creating a system where compliance is simulated but outcomes are pre-allocated. By formalizing informality, cronyism engineers a permanent split between official process and operational reality—producing an \"insider's market\" and encoding extraction as routine output.",
   },
   regulatoryArbitrage: {
     title: "Regulatory Arbitrage: Gap Navigation and Legal Engineering",
