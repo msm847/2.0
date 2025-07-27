@@ -210,10 +210,10 @@ const PerceptionPerspective = () => {
     setActiveSection(null);
   }, []);
 
-  // Global corruption loss counter - only runs when in Choose Your Lens state
+  // Global corruption loss counter - always runs except on home page
   useEffect(() => {
     let interval;
-    if (!activeSection) { // Only run when in "Choose Your Lens" state
+    if (location.pathname !== "/") { // Run on all pages except home page
       interval = setInterval(() => {
         setGlobalLoss(prev => prev + Math.floor(Math.random() * 50000) + 25000);
       }, 1500);
@@ -221,7 +221,7 @@ const PerceptionPerspective = () => {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [activeSection]);
+  }, [location.pathname]);
 
   // Reset to instruction section when navigating via hash to this section
   useEffect(() => {
@@ -625,22 +625,23 @@ const PerceptionPerspective = () => {
         </div>
       </div>
 
-      {/* Global Corruption Count - shown only during Choose Your Lens state */}
-      {!activeSection && createPortal(
+      {/* Global Corruption Count - shown on all pages except home */}
+      {location.pathname !== "/" && createPortal(
         <div
           style={{
             position: "fixed",
             top: "80px",
             right: "20px",
             backdropFilter: "blur(8px)",
-            background: "rgba(0, 0, 0, 0.85)",
-            border: "1px solid rgba(157, 230, 198, 0.3)",
+            background: "rgba(0, 0, 0, 0.3)", // More transparent
+            border: "1px solid rgba(157, 230, 198, 0.2)", // More transparent border
             borderRadius: "8px",
             padding: "12px 16px",
             color: "white",
             fontFamily: "var(--font-display)",
             zIndex: 1000,
             minWidth: "180px",
+            opacity: 0.8, // Additional transparency
           }}
         >
           <div
