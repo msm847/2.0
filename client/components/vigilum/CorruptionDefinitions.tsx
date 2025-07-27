@@ -1570,11 +1570,11 @@ const BoundaryLogicCarousel = () => {
             <h4
               style={{
                 margin: "0 0 16px 0",
-                fontSize: "14px",
-                fontWeight: "600",
+                fontSize: "18px",
+                fontWeight: "700",
                 color: "#9DE6C6",
                 textTransform: "uppercase",
-                letterSpacing: "0.5px",
+                letterSpacing: "1px",
                 fontFamily: "SF Mono, Monaco, monospace",
               }}
             >
