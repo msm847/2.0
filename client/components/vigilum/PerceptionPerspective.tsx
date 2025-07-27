@@ -210,6 +210,19 @@ const PerceptionPerspective = () => {
     setActiveSection(null);
   }, []);
 
+  // Global corruption loss counter - only runs when in Choose Your Lens state
+  useEffect(() => {
+    let interval;
+    if (!activeSection) { // Only run when in "Choose Your Lens" state
+      interval = setInterval(() => {
+        setGlobalLoss(prev => prev + Math.floor(Math.random() * 50000) + 25000);
+      }, 1500);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [activeSection]);
+
   // Reset to instruction section when navigating via hash to this section
   useEffect(() => {
     if (location.hash === "#perception-perspective") {
