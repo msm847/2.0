@@ -128,9 +128,13 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 47, y: 38 }, // 4 o'clock - moved even higher and further left
-      headline:
-        "Corruption widens the gap, excludes millions from essential services.",
+      axisTitle: "Behavioral Drift & Reflexive Erosion",
+      position: { x: 47, y: 38 }, // 4 o'clock
+      structuralLogic: "Repeated exposure to non-binding reforms and simulated accountability compresses cognitive reflexes—normalizing evasion and teaching actors that structural outcomes are predetermined.",
+      shockingFact: "Nearly 80% of public servants in high-simulation countries say 'everyone adapts the rules'—twice the global average.",
+      dataPoint: "In post-reform Lithuania, 74% of surveyed officials agreed that 'rules are changed to fit decisions,' not the reverse—a reversal from pre-reform attitudes.",
+      actionableOutput: "Detect system states where procedural adaptation outpaces formal regulation (e.g., sudden changes in tendering logic, spike in legal amendments post-scandal).",
+      headline: "Surface reforms mask deeper structural drift—teaching actors to adapt, evade, and accept simulation as the new normal.",
       domainCounter: {
         ratePerSecond: 15200,
         unit: "People Affected",
