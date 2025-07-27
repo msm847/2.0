@@ -54,7 +54,7 @@ const cardData = [
         name: "Ričardas Blaškevič",
         role: "Marketing Team Lead",
         description:
-          "Crafting compelling narratives and building market presence to amplify Vigilum's mission across global audiences.",
+          "Transforming complex governance insights into powerful market narratives that accelerate institutional transparency adoption.",
         imageUrl: "/placeholder.svg",
       },
     ],
