@@ -1583,13 +1583,10 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         style={{
           position: "relative",
           width: "100%",
-          height: "700px",
-          maxWidth: "800px",
-          margin: "20px 0 0 0",
-          paddingLeft: "40px",
-          paddingRight: "40px",
-          paddingTop: "20px",
-          paddingBottom: "20px",
+          height: "800px",
+          maxWidth: "1000px",
+          margin: "20px auto 0 auto",
+          padding: "80px",
           boxSizing: "border-box"
         }}
       >
