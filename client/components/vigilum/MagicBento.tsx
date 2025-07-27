@@ -776,7 +776,7 @@ const AdvisoryCarousel = ({ card }) => {
           marginBottom: "20px",
           color: "#9DE6C6",
           fontWeight: "400",
-          textAlign: "center",
+          textAlign: "left",
         }}
       >
         {card.title}
@@ -785,49 +785,66 @@ const AdvisoryCarousel = ({ card }) => {
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
           gap: "20px",
-          position: "relative",
+          alignItems: "flex-start",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
+          flex: 1,
         }}
       >
-        {/* Profile Image */}
-        <div
-          style={{
-            width: "160px",
-            height: "160px",
-            borderRadius: "12px",
-            backgroundColor: "#2d4a3f",
-            border: "2px solid #9DE6C6",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-            boxShadow: "0 4px 15px rgba(157, 230, 198, 0.2)",
-          }}
-        >
-          <img
-            src={member.imageUrl}
-            alt={member.name}
+        {/* Left side - Profile Image */}
+        <div style={{ flexShrink: 0 }}>
+          <div
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              filter: "brightness(0.9)",
+              width: "120px",
+              height: "120px",
+              borderRadius: "12px",
+              backgroundColor: "#2d4a3f",
+              border: "2px solid #9DE6C6",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              boxShadow: "0 4px 15px rgba(157, 230, 198, 0.2)",
+              marginBottom: "12px",
             }}
-          />
+          >
+            <img
+              src={member.imageUrl}
+              alt={member.name}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "brightness(0.9)",
+              }}
+            />
+          </div>
+
+          {/* Description below picture */}
+          <p
+            style={{
+              fontSize: "12px",
+              lineHeight: "1.4",
+              color: "#E5E5E5",
+              fontWeight: "300",
+              margin: "0",
+              textAlign: "center",
+              maxWidth: "120px",
+            }}
+          >
+            {member.description}
+          </p>
         </div>
 
-        {/* Member Info */}
-        <div style={{ textAlign: "center", maxWidth: "300px" }}>
+        {/* Right side - Member Info */}
+        <div style={{ flex: 1, paddingTop: "8px" }}>
           <h3
             style={{
-              fontSize: "20px",
+              fontSize: "24px",
               fontWeight: "600",
               color: "#FFFFFF",
-              margin: "0 0 6px 0",
+              margin: "0 0 8px 0",
               lineHeight: "1.2",
             }}
           >
@@ -835,121 +852,111 @@ const AdvisoryCarousel = ({ card }) => {
           </h3>
           <p
             style={{
-              fontSize: "14px",
+              fontSize: "16px",
               fontWeight: "500",
               color: "#9DE6C6",
-              margin: "0 0 12px 0",
+              margin: "0 0 16px 0",
               lineHeight: "1.3",
             }}
           >
             {member.role}
           </p>
-          <p
-            style={{
-              fontSize: "13px",
-              lineHeight: "1.4",
-              color: "#E5E5E5",
-              fontWeight: "300",
-              margin: "0",
-            }}
-          >
-            {member.description}
-          </p>
-        </div>
 
-        {/* Navigation */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            marginTop: "10px",
-          }}
-        >
-          <button
-            onClick={prevMember}
+          {/* Navigation at bottom right */}
+          <div
             style={{
-              width: "36px",
-              height: "36px",
-              borderRadius: "50%",
-              backgroundColor: "rgba(157, 230, 198, 0.1)",
-              border: "1px solid rgba(157, 230, 198, 0.3)",
-              color: "#9DE6C6",
-              cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              fontSize: "18px",
-              transition: "all 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-              e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-              e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+              gap: "15px",
+              marginTop: "auto",
+              paddingTop: "20px",
             }}
           >
-            ‹
-          </button>
+            <button
+              onClick={prevMember}
+              style={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "50%",
+                backgroundColor: "rgba(157, 230, 198, 0.1)",
+                border: "1px solid rgba(157, 230, 198, 0.3)",
+                color: "#9DE6C6",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "16px",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+              }}
+            >
+              ‹
+            </button>
 
-          {/* Dots indicator */}
-          <div style={{ display: "flex", gap: "8px" }}>
-            {card.advisoryMembers.map((_, index) => (
-              <div
-                key={index}
-                onClick={() => {
-                  if (!isTransitioning) {
-                    setIsTransitioning(true);
-                    setTimeout(() => {
-                      setCurrentMember(index);
-                      setIsTransitioning(false);
-                    }, 150);
-                  }
-                }}
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  backgroundColor:
-                    index === currentMember
-                      ? "#9DE6C6"
-                      : "rgba(157, 230, 198, 0.3)",
-                  cursor: "pointer",
-                  transition: "background-color 0.2s ease",
-                }}
-              />
-            ))}
+            {/* Dots indicator */}
+            <div style={{ display: "flex", gap: "6px" }}>
+              {card.advisoryMembers.map((_, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    if (!isTransitioning) {
+                      setIsTransitioning(true);
+                      setTimeout(() => {
+                        setCurrentMember(index);
+                        setIsTransitioning(false);
+                      }, 150);
+                    }
+                  }}
+                  style={{
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "50%",
+                    backgroundColor:
+                      index === currentMember
+                        ? "#9DE6C6"
+                        : "rgba(157, 230, 198, 0.3)",
+                    cursor: "pointer",
+                    transition: "background-color 0.2s ease",
+                  }}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextMember}
+              style={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "50%",
+                backgroundColor: "rgba(157, 230, 198, 0.1)",
+                border: "1px solid rgba(157, 230, 198, 0.3)",
+                color: "#9DE6C6",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "16px",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
+              }}
+            >
+              ›
+            </button>
           </div>
-
-          <button
-            onClick={nextMember}
-            style={{
-              width: "36px",
-              height: "36px",
-              borderRadius: "50%",
-              backgroundColor: "rgba(157, 230, 198, 0.1)",
-              border: "1px solid rgba(157, 230, 198, 0.3)",
-              color: "#9DE6C6",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "18px",
-              transition: "all 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-              e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-              e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
-            }}
-          >
-            ›
-          </button>
         </div>
       </div>
     </>
