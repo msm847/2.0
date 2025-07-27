@@ -1438,33 +1438,17 @@ const Partners = () => {
               >
                 Systemic risk is a function of structure, not individual intent.
                 <br />
-                Exposure emerges from how legal, procedural, and contractual
-                forms encode discretion, sequence overrides, and segment
-                recognition.
+                Exposure emerges from how legal, procedural, and contractual forms encode discretion, sequence overrides, and segment recognition.
                 <br />
-                Policy failure is not produced by lack of control, but by the
-                simulation of constraint—where compliance format and extraction
-                logic coincide.
+                Failure is engineered not by absence of rules, but by their sequencing—where legal format enables extraction under the pretense of oversight.
                 <br />
                 <br />
-                Effective oversight requires simulating clause order, override
-                paths, and environmental interaction—projecting risk before
-                materialization.
+                Effective oversight requires simulating clause order, override paths, and environmental interaction—projecting risk before materialization.
                 <br />
-                The critical problem is not identifying actors, but modeling the
-                space of structurally permitted outcomes under evolving
-                compliance structures.
+                The critical problem is not identifying actors, but modeling the space of structurally permitted outcomes under evolving compliance structures.
                 <br />
                 <br />
-                What you explored above is an early, condensed
-                demonstration—structurally isolated from the underlying Vigilum
-                system. The interface is intended for preliminary engagement and
-                does not reflect the scope or complexity of the operational
-                platform in development. Collaboration is open to institutions,
-                researchers, and practitioners positioned to contribute to this
-                work. All engagements are strictly confidential and directed
-                toward the joint development of public-interest oversight
-                infrastructure.
+                What you explored above is an early, condensed demonstration—structurally isolated from the underlying Vigilum system. The interface is intended for preliminary engagement and does not reflect the scope or complexity of the operational platform in development. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
