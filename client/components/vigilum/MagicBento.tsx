@@ -878,13 +878,13 @@ const AdvisoryCarousel = ({ card }) => {
             </p>
           </div>
 
-          {/* Navigation at bottom */}
+          {/* Navigation */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: "20px",
-              marginTop: "30px",
+              marginTop: "10px",
             }}
           >
             <button
