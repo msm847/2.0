@@ -304,7 +304,7 @@ const ModuleGrid = () => {
                       {module.subtitle}
                     </p>
                     <p
-                      className={`text-xs leading-relaxed mb-4 ${
+                      className={`text-sm leading-relaxed mb-4 ${
                         isPhantom ? "opacity-50" : "opacity-70"
                       }`}
                       style={{ color: module.textColor }}
