@@ -1156,7 +1156,7 @@ const termDefinitions = {
     analysis:
       'Asset laundering converges on the transformation of illicit or opaque gains into legitimate assets. Divergence appears in predicate offenses, documentation standards, and thresholds for tracing beneficial ownership. Classic laundering involves layering transactions—shell companies, trusts, offshore flows���but complex investment vehicles, real estate, and even art markets can serve as legal conduits. Many jurisdictions require only minimal "source of funds" checks, allowing structural flows to evade scrutiny. Simulation occurs when assets derived from compliant but extractive acts (e.g., regulatory capture, procurement distortion) are legitimized through ordinary wealth management. This neutralizes enforcement and allows laundered value to circulate in global capital markets.',
     consequence:
-      "Untraceable asset flows embed systemic fragility in financial markets, creating hidden exposure to sanctions, seizure, and reputational damage for institutional investors.",
+      "STRUCTURAL CONSEQUENCE: Asset laundering turns illicit extraction into a legal asset base, fusing criminal and licit economies through recursive layering and integration. Structural opacity is compounded as laundered assets flow through complex, cross-jurisdictional chains—rendering origin untraceable and deterrence theoretical. Enforcement becomes a matter of downstream detection, long after risk has already been absorbed into the system's productive core.",
   },
   cronyism: {
     title: "Cronyism: Preferential Networks and Market Distortion",
