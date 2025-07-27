@@ -220,7 +220,7 @@ const impactNetworkData = {
         {
           step: "Unqualified winner",
           description: "Project given to incapable bidder",
-          icon: "⚠️",
+          icon: "���️",
         },
         {
           step: "Project fails",
@@ -804,8 +804,81 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   fontWeight: "500",
                 }}
               >
-                {node.domainCounter.unit} lost since you started exploring
+                {node.domainCounter.label || node.domainCounter.unit} since you started exploring
               </div>
+            </div>
+          )}
+
+          {/* Sample Data Point */}
+          {node.dataPoint && (
+            <div
+              style={{
+                background: "rgba(255, 255, 255, 0.03)",
+                border: `1px solid ${node.color}30`,
+                borderRadius: "12px",
+                padding: "20px",
+                marginBottom: "24px",
+              }}
+            >
+              <h4
+                style={{
+                  fontSize: "14px",
+                  color: node.color,
+                  margin: "0 0 8px 0",
+                  fontWeight: "600",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px"
+                }}
+              >
+                📊 Sample Data Point
+              </h4>
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "#E5E5E5",
+                  margin: "0",
+                  lineHeight: "1.4",
+                }}
+              >
+                {node.dataPoint}
+              </p>
+            </div>
+          )}
+
+          {/* Actionable Output */}
+          {node.actionableOutput && (
+            <div
+              style={{
+                background: `${node.color}08`,
+                border: `1px solid ${node.color}25`,
+                borderRadius: "12px",
+                padding: "20px",
+                marginBottom: "32px",
+              }}
+            >
+              <h4
+                style={{
+                  fontSize: "14px",
+                  color: node.color,
+                  margin: "0 0 8px 0",
+                  fontWeight: "600",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px"
+                }}
+              >
+                🎯 Vigilum Output
+              </h4>
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "#FFFFFF",
+                  margin: "0",
+                  lineHeight: "1.4",
+                  fontWeight: "500"
+                }}
+              >
+                {node.actionableOutput}
+              </p>
             </div>
           )}
 
