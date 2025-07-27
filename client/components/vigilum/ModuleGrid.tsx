@@ -320,6 +320,10 @@ const ModuleGrid = () => {
                     <p
                       className={`text-xs italic font-mono mb-4 ${
                         isPhantom ? "opacity-40" : ""
+                      } ${
+                        ["vigilo-core", "obscura"].includes(module.id)
+                          ? "mt-4"
+                          : ""
                       }`}
                       style={{ color: module.accentColor }}
                     >
