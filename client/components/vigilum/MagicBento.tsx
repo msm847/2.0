@@ -828,33 +828,9 @@ const AdvisoryCarousel = ({ card }) => {
             />
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "8px" }}>
-            <h3
-              style={{
-                fontSize: "16px",
-                fontWeight: "600",
-                color: "#FFFFFF",
-                margin: "0 0 4px 0",
-                lineHeight: "1.2",
-              }}
-            >
-              {member.name}
-            </h3>
-            <p
-              style={{
-                fontSize: "13px",
-                fontWeight: "500",
-                color: "#9DE6C6",
-                margin: "0",
-                lineHeight: "1.3",
-              }}
-            >
-              {member.role}
-            </p>
-          </div>
         </div>
 
-        {/* Right side - Description & Navigation */}
+        {/* Right side - Name, Role, Description & Navigation */}
         <div
           style={{
             flex: 1,
@@ -864,18 +840,42 @@ const AdvisoryCarousel = ({ card }) => {
             paddingTop: "12px",
           }}
         >
-          <p
-            style={{
-              fontSize: "13px",
-              lineHeight: "1.4",
-              color: "#E5E5E5",
-              fontWeight: "300",
-              margin: "0",
-              textAlign: "left",
-            }}
-          >
-            {member.description}
-          </p>
+          <div>
+            <h3
+              style={{
+                fontSize: "22px",
+                fontWeight: "600",
+                color: "#FFFFFF",
+                margin: "0 0 8px 0",
+                lineHeight: "1.2",
+              }}
+            >
+              {member.name}
+            </h3>
+            <p
+              style={{
+                fontSize: "15px",
+                fontWeight: "500",
+                color: "#9DE6C6",
+                margin: "0 0 16px 0",
+                lineHeight: "1.3",
+              }}
+            >
+              {member.role}
+            </p>
+            <p
+              style={{
+                fontSize: "13px",
+                lineHeight: "1.4",
+                color: "#E5E5E5",
+                fontWeight: "300",
+                margin: "0",
+                textAlign: "left",
+              }}
+            >
+              {member.description}
+            </p>
+          </div>
 
           {/* Navigation at bottom */}
           <div
