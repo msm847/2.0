@@ -752,7 +752,7 @@ const boundaryLogicData = {
     {
       id: "ebrd",
       name: "EBRD",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F4bdc576926184906bd0ebc8ad2da6130?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa83ad062f4a144c1a0e267e4809a9a85?format=webp&width=800",
       logo: "🏛️",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
