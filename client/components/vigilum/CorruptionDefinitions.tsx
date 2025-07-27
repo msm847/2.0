@@ -1114,13 +1114,13 @@ const BoundaryLogicCarousel = () => {
   const theme = groupTheme[activeGroup];
   const allTerms = [
     "bribery",
-    "fraud",
     "nepotism",
     "lobbying",
-    "assetLaundering",
-    "cronyism",
-    "regulatoryArbitrage",
     "shellCompany",
+    "cronyism",
+    "fraud",
+    "assetLaundering",
+    "regulatoryArbitrage",
   ];
 
   // Format term names for display
@@ -1589,13 +1589,13 @@ const BoundaryLogicCarousel = () => {
             >
               {[
                 "bribery",
-                "fraud",
                 "nepotism",
                 "lobbying",
-                "assetLaundering",
-                "cronyism",
-                "regulatoryArbitrage",
                 "shellCompany",
+                "cronyism",
+                "fraud",
+                "assetLaundering",
+                "regulatoryArbitrage",
               ].map((term) => (
                 <button
                   key={term}
