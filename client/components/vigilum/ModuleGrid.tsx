@@ -287,10 +287,10 @@ const ModuleGrid = () => {
                     </div>
                   </div>
 
-                  {/* Module Info */}
-                  <div className="flex-1 mb-6">
+                  {/* Module Info with fixed grid layout */}
+                  <div className="flex-1 mb-6 grid grid-rows-[auto_auto_1fr_auto] gap-2">
                     <h3
-                      className={`text-xl font-bold mb-2 font-mono ${
+                      className={`text-xl font-bold font-mono ${
                         isPhantom ? "opacity-70" : ""
                       }`}
                       style={{ color: module.textColor }}
@@ -298,13 +298,13 @@ const ModuleGrid = () => {
                       {module.name}
                     </h3>
                     <p
-                      className={`text-sm mb-3 ${isPhantom ? "opacity-60" : "opacity-80"}`}
+                      className={`text-sm ${isPhantom ? "opacity-60" : "opacity-80"}`}
                       style={{ color: module.textColor }}
                     >
                       {module.subtitle}
                     </p>
                     <p
-                      className={`text-xs leading-relaxed mb-6 ${
+                      className={`text-xs leading-relaxed ${
                         isPhantom ? "opacity-50" : "opacity-70"
                       }`}
                       style={{ color: module.textColor }}
@@ -312,9 +312,9 @@ const ModuleGrid = () => {
                       {module.description}
                     </p>
 
-                    {/* Tagline with consistent spacing */}
+                    {/* Tagline - always at bottom of grid */}
                     <p
-                      className={`text-xs italic font-mono mb-4 ${
+                      className={`text-xs italic font-mono ${
                         isPhantom ? "opacity-40" : ""
                       }`}
                       style={{ color: module.accentColor }}
