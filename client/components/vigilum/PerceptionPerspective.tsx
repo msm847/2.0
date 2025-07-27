@@ -610,9 +610,16 @@ const PerceptionPerspective = () => {
                           "rgba(157, 230, 198, 0.4)";
                       }}
                     >
-                      {selectedButton === "Cultural"
-                        ? "→ Consequences of Corruption"
-                        : "→ What is Corruption?"}
+                      {selectedButton === "Cultural" ? (
+                        <>→ Consequences of Corruption</>
+                      ) : (
+                        <>
+                          What is Corruption?{" "}
+                          <span style={{ transform: "rotate(180deg)", display: "inline-block" }}>
+                            →
+                          </span>
+                        </>
+                      )}
                     </motion.button>
                   </motion.div>
                 )}
