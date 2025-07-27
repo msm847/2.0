@@ -768,15 +768,16 @@ const AdvisoryCarousel = ({ card }) => {
   const member = card.advisoryMembers[currentMember];
 
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "0" }}>
       <h2
         className="card__title"
         style={{
           fontSize: "30px",
-          marginBottom: "20px",
+          marginBottom: "16px",
           color: "#9DE6C6",
           fontWeight: "400",
           textAlign: "left",
+          marginTop: "0",
         }}
       >
         {card.title}
@@ -786,9 +787,8 @@ const AdvisoryCarousel = ({ card }) => {
         style={{
           display: "flex",
           gap: "24px",
-          height: "100%",
+          flex: "1",
           alignItems: "flex-start",
-          marginTop: "24px",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
         }}
