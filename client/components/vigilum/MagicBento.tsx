@@ -1060,7 +1060,7 @@ const MagicBento = ({
                       className="card__title"
                       style={{
                         fontSize: "30px",
-                        marginBottom: "12px",
+                        marginBottom: "10px",
                         color: "#9DE6C6",
                         fontWeight: "400",
                       }}
