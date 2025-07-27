@@ -272,10 +272,13 @@ const PerceptionPerspective = () => {
             const sectionHeight = rect.height;
             const visibilityRatio = Math.max(0, visibleHeight / sectionHeight);
 
-            if (visibilityRatio < 0.6 || rect.bottom < viewportHeight * 0.7) {
-              setShowFloatingNav(false);
-            } else if (visibilityRatio > 0.4) {
+            // Check if section is in viewport
+            const isInViewport = rect.top < viewportHeight && rect.bottom > 0;
+
+            if (isInViewport && visibilityRatio > 0.3) {
               setShowFloatingNav(true);
+            } else if (!isInViewport || visibilityRatio < 0.2) {
+              setShowFloatingNav(false);
             }
           }
           ticking = false;
