@@ -82,50 +82,50 @@ const boundaryLogicData = {
         bribery: {
           state: "✓",
           tooltip:
-            "Central focus on active bribery of foreign officials under Article 1.",
+            "Core focus on both active and passive bribery under Criminal Law Convention. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "?",
           tooltip:
-            "Lobbying is only problematic when crossing into bribery territory (OECD Guidelines, 2011). Legal advocacy remains excluded.",
+            "Transparency required but lobbying not inherently corrupt unless involving improper influence. [DG]",
           typology: ["DG"],
         },
-        privateSector: {
-          state: "–",
-          tooltip:
-            "OECD Convention focus limited to public sector bribery. Private-to-private corruption outside scope.",
-          typology: ["SB"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Included when involving foreign public officials (Article 1 interpretation).",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
+        shellCompany: {
           state: "?",
           tooltip:
-            "Addressed in Recommendation but not binding convention obligations.",
+            "Addressed through beneficial ownership transparency measures. [DG]",
+          typology: ["DG"],
+        },
+        cronyism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest measures rather than direct criminalization. [DG]",
           typology: ["DG"],
         },
         fraud: {
           state: "–",
           tooltip:
-            "Not central to anti-bribery framework. Outside convention scope.",
+            "Outside core corruption mandate. Not systematically evaluated. [SB]",
           typology: ["SB"],
         },
-        embezzlement: {
-          state: "–",
+        assetLaundering: {
+          state: "?",
           tooltip:
-            "Outside scope of bribery convention. No criminalization requirement.",
-          typology: ["SB"],
+            "Addressed through MONEYVAL and financial intelligence coordination. [RT]",
+          typology: ["RT"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through European harmonization and mutual evaluation. [DG]",
+          typology: ["DG"],
         },
         nepotism: {
-          state: "–",
+          state: "?",
           tooltip:
-            "Not addressed in convention framework. Left to domestic discretion.",
-          typology: ["SB"],
+            "Addressed through conflict of interest measures rather than direct criminalization. [DG]",
+          typology: ["DG"],
         },
       },
     },
@@ -277,7 +277,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         privateSector: {
-          state: "✓",
+          state: "���",
           tooltip: "Private sector bribery fully covered under Sections 1-2.",
           typology: ["CI"],
         },
