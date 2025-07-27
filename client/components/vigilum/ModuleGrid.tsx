@@ -22,7 +22,7 @@ const modules = [
     subtitle: "Clause Intelligence",
     tagline: "Structure is intent made computable; inversion exposes its risk topology.",
     description:
-      "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields.",
+      "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields for logic-based risk detection.",
     color: "#1a3d82",
     secondaryColor: "#1e40af",
     textColor: "#dce3f7",
