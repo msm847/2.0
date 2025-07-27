@@ -443,7 +443,7 @@ const boundaryLogicData = {
       logoUrl: "/logos/g20.svg",
       logo: "🌐",
       definition:
-        "The G20 ACWG recognizes the negative impact of corruption which 'threatens the integrity of markets, undermines fair competition, distorts resource allocation, destroys public trust, and undermines the rule of law'…",
+        "The G20 ACWG recognizes the negative impact of corruption which 'threatens the integrity of markets, undermines fair competition, distorts resource allocation, destroys public trust, and undermines the rule of law'��",
       citation: {
         text: "G20 Anti-Corruption Working Group, World Bank STAR",
         url: "https://star.worldbank.org/g20-anti-corruption-working-group",
@@ -1066,7 +1066,7 @@ const boundaryLogicData = {
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
         text: "NIB Enforcement Policy",
-        url: "https://www.nib.int/files/dfcce05943a24331e4a7d96f931b880673523d53/enforcement-policy.pdf",
+        url: "https://www.nib.int/about/integrity-and-compliance",
       },
       tags: {
         bribery: {
@@ -1896,7 +1896,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪��",
+          logo: "🇪🇺",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
