@@ -389,7 +389,7 @@ const impactNetworkData = {
       axisTitle: "Systemic Trust Collapse",
       position: { x: 35, y: 50 }, // 6 o'clock
       structuralLogic:
-        "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
+        "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable���leading to capital flight, governance disintegration, or legitimacy crises.",
       shockingFact:
         "In markets where anti-corruption action was purely symbolic, FDI inflows collapsed by 67% in 24 months following a major scandal.",
       dataPoint:
@@ -1698,8 +1698,8 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         <div
           style={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
+            top: "25%",
+            left: "35%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
             zIndex: 5,
