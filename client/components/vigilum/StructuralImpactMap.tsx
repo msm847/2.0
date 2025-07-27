@@ -1586,6 +1586,11 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           height: "700px",
           maxWidth: "800px",
           margin: "20px 0 0 0",
+          paddingLeft: "40px",
+          paddingRight: "40px",
+          paddingTop: "20px",
+          paddingBottom: "20px",
+          boxSizing: "border-box"
         }}
       >
         {/* Nodes */}
