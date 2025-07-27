@@ -52,7 +52,7 @@ const cardData = [
       },
       {
         name: "Ričardas Blaškevič",
-        role: "Marketing Team Lead",
+        role: "Media & Communications Lead",
         description:
           "Transforming complex governance insights into powerful market narratives",
         imageUrl: "/placeholder.svg",
