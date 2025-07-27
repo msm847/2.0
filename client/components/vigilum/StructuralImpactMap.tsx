@@ -239,13 +239,12 @@ const impactNetworkData = {
         source: "ADB",
       },
       propagation: [
-        {
-          toNode: "economy",
-          effect: "Distorts economic growth and productivity",
-        },
-        { toNode: "trust", effect: "Undermines business confidence" },
+        { toNode: "economy", effect: "Distorts market signals", intensity: 0.8 },
+        { toNode: "trust", effect: "Undermines market confidence", intensity: 0.7 },
+        { toNode: "institutions", effect: "Bypasses formal systems", intensity: 0.9 }
       ],
-      color: "#059669",
+      color: "#6B7280",
+      structuralType: "shadow"
     },
     {
       id: "environment",
