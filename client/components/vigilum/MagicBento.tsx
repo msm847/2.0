@@ -807,7 +807,7 @@ const MagicBento = ({
                 }
                 particleCount={particleCount}
                 glowColor={glowColor}
-                enableTilt={enableTilt && !card.isTeamCarousel && !card.isVision && !card.isFounder}
+                enableTilt={enableTilt && !card.isTeamCarousel && !card.isAdvisoryCarousel && !card.isVision && !card.isFounder}
                 clickEffect={clickEffect && !card.isTeamCarousel && !card.isVision && !card.isFounder}
                 enableMagnetism={enableMagnetism && !card.isTeamCarousel && !card.isVision && !card.isFounder}
               >
