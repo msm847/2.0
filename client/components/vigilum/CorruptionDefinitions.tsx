@@ -194,7 +194,7 @@ const boundaryLogicData = {
     {
       id: "ec",
       name: "European Commission",
-      logoUrl: "/logos/ec.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7c0fc3c03a5f47fcb0e7e8664824aaa8?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon…",
