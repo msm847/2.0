@@ -8,7 +8,7 @@ const impactNetworkData = {
     {
       id: "economy",
       label: "Economy",
-      position: { x: 30, y: 10 }, // 12 o'clock position - moved to top-left
+      position: { x: 40, y: 5 }, // 12 o'clock position - expanded circle in top-left
       headline:
         "Every minute, corruption drains $1.9 million from the global economy.",
       domainCounter: {
@@ -61,7 +61,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 55, y: 20 }, // 2 o'clock position - moved to top-left
+      position: { x: 70, y: 15 }, // 2 o'clock position - expanded circle in top-left
       headline: "Corruption weakens law, derails justice, erodes legitimacy.",
       domainCounter: {
         ratePerSecond: 8400,
@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 55, y: 45 }, // 4 o'clock position - moved to top-left
+      position: { x: 70, y: 45 }, // 4 o'clock position - expanded circle in top-left
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 5, y: 45 }, // 8 o'clock position - moved to top-left
+      position: { x: 10, y: 45 }, // 8 o'clock position - expanded circle in top-left
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 5, y: 20 }, // 10 o'clock position - moved to top-left
+      position: { x: 10, y: 15 }, // 10 o'clock position - expanded circle in top-left
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 30, y: 55 }, // 6 o'clock position - moved to top-left
+      position: { x: 40, y: 65 }, // 6 o'clock position - expanded circle in top-left
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
