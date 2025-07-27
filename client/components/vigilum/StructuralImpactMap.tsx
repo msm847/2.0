@@ -64,16 +64,12 @@ const impactNetworkData = {
         source: "World Bank",
       },
       propagation: [
-        {
-          toNode: "markets",
-          effect: "Drives market distortion and unfair competition",
-        },
-        {
-          toNode: "inequality",
-          effect: "Deepens social exclusion and poverty",
-        },
+        { toNode: "markets", effect: "Feeds shadow market creation", intensity: 0.8 },
+        { toNode: "institutions", effect: "Enables compliance inversion", intensity: 0.7 },
+        { toNode: "inequality", effect: "Multiplies extraction effects", intensity: 0.9 }
       ],
       color: "#DC2626",
+      structuralType: "extraction"
     },
     {
       id: "institutions",
