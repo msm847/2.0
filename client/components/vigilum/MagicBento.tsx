@@ -40,7 +40,7 @@ const cardData = [
         name: "Adam Kovarskas",
         role: "Founder & System Architect",
         description:
-          "Leading technical innovation and system architecture to transform governance through advanced analytics.",
+          "Leads technical innovation and system architecture. Oversees all platform development.",
         imageUrl: "/placeholder.svg",
       },
       {
