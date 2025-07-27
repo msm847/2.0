@@ -1388,9 +1388,9 @@ const StructuralImpactMap = ({ onNavigate }) => {
               fontSize: "13px",
               color: "#9DE6C6",
               position: "relative",
-              top: "60px",
-              left: "60px",
-              marginBottom: "-40px",
+              top: "20px",
+              left: "20px",
+              marginBottom: "-10px",
             }}
           >
             Click any node to explore its impacts and connections
