@@ -379,7 +379,7 @@ const boundaryLogicData = {
     {
       id: "unodc",
       name: "UNODC",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F409ba1ed70e94d7690619584c21c14c3?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F2c460fd7acf5492ab1e8a4edccb8c3c9?format=webp&width=800",
       logo: "🌍",
       definition:
         "UNODC acknowledges corruption as a 'fluid and evolving concept, signifying different things to different people' but describes it broadly as 'the misuse of public power, office or authority for private benefit, through bribery, extortion, influence peddling, nepotism, fraud or embezzlement.'",
