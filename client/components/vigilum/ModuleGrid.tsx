@@ -273,7 +273,7 @@ const ModuleGrid = () => {
                   <div className="mb-4">
                     <div
                       className={`text-4xl font-bold transition-all duration-300 ${
-                        isPhantom ? "opacity-50" : ""
+                        isPhantom ? "opacity-70" : ""
                       }`}
                       style={{
                         color: module.accentColor,
@@ -291,21 +291,21 @@ const ModuleGrid = () => {
                   <div className="flex-1 mb-6">
                     <h3
                       className={`text-xl font-bold mb-2 font-mono ${
-                        isPhantom ? "opacity-70" : ""
+                        isPhantom ? "opacity-90" : ""
                       }`}
                       style={{ color: module.textColor }}
                     >
                       {module.name}
                     </h3>
                     <p
-                      className={`text-sm mb-3 ${isPhantom ? "opacity-60" : "opacity-80"}`}
+                      className={`text-sm mb-3 ${isPhantom ? "opacity-80" : "opacity-80"}`}
                       style={{ color: module.textColor }}
                     >
                       {module.subtitle}
                     </p>
                     <p
                       className={`text-sm leading-relaxed mb-4 ${
-                        isPhantom ? "opacity-50" : "opacity-70"
+                        isPhantom ? "opacity-70" : "opacity-70"
                       }`}
                       style={{ color: module.textColor }}
                     >
@@ -315,7 +315,7 @@ const ModuleGrid = () => {
                     {/* Tagline */}
                     <p
                       className={`text-xs italic font-mono mb-4 ${
-                        isPhantom ? "opacity-40" : ""
+                        isPhantom ? "opacity-60" : ""
                       }`}
                       style={{ color: module.accentColor }}
                     >
