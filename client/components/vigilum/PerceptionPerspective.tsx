@@ -593,9 +593,9 @@ const PerceptionPerspective = () => {
                         textTransform: "uppercase",
                       }}
                       whileHover={{
-                        backgroundColor: "rgba(16, 185, 129, 0.35)",
-                        boxShadow: "0 12px 40px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.3)",
-                        borderColor: "rgba(157, 230, 198, 0.8)",
+                        backgroundColor: "rgba(16, 185, 129, 0.25)",
+                        boxShadow: "0 0 30px rgba(16, 185, 129, 0.5), inset 0 0 20px rgba(16, 185, 129, 0.2)",
+                        borderColor: "rgba(16, 185, 129, 0.7)",
                       }}
                       whileTap={{ scale: 0.95 }}
                     >
