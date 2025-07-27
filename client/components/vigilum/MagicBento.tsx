@@ -787,6 +787,7 @@ const AdvisoryCarousel = ({ card }) => {
           display: "flex",
           gap: "24px",
           height: "100%",
+          alignItems: "flex-start",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
         }}
