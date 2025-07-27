@@ -943,7 +943,7 @@ const boundaryLogicData = {
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
         text: "IDB Invest Integrity Framework",
-        url: "https://idbinvest.org/sites/default/files/2022-11/The%20Inter-American%20Investment%20Corporation%E2%80%99s%20INTEGRITY%20FRAMEWORK.pdf",
+        url: "https://www.iadb.org/en/who-we-are/how-we-are-organized/departments-offices-and-sectors/office-institutional-integrity",
       },
       tags: {
         bribery: {
