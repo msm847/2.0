@@ -546,27 +546,25 @@ const PerceptionPerspective = () => {
                   >
                     <motion.button
                       onClick={() => {
-                        setSelectedButton("Cultural");
-                        setVisitedSections(
-                          (prev) => new Set([...prev, "Cultural"]),
-                        );
+                        if (selectedButton === "Cultural") {
+                          setSelectedButton("Social");
+                          setVisitedSections(
+                            (prev) => new Set([...prev, "Cultural", "Social"]),
+                          );
+                        } else {
+                          setSelectedButton("Cultural");
+                          setVisitedSections(
+                            (prev) => new Set([...prev, "Cultural"]),
+                          );
+                        }
                       }}
                       className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
                       style={{
-                        background:
-                          selectedButton === "Cultural"
-                            ? "rgba(16, 185, 129, 0.25)"
-                            : "rgba(16, 185, 129, 0.15)",
+                        background: "rgba(16, 185, 129, 0.15)",
                         color: "#9DE6C6",
-                        border:
-                          selectedButton === "Cultural"
-                            ? "2px solid rgba(157, 230, 198, 0.6)"
-                            : "1px solid rgba(157, 230, 198, 0.4)",
+                        border: "1px solid rgba(157, 230, 198, 0.4)",
                         backdropFilter: "blur(15px)",
-                        boxShadow:
-                          selectedButton === "Cultural"
-                            ? "0 8px 32px rgba(16, 185, 129, 0.3)"
-                            : "0 8px 32px rgba(0,0,0,0.2)",
+                        boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
                         fontFamily: "var(--font-display)",
                         letterSpacing: "0.5px",
                         textTransform: "uppercase",
@@ -578,46 +576,10 @@ const PerceptionPerspective = () => {
                       }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      {visitedSections.has("Cultural") ? "✓ " : "→ "}What is
-                      Corruption?
-                    </motion.button>
-
-                    <motion.button
-                      onClick={() => {
-                        setSelectedButton("Social");
-                        setVisitedSections(
-                          (prev) => new Set([...prev, "Cultural", "Social"]),
-                        );
-                      }}
-                      className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
-                      style={{
-                        background:
-                          selectedButton === "Social"
-                            ? "rgba(16, 185, 129, 0.25)"
-                            : "rgba(16, 185, 129, 0.15)",
-                        color: "#9DE6C6",
-                        border:
-                          selectedButton === "Social"
-                            ? "2px solid rgba(157, 230, 198, 0.6)"
-                            : "1px solid rgba(157, 230, 198, 0.4)",
-                        backdropFilter: "blur(15px)",
-                        boxShadow:
-                          selectedButton === "Social"
-                            ? "0 8px 32px rgba(16, 185, 129, 0.3)"
-                            : "0 8px 32px rgba(0,0,0,0.2)",
-                        fontFamily: "var(--font-display)",
-                        letterSpacing: "0.5px",
-                        textTransform: "uppercase",
-                      }}
-                      whileHover={{
-                        scale: 1.05,
-                        backgroundColor: "rgba(16, 185, 129, 0.25)",
-                        boxShadow: "0 12px 40px rgba(16, 185, 129, 0.2)",
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {visitedSections.has("Social") ? "✓ " : "→ "}Consequences
-                      of Corruption
+                      {selectedButton === "Cultural"
+                        ? "→ Consequences of Corruption"
+                        : "→ What is Corruption?"
+                      }
                     </motion.button>
                   </motion.div>
                 )}
