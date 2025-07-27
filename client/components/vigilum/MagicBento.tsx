@@ -797,7 +797,7 @@ const AdvisoryCarousel = ({ card }) => {
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "flex-start",
             width: "180px",
             flexShrink: 0,
           }}
