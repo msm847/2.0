@@ -423,7 +423,7 @@ const boundaryLogicData = {
           typology: ["RT"],
         },
         embezzlement: {
-          state: "–",
+          state: "��",
           tooltip:
             "Outside FCPA scope unless involving foreign official payments.",
           typology: ["SB"],
@@ -698,7 +698,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Core violation in ADB integrity framework and sanctions procedures.",
           typology: ["CI"],
@@ -1295,8 +1295,8 @@ const BoundaryLogicCarousel = () => {
               <div
                 key={term}
                 style={{
-                  height: "36px",
-                  padding: "6px 10px",
+                  height: "32px",
+                  padding: "4px 8px",
                   border: `2px solid ${isSelected ? "#FFFFFF" : getTagColor(tag.state)}`,
                   borderRadius: "6px",
                   background: isSelected
