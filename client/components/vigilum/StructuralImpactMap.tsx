@@ -244,8 +244,13 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 3, y: 12 }, // 10 o'clock - moved even higher and further left
-      headline: "Corruption undermines protection, fuels human suffering.",
+      axisTitle: "Oversight Simulation & Evasion",
+      position: { x: 3, y: 12 }, // 10 o'clock
+      structuralLogic: "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
+      shockingFact: "Over 90% of ESG funds reviewed by Vigilum passed formal screens—while 1 in 4 failed independent conflict-of-interest checks.",
+      dataPoint: "95% of EU in-house procurement contracts that failed external audit had passed internal compliance review with no flags.",
+      actionableOutput: "Model overlap between compliance optics and actual risk; surface nodes with repeated 'clean' audit cycles but unresolved financial anomalies.",
+      headline: "'Green' or 'ethical' oversight is often formatted to deflect scrutiny, not enforce constraint.",
       domainCounter: {
         ratePerSecond: 950,
         unit: "Hectares Destroyed",
