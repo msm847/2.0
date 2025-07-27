@@ -184,6 +184,7 @@ const PerceptionPerspective = () => {
   const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
   const [visitedSections, setVisitedSections] = useState(new Set(["Cultural"])); // Track visited sections
   const [showFloatingNav, setShowFloatingNav] = useState(false); // Control floating nav visibility
+  const [globalLoss, setGlobalLoss] = useState(0);
 
   // Simple step navigation for perspective section
   const perspectiveSteps = ["Cultural", "Social"];
