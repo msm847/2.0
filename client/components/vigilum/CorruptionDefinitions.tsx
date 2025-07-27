@@ -1122,6 +1122,21 @@ const BoundaryLogicCarousel = () => {
     "shellCompany",
   ];
 
+  // Format term names for display
+  const getTermDisplayName = (term) => {
+    const nameMap = {
+      bribery: "Bribery",
+      fraud: "Fraud",
+      nepotism: "Nepotism",
+      lobbying: "Lobbying",
+      assetLaundering: "Asset Laundering",
+      cronyism: "Cronyism",
+      regulatoryArbitrage: "Regulatory Arbitrage",
+      shellCompany: "Shell Company",
+    };
+    return nameMap[term] || term;
+  };
+
   // Tag State Logic - Boundary Recognition System
   const getTagColor = (state) => {
     switch (state) {
@@ -1597,7 +1612,7 @@ const BoundaryLogicCarousel = () => {
                     fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
                   }}
                 >
-                  {term.replace(/([A-Z])/g, " $1").trim()}
+                  {getTermDisplayName(term)}
                 </button>
               ))}
             </div>
