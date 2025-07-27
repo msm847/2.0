@@ -10,9 +10,9 @@ const MOBILE_BREAKPOINT = 768;
 const cardData = [
   {
     color: "#10201C",
-    title: "Mission",
+    title: "System Logic",
     description:
-      "This integrated structural intelligence system transforms complex legal, procedural, and network data into clear risk signals that safeguard public resources and foster economic growth. Its modular engines combine procurement anomaly detection, contract clause evaluation, influence mapping, and enforcement monitoring into a unified interface. Machine-powered analysis simulates future governance scenarios, quantifies exposure in real time, and recommends proactive measures to close hidden gaps—so institutions can unlock value, enhance transparency, and build prosperity for all stakeholders.",
+      "Vigilum is a structural foresight engine that renders governance as a dynamic risk field. It reconstructs the design-level sequence of contracts, processes, and networks, mapping every clause, threshold, and override as an operator within a multidimensional logic-space. By vectorizing legal structure and simulating operator interactions, Vigilum surfaces how discretion, override chains, and compliance simulation intersect–exposing latent extraction paths and systemic blind spots long before risk materializes as loss. Designed for any governance environment, Vigilum adapts its risk field logic to public, private, and hybrid systems–ensuring structural foresight at every institutional scale.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
