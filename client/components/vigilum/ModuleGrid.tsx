@@ -408,8 +408,7 @@ const ModuleGrid = () => {
         <div className="text-center">
           <p className="text-sm text-gray-400 font-mono">
             Each module is an operator in Vigilum's risk calculus; <br />
-            their interdependencies compose the logic-space where design,
-            recognition, and evasion intersect.
+            Together, they render systemic risk as a visible and actionable system output.
           </p>
         </div>
       </div>
