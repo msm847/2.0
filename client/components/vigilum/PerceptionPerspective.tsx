@@ -296,17 +296,17 @@ const PerceptionPerspective = () => {
   // Monitor main navigation dropdown state
   useEffect(() => {
     const handleMouseEvents = () => {
-      const navDropdown = document.querySelector('.group');
+      const navDropdown = document.querySelector(".group");
       if (navDropdown) {
         const handleMouseEnter = () => setIsMainNavOpen(true);
         const handleMouseLeave = () => setIsMainNavOpen(false);
 
-        navDropdown.addEventListener('mouseenter', handleMouseEnter);
-        navDropdown.addEventListener('mouseleave', handleMouseLeave);
+        navDropdown.addEventListener("mouseenter", handleMouseEnter);
+        navDropdown.addEventListener("mouseleave", handleMouseLeave);
 
         return () => {
-          navDropdown.removeEventListener('mouseenter', handleMouseEnter);
-          navDropdown.removeEventListener('mouseleave', handleMouseLeave);
+          navDropdown.removeEventListener("mouseenter", handleMouseEnter);
+          navDropdown.removeEventListener("mouseleave", handleMouseLeave);
         };
       }
     };
@@ -594,14 +594,20 @@ const PerceptionPerspective = () => {
                       }}
                       whileTap={{ scale: 0.98 }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = "rgba(16, 185, 129, 0.25)";
-                        e.currentTarget.style.boxShadow = "0 0 25px rgba(16, 185, 129, 0.6)";
-                        e.currentTarget.style.borderColor = "rgba(16, 185, 129, 0.8)";
+                        e.currentTarget.style.background =
+                          "rgba(16, 185, 129, 0.25)";
+                        e.currentTarget.style.boxShadow =
+                          "0 0 25px rgba(16, 185, 129, 0.6)";
+                        e.currentTarget.style.borderColor =
+                          "rgba(16, 185, 129, 0.8)";
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = "rgba(16, 185, 129, 0.15)";
-                        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.2)";
-                        e.currentTarget.style.borderColor = "rgba(157, 230, 198, 0.4)";
+                        e.currentTarget.style.background =
+                          "rgba(16, 185, 129, 0.15)";
+                        e.currentTarget.style.boxShadow =
+                          "0 8px 32px rgba(0,0,0,0.2)";
+                        e.currentTarget.style.borderColor =
+                          "rgba(157, 230, 198, 0.4)";
                       }}
                     >
                       {selectedButton === "Cultural"
