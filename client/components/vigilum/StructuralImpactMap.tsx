@@ -66,8 +66,13 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 47, y: 12 }, // 2 o'clock - moved even higher and further left
-      headline: "Corruption weakens law, derails justice, erodes legitimacy.",
+      axisTitle: "Compliance Inversion",
+      position: { x: 47, y: 12 }, // 2 o'clock
+      structuralLogic: "When compliance systems are engineered for appearance, not substance, oversight becomes a simulacrum—reforms actually drive new extraction logics.",
+      shockingFact: "EU countries with the fastest uptick in anti-corruption laws saw no drop in procurement anomalies—just a shift in method.",
+      dataPoint: "Following major anti-corruption 'reforms,' enforcement actions may drop 30%—not because risk fell, but because simulation logic absorbed real oversight (see Romania, 2016–2019).",
+      actionableOutput: "Surface clusters where legal change correlates with increased uninvestigated procurement anomalies.",
+      headline: "When systems reward simulation over substance, reforms create new loopholes faster than old ones close.",
       domainCounter: {
         ratePerSecond: 8400,
         unit: "Trust Points",
