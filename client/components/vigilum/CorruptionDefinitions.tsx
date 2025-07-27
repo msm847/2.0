@@ -1170,7 +1170,7 @@ const termDefinitions = {
     analysis:
       'Regulatory arbitrage is defined by the strategic exploitation of inconsistencies, gaps, or slow adaptation in legal regimes. Divergence is found in the clarity of anti-abuse rules, the speed of regulatory adaptation, and the global mobility of capital. Actors recast risk or extraction as compliance through relocation, reclassification, or product redesign—moving financial products, tax structures, or even entire businesses to friendlier jurisdictions. Shadow banking, tax havens, and cross-border structuring exemplify arbitrage as a core system feature, not an anomaly. Regulatory arbitrage triggers "race to the bottom" dynamics, undermining enforcement and creating persistent fragility that regulators struggle to address without global coordination.',
     consequence:
-      "Regulatory arbitrage encodes risk migration as a design feature, not a flaw. By sequencing operations to exploit the most permissive regimes, actors transform systemic fragility into routine efficiency. Oversight is disassembled into procedural fragments, with no node able to compute or constrain total exposure. The result is a dynamic equilibrium of non-accountability—where the system's very complexity ensures its continuous circumvention.",
+      "Regulatory arbitrage encodes risk migration as a design feature, not a flaw. By sequencing operations to exploit the most permissive regimes, actors transform systemic fragility into routine efficiency. Oversight is disassembled into procedural fragments, with no node able to compute or constrain total exposure. The result is a dynamic equilibrium of non-accountability��where the system's very complexity ensures its continuous circumvention.",
   },
   shellCompany: {
     title:
@@ -1335,9 +1335,8 @@ const BoundaryLogicCarousel = () => {
         >
           <div
             style={{
-              fontSize: "32px",
-              width: "54px",
-              height: "54px",
+              width: "60px",
+              height: "60px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -1357,7 +1356,21 @@ const BoundaryLogicCarousel = () => {
             }}
             title={`View source: ${institution.citation.text}`}
           >
-            {institution.logo}
+            <img
+              src={institution.logoUrl}
+              alt={`${institution.name} logo`}
+              style={{
+                height: "60px",
+                width: "auto",
+                maxWidth: "100%",
+                objectFit: "contain"
+              }}
+              onError={(e) => {
+                // Fallback to emoji if image fails to load
+                e.target.style.display = 'none';
+                e.target.parentElement.innerHTML = `<span style="fontSize: 32px">${institution.logo}</span>`;
+              }}
+            />
           </div>
           <h4
             style={{
