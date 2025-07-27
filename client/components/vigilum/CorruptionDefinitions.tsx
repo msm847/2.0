@@ -6,15 +6,15 @@ import Carousel from "@/components/ui/Carousel";
 const boundaryLogicData = {
   regulatory: [
     {
-      id: "doj",
-      name: "US DOJ",
-      logoUrl: "/logos/doj.svg",
-      logo: "🏛️",
+      id: "oecd",
+      name: "OECD",
+      logoUrl: "/logos/oecd.svg",
+      logo: "🌐",
       definition:
-        "The offering, giving, receiving, or soliciting of anything of value to influence the actions of an official in the discharge of public or commercial duties.",
+        "The OECD deliberately does not define 'corruption' but establishes specific offences for corrupt behavior. For policy purposes, corruption is described as 'the misuse of public office, roles or resources for private benefit.'",
       citation: {
-        text: "DOJ, Foreign Corrupt Practices Act Resource Guide, 2020, p.7",
-        url: "https://www.justice.gov/criminal-fraud/file/1292051/download",
+        text: "OECD, Corruption: A Glossary of International Standards in Criminal Law, 2008",
+        url: "https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/03/corruption_aaf2a47f/a71d7115-en.pdf",
       },
       tags: {
         bribery: {
