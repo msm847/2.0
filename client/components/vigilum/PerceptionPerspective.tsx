@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { createPortal } from "react-dom";
 import SplitText from "@/components/ui/SplitText";
 
 import CorruptionDefinitions from "./CorruptionDefinitions";
