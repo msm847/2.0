@@ -1060,7 +1060,7 @@ const boundaryLogicData = {
     {
       id: "nib",
       name: "NIB",
-      logoUrl: "/logos/nib.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fbea7129300cb4e3ea7054aab432a3622?format=webp&width=800",
       logo: "🇳🇴",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
@@ -1913,7 +1913,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪🇺",
+          logo: "🇪���",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
@@ -2438,7 +2438,7 @@ const TagPill = ({ tag, status, label }) => {
       }}
       title={tagTooltips[tag]}
     >
-      {status === "included" ? "✓" : status === "excluded" ? "��" : "?"} {label}
+      {status === "included" ? "✓" : status === "excluded" ? "–" : "?"} {label}
     </span>
   );
 };
