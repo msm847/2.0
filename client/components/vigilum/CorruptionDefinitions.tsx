@@ -359,8 +359,7 @@ const boundaryLogicData = {
         },
         assetLaundering: {
           state: "✓",
-          tooltip:
-            "Investigated when connected to corruption proceeds. [CI]",
+          tooltip: "Investigated when connected to corruption proceeds. [CI]",
           typology: ["CI"],
         },
         regulatoryArbitrage: {
@@ -433,8 +432,7 @@ const boundaryLogicData = {
         },
         nepotism: {
           state: "✓",
-          tooltip:
-            "Explicitly included in UNODC corruption definition. [CI]",
+          tooltip: "Explicitly included in UNODC corruption definition. [CI]",
           typology: ["CI"],
         },
       },
@@ -771,8 +769,7 @@ const boundaryLogicData = {
         },
         lobbying: {
           state: "–",
-          tooltip:
-            "Legal advocacy excluded from EBRD enforcement scope. [SB]",
+          tooltip: "Legal advocacy excluded from EBRD enforcement scope. [SB]",
           typology: ["SB"],
         },
         shellCompany: {
@@ -975,8 +972,7 @@ const boundaryLogicData = {
         },
         fraud: {
           state: "✓",
-          tooltip:
-            "Core prohibited practice in IDB integrity framework. [CI]",
+          tooltip: "Core prohibited practice in IDB integrity framework. [CI]",
           typology: ["CI"],
         },
         assetLaundering: {
@@ -1081,8 +1077,7 @@ const boundaryLogicData = {
         },
         lobbying: {
           state: "–",
-          tooltip:
-            "Legal advocacy excluded from NIB enforcement scope. [SB]",
+          tooltip: "Legal advocacy excluded from NIB enforcement scope. [SB]",
           typology: ["SB"],
         },
         shellCompany: {
