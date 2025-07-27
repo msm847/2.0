@@ -322,7 +322,7 @@ const impactNetworkData = {
         {
           text: "Corruption predicts willingness to migrate",
           source: "UNDP",
-          icon: "🚶",
+          icon: "����",
         },
         { text: "Security forces compromised", source: "UNODC", icon: "🛡️" },
         {
@@ -1508,7 +1508,9 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         >
           What appears as isolated harm is, in fact, systemic propagation.
           <br />
-          Examine how design-level risk migrates across the economy, institutions, and public trust, producing consequences that outpace any single event.
+          Examine how design-level risk migrates across the economy, institutions,
+          <br />
+          and public trust, producing consequences that outpace any single event.
         </p>
 
         {/* Global Live Ticker - rendered via portal for immediate positioning */}
