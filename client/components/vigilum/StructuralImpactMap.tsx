@@ -707,34 +707,17 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
 
           {/* Header */}
           <div style={{ marginBottom: "32px" }}>
-            <div style={{ marginBottom: "12px", display: "flex", alignItems: "center", gap: "12px" }}>
-              <h2
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "700",
-                  color: "#FFFFFF",
-                  margin: "0",
-                  fontFamily: "var(--font-display)",
-                }}
-              >
-                {node.label}
-              </h2>
-              <div
-                style={{
-                  padding: "4px 8px",
-                  background: `${node.color}20`,
-                  border: `1px solid ${node.color}40`,
-                  borderRadius: "6px",
-                  fontSize: "10px",
-                  color: node.color,
-                  fontWeight: "600",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px"
-                }}
-              >
-                {node.structuralType || "AXIS"}
-              </div>
-            </div>
+            <h2
+              style={{
+                fontSize: "24px",
+                fontWeight: "700",
+                color: "#FFFFFF",
+                margin: "0 0 12px 0",
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              {node.label}
+            </h2>
             <h3
               style={{
                 fontSize: "20px",
