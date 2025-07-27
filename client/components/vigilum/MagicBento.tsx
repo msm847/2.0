@@ -836,7 +836,7 @@ const MagicBento = ({
                           color: "#E5E5E5",
                           marginBottom: "8px",
                           fontWeight: "300",
-                          
+
                         }}
                       >
                         {card.description}
@@ -848,7 +848,7 @@ const MagicBento = ({
                           color: "#D0D0D0",
                           marginBottom: "8px",
                           fontWeight: "200",
-                          
+
                         }}
                       >
                         {card.secondaryDescription}
@@ -1067,37 +1067,28 @@ const MagicBento = ({
                     >
                       {card.title}
                     </h2>
-                    <div
+                    <p
                       style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        flex: "1",
+                        fontSize: "17px",
+                        lineHeight: "25px",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "300",
                       }}
                     >
-                      <p
-                        style={{
-                          fontSize: "17px",
-                          lineHeight: "25px",
-                          color: "#E5E5E5",
-                          marginBottom: "8px",
-                          fontWeight: "300",
-                        }}
-                      >
-                        {card.description}
-                      </p>
-                      <p
-                        style={{
-                          fontSize: "17px",
-                          lineHeight: "25px",
-                          color: "#E5E5E5",
-                          marginBottom: "8px",
-                          fontWeight: "300",
-                        }}
-                      >
-                        {card.secondaryDescription}
-                      </p>
-                    </div>
+                      {card.description}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "17px",
+                        lineHeight: "25px",
+                        color: "#E5E5E5",
+                        marginBottom: "8px",
+                        fontWeight: "300",
+                      }}
+                    >
+                      {card.secondaryDescription}
+                    </p>
                   </>
                 ) : card.isFounder ? (
                   <>
@@ -1119,7 +1110,7 @@ const MagicBento = ({
                         color: "#E5E5E5",
                         marginBottom: "8px",
                         fontWeight: "300",
-                        
+
                       }}
                     >
                       {card.description}
@@ -1131,7 +1122,7 @@ const MagicBento = ({
                         color: "#D0D0D0",
                         marginBottom: "8px",
                         fontWeight: "200",
-                        
+
                       }}
                     >
                       {card.secondaryDescription}
