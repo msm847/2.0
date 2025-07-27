@@ -288,6 +288,8 @@ const PerceptionPerspective = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    // Trigger initial check
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
 
