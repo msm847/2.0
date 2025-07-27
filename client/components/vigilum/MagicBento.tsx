@@ -798,7 +798,7 @@ const MagicBento = ({
                           lineHeight: "25px",
                           color: "#E5E5E5",
                           marginBottom: "8px",
-                          fontWeight: "300", textAlign: "center",
+                          fontWeight: "300",
                         }}
                       >
                         {card.description}
