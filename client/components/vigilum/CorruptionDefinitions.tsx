@@ -440,7 +440,7 @@ const boundaryLogicData = {
     {
       id: "g20",
       name: "G20 ACWG",
-      logoUrl: "/logos/g20.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5ea716e7499346d8923706521145718f?format=webp&width=800",
       logo: "🌐",
       definition:
         "The G20 ACWG recognizes the negative impact of corruption which 'threatens the integrity of markets, undermines fair competition, distorts resource allocation, destroys public trust, and undermines the rule of law'…",
