@@ -937,7 +937,7 @@ const boundaryLogicData = {
     {
       id: "idb",
       name: "IDB",
-      logoUrl: "/logos/idb.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F2c460fd7acf5492ab1e8a4edccb8c3c9?format=webp&width=800",
       logo: "🌎",
       definition:
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
@@ -2261,7 +2261,7 @@ const institutionalData = {
       name: "Civil Society / NGO",
       description:
         "Leading transparency and anti-corruption organizations with their definitions.",
-      emblem: "🤝",
+      emblem: "����",
       institutions: [
         {
           name: "Transparency International",
