@@ -226,7 +226,7 @@ const impactNetworkData = {
         {
           step: "Unqualified winner",
           description: "Project given to incapable bidder",
-          icon: "���️",
+          icon: "⚠️",
         },
         {
           step: "Project fails",
@@ -1488,12 +1488,11 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         >
           <h2
             style={{
-              fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
-              fontWeight: "700",
-              color: "#E5F3ED",
-              margin: "0 0 16px 0",
-              fontFamily: "IBM Plex Sans, sans-serif",
-              lineHeight: "1.1",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
+              fontWeight: "600",
+              color: "#9DE6C6",
+              margin: "0 0 12px 0",
+              fontFamily: "var(--font-display)",
             }}
           >
             Structural Impact Map
