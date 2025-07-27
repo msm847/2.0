@@ -1508,9 +1508,9 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             whiteSpace: "nowrap",
           }}
         >
-          Examine how design-level risk migrates across the economy, institutions,
+          Examine how design-level risk migrates across the economy, institutions, and public trust,
           <br />
-          and public trust, producing consequences that outpace any single event.
+          producing consequences that outpace any single event.
         </p>
 
         {/* Global Live Ticker - rendered via portal for immediate positioning */}
