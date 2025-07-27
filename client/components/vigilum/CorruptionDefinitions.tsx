@@ -875,7 +875,7 @@ const boundaryLogicData = {
     {
       id: "ifc",
       name: "IFC",
-      logoUrl: "/logos/ifc.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa5582b7835c0404596752e71575157c9?format=webp&width=800",
       logo: "💼",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
