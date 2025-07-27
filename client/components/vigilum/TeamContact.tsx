@@ -453,6 +453,22 @@ const TeamContact = () => {
               >
                 Purpose & Horizon
               </motion.h2>
+
+              <motion.p
+                style={{
+                  fontFamily: "IBM Plex Sans, sans-serif",
+                  fontSize: "18px",
+                  color: "#A5C9B7",
+                  textAlign: "center",
+                  margin: "0",
+                  lineHeight: "1.5",
+                }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Meet the team and understand the vision driving Vigilum.
+              </motion.p>
             </div>
 
             {/* MagicBento Grid */}
