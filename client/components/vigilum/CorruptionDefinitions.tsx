@@ -296,7 +296,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Primary focus area - money laundering is core FATF mandate. [CI]",
           typology: ["CI"],
@@ -1433,6 +1433,10 @@ const BoundaryLogicCarousel = () => {
                 alignItems: "center",
                 gap: "4px",
                 transition: "color 0.2s ease",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                maxWidth: "100%",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = "#FFFFFF";
