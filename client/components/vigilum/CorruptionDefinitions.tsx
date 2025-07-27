@@ -1060,7 +1060,7 @@ const boundaryLogicData = {
     {
       id: "nib",
       name: "NIB",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fbea7129300cb4e3ea7054aab432a3622?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
       logo: "🇳🇴",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
@@ -2750,7 +2750,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              Explore how global authorities construct���and limit–the boundaries
+              Explore how global authorities construct–and limit–the boundaries
               of corruption.
             </p>
 
