@@ -22,8 +22,8 @@ const cardData = [
     color: "#10201C",
     title: "Vision",
     description:
-      "A world where the mechanics of loss are surfaced before they can take root– where institutions no longer react, but continually self-correct, dissolving risk before it becomes harm.",
-    secondaryDescription: "Here, governance is not a spectacle of procedures or delayed consequence, but a living architecture of prevention.\nTrust is no longer performed, but embedded–anchored in transparent structure and the continuous neutralization of extraction at its source.\n\nSociety becomes resilient by design, and the game of concealment, loopholes, and loss becomes obsolete.",
+      "A world where the mechanics of loss are surfaced before they can take root– where institutions no longer react, but continually self-correct, dissolving risk before it becomes harm.\n\nHere, governance is not a spectacle of procedures or delayed consequence, but a living architecture of prevention.\n\nTrust is no longer performed, but embedded–anchored in transparent structure and the continuous neutralization of extraction at its source.\n\nSociety becomes resilient by design, and the game of concealment, loopholes, and loss becomes obsolete.",
+    secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
   },
