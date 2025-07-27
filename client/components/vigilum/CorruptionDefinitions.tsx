@@ -628,7 +628,7 @@ const boundaryLogicData = {
     {
       id: "worldbank",
       name: "World Bank",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5ea716e7499346d8923706521145718f?format=webp&width=800",
       logo: "🏦",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
