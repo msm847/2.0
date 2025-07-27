@@ -184,6 +184,7 @@ const PerceptionPerspective = () => {
   const [selectedButton, setSelectedButton] = useState("Cultural"); // Auto-select Cultural
   const [visitedSections, setVisitedSections] = useState(new Set(["Cultural"])); // Track visited sections
   const [showFloatingNav, setShowFloatingNav] = useState(false); // Control floating nav visibility
+  const [isMainNavOpen, setIsMainNavOpen] = useState(false); // Track main navigation state
   const [globalLoss, setGlobalLoss] = useState(0);
 
   // Simple step navigation for perspective section
@@ -291,6 +292,28 @@ const PerceptionPerspective = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
+
+  // Monitor main navigation dropdown state
+  useEffect(() => {
+    const handleMouseEvents = () => {
+      const navDropdown = document.querySelector('.group');
+      if (navDropdown) {
+        const handleMouseEnter = () => setIsMainNavOpen(true);
+        const handleMouseLeave = () => setIsMainNavOpen(false);
+
+        navDropdown.addEventListener('mouseenter', handleMouseEnter);
+        navDropdown.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+          navDropdown.removeEventListener('mouseenter', handleMouseEnter);
+          navDropdown.removeEventListener('mouseleave', handleMouseLeave);
+        };
+      }
+    };
+
+    const cleanup = handleMouseEvents();
+    return cleanup;
+  }, []);
 
   // Theme configurations
   const themes = {
@@ -535,8 +558,8 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-                {/* Floating Contextual Navigation - Only show when in perception/perspective sections */}
-                {showFloatingNav && (
+                {/* Floating Contextual Navigation - Only show when in perception/perspective sections and main nav is closed */}
+                {showFloatingNav && !isMainNavOpen && (
                   <motion.div
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
