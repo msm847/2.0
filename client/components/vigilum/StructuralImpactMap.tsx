@@ -2,6 +2,18 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Structural type color mapping
+const getStructuralTypeColor = (type) => {
+  const colors = {
+    extraction: "#DC2626", // Red - Extraction type
+    simulation: "#3B82F6", // Institutional blue - Simulation type
+    shadow: "#6B7280", // Grey/Black - Shadow type
+    drift: "#EA580C", // Orange - Drift type
+    collapse: "#8B5CF6", // Purple - Trust Collapse type
+  };
+  return colors[type] || "#9CA3AF";
+};
+
 // Enhanced data model for the immersive structural impact map
 const impactNetworkData = {
   nodes: [
