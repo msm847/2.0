@@ -8,9 +8,14 @@ const impactNetworkData = {
     {
       id: "economy",
       label: "Economy",
-      position: { x: 25, y: 0 }, // 12 o'clock - moved even higher and further left
+      axisTitle: "Extraction Multipliers",
+      position: { x: 25, y: 0 }, // 12 o'clock
+      structuralLogic: "Corruption is not a single event—it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
+      shockingFact: "In major infrastructure projects, compliant extraction channels often outpace criminal theft 2:1, draining billions through 'legal' structures.",
+      dataPoint: "Countries in the top decile of procurement loophole density lose up to 25% of project value to legal but extractive intermediaries—triple the OECD average.",
+      actionableOutput: "Flag contracts where clause sequencing produces risk vectors above threshold; simulate extraction velocity over time.",
       headline:
-        "Every minute, corruption drains $1.9 million from the global economy.",
+        "Corruption is not just leakage; it is a systemic multiplier—compounding over every contract, every cycle, and every loophole.",
       domainCounter: {
         ratePerSecond: 31666,
         unit: "USD",
