@@ -353,13 +353,13 @@ const impactNetworkData = {
         source: "SIGAR",
       },
       propagation: [
-        { toNode: "institutions", effect: "Disrupts institutional legitimacy" },
-        {
-          toNode: "economy",
-          effect: "Creates economic uncertainty and flight",
-        },
+        { toNode: "economy", effect: "Triggers capital flight", intensity: 0.9 },
+        { toNode: "institutions", effect: "Accelerates legitimacy crisis", intensity: 0.95 },
+        { toNode: "inequality", effect: "Deepens social breakdown", intensity: 0.8 },
+        { toNode: "markets", effect: "Collapses market confidence", intensity: 0.85 }
       ],
       color: "#8B5CF6",
+      structuralType: "collapse"
     },
   ],
 };
@@ -891,7 +891,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   letterSpacing: "0.5px"
                 }}
               >
-                🎯 Vigilum Output
+                �� Vigilum Output
               </h4>
               <p
                 style={{
