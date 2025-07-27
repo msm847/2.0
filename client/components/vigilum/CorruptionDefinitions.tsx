@@ -1569,13 +1569,13 @@ const BoundaryLogicCarousel = () => {
             >
               {[
                 "bribery",
-                "lobbying",
-                "privateSector",
-                "influencePeddling",
-                "conflictOfInterest",
                 "fraud",
-                "embezzlement",
                 "nepotism",
+                "lobbying",
+                "assetLaundering",
+                "cronyism",
+                "regulatoryArbitrage",
+                "shellCompany",
               ].map((term) => (
                 <button
                   key={term}
