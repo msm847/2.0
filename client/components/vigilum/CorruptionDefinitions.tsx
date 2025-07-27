@@ -1135,7 +1135,7 @@ const termDefinitions = {
     analysis:
       'Fraud converges on intentional deception for gain, achieved through misrepresentation, concealment, or omission. Divergence emerges in how materiality, intent, and threshold for criminal enforcement are drawn across jurisdictions and industries. While criminal codes prosecute overt schemes—like false invoicing or asset misappropriation—many legal systems allow structural fraud through regulatory loopholes, creative accounting, or misleading disclosures. Complex financial products and off-balance-sheet vehicles can simulate legitimacy, blurring the distinction between regulatory error and criminal intent. Legal formatting reframes fraud as compliance failure or "market innovation" rather than extraction, allowing systemic risk to accumulate off-ledger. For institutional investors, latent fraud risk becomes reputational tail risk and regulatory exposure long after the act.',
     consequence:
-      "Structural fraud erodes trust in financial systems and institutional governance, exposing markets and investors to delayed, cascading losses.",
+      "STRUCTURAL CONSEQUENCE: Fraud transforms the logic of detection into a probabilistic event—outpacing audits by distributing exposure across actors, channels, and time. Compliance frameworks simulate control but are fragmented by design, allowing extractive maneuvers to pass as routine operations. Systemic fraud is not an exception, but an emergent property: risk migrates through legal seams, and structural vulnerability is recalibrated with each new circumvention.",
   },
   nepotism: {
     title: "Nepotism: Embedded Networks and Discretionary Capture",
@@ -2012,7 +2012,7 @@ const institutionalData = {
       name: "International Financial",
       description:
         "Leading global financial institutions with their corruption frameworks.",
-      emblem: "🏦",
+      emblem: "���",
       institutions: [
         {
           name: "World Bank",
