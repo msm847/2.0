@@ -50,7 +50,7 @@ const impactNetworkData = {
         {
           step: "Bribe paid",
           description: "Funds diverted from national budget",
-          icon: "��",
+          icon: "💸",
         },
         {
           step: "Funds lost",
@@ -128,7 +128,7 @@ const impactNetworkData = {
         {
           step: "Judge bribed",
           description: "Legal system compromised",
-          icon: "���️",
+          icon: "⚖️",
         },
         {
           step: "Reforms blocked",
@@ -189,7 +189,7 @@ const impactNetworkData = {
         {
           text: "Public services cost up to 30% more",
           source: "Transparency International",
-          icon: "💊",
+          icon: "����",
         },
         {
           text: "Petty corruption hurts the poor most",
@@ -1698,8 +1698,8 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
         <div
           style={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
+            top: "25%",
+            left: "35%",
             transform: "translate(-50%, -50%)",
             textAlign: "center",
             zIndex: 5,
