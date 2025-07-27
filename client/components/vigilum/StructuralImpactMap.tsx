@@ -22,10 +22,14 @@ const impactNetworkData = {
       label: "Economy",
       axisTitle: "Extraction Multipliers",
       position: { x: 35, y: 0 }, // 12 o'clock
-      structuralLogic: "Corruption is not a single event—it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
-      shockingFact: "In major infrastructure projects, compliant extraction channels often outpace criminal theft 2:1, draining billions through 'legal' structures.",
-      dataPoint: "Countries in the top decile of procurement loophole density lose up to 25% of project value to legal but extractive intermediaries—triple the OECD average.",
-      actionableOutput: "Flag contracts where clause sequencing produces risk vectors above threshold; simulate extraction velocity over time.",
+      structuralLogic:
+        "Corruption is not a single event—it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
+      shockingFact:
+        "In major infrastructure projects, compliant extraction channels often outpace criminal theft 2:1, draining billions through 'legal' structures.",
+      dataPoint:
+        "Countries in the top decile of procurement loophole density lose up to 25% of project value to legal but extractive intermediaries—triple the OECD average.",
+      actionableOutput:
+        "Flag contracts where clause sequencing produces risk vectors above threshold; simulate extraction velocity over time.",
       headline:
         "Corruption is not just leakage; it is a systemic multiplier—compounding over every contract, every cycle, and every loophole.",
       domainCounter: {
@@ -64,23 +68,40 @@ const impactNetworkData = {
         source: "World Bank",
       },
       propagation: [
-        { toNode: "markets", effect: "Feeds shadow market creation", intensity: 0.8 },
-        { toNode: "institutions", effect: "Enables compliance inversion", intensity: 0.7 },
-        { toNode: "inequality", effect: "Multiplies extraction effects", intensity: 0.9 }
+        {
+          toNode: "markets",
+          effect: "Feeds shadow market creation",
+          intensity: 0.8,
+        },
+        {
+          toNode: "institutions",
+          effect: "Enables compliance inversion",
+          intensity: 0.7,
+        },
+        {
+          toNode: "inequality",
+          effect: "Multiplies extraction effects",
+          intensity: 0.9,
+        },
       ],
       color: "#DC2626",
-      structuralType: "extraction"
+      structuralType: "extraction",
     },
     {
       id: "institutions",
       label: "Institutions",
       axisTitle: "Compliance Inversion",
       position: { x: 57, y: 12 }, // 2 o'clock
-      structuralLogic: "When compliance systems are engineered for appearance, not substance, oversight becomes a simulacrum—reforms actually drive new extraction logics.",
-      shockingFact: "EU countries with the fastest uptick in anti-corruption laws saw no drop in procurement anomalies—just a shift in method.",
-      dataPoint: "Following major anti-corruption 'reforms,' enforcement actions may drop 30%—not because risk fell, but because simulation logic absorbed real oversight (see Romania, 2016–2019).",
-      actionableOutput: "Surface clusters where legal change correlates with increased uninvestigated procurement anomalies.",
-      headline: "When systems reward simulation over substance, reforms create new loopholes faster than old ones close.",
+      structuralLogic:
+        "When compliance systems are engineered for appearance, not substance, oversight becomes a simulacrum—reforms actually drive new extraction logics.",
+      shockingFact:
+        "EU countries with the fastest uptick in anti-corruption laws saw no drop in procurement anomalies—just a shift in method.",
+      dataPoint:
+        "Following major anti-corruption 'reforms,' enforcement actions may drop 30%—not because risk fell, but because simulation logic absorbed real oversight (see Romania, 2016–2019).",
+      actionableOutput:
+        "Surface clusters where legal change correlates with increased uninvestigated procurement anomalies.",
+      headline:
+        "When systems reward simulation over substance, reforms create new loopholes faster than old ones close.",
       domainCounter: {
         ratePerSecond: 8400,
         unit: "Trust Points",
@@ -125,23 +146,40 @@ const impactNetworkData = {
         source: "GRECO",
       },
       propagation: [
-        { toNode: "environment", effect: "Enables oversight simulation", intensity: 0.9 },
-        { toNode: "inequality", effect: "Drives behavioral drift", intensity: 0.6 },
-        { toNode: "trust", effect: "Accelerates legitimacy crisis", intensity: 0.8 }
+        {
+          toNode: "environment",
+          effect: "Enables oversight simulation",
+          intensity: 0.9,
+        },
+        {
+          toNode: "inequality",
+          effect: "Drives behavioral drift",
+          intensity: 0.6,
+        },
+        {
+          toNode: "trust",
+          effect: "Accelerates legitimacy crisis",
+          intensity: 0.8,
+        },
       ],
       color: "#3B82F6",
-      structuralType: "simulation"
+      structuralType: "simulation",
     },
     {
       id: "inequality",
       label: "Inequality",
       axisTitle: "Behavioral Drift & Reflexive Erosion",
       position: { x: 57, y: 38 }, // 4 o'clock
-      structuralLogic: "Repeated exposure to non-binding reforms and simulated accountability compresses cognitive reflexes—normalizing evasion and teaching actors that structural outcomes are predetermined.",
-      shockingFact: "Nearly 80% of public servants in high-simulation countries say 'everyone adapts the rules'—twice the global average.",
-      dataPoint: "In post-reform Lithuania, 74% of surveyed officials agreed that 'rules are changed to fit decisions,' not the reverse—a reversal from pre-reform attitudes.",
-      actionableOutput: "Detect system states where procedural adaptation outpaces formal regulation (e.g., sudden changes in tendering logic, spike in legal amendments post-scandal).",
-      headline: "Surface reforms mask deeper structural drift—teaching actors to adapt, evade, and accept simulation as the new normal.",
+      structuralLogic:
+        "Repeated exposure to non-binding reforms and simulated accountability compresses cognitive reflexes—normalizing evasion and teaching actors that structural outcomes are predetermined.",
+      shockingFact:
+        "Nearly 80% of public servants in high-simulation countries say 'everyone adapts the rules'—twice the global average.",
+      dataPoint:
+        "In post-reform Lithuania, 74% of surveyed officials agreed that 'rules are changed to fit decisions,' not the reverse—a reversal from pre-reform attitudes.",
+      actionableOutput:
+        "Detect system states where procedural adaptation outpaces formal regulation (e.g., sudden changes in tendering logic, spike in legal amendments post-scandal).",
+      headline:
+        "Surface reforms mask deeper structural drift—teaching actors to adapt, evade, and accept simulation as the new normal.",
       domainCounter: {
         ratePerSecond: 15200,
         unit: "People Affected",
@@ -186,23 +224,40 @@ const impactNetworkData = {
         source: "WHO",
       },
       propagation: [
-        { toNode: "trust", effect: "Accelerates trust collapse", intensity: 0.95 },
-        { toNode: "economy", effect: "Feeds extraction multipliers", intensity: 0.7 },
-        { toNode: "institutions", effect: "Erodes reform capacity", intensity: 0.6 }
+        {
+          toNode: "trust",
+          effect: "Accelerates trust collapse",
+          intensity: 0.95,
+        },
+        {
+          toNode: "economy",
+          effect: "Feeds extraction multipliers",
+          intensity: 0.7,
+        },
+        {
+          toNode: "institutions",
+          effect: "Erodes reform capacity",
+          intensity: 0.6,
+        },
       ],
       color: "#EA580C",
-      structuralType: "drift"
+      structuralType: "drift",
     },
     {
       id: "markets",
       label: "Markets",
       axisTitle: "Shadow Market Creation",
       position: { x: 13, y: 38 }, // 8 o'clock
-      structuralLogic: "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
-      shockingFact: "In the wake of SOE procurement simulation, shadow banking ballooned to 3x formal lending in Eastern Europe—mostly via shell vehicles.",
-      dataPoint: "In environments with high regulatory arbitrage, shadow banking assets can reach 40% of GDP—up to 4x higher than reported official sector credit.",
-      actionableOutput: "Map clause-induced shadow activity (e.g., shell company use); simulate scale of untraceable flows for each sector.",
-      headline: "Structural corruption warps the playing field—creating shadow markets and parallel finance invisible to standard oversight.",
+      structuralLogic:
+        "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
+      shockingFact:
+        "In the wake of SOE procurement simulation, shadow banking ballooned to 3x formal lending in Eastern Europe—mostly via shell vehicles.",
+      dataPoint:
+        "In environments with high regulatory arbitrage, shadow banking assets can reach 40% of GDP—up to 4x higher than reported official sector credit.",
+      actionableOutput:
+        "Map clause-induced shadow activity (e.g., shell company use); simulate scale of untraceable flows for each sector.",
+      headline:
+        "Structural corruption warps the playing field—creating shadow markets and parallel finance invisible to standard oversight.",
       domainCounter: {
         ratePerSecond: 12800,
         unit: "Business Deals Lost",
@@ -239,23 +294,40 @@ const impactNetworkData = {
         source: "ADB",
       },
       propagation: [
-        { toNode: "economy", effect: "Distorts market signals", intensity: 0.8 },
-        { toNode: "trust", effect: "Undermines market confidence", intensity: 0.7 },
-        { toNode: "institutions", effect: "Bypasses formal systems", intensity: 0.9 }
+        {
+          toNode: "economy",
+          effect: "Distorts market signals",
+          intensity: 0.8,
+        },
+        {
+          toNode: "trust",
+          effect: "Undermines market confidence",
+          intensity: 0.7,
+        },
+        {
+          toNode: "institutions",
+          effect: "Bypasses formal systems",
+          intensity: 0.9,
+        },
       ],
       color: "#6B7280",
-      structuralType: "shadow"
+      structuralType: "shadow",
     },
     {
       id: "environment",
       label: "Environment",
       axisTitle: "Oversight Simulation & Evasion",
       position: { x: 13, y: 12 }, // 10 o'clock
-      structuralLogic: "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
-      shockingFact: "Over 90% of ESG funds reviewed by Vigilum passed formal screens—while 1 in 4 failed independent conflict-of-interest checks.",
-      dataPoint: "95% of EU in-house procurement contracts that failed external audit had passed internal compliance review with no flags.",
-      actionableOutput: "Model overlap between compliance optics and actual risk; surface nodes with repeated 'clean' audit cycles but unresolved financial anomalies.",
-      headline: "'Green' or 'ethical' oversight is often formatted to deflect scrutiny, not enforce constraint.",
+      structuralLogic:
+        "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
+      shockingFact:
+        "Over 90% of ESG funds reviewed by Vigilum passed formal screens—while 1 in 4 failed independent conflict-of-interest checks.",
+      dataPoint:
+        "95% of EU in-house procurement contracts that failed external audit had passed internal compliance review with no flags.",
+      actionableOutput:
+        "Model overlap between compliance optics and actual risk; surface nodes with repeated 'clean' audit cycles but unresolved financial anomalies.",
+      headline:
+        "'Green' or 'ethical' oversight is often formatted to deflect scrutiny, not enforce constraint.",
       domainCounter: {
         ratePerSecond: 950,
         unit: "Hectares Destroyed",
@@ -296,23 +368,36 @@ const impactNetworkData = {
         source: "Global Forest Watch",
       },
       propagation: [
-        { toNode: "institutions", effect: "Reinforces compliance inversion", intensity: 0.85 },
-        { toNode: "trust", effect: "Erodes environmental trust", intensity: 0.6 },
-        { toNode: "markets", effect: "Enables shadow flows", intensity: 0.7 }
+        {
+          toNode: "institutions",
+          effect: "Reinforces compliance inversion",
+          intensity: 0.85,
+        },
+        {
+          toNode: "trust",
+          effect: "Erodes environmental trust",
+          intensity: 0.6,
+        },
+        { toNode: "markets", effect: "Enables shadow flows", intensity: 0.7 },
       ],
       color: "#3B82F6",
-      structuralType: "simulation"
+      structuralType: "simulation",
     },
     {
       id: "trust",
       label: "Trust & Security",
       axisTitle: "Systemic Trust Collapse",
       position: { x: 35, y: 50 }, // 6 o'clock
-      structuralLogic: "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
-      shockingFact: "In markets where anti-corruption action was purely symbolic, FDI inflows collapsed by 67% in 24 months following a major scandal.",
-      dataPoint: "After repeated corruption scandals with no high-level convictions, Lithuania's public trust in national government dropped from 56% to 21% in four years—mirrored by a 5x increase in non-performing loans and youth emigration.",
-      actionableOutput: "Surface early-warning signals for systemic collapse: simultaneous audit failures, market outflows, and rising regulatory amendments in a 12-month period.",
-      headline: "Trust isn't just perception—it's a structural property that can be modeled and lost.",
+      structuralLogic:
+        "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
+      shockingFact:
+        "In markets where anti-corruption action was purely symbolic, FDI inflows collapsed by 67% in 24 months following a major scandal.",
+      dataPoint:
+        "After repeated corruption scandals with no high-level convictions, Lithuania's public trust in national government dropped from 56% to 21% in four years—mirrored by a 5x increase in non-performing loans and youth emigration.",
+      actionableOutput:
+        "Surface early-warning signals for systemic collapse: simultaneous audit failures, market outflows, and rising regulatory amendments in a 12-month period.",
+      headline:
+        "Trust isn't just perception—it's a structural property that can be modeled and lost.",
       domainCounter: {
         ratePerSecond: 240,
         unit: "Refugees Created",
@@ -353,13 +438,29 @@ const impactNetworkData = {
         source: "SIGAR",
       },
       propagation: [
-        { toNode: "economy", effect: "Triggers capital flight", intensity: 0.9 },
-        { toNode: "institutions", effect: "Accelerates legitimacy crisis", intensity: 0.95 },
-        { toNode: "inequality", effect: "Deepens social breakdown", intensity: 0.8 },
-        { toNode: "markets", effect: "Collapses market confidence", intensity: 0.85 }
+        {
+          toNode: "economy",
+          effect: "Triggers capital flight",
+          intensity: 0.9,
+        },
+        {
+          toNode: "institutions",
+          effect: "Accelerates legitimacy crisis",
+          intensity: 0.95,
+        },
+        {
+          toNode: "inequality",
+          effect: "Deepens social breakdown",
+          intensity: 0.8,
+        },
+        {
+          toNode: "markets",
+          effect: "Collapses market confidence",
+          intensity: 0.85,
+        },
       ],
       color: "#8B5CF6",
-      structuralType: "collapse"
+      structuralType: "collapse",
     },
   ],
 };
@@ -707,7 +808,6 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
 
           {/* Header */}
           <div style={{ marginBottom: "32px" }}>
-
             <h2
               style={{
                 fontSize: "28px",
@@ -716,7 +816,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                 margin: "0 0 20px 0",
                 fontFamily: "var(--font-display)",
                 textAlign: "left",
-                letterSpacing: "0.5px"
+                letterSpacing: "0.5px",
               }}
             >
               {node.axisTitle}
@@ -738,7 +838,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                 background: "rgba(239, 68, 68, 0.1)",
                 border: "1px solid rgba(239, 68, 68, 0.3)",
                 borderRadius: "8px",
-                borderLeft: `4px solid ${node.color}`
+                borderLeft: `4px solid ${node.color}`,
               }}
             >
               <p
@@ -747,7 +847,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   color: "#FFFFFF",
                   fontWeight: "500",
                   margin: "0",
-                  fontStyle: "italic"
+                  fontStyle: "italic",
                 }}
               >
                 💥 {node.shockingFact}
@@ -787,7 +887,8 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   fontWeight: "500",
                 }}
               >
-                {node.domainCounter.label || node.domainCounter.unit} since you started exploring
+                {node.domainCounter.label || node.domainCounter.unit} since you
+                started exploring
               </div>
             </div>
           )}
@@ -810,7 +911,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   margin: "0 0 8px 0",
                   fontWeight: "600",
                   textTransform: "uppercase",
-                  letterSpacing: "0.5px"
+                  letterSpacing: "0.5px",
                 }}
               >
                 📊 Sample Data Point
@@ -846,7 +947,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   margin: "0 0 8px 0",
                   fontWeight: "600",
                   textTransform: "uppercase",
-                  letterSpacing: "0.5px"
+                  letterSpacing: "0.5px",
                 }}
               >
                 🎯 Vigilum Output
@@ -857,7 +958,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                   color: "#FFFFFF",
                   margin: "0",
                   lineHeight: "1.4",
-                  fontWeight: "500"
+                  fontWeight: "500",
                 }}
               >
                 {node.actionableOutput}
@@ -1508,7 +1609,8 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             whiteSpace: "nowrap",
           }}
         >
-          Examine how design-level risk migrates across the economy, institutions, and public trust,
+          Examine how design-level risk migrates across the economy,
+          institutions, and public trust,
           <br />
           producing consequences that outpace any single event.
         </p>
@@ -1589,7 +1691,7 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           maxWidth: "1000px",
           margin: "20px auto 0 auto",
           padding: "80px",
-          boxSizing: "border-box"
+          boxSizing: "border-box",
         }}
       >
         {/* Nodes */}
