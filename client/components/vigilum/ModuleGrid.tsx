@@ -313,14 +313,16 @@ const ModuleGrid = () => {
                     </p>
 
                     {/* Tagline */}
-                    <p
-                      className={`text-xs italic font-mono mb-4 ${
-                        isPhantom ? "opacity-60" : ""
-                      }`}
-                      style={{ color: module.accentColor }}
-                    >
-                      "{module.tagline}"
-                    </p>
+                    {module.tagline && (
+                      <p
+                        className={`text-xs italic font-mono mb-4 ${
+                          isPhantom ? "opacity-60" : ""
+                        }`}
+                        style={{ color: module.accentColor }}
+                      >
+                        "{module.tagline}"
+                      </p>
+                    )}
                   </div>
 
                   {/* Analyze Button */}
@@ -334,9 +336,8 @@ const ModuleGrid = () => {
                         color: "#6b7280",
                       }}
                     >
-                      <span className="flex items-center justify-center gap-2">
+                      <span className="flex items-center justify-center">
                         COMING SOON
-                        <HelpCircle className="w-4 h-4" />
                       </span>
                     </Button>
                   ) : (
