@@ -8,7 +8,7 @@ const boundaryLogicData = {
     {
       id: "oecd",
       name: "OECD",
-      logoUrl: "/logos/oecd.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
       logo: "🌐",
       definition:
         "The OECD deliberately does not define 'corruption' but establishes specific offences for corrupt behavior. For policy purposes, corruption is described as 'the misuse of public office, roles or resources for private benefit.'",
@@ -1170,7 +1170,7 @@ const termDefinitions = {
     analysis:
       'Regulatory arbitrage is defined by the strategic exploitation of inconsistencies, gaps, or slow adaptation in legal regimes. Divergence is found in the clarity of anti-abuse rules, the speed of regulatory adaptation, and the global mobility of capital. Actors recast risk or extraction as compliance through relocation, reclassification, or product redesign—moving financial products, tax structures, or even entire businesses to friendlier jurisdictions. Shadow banking, tax havens, and cross-border structuring exemplify arbitrage as a core system feature, not an anomaly. Regulatory arbitrage triggers "race to the bottom" dynamics, undermining enforcement and creating persistent fragility that regulators struggle to address without global coordination.',
     consequence:
-      "Regulatory arbitrage encodes risk migration as a design feature, not a flaw. By sequencing operations to exploit the most permissive regimes, actors transform systemic fragility into routine efficiency. Oversight is disassembled into procedural fragments, with no node able to compute or constrain total exposure. The result is a dynamic equilibrium of non-accountability��where the system's very complexity ensures its continuous circumvention.",
+      "Regulatory arbitrage encodes risk migration as a design feature, not a flaw. By sequencing operations to exploit the most permissive regimes, actors transform systemic fragility into routine efficiency. Oversight is disassembled into procedural fragments, with no node able to compute or constrain total exposure. The result is a dynamic equilibrium of non-accountability—where the system's very complexity ensures its continuous circumvention.",
   },
   shellCompany: {
     title:
