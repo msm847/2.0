@@ -61,7 +61,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 85, y: 25 }, // 2 o'clock position - further right
+      position: { x: 84.64, y: 30 }, // 2 o'clock position
       headline: "Corruption weakens law, derails justice, erodes legitimacy.",
       domainCounter: {
         ratePerSecond: 8400,
@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 85, y: 75 }, // 4 o'clock position - lowered even more
+      position: { x: 84.64, y: 70 }, // 4 o'clock position
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 15, y: 75 }, // 8 o'clock position - lowered even more
+      position: { x: 15.36, y: 70 }, // 8 o'clock position
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 15, y: 25 }, // 10 o'clock position - further left
+      position: { x: 15.36, y: 30 }, // 10 o'clock position
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 50, y: 85 }, // 6 o'clock position - lowered even more
+      position: { x: 50, y: 90 }, // 6 o'clock position
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
