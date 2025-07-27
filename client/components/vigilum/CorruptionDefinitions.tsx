@@ -998,7 +998,7 @@ const boundaryLogicData = {
     {
       id: "ndb",
       name: "NDB (BRICS)",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5a9ed7f1fb364a86a871f7b2d1c86fcc?format=webp&width=800",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
       logo: "🌍",
       definition:
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
@@ -2750,7 +2750,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              Explore how global authorities construct–and limit–the boundaries
+              Explore how global authorities construct���and limit–the boundaries
               of corruption.
             </p>
 
