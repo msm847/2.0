@@ -18,11 +18,11 @@ import DecryptedText from "../ui/DecryptedText";
 const modules = [
   {
     id: "clavis",
-    name: "CLAVIS",
-    subtitle: "Clause Intelligence Engine",
-    tagline: "Detection is the inversion of encoded structure.",
+    name: "ϕ CLAVIS",
+    subtitle: "Clause Intelligence",
+    tagline: "Structure is intent made computable; inversion exposes its risk topology.",
     description:
-      "Deconstructs legal clauses into operator chains, projecting how simulation logic reroutes liability and embeds discretionary gaps.",
+      "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields.",
     color: "#1a3d82",
     secondaryColor: "#1e40af",
     textColor: "#dce3f7",
@@ -35,11 +35,11 @@ const modules = [
   },
   {
     id: "obscura",
-    name: "OBSCURA",
-    subtitle: "Procurement Distortion Detector",
-    tagline: "Procedure is the mask of engineered intent.",
+    name: "⊗ OBSCURA",
+    subtitle: "Procurement Distortion",
+    tagline: "Design is camouflage; compression preformats extraction.",
     description:
-      "Renders procedural compression as a risk operator—tracing how design artifacts (timeline collapse, single-bid, emergency logic) preformat capture before execution.",
+      "Projects procedural flows as capture operators, rendering compression, exclusivity, and emergency logic as pre-structured nullification paths.",
     color: "#941b1b",
     secondaryColor: "#b91c1c",
     textColor: "#f1d1d1",
@@ -52,11 +52,11 @@ const modules = [
   },
   {
     id: "nullum",
-    name: "NULLUM",
-    subtitle: "Judicial Stalling Detector",
-    tagline: "Delay is the procedural override of law.",
+    name: "Δ NULLUM",
+    subtitle: "Judicial Stalling",
+    tagline: "Delay is the systemic erasure of enforcement logic.",
     description:
-      "Models stalling as a vector space—mapping how delay, expiration, and bypass operators dissolve system constraint and nullify enforcement reflexes.",
+      "Vectorizes delay as an override mechanism, identifying temporal collapse and procedural bypass as latent constraint erasure.",
     color: "#1e232b",
     secondaryColor: "#1f2937",
     textColor: "#d1d5db",
@@ -69,11 +69,11 @@ const modules = [
   },
   {
     id: "nexus-potentia",
-    name: "NEXUS POTENTIA",
-    subtitle: "Political Graph Mapper",
-    tagline: "Influence propagates as hidden recursion.",
+    name: "λ NEXUS POTENTIA",
+    subtitle: "Influence Network Graph",
+    tagline: "Power propagates in recursion; mapping reveals the hidden operator graph.",
     description:
-      "Infers latent power graphs by recursively mapping cross-institutional linkage, rendering indirect control as emergent structural override.",
+      "Recursively infers indirect control structures, exposing latent influence via relational propagation and hidden override matrices.",
     color: "#4e27a6",
     secondaryColor: "#6d28d9",
     textColor: "#ded1f7",
@@ -86,11 +86,11 @@ const modules = [
   },
   {
     id: "vigilo-core",
-    name: "VIGILO CORE",
-    subtitle: "Signal Integrator",
-    tagline: "Exposure is the emergent logic of pattern recognition.",
+    name: "Σ VIGILO CORE",
+    subtitle: "Signal Integration",
+    tagline: "Pattern resonance is system exposure; escalation is logic actualized.",
     description:
-      "Aggregates module vectors into a multidimensional risk field—initiating escalation and override detection when latent design risk achieves system coherence.",
+      "Aggregates all module outputs into a dynamic risk lattice, triggering escalation when structural resonance achieves system-level coherence.",
     color: "#035e4a",
     secondaryColor: "#047857",
     textColor: "#c0f1e4",
@@ -103,11 +103,11 @@ const modules = [
   },
   {
     id: "veris",
-    name: "VERIS",
+    name: "τ VERIS",
     subtitle: "Structural Risk Index",
-    tagline: "Integrity is a computed equilibrium.",
+    tagline: "Integrity is a projection in risk space—fragility is its spectral collapse.",
     description:
-      "Synthesizes risk projections into a unified signal—quantifying governance fragility as a structural index across entities and temporal sequences.",
+      "Quantifies risk field intensities as a multidimensional signal, collapsing typology vectors into an integrated structural index.",
     color: "#a65800",
     secondaryColor: "#b45309",
     textColor: "#f5d199",
@@ -120,11 +120,11 @@ const modules = [
   },
   {
     id: "sentium",
-    name: "SENTIUM",
-    subtitle: "Civic Signal Channel",
-    tagline: "Testimony is transposed into analytic vector space.",
+    name: "Ω SENTIUM",
+    subtitle: "Civic Signal",
+    tagline: "Witness is vectorized; signal emerges through cross-structural resonance.",
     description:
-      "Transforms civic input into encrypted vectors, triangulating with system-detected risk for cross-validation and structural escalation.",
+      "Encrypts testimonial input as analytic vectors, triangulating with system detections for recursive validation and escalation.",
     color: "#036373",
     secondaryColor: "#0e7490",
     textColor: "#a2e9f5",
@@ -137,11 +137,11 @@ const modules = [
   },
   {
     id: "unallocated",
-    name: "UNALLOCATED MODULE",
-    subtitle: "Awaiting activation",
-    tagline: "Capacity is constraint in reserve.",
+    name: "∅ UNALLOCATED MODULE",
+    subtitle: "Reserved Operator",
+    tagline: "Extensibility is preserved as a future operator—capacity remains latent.",
     description:
-      "Inactive module—engineered as a semantic placeholder for future operator injection, preserving system extensibility for emerging detection logics.",
+      "Semantic placeholder for emergent detection logic; system extensibility is encoded as constraint in reserve.",
     color: "#1c1c1c",
     secondaryColor: "#2a2a2a",
     textColor: "#6b7280",
