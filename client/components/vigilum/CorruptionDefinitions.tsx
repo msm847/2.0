@@ -240,7 +240,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Central concern in EU regulatory coherence and harmonization efforts. [CI]",
           typology: ["CI"],
@@ -1149,7 +1149,7 @@ const termDefinitions = {
     analysis:
       'Lobbying is formally defined as organized advocacy to shape policy or regulation. Divergence appears in registration standards, definitions of "lobbyist," and scope of disclosure, with critical gaps in capturing indirect and informal channels. In the US, rules narrowly regulate direct contact, while industry associations, think-tanks, "astroturfing" campaigns, and campaign finance operate in the shadows. In the EU, public consultation and policy advice blur the lines between advocacy and extractive influence. Globally, the rise of "proxy advocacy," strategic philanthropy, and revolving-door hires enable sustained access without violating formal rules. Legal formatting performs compliance while structurally enabling policy capture: material risk is created when extractive actors operate via formally legal influence, outpacing oversight and market due diligence.',
     consequence:
-      "Opaque lobbying networks undermine market integrity, expose firms to reputational backlash, and drive policy arbitrage that weakens regulatory harmonization.",
+      "STRUCTURAL CONSEQUENCE: Lobbying institutionalizes access as the substrate of policy, turning disclosure into simulation and exclusion into process. While formal registration mimics constraint, real influence flows through privileged pathways that fragment recognition and diffuse liability. Policy capture is routinized as \"input,\" allowing extraction logic to be embedded via legal advocacy, shifting the center of power outside public oversight. The system learns to distinguish between \"undue influence\" and routine engagement only after the risk has propagated.",
   },
   assetLaundering: {
     title: "Asset Laundering: Obfuscation, Integration, and Systemic Risk",
