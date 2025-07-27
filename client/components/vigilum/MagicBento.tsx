@@ -768,7 +768,7 @@ const AdvisoryCarousel = ({ card }) => {
   const member = card.advisoryMembers[currentMember];
 
   return (
-    <>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <h2
         className="card__title"
         style={{
@@ -776,7 +776,7 @@ const AdvisoryCarousel = ({ card }) => {
           marginBottom: "20px",
           color: "#9DE6C6",
           fontWeight: "400",
-          textAlign: "left",
+          textAlign: "center",
         }}
       >
         {card.title}
@@ -785,15 +785,22 @@ const AdvisoryCarousel = ({ card }) => {
       <div
         style={{
           display: "flex",
-          gap: "20px",
-          alignItems: "flex-start",
+          gap: "24px",
+          height: "100%",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
-          flex: 1,
         }}
       >
-        {/* Left side - Profile Image */}
-        <div style={{ flexShrink: 0 }}>
+        {/* Left side - Profile Image & Description */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "140px",
+            flexShrink: 0,
+          }}
+        >
           <div
             style={{
               width: "120px",
@@ -806,7 +813,7 @@ const AdvisoryCarousel = ({ card }) => {
               justifyContent: "center",
               overflow: "hidden",
               boxShadow: "0 4px 15px rgba(157, 230, 198, 0.2)",
-              marginBottom: "12px",
+              marginBottom: "16px",
             }}
           >
             <img
@@ -821,62 +828,70 @@ const AdvisoryCarousel = ({ card }) => {
             />
           </div>
 
-          {/* Description below picture */}
           <p
             style={{
-              fontSize: "12px",
+              fontSize: "11px",
               lineHeight: "1.4",
               color: "#E5E5E5",
               fontWeight: "300",
               margin: "0",
               textAlign: "center",
-              maxWidth: "120px",
             }}
           >
             {member.description}
           </p>
         </div>
 
-        {/* Right side - Member Info */}
-        <div style={{ flex: 1, paddingTop: "8px" }}>
-          <h3
-            style={{
-              fontSize: "24px",
-              fontWeight: "600",
-              color: "#FFFFFF",
-              margin: "0 0 8px 0",
-              lineHeight: "1.2",
-            }}
-          >
-            {member.name}
-          </h3>
-          <p
-            style={{
-              fontSize: "16px",
-              fontWeight: "500",
-              color: "#9DE6C6",
-              margin: "0 0 16px 0",
-              lineHeight: "1.3",
-            }}
-          >
-            {member.role}
-          </p>
+        {/* Right side - Name, Role & Navigation */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            paddingTop: "12px",
+          }}
+        >
+          <div>
+            <h3
+              style={{
+                fontSize: "22px",
+                fontWeight: "600",
+                color: "#FFFFFF",
+                margin: "0 0 8px 0",
+                lineHeight: "1.2",
+              }}
+            >
+              {member.name}
+            </h3>
+            <p
+              style={{
+                fontSize: "15px",
+                fontWeight: "500",
+                color: "#9DE6C6",
+                margin: "0",
+                lineHeight: "1.3",
+              }}
+            >
+              {member.role}
+            </p>
+          </div>
 
-          {/* Navigation at bottom right */}
+          {/* Navigation at bottom */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "15px",
-              marginTop: "auto",
-              paddingTop: "20px",
+              gap: "12px",
+              justifyContent: "flex-start",
+              marginTop: "20px",
             }}
           >
             <button
               onClick={prevMember}
               style={{
-                width: "32px",
-                height: "32px",
+                width: "28px",
+                height: "28px",
                 borderRadius: "50%",
                 backgroundColor: "rgba(157, 230, 198, 0.1)",
                 border: "1px solid rgba(157, 230, 198, 0.3)",
@@ -885,7 +900,7 @@ const AdvisoryCarousel = ({ card }) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "16px",
+                fontSize: "14px",
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
@@ -900,7 +915,6 @@ const AdvisoryCarousel = ({ card }) => {
               ‹
             </button>
 
-            {/* Dots indicator */}
             <div style={{ display: "flex", gap: "6px" }}>
               {card.advisoryMembers.map((_, index) => (
                 <div
@@ -932,8 +946,8 @@ const AdvisoryCarousel = ({ card }) => {
             <button
               onClick={nextMember}
               style={{
-                width: "32px",
-                height: "32px",
+                width: "28px",
+                height: "28px",
                 borderRadius: "50%",
                 backgroundColor: "rgba(157, 230, 198, 0.1)",
                 border: "1px solid rgba(157, 230, 198, 0.3)",
@@ -942,7 +956,7 @@ const AdvisoryCarousel = ({ card }) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "16px",
+                fontSize: "14px",
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
@@ -959,7 +973,7 @@ const AdvisoryCarousel = ({ card }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
