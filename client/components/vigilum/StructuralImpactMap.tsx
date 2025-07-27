@@ -21,7 +21,7 @@ const impactNetworkData = {
       id: "economy",
       label: "Economy",
       axisTitle: "Extraction Multipliers",
-      position: { x: 25, y: 0 }, // 12 o'clock
+      position: { x: 28, y: 5 }, // 12 o'clock
       structuralLogic: "Corruption is not a single event—it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
       shockingFact: "In major infrastructure projects, compliant extraction channels often outpace criminal theft 2:1, draining billions through 'legal' structures.",
       dataPoint: "Countries in the top decile of procurement loophole density lose up to 25% of project value to legal but extractive intermediaries—triple the OECD average.",
@@ -75,7 +75,7 @@ const impactNetworkData = {
       id: "institutions",
       label: "Institutions",
       axisTitle: "Compliance Inversion",
-      position: { x: 47, y: 12 }, // 2 o'clock
+      position: { x: 45, y: 15 }, // 2 o'clock
       structuralLogic: "When compliance systems are engineered for appearance, not substance, oversight becomes a simulacrum—reforms actually drive new extraction logics.",
       shockingFact: "EU countries with the fastest uptick in anti-corruption laws saw no drop in procurement anomalies—just a shift in method.",
       dataPoint: "Following major anti-corruption 'reforms,' enforcement actions may drop 30%—not because risk fell, but because simulation logic absorbed real oversight (see Romania, 2016–2019).",
@@ -136,7 +136,7 @@ const impactNetworkData = {
       id: "inequality",
       label: "Inequality",
       axisTitle: "Behavioral Drift & Reflexive Erosion",
-      position: { x: 47, y: 38 }, // 4 o'clock
+      position: { x: 45, y: 40 }, // 4 o'clock
       structuralLogic: "Repeated exposure to non-binding reforms and simulated accountability compresses cognitive reflexes—normalizing evasion and teaching actors that structural outcomes are predetermined.",
       shockingFact: "Nearly 80% of public servants in high-simulation countries say 'everyone adapts the rules'—twice the global average.",
       dataPoint: "In post-reform Lithuania, 74% of surveyed officials agreed that 'rules are changed to fit decisions,' not the reverse—a reversal from pre-reform attitudes.",
@@ -197,7 +197,7 @@ const impactNetworkData = {
       id: "markets",
       label: "Markets",
       axisTitle: "Shadow Market Creation",
-      position: { x: 3, y: 38 }, // 8 o'clock
+      position: { x: 8, y: 38 }, // 8 o'clock
       structuralLogic: "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
       shockingFact: "In the wake of SOE procurement simulation, shadow banking ballooned to 3x formal lending in Eastern Europe—mostly via shell vehicles.",
       dataPoint: "In environments with high regulatory arbitrage, shadow banking assets can reach 40% of GDP—up to 4x higher than reported official sector credit.",
@@ -250,7 +250,7 @@ const impactNetworkData = {
       id: "environment",
       label: "Environment",
       axisTitle: "Oversight Simulation & Evasion",
-      position: { x: 3, y: 12 }, // 10 o'clock
+      position: { x: 8, y: 12 }, // 10 o'clock
       structuralLogic: "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
       shockingFact: "Over 90% of ESG funds reviewed by Vigilum passed formal screens—while 1 in 4 failed independent conflict-of-interest checks.",
       dataPoint: "95% of EU in-house procurement contracts that failed external audit had passed internal compliance review with no flags.",
@@ -307,7 +307,7 @@ const impactNetworkData = {
       id: "trust",
       label: "Trust & Security",
       axisTitle: "Systemic Trust Collapse (Feedback Loop)",
-      position: { x: 25, y: 50 }, // 6 o'clock
+      position: { x: 28, y: 47 }, // 6 o'clock
       structuralLogic: "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
       shockingFact: "In markets where anti-corruption action was purely symbolic, FDI inflows collapsed by 67% in 24 months following a major scandal.",
       dataPoint: "After repeated corruption scandals with no high-level convictions, Lithuania's public trust in national government dropped from 56% to 21% in four years—mirrored by a 5x increase in non-performing loans and youth emigration.",
