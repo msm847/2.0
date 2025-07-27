@@ -1478,26 +1478,17 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           zIndex: 10,
         }}
       >
-        <div
+        <h2
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "16px",
+            fontSize: "clamp(2rem, 4vw, 2.5rem)",
+            fontWeight: "600",
+            color: "#9DE6C6",
+            margin: "0 0 8px 0",
+            fontFamily: "var(--font-display)",
           }}
         >
-          <h2
-            style={{
-              fontSize: "clamp(2rem, 4vw, 2.5rem)",
-              fontWeight: "600",
-              color: "#9DE6C6",
-              margin: "0 0 12px 0",
-              fontFamily: "var(--font-display)",
-            }}
-          >
-            Structural Impact Map
-          </h2>
-        </div>
+          Structural Impact Map
+        </h2>
         <p
           style={{
             fontSize: "18px",
