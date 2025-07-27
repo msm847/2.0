@@ -837,46 +837,43 @@ const AdvisoryCarousel = ({ card }) => {
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
             paddingTop: "12px",
           }}
         >
-          <div>
-            <h3
-              style={{
-                fontSize: "22px",
-                fontWeight: "600",
-                color: "#FFFFFF",
-                margin: "0 0 8px 0",
-                lineHeight: "1.2",
-              }}
-            >
-              {member.name}
-            </h3>
-            <p
-              style={{
-                fontSize: "15px",
-                fontWeight: "500",
-                color: "#9DE6C6",
-                margin: "0 0 16px 0",
-                lineHeight: "1.3",
-              }}
-            >
-              {member.role}
-            </p>
-            <p
-              style={{
-                fontSize: "13px",
-                lineHeight: "1.4",
-                color: "#E5E5E5",
-                fontWeight: "300",
-                margin: "0",
-                textAlign: "left",
-              }}
-            >
-              {member.description}
-            </p>
-          </div>
+          <h3
+            style={{
+              fontSize: "22px",
+              fontWeight: "600",
+              color: "#FFFFFF",
+              margin: "0 0 8px 0",
+              lineHeight: "1.2",
+            }}
+          >
+            {member.name}
+          </h3>
+          <p
+            style={{
+              fontSize: "15px",
+              fontWeight: "500",
+              color: "#9DE6C6",
+              margin: "0 0 16px 0",
+              lineHeight: "1.3",
+            }}
+          >
+            {member.role}
+          </p>
+          <p
+            style={{
+              fontSize: "13px",
+              lineHeight: "1.4",
+              color: "#E5E5E5",
+              fontWeight: "300",
+              margin: "0",
+              textAlign: "left",
+            }}
+          >
+            {member.description}
+          </p>
 
           {/* Navigation */}
           <div
