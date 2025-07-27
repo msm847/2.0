@@ -236,7 +236,7 @@ const ModuleGrid = () => {
               >
                 {/* Module Card */}
                 <div
-                  className={`relative backdrop-blur-lg border rounded-2xl p-6 h-full min-h-[480px] flex flex-col transition-all duration-300 ${
+                  className={`relative backdrop-blur-lg border rounded-2xl p-6 h-full min-h-[420px] flex flex-col transition-all duration-300 ${
                     isPhantom ? "border-dashed" : ""
                   }`}
                   style={{
