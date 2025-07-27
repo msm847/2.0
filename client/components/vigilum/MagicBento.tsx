@@ -803,8 +803,8 @@ const AdvisoryCarousel = ({ card }) => {
         >
           <div
             style={{
-              width: "120px",
-              height: "120px",
+              width: "160px",
+              height: "160px",
               borderRadius: "12px",
               backgroundColor: "#2d4a3f",
               border: "2px solid #9DE6C6",
