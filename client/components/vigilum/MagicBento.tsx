@@ -54,7 +54,7 @@ const cardData = [
         name: "Ričardas Blaškevič",
         role: "Media & Communications Lead",
         description:
-          "Transforming complex governance insights into powerful market narratives",
+          "Shapes Vigilum's visual identity, manages all media assets, and oversees public-facing content.",
         imageUrl: "/placeholder.svg",
       },
     ],
