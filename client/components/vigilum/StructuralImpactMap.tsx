@@ -8,7 +8,7 @@ const impactNetworkData = {
     {
       id: "economy",
       label: "Economy",
-      position: { x: 50, y: 20 }, // 12 o'clock position - moved down
+      position: { x: 30, y: 10 }, // 12 o'clock position - moved to top-left
       headline:
         "Every minute, corruption drains $1.9 million from the global economy.",
       domainCounter: {
@@ -61,7 +61,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      position: { x: 80, y: 35 }, // 2 o'clock position
+      position: { x: 55, y: 20 }, // 2 o'clock position - moved to top-left
       headline: "Corruption weakens law, derails justice, erodes legitimacy.",
       domainCounter: {
         ratePerSecond: 8400,
@@ -118,7 +118,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      position: { x: 80, y: 65 }, // 4 o'clock position
+      position: { x: 55, y: 45 }, // 4 o'clock position - moved to top-left
       headline:
         "Corruption widens the gap, excludes millions from essential services.",
       domainCounter: {
@@ -176,7 +176,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      position: { x: 20, y: 65 }, // 8 o'clock position
+      position: { x: 5, y: 45 }, // 8 o'clock position - moved to top-left
       headline: "Corruption blocks fair competition, repels honest business.",
       domainCounter: {
         ratePerSecond: 12800,
@@ -225,7 +225,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      position: { x: 20, y: 35 }, // 10 o'clock position
+      position: { x: 5, y: 20 }, // 10 o'clock position - moved to top-left
       headline: "Corruption undermines protection, fuels human suffering.",
       domainCounter: {
         ratePerSecond: 950,
@@ -275,7 +275,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      position: { x: 50, y: 80 }, // 6 o'clock position - moved up for better proportions
+      position: { x: 30, y: 55 }, // 6 o'clock position - moved to top-left
       headline: "Corruption fuels distrust, migration, global instability.",
       domainCounter: {
         ratePerSecond: 240,
