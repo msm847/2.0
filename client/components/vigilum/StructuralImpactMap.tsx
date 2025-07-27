@@ -1506,9 +1506,9 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             lineHeight: "1.6",
           }}
         >
-          Corruption is not an incident—it's a living system of cascading harms.
+          What appears as isolated harm is, in fact, systemic propagation.
           <br />
-          Explore how damage propagates across domains.
+          Examine how design-level risk migrates across the economy, institutions, and public trust, producing consequences that outpace any single event.
         </p>
 
         {/* Global Live Ticker - rendered via portal for immediate positioning */}
