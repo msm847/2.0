@@ -50,7 +50,7 @@ const impactNetworkData = {
         {
           step: "Bribe paid",
           description: "Funds diverted from national budget",
-          icon: "💸",
+          icon: "��",
         },
         {
           step: "Funds lost",
@@ -128,7 +128,7 @@ const impactNetworkData = {
         {
           step: "Judge bribed",
           description: "Legal system compromised",
-          icon: "⚖️",
+          icon: "���️",
         },
         {
           step: "Reforms blocked",
@@ -1694,6 +1694,43 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           boxSizing: "border-box",
         }}
       >
+        {/* Central Instruction Text */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+            zIndex: 5,
+            pointerEvents: "none",
+            maxWidth: "200px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "14px",
+              color: "#9DE6C6",
+              fontWeight: "500",
+              marginBottom: "8px",
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
+              fontFamily: "var(--font-display)",
+            }}
+          >
+            Interactive Map
+          </div>
+          <div
+            style={{
+              fontSize: "12px",
+              color: "#E5E5E5",
+              lineHeight: "1.4",
+              opacity: 0.8,
+            }}
+          >
+            Click each sphere to explore structural corruption axes
+          </div>
+        </div>
         {/* Nodes */}
         {nodes.map((node) => (
           <NetworkNode
