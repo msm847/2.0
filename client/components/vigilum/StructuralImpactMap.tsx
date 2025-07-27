@@ -1377,72 +1377,71 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
           Explore how damage propagates across domains.
         </p>
 
-
-
         {/* Global Live Ticker - rendered via portal for immediate positioning */}
-        {showGlobalCount && createPortal(
-          <div
-            style={{
-              position: "fixed",
-              top: "80px",
-              right: "20px",
-              backdropFilter: "blur(20px) saturate(180%)",
-              background: "rgba(255, 255, 255, 0.05)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              borderRadius: "4px",
-              boxShadow:
-                "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
-              padding: "8px 12px",
-              zIndex: 1000,
-              minWidth: "200px",
-            }}
-          >
+        {showGlobalCount &&
+          createPortal(
             <div
               style={{
-                fontSize: "12px",
-                color: "#9DE6C6",
-                marginBottom: "4px",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                fontWeight: "500",
-              }}
-            >
-              Global Corruption Loss
-            </div>
-            <div
-              style={{
-                fontSize: "24px",
-                fontWeight: "700",
-                color: "#FFFFFF",
-                fontFamily: "monospace",
-                marginBottom: "2px",
-              }}
-            >
-              ${globalLoss.toLocaleString()}
-            </div>
-            <div
-              style={{
-                fontSize: "11px",
-                color: "#9CA3AF",
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
+                position: "fixed",
+                top: "80px",
+                right: "20px",
+                backdropFilter: "blur(20px) saturate(180%)",
+                background: "rgba(255, 255, 255, 0.05)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                borderRadius: "4px",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px, rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset",
+                padding: "8px 12px",
+                zIndex: 1000,
+                minWidth: "200px",
               }}
             >
               <div
                 style={{
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "50%",
-                  background: "#9DE6C6",
-                  animation: "pulse 2s infinite",
+                  fontSize: "12px",
+                  color: "#9DE6C6",
+                  marginBottom: "4px",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  fontWeight: "500",
                 }}
-              />
-              Live since you started exploring
-            </div>
-          </div>,
-          document.body,
-        )}
+              >
+                Global Corruption Loss
+              </div>
+              <div
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "700",
+                  color: "#FFFFFF",
+                  fontFamily: "monospace",
+                  marginBottom: "2px",
+                }}
+              >
+                ${globalLoss.toLocaleString()}
+              </div>
+              <div
+                style={{
+                  fontSize: "11px",
+                  color: "#9CA3AF",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "50%",
+                    background: "#9DE6C6",
+                    animation: "pulse 2s infinite",
+                  }}
+                />
+                Live since you started exploring
+              </div>
+            </div>,
+            document.body,
+          )}
       </div>
 
       {/* Network Visualization */}
