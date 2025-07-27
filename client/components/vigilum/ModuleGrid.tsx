@@ -408,7 +408,8 @@ const ModuleGrid = () => {
         <div className="text-center">
           <p className="text-sm text-gray-400 font-mono">
             Each module is an operator in Vigilum's risk calculus; <br />
-            Together, they render systemic risk as a visible and actionable system output.
+            Together, they render systemic risk as a visible and actionable
+            system output.
           </p>
         </div>
       </div>
