@@ -578,8 +578,7 @@ const PerceptionPerspective = () => {
                     >
                       {selectedButton === "Cultural"
                         ? "→ Consequences of Corruption"
-                        : "→ What is Corruption?"
-                      }
+                        : "→ What is Corruption?"}
                     </motion.button>
                   </motion.div>
                 )}
