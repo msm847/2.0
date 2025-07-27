@@ -76,10 +76,10 @@ const cardData = [
         imageUrl: "/placeholder.svg",
       },
       {
-        name: "Michael Rodriguez",
-        role: "Technical Advisor",
+        name: "Name Surname",
+        role: "Advisor",
         description:
-          "Ex-CTO at Palantir Technologies. 15+ years developing large-scale data analysis platforms for government transparency and financial crime detection systems.",
+          "Description",
         imageUrl: "/placeholder.svg",
       },
     ],
