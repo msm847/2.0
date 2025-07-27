@@ -1487,7 +1487,7 @@ const StructuralImpactMap = ({ onNavigate, showGlobalCount = false }) => {
             fontFamily: "var(--font-display)",
           }}
         >
-          Structural Impact Map
+          Systemic Harm Propagation
         </h2>
         <p
           style={{
