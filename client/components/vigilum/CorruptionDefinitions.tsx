@@ -2569,37 +2569,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
               </p>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
-            <button
-              onClick={() => setShowCompareAll(true)}
-              style={{
-                backgroundColor: "rgba(157, 230, 198, 0.08)",
-                border: "1px solid rgba(157, 230, 198, 0.2)",
-                borderRadius: "6px",
-                padding: "8px 16px",
-                color: "#9DE6C6",
-                fontSize: "12px",
-                fontWeight: "500",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                textAlign: "center",
-                fontFamily: "var(--font-display)",
-                letterSpacing: "0.5px",
-                textTransform: "uppercase",
-                opacity: 0.8,
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.2)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.6)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
-                e.target.style.borderColor = "rgba(157, 230, 198, 0.3)";
-              }}
-            >
-              Compare All Definitions
-            </button>
-          </div>
+
         </div>
       </div>
 
