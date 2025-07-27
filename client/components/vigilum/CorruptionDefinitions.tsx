@@ -425,7 +425,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Addressed through international cooperation and regulatory harmonization under UNCAC. [CI]",
           typology: ["CI"],
@@ -502,7 +502,7 @@ const boundaryLogicData = {
     {
       id: "doj",
       name: "US DOJ FCPA",
-      logoUrl: "/logos/doj.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd13ace4acefa49238b479c2abc49255d?format=webp&width=800",
       logo: "🏛️",
       definition:
         "The Foreign Corrupt Practices Act … was enacted for the purpose of making it unlawful … to make payments to foreign government officials to assist in obtaining or retaining business.",
