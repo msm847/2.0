@@ -12,7 +12,7 @@ const cardData = [
     color: "#10201C",
     title: "Mission",
     description:
-      "Vigilum is a structural foresight engine that renders governance as a dynamic risk field. It reconstructs the design-level sequence of contracts, processes, and networks, mapping every clause, threshold, and override as an operator within a multidimensional logic-space. By vectorizing legal structure and simulating operator interactions, Vigilum surfaces how discretion, override chains, and compliance simulation intersect–exposing latent extraction paths and systemic blind spots long before risk materializes as loss. Designed for any governance environment, Vigilum adapts its risk field logic to public, private, and hybrid systems–ensuring structural foresight at every institutional scale.",
+      "Vigilum is a structural foresight engine that renders governance as a dynamic risk field. It reconstructs the design-level sequence of contracts, processes, and networks, mapping every clause, threshold, and override as an operator within a multidimensional logic-space. By vectorizing legal structure and simulating operator interactions, Vigilum surfaces how discretion, override chains, and compliance simulation intersect��exposing latent extraction paths and systemic blind spots long before risk materializes as loss. Designed for any governance environment, Vigilum adapts its risk field logic to public, private, and hybrid systems–ensuring structural foresight at every institutional scale.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
@@ -55,6 +55,31 @@ const cardData = [
         role: "Media & Communications Lead",
         description:
           "Shapes Vigilum's visual identity, manages all media assets, and oversees public-facing content.",
+        imageUrl: "/placeholder.svg",
+      },
+    ],
+  },
+  {
+    color: "#10201C",
+    title: "Advisory",
+    description: "Strategic guidance from industry leaders",
+    secondaryDescription: "",
+    signature: "",
+    url: "/advisory",
+    isAdvisoryCarousel: true,
+    advisoryMembers: [
+      {
+        name: "TBA",
+        role: "Strategic Advisor",
+        description:
+          "Strategic guidance and industry expertise.",
+        imageUrl: "/placeholder.svg",
+      },
+      {
+        name: "TBA",
+        role: "Technical Advisor",
+        description:
+          "Technical advisory and platform guidance.",
         imageUrl: "/placeholder.svg",
       },
     ],
