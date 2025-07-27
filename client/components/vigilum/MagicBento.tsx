@@ -1068,6 +1068,7 @@ const MagicBento = ({
                     >
                       {card.title}
                     </h2>
+                    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", flex: 1}}>
                     <p
                       style={{
                         fontSize: "17px",
