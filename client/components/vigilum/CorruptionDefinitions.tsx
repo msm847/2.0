@@ -144,355 +144,421 @@ const boundaryLogicData = {
         bribery: {
           state: "✓",
           tooltip:
-            "Core focus on both active and passive bribery under Criminal Law Convention.",
+            "Explicitly included as core corruption type in TI framework. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "?",
           tooltip:
-            "Transparency required but lobbying not inherently corrupt unless involving improper influence.",
+            "Problematic when lacking transparency or involving undue influence. [DG]",
           typology: ["DG"],
         },
-        privateSector: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Private sector bribery explicitly addressed in Additional Protocol Article 7.",
+            "Major focus area for TI through beneficial ownership advocacy. [CI]",
           typology: ["CI"],
         },
-        influencePeddling: {
+        cronyism: {
           state: "✓",
           tooltip:
-            'Covered under "trading in influence" provisions (Article 12).',
+            "Recognized as form of corruption affecting governance quality. [CI]",
           typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "✓",
-          tooltip:
-            "Addressed in public ethics recommendations and evaluation reports.",
-          typology: ["RT"],
         },
         fraud: {
-          state: "–",
+          state: "✓",
           tooltip:
-            "Outside core corruption mandate. Not systematically evaluated.",
-          typology: ["SB"],
+            "Included in TI's broad corruption definition and advocacy work. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
-          state: "��",
+        assetLaundering: {
+          state: "✓",
           tooltip:
-            'Included in "abuse of functions" category under Article 10.',
-          typology: ["RT"],
+            "Central focus area through financial transparency and anti-money laundering advocacy. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Addressed through regulatory transparency and international coordination advocacy. [CI]",
+          typology: ["CI"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Recognized as corruption type affecting institutional integrity. [CI]",
+          typology: ["CI"],
+        },
+      },
+    },
+    {
+      id: "ec",
+      name: "European Commission",
+      logoUrl: "/logos/ec.svg",
+      logo: "🇪🇺",
+      definition:
+        "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon…",
+      citation: {
+        text: "European Commission, Anti-Corruption Policy",
+        url: "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/democracy-eu-citizenship-anti-corruption/anti-corruption_en",
+      },
+      tags: {
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly addressed in EU anti-corruption directives and framework. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "?",
+          tooltip:
+            "Regulated through transparency register but not criminalized unless involving improper influence. [DG]",
+          typology: ["DG"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Major focus through Anti-Money Laundering Directives and beneficial ownership registers. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest and procurement transparency measures. [DG]",
+          typology: ["DG"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Explicitly covered under EU fraud protection and financial crime directives. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "✓",
+          tooltip:
+            "Core focus through Anti-Money Laundering Directive and financial intelligence coordination. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Central concern in EU regulatory coherence and harmonization efforts. [CI]",
+          typology: ["CI"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Addressed through conflict of interest measures rather than direct criminalization.",
+            "Addressed through conflict of interest measures in public administration. [DG]",
           typology: ["DG"],
         },
       },
     },
     {
-      id: "uncac",
-      name: "UN UNCAC",
-      logoUrl: "/logos/un.svg",
+      id: "fatf",
+      name: "FATF",
+      logoUrl: "/logos/fatf.svg",
+      logo: "💰",
+      definition:
+        "Corruption offences such as bribery, embezzlement, trading in influence, abuse of functions and other offences are generally committed for private gain…",
+      citation: {
+        text: "FATF, Reference Guide and Information Note on Fight Against Corruption",
+        url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/brochures/reference%20guide%20and%20information%20note%20on%20fight%20against%20corruption.pdf.coredownload.inline.pdf",
+      },
+      tags: {
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Central predicate offense for money laundering under FATF standards. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Not within FATF mandate unless involving money laundering or terrorism financing. [SB]",
+          typology: ["SB"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Major focus through beneficial ownership transparency and corporate vehicle abuse prevention. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "?",
+          tooltip:
+            "Relevant when involving financial flows that could constitute money laundering. [RT]",
+          typology: ["RT"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Core predicate offense for money laundering under FATF 40 Recommendations. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "✓",
+          tooltip:
+            "Primary focus area - money laundering is core FATF mandate. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Addressed through international coordination and regulatory harmonization. [CI]",
+          typology: ["CI"],
+        },
+        nepotism: {
+          state: "?",
+          tooltip:
+            "Relevant only when involving financial flows that could constitute money laundering. [RT]",
+          typology: ["RT"],
+        },
+      },
+    },
+    {
+      id: "stt",
+      name: "STT Lithuania",
+      logoUrl: "/logos/stt.svg",
+      logo: "🇱🇹",
+      definition:
+        "Mission: to reduce corruption as a threat to human rights and freedoms, the principles of the rule of law and economic development.",
+      citation: {
+        text: "Special Investigation Service (STT), About STT",
+        url: "https://www.stt.lt/en/about-stt/4965",
+      },
+      tags: {
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core investigative focus under Lithuanian criminal law. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "?",
+          tooltip:
+            "Regulated through transparency measures but not criminalized unless involving improper influence. [DG]",
+          typology: ["DG"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Investigated when used for corruption or money laundering purposes. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "✓",
+          tooltip:
+            "Investigated as abuse of office and conflict of interest violations. [CI]",
+          typology: ["CI"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Within STT mandate when involving public officials or public interest. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "✓",
+          tooltip:
+            "Investigated when connected to corruption proceeds. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through EU coordination and regulatory compliance monitoring. [RT]",
+          typology: ["RT"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Investigated as conflict of interest and abuse of office. [CI]",
+          typology: ["CI"],
+        },
+      },
+    },
+    {
+      id: "unodc",
+      name: "UNODC",
+      logoUrl: "/logos/unodc.svg",
       logo: "🌍",
       definition:
-        "Solicitation or acceptance by a public official of an undue advantage and the offering or granting of an undue advantage to a public official.",
+        "UNODC acknowledges corruption as a 'fluid and evolving concept, signifying different things to different people' but describes it broadly as 'the misuse of public power, office or authority for private benefit, through bribery, extortion, influence peddling, nepotism, fraud or embezzlement.'",
       citation: {
-        text: "UN Convention Against Corruption, Article 15, 2003",
-        url: "https://www.unodc.org/documents/brussels/UN_Convention_Against_Corruption.pdf",
+        text: "UNODC, What is Corruption",
+        url: "https://www.unodc.org/corruption/en/learn/what-is-corruption.html",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Comprehensive bribery provisions for public (Article 15) and private sectors (Article 21).",
+            "Explicitly included in UNODC corruption definition and UNCAC framework. [CI]",
           typology: ["CI"],
         },
         lobbying: {
-          state: "–",
-          tooltip:
-            "Not explicitly addressed in convention text. Legal advocacy generally excluded.",
-          typology: ["SB"],
-        },
-        privateSector: {
-          state: "✓",
-          tooltip:
-            "Private sector bribery covered in Article 21 as mandatory criminalization.",
-          typology: ["CI"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Trading in influence covered in Article 18 with mandatory criminalization.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
           state: "?",
           tooltip:
-            "Addressed in preventive measures (Chapter II) but not criminal provisions.",
+            "Addressed as influence peddling when involving improper advantage. [DG]",
           typology: ["DG"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Addressed through UNCAC asset recovery and beneficial ownership provisions. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "✓",
+          tooltip:
+            "Explicitly included in UNODC definition through nepotism and favoritism. [CI]",
+          typology: ["CI"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Fraud against public administration covered under Article 17.",
-          typology: ["RT"],
+            "Explicitly included in UNODC corruption definition and UNCAC provisions. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
-          tooltip: "Embezzlement explicitly criminalized in Article 17.",
-          typology: ["RT"],
+          tooltip:
+            "Core focus through UNCAC asset recovery and anti-money laundering provisions. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Addressed through international cooperation and regulatory harmonization under UNCAC. [CI]",
+          typology: ["CI"],
         },
         nepotism: {
-          state: "?",
+          state: "✓",
           tooltip:
-            "Addressed through public sector ethics provisions rather than direct criminalization.",
-          typology: ["DG"],
+            "Explicitly included in UNODC corruption definition. [CI]",
+          typology: ["CI"],
         },
       },
     },
     {
-      id: "uk-bribery",
-      name: "UK Bribery Act",
-      logoUrl: "/logos/uk.svg",
-      logo: "🇬🇧",
+      id: "g20",
+      name: "G20 ACWG",
+      logoUrl: "/logos/g20.svg",
+      logo: "🌐",
       definition:
-        "Offering, promising or giving a financial or other advantage to another person, and requesting, agreeing to receive or accepting a financial or other advantage.",
+        "The G20 ACWG recognizes the negative impact of corruption which 'threatens the integrity of markets, undermines fair competition, distorts resource allocation, destroys public trust, and undermines the rule of law'…",
       citation: {
-        text: "UK Bribery Act 2010, Sections 1-2",
-        url: "https://www.legislation.gov.uk/ukpga/2010/23/contents",
+        text: "G20 Anti-Corruption Working Group, World Bank STAR",
+        url: "https://star.worldbank.org/g20-anti-corruption-working-group",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Comprehensive coverage including active, passive, and failure to prevent bribery.",
-          typology: ["CI"],
-        },
-        lobbying: {
-          state: "–",
-          tooltip:
-            "Legal lobbying excluded unless constituting improper influence or advantage.",
-          typology: ["DG"],
-        },
-        privateSector: {
-          state: "���",
-          tooltip: "Private sector bribery fully covered under Sections 1-2.",
-          typology: ["CI"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Covered under general bribery provisions when involving improper influence.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "–",
-          tooltip:
-            "Not directly criminalized unless involving bribery elements.",
-          typology: ["SB"],
-        },
-        fraud: {
-          state: "–",
-          tooltip: "Covered under separate Fraud Act 2006, not Bribery Act.",
-          typology: ["SB"],
-        },
-        embezzlement: {
-          state: "���",
-          tooltip:
-            "Outside Bribery Act scope. Covered under other legislation.",
-          typology: ["SB"],
-        },
-        nepotism: {
-          state: "–",
-          tooltip:
-            "Not specifically criminalized unless involving bribery or advantage.",
-          typology: ["SB"],
-        },
-      },
-    },
-    {
-      id: "transparency",
-      name: "Transparency Intl",
-      logoUrl: "/logos/ti.svg",
-      logo: "🔍",
-      definition:
-        "The abuse of entrusted power for private gain, encompassing grand, petty and political corruption.",
-      citation: {
-        text: "Transparency International, Anti-Corruption Glossary, 2023",
-        url: "https://www.transparency.org/en/corruptionary",
-      },
-      tags: {
-        bribery: {
-          state: "✓",
-          tooltip:
-            "Explicitly included as core form of corruption across all contexts.",
+            "Core focus in G20 anti-corruption action plans and private sector principles. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "?",
           tooltip:
-            "Problematic when lacking transparency or involving undue influence (TI Policy Position, 2015).",
+            "Addressed through transparency and integrity measures rather than prohibition. [DG]",
           typology: ["DG"],
         },
-        privateSector: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Private sector corruption explicitly recognized in definition and measurement.",
+            "Major focus through beneficial ownership transparency initiatives. [CI]",
           typology: ["CI"],
         },
-        influencePeddling: {
+        cronyism: {
           state: "✓",
           tooltip:
-            "Covered under political corruption and access monetization.",
+            "Addressed through public procurement transparency and competition measures. [CI]",
           typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "✓",
-          tooltip:
-            "Recognized as corruption risk requiring management and disclosure.",
-          typology: ["RT"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Included when involving abuse of entrusted power for private gain.",
-          typology: ["RT"],
+            "Included in G20 anti-corruption framework and business integrity measures. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
           tooltip:
-            "Classic example of abuse of entrusted power in TI framework.",
-          typology: ["RT"],
+            "Core focus through FATF coordination and asset recovery initiatives. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Central concern in G20 regulatory coordination and international cooperation. [CI]",
+          typology: ["CI"],
         },
         nepotism: {
           state: "✓",
           tooltip:
-            "Recognized as form of political and administrative corruption.",
-          typology: ["RT"],
+            "Addressed through conflict of interest and governance measures. [CI]",
+          typology: ["CI"],
         },
       },
     },
     {
-      id: "fcpa",
-      name: "SEC FCPA",
-      logoUrl: "/logos/sec.svg",
-      logo: "📊",
+      id: "doj",
+      name: "US DOJ FCPA",
+      logoUrl: "/logos/doj.svg",
+      logo: "🏛️",
       definition:
-        "Payments to foreign officials to assist in obtaining or retaining business or securing any improper advantage.",
+        "The Foreign Corrupt Practices Act … was enacted for the purpose of making it unlawful … to make payments to foreign government officials to assist in obtaining or retaining business.",
       citation: {
-        text: "SEC, Foreign Corrupt Practices Act Guidance, 2020",
-        url: "https://www.sec.gov/spotlight/foreign-corrupt-practices-act.shtml",
+        text: "US DOJ Criminal Fraud Section, FCPA Unit",
+        url: "https://www.justice.gov/criminal/criminal-fraud/foreign-corrupt-practices-act",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Core FCPA violation with both anti-bribery and accounting provisions.",
+            "Central focus - bribery of foreign officials under FCPA provisions. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
           tooltip:
-            "Legal lobbying explicitly excluded from FCPA scope (SEC Guidance, 2012).",
-          typology: ["DG"],
+            "Legal lobbying excluded from FCPA scope unless involving prohibited payments. [SB]",
+          typology: ["SB"],
         },
-        privateSector: {
+        shellCompany: {
           state: "?",
           tooltip:
-            "Only covers private sector when involving foreign officials or government business.",
+            "Relevant when used to conceal FCPA violations or facilitate prohibited payments. [RT]",
           typology: ["RT"],
         },
-        influencePeddling: {
-          state: "✓",
+        cronyism: {
+          state: "–",
           tooltip:
-            "Covered when involving foreign officials or securing government business.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "��",
-          tooltip:
-            "Not within FCPA scope unless involving prohibited payments.",
+            "Not within FCPA scope unless involving foreign official bribery. [SB]",
           typology: ["SB"],
         },
         fraud: {
           state: "?",
           tooltip:
-            "Accounting fraud covered under books and records provisions.",
+            "Addressed under separate federal fraud statutes, not FCPA. [RT]",
           typology: ["RT"],
         },
-        embezzlement: {
-          state: "–",
+        assetLaundering: {
+          state: "?",
           tooltip:
-            "Outside FCPA scope unless involving foreign official payments.",
-          typology: ["SB"],
+            "Relevant when used to conceal FCPA violations - prosecuted under separate statutes. [RT]",
+          typology: ["RT"],
         },
-        nepotism: {
-          state: "–",
+        regulatoryArbitrage: {
+          state: "?",
           tooltip:
-            "Not covered unless involving improper payments to foreign officials.",
-          typology: ["SB"],
-        },
-      },
-    },
-    {
-      id: "canada-cfpoa",
-      name: "Canada CFPOA",
-      logoUrl: "/logos/canada.svg",
-      logo: "🍁",
-      definition:
-        "Giving or offering a loan, reward, advantage or benefit of any kind to a foreign public official as consideration for cooperation, assistance, exercise of influence or an act or omission.",
-      citation: {
-        text: "Corruption of Foreign Public Officials Act, Section 3, 1998",
-        url: "https://laws-lois.justice.gc.ca/eng/acts/c-45.2/",
-      },
-      tags: {
-        bribery: {
-          state: "✓",
-          tooltip:
-            "Focus on bribery of foreign public officials under Section 3.",
-          typology: ["CI"],
-        },
-        lobbying: {
-          state: "–",
-          tooltip: "Legal lobbying activities excluded from CFPOA scope.",
+            "Addressed through international coordination and extraterritorial jurisdiction. [DG]",
           typology: ["DG"],
         },
-        privateSector: {
-          state: "–",
-          tooltip:
-            "Limited to foreign public officials. Private-to-private excluded.",
-          typology: ["SB"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Covered when involving foreign public officials and improper influence.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "–",
-          tooltip:
-            "Not within CFPOA mandate unless involving prohibited payments.",
-          typology: ["SB"],
-        },
-        fraud: {
-          state: "–",
-          tooltip:
-            "Outside CFPOA scope. Covered under Criminal Code provisions.",
-          typology: ["SB"],
-        },
-        embezzlement: {
-          state: "–",
-          tooltip:
-            "Not covered unless involving foreign public official bribery.",
-          typology: ["SB"],
-        },
         nepotism: {
           state: "–",
           tooltip:
-            "Outside CFPOA scope unless involving foreign public officials.",
+            "Not within FCPA scope unless involving foreign official bribery. [SB]",
           typology: ["SB"],
         },
       },
@@ -500,126 +566,188 @@ const boundaryLogicData = {
   ],
   international: [
     {
-      id: "worldbank",
-      name: "World Bank",
-      logoUrl: "/logos/worldbank.svg",
-      logo: "🏦",
-      definition:
-        "The abuse of public office for private gain, including both grand and petty corruption, and capture of the state by elites and private interests.",
-      citation: {
-        text: "World Bank, Helping Countries Combat Corruption, 1997, Chapter 1",
-        url: "https://openknowledge.worldbank.org/handle/10986/11957",
-      },
-      tags: {
-        bribery: {
-          state: "✓",
-          tooltip:
-            "Explicitly included as core corruption type in Bank operational policies.",
-          typology: ["CI"],
-        },
-        lobbying: {
-          state: "?",
-          tooltip:
-            "Problematic when it constitutes state capture or undermines governance (WB 2017 Framework).",
-          typology: ["DG"],
-        },
-        privateSector: {
-          state: "✓",
-          tooltip:
-            "Private sector corruption explicitly recognized in governance indicators.",
-          typology: ["CI"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Covered under state capture framework and governance diagnostics.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "✓",
-          tooltip:
-            "Addressed in governance and procurement standards across operations.",
-          typology: ["RT"],
-        },
-        fraud: {
-          state: "✓",
-          tooltip:
-            "Included in financial crime prevention and project supervision.",
-          typology: ["RT"],
-        },
-        embezzlement: {
-          state: "✓",
-          tooltip:
-            "Explicitly included in Bank corruption typology and sanctions framework.",
-          typology: ["RT"],
-        },
-        nepotism: {
-          state: "✓",
-          tooltip:
-            "Recognized as form of corruption affecting governance quality.",
-          typology: ["RT"],
-        },
-      },
-    },
-    {
       id: "imf",
       name: "IMF",
       logoUrl: "/logos/imf.svg",
       logo: "💰",
       definition:
-        "The abuse of public office for private gain, with emphasis on fiscal corruption and misuse of public resources.",
+        "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another person or entity, including bribes or facilitation payments.",
       citation: {
-        text: "IMF, The Role of the IMF in Governance Issues, 1997, Section II",
-        url: "https://www.imf.org/external/pubs/ft/exrp/govern/govern.pdf",
+        text: "IMF Anti-Fraud Anti-Corruption Policy, January 2025",
+        url: "https://www.imf.org/-/media/Files/About/Ethics/policy/anti-fraud-anti-corruption-011725.ashx",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Included when affecting fiscal governance and macroeconomic stability.",
+            "Explicitly prohibited in IMF operations and financing arrangements. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
           tooltip:
-            "Generally not within IMF mandate unless affecting fiscal policy implementation.",
+            "Legal advocacy excluded from IMF prohibited practices framework. [SB]",
           typology: ["SB"],
         },
-        privateSector: {
-          state: "?",
-          tooltip:
-            "Relevant only when affecting public financial management or fiscal outcomes.",
-          typology: ["RT"],
-        },
-        influencePeddling: {
-          state: "?",
-          tooltip:
-            "Addressed when impacting economic governance and policy implementation.",
-          typology: ["DG"],
-        },
-        conflictOfInterest: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Critical in financial sector oversight and central bank governance.",
-          typology: ["RT"],
+            "Addressed through beneficial ownership transparency in IMF operations. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "?",
+          tooltip:
+            "Relevant when affecting governance and economic policy implementation. [DG]",
+          typology: ["DG"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Central concern in public financial management and fiscal reporting.",
-          typology: ["RT"],
+            "Central concern in public financial management and fiscal accountability. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
           tooltip:
-            "Core focus in public resource management and fiscal accountability.",
-          typology: ["RT"],
+            "Addressed through financial sector oversight and AML/CFT compliance. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Core concern in financial sector regulation and international coordination. [CI]",
+          typology: ["CI"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Relevant when affecting financial governance quality and institutional capacity.",
+            "Relevant when affecting financial governance quality and institutional capacity. [DG]",
           typology: ["DG"],
+        },
+      },
+    },
+    {
+      id: "worldbank",
+      name: "World Bank",
+      logoUrl: "/logos/worldbank.svg",
+      logo: "🏦",
+      definition:
+        "The offering, giving, receiving or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
+      citation: {
+        text: "World Bank Group Integrity Vice Presidency Investigation Guidelines",
+        url: "https://www.worldbank.org/en/about/unit/integrity-vice-presidency/What-can-the-World-Bank-Groups-investigate",
+      },
+      tags: {
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core prohibited practice in World Bank operations and project financing. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal advocacy excluded from World Bank sanctions framework. [SB]",
+          typology: ["SB"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Investigated when used to facilitate prohibited practices or conceal beneficial ownership. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "✓",
+          tooltip:
+            "Addressed through conflict of interest and governance diagnostics. [CI]",
+          typology: ["CI"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Core prohibited practice in World Bank operational procedures. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "✓",
+          tooltip:
+            "Addressed through financial crime prevention and project supervision. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "✓",
+          tooltip:
+            "Addressed through governance indicators and regulatory quality measures. [CI]",
+          typology: ["CI"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Recognized as governance issue affecting development outcomes. [CI]",
+          typology: ["CI"],
+        },
+      },
+    },
+    {
+      id: "eib",
+      name: "EIB",
+      logoUrl: "/logos/eib.svg",
+      logo: "🇪🇺",
+      definition:
+        "The EIB defines corruption and fraud as the abuse of public or private office for personal gain. This means any behaviour in which people improperly and unlawfully enrich themselves or those close to them, or induce others to do so, by misusing their position.",
+      citation: {
+        text: "EIB Anti-Fraud Policy",
+        url: "https://www.eib.org/attachments/thematic/fraud_en.pdf",
+      },
+      tags: {
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Explicitly covered in EIB anti-fraud policy and operational procedures. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal lobbying excluded unless constituting undue influence in operations. [SB]",
+          typology: ["SB"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Investigated when used to facilitate fraud or conceal beneficial ownership in EIB operations. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "✓",
+          tooltip:
+            "Explicitly included in EIB definition as misuse of position for personal or close associates' benefit. [CI]",
+          typology: ["CI"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Core focus of EIB integrity framework alongside corruption. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "✓",
+          tooltip:
+            "Addressed through AML compliance and financial crime prevention measures. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through EU regulatory coordination and project compliance. [DG]",
+          typology: ["DG"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Explicitly included as enriching 'those close to them' in EIB definition. [CI]",
+          typology: ["CI"],
         },
       },
     },
@@ -629,58 +757,58 @@ const boundaryLogicData = {
       logoUrl: "/logos/ebrd.svg",
       logo: "🏛️",
       definition:
-        "Improper use of official position for personal or private advantage in connection with EBRD operations.",
+        "The offering, giving, receiving or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
-        text: "EBRD, Enforcement Policy and Procedures, 2020, Section 2.1",
-        url: "https://www.ebrd.com/integrity-compliance/enforcement-policy.pdf",
+        text: "EBRD Enforcement Policy and Procedures",
+        url: "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/project-procurement/enforcement-policy-and-procedures/Enforcement-Policy-Procedures-English.pdf",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Prohibited practice in all EBRD-financed projects and operations.",
+            "Core prohibited practice in EBRD operations and project financing. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
           tooltip:
-            "Not within EBRD enforcement scope unless constituting prohibited practice.",
+            "Legal advocacy excluded from EBRD enforcement scope. [SB]",
           typology: ["SB"],
         },
-        privateSector: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Private sector conduct covered in project finance and investment operations.",
+            "Investigated when used to facilitate prohibited practices in EBRD operations. [CI]",
           typology: ["CI"],
         },
-        influencePeddling: {
-          state: "✓",
+        cronyism: {
+          state: "?",
           tooltip:
-            "Improper influence prohibited in procurement and project implementation.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "✓",
-          tooltip:
-            "Strictly regulated in procurement and operational procedures.",
-          typology: ["RT"],
+            "Addressed through conflict of interest policies rather than direct prohibition. [DG]",
+          typology: ["DG"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Fraudulent practices covered in enforcement and sanctions framework.",
-          typology: ["RT"],
+            "Core prohibited practice in EBRD enforcement framework. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
           tooltip:
-            "Misappropriation prohibited in project funds and operational resources.",
-          typology: ["RT"],
+            "Addressed through AML compliance and financial crime prevention. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through transition economy regulatory development. [DG]",
+          typology: ["DG"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Addressed through conflict of interest policies rather than direct prohibition.",
+            "Addressed through conflict of interest disclosure and mitigation. [DG]",
           typology: ["DG"],
         },
       },
@@ -691,303 +819,306 @@ const boundaryLogicData = {
       logoUrl: "/logos/adb.svg",
       logo: "🌏",
       definition:
-        "Offering, giving, receiving, or soliciting of anything of value to influence improperly the actions of another party.",
+        "ADB defines corruption as the abuse of public or private office for personal gain.",
       citation: {
-        text: "ADB, Anticorruption and Integrity Policy, 2020, Section 2",
-        url: "https://www.adb.org/sites/default/files/institutional-document/31317/anticorruption-integrity-policy.pdf",
+        text: "ADB Anticorruption Policy",
+        url: "https://www.adb.org/documents/anticorruption-policy",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Core violation in ADB integrity framework and sanctions procedures.",
+            "Core prohibited practice in ADB integrity framework and operations. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
-          tooltip: "Outside ADB operational mandate and enforcement scope.",
+          tooltip:
+            "Legal advocacy excluded from ADB prohibited practices scope. [SB]",
           typology: ["SB"],
         },
-        privateSector: {
-          state: "���",
-          tooltip:
-            "Private sector operations covered under integrity due diligence.",
-          typology: ["CI"],
-        },
-        influencePeddling: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Improper influence explicitly prohibited in operational procedures.",
+            "Investigated when used to facilitate prohibited practices or conceal beneficial ownership. [CI]",
           typology: ["CI"],
         },
-        conflictOfInterest: {
+        cronyism: {
           state: "✓",
           tooltip:
-            "Covered in integrity and procurement policies across operations.",
-          typology: ["RT"],
+            "Explicitly included in ADB definition as abuse of office for personal gain. [CI]",
+          typology: ["CI"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Fraudulent practice prohibited in operations and project implementation.",
-          typology: ["RT"],
+            "Core prohibited practice in ADB operations and project implementation. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
           tooltip:
-            "Misappropriation covered in enforcement and sanctions framework.",
-          typology: ["RT"],
+            "Addressed through AML compliance and integrity due diligence. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through regional regulatory coordination and governance support. [DG]",
+          typology: ["DG"],
+        },
+        nepotism: {
+          state: "✓",
+          tooltip:
+            "Included as form of abuse of office for personal gain. [CI]",
+          typology: ["CI"],
+        },
+      },
+    },
+    {
+      id: "ifc",
+      name: "IFC",
+      logoUrl: "/logos/ifc.svg",
+      logo: "💼",
+      definition:
+        "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
+      citation: {
+        text: "IFC Definitions and Interpretive Guidelines",
+        url: "https://www.ifc.org/content/dam/ifc/doc/2010/definitions-interpretive-guidelines.pdf",
+      },
+      tags: {
+        bribery: {
+          state: "✓",
+          tooltip:
+            "Core prohibited practice in IFC private sector operations. [CI]",
+          typology: ["CI"],
+        },
+        lobbying: {
+          state: "–",
+          tooltip:
+            "Legal advocacy excluded from IFC prohibited practices framework. [SB]",
+          typology: ["SB"],
+        },
+        shellCompany: {
+          state: "✓",
+          tooltip:
+            "Investigated when used to facilitate prohibited practices in IFC investments. [CI]",
+          typology: ["CI"],
+        },
+        cronyism: {
+          state: "?",
+          tooltip:
+            "Addressed through conflict of interest and governance measures in private sector. [DG]",
+          typology: ["DG"],
+        },
+        fraud: {
+          state: "✓",
+          tooltip:
+            "Core prohibited practice in IFC investment operations. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "✓",
+          tooltip:
+            "Addressed through AML compliance and financial sector integrity measures. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through regulatory development and private sector governance. [DG]",
+          typology: ["DG"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Addressed through transparency and ethics measures in procurement.",
+            "Addressed through governance and conflict of interest measures. [DG]",
           typology: ["DG"],
         },
       },
     },
     {
-      id: "iadb",
+      id: "idb",
       name: "IDB",
-      logoUrl: "/logos/iadb.svg",
+      logoUrl: "/logos/idb.svg",
       logo: "🌎",
       definition:
-        "Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
+        "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
-        text: "IDB, Policy on Prohibited Practices, 2020, Section II",
-        url: "https://www.iadb.org/en/about-us/policy-prohibited-practices",
+        text: "IDB Invest Integrity Framework",
+        url: "https://idbinvest.org/sites/default/files/2022-11/The%20Inter-American%20Investment%20Corporation%E2%80%99s%20INTEGRITY%20FRAMEWORK.pdf",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Explicitly prohibited in all IDB-financed operations and contracts.",
+            "Core prohibited practice in IDB operations and project financing. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
           tooltip:
-            "Legal advocacy excluded from prohibited practices framework.",
+            "Legal advocacy excluded from IDB prohibited practices scope. [SB]",
           typology: ["SB"],
         },
-        privateSector: {
-          state: "���",
-          tooltip:
-            "Private sector operations covered under integrity due diligence procedures.",
-          typology: ["CI"],
-        },
-        influencePeddling: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Improper influence covered under prohibited practices policy.",
+            "Investigated when used to facilitate prohibited practices in IDB operations. [CI]",
           typology: ["CI"],
         },
-        conflictOfInterest: {
-          state: "✓",
+        cronyism: {
+          state: "?",
           tooltip:
-            "Managed through disclosure and mitigation in procurement processes.",
-          typology: ["RT"],
+            "Addressed through governance and conflict of interest measures. [DG]",
+          typology: ["DG"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Fraudulent practices explicitly prohibited in operational procedures.",
-          typology: ["RT"],
+            "Core prohibited practice in IDB integrity framework. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
           tooltip:
-            "Misappropriation prohibited in project funds and resource management.",
-          typology: ["RT"],
+            "Addressed through AML compliance and financial crime prevention. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through regional regulatory coordination and governance support. [DG]",
+          typology: ["DG"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Addressed through conflict of interest and transparency requirements.",
+            "Addressed through transparency and ethics measures in operations. [DG]",
           typology: ["DG"],
         },
       },
     },
     {
-      id: "afdb",
-      name: "AfDB",
-      logoUrl: "/logos/afdb.svg",
+      id: "ndb",
+      name: "NDB (BRICS)",
+      logoUrl: "/logos/ndb.svg",
       logo: "🌍",
       definition:
-        "Offering, giving, receiving, or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
+        "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
-        text: "AfDB, Sanctions Procedures, 2020, Annex 1",
-        url: "https://www.afdb.org/en/about-us/organisational-structure/integrity-and-anti-corruption/sanctions-procedures",
+        text: "NDB Anti-Corruption Anti-Fraud and Anti-Money Laundering Policy",
+        url: "https://www.ndb.int/wp-content/uploads/2019/12/Anti-Corruption-Anti-Fraud-and-Anti-Money-Laundering-Policy.pdf",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Core prohibited practice in AfDB operations and project financing.",
+            "Core prohibited practice in NDB operations and project financing. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
           tooltip:
-            "Legal advocacy activities excluded from sanctions framework.",
+            "Legal advocacy excluded from NDB prohibited practices framework. [SB]",
           typology: ["SB"],
         },
-        privateSector: {
+        shellCompany: {
           state: "✓",
           tooltip:
-            "Private sector conduct covered in integrity and due diligence procedures.",
+            "Addressed through AML provisions and beneficial ownership transparency. [CI]",
           typology: ["CI"],
         },
-        influencePeddling: {
-          state: "✓",
+        cronyism: {
+          state: "?",
           tooltip:
-            "Improper influence prohibited in procurement and project implementation.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "✓",
-          tooltip:
-            "Addressed in procurement guidelines and operational procedures.",
-          typology: ["RT"],
+            "Addressed through governance and conflict of interest measures. [DG]",
+          typology: ["DG"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Fraudulent practices covered in sanctions and enforcement procedures.",
-          typology: ["RT"],
+            "Core prohibited practice explicitly covered in NDB policy. [CI]",
+          typology: ["CI"],
         },
-        embezzlement: {
+        assetLaundering: {
           state: "✓",
           tooltip:
-            "Misappropriation prohibited in project resources and fund management.",
-          typology: ["RT"],
+            "Core focus area explicitly covered in NDB anti-money laundering policy. [CI]",
+          typology: ["CI"],
+        },
+        regulatoryArbitrage: {
+          state: "?",
+          tooltip:
+            "Addressed through BRICS coordination and regulatory harmonization. [DG]",
+          typology: ["DG"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Managed through conflict of interest disclosure and mitigation.",
+            "Addressed through governance and transparency measures. [DG]",
           typology: ["DG"],
         },
       },
     },
     {
-      id: "eib",
-      name: "EIB",
-      logoUrl: "/logos/eib.svg",
-      logo: "🇪🇺",
+      id: "nib",
+      name: "NIB",
+      logoUrl: "/logos/nib.svg",
+      logo: "🇳🇴",
       definition:
-        "Any active or passive corrupt behavior in relation to EIB operations, including offering, promising, giving, accepting or soliciting an undue advantage.",
+        "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
-        text: "EIB, Anti-Fraud Policy, 2019, Section 3.1",
-        url: "https://www.eib.org/en/about/accountability/anti-fraud/index.htm",
+        text: "NIB Enforcement Policy",
+        url: "https://www.nib.int/files/dfcce05943a24331e4a7d96f931b880673523d53/enforcement-policy.pdf",
       },
       tags: {
         bribery: {
           state: "✓",
           tooltip:
-            "Explicitly covered in EIB anti-fraud policy and operational procedures.",
+            "Core prohibited practice in NIB operations and project financing. [CI]",
           typology: ["CI"],
         },
         lobbying: {
           state: "–",
           tooltip:
-            "Legal lobbying excluded unless constituting undue influence in operations.",
+            "Legal advocacy excluded from NIB enforcement scope. [SB]",
           typology: ["SB"],
         },
-        privateSector: {
+        shellCompany: {
           state: "?",
           tooltip:
-            "Private sector corruption only recognized when affecting EIB-financed projects.",
-          typology: ["RT"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Undue influence prohibited in procurement and project evaluation.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "��",
-          tooltip: "Covered in professional ethics and operational procedures.",
-          typology: ["RT"],
-        },
-        fraud: {
-          state: "✓",
-          tooltip: "Central focus of EIB anti-fraud policy and investigations.",
-          typology: ["RT"],
-        },
-        embezzlement: {
-          state: "✓",
-          tooltip:
-            "Misappropriation covered in anti-fraud framework and sanctions.",
-          typology: ["RT"],
-        },
-        nepotism: {
-          state: "?",
-          tooltip:
-            "Addressed through conflict of interest and ethics policies.",
+            "Addressed through transparency and beneficial ownership measures. [DG]",
           typology: ["DG"],
         },
-      },
-    },
-    {
-      id: "aiib",
-      name: "AIIB",
-      logoUrl: "/logos/aiib.svg",
-      logo: "🏗️",
-      definition:
-        "Offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
-      citation: {
-        text: "AIIB, Policy on Prohibited Practices for Borrowers, 2019",
-        url: "https://www.aiib.org/en/policies-strategies/policies/prohibited-practices.html",
-      },
-      tags: {
-        bribery: {
-          state: "✓",
+        cronyism: {
+          state: "?",
           tooltip:
-            "Core prohibited practice in AIIB-financed projects and operations.",
-          typology: ["CI"],
-        },
-        lobbying: {
-          state: "–",
-          tooltip:
-            "Legal advocacy excluded from prohibited practices framework.",
-          typology: ["SB"],
-        },
-        privateSector: {
-          state: "✓",
-          tooltip:
-            "Private sector operations covered under integrity screening procedures.",
-          typology: ["CI"],
-        },
-        influencePeddling: {
-          state: "✓",
-          tooltip:
-            "Improper influence explicitly prohibited in operational guidelines.",
-          typology: ["CI"],
-        },
-        conflictOfInterest: {
-          state: "✓",
-          tooltip:
-            "Addressed in procurement and operational integrity procedures.",
-          typology: ["RT"],
+            "Addressed through Nordic governance standards and conflict of interest measures. [DG]",
+          typology: ["DG"],
         },
         fraud: {
           state: "✓",
           tooltip:
-            "Fraudulent practices prohibited in project implementation and financing.",
+            "Core prohibited practice in NIB enforcement framework. [CI]",
+          typology: ["CI"],
+        },
+        assetLaundering: {
+          state: "?",
+          tooltip:
+            "Addressed through Nordic AML coordination and compliance measures. [RT]",
           typology: ["RT"],
         },
-        embezzlement: {
-          state: "✓",
+        regulatoryArbitrage: {
+          state: "?",
           tooltip:
-            "Misappropriation covered in prohibited practices and sanctions framework.",
-          typology: ["RT"],
+            "Addressed through Nordic regulatory coordination and EU compliance. [DG]",
+          typology: ["DG"],
         },
         nepotism: {
           state: "?",
           tooltip:
-            "Managed through transparency and conflict of interest procedures.",
+            "Addressed through Nordic transparency and governance standards. [DG]",
           typology: ["DG"],
         },
       },
@@ -1028,7 +1159,7 @@ const termDefinitions = {
   assetLaundering: {
     title: "Asset Laundering: Obfuscation, Integration, and Systemic Risk",
     analysis:
-      'Asset laundering converges on the transformation of illicit or opaque gains into legitimate assets. Divergence appears in predicate offenses, documentation standards, and thresholds for tracing beneficial ownership. Classic laundering involves layering transactions—shell companies, trusts, offshore flows—but complex investment vehicles, real estate, and even art markets can serve as legal conduits. Many jurisdictions require only minimal "source of funds" checks, allowing structural flows to evade scrutiny. Simulation occurs when assets derived from compliant but extractive acts (e.g., regulatory capture, procurement distortion) are legitimized through ordinary wealth management. This neutralizes enforcement and allows laundered value to circulate in global capital markets.',
+      'Asset laundering converges on the transformation of illicit or opaque gains into legitimate assets. Divergence appears in predicate offenses, documentation standards, and thresholds for tracing beneficial ownership. Classic laundering involves layering transactions—shell companies, trusts, offshore flows���but complex investment vehicles, real estate, and even art markets can serve as legal conduits. Many jurisdictions require only minimal "source of funds" checks, allowing structural flows to evade scrutiny. Simulation occurs when assets derived from compliant but extractive acts (e.g., regulatory capture, procurement distortion) are legitimized through ordinary wealth management. This neutralizes enforcement and allows laundered value to circulate in global capital markets.',
     consequence:
       "Untraceable asset flows embed systemic fragility in financial markets, creating hidden exposure to sanctions, seizure, and reputational damage for institutional investors.",
   },
@@ -1895,7 +2026,7 @@ const institutionalData = {
         },
         {
           name: "European Investment Bank",
-          logo: "����️",
+          logo: "🏦",
           definition:
             "Corruption includes any abuse of entrusted power for private gain, encompassing bribery, fraud, and embezzlement.",
           source: "EIB, official website",
