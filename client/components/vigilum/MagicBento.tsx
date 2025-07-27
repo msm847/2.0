@@ -22,7 +22,7 @@ const cardData = [
     color: "#10201C",
     title: "Vision",
     description:
-      "Our vision is to empower every decision with structural foresight that promotes shared prosperity and integrity. We envision a world where every contract, tender, and regulatory action is continuously assessed against a dynamic risk framework—blending text analysis, process review, network insights, and outcome tracking. By making these insights widely accessible, we create a collaborative ecosystem of regulators, institutions, and communities working together to prevent systemic loss and direct resources toward productive, sustainable growth.",
+      "A world where the mechanics of loss are surfaced before they can take root– where institutions no longer react, but continually self-correct, dissolving risk before it becomes harm. Here, governance is not a spectacle of procedures or delayed consequence, but a living architecture of prevention. Trust is no longer performed, but embedded–anchored in transparent structure and the continuous neutralization of extraction at its source. Society becomes resilient by design, and the game of concealment, loopholes, and loss becomes obsolete.",
     secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
