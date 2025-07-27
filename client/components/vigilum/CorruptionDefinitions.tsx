@@ -70,7 +70,7 @@ const boundaryLogicData = {
     {
       id: "greco",
       name: "GRECO",
-      logoUrl: "/logos/greco.svg",
+      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "GRECO works with Council of Europe anti-corruption standards. They describe corruption as that which 'threatens the rule of law, democracy and human rights, undermines good governance, fairness and social justice, distorts competition, hinders economic development and endangers the stability of democratic institutions and the moral foundations of society.'",
