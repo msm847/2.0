@@ -287,10 +287,10 @@ const OPERATORS_V2 = [
     weight: 0.18,
     symbol: "R",
     glyph: "⟲",
-    affects: ["A", "R", "P"],
+    affects: ["L", "A", "V"],
     position_sensitive: true,
-    override_targets: ["O"],
-    color: "#84CC16", // Lime
+    override_targets: ["P", "ε"],
+    color: "#EF4444", // Red
     description:
       "This operator maps the relational networks and dependency structures between system actors. Values determine the density and influence of relationship networks.",
     calculation: {
