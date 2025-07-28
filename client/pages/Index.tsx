@@ -9,7 +9,6 @@ export default function Index() {
   const navigate = useNavigate();
   const [animationPlayed, setAnimationPlayed] = useState(false);
   const [robotAnimationFinished, setRobotAnimationFinished] = useState(false);
-  const [globalLoss, setGlobalLoss] = useState(0);
 
   useEffect(() => {
     setupAnimationTrigger();
