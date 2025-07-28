@@ -19,11 +19,8 @@ const LetterGlitch = ({
   smooth = true,
   onAnimationFinished,
 }: LetterGlitchProps) => {
-  const audioRef = useRef<HTMLAudioElement>(null);
   const [robotLoaded, setRobotLoaded] = useState(false);
   const [animationFinished, setAnimationFinished] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
