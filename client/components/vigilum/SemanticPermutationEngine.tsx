@@ -851,7 +851,7 @@ const SemanticPermutationEngine = () => {
     // Immediate visual feedback
     setIsCalculating(true);
 
-    // Use timeout for 2-second calculating feedback
+    // Use timeout for 1-second calculating feedback
     setTimeout(() => {
       if (operatorVersion === "v1") {
         setOperatorSequence(["H", "O", "XT", "F", "I"]);
@@ -859,10 +859,10 @@ const SemanticPermutationEngine = () => {
         setOperatorSequenceV2(["S", "M", "C", "R", "A"]);
       }
       setFlippedCards(new Set());
-      // Reset calculating state after 2 seconds
+      // Reset calculating state after 1 second
       setIsCalculating(false);
       isCalculatingRef.current = false;
-    }, 2000);
+    }, 1000);
   }, [operatorVersion]);
 
   const downloadResults = useCallback(() => {
@@ -1802,7 +1802,7 @@ const SemanticPermutationEngine = () => {
                   className="mb-6"
                 >
                   <h4 className="text-sm font-bold text-white font-mono mb-4">
-                    TEMPORAL EXECUTION TRACE (t��� → t₅)
+                    TEMPORAL EXECUTION TRACE (t��� → t���)
                   </h4>
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {executionTrace.map((step, index) => (
