@@ -84,7 +84,7 @@ export default function Index() {
       >
         <iframe
           key={`home-spline-animation-${Date.now()}`}
-          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/?v=2"
+          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/?t=1703601234&cache=false"
           frameBorder="0"
           width="100%"
           height="100%"
