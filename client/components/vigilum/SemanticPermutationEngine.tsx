@@ -1298,7 +1298,7 @@ const SemanticPermutationEngine = () => {
 
         {/* Analysis Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Matrix Visualizer */}
+          {/* V1×V2 Interaction Matrix */}
           <div
             className="rounded-lg p-6 border h-full flex flex-col relative"
             style={{
@@ -1327,76 +1327,134 @@ const SemanticPermutationEngine = () => {
             </AnimatePresence>
             <div className="flex items-center justify-between mb-4 flex-shrink-0">
               <h3 className="text-lg font-bold text-white font-mono">
-                EXECUTION MATRIX
+                V1×V2 INTERACTION MATRIX
               </h3>
               <BarChart3 className="w-5 h-5 text-gray-400" />
             </div>
 
-            <div key={operatorVersion} className="flex flex-col flex-1 min-h-0">
-              {/* Layer headers */}
-              <div className="grid grid-cols-7 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
-                <div className="h-10 flex items-center justify-center"></div>
-                {Object.keys(SYSTEM_LAYERS).map((layer) => (
+            {/* Matrix Description */}
+            <div className="text-xs text-gray-400 font-mono mb-4 flex-shrink-0">
+              V1 operators (rows) ⊗ V2 operators (columns) = interaction values
+            </div>
+
+            <div className="flex flex-col flex-1 min-h-0">
+              {/* V2 Column Headers */}
+              <div className="grid grid-cols-6 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
+                <div className="h-8 flex items-center justify-center text-gray-500">V1↓/V2→</div>
+                {OPERATORS_V2.slice(0, 5).map((op) => (
                   <div
-                    key={layer}
-                    className="h-10 text-center px-1 rounded flex items-center justify-center border transition-all duration-200 hover:scale-105"
+                    key={op.id}
+                    className="h-8 text-center px-1 rounded flex items-center justify-center border transition-all duration-200 hover:scale-105"
                     style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.03)",
-                      backdropFilter: "blur(8px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                      backgroundColor: `${op.color}20`,
+                      borderColor: `${op.color}40`,
+                      color: op.color,
                     }}
                   >
-                    {layer}
+                    {op.id}
                   </div>
                 ))}
               </div>
 
-              {/* Matrix rows - flex to fill remaining space */}
-              <div
-                key={`${operatorVersion}-${getCurrentSequence.join("")}`}
-                className="flex-1 flex flex-col justify-between gap-2"
-              >
-                {matrixData.map((row, rowIndex) => (
+              {/* Matrix rows - V1 operators as rows */}
+              <div className="flex-1 flex flex-col justify-between gap-2">
+                {OPERATORS.slice(0, 5).map((v1Op, rowIndex) => (
                   <div
-                    key={`${operatorVersion}-${rowIndex}-${getCurrentSequence[rowIndex]}`}
-                    className="grid grid-cols-7 gap-2 flex-1"
+                    key={v1Op.id}
+                    className="grid grid-cols-6 gap-2 flex-1"
                   >
+                    {/* V1 Row Header */}
                     <div
-                      className="text-xs font-mono text-gray-300 flex items-center justify-center px-1 rounded border transition-all duration-200 hover:scale-105"
+                      className="text-xs font-mono flex items-center justify-center px-1 rounded border transition-all duration-200 hover:scale-105"
                       style={{
-                        backgroundColor: "rgba(255, 255, 255, 0.03)",
-                        backdropFilter: "blur(8px)",
-                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                        backgroundColor: `${v1Op.color}20`,
+                        borderColor: `${v1Op.color}40`,
+                        color: v1Op.color,
                         minHeight: "3rem",
                       }}
                     >
-                      {getCurrentSequence[rowIndex]}
+                      {v1Op.id}
                     </div>
-                    {row.map((cell, colIndex) => (
-                      <div
-                        key={colIndex}
-                        className="rounded-md flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border"
-                        style={{
-                          backgroundColor: cell.nullified
-                            ? "rgba(55, 65, 81, 0.8)"
-                            : cell.type === "positive"
-                              ? `rgba(16, 185, 129, ${Math.max(0.2, cell.strength)})`
-                              : cell.type === "destructive"
-                                ? `rgba(239, 68, 68, ${Math.max(0.2, cell.strength)})`
-                                : "rgba(107, 114, 128, 0.4)",
-                          color: cell.strength > 0.4 ? "white" : "#f3f4f6",
-                          borderColor: cell.nullified
-                            ? "rgba(107, 114, 128, 0.3)"
-                            : cell.type === "positive"
-                              ? "rgba(16, 185, 129, 0.5)"
-                              : cell.type === "destructive"
-                                ? "rgba(239, 68, 68, 0.5)"
-                                : "rgba(107, 114, 128, 0.3)",
-                          boxShadow:
-                            cell.strength > 0.7
-                              ? "0 0 8px rgba(16, 185, 129, 0.3)"
+
+                    {/* Matrix cells - V1 × V2 interactions */}
+                    {OPERATORS_V2.slice(0, 5).map((v2Op, colIndex) => {
+                      const cellValue = computeMatrixCell(v1Op, v2Op);
+                      const normalizedValue = Math.min(1, cellValue / 1.5); // Normalize for color scaling
+
+                      return (
+                        <motion.div
+                          key={`${v1Op.id}-${v2Op.id}`}
+                          className="rounded-md flex flex-col items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border cursor-pointer group relative"
+                          style={{
+                            backgroundColor: cellValue === 0
+                              ? "rgba(55, 65, 81, 0.8)"
+                              : normalizedValue < 0.3
+                                ? `rgba(16, 185, 129, ${Math.max(0.2, normalizedValue)})`
+                                : normalizedValue < 0.7
+                                  ? `rgba(245, 158, 11, ${Math.max(0.3, normalizedValue)})`
+                                  : `rgba(239, 68, 68, ${Math.max(0.4, normalizedValue)})`,
+                            color: normalizedValue > 0.5 ? "white" : "#f3f4f6",
+                            borderColor: cellValue === 0
+                              ? "rgba(107, 114, 128, 0.3)"
+                              : normalizedValue < 0.3
+                                ? "rgba(16, 185, 129, 0.5)"
+                                : normalizedValue < 0.7
+                                  ? "rgba(245, 158, 11, 0.5)"
+                                  : "rgba(239, 68, 68, 0.5)",
+                            boxShadow: normalizedValue > 0.7
+                              ? "0 0 8px rgba(239, 68, 68, 0.3)"
                               : "none",
-                          minHeight: "3rem",
+                            minHeight: "3rem",
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                          animate={{
+                            backgroundColor: cellValue === 0
+                              ? "rgba(55, 65, 81, 0.8)"
+                              : normalizedValue < 0.3
+                                ? `rgba(16, 185, 129, ${Math.max(0.2, normalizedValue)})`
+                                : normalizedValue < 0.7
+                                  ? `rgba(245, 158, 11, ${Math.max(0.3, normalizedValue)})`
+                                  : `rgba(239, 68, 68, ${Math.max(0.4, normalizedValue)})`,
+                          }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <span className="text-center leading-tight">
+                            {cellValue.toFixed(2)}
+                          </span>
+
+                          {/* Tooltip */}
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none">
+                            <div className="bg-gray-900 border border-gray-600 rounded-lg p-3 text-xs font-mono whitespace-nowrap shadow-lg">
+                              <div className="text-white font-bold mb-1">{v1Op.id} × {v2Op.id}</div>
+                              <div className="text-gray-300">
+                                Base: {(v1Op.weight * v2Op.weight).toFixed(3)}<br/>
+                                Resonance: {getTypologyResonance(v1Op.typology, v2Op.typology).toFixed(3)}<br/>
+                                Kernel: {getKernelModifier(v1Op, v2Op).toFixed(3)}<br/>
+                                <span className="text-green-400">Final: {cellValue.toFixed(3)}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+
+              {/* Matrix Summary */}
+              <div className="mt-4 pt-4 border-t border-gray-600 flex-shrink-0">
+                <div className="flex justify-between items-center text-xs font-mono">
+                  <span className="text-gray-400">Matrix Sum:</span>
+                  <span className="text-green-400 font-bold">
+                    {OPERATORS.slice(0, 5).reduce((sum, v1Op) =>
+                      sum + OPERATORS_V2.slice(0, 5).reduce((rowSum, v2Op) =>
+                        rowSum + computeMatrixCell(v1Op, v2Op), 0), 0
+                    ).toFixed(3)}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
                         }}
                       >
                         {cell.nullified ? "×" : cell.delta.toFixed(1)}
