@@ -328,12 +328,10 @@ const OPERATORS_V2 = [
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma:
-          "If PM is last in chain, γ = +0.10 (risk masked); if first, γ = –0.05",
+        gamma: "Aggregation complexity modifier",
       },
     },
-    impact:
-      "Operators targeting narrative, optics, or 'surface' compliance (media, PR, simulated transparency).",
+    impact: "Combines minor actions into significant cumulative exposure.",
   },
 ];
 
