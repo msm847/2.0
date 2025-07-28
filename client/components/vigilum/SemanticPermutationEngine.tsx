@@ -78,7 +78,7 @@ const OPERATORS = [
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
-      formula: "ϕ(O) = 0.24·H + 0.15·S + 0.27·B + 0.04·W + γ(Seq,����)",
+      formula: "ϕ(O) = 0.24·H + 0.15·S + 0.27·B + 0.04·W + γ(Seq,𝓔)",
       weights: { w1: 0.24, w2: 0.15, w3: 0.27, w4: 0.04 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -249,12 +249,10 @@ const OPERATORS_V2 = [
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma:
-          "If Masking is paired or sequenced with Soft/Black, γ = +0.13; if immediately followed by Audit, γ = –0.07",
+        gamma: "Opacity complexity modifier",
       },
     },
-    impact:
-      "Creates ambiguity, semantic opacity, or off-ledger status (deliberate or emergent).",
+    impact: "Obscures real operations through legal and procedural complexity.",
   },
   {
     id: "ε",
