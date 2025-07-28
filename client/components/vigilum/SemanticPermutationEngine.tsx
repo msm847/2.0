@@ -258,13 +258,13 @@ const OPERATORS_V2 = [
     id: "C",
     name: "Compression",
     fullName: "Compression",
-    weight: 0.25,
-    symbol: "ε",
-    glyph: "⟡",
-    affects: ["ε", "P", "A"],
+    weight: 0.15,
+    symbol: "C",
+    glyph: "⊞",
+    affects: ["ε", "P", "R"],
     position_sensitive: true,
-    override_targets: ["R"],
-    color: "#EC4899", // Pink
+    override_targets: ["V", "L"],
+    color: "#8B5CF6", // Purple
     description:
       "Not an actor; amplifies or absorbs risk for all operators within its effective window. Example: Procurement under 'state of emergency' has ε = 0.41; all Soft/Black operators compound.",
     calculation: {
