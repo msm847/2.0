@@ -195,7 +195,7 @@ const boundaryLogicData = {
       id: "ec",
       name: "European Commission",
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
-      logo: "🇪🇺",
+      logo: "���🇺",
       definition:
         "Corruption, commonly referred to as the abuse of entrusted power for private gain, is a multi-sector phenomenon…",
       citation: {
@@ -1032,7 +1032,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         fraud: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Core prohibited practice explicitly covered in NDB policy. [CI]",
           typology: ["CI"],
@@ -1381,7 +1381,6 @@ const BoundaryLogicCarousel = () => {
               color: "#FFFFFF",
               lineHeight: "24px",
               textAlign: "center",
-              flex: 1,
             }}
           >
             {institution.name}
