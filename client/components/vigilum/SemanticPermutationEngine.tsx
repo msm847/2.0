@@ -417,6 +417,41 @@ const OVERRIDE_MATRIX = [
   },
 ];
 
+// V1×V2 Matrix Computation Functions
+const computeMatrixCell = (V1op: any, V2op: any): number => {
+  const alpha = V1op.weight;
+  const beta = V2op.weight;
+  const [h1, s1, b1, w1] = V1op.typology;
+  const [h2, s2, b2, w2] = V2op.typology;
+
+  let base = alpha * beta;
+  let typologyResonance = h1 * h2 + s1 * s2 + b1 * b2 + w1 * w2;
+  let kernel = 1.0;
+
+  // Kernel logic modifiers
+  if (V1op.id === 'O') return 0.0; // Override nullifies interaction
+  if (V1op.id === 'H') kernel *= 0.4; // Hard constraint dampening
+  if (V1op.id === 'XT' && ['S', 'M', 'A'].includes(V2op.id)) kernel *= 1.3; // Extraction amplifies simulation/masking/aggregation
+  if (V1op.id === 'F' && ['C', 'R'].includes(V2op.id)) kernel *= (1 + (Math.random() - 0.5) * 0.2); // Fracture adds noise to compression/reinjection
+  if (V1op.id === 'I' && V2op.typology[2] > 0.7) kernel *= 1.1; // Indirection amplifies high-black operators
+
+  return +(base * (1 + 0.2 * typologyResonance) * kernel);
+};
+
+const getTypologyResonance = (typology1: number[], typology2: number[]): number => {
+  return typology1[0] * typology2[0] + typology1[1] * typology2[1] + typology1[2] * typology2[2] + typology1[3] * typology2[3];
+};
+
+const getKernelModifier = (V1op: any, V2op: any): number => {
+  let kernel = 1.0;
+  if (V1op.id === 'O') return 0.0;
+  if (V1op.id === 'H') kernel *= 0.4;
+  if (V1op.id === 'XT' && ['S', 'M', 'A'].includes(V2op.id)) kernel *= 1.3;
+  if (V1op.id === 'F' && ['C', 'R'].includes(V2op.id)) kernel *= (1 + (Math.random() - 0.5) * 0.2);
+  if (V1op.id === 'I' && V2op.typology[2] > 0.7) kernel *= 1.1;
+  return kernel;
+};
+
 const SemanticPermutationEngine = () => {
   const [operatorVersion, setOperatorVersion] = useState<"v1" | "v2">("v1");
   const [operatorSequence, setOperatorSequence] = useState([
