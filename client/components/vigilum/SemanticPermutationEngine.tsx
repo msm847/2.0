@@ -624,17 +624,20 @@ const SemanticPermutationEngine = () => {
       sequence.forEach(opId => {
         const operator = getCurrentOperators.find(op => op.id === opId);
         if (operator) {
-          if (operator.typology[1] > 0.7) softCount++;
-          if (operator.typology[2] > 0.8) blackCount++;
-          if (operator.typology[0] > 0.6) hardCount++;
-          if (operator.typology[3] > 0.6) whiteCount++;
+          if (operator.typology[1] >= 0.75) softCount++; // Soft >= 0.75
+          if (operator.typology[2] >= 0.70) blackCount++; // Black >= 0.70
+          if (operator.typology[0] >= 0.20) hardCount++; // Hard >= 0.20 (only H has 1.0, others have 0.0-0.20)
+          if (operator.typology[3] >= 0.20) whiteCount++; // White >= 0.20
         }
       });
 
-      if (softCount >= 3) resonanceModifier += 0.15;
-      if (blackCount >= 3) resonanceModifier += 0.20;
-      if (hardCount >= 2) resonanceModifier -= 0.15;
-      if (whiteCount >= 2) resonanceModifier -= 0.10;
+      // Soft/Black clustering = exponential risk
+      if (softCount >= 3) resonanceModifier += 0.20; // Increased from 0.15
+      if (blackCount >= 3) resonanceModifier += 0.25; // Increased from 0.20
+
+      // Hard/White dampening = exponential safety
+      if (hardCount >= 1) resonanceModifier -= 0.15; // H operator present
+      if (whiteCount >= 2) resonanceModifier -= 0.10; // Multiple white operators
 
       if (resonanceModifier !== 0) {
         phi += resonanceModifier;
