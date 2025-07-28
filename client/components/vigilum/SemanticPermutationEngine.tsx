@@ -1455,16 +1455,6 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
           </div>
-                        }}
-                      >
-                        {cell.nullified ? "×" : cell.delta.toFixed(1)}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
 
           {/* Override Resolution Path */}
           <div
