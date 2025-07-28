@@ -183,49 +183,7 @@ const LetterGlitch = ({
         />
       </div>
 
-      {/* Audio for robot voice */}
-      <audio ref={audioRef} preload="auto" onEnded={() => setIsPlaying(false)}>
-        <source
-          src="https://cdn.builder.io/o/assets%2F41e98af6d24e4f21a2289029be813332%2F8e84c7ac708b412881d0ea909addd048?alt=media&token=8e2a75df-3e11-4f03-9345-e6d6a9e37bdf&apiKey=41e98af6d24e4f21a2289029be813332"
-          type="audio/mpeg"
-        />
-        Your browser does not support the audio element.
-      </audio>
 
-      {/* Sound Wave Animation - Audio Indicator */}
-      {animationFinished && (
-        <div
-          style={{
-            ...soundWaveStyle,
-            display: "flex",
-            cursor: "pointer",
-            padding: "10px",
-            position: "absolute",
-          }}
-          onClick={handleAudioClick}
-          title={
-            isPlaying
-              ? "Click to stop robot voice"
-              : "Click to play robot voice"
-          }
-        >
-          {[...Array(4)].map((_, i) => (
-            <div
-              key={i}
-              style={{
-                width: "2px",
-                height: `${10 + i * 4}px`,
-                backgroundColor: isPlaying ? "#40FFAA" : "#6B8673",
-                borderRadius: "1px",
-                animation: isPlaying
-                  ? `soundWave 0.6s ease-in-out infinite ${i * 0.1}s`
-                  : "none",
-                opacity: isPlaying ? 1 : 0.6,
-              }}
-            />
-          ))}
-        </div>
-      )}
 
       {/* Vignette overlays */}
       {outerVignette && <div style={outerVignetteStyle}></div>}
