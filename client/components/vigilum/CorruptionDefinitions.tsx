@@ -195,7 +195,7 @@ const boundaryLogicData = {
       id: "ec",
       name: "European Commission",
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
-      logo: "🇪🇺",
+      logo: "��🇺",
       definition:
         "Corruption is commonly understood as the abuse of entrusted power for private gain, manifesting across multiple sectors and institutional settings. The Commission recognizes the complexity of corruption, including both public and private sector forms, and links it to broader risks for democracy and market integrity.",
       citation: {
@@ -210,7 +210,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Regulated through transparency register but not criminalized unless involving improper influence. [DG]",
           typology: ["DG"],
