@@ -89,7 +89,7 @@ const OPERATORS = [
     position_sensitive: true,
     override_targets: ["H", "XT", "F", "I"],
     color: "#EF4444", // Vigilum red
-    typology: [0.0, 0.8, 0.5, 0.1], // [H, S, B, W]
+    typology: [0.00, 0.85, 0.65, 0.10], // [H, S, B, W]
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
