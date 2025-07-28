@@ -1438,7 +1438,7 @@ const BoundaryLogicCarousel = () => {
               gap: "8px",
               marginTop: "auto",
               paddingTop: "16px",
-              marginBottom: "12px",
+              marginBottom: "6px",
             }}
           >
             <span
