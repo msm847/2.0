@@ -1061,9 +1061,9 @@ const boundaryLogicData = {
       id: "nib",
       name: "NIB",
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
-      logo: "������",
+      logo: "🇳🇴",
       definition:
-        "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
+        "The NIB defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This standard applies across all NIB activities and is designed to prevent undue advantage and conflicts of interest in financing and procurement.",
       citation: {
         text: "NIB Enforcement Policy",
         url: "https://www.nib.int/about/integrity-and-compliance",
