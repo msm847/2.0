@@ -588,7 +588,7 @@ const boundaryLogicData = {
           typology: ["SB"],
         },
         shellCompany: {
-          state: "✓",
+          state: "?",
           tooltip:
             "Addressed through beneficial ownership transparency in IMF operations. [CI]",
           typology: ["CI"],
