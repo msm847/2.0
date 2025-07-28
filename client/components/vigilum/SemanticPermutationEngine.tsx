@@ -706,26 +706,51 @@ const SemanticPermutationEngine = () => {
     [calculatePermutationFormula, operatorVersion],
   );
 
-  // Execute permutation calculation
-  useEffect(() => {
-    const currentSeq = getCurrentSequence();
-    const { finalState: newFinalState, trace } =
-      calculateTensorEffects(currentSeq);
-    setFinalState(newFinalState);
-    setExecutionTrace(trace);
-    setMatrixData(generateMatrixData(trace));
+  // Debounced calculation execution to prevent page crashes
+  const executeCalculations = useCallback(() => {
+    if (isCalculatingRef.current) return;
 
-    const result = generatePermutationResult(currentSeq, newFinalState, trace);
-    setPermutationResult(result);
-    setCalculationBreakdowns(result.mathematical_result.details);
-  }, [
-    operatorSequence,
-    operatorSequenceV2,
-    operatorVersion,
-    calculateTensorEffects,
-    generateMatrixData,
-    generatePermutationResult,
-  ]);
+    isCalculatingRef.current = true;
+    setIsCalculating(true);
+
+    // Use requestAnimationFrame to ensure DOM doesn't block
+    requestAnimationFrame(() => {
+      try {
+        const currentSeq = getCurrentSequence;
+        const { finalState: newFinalState, trace } = calculateTensorEffects(currentSeq);
+
+        setFinalState(newFinalState);
+        setExecutionTrace(trace);
+        setMatrixData(generateMatrixData(trace));
+
+        const result = generatePermutationResult(currentSeq, newFinalState, trace);
+        setPermutationResult(result);
+        setCalculationBreakdowns(result.mathematical_result.details);
+      } catch (error) {
+        console.error('Calculation error:', error);
+      } finally {
+        isCalculatingRef.current = false;
+        setIsCalculating(false);
+      }
+    });
+  }, [getCurrentSequence, calculateTensorEffects, generateMatrixData, generatePermutationResult]);
+
+  // Debounced effect for calculations
+  useEffect(() => {
+    if (calculationTimeoutRef.current) {
+      clearTimeout(calculationTimeoutRef.current);
+    }
+
+    calculationTimeoutRef.current = setTimeout(() => {
+      executeCalculations();
+    }, 100); // 100ms debounce
+
+    return () => {
+      if (calculationTimeoutRef.current) {
+        clearTimeout(calculationTimeoutRef.current);
+      }
+    };
+  }, [operatorSequence, operatorSequenceV2, operatorVersion, executeCalculations]);
 
   // Drag and drop handlers
   const handleDragStart = (e: React.DragEvent, operatorId: string) => {
