@@ -268,17 +268,17 @@ const OPERATORS_V2 = [
     description:
       "Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how \"urgent\" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.",
     calculation: {
-      formula:
-        "ϕ(ε) = ε_env (scalable, typically 0.10–0.45 based on real scenario, can be 0.0 for neutral)",
-      weights: { w1: 1.0 },
+      formula: "ϕ(C) = 0.15·H + 0.20·S + 0.18·B + 0.03·W + γ(Seq,𝓔)",
+      weights: { w1: 0.15, w2: 0.20, w3: 0.18, w4: 0.03 },
       variables: {
-        ε_env: "Environmental disruption coefficient",
-        gamma:
-          "Multiplies risk of adjacent Black/Soft by 1.25–1.45 if high disruption; divides by 0.7 if stabilizing",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "Timeline compression modifier",
       },
     },
-    impact:
-      "External, exogenous, or ambient environmental shift (legal crisis, emergency, war, etc).",
+    impact: "Compresses decision timeframes to prevent meaningful oversight.",
   },
   {
     id: "S",
