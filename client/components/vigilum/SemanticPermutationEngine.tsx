@@ -425,22 +425,22 @@ const SemanticPermutationEngine = () => {
   const calculationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isCalculatingRef = useRef(false);
 
-  // Get current operators based on version
-  const getCurrentOperators = () => {
+  // Memoized current operators and sequence
+  const getCurrentOperators = useMemo(() => {
     return operatorVersion === "v1" ? OPERATORS : OPERATORS_V2;
-  };
+  }, [operatorVersion]);
 
-  const getCurrentSequence = () => {
+  const getCurrentSequence = useMemo(() => {
     return operatorVersion === "v1" ? operatorSequence : operatorSequenceV2;
-  };
+  }, [operatorVersion, operatorSequence, operatorSequenceV2]);
 
-  const setCurrentSequence = (sequence: string[]) => {
+  const setCurrentSequence = useCallback((sequence: string[]) => {
     if (operatorVersion === "v1") {
       setOperatorSequence(sequence);
     } else {
       setOperatorSequenceV2(sequence);
     }
-  };
+  }, [operatorVersion]);
 
   // Toggle card flip
   const toggleCard = (operatorId: string) => {
