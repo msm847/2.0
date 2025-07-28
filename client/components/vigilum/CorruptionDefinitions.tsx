@@ -505,7 +505,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fbea7129300cb4e3ea7054aab432a3622?format=webp&width=800",
       logo: "🏛️",
       definition:
-        "The Foreign Corrupt Practices Act … was enacted for the purpose of making it unlawful … to make payments to foreign government officials to assist in obtaining or retaining business.",
+        "The Foreign Corrupt Practices Act (FCPA) defines corruption through the prohibition of offering, promising, or paying anything of value to foreign officials to obtain or retain business. The law targets both direct and indirect payments, regardless of motive, if intended to secure improper business advantage.",
       citation: {
         text: "US DOJ Criminal Fraud Section, FCPA Unit",
         url: "https://www.justice.gov/criminal/criminal-fraud/foreign-corrupt-practices-act",
