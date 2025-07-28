@@ -160,9 +160,11 @@ const OPERATORS = [
         "ε = w₁ × pressure_coefficient + w���� × temporal_compression + w₃ × distortion_amplitude",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
-        pressure_coefficient: "Environmental pressure intensity on system",
-        temporal_compression: "Degree of accelerated decision requirements",
-        distortion_amplitude: "Magnitude of environmental signal distortion",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "Proxy chain complexity modifier",
       },
     },
     impact:
