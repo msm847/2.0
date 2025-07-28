@@ -302,7 +302,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Addressed through international coordination and regulatory harmonization. [CI]",
           typology: ["CI"],
@@ -999,7 +999,7 @@ const boundaryLogicData = {
       id: "ndb",
       name: "NDB (BRICS)",
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
-      logo: "���",
+      logo: "🌍",
       definition:
         "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
       citation: {
@@ -1336,15 +1336,15 @@ const BoundaryLogicCarousel = () => {
         >
           <div
             style={{
-              width: "60px",
-              height: "60px",
+              width: "80px",
+              height: "80px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               background: "#FFFFFF",
               border: "1px solid #D6DBE3",
               borderRadius: "8px",
-              padding: "6px",
+              padding: "8px",
               boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
               cursor: "pointer",
               flexShrink: 0,
@@ -1361,7 +1361,7 @@ const BoundaryLogicCarousel = () => {
               src={institution.logoUrl}
               alt={`${institution.name} logo`}
               style={{
-                height: "60px",
+                height: "80px",
                 width: "auto",
                 maxWidth: "100%",
                 objectFit: "contain"
@@ -1369,7 +1369,7 @@ const BoundaryLogicCarousel = () => {
               onError={(e) => {
                 // Fallback to emoji if image fails to load
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = `<span style="fontSize: 32px">${institution.logo}</span>`;
+                e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
               }}
             />
           </div>
@@ -1380,7 +1380,7 @@ const BoundaryLogicCarousel = () => {
               fontWeight: "bold",
               color: "#FFFFFF",
               lineHeight: "24px",
-              textAlign: "left",
+              textAlign: "center",
               flex: 1,
             }}
           >
