@@ -528,7 +528,7 @@ const SemanticPermutationEngine = () => {
       });
 
       phi += environmentGradient;
-      formulaTerms.push(`∇𝓔`);
+      formulaTerms.push(`��𝓔`);
 
       return {
         phi,
@@ -916,10 +916,16 @@ const SemanticPermutationEngine = () => {
                 <button
                   onClick={() => {
                     if (isCalculatingRef.current || isCalculating || operatorVersion === "v1") return;
+
+                    // Clear any existing timeout
+                    if (versionSwitchTimeoutRef.current) {
+                      clearTimeout(versionSwitchTimeoutRef.current);
+                    }
+
                     setIsCalculating(true);
                     isCalculatingRef.current = true;
 
-                    setTimeout(() => {
+                    versionSwitchTimeoutRef.current = setTimeout(() => {
                       setOperatorVersion("v1");
                       setFlippedCards(new Set());
                       setMatrixData([]);
@@ -939,10 +945,16 @@ const SemanticPermutationEngine = () => {
                 <button
                   onClick={() => {
                     if (isCalculatingRef.current || isCalculating || operatorVersion === "v2") return;
+
+                    // Clear any existing timeout
+                    if (versionSwitchTimeoutRef.current) {
+                      clearTimeout(versionSwitchTimeoutRef.current);
+                    }
+
                     setIsCalculating(true);
                     isCalculatingRef.current = true;
 
-                    setTimeout(() => {
+                    versionSwitchTimeoutRef.current = setTimeout(() => {
                       setOperatorVersion("v2");
                       setFlippedCards(new Set());
                       setMatrixData([]);
