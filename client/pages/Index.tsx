@@ -82,6 +82,7 @@ export default function Index() {
           width: "100%",
           height: "100%",
           zIndex: 1,
+          backgroundColor: "#0a0f0d",
         }}
       >
         <iframe
