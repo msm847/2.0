@@ -19,8 +19,7 @@ const LetterGlitch = ({
   smooth = true,
   onAnimationFinished,
 }: LetterGlitchProps) => {
-  const [robotLoaded, setRobotLoaded] = useState(false);
-  const [animationFinished, setAnimationFinished] = useState(false);
+
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
