@@ -758,21 +758,9 @@ const SemanticPermutationEngine = () => {
     generatePermutationResult,
   ]);
 
-  // Debounced effect for calculations
+  // Instant calculations
   useEffect(() => {
-    if (calculationTimeoutRef.current) {
-      clearTimeout(calculationTimeoutRef.current);
-    }
-
-    calculationTimeoutRef.current = setTimeout(() => {
-      executeCalculations();
-    }, 250); // Increased debounce for smoother interactions
-
-    return () => {
-      if (calculationTimeoutRef.current) {
-        clearTimeout(calculationTimeoutRef.current);
-      }
-    };
+    executeCalculations();
   }, [
     operatorSequence,
     operatorSequenceV2,
