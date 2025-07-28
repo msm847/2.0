@@ -78,7 +78,7 @@ const OPERATORS = [
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
-      formula: "ϕ(O) = 0.24·H + 0.15·S + 0.27·B + 0.04·W + γ(Seq,𝓔)",
+      formula: "ϕ(O) = 0.24·H + 0.15·S + 0.27·B + 0.04·W + γ(Seq,����)",
       weights: { w1: 0.24, w2: 0.15, w3: 0.27, w4: 0.04 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -240,7 +240,7 @@ const OPERATORS_V2 = [
     override_targets: ["R"],
     color: "#F97316", // Orange
     description:
-      "High-risk, especially if adjacent to Proxy, Liability Shift, or used late. Masking → Override: most hazardous pattern.",
+      "Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system's real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined \"strategic partnerships,\" complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.",
     calculation: {
       formula: "ϕ(M) = 0.05·H + 0.25·S + 0.33·B + 0.02·W + γ(Seq,𝓔)",
       weights: { w1: 0.05, w2: 0.25, w3: 0.33, w4: 0.02 },
