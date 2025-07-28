@@ -363,7 +363,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Addressed through EU coordination and regulatory compliance monitoring. [RT]",
           typology: ["RT"],
