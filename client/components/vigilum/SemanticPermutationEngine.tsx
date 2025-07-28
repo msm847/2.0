@@ -777,24 +777,28 @@ const SemanticPermutationEngine = () => {
     setDraggedOperator(null);
   };
 
-  const shuffleOperators = () => {
-    const currentSeq = getCurrentSequence();
+  const shuffleOperators = useCallback(() => {
+    if (isCalculatingRef.current) return;
+
+    const currentSeq = getCurrentSequence;
     const shuffled = [...currentSeq];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     setCurrentSequence(shuffled);
-  };
+  }, [getCurrentSequence, setCurrentSequence]);
 
-  const resetToDefault = () => {
+  const resetToDefault = useCallback(() => {
+    if (isCalculatingRef.current) return;
+
     if (operatorVersion === "v1") {
-      setOperatorSequence(["O", "L", "P", "A", "R"]);
+      setOperatorSequence(["H", "O", "XT", "F", "I"]);
     } else {
-      setOperatorSequenceV2(["V", "M", "ε", "S", "PM"]);
+      setOperatorSequenceV2(["S", "M", "C", "R", "A"]);
     }
     setFlippedCards(new Set());
-  };
+  }, [operatorVersion]);
 
   const downloadResults = () => {
     const dataStr = JSON.stringify(permutationResult, null, 2);
