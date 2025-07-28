@@ -758,7 +758,7 @@ const SemanticPermutationEngine = () => {
 
     calculationTimeoutRef.current = setTimeout(() => {
       executeCalculations();
-    }, 100); // 100ms debounce
+    }, 250); // Increased debounce for smoother interactions
 
     return () => {
       if (calculationTimeoutRef.current) {
