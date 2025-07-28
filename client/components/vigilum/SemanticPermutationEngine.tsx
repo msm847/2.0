@@ -1140,12 +1140,12 @@ const SemanticPermutationEngine = () => {
 
               {/* Matrix rows - flex to fill remaining space */}
               <div
-                key={`${operatorVersion}-${getCurrentSequence().join("")}`}
+                key={`${operatorVersion}-${getCurrentSequence.join("")}`}
                 className="flex-1 flex flex-col justify-between gap-2"
               >
                 {matrixData.map((row, rowIndex) => (
                   <div
-                    key={`${operatorVersion}-${rowIndex}-${getCurrentSequence()[rowIndex]}`}
+                    key={`${operatorVersion}-${rowIndex}-${getCurrentSequence[rowIndex]}`}
                     className="grid grid-cols-7 gap-2 flex-1"
                   >
                     <div
