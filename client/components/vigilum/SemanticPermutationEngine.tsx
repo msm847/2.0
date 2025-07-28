@@ -1221,10 +1221,10 @@ const SemanticPermutationEngine = () => {
                 <motion.div
                   key={`${operatorVersion}-formula`}
                   className="text-lg font-mono text-white"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.05 }}
-                  transition={{ duration: 0.4, ease: "easeInOut", delay: 0.1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
                   ϕ(c,𝓔) ={" "}
                   {getCurrentSequence.map((op, i) => (
