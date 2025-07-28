@@ -32,8 +32,6 @@ const LetterGlitch = ({
     overflow: "hidden",
   };
 
-
-
   const outerVignetteStyle: React.CSSProperties = {
     position: "absolute",
     top: 0,
@@ -58,10 +56,6 @@ const LetterGlitch = ({
     zIndex: 1,
   };
 
-
-
-
-
   return (
     <div style={containerStyle} className={className}>
       {/* Green background layer */}
@@ -76,10 +70,6 @@ const LetterGlitch = ({
           zIndex: -1,
         }}
       />
-
-
-
-
 
       {/* Vignette overlays */}
       {outerVignette && <div style={outerVignetteStyle}></div>}
