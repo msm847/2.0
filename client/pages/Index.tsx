@@ -84,6 +84,7 @@ export default function Index() {
         }}
       >
         <iframe
+          key="home-spline-animation"
           src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/"
           frameBorder="0"
           width="100%"
