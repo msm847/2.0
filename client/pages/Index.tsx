@@ -70,36 +70,7 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-      {/* Holographic Earth with Dynamic Lines */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
-          backgroundColor: "#10201C",
-        }}
-      >
-        <iframe
-          src="https://my.spline.design/holographicearthwithdynamiclines-VwkcRVjVvz9qJvv9Fl42rDjY/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          allow="accelerometer; autoplay; camera; clipboard-write; encrypted-media; fullscreen; gyroscope; magnetometer; microphone; midi; payment; picture-in-picture; publickey-credentials-get; sync-xhr; usb; web-share; xr-spatial-tracking"
-          allowFullScreen
-          sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
-          style={{
-            border: "none",
-            display: "block",
-            width: "100%",
-            height: "100%",
-            colorScheme: "only light",
-          }}
-          onLoad={() => setRobotAnimationFinished(true)}
-        />
-      </div>
+
 
       {/* VIGILUM Logo - Company Name */}
       <div
