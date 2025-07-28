@@ -112,16 +112,7 @@ export default function Index() {
             : "translateX(-50%) translateY(20px)",
         }}
       >
-        <h1
-          style={{
-            margin: 0,
-            fontSize: "1.5rem",
-            fontWeight: "900",
-            fontStyle: "normal",
-          }}
-        >
-          VIGILUM
-        </h1>
+
       </div>
 
       {/* Content Overlay */}
