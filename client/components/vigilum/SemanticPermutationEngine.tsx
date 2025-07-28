@@ -105,7 +105,7 @@ const OPERATORS = [
       "Extraction/Transfer is the core operator through which value, risk, decision rights, or liability are structurally moved out of the originating system, either to external entities, hidden intermediaries, or parallel structures. It operates regardless of surface compliance: whenever a contract, statute, or policy grants the right to shift money, responsibility, or control beyond the oversight boundary, this operator is in play. Extraction may be explicit (fees to an offshore partner, liability shifted to a subcontractor) or disguised (service flows through opaque SPVs), but in every case it severs the internal chain of accountability. This operator is what transforms system resilience into system exposure: once activated, internal safeguards, audits, or rules have no purchase over the extracted asset or risk. In governance and procurement, repeated application of extraction/transfer is the primary channel for laundering, asset flight, or regulatory arbitrage.",
     calculation: {
       formula:
-        "R = w₁ �� pattern_strength + w₂ × automation_depth + w₃ × override_resistance",
+        "ϕ(XT) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         pattern_strength: "Degree of institutionalized response patterns",
