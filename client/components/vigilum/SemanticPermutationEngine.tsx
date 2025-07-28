@@ -189,7 +189,7 @@ const OPERATORS = [
       "Reflex risk is contextual: reduces actor discretion, but can be weaponized if environment operator (𝓔) is high entropy/disordered.",
     calculation: {
       formula:
-        "O = w��� × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
+        "O = w₁ × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         bypass_strength: "Capacity to circumvent standard procedures",
@@ -1192,16 +1192,8 @@ const SemanticPermutationEngine = () => {
             <div className="text-sm font-mono text-gray-400 mb-2">
               LIVE MATHEMATICAL FORMULA
             </div>
-            <AnimatePresence mode="wait">
-              {permutationResult && !isCalculating && (
-                <motion.div
-                  key={`${operatorVersion}-formula`}
-                  className="text-lg font-mono text-white"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
+            {permutationResult && !isCalculating && (
+              <div className="text-lg font-mono text-white">
                   ϕ(c,𝓔) ={" "}
                   {getCurrentSequence.map((op, i) => (
                     <span key={`${operatorVersion}-${op}-${i}`}>
