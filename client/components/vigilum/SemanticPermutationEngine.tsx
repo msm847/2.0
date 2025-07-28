@@ -259,7 +259,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F97316", // Orange
-    typology: [0.0, 0.9, 1.0, 0.1], // [H, S, B, W]
+    typology: [0.00, 0.85, 1.00, 0.05], // [H, S, B, W]
     description:
       'Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system\'s real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined "strategic partnerships," complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.',
     calculation: {
