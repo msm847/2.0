@@ -401,7 +401,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         shellCompany: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Addressed through UNCAC asset recovery and beneficial ownership provisions. [CI]",
           typology: ["CI"],
@@ -736,7 +736,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Addressed through EU regulatory coordination and project compliance. [DG]",
           typology: ["DG"],
