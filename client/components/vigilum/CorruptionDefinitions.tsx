@@ -859,7 +859,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Addressed through regional regulatory coordination and governance support. [DG]",
           typology: ["DG"],
