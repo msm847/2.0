@@ -86,6 +86,9 @@ export default function Index() {
           frameBorder="0"
           width="100%"
           height="100%"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
           style={{
             border: "none",
             display: "block",
@@ -93,9 +96,14 @@ export default function Index() {
             top: 0,
             left: 0,
             zIndex: 1,
-            pointerEvents: "none",
+            pointerEvents: "auto",
+            background: "#10201C",
           }}
           onLoad={() => setRobotAnimationFinished(true)}
+          onError={() => {
+            console.error("Failed to load Spline earth animation");
+            setRobotAnimationFinished(true);
+          }}
         />
       </div>
 
