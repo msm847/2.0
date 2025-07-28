@@ -1080,7 +1080,9 @@ const SemanticPermutationEngine = () => {
                   if (opId === "O") positionalModifier = 0.15;
                   else if (opId === "XT") positionalModifier = 0.12;
                 }
-                if (index === 0 && opId === "H") positionalModifier = -0.10;
+                if (index === 0 && opId === "H") {
+                  positionalModifier = -0.10;
+                }
 
                 const effectiveWeight = operator.weight * (1 + environmentalModifier) + positionalModifier;
 
