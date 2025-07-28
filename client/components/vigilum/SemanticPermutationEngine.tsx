@@ -1217,12 +1217,29 @@ const SemanticPermutationEngine = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Matrix Visualizer */}
           <div
-            className="rounded-lg p-6 border h-full flex flex-col"
+            className="rounded-lg p-6 border h-full flex flex-col relative"
             style={{
               backgroundColor: "rgba(16, 44, 34, 0.7)",
               borderColor: "rgba(34, 68, 54, 0.8)",
             }}
           >
+            {/* Calculating overlay */}
+            <AnimatePresence>
+              {isCalculating && (
+                <motion.div
+                  className="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm rounded-lg z-10 flex items-center justify-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
+                    <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
+                    <span className="text-sm font-mono text-green-400">Calculating...</span>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
             <div className="flex items-center justify-between mb-4 flex-shrink-0">
               <h3 className="text-lg font-bold text-white font-mono">
                 EXECUTION MATRIX
