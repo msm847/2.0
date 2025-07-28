@@ -1329,8 +1329,7 @@ const SemanticPermutationEngine = () => {
                   </div>
                 ))}
               </div>
-              </motion.div>
-            </AnimatePresence>
+            </div>
           </div>
 
           {/* Override Resolution Path */}
