@@ -284,7 +284,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         cronyism: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Relevant when involving financial flows that could constitute money laundering. [RT]",
           typology: ["RT"],
