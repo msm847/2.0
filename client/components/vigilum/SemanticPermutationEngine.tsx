@@ -306,13 +306,14 @@ const OPERATORS_V2 = [
     id: "R",
     name: "Reinjection",
     fullName: "Reinjection",
-    weight: 0.18,
+    weight: 0.50, // Updated baseline weight
     symbol: "R",
     glyph: "⟲",
     affects: ["L", "A", "V"],
     position_sensitive: true,
     override_targets: ["P", "ε"],
     color: "#EF4444", // Red
+    typology: [0.0, 0.7, 0.6, 0.2], // [H, S, B, W]
     description:
       'Reinjection brings previously excluded, neutralized, or extracted risk, value, or process back into the system through a new channel, often after surface closure or apparent remediation. This operator allows systems to "recycle" loopholes, funds, or structural exposures by rebranding, repackaging, or relaunching them under a different guise. Reinjection is critical in systems with dynamic oversight: whenever a risk pathway appears to have been blocked, but later resurfaces via a different actor, fund, or clause, reinjection is at work. It is the structural answer to "loophole whack-a-mole"—no matter how many times a vulnerability is closed, the logic of reinjection guarantees its return unless the system is hardened at the root.',
     calculation: {
