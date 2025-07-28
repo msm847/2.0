@@ -305,8 +305,7 @@ const OPERATORS_V2 = [
         gamma: "Reinjection pathway modifier",
       },
     },
-    impact:
-      "Increasing 'N' amplifies network effects and relationship-based influence mechanisms.",
+    impact: "Reintroduces previously neutralized risks through new channels.",
   },
   {
     id: "PM",
