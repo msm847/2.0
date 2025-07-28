@@ -582,7 +582,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "–",
+          state: "✓",
           tooltip:
             "Legal advocacy excluded from IMF prohibited practices framework. [SB]",
           typology: ["SB"],
