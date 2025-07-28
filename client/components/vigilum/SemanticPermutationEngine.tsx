@@ -615,24 +615,7 @@ const SemanticPermutationEngine = () => {
         formulaTerms.push(`${adjacencySum > 0 ? '+' : ''}${adjacencySum.toFixed(2)}λ`);
       }
 
-      // 3. Positional modifiers (ρᵢ)
-      let positionalSum = 0;
-      sequence.forEach((opId, index) => {
-        let positionalModifier = 0;
-        // End amplification
-        if (index === sequence.length - 1) {
-          if (opId === "O") positionalModifier = 0.15;
-          else if (opId === "XT") positionalModifier = 0.12;
-        }
-        // Start dampening
-        if (index === 0 && opId === "H") positionalModifier = -0.10;
-        positionalSum += positionalModifier;
-      });
-
-      if (positionalSum !== 0) {
-        phi += positionalSum;
-        formulaTerms.push(`${positionalSum > 0 ? '+' : ''}${positionalSum.toFixed(2)}ρ`);
-      }
+      // 3. Positional modifiers are now integrated into individual operator weights above
 
       // 4. Typology resonance (γ)
       let resonanceModifier = 0;
@@ -1187,7 +1170,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {/* Scroll hint */}
                         <div className="text-xs text-gray-500 font-mono mb-2">
-                          <span className="text-lg">��</span> Scroll for more
+                          <span className="text-lg">↓</span> Scroll for more
                           details
                         </div>
 
