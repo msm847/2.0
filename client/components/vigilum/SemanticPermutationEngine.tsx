@@ -839,7 +839,9 @@ const SemanticPermutationEngine = () => {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
       }
       setCurrentSequence(shuffled);
-      // Note: isCalculating will be set to false by executeCalculations
+      // Reset calculating state - executeCalculations will handle the real calculations
+      setIsCalculating(false);
+      isCalculatingRef.current = false;
     }, 50);
   }, [getCurrentSequence, setCurrentSequence]);
 
