@@ -328,7 +328,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Core investigative focus under Lithuanian criminal law. [CI]",
           typology: ["CI"],
