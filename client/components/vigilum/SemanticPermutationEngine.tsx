@@ -266,7 +266,7 @@ const OPERATORS_V2 = [
     override_targets: ["V", "L"],
     color: "#8B5CF6", // Purple
     description:
-      "Not an actor; amplifies or absorbs risk for all operators within its effective window. Example: Procurement under 'state of emergency' has ε = 0.41; all Soft/Black operators compound.",
+      "Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how \"urgent\" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.",
     calculation: {
       formula:
         "ϕ(ε) = ε_env (scalable, typically 0.10–0.45 based on real scenario, can be 0.0 for neutral)",
