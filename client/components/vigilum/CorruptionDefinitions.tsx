@@ -548,7 +548,7 @@ const boundaryLogicData = {
           typology: ["RT"],
         },
         regulatoryArbitrage: {
-          state: "?",
+          state: "–",
           tooltip:
             "Addressed through international coordination and extraterritorial jurisdiction. [DG]",
           typology: ["DG"],
@@ -953,7 +953,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "��",
+          state: "–",
           tooltip:
             "Legal advocacy excluded from IDB prohibited practices scope. [SB]",
           typology: ["SB"],
