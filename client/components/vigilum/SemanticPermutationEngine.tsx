@@ -145,7 +145,7 @@ const OPERATORS = [
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F59E0B", // Amber
-    typology: [0.2, 0.8, 0.7, 0.1], // [H, S, B, W]
+    typology: [0.20, 0.80, 0.75, 0.15], // [H, S, B, W]
     description:
       'Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system\'s outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about "multiple signatures" or "distributed roles"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.',
     calculation: {
@@ -1621,7 +1621,7 @@ const SemanticPermutationEngine = () => {
                   <div className="text-sm font-bold text-white font-mono">
                     {permutationResult.mathematical_result.phi.toFixed(3)}
                   </div>
-                  <div className="text-xs text-gray-400">�� RESULT</div>
+                  <div className="text-xs text-gray-400">���� RESULT</div>
                 </div>
                 <div
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
