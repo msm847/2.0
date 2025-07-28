@@ -257,7 +257,7 @@ const boundaryLogicData = {
       id: "fatf",
       name: "FATF",
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd90d804729d2429aa2af488e9a85fa01?format=webp&width=800",
-      logo: "💰",
+      logo: "����",
       definition:
         "Corruption refers to the misuse of public office or powers for personal benefit, including acts such as bribery, embezzlement, trading in influence, and abuse of functions. FATF focuses on corruption's integration with money laundering and the concealment of illicit proceeds within the financial system.",
       citation: {
@@ -382,7 +382,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F2c460fd7acf5492ab1e8a4edccb8c3c9?format=webp&width=800",
       logo: "🌍",
       definition:
-        "UNODC acknowledges corruption as a 'fluid and evolving concept, signifying different things to different people' but describes it broadly as 'the misuse of public power, office or authority for private benefit, through bribery, extortion, influence peddling, nepotism, fraud or embezzlement.'",
+        "Corruption, while lacking a universal definition, is generally described as the misuse of entrusted power for private benefit—including bribery, extortion, nepotism, fraud, and embezzlement. UNODC highlights that the forms and perceptions of corruption vary across legal, cultural, and institutional contexts.",
       citation: {
         text: "UNODC, What is Corruption",
         url: "https://www.unodc.org/corruption/en/learn/what-is-corruption.html",
