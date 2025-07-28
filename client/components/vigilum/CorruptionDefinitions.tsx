@@ -730,7 +730,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "✓",
+          state: "?",
           tooltip:
             "Addressed through AML compliance and financial crime prevention measures. [CI]",
           typology: ["CI"],
