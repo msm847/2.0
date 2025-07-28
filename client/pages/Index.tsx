@@ -94,7 +94,7 @@ export default function Index() {
             display: "block",
             width: "100%",
             height: "100%",
-            pointerEvents: "none",
+            pointerEvents: "auto",
           }}
           onLoad={() => setRobotAnimationFinished(true)}
         />
