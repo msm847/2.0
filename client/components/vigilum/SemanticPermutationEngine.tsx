@@ -298,9 +298,11 @@ const OPERATORS_V2 = [
         "N = w₁ × network_density + w₂ × influence_centrality + w�� × dependency_depth",
       weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
       variables: {
-        network_density: "Concentration of actor relationships",
-        influence_centrality: "Degree of centralized influence distribution",
-        dependency_depth: "Structural dependency complexity",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "Reinjection pathway modifier",
       },
     },
     impact:
