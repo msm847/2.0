@@ -163,6 +163,26 @@ export default function Index() {
           </h1>
         </GradientText>
 
+        <div style={{ display: "block", width: "100%", marginTop: "1rem" }}>
+          <GradientText
+            colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
+            animationSpeed={8}
+          >
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "1.1rem",
+                fontWeight: "700",
+                margin: "0 0 1.5rem 0",
+                letterSpacing: "0.5px",
+                lineHeight: 1.4,
+                display: "block",
+              }}
+            >
+              Truth is not fixed.<br />It is rendered by the logic that observes it.
+            </p>
+          </GradientText>
+        </div>
 
         {/* Buttons Container - Inside content overlay */}
         <div
