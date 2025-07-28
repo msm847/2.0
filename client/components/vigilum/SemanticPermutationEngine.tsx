@@ -753,15 +753,15 @@ const SemanticPermutationEngine = () => {
   }, [operatorSequence, operatorSequenceV2, operatorVersion, executeCalculations]);
 
   // Drag and drop handlers
-  const handleDragStart = (e: React.DragEvent, operatorId: string) => {
+  const handleDragStart = useCallback((e: React.DragEvent, operatorId: string) => {
     setDraggedOperator(operatorId);
     e.dataTransfer.effectAllowed = "move";
-  };
+  }, []);
 
-  const handleDragOver = (e: React.DragEvent) => {
+  const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = "move";
-  };
+  }, []);
 
   const handleDrop = useCallback((e: React.DragEvent, targetIndex: number) => {
     e.preventDefault();
