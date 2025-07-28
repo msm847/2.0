@@ -135,7 +135,7 @@ const OPERATORS = [
       "This operator quantifies environmental pressure effects and temporal distortions that compress decision timeframes and alter system responses under stress conditions.",
     calculation: {
       formula:
-        "ε = w₁ × pressure_coefficient + w��� × temporal_compression + w₃ × distortion_amplitude",
+        "ε = w₁ × pressure_coefficient + w���� × temporal_compression + w₃ × distortion_amplitude",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         pressure_coefficient: "Environmental pressure intensity on system",
@@ -380,11 +380,11 @@ const SemanticPermutationEngine = () => {
     "I",
   ]);
   const [operatorSequenceV2, setOperatorSequenceV2] = useState([
-    "V",
-    "M",
-    "ε",
     "S",
-    "PM",
+    "M",
+    "C",
+    "R",
+    "A",
   ]);
   const [draggedOperator, setDraggedOperator] = useState<string | null>(null);
   const [executionTrace, setExecutionTrace] = useState<any[]>([]);
