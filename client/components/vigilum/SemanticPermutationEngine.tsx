@@ -647,7 +647,6 @@ const SemanticPermutationEngine = () => {
         details: calculationDetails,
         v1Vector: v1Vector,
         adjacencySum: adjacencySum,
-        positionalSum: positionalSum,
         resonanceModifier: resonanceModifier,
       };
     },
@@ -1821,7 +1820,7 @@ const SemanticPermutationEngine = () => {
                   className="mb-6"
                 >
                   <h4 className="text-sm font-bold text-white font-mono mb-4">
-                    TEMPORAL EXECUTION TRACE (t��� → t₅)
+                    TEMPORAL EXECUTION TRACE (t��� → t���)
                   </h4>
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {executionTrace.map((step, index) => (
