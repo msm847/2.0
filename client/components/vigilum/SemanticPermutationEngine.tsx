@@ -851,7 +851,7 @@ const SemanticPermutationEngine = () => {
     // Immediate visual feedback
     setIsCalculating(true);
 
-    // Use timeout to ensure visual feedback shows immediately
+    // Use timeout for 2-second calculating feedback
     setTimeout(() => {
       if (operatorVersion === "v1") {
         setOperatorSequence(["H", "O", "XT", "F", "I"]);
@@ -859,10 +859,10 @@ const SemanticPermutationEngine = () => {
         setOperatorSequenceV2(["S", "M", "C", "R", "A"]);
       }
       setFlippedCards(new Set());
-      // Reset calculating state - executeCalculations will handle the real calculations
+      // Reset calculating state after 2 seconds
       setIsCalculating(false);
       isCalculatingRef.current = false;
-    }, 50);
+    }, 2000);
   }, [operatorVersion]);
 
   const downloadResults = useCallback(() => {
