@@ -1078,13 +1078,36 @@ const SemanticPermutationEngine = () => {
                   if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) environmentalModifier -= 0.12;
                 }
 
-                // Positional modifier
-                if (index === getCurrentSequence.length - 1) {
-                  if (opId === "O") positionalModifier = 0.15;
-                  else if (opId === "XT") positionalModifier = 0.12;
+                // Comprehensive typology-based positional modifiers
+                const [h, s, b, w] = operator.typology;
+
+                // START POSITION EFFECTS
+                if (index === 0) {
+                  // Hard operators at start dampen risk (-0.10 to -0.15)
+                  if (h >= 0.20) positionalModifier = -0.15;
+                  // Soft/Black operators at start create early risk (+0.05 to +0.08)
+                  else if (s >= 0.75 || b >= 0.70) positionalModifier = +0.08;
                 }
-                if (index === 0 && opId === "H") {
-                  positionalModifier = -0.10;
+
+                // END POSITION EFFECTS
+                else if (index === getCurrentSequence.length - 1) {
+                  // Soft/Black operators at end spike risk (+0.10 to +0.20)
+                  if (s >= 0.75 && b >= 0.70) positionalModifier = +0.20; // Both Soft AND Black
+                  else if (s >= 0.75) positionalModifier = +0.15; // Soft operators
+                  else if (b >= 0.70) positionalModifier = +0.12; // Black operators
+
+                  // White operators at end provide transparency dampening (-0.08)
+                  if (w >= 0.20) positionalModifier = -0.08;
+                }
+
+                // MIDDLE POSITIONS (index 1, 2, 3)
+                else {
+                  // Central Soft/Black clustering gets small bonus (+0.03 to +0.05)
+                  if (s >= 0.80 && b >= 0.70) positionalModifier = +0.05;
+                  else if (s >= 0.75 || b >= 0.70) positionalModifier = +0.03;
+
+                  // Hard/White in middle provides stability (-0.03)
+                  if (h >= 0.20 || w >= 0.30) positionalModifier = -0.03;
                 }
 
                 const effectiveWeight = operator.weight * (1 + environmentalModifier) + positionalModifier;
