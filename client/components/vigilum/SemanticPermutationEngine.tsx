@@ -1518,12 +1518,29 @@ const SemanticPermutationEngine = () => {
         {permutationResult && (
           <div className="mb-12">
             <div
-              className="rounded-lg p-4 border"
+              className="rounded-lg p-4 border relative"
               style={{
                 backgroundColor: "rgba(16, 44, 34, 0.7)",
                 borderColor: "rgba(34, 68, 54, 0.8)",
               }}
             >
+              {/* Calculating overlay */}
+              <AnimatePresence>
+                {isCalculating && (
+                  <motion.div
+                    className="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm rounded-lg z-10 flex items-center justify-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
+                      <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
+                      <span className="text-sm font-mono text-green-400">Calculating...</span>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-white font-mono">
                   PERMUTATION RESULTS
