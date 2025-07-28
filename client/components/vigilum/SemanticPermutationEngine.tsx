@@ -113,7 +113,7 @@ const OPERATORS = [
     weight: 0.80, // Updated baseline weight
     symbol: "L",
     glyph: "⧨",
-    typology: [0.1, 0.6, 1.0, 0.2], // [H, S, B, W]
+    typology: [0.10, 0.60, 1.00, 0.20], // [H, S, B, W]
     affects: ["R", "P", "V"],
     position_sensitive: true,
     override_targets: ["ε"],
