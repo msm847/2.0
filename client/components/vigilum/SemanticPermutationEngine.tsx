@@ -711,34 +711,41 @@ const SemanticPermutationEngine = () => {
     [calculatePermutationFormula, operatorVersion],
   );
 
-  // Debounced calculation execution to prevent page crashes
+  // Progressive calculation execution for maximum smoothness
   const executeCalculations = useCallback(() => {
     if (isCalculatingRef.current) return;
 
     isCalculatingRef.current = true;
     setIsCalculating(true);
 
-    // Use requestAnimationFrame to ensure DOM doesn't block
+    // Split calculations across multiple frames for smoothness
     requestAnimationFrame(() => {
       try {
         const currentSeq = getCurrentSequence;
-        const { finalState: newFinalState, trace } =
-          calculateTensorEffects(currentSeq);
 
-        setFinalState(newFinalState);
-        setExecutionTrace(trace);
-        setMatrixData(generateMatrixData(trace));
+        // First frame: Calculate tensor effects
+        requestAnimationFrame(() => {
+          const { finalState: newFinalState, trace } = calculateTensorEffects(currentSeq);
+          setFinalState(newFinalState);
+          setExecutionTrace(trace);
 
-        const result = generatePermutationResult(
-          currentSeq,
-          newFinalState,
-          trace,
-        );
-        setPermutationResult(result);
-        setCalculationBreakdowns(result.mathematical_result.details);
+          // Second frame: Generate matrix and permutation results
+          requestAnimationFrame(() => {
+            setMatrixData(generateMatrixData(trace));
+
+            // Third frame: Final result calculation
+            requestAnimationFrame(() => {
+              const result = generatePermutationResult(currentSeq, newFinalState, trace);
+              setPermutationResult(result);
+              setCalculationBreakdowns(result.mathematical_result.details);
+
+              isCalculatingRef.current = false;
+              setIsCalculating(false);
+            });
+          });
+        });
       } catch (error) {
         console.error("Calculation error:", error);
-      } finally {
         isCalculatingRef.current = false;
         setIsCalculating(false);
       }
