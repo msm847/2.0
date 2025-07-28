@@ -853,7 +853,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "��",
+          state: "?",
           tooltip:
             "Addressed through AML compliance and integrity due diligence. [CI]",
           typology: ["CI"],
