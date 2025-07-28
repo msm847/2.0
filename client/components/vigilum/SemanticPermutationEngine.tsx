@@ -425,6 +425,7 @@ const SemanticPermutationEngine = () => {
 
   // Refs for debouncing and performance
   const calculationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const versionSwitchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isCalculatingRef = useRef(false);
 
   // Memoized current operators and sequence
