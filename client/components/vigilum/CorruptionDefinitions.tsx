@@ -1001,7 +1001,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
       logo: "🌍",
       definition:
-        "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
+        "The NDB (BRICS) defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. The definition is enforced to maintain integrity in all NDB-related operations, contracts, and financial instruments.",
       citation: {
         text: "NDB Anti-Corruption Anti-Fraud and Anti-Money Laundering Policy",
         url: "https://www.ndb.int/wp-content/uploads/2024/10/IEO-CLE-PolicyFramework.pdf",
