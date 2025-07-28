@@ -632,8 +632,8 @@ const PerceptionPerspective = () => {
         </div>
       </div>
 
-      {/* Global Corruption Count - shown on all pages except home */}
-      {location.pathname !== "/" &&
+      {/* Global Corruption Count - shown on all pages including home */}
+      {
         createPortal(
           <div
             style={{
