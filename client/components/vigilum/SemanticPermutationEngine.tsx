@@ -323,7 +323,7 @@ const OPERATORS_V2 = [
     description:
       'Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
     calculation: {
-      formula: "ϕ(A) = 0.12��H + 0.16·S + 0.14·B + 0.08·W + γ(Seq,𝓔)",
+      formula: "ϕ(A) = 0.12·H + 0.16·S + 0.14·B + 0.08·W + γ(Seq,𝓔)",
       weights: { w1: 0.12, w2: 0.16, w3: 0.14, w4: 0.08 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -980,10 +980,10 @@ const SemanticPermutationEngine = () => {
                       setMatrixData([]);
                       setExecutionTrace([]);
                       setPermutationResult(null);
-                      // Reset calculating state after 2 seconds
+                      // Reset calculating state after 1 second
                       setIsCalculating(false);
                       isCalculatingRef.current = false;
-                    }, 2000);
+                    }, 1000);
                   }}
                   disabled={isCalculating || operatorVersion === "v2"}
                   className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ${
