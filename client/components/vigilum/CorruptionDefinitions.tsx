@@ -1325,9 +1325,9 @@ const BoundaryLogicCarousel = () => {
             ? `0 12px 30px rgba(24,41,27,0.08)`
             : "0 2px 6px rgba(24,41,27,0.04)",
           cursor: "default",
-          width: "320px",
+          width: "360px",
           height: "auto",
-          minHeight: "650px",
+          minHeight: "720px",
           flexShrink: 0,
           transform: isActive ? "scale(1.04)" : "scale(1)",
           zIndex: isActive ? 2 : 1,
@@ -1938,7 +1938,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪���",
+          logo: "������",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
