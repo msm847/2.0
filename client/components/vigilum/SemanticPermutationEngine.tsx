@@ -495,8 +495,8 @@ const SemanticPermutationEngine = () => {
     [],
   );
 
-  // Memoized enhanced formula calculation
-  const calculatePermutationFormula = useMemo(() =>
+  // Enhanced formula calculation
+  const calculatePermutationFormula = useCallback(
     (sequence: string[]) => {
       const environmentGradient = 0.15; // ∇𝓔 base value
       let phi = 0;
@@ -531,7 +531,7 @@ const SemanticPermutationEngine = () => {
         environmentGradient,
       };
     },
-    [calculateOperatorValue, operatorVersion],
+    [calculateOperatorValue, getCurrentOperators],
   );
 
   // Calculate tensor effects based on operator sequence
