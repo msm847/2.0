@@ -797,7 +797,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Addressed through transition economy regulatory development. [DG]",
           typology: ["DG"],
