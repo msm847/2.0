@@ -195,11 +195,6 @@ const LetterGlitch = ({
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.1); }
         }
-
-        @keyframes soundWave {
-          0%, 100% { transform: scaleY(0.4); }
-          50% { transform: scaleY(1); }
-        }
       `}</style>
     </div>
   );
