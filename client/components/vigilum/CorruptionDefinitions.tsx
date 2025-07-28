@@ -1323,29 +1323,30 @@ const BoundaryLogicCarousel = () => {
           transition: { duration: 0.2 },
         }}
       >
-        {/* Logo and Institution Header */}
+        {/* Logo and Institution Header - Horizontal Layout */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
+            flexDirection: "row",
             alignItems: "center",
             marginBottom: "16px",
-            textAlign: "center",
+            gap: "15px",
           }}
         >
           <div
             style={{
-              width: "80px",
-              height: "80px",
+              width: "60px",
+              height: "60px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "transparent",
-              border: "none",
+              background: "#FFFFFF",
+              border: "1px solid #D6DBE3",
               borderRadius: "8px",
-              padding: "0px",
+              padding: "6px",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
               cursor: "pointer",
-              marginBottom: "12px",
+              flexShrink: 0,
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -1359,7 +1360,7 @@ const BoundaryLogicCarousel = () => {
               src={institution.logoUrl}
               alt={`${institution.name} logo`}
               style={{
-                height: "80px",
+                height: "60px",
                 width: "auto",
                 maxWidth: "100%",
                 objectFit: "contain"
@@ -1367,7 +1368,7 @@ const BoundaryLogicCarousel = () => {
               onError={(e) => {
                 // Fallback to emoji if image fails to load
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
+                e.target.parentElement.innerHTML = `<span style="fontSize: 32px">${institution.logo}</span>`;
               }}
             />
           </div>
@@ -1378,7 +1379,8 @@ const BoundaryLogicCarousel = () => {
               fontWeight: "bold",
               color: "#FFFFFF",
               lineHeight: "24px",
-              textAlign: "center",
+              textAlign: "left",
+              flex: 1,
             }}
           >
             {institution.name}
@@ -2264,7 +2266,7 @@ const institutionalData = {
       institutions: [
         {
           name: "Transparency International",
-          logo: "��",
+          logo: "🔍",
           definition:
             "Corruption is the abuse of entrusted power for private gain.",
           source: "Transparency International, official website",
