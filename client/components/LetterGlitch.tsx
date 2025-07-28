@@ -19,11 +19,10 @@ const LetterGlitch = ({
   smooth = true,
   onAnimationFinished,
 }: LetterGlitchProps) => {
-
-
-
-
-
+  // Call animation finished immediately since there's no animation
+  useEffect(() => {
+    onAnimationFinished?.();
+  }, [onAnimationFinished]);
 
   const containerStyle: React.CSSProperties = {
     position: "relative",
