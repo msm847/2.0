@@ -1265,18 +1265,18 @@ const SemanticPermutationEngine = () => {
             <div className="space-y-2 max-h-64 overflow-y-auto">
               {OVERRIDE_MATRIX.filter(
                 (override) =>
-                  getCurrentSequence().includes(override.from) &&
-                  getCurrentSequence().includes(override.to),
+                  getCurrentSequence.includes(override.from) &&
+                  getCurrentSequence.includes(override.to),
               ).map((override, index) => {
-                const fromOp = getCurrentOperators().find(
+                const fromOp = getCurrentOperators.find(
                   (op) => op.id === override.from,
                 );
-                const toOp = getCurrentOperators().find(
+                const toOp = getCurrentOperators.find(
                   (op) => op.id === override.to,
                 );
                 if (!fromOp || !toOp) return null;
-                const fromIndex = getCurrentSequence().indexOf(override.from);
-                const toIndex = getCurrentSequence().indexOf(override.to);
+                const fromIndex = getCurrentSequence.indexOf(override.from);
+                const toIndex = getCurrentSequence.indexOf(override.to);
                 const isActive =
                   fromIndex < toIndex && fromIndex !== -1 && toIndex !== -1;
 
