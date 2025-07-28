@@ -386,7 +386,7 @@ const OVERRIDE_MATRIX = [
     strength: 0.5,
   },
   {
-    from: "��",
+    from: "ε",
     to: "R",
     effect:
       "Environmental distortion destabilizes institutional reflex structures",
@@ -944,6 +944,9 @@ const SemanticPermutationEngine = () => {
                       setMatrixData([]);
                       setExecutionTrace([]);
                       setPermutationResult(null);
+                      // Reset calculating state immediately after version switch
+                      setIsCalculating(false);
+                      isCalculatingRef.current = false;
                     }, 50);
                   }}
                   disabled={isCalculating || operatorVersion === "v1"}
