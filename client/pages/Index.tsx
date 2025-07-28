@@ -342,7 +342,7 @@ export default function Index() {
             marginBottom: "2px",
           }}
         >
-          $47,832,156
+          ${globalLoss.toLocaleString()}
         </div>
         <div
           style={{
