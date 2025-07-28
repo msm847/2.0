@@ -530,7 +530,7 @@ const boundaryLogicData = {
           typology: ["RT"],
         },
         cronyism: {
-          state: "–",
+          state: "?",
           tooltip:
             "Not within FCPA scope unless involving foreign official bribery. [SB]",
           typology: ["SB"],
@@ -953,7 +953,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "–",
+          state: "��",
           tooltip:
             "Legal advocacy excluded from IDB prohibited practices scope. [SB]",
           typology: ["SB"],
