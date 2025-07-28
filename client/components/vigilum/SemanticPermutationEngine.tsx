@@ -62,7 +62,8 @@ const OPERATORS = [
         gamma: "Environmental context modifier",
       },
     },
-    impact: "Creates immutable structural boundaries that resist all override attempts.",
+    impact:
+      "Creates immutable structural boundaries that resist all override attempts.",
   },
   {
     id: "O",
@@ -88,7 +89,8 @@ const OPERATORS = [
         gamma: "Override sequence context modifier",
       },
     },
-    impact: "Enables systematic bypass of established constraints and procedures.",
+    impact:
+      "Enables systematic bypass of established constraints and procedures.",
   },
   {
     id: "XT",
@@ -104,8 +106,7 @@ const OPERATORS = [
     description:
       "Extraction/Transfer is the core operator through which value, risk, decision rights, or liability are structurally moved out of the originating system, either to external entities, hidden intermediaries, or parallel structures. It operates regardless of surface compliance: whenever a contract, statute, or policy grants the right to shift money, responsibility, or control beyond the oversight boundary, this operator is in play. Extraction may be explicit (fees to an offshore partner, liability shifted to a subcontractor) or disguised (service flows through opaque SPVs), but in every case it severs the internal chain of accountability. This operator is what transforms system resilience into system exposure: once activated, internal safeguards, audits, or rules have no purchase over the extracted asset or risk. In governance and procurement, repeated application of extraction/transfer is the primary channel for laundering, asset flight, or regulatory arbitrage.",
     calculation: {
-      formula:
-        "ϕ(XT) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
+      formula: "ϕ(XT) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
       weights: { w1: 0.13, w2: 0.16, w3: 0.2, w4: 0.07 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -130,7 +131,7 @@ const OPERATORS = [
     override_targets: ["R"],
     color: "#F59E0B", // Amber
     description:
-      "Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system's outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about \"multiple signatures\" or \"distributed roles\"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.",
+      'Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system\'s outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about "multiple signatures" or "distributed roles"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.',
     calculation: {
       formula: "ϕ(F) = 0.09·H + 0.12·S + 0.15·B + 0.04·W + γ(Seq,𝓔)",
       weights: { w1: 0.09, w2: 0.12, w3: 0.15, w4: 0.04 },
@@ -142,7 +143,8 @@ const OPERATORS = [
         gamma: "Fragmentation complexity modifier",
       },
     },
-    impact: "Distributes accountability across multiple actors to create blind spots.",
+    impact:
+      "Distributes accountability across multiple actors to create blind spots.",
   },
   {
     id: "I",
@@ -214,7 +216,7 @@ const OPERATORS_V2 = [
     override_targets: ["A"],
     color: "#06B6D4", // Cyan
     description:
-      "Simulation transforms structural risk by replicating the surface appearance of compliance, oversight, or procedural integrity without enforcing any actual constraint. This operator is executed through symbolic actions—non-binding audits, advisory committees, or reviews whose outcomes do not alter the system's real operation. In effect, simulation \"fools\" both internal and external observers: it provides the audit trail, the ritual, and the reporting, yet all actors know the process is performative. Simulation is not mere theater; it is the central defense of advanced captured systems, absorbing pressure from regulators, the public, or oversight bodies while ensuring that true power dynamics remain untouched. When simulation dominates, the system becomes audit-proof and sanction-resistant—not because it is safe, but because it is semantically and operationally insulated from intervention.",
+      'Simulation transforms structural risk by replicating the surface appearance of compliance, oversight, or procedural integrity without enforcing any actual constraint. This operator is executed through symbolic actions—non-binding audits, advisory committees, or reviews whose outcomes do not alter the system\'s real operation. In effect, simulation "fools" both internal and external observers: it provides the audit trail, the ritual, and the reporting, yet all actors know the process is performative. Simulation is not mere theater; it is the central defense of advanced captured systems, absorbing pressure from regulators, the public, or oversight bodies while ensuring that true power dynamics remain untouched. When simulation dominates, the system becomes audit-proof and sanction-resistant—not because it is safe, but because it is semantically and operationally insulated from intervention.',
     calculation: {
       formula: "ϕ(S) = 0.10·H + 0.02·S + 0.02·B + 0.30·W + γ(Seq,𝓔)",
       weights: { w1: 0.1, w2: 0.02, w3: 0.02, w4: 0.3 },
@@ -240,7 +242,7 @@ const OPERATORS_V2 = [
     override_targets: ["R"],
     color: "#F97316", // Orange
     description:
-      "Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system's real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined \"strategic partnerships,\" complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.",
+      'Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system\'s real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined "strategic partnerships," complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.',
     calculation: {
       formula: "ϕ(M) = 0.05·H + 0.25·S + 0.33·B + 0.02·W + γ(Seq,𝓔)",
       weights: { w1: 0.05, w2: 0.25, w3: 0.33, w4: 0.02 },
@@ -266,10 +268,10 @@ const OPERATORS_V2 = [
     override_targets: ["V", "L"],
     color: "#8B5CF6", // Purple
     description:
-      "Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how \"urgent\" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.",
+      'Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how "urgent" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.',
     calculation: {
       formula: "ϕ(C) = 0.15·H + 0.20·S + 0.18·B + 0.03·W + γ(Seq,𝓔)",
-      weights: { w1: 0.15, w2: 0.20, w3: 0.18, w4: 0.03 },
+      weights: { w1: 0.15, w2: 0.2, w3: 0.18, w4: 0.03 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
@@ -292,11 +294,11 @@ const OPERATORS_V2 = [
     override_targets: ["P", "ε"],
     color: "#EF4444", // Red
     description:
-      "Reinjection brings previously excluded, neutralized, or extracted risk, value, or process back into the system through a new channel, often after surface closure or apparent remediation. This operator allows systems to \"recycle\" loopholes, funds, or structural exposures by rebranding, repackaging, or relaunching them under a different guise. Reinjection is critical in systems with dynamic oversight: whenever a risk pathway appears to have been blocked, but later resurfaces via a different actor, fund, or clause, reinjection is at work. It is the structural answer to \"loophole whack-a-mole\"—no matter how many times a vulnerability is closed, the logic of reinjection guarantees its return unless the system is hardened at the root.",
+      'Reinjection brings previously excluded, neutralized, or extracted risk, value, or process back into the system through a new channel, often after surface closure or apparent remediation. This operator allows systems to "recycle" loopholes, funds, or structural exposures by rebranding, repackaging, or relaunching them under a different guise. Reinjection is critical in systems with dynamic oversight: whenever a risk pathway appears to have been blocked, but later resurfaces via a different actor, fund, or clause, reinjection is at work. It is the structural answer to "loophole whack-a-mole"—no matter how many times a vulnerability is closed, the logic of reinjection guarantees its return unless the system is hardened at the root.',
     calculation: {
       formula:
         "N = w₁ × network_density + w₂ × influence_centrality + w�� × dependency_depth",
-      weights: { w1: 0.18, w2: 0.22, w3: 0.20, w4: 0.06 },
+      weights: { w1: 0.18, w2: 0.22, w3: 0.2, w4: 0.06 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
@@ -319,7 +321,7 @@ const OPERATORS_V2 = [
     override_targets: ["V", "ε"],
     color: "#10B981", // Green
     description:
-      "Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of \"smurfing\" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.",
+      'Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
     calculation: {
       formula: "ϕ(A) = 0.12·H + 0.16·S + 0.14·B + 0.08·W + γ(Seq,𝓔)",
       weights: { w1: 0.12, w2: 0.16, w3: 0.14, w4: 0.08 },
@@ -434,19 +436,22 @@ const SemanticPermutationEngine = () => {
     return operatorVersion === "v1" ? operatorSequence : operatorSequenceV2;
   }, [operatorVersion, operatorSequence, operatorSequenceV2]);
 
-  const setCurrentSequence = useCallback((sequence: string[]) => {
-    if (operatorVersion === "v1") {
-      setOperatorSequence(sequence);
-    } else {
-      setOperatorSequenceV2(sequence);
-    }
-  }, [operatorVersion]);
+  const setCurrentSequence = useCallback(
+    (sequence: string[]) => {
+      if (operatorVersion === "v1") {
+        setOperatorSequence(sequence);
+      } else {
+        setOperatorSequenceV2(sequence);
+      }
+    },
+    [operatorVersion],
+  );
 
   // Debounced toggle card flip to prevent rapid state changes
   const toggleCard = useCallback((operatorId: string) => {
     if (isCalculatingRef.current) return;
 
-    setFlippedCards(prev => {
+    setFlippedCards((prev) => {
       const newFlipped = new Set(prev);
       if (newFlipped.has(operatorId)) {
         newFlipped.delete(operatorId);
@@ -717,23 +722,33 @@ const SemanticPermutationEngine = () => {
     requestAnimationFrame(() => {
       try {
         const currentSeq = getCurrentSequence;
-        const { finalState: newFinalState, trace } = calculateTensorEffects(currentSeq);
+        const { finalState: newFinalState, trace } =
+          calculateTensorEffects(currentSeq);
 
         setFinalState(newFinalState);
         setExecutionTrace(trace);
         setMatrixData(generateMatrixData(trace));
 
-        const result = generatePermutationResult(currentSeq, newFinalState, trace);
+        const result = generatePermutationResult(
+          currentSeq,
+          newFinalState,
+          trace,
+        );
         setPermutationResult(result);
         setCalculationBreakdowns(result.mathematical_result.details);
       } catch (error) {
-        console.error('Calculation error:', error);
+        console.error("Calculation error:", error);
       } finally {
         isCalculatingRef.current = false;
         setIsCalculating(false);
       }
     });
-  }, [getCurrentSequence, calculateTensorEffects, generateMatrixData, generatePermutationResult]);
+  }, [
+    getCurrentSequence,
+    calculateTensorEffects,
+    generateMatrixData,
+    generatePermutationResult,
+  ]);
 
   // Debounced effect for calculations
   useEffect(() => {
@@ -750,32 +765,43 @@ const SemanticPermutationEngine = () => {
         clearTimeout(calculationTimeoutRef.current);
       }
     };
-  }, [operatorSequence, operatorSequenceV2, operatorVersion, executeCalculations]);
+  }, [
+    operatorSequence,
+    operatorSequenceV2,
+    operatorVersion,
+    executeCalculations,
+  ]);
 
   // Drag and drop handlers
-  const handleDragStart = useCallback((e: React.DragEvent, operatorId: string) => {
-    setDraggedOperator(operatorId);
-    e.dataTransfer.effectAllowed = "move";
-  }, []);
+  const handleDragStart = useCallback(
+    (e: React.DragEvent, operatorId: string) => {
+      setDraggedOperator(operatorId);
+      e.dataTransfer.effectAllowed = "move";
+    },
+    [],
+  );
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = "move";
   }, []);
 
-  const handleDrop = useCallback((e: React.DragEvent, targetIndex: number) => {
-    e.preventDefault();
-    if (!draggedOperator) return;
+  const handleDrop = useCallback(
+    (e: React.DragEvent, targetIndex: number) => {
+      e.preventDefault();
+      if (!draggedOperator) return;
 
-    const newSequence = [...getCurrentSequence];
-    const draggedIndex = newSequence.indexOf(draggedOperator);
+      const newSequence = [...getCurrentSequence];
+      const draggedIndex = newSequence.indexOf(draggedOperator);
 
-    newSequence.splice(draggedIndex, 1);
-    newSequence.splice(targetIndex, 0, draggedOperator);
+      newSequence.splice(draggedIndex, 1);
+      newSequence.splice(targetIndex, 0, draggedOperator);
 
-    setCurrentSequence(newSequence);
-    setDraggedOperator(null);
-  }, [draggedOperator, getCurrentSequence, setCurrentSequence]);
+      setCurrentSequence(newSequence);
+      setDraggedOperator(null);
+    },
+    [draggedOperator, getCurrentSequence, setCurrentSequence],
+  );
 
   const shuffleOperators = useCallback(() => {
     if (isCalculatingRef.current) return;
@@ -897,7 +923,9 @@ const SemanticPermutationEngine = () => {
                   color: "#10b981",
                 }}
               >
-                <RefreshCw className={`w-4 h-4 mr-2 inline ${isCalculating ? 'animate-spin' : ''}`} />
+                <RefreshCw
+                  className={`w-4 h-4 mr-2 inline ${isCalculating ? "animate-spin" : ""}`}
+                />
                 SHUFFLE
               </button>
               <button
