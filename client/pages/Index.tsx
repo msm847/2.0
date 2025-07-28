@@ -70,42 +70,7 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-      {/* Holographic Earth Animation */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
-        }}
-      >
-        <iframe
-          src="https://my.spline.design/holographicearthwithdynamiclines-VwkcRVjVvz9qJvv9Fl42rDjY/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-          style={{
-            border: "none",
-            display: "block",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            zIndex: 1,
-            pointerEvents: "auto",
-            background: "#10201C",
-          }}
-          onLoad={() => setRobotAnimationFinished(true)}
-          onError={() => {
-            console.error("Failed to load Spline earth animation");
-            setRobotAnimationFinished(true);
-          }}
-        />
-      </div>
+
 
       {/* VIGILUM Logo - Company Name */}
       <div
