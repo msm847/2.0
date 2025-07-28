@@ -524,7 +524,7 @@ const boundaryLogicData = {
           typology: ["SB"],
         },
         shellCompany: {
-          state: "?",
+          state: "–",
           tooltip:
             "Relevant when used to conceal FCPA violations or facilitate prohibited payments. [RT]",
           typology: ["RT"],
