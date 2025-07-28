@@ -104,7 +104,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         fraud: {
-          state: "–",
+          state: "✓",
           tooltip:
             "Outside core corruption mandate. Not systematically evaluated. [SB]",
           typology: ["SB"],
