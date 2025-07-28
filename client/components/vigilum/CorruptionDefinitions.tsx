@@ -135,7 +135,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
       logo: "🔍",
       definition:
-        "We define corruption as the abuse of entrusted power for private gain.",
+        "Corruption is the abuse of entrusted power for private gain, encompassing both grand and petty acts across the public and private sectors. TI specifically includes bribery, nepotism, cronyism, and the manipulation of policy or resources for individual or organizational benefit.",
       citation: {
         text: "Transparency International, What is Corruption",
         url: "https://www.transparency.org/en/what-is-corruption",
