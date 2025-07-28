@@ -39,32 +39,56 @@ const SYSTEM_LAYERS = {
 // Five Atomic Semantic Operators with Mathematical Definitions
 const OPERATORS = [
   {
-    id: "O",
-    name: "Override",
-    fullName: "Override Functions and Nullification Logic",
+    id: "H",
+    name: "Unbreakable Constraint",
+    fullName: "Unbreakable Constraint",
     weight: 0.34,
-    symbol: "O",
-    glyph: "⊗",
+    symbol: "H",
+    glyph: "⬛",
     affects: ["L", "P", "V"],
     position_sensitive: true,
-    override_targets: ["A", "R"],
+    override_targets: [],
     color: "#10B981", // Vigilum mint
     description:
-      "Override operators forcibly reset or override prior safeguards. Risk spikes when used late in a chain or immediately after ambiguous operators. Maximum risk if O follows Masking (M), Masking → Override (M→O): simulated transparency, hidden extraction. Minimum risk if O opens a sequence and is followed by White/Hard (O→A): visible reset, no stealth.",
+      "Unbreakable Constraint defines a boundary that cannot be crossed or dissolved from within the system, no matter what other operators are invoked. It requires an external, independent actor—often a regulator, court, or sovereign authority—to permit an exception or breach, and even then only under conditions that are hard-coded and immutable. This operator represents true structural friction: it is the only reliable defense against capture or override, because it is designed to be non-negotiable and to survive attempts at internal nullification or simulation. In institutional logic, genuine unbreakable constraints are rare and valuable, marking the difference between simulated compliance and actual legal or operational immovability. Where most controls can be circumvented through sophisticated clause sequencing or discretionary override, an unbreakable constraint draws an absolute line, forcing all actors to operate within its bounds or face existential system breakdown.",
     calculation: {
-      formula: "ϕ(O) = 0.34·H + 0.05·S + 0.17·B + 0.04·W + γ(Seq,𝓔)",
+      formula: "ϕ(H) = 0.34·H + 0.05·S + 0.17·B + 0.04·W + γ(Seq,𝓔)",
       weights: { w1: 0.34, w2: 0.05, w3: 0.17, w4: 0.04 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma:
-          "If O follows Masking or Soft actor split, γ = +0.11; if O follows Audit or Disclosure, γ = –0.07",
+        gamma: "Environmental context modifier",
       },
     },
-    impact:
-      "Explicit clause or mechanism nullifying existing constraint or escalation.",
+    impact: "Creates immutable structural boundaries that resist all override attempts.",
+  },
+  {
+    id: "O",
+    name: "Override",
+    fullName: "Override",
+    weight: 0.24,
+    symbol: "O",
+    glyph: "⊗",
+    affects: ["L", "P", "V"],
+    position_sensitive: true,
+    override_targets: ["H", "XT", "F", "I"],
+    color: "#EF4444", // Vigilum red
+    description:
+      "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
+    calculation: {
+      formula: "ϕ(O) = 0.24·H + 0.15·S + 0.27·B + 0.04·W + γ(Seq,𝓔)",
+      weights: { w1: 0.24, w2: 0.15, w3: 0.27, w4: 0.04 },
+      variables: {
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "Override sequence context modifier",
+      },
+    },
+    impact: "Enables systematic bypass of established constraints and procedures.",
   },
   {
     id: "L",
