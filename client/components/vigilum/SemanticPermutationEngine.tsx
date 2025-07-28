@@ -1025,13 +1025,15 @@ const SemanticPermutationEngine = () => {
               return (
                 <div
                   key={`${opId}-${index}`}
-                  className="relative h-64 cursor-pointer"
+                  className={`relative h-64 cursor-pointer transition-all duration-300 ${
+                    isCalculating ? 'opacity-30' : 'opacity-100'
+                  }`}
                   style={{ perspective: "1000px" }}
-                  onClick={() => toggleCard(opId)}
-                  draggable
-                  onDragStart={(e) => handleDragStart(e, opId)}
-                  onDragOver={handleDragOver}
-                  onDrop={(e) => handleDrop(e, index)}
+                  onClick={() => !isCalculating && toggleCard(opId)}
+                  draggable={!isCalculating}
+                  onDragStart={(e) => !isCalculating && handleDragStart(e, opId)}
+                  onDragOver={!isCalculating ? handleDragOver : undefined}
+                  onDrop={(e) => !isCalculating && handleDrop(e, index)}
                 >
                   <motion.div
                     className="relative w-full h-full transition-transform duration-700 ease-out"
