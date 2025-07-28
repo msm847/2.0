@@ -1064,6 +1064,27 @@ const SemanticPermutationEngine = () => {
                   checkActiveOverrides(opId, getCurrentSequence, index).length >
                   0;
 
+                // Calculate effective weight with positional modifiers
+                const isV2 = operatorVersion === "v2";
+                let environmentalModifier = 0;
+                let positionalModifier = 0;
+
+                // Environmental modifier for V2
+                if (isV2 && permutationResult?.v1Vector) {
+                  const [h_v1, s_v1, b_v1, w_v1] = permutationResult.v1Vector;
+                  if (b_v1 > 0.7 && operator.typology[2] > 0.6) environmentalModifier += 0.20;
+                  if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) environmentalModifier -= 0.12;
+                }
+
+                // Positional modifier
+                if (index === getCurrentSequence.length - 1) {
+                  if (opId === "O") positionalModifier = 0.15;
+                  else if (opId === "XT") positionalModifier = 0.12;
+                }
+                if (index === 0 && opId === "H") positionalModifier = -0.10;
+
+                const effectiveWeight = operator.weight * (1 + environmentalModifier) + positionalModifier;
+
               return (
                 <div
                   key={`${opId}-${index}`}
