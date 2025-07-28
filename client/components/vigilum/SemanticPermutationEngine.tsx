@@ -154,7 +154,7 @@ const OPERATORS = [
     override_targets: ["A", "R"],
     color: "#06B6D4", // Cyan
     description:
-      "This operator quantifies environmental pressure effects and temporal distortions that compress decision timeframes and alter system responses under stress conditions.",
+      "Indirection routes control, decision-making, or value through a chain of proxies, affiliates, or off-ledger vehicles to obscure the true path and ultimate beneficiary. Unlike masking, which operates through ambiguity or complexity, indirection creates a formally correct but substantively misleading sequence of actors or steps. Its essence is to break the link between apparent and real control: what appears as an arms-length transaction or compliant process is, in fact, a channel for concealed influence or extraction. Indirection is the favored tool of those seeking to avoid scrutiny—political actors, oligarchic networks, or multinationals structuring around sanctions or procurement caps. Its detection requires not just reading the contract, but reconstructing the real-world flow of authority, money, or risk through layered intermediaries that are often outside standard audit reach.",
     calculation: {
       formula:
         "ε = w₁ × pressure_coefficient + w���� × temporal_compression + w₃ × distortion_amplitude",
