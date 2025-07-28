@@ -419,6 +419,11 @@ const SemanticPermutationEngine = () => {
   const [permutationResult, setPermutationResult] = useState<any>(null);
   const [flippedCards, setFlippedCards] = useState<Set<string>>(new Set());
   const [calculationBreakdowns, setCalculationBreakdowns] = useState<any>({});
+  const [isCalculating, setIsCalculating] = useState(false);
+
+  // Refs for debouncing and performance
+  const calculationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isCalculatingRef = useRef(false);
 
   // Get current operators based on version
   const getCurrentOperators = () => {
