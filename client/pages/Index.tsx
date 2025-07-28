@@ -14,14 +14,6 @@ export default function Index() {
     setupAnimationTrigger();
   }, []);
 
-  // Global corruption loss counter - runs on home page
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGlobalLoss((prev) => prev + 114169);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   const setupAnimationTrigger = () => {
     const triggerAnimation = () => {
       if (!animationPlayed) {
