@@ -1239,19 +1239,19 @@ const BoundaryLogicCarousel = () => {
   const groupTheme = {
     regulatory: {
       primary: "#18291B",
-      secondary: "#10B981",
+      secondary: "#059669",
       background: "linear-gradient(135deg, #18291B, #0F1E14)",
       cardBg: "#FFFFFF",
       textPrimary: "#2D3329",
-      accent: "#22C55E",
+      accent: "#16A34A",
     },
     international: {
       primary: "#465B6E",
-      secondary: "#60A5FA",
+      secondary: "#3B82F6",
       background: "linear-gradient(135deg, #EAEEF2, #465B6E)",
       cardBg: "#F8FAFC",
       textPrimary: "#1E293B",
-      accent: "#3B82F6",
+      accent: "#2563EB",
     },
   };
 
