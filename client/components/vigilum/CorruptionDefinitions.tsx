@@ -389,7 +389,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Explicitly included in UNODC corruption definition and UNCAC framework. [CI]",
           typology: ["CI"],
@@ -2264,7 +2264,7 @@ const institutionalData = {
       institutions: [
         {
           name: "Transparency International",
-          logo: "🔍",
+          logo: "��",
           definition:
             "Corruption is the abuse of entrusted power for private gain.",
           source: "Transparency International, official website",
@@ -2612,22 +2612,22 @@ const InstitutionCard = ({ institution }) => {
       {/* Centered Logo */}
       <div
         style={{
-          width: "60px",
-          height: "60px",
+          width: "80px",
+          height: "80px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "12px",
           marginBottom: "16px",
-          background: "#FFFFFF",
-          padding: "6px",
+          background: "transparent",
+          padding: "0px",
         }}
       >
         <img
           src={institution.logoUrl}
           alt={`${institution.name} logo`}
           style={{
-            height: "60px",
+            height: "80px",
             width: "auto",
             maxWidth: "100%",
             objectFit: "contain"
@@ -2635,7 +2635,7 @@ const InstitutionCard = ({ institution }) => {
           onError={(e) => {
             // Fallback to emoji if image fails to load
             e.target.style.display = 'none';
-            e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
+            e.target.parentElement.innerHTML = `<span style="fontSize: 48px">${institution.logo}</span>`;
           }}
         />
       </div>
