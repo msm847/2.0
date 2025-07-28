@@ -926,23 +926,19 @@ const SemanticPermutationEngine = () => {
             <div className="flex gap-3">
               <button
                 onClick={shuffleOperators}
-                disabled={isCalculating}
-                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
                 style={{
                   backgroundColor: "rgba(16, 44, 34, 0.7)",
                   borderColor: "rgba(52, 211, 153, 0.3)",
                   color: "#10b981",
                 }}
               >
-                <RefreshCw
-                  className={`w-4 h-4 mr-2 inline ${isCalculating ? "animate-spin" : ""}`}
-                />
+                <RefreshCw className="w-4 h-4 mr-2 inline" />
                 SHUFFLE
               </button>
               <button
                 onClick={resetToDefault}
-                disabled={isCalculating}
-                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
                 style={{
                   backgroundColor: "rgba(16, 44, 34, 0.7)",
                   borderColor: "rgba(52, 211, 153, 0.3)",
