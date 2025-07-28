@@ -308,16 +308,16 @@ const OPERATORS_V2 = [
     impact: "Reintroduces previously neutralized risks through new channels.",
   },
   {
-    id: "PM",
-    name: "Perception Management",
-    fullName: "Perception Management and Narrative Control",
-    weight: 0.05,
-    symbol: "PM",
-    glyph: "⧪",
-    affects: ["R", "L", "V"],
+    id: "A",
+    name: "Aggregation",
+    fullName: "Aggregation",
+    weight: 0.12,
+    symbol: "A",
+    glyph: "⊕",
+    affects: ["P", "L", "R"],
     position_sensitive: true,
-    override_targets: ["T"],
-    color: "#A855F7", // Violet
+    override_targets: ["V", "ε"],
+    color: "#10B981", // Green
     description:
       "Often the closing move in risk chains—dangerous if last, less so if opening and subject to Audit/Visibility.",
     calculation: {
