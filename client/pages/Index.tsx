@@ -4,6 +4,7 @@ import GradientText from "@/components/ui/GradientText";
 import Orb from "@/components/ui/Orb";
 import Aurora from "@/components/ui/Aurora";
 import LetterGlitch from "@/components/LetterGlitch";
+import PerceptionPerspective from "@/components/vigilum/PerceptionPerspective";
 
 export default function Index() {
   const navigate = useNavigate();
