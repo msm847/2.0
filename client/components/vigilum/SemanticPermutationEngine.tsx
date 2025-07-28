@@ -166,8 +166,9 @@ const OPERATORS = [
     id: "I",
     name: "Indirection",
     fullName: "Indirection",
-    weight: 0.22,
+    weight: 0.75, // Updated baseline weight
     symbol: "I",
+    typology: [0.0, 0.7, 0.9, 0.0], // [H, S, B, W]
     glyph: "⦿",
     affects: ["L", "P", "V"],
     position_sensitive: true,
