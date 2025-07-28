@@ -594,7 +594,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         cronyism: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Relevant when affecting governance and economic policy implementation. [DG]",
           typology: ["DG"],
