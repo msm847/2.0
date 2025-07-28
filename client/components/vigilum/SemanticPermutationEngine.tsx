@@ -166,7 +166,7 @@ const OPERATORS = [
       },
     },
     impact:
-      "Elevating 'ε' introduces systematic instabilities and compressed response windows.",
+      "Routes control through intermediaries to obscure true beneficiaries.",
   },
   {
     id: "R",
