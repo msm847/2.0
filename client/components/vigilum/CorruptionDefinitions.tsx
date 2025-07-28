@@ -328,7 +328,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Core investigative focus under Lithuanian criminal law. [CI]",
           typology: ["CI"],
@@ -1405,18 +1405,21 @@ const BoundaryLogicCarousel = () => {
               margin: "0 0 8px 0",
               lineHeight: "26px",
               fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
+              flex: 1,
+              overflow: "hidden",
             }}
           >
             "{institution.definition}"
           </blockquote>
 
-          {/* Source Link */}
+          {/* Source Link - Fixed at bottom */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: "8px",
-              marginTop: "8px",
+              marginTop: "auto",
+              paddingTop: "8px",
             }}
           >
             <span
