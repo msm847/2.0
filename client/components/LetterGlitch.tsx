@@ -21,14 +21,7 @@ const LetterGlitch = ({
 }: LetterGlitchProps) => {
 
 
-  const handleIframeLoad = () => {
-    setRobotLoaded(true);
-    // Wait for robot animation to fully finish
-    setTimeout(() => {
-      setAnimationFinished(true);
-      onAnimationFinished?.(); // Notify parent component that animation is finished
-    }, 4000); // Wait 4 seconds for animation to complete
-  };
+
 
 
 
