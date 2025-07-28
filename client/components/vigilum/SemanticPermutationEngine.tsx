@@ -286,7 +286,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["V", "L"],
     color: "#8B5CF6", // Purple
-    typology: [0.0, 0.8, 0.8, 0.1], // [H, S, B, W]
+    typology: [0.05, 0.80, 0.85, 0.10], // [H, S, B, W]
     description:
       'Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how "urgent" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.',
     calculation: {
