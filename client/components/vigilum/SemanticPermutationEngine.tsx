@@ -1160,21 +1160,26 @@ const SemanticPermutationEngine = () => {
                         {effectiveWeight.toFixed(3)}
                       </div>
 
-                      {/* Position modifier indicator */}
-                      {(positionalModifier !== 0 || environmentalModifier !== 0) && (
-                        <div className="text-xs font-mono text-gray-300 mt-1">
-                          {positionalModifier !== 0 && (
-                            <span className={positionalModifier > 0 ? "text-green-400" : "text-red-400"}>
-                              pos: {positionalModifier > 0 ? '+' : ''}{positionalModifier.toFixed(2)}
-                            </span>
-                          )}
-                          {environmentalModifier !== 0 && (
-                            <div className={environmentalModifier > 0 ? "text-blue-400" : "text-orange-400"}>
-                              env: {environmentalModifier > 0 ? '+' : ''}{environmentalModifier.toFixed(2)}
-                            </div>
-                          )}
+                      {/* Position modifier display - always show */}
+                      <div className="text-xs font-mono text-gray-300 mt-2 text-center">
+                        <div className="text-gray-400">Position:</div>
+                        <div className={`font-medium ${
+                          positionalModifier > 0 ? "text-green-400" :
+                          positionalModifier < 0 ? "text-red-400" : "text-gray-500"
+                        }`}>
+                          {positionalModifier > 0 ? '+' : ''}{positionalModifier.toFixed(2)}
                         </div>
-                      )}
+
+                        {/* Environmental modifier for V2 */}
+                        {environmentalModifier !== 0 && (
+                          <div className="mt-1">
+                            <div className="text-gray-400">Environment:</div>
+                            <div className={`font-medium ${environmentalModifier > 0 ? "text-blue-400" : "text-orange-400"}`}>
+                              {environmentalModifier > 0 ? '+' : ''}{environmentalModifier.toFixed(2)}
+                            </div>
+                          </div>
+                        )}
+                      </div>
 
                       {/* Info hint */}
                       <div className="absolute bottom-2 right-2">
