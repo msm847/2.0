@@ -98,15 +98,7 @@ const LetterGlitch = ({
     animation: isPlaying ? "pulse 1.5s ease-in-out infinite" : "none",
   };
 
-  const soundWaveStyle: React.CSSProperties = {
-    position: "absolute",
-    top: "45%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    alignItems: "center",
-    gap: "3px",
-    zIndex: 2,
-  };
+
 
   return (
     <div style={containerStyle} className={className}>
