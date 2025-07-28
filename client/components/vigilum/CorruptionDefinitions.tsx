@@ -389,7 +389,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Explicitly included in UNODC corruption definition and UNCAC framework. [CI]",
           typology: ["CI"],
@@ -1335,16 +1335,15 @@ const BoundaryLogicCarousel = () => {
         >
           <div
             style={{
-              width: "60px",
-              height: "60px",
+              width: "80px",
+              height: "80px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#FFFFFF",
-              border: "1px solid #D6DBE3",
+              background: "transparent",
+              border: "none",
               borderRadius: "8px",
-              padding: "6px",
-              boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+              padding: "0px",
               cursor: "pointer",
               marginBottom: "12px",
             }}
@@ -1360,7 +1359,7 @@ const BoundaryLogicCarousel = () => {
               src={institution.logoUrl}
               alt={`${institution.name} logo`}
               style={{
-                height: "60px",
+                height: "80px",
                 width: "auto",
                 maxWidth: "100%",
                 objectFit: "contain"
@@ -1368,7 +1367,7 @@ const BoundaryLogicCarousel = () => {
               onError={(e) => {
                 // Fallback to emoji if image fails to load
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = `<span style="fontSize: 32px">${institution.logo}</span>`;
+                e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
               }}
             />
           </div>
