@@ -82,13 +82,14 @@ const OPERATORS = [
     id: "O",
     name: "Override",
     fullName: "Override",
-    weight: 0.24,
+    weight: 0.90, // Updated baseline weight (amplifying)
     symbol: "O",
     glyph: "⊗",
     affects: ["L", "P", "V"],
     position_sensitive: true,
     override_targets: ["H", "XT", "F", "I"],
     color: "#EF4444", // Vigilum red
+    typology: [0.0, 0.8, 0.5, 0.1], // [H, S, B, W]
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
@@ -336,7 +337,7 @@ const OPERATORS_V2 = [
     description:
       'Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
     calculation: {
-      formula: "ϕ(A) = 0.12·H + 0.16·S + 0.14·B + 0.08·W + γ(Seq,𝓔)",
+      formula: "ϕ(A) = 0.12·H + 0.16·S + 0.14·B + 0.08·W + γ(Seq,���)",
       weights: { w1: 0.12, w2: 0.16, w3: 0.14, w4: 0.08 },
       variables: {
         H: "Hard operator intensity coefficient",
