@@ -70,7 +70,7 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-      {/* LetterGlitch Background */}
+      {/* Holographic Earth Animation */}
       <div
         style={{
           position: "absolute",
@@ -81,12 +81,21 @@ export default function Index() {
           zIndex: 1,
         }}
       >
-        <LetterGlitch
-          glitchSpeed={50}
-          centerVignette={false}
-          outerVignette={false}
-          smooth={true}
-          onAnimationFinished={() => setRobotAnimationFinished(true)}
+        <iframe
+          src="https://my.spline.design/holographicearthwithdynamiclines-VwkcRVjVvz9qJvv9Fl42rDjY/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          style={{
+            border: "none",
+            display: "block",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+          onLoad={() => setRobotAnimationFinished(true)}
         />
       </div>
 
