@@ -292,7 +292,7 @@ const OPERATORS_V2 = [
     override_targets: ["P", "ε"],
     color: "#EF4444", // Red
     description:
-      "This operator maps the relational networks and dependency structures between system actors. Values determine the density and influence of relationship networks.",
+      "Reinjection brings previously excluded, neutralized, or extracted risk, value, or process back into the system through a new channel, often after surface closure or apparent remediation. This operator allows systems to \"recycle\" loopholes, funds, or structural exposures by rebranding, repackaging, or relaunching them under a different guise. Reinjection is critical in systems with dynamic oversight: whenever a risk pathway appears to have been blocked, but later resurfaces via a different actor, fund, or clause, reinjection is at work. It is the structural answer to \"loophole whack-a-mole\"—no matter how many times a vulnerability is closed, the logic of reinjection guarantees its return unless the system is hardened at the root.",
     calculation: {
       formula:
         "N = w₁ × network_density + w₂ × influence_centrality + w�� × dependency_depth",
