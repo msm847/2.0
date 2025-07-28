@@ -69,6 +69,7 @@ export default function Index() {
         height: "100vh",
         position: "relative",
         overflow: "hidden",
+        backgroundColor: "#0a0f0d",
         fontFamily: "var(--font-body)",
       }}
     >
