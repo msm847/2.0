@@ -1197,26 +1197,7 @@ const SemanticPermutationEngine = () => {
           </AnimatePresence>
 
           {/* Live Formula */}
-          <div className="text-center relative">
-            {/* Calculating overlay */}
-            <AnimatePresence>
-              {isCalculating && (
-                <motion.div
-                  className="absolute inset-0 bg-gray-900 bg-opacity-50 rounded-lg z-20 flex items-center justify-center min-h-[60px]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                >
-                  <div className="bg-gray-800 border border-green-400/30 px-4 py-2 rounded-lg">
-                    <div className="flex items-center space-x-2">
-                      <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
-                      <span className="text-xs font-mono text-green-400">Calculating...</span>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="text-center">
             <div className="text-sm font-mono text-gray-400 mb-2">
               LIVE MATHEMATICAL FORMULA
             </div>
