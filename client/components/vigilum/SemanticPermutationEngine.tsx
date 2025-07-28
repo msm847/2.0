@@ -143,9 +143,9 @@ const OPERATORS = [
     impact: "Distributes accountability across multiple actors to create blind spots.",
   },
   {
-    id: "A",
-    name: "Audit/Disclosure",
-    fullName: "Audit and Disclosure Mechanisms",
+    id: "I",
+    name: "Indirection",
+    fullName: "Indirection",
     weight: 0.09,
     symbol: "A",
     glyph: "⚬",
@@ -984,7 +984,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {/* Scroll hint */}
                         <div className="text-xs text-gray-500 font-mono mb-2">
-                          <span className="text-lg">↓</span> Scroll for more
+                          <span className="text-lg">���</span> Scroll for more
                           details
                         </div>
 
