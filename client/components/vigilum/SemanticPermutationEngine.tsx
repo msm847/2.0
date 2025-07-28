@@ -830,7 +830,7 @@ const SemanticPermutationEngine = () => {
     // Immediate visual feedback
     setIsCalculating(true);
 
-    // Use timeout to ensure visual feedback shows immediately
+    // Use timeout for 2-second calculating feedback
     setTimeout(() => {
       const currentSeq = getCurrentSequence;
       const shuffled = [...currentSeq];
@@ -839,10 +839,10 @@ const SemanticPermutationEngine = () => {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
       }
       setCurrentSequence(shuffled);
-      // Reset calculating state - executeCalculations will handle the real calculations
+      // Reset calculating state after 2 seconds
       setIsCalculating(false);
       isCalculatingRef.current = false;
-    }, 50);
+    }, 2000);
   }, [getCurrentSequence, setCurrentSequence]);
 
   const resetToDefault = useCallback(() => {
