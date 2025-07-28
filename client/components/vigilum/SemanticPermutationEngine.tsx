@@ -1201,10 +1201,10 @@ const SemanticPermutationEngine = () => {
               {isCalculating && (
                 <motion.div
                   className="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm rounded-lg z-10 flex items-center justify-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
                   <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
                     <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
