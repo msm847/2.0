@@ -800,16 +800,16 @@ const SemanticPermutationEngine = () => {
     setFlippedCards(new Set());
   }, [operatorVersion]);
 
-  const downloadResults = () => {
+  const downloadResults = useCallback(() => {
     const dataStr = JSON.stringify(permutationResult, null, 2);
     const dataBlob = new Blob([dataStr], { type: "application/json" });
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `vigilum-spe-${getCurrentSequence().join("-")}.json`;
+    link.download = `vigilum-spe-${getCurrentSequence.join("-")}.json`;
     link.click();
     URL.revokeObjectURL(url);
-  };
+  }, [permutationResult, getCurrentSequence]);
 
   return (
     <div
