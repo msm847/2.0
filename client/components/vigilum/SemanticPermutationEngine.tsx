@@ -495,8 +495,8 @@ const SemanticPermutationEngine = () => {
     [],
   );
 
-  // Enhanced formula calculation
-  const calculatePermutationFormula = useCallback(
+  // Memoized enhanced formula calculation
+  const calculatePermutationFormula = useMemo(() =>
     (sequence: string[]) => {
       const environmentGradient = 0.15; // ∇𝓔 base value
       let phi = 0;
@@ -504,7 +504,7 @@ const SemanticPermutationEngine = () => {
       let calculationDetails: any = {};
 
       sequence.forEach((opId) => {
-        const operator = getCurrentOperators().find((op) => op.id === opId);
+        const operator = getCurrentOperators.find((op) => op.id === opId);
         if (!operator) return;
 
         const { value, breakdown } = calculateOperatorValue(
