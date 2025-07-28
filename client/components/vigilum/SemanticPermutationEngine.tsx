@@ -200,33 +200,33 @@ const OPERATORS = [
   },
 ];
 
-// Five Additional Semantic Operators - V2
+// V2: Semantic/Simulation/Pressure Operators
 const OPERATORS_V2 = [
   {
-    id: "V",
-    name: "Visibility Constraint",
-    fullName: "Visibility Constraint and Traceability Binding",
+    id: "S",
+    name: "Simulation",
+    fullName: "Simulation",
     weight: 0.1,
-    symbol: "V",
+    symbol: "S",
     glyph: "⟐",
     affects: ["V", "L", "ε"],
     position_sensitive: true,
     override_targets: ["A"],
     color: "#06B6D4", // Cyan
     description:
-      "Highly stabilizing—risk sinks as W increases, but if sandwiched by Black/Soft operators, V becomes 'ritual visibility' (simulated audit).",
+      "Simulation transforms structural risk by replicating the surface appearance of compliance, oversight, or procedural integrity without enforcing any actual constraint. This operator is executed through symbolic actions—non-binding audits, advisory committees, or reviews whose outcomes do not alter the system's real operation. In effect, simulation \"fools\" both internal and external observers: it provides the audit trail, the ritual, and the reporting, yet all actors know the process is performative. Simulation is not mere theater; it is the central defense of advanced captured systems, absorbing pressure from regulators, the public, or oversight bodies while ensuring that true power dynamics remain untouched. When simulation dominates, the system becomes audit-proof and sanction-resistant—not because it is safe, but because it is semantically and operationally insulated from intervention.",
     calculation: {
-      formula: "ϕ(V) = 0.10·H + 0.02·S + 0.02·B + 0.30·W + γ(Seq,𝓔)",
+      formula: "ϕ(S) = 0.10·H + 0.02·S + 0.02·B + 0.30·W + γ(Seq,𝓔)",
       weights: { w1: 0.1, w2: 0.02, w3: 0.02, w4: 0.3 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma: "If V is last or paired with Masking, γ = –0.08",
+        gamma: "Simulation depth modifier",
       },
     },
-    impact: "Binds discretionary acts to traceability/observation.",
+    impact: "Creates performative compliance without real constraint.",
   },
   {
     id: "M",
@@ -276,7 +276,7 @@ const OPERATORS_V2 = [
       variables: {
         ε_env: "Environmental disruption coefficient",
         gamma:
-          "Multiplies risk of adjacent Black/Soft by 1.25��1.45 if high disruption; divides by 0.7 if stabilizing",
+          "Multiplies risk of adjacent Black/Soft by 1.25–1.45 if high disruption; divides by 0.7 if stabilizing",
       },
     },
     impact:
