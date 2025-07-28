@@ -24,22 +24,10 @@ const LetterGlitch = ({
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
-    // Wait for robot animation to fully finish, then show sound wave and play audio once
+    // Wait for robot animation to fully finish
     setTimeout(() => {
       setAnimationFinished(true);
       onAnimationFinished?.(); // Notify parent component that animation is finished
-      if (audioRef.current && !hasPlayedOnce) {
-        audioRef.current
-          ?.play()
-          .then(() => {
-            setIsPlaying(true);
-            setHasPlayedOnce(true);
-          })
-          .catch(() => {
-            // If autoplay fails, user can still click button
-            console.log("Autoplay prevented - user can click audio button");
-          });
-      }
     }, 4000); // Wait 4 seconds for animation to complete
   };
 
