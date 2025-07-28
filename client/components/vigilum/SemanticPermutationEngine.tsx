@@ -550,7 +550,7 @@ const SemanticPermutationEngine = () => {
         }
       }
 
-      // 1. Enhanced operator calculations with new weights and environmental coupling
+      // 1. Enhanced operator calculations with new weights, environmental coupling, and positional modifiers
       sequence.forEach((opId, index) => {
         const operator = getCurrentOperators.find((op) => op.id === opId);
         if (!operator) return;
@@ -565,16 +565,30 @@ const SemanticPermutationEngine = () => {
           if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) epsilon -= 0.12;
         }
 
-        // Effective weight: αᵢ × (1 + εᵢ)
-        const effectiveWeight = operator.weight * (1 + epsilon);
+        // Positional modifier (ρᵢ) - affects individual operator weight
+        let positionalModifier = 0;
+        // End amplification
+        if (index === sequence.length - 1) {
+          if (opId === "O") positionalModifier = 0.15;
+          else if (opId === "XT") positionalModifier = 0.12;
+        }
+        // Start dampening
+        if (index === 0 && opId === "H") {
+          positionalModifier = -0.10;
+        }
+
+        // Effective weight: αᵢ × (1 + εᵢ) + ρᵢ
+        const effectiveWeight = operator.weight * (1 + epsilon) + positionalModifier;
         phi += effectiveWeight;
         formulaTerms.push(`${effectiveWeight.toFixed(2)}${opId}`);
 
         calculationDetails[opId] = {
           baselineWeight: operator.weight,
           environmentalModifier: epsilon,
+          positionalModifier: positionalModifier,
           effectiveWeight: effectiveWeight,
           typology: operator.typology,
+          position: index,
         };
       });
 
@@ -1173,7 +1187,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {/* Scroll hint */}
                         <div className="text-xs text-gray-500 font-mono mb-2">
-                          <span className="text-lg">↓</span> Scroll for more
+                          <span className="text-lg">��</span> Scroll for more
                           details
                         </div>
 
