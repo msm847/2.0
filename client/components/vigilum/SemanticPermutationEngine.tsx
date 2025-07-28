@@ -980,10 +980,10 @@ const SemanticPermutationEngine = () => {
                       setMatrixData([]);
                       setExecutionTrace([]);
                       setPermutationResult(null);
-                      // Reset calculating state immediately after version switch
+                      // Reset calculating state after 2 seconds
                       setIsCalculating(false);
                       isCalculatingRef.current = false;
-                    }, 50);
+                    }, 2000);
                   }}
                   disabled={isCalculating || operatorVersion === "v2"}
                   className={`px-4 py-2 rounded border font-mono text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ${
