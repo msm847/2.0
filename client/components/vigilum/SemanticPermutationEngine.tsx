@@ -825,44 +825,22 @@ const SemanticPermutationEngine = () => {
   );
 
   const shuffleOperators = useCallback(() => {
-    if (isCalculatingRef.current) return;
-
-    // Immediate visual feedback
-    setIsCalculating(true);
-
-    // Use timeout for 1-second calculating feedback
-    setTimeout(() => {
-      const currentSeq = getCurrentSequence;
-      const shuffled = [...currentSeq];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      setCurrentSequence(shuffled);
-      // Reset calculating state after 1 second
-      setIsCalculating(false);
-      isCalculatingRef.current = false;
-    }, 1000);
+    const currentSeq = getCurrentSequence;
+    const shuffled = [...currentSeq];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setCurrentSequence(shuffled);
   }, [getCurrentSequence, setCurrentSequence]);
 
   const resetToDefault = useCallback(() => {
-    if (isCalculatingRef.current) return;
-
-    // Immediate visual feedback
-    setIsCalculating(true);
-
-    // Use timeout for 1-second calculating feedback
-    setTimeout(() => {
-      if (operatorVersion === "v1") {
-        setOperatorSequence(["H", "O", "XT", "F", "I"]);
-      } else {
-        setOperatorSequenceV2(["S", "M", "C", "R", "A"]);
-      }
-      setFlippedCards(new Set());
-      // Reset calculating state after 1 second
-      setIsCalculating(false);
-      isCalculatingRef.current = false;
-    }, 1000);
+    if (operatorVersion === "v1") {
+      setOperatorSequence(["H", "O", "XT", "F", "I"]);
+    } else {
+      setOperatorSequenceV2(["S", "M", "C", "R", "A"]);
+    }
+    setFlippedCards(new Set());
   }, [operatorVersion]);
 
   const downloadResults = useCallback(() => {
