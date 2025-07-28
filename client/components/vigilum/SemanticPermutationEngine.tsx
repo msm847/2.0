@@ -91,9 +91,9 @@ const OPERATORS = [
     impact: "Enables systematic bypass of established constraints and procedures.",
   },
   {
-    id: "L",
-    name: "Liability Shift",
-    fullName: "Liability Transfer and Responsibility Displacement",
+    id: "XT",
+    name: "Extraction/Transfer",
+    fullName: "Extraction/Transfer",
     weight: 0.24,
     symbol: "L",
     glyph: "⧨",
@@ -986,7 +986,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {/* Scroll hint */}
                         <div className="text-xs text-gray-500 font-mono mb-2">
-                          <span className="text-lg">↓</span> Scroll for more
+                          <span className="text-lg">���</span> Scroll for more
                           details
                         </div>
 
