@@ -98,7 +98,10 @@ export default function Index() {
             height: "100%",
             pointerEvents: "auto",
           }}
-          onLoad={() => setRobotAnimationFinished(true)}
+          onLoad={() => {
+            setRobotAnimationFinished(true);
+            setSplineLoaded(true);
+          }}
         />
       </div>
 
