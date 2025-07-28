@@ -321,7 +321,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa5582b7835c0404596752e71575157c9?format=webp&width=800",
       logo: "🇱🇹",
       definition:
-        "Mission: to reduce corruption as a threat to human rights and freedoms, the principles of the rule of law and economic development.",
+        "Corruption is direct or indirect abuse of official position or powers for personal or third-party benefit by a person holding office in the public or private sector. Lithuanian law includes acts such as bribery, trading in influence, and conflicts of interest under this term.",
       citation: {
         text: "Special Investigation Service (STT), About STT",
         url: "https://www.stt.lt/en/about-stt/4965",
@@ -1061,7 +1061,7 @@ const boundaryLogicData = {
       id: "nib",
       name: "NIB",
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
-      logo: "🇳🇴",
+      logo: "🇳��",
       definition:
         "The offering, giving, receiving or soliciting, directly or indirectly, of anything of value to influence improperly the actions of another party.",
       citation: {
