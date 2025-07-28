@@ -816,7 +816,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff061f91c60ef44018b2fc913e75f31a6?format=webp&width=800",
       logo: "🌏",
       definition:
-        "ADB defines corruption as the abuse of public or private office for personal gain.",
+        "ADB defines corruption as the abuse of public or private office for personal gain, covering any situation where entrusted authority is misused for undue benefit. This applies across all sectors, actors, and forms of development finance in ADB operations.",
       citation: {
         text: "ADB Anticorruption Policy",
         url: "https://www.adb.org/documents/anticorruption-policy",
