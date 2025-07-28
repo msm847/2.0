@@ -9,6 +9,7 @@ export default function Index() {
   const navigate = useNavigate();
   const [animationPlayed, setAnimationPlayed] = useState(false);
   const [robotAnimationFinished, setRobotAnimationFinished] = useState(false);
+  const [splineLoaded, setSplineLoaded] = useState(false);
 
   useEffect(() => {
     setupAnimationTrigger();
