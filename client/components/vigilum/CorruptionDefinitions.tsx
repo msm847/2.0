@@ -8,7 +8,8 @@ const boundaryLogicData = {
     {
       id: "oecd",
       name: "OECD",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
       logo: "🌐",
       definition:
         "Corruption is generally understood as the intentional abuse of public or private office for undue advantage, including bribery, embezzlement, and related misconduct. The OECD establishes offence-specific standards rather than a single definition, recognizing the diversity of national legal systems.",
@@ -70,7 +71,8 @@ const boundaryLogicData = {
     {
       id: "greco",
       name: "GRECO",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F4bdc576926184906bd0ebc8ad2da6130?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F4bdc576926184906bd0ebc8ad2da6130?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "Corruption is conduct by public or private actors who improperly and unlawfully benefit themselves or others through the misuse of entrusted authority. GRECO's standards frame corruption as a systemic threat to rule of law, democracy, and social justice.",
@@ -132,7 +134,8 @@ const boundaryLogicData = {
     {
       id: "transparency",
       name: "Transparency International",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
       logo: "🔍",
       definition:
         "Corruption is the abuse of entrusted power for private gain, encompassing both grand and petty acts across the public and private sectors. TI specifically includes bribery, nepotism, cronyism, and the manipulation of policy or resources for individual or organizational benefit.",
@@ -194,7 +197,8 @@ const boundaryLogicData = {
     {
       id: "ec",
       name: "European Commission",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "Corruption is commonly understood as the abuse of entrusted power for private gain, manifesting across multiple sectors and institutional settings. The Commission recognizes the complexity of corruption, including both public and private sector forms, and links it to broader risks for democracy and market integrity.",
@@ -256,7 +260,8 @@ const boundaryLogicData = {
     {
       id: "fatf",
       name: "FATF",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd90d804729d2429aa2af488e9a85fa01?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd90d804729d2429aa2af488e9a85fa01?format=webp&width=800",
       logo: "����",
       definition:
         "Corruption refers to the misuse of public office or powers for personal benefit, including acts such as bribery, embezzlement, trading in influence, and abuse of functions. FATF focuses on corruption's integration with money laundering and the concealment of illicit proceeds within the financial system.",
@@ -318,7 +323,8 @@ const boundaryLogicData = {
     {
       id: "stt",
       name: "STT Lithuania",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa5582b7835c0404596752e71575157c9?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa5582b7835c0404596752e71575157c9?format=webp&width=800",
       logo: "🇱🇹",
       definition:
         "Corruption is direct or indirect abuse of official position or powers for personal or third-party benefit by a person holding office in the public or private sector. Lithuanian law includes acts such as bribery, trading in influence, and conflicts of interest under this term.",
@@ -379,7 +385,8 @@ const boundaryLogicData = {
     {
       id: "unodc",
       name: "UNODC",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F2c460fd7acf5492ab1e8a4edccb8c3c9?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F2c460fd7acf5492ab1e8a4edccb8c3c9?format=webp&width=800",
       logo: "🌍",
       definition:
         "Corruption, while lacking a universal definition, is generally described as the misuse of entrusted power for private benefit—including bribery, extortion, nepotism, fraud, and embezzlement. UNODC highlights that the forms and perceptions of corruption vary across legal, cultural, and institutional contexts.",
@@ -440,7 +447,8 @@ const boundaryLogicData = {
     {
       id: "g20",
       name: "G20 ACWG",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5a9ed7f1fb364a86a871f7b2d1c86fcc?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5a9ed7f1fb364a86a871f7b2d1c86fcc?format=webp&width=800",
       logo: "🌐",
       definition:
         "Corruption is recognized as the abuse of entrusted authority for private gain, posing significant risks to market integrity, fair competition, and public trust. The G20 ACWG emphasizes corruption's systemic impact on governance, economic development, and the rule of law.",
@@ -502,7 +510,8 @@ const boundaryLogicData = {
     {
       id: "doj",
       name: "US DOJ FCPA",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fbea7129300cb4e3ea7054aab432a3622?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fbea7129300cb4e3ea7054aab432a3622?format=webp&width=800",
       logo: "🏛️",
       definition:
         "The Foreign Corrupt Practices Act (FCPA) defines corruption through the prohibition of offering, promising, or paying anything of value to foreign officials to obtain or retain business. The law targets both direct and indirect payments, regardless of motive, if intended to secure improper business advantage.",
@@ -566,7 +575,8 @@ const boundaryLogicData = {
     {
       id: "imf",
       name: "IMF",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd13ace4acefa49238b479c2abc49255d?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd13ace4acefa49238b479c2abc49255d?format=webp&width=800",
       logo: "💰",
       definition:
         "The IMF defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another person or entity—including bribes, facilitation payments, or similar inducements. This definition applies to any public or private actor whose conduct undermines integrity in financial transactions and governance.",
@@ -628,7 +638,8 @@ const boundaryLogicData = {
     {
       id: "worldbank",
       name: "World Bank",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5ea716e7499346d8923706521145718f?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5ea716e7499346d8923706521145718f?format=webp&width=800",
       logo: "🏦",
       definition:
         "The World Bank defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. Its policy framework targets all forms of undue influence or personal benefit that compromise fair decision-making in public or private contexts.",
@@ -690,7 +701,8 @@ const boundaryLogicData = {
     {
       id: "eib",
       name: "EIB",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F409ba1ed70e94d7690619584c21c14c3?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F409ba1ed70e94d7690619584c21c14c3?format=webp&width=800",
       logo: "🇪🇺",
       definition:
         "The EIB defines corruption as the abuse of public or private office for personal gain, including any conduct where a person improperly or unlawfully enriches themselves or close associates by misusing their position. This standard applies to all parties engaged in EIB-financed projects and activities.",
@@ -752,7 +764,8 @@ const boundaryLogicData = {
     {
       id: "ebrd",
       name: "EBRD",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa83ad062f4a144c1a0e267e4809a9a85?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa83ad062f4a144c1a0e267e4809a9a85?format=webp&width=800",
       logo: "🏛️",
       definition:
         "The EBRD defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This definition is enforced throughout EBRD-financed projects to ensure integrity in both public and private sector dealings.",
@@ -813,7 +826,8 @@ const boundaryLogicData = {
     {
       id: "adb",
       name: "ADB",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff061f91c60ef44018b2fc913e75f31a6?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff061f91c60ef44018b2fc913e75f31a6?format=webp&width=800",
       logo: "🌏",
       definition:
         "ADB defines corruption as the abuse of public or private office for personal gain, covering any situation where entrusted authority is misused for undue benefit. This applies across all sectors, actors, and forms of development finance in ADB operations.",
@@ -875,7 +889,8 @@ const boundaryLogicData = {
     {
       id: "ifc",
       name: "IFC",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7c0fc3c03a5f47fcb0e7e8664824aaa8?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7c0fc3c03a5f47fcb0e7e8664824aaa8?format=webp&width=800",
       logo: "💼",
       definition:
         "The IFC defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This standard governs all IFC-supported transactions and investments, targeting improper inducements in both public and private sectors.",
@@ -937,7 +952,8 @@ const boundaryLogicData = {
     {
       id: "idb",
       name: "IDB",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F96450dcffb7742d9a9b1ade768883238?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F96450dcffb7742d9a9b1ade768883238?format=webp&width=800",
       logo: "🌎",
       definition:
         "The IDB defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This policy applies to all individuals or entities participating in IDB-funded projects or transactions.",
@@ -998,7 +1014,8 @@ const boundaryLogicData = {
     {
       id: "ndb",
       name: "NDB (BRICS)",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fadea02f00f9c41c49ece1fb58fb19e1f?format=webp&width=800",
       logo: "🌍",
       definition:
         "The NDB (BRICS) defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. The definition is enforced to maintain integrity in all NDB-related operations, contracts, and financial instruments.",
@@ -1060,7 +1077,8 @@ const boundaryLogicData = {
     {
       id: "nib",
       name: "NIB",
-      logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
+      logoUrl:
+        "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff18c085594b847b6b29bebe53f9405e5?format=webp&width=800",
       logo: "🇳🇴",
       definition:
         "The NIB defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This standard applies across all NIB activities and is designed to prevent undue advantage and conflicts of interest in financing and procurement.",
@@ -1364,11 +1382,11 @@ const BoundaryLogicCarousel = () => {
                 height: "80px",
                 width: "auto",
                 maxWidth: "100%",
-                objectFit: "contain"
+                objectFit: "contain",
               }}
               onError={(e) => {
                 // Fallback to emoji if image fails to load
-                e.target.style.display = 'none';
+                e.target.style.display = "none";
                 e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
               }}
             />
@@ -2649,11 +2667,11 @@ const InstitutionCard = ({ institution }) => {
               height: "80px",
               width: "auto",
               maxWidth: "100%",
-              objectFit: "contain"
+              objectFit: "contain",
             }}
             onError={(e) => {
               // Fallback to emoji if image fails to load
-              e.target.style.display = 'none';
+              e.target.style.display = "none";
               e.target.parentElement.innerHTML = `<span style="fontSize: 48px">${institution.logo}</span>`;
             }}
           />
