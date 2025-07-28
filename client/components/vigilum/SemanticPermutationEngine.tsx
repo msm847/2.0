@@ -386,7 +386,7 @@ const OVERRIDE_MATRIX = [
     strength: 0.5,
   },
   {
-    from: "ε",
+    from: "��",
     to: "R",
     effect:
       "Environmental distortion destabilizes institutional reflex structures",
@@ -528,7 +528,7 @@ const SemanticPermutationEngine = () => {
       });
 
       phi += environmentGradient;
-      formulaTerms.push(`��𝓔`);
+      formulaTerms.push(`∇𝓔`);
 
       return {
         phi,
@@ -779,6 +779,19 @@ const SemanticPermutationEngine = () => {
     operatorVersion,
     executeCalculations,
   ]);
+
+  // Cleanup effect for all timeouts
+  useEffect(() => {
+    return () => {
+      if (calculationTimeoutRef.current) {
+        clearTimeout(calculationTimeoutRef.current);
+      }
+      if (versionSwitchTimeoutRef.current) {
+        clearTimeout(versionSwitchTimeoutRef.current);
+      }
+      isCalculatingRef.current = false;
+    };
+  }, []);
 
   // Drag and drop handlers
   const handleDragStart = useCallback(
