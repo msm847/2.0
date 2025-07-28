@@ -294,9 +294,6 @@ export default function Index() {
           }
         }
       `}</style>
-
-      {/* Add PerceptionPerspective for global corruption counter */}
-      <PerceptionPerspective />
     </div>
   );
 }
