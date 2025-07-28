@@ -1271,15 +1271,17 @@ const SemanticPermutationEngine = () => {
             <AnimatePresence>
               {isCalculating && (
                 <motion.div
-                  className="absolute inset-0 bg-black bg-opacity-10 backdrop-blur-sm rounded-lg z-10 flex items-center justify-center"
+                  className="absolute inset-0 bg-gray-900 bg-opacity-60 rounded-lg z-20 flex items-center justify-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
-                  <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
-                    <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
-                    <span className="text-sm font-mono text-green-400">Calculating...</span>
+                  <div className="bg-gray-800 border border-green-400/30 px-5 py-3 rounded-lg shadow-lg">
+                    <div className="flex items-center space-x-3">
+                      <RefreshCw className="w-5 h-5 animate-spin text-green-400" />
+                      <span className="text-sm font-mono text-green-400 font-medium">Calculating...</span>
+                    </div>
                   </div>
                 </motion.div>
               )}
