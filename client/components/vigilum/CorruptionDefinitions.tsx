@@ -272,7 +272,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "–",
+          state: "✓",
           tooltip:
             "Not within FATF mandate unless involving money laundering or terrorism financing. [SB]",
           typology: ["SB"],
