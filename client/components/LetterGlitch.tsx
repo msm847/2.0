@@ -31,18 +31,7 @@ const LetterGlitch = ({
     }, 4000); // Wait 4 seconds for animation to complete
   };
 
-  const handleAudioClick = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-        setIsPlaying(false);
-      } else {
-        audioRef.current.play().catch(console.error);
-        setIsPlaying(true);
-      }
-    }
-  };
+
 
   const containerStyle: React.CSSProperties = {
     position: "relative",
