@@ -1213,7 +1213,15 @@ const SemanticPermutationEngine = () => {
               <BarChart3 className="w-5 h-5 text-gray-400" />
             </div>
 
-            <div key={operatorVersion} className="flex flex-col flex-1 min-h-0">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={operatorVersion}
+                className="flex flex-col flex-1 min-h-0"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
               {/* Layer headers */}
               <div className="grid grid-cols-7 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
                 <div className="h-10 flex items-center justify-center"></div>
