@@ -11,7 +11,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
       logo: "🌐",
       definition:
-        "The OECD deliberately does not define 'corruption' but establishes specific offences for corrupt behavior. For policy purposes, corruption is described as 'the misuse of public office, roles or resources for private benefit.'",
+        "Corruption is generally understood as the intentional abuse of public or private office for undue advantage, including bribery, embezzlement, and related misconduct. The OECD establishes offence-specific standards rather than a single definition, recognizing the diversity of national legal systems.",
       citation: {
         text: "OECD, Corruption: A Glossary of International Standards in Criminal Law, 2008",
         url: "https://www.oecd.org/en/topics/policy-issues/anti-corruption-and-integrity.html",
