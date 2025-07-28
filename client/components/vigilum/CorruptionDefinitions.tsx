@@ -823,7 +823,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Core prohibited practice in ADB integrity framework and operations. [CI]",
           typology: ["CI"],
@@ -1329,6 +1329,7 @@ const BoundaryLogicCarousel = () => {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
+            justifyContent: "center",
             marginBottom: "16px",
             gap: "15px",
           }}
