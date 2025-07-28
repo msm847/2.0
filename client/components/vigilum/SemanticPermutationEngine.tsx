@@ -1157,7 +1157,7 @@ const SemanticPermutationEngine = () => {
                         minHeight: "3rem",
                       }}
                     >
-                      {getCurrentSequence()[rowIndex]}
+                      {getCurrentSequence[rowIndex]}
                     </div>
                     {row.map((cell, colIndex) => (
                       <div
