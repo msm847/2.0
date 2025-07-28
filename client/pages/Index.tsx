@@ -71,9 +71,38 @@ export default function Index() {
         fontFamily: "var(--font-body)",
       }}
     >
-
-
-
+      {/* Interactive AI Website Background */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+        }}
+      >
+        <iframe
+          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          allow="accelerometer; autoplay; camera; clipboard-write; encrypted-media; fullscreen; gyroscope; magnetometer; microphone; midi; payment; picture-in-picture; publickey-credentials-get; sync-xhr; usb; web-share; xr-spatial-tracking"
+          allowFullScreen
+          sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          style={{
+            border: "none",
+            display: "block",
+            width: "100%",
+            height: "100%",
+            pointerEvents: "auto",
+          }}
+          onLoad={() => {
+            setRobotAnimationFinished(true);
+            setSplineLoaded(true);
+          }}
+        />
+      </div>
 
       {/* Content Overlay - Only show when Spline is loaded */}
       {splineLoaded && (
