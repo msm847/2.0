@@ -1215,9 +1215,8 @@ const SemanticPermutationEngine = () => {
                   <span className="text-green-400">
                     {permutationResult.mathematical_result.phi.toFixed(3)}
                   </span>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
           </div>
         </div>
 
