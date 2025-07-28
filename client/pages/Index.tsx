@@ -174,7 +174,7 @@ export default function Index() {
               lineHeight: 1.4,
             }}
           >
-            Truth is not fixed. It is rendered by the logic that observes it.
+            Truth is not fixed.<br />It is rendered by the logic that observes it.
           </p>
         </GradientText>
 
