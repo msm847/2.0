@@ -565,38 +565,21 @@ const SemanticPermutationEngine = () => {
           if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) epsilon -= 0.12;
         }
 
-        // Comprehensive typology-based positional modifier (ρᵢ)
+        // Exact positional modifier (ρᵢ) as specified
         let positionalModifier = 0;
-        const [h, s, b, w] = operator.typology;
 
-        // START POSITION EFFECTS
-        if (index === 0) {
-          // Hard operators at start dampen risk
-          if (h >= 0.20) positionalModifier = -0.15;
-          // Soft/Black operators at start create early risk
-          else if (s >= 0.75 || b >= 0.70) positionalModifier = +0.08;
+        // End amplification: only O and XT get bonuses
+        if (index === sequence.length - 1) {
+          if (opId === "O") positionalModifier = 0.15;
+          else if (opId === "XT") positionalModifier = 0.12;
         }
 
-        // END POSITION EFFECTS
-        else if (index === sequence.length - 1) {
-          // Soft/Black operators at end spike risk
-          if (s >= 0.75 && b >= 0.70) positionalModifier = +0.20; // Both Soft AND Black
-          else if (s >= 0.75) positionalModifier = +0.15; // Soft operators
-          else if (b >= 0.70) positionalModifier = +0.12; // Black operators
-
-          // White operators at end provide transparency dampening
-          if (w >= 0.20) positionalModifier = -0.08;
+        // Start dampening: only H gets penalty
+        if (index === 0 && opId === "H") {
+          positionalModifier = -0.10;
         }
 
-        // MIDDLE POSITIONS
-        else {
-          // Central Soft/Black clustering gets small bonus
-          if (s >= 0.80 && b >= 0.70) positionalModifier = +0.05;
-          else if (s >= 0.75 || b >= 0.70) positionalModifier = +0.03;
-
-          // Hard/White in middle provides stability
-          if (h >= 0.20 || w >= 0.30) positionalModifier = -0.03;
-        }
+        // All other operators and positions: 0 by default
 
         // Effective weight: αᵢ × (1 + εᵢ) + ρᵢ
         const effectiveWeight = operator.weight * (1 + epsilon) + positionalModifier;
