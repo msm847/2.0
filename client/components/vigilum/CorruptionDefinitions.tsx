@@ -432,7 +432,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Addressed through international cooperation and regulatory harmonization under UNCAC. [CI]",
           typology: ["CI"],
@@ -640,7 +640,7 @@ const boundaryLogicData = {
       name: "World Bank",
       logoUrl:
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5ea716e7499346d8923706521145718f?format=webp&width=800",
-      logo: "🏦",
+      logo: "����",
       definition:
         "The World Bank defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. Its policy framework targets all forms of undue influence or personal benefit that compromise fair decision-making in public or private contexts.",
       citation: {
@@ -1437,7 +1437,8 @@ const BoundaryLogicCarousel = () => {
               alignItems: "center",
               gap: "8px",
               marginTop: "auto",
-              paddingTop: "8px",
+              paddingTop: "16px",
+              marginBottom: "12px",
             }}
           >
             <span
