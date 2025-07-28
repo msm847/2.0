@@ -36,19 +36,32 @@ const SYSTEM_LAYERS = {
   ε: { name: "Environmental distortion and temporal compression", symbol: "ε" },
 };
 
+// Adjacency Matrix for operator pair modifiers
+const ADJACENCY_MATRIX = {
+  // Major adjacencies
+  "S-O": 0.15,
+  "S-M": 0.10,
+  "A-XT": 0.12,
+  "I-F": 0.08,
+  "C-R": 0.10,
+  "H-*": -0.12, // H dampens all following operators
+  // Add more as needed
+};
+
 // Five Atomic Semantic Operators with Mathematical Definitions
 const OPERATORS = [
   {
     id: "H",
     name: "Unbreakable Constraint",
     fullName: "Unbreakable Constraint",
-    weight: 0.34,
+    weight: 0.15, // Updated baseline weight (dampening)
     symbol: "H",
     glyph: "⬛",
     affects: ["L", "P", "V"],
     position_sensitive: true,
     override_targets: [],
     color: "#10B981", // Vigilum mint
+    typology: [1.0, 0.0, 0.0, 0.8], // [H, S, B, W]
     description:
       "Unbreakable Constraint defines a boundary that cannot be crossed or dissolved from within the system, no matter what other operators are invoked. It requires an external, independent actor—often a regulator, court, or sovereign authority—to permit an exception or breach, and even then only under conditions that are hard-coded and immutable. This operator represents true structural friction: it is the only reliable defense against capture or override, because it is designed to be non-negotiable and to survive attempts at internal nullification or simulation. In institutional logic, genuine unbreakable constraints are rare and valuable, marking the difference between simulated compliance and actual legal or operational immovability. Where most controls can be circumvented through sophisticated clause sequencing or discretionary override, an unbreakable constraint draws an absolute line, forcing all actors to operate within its bounds or face existential system breakdown.",
     calculation: {
