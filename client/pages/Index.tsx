@@ -273,6 +273,7 @@ export default function Index() {
           </button>
         </div>
       </div>
+      )}
 
       <style>{`
         @keyframes gradientShift {
