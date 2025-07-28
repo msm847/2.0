@@ -338,7 +338,7 @@ const OPERATORS_V2 = [
     symbol: "A",
     glyph: "⊕",
     affects: ["P", "L", "R"],
-    typology: [0.1, 0.7, 0.6, 0.1], // [H, S, B, W]
+    typology: [0.10, 0.75, 0.70, 0.10], // [H, S, B, W]
     position_sensitive: true,
     override_targets: ["V", "ε"],
     color: "#10B981", // Green
