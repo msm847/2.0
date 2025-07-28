@@ -296,7 +296,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Primary focus area - money laundering is core FATF mandate. [CI]",
           typology: ["CI"],
