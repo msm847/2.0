@@ -102,7 +102,7 @@ const OPERATORS = [
     override_targets: ["ε"],
     color: "#EF4444", // Vigilum red
     description:
-      "Risk emerges when surface accountability is separated from actual execution logic. L placed before or after an Audit reduces risk; L embedded between Masking or Proxy actors increases exposure.",
+      "Extraction/Transfer is the core operator through which value, risk, decision rights, or liability are structurally moved out of the originating system, either to external entities, hidden intermediaries, or parallel structures. It operates regardless of surface compliance: whenever a contract, statute, or policy grants the right to shift money, responsibility, or control beyond the oversight boundary, this operator is in play. Extraction may be explicit (fees to an offshore partner, liability shifted to a subcontractor) or disguised (service flows through opaque SPVs), but in every case it severs the internal chain of accountability. This operator is what transforms system resilience into system exposure: once activated, internal safeguards, audits, or rules have no purchase over the extracted asset or risk. In governance and procurement, repeated application of extraction/transfer is the primary channel for laundering, asset flight, or regulatory arbitrage.",
     calculation: {
       formula:
         "R = w₁ �� pattern_strength + w₂ × automation_depth + w₃ × override_resistance",
@@ -986,7 +986,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {/* Scroll hint */}
                         <div className="text-xs text-gray-500 font-mono mb-2">
-                          <span className="text-lg">���</span> Scroll for more
+                          <span className="text-lg">↓</span> Scroll for more
                           details
                         </div>
 
