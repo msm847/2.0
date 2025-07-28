@@ -255,9 +255,9 @@ const OPERATORS_V2 = [
     impact: "Obscures real operations through legal and procedural complexity.",
   },
   {
-    id: "ε",
-    name: "Environmental Operator",
-    fullName: "Environmental Operator and External Disruption",
+    id: "C",
+    name: "Compression",
+    fullName: "Compression",
     weight: 0.25,
     symbol: "ε",
     glyph: "⟡",
