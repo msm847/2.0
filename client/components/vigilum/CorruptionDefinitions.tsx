@@ -2625,15 +2625,15 @@ const InstitutionCard = ({ institution }) => {
       >
         <div
           style={{
-            width: "60px",
-            height: "60px",
+            width: "80px",
+            height: "80px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             borderRadius: "8px",
             background: "#FFFFFF",
             border: "1px solid #D6DBE3",
-            padding: "6px",
+            padding: "8px",
             boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
             flexShrink: 0,
           }}
@@ -2642,7 +2642,7 @@ const InstitutionCard = ({ institution }) => {
             src={institution.logoUrl}
             alt={`${institution.name} logo`}
             style={{
-              height: "60px",
+              height: "80px",
               width: "auto",
               maxWidth: "100%",
               objectFit: "contain"
@@ -2650,7 +2650,7 @@ const InstitutionCard = ({ institution }) => {
             onError={(e) => {
               // Fallback to emoji if image fails to load
               e.target.style.display = 'none';
-              e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
+              e.target.parentElement.innerHTML = `<span style="fontSize: 48px">${institution.logo}</span>`;
             }}
           />
         </div>
@@ -2661,7 +2661,7 @@ const InstitutionCard = ({ institution }) => {
             fontWeight: "600",
             color: "#FFFFFF",
             margin: "0",
-            textAlign: "left",
+            textAlign: "center",
             flex: 1,
           }}
         >
