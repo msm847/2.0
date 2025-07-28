@@ -184,7 +184,7 @@ export default function Index() {
           style={{
             display: "flex",
             gap: "20px",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             pointerEvents: "auto",
             marginTop: "0.2rem",
           }}
