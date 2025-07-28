@@ -100,30 +100,7 @@ export default function Index() {
         />
       </div>
 
-      {/* VIGILUM Logo - Company Name */}
-      <div
-        id="logo-container"
-        style={{
-          position: "absolute",
-          top: "55%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: "1.5rem",
-          fontWeight: "900",
-          color: "#FFFFFF",
-          zIndex: 3,
-          pointerEvents: "none",
-          fontFamily: "var(--font-display)",
-          letterSpacing: "1px",
-          opacity: robotAnimationFinished ? 1 : 0,
-          transition: "opacity 1.5s ease-in-out, transform 1.5s ease-in-out",
-          transform: robotAnimationFinished
-            ? "translateX(-50%) translateY(0)"
-            : "translateX(-50%) translateY(20px)",
-        }}
-      >
 
-      </div>
 
       {/* Content Overlay */}
       <div
