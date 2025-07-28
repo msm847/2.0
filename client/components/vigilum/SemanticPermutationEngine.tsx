@@ -503,7 +503,7 @@ const SemanticPermutationEngine = () => {
   // Enhanced formula calculation
   const calculatePermutationFormula = useCallback(
     (sequence: string[]) => {
-      const environmentGradient = 0.15; // ∇𝓔 base value
+      const environmentGradient = 0.15; // ���𝓔 base value
       let phi = 0;
       let formulaTerms: string[] = [];
       let calculationDetails: any = {};
@@ -971,16 +971,24 @@ const SemanticPermutationEngine = () => {
           </div>
 
           {/* Operator Cards with Flip Animation */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-            {getCurrentSequence.map((opId, index) => {
-              const operator = getCurrentOperators.find(
-                (op) => op.id === opId,
-              )!;
-              const isFlipped = flippedCards.has(opId);
-              const calculationData = calculationBreakdowns[opId];
-              const isNullified =
-                checkActiveOverrides(opId, getCurrentSequence, index).length >
-                0;
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={operatorVersion}
+              className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              {getCurrentSequence.map((opId, index) => {
+                const operator = getCurrentOperators.find(
+                  (op) => op.id === opId,
+                )!;
+                const isFlipped = flippedCards.has(opId);
+                const calculationData = calculationBreakdowns[opId];
+                const isNullified =
+                  checkActiveOverrides(opId, getCurrentSequence, index).length >
+                  0;
 
               return (
                 <div
