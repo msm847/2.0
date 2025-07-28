@@ -779,7 +779,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         cronyism: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Addressed through conflict of interest policies rather than direct prohibition. [DG]",
           typology: ["DG"],
