@@ -11,9 +11,6 @@ export default function Index() {
   const [robotAnimationFinished, setRobotAnimationFinished] = useState(false);
 
   useEffect(() => {
-    // Reset states when component mounts (including when returning from other pages)
-    setAnimationPlayed(false);
-    setRobotAnimationFinished(false);
     setupAnimationTrigger();
   }, []);
 
