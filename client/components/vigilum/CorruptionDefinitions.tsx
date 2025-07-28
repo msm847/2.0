@@ -823,7 +823,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Core prohibited practice in ADB integrity framework and operations. [CI]",
           typology: ["CI"],
@@ -2611,49 +2611,61 @@ const InstitutionCard = ({ institution }) => {
         textAlign: "center",
       }}
     >
-      {/* Centered Logo */}
+      {/* Logo and Institution Name - Horizontal Layout */}
       <div
         style={{
-          width: "80px",
-          height: "80px",
           display: "flex",
+          flexDirection: "row",
           alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "12px",
-          marginBottom: "16px",
-          background: "transparent",
-          padding: "0px",
+          marginBottom: "20px",
+          gap: "15px",
         }}
       >
-        <img
-          src={institution.logoUrl}
-          alt={`${institution.name} logo`}
+        <div
           style={{
-            height: "80px",
-            width: "auto",
-            maxWidth: "100%",
-            objectFit: "contain"
+            width: "60px",
+            height: "60px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "8px",
+            background: "#FFFFFF",
+            border: "1px solid #D6DBE3",
+            padding: "6px",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+            flexShrink: 0,
           }}
-          onError={(e) => {
-            // Fallback to emoji if image fails to load
-            e.target.style.display = 'none';
-            e.target.parentElement.innerHTML = `<span style="fontSize: 48px">${institution.logo}</span>`;
-          }}
-        />
-      </div>
+        >
+          <img
+            src={institution.logoUrl}
+            alt={`${institution.name} logo`}
+            style={{
+              height: "60px",
+              width: "auto",
+              maxWidth: "100%",
+              objectFit: "contain"
+            }}
+            onError={(e) => {
+              // Fallback to emoji if image fails to load
+              e.target.style.display = 'none';
+              e.target.parentElement.innerHTML = `<span style="fontSize: 40px">${institution.logo}</span>`;
+            }}
+          />
+        </div>
 
-      {/* Centered Institution Name */}
-      <h4
-        style={{
-          fontSize: "20px",
-          fontWeight: "600",
-          color: "#FFFFFF",
-          margin: "0 0 20px 0",
-          textAlign: "center",
-        }}
-      >
-        {institution.name}
-      </h4>
+        <h4
+          style={{
+            fontSize: "20px",
+            fontWeight: "600",
+            color: "#FFFFFF",
+            margin: "0",
+            textAlign: "left",
+            flex: 1,
+          }}
+        >
+          {institution.name}
+        </h4>
+      </div>
 
       {/* Left-aligned Definition */}
       <p
