@@ -755,7 +755,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fa83ad062f4a144c1a0e267e4809a9a85?format=webp&width=800",
       logo: "🏛️",
       definition:
-        "The offering, giving, receiving or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
+        "The EBRD defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This definition is enforced throughout EBRD-financed projects to ensure integrity in both public and private sector dealings.",
       citation: {
         text: "EBRD Enforcement Policy and Procedures",
         url: "https://www.ebrd.com/home/who-we-are/strategies-governance-compliance/ebrd-sanctions-system.html",
