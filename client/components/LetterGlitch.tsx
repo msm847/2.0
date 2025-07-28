@@ -33,14 +33,7 @@ const LetterGlitch = ({
     overflow: "hidden",
   };
 
-  const iframeStyle: React.CSSProperties = {
-    border: "none",
-    display: "block",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    zIndex: 0,
-  };
+
 
   const outerVignetteStyle: React.CSSProperties = {
     position: "absolute",
