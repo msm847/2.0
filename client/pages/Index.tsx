@@ -130,10 +130,10 @@ export default function Index() {
         id="content-overlay"
         style={{
           position: "absolute",
-          top: "80px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          textAlign: "center",
+          top: "50%",
+          left: "35%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "left",
           color: "white",
           pointerEvents: "none",
           zIndex: 3,
