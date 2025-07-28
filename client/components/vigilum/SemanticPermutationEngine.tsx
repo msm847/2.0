@@ -917,14 +917,14 @@ const SemanticPermutationEngine = () => {
 
           {/* Operator Cards with Flip Animation */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-            {getCurrentSequence().map((opId, index) => {
-              const operator = getCurrentOperators().find(
+            {getCurrentSequence.map((opId, index) => {
+              const operator = getCurrentOperators.find(
                 (op) => op.id === opId,
               )!;
               const isFlipped = flippedCards.has(opId);
               const calculationData = calculationBreakdowns[opId];
               const isNullified =
-                checkActiveOverrides(opId, getCurrentSequence(), index).length >
+                checkActiveOverrides(opId, getCurrentSequence, index).length >
                 0;
 
               return (
