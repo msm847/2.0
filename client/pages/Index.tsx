@@ -83,8 +83,8 @@ export default function Index() {
         }}
       >
         <iframe
-          key="home-spline-animation"
-          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/"
+          key={`home-spline-animation-${Date.now()}`}
+          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/?v=2"
           frameBorder="0"
           width="100%"
           height="100%"
@@ -105,176 +105,174 @@ export default function Index() {
         />
       </div>
 
+
+
       {/* Content Overlay - Only show when Spline is loaded */}
       {splineLoaded && (
         <div
           id="content-overlay"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "35%",
-            transform: "translate(-50%, -50%)",
-            textAlign: "left",
-            color: "white",
-            pointerEvents: "none",
-            zIndex: 3,
-            background: "transparent",
-            padding: "40px 60px",
-          }}
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "35%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "left",
+          color: "white",
+          pointerEvents: "none",
+          zIndex: 3,
+          background: "transparent",
+          padding: "40px 60px",
+        }}
+      >
+        <GradientText
+          colors={["#1a3d2e", "#2d6b4f", "#61dca3", "#2d6b4f", "#1a3d2e"]}
+          animationSpeed={6}
+          className="font-black"
+          style={{ fontWeight: "900" }}
         >
-          <GradientText
-            colors={["#1a3d2e", "#2d6b4f", "#61dca3", "#2d6b4f", "#1a3d2e"]}
-            animationSpeed={6}
-            className="font-black"
-            style={{ fontWeight: "900" }}
-          >
-            <h1
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "3rem",
-                fontWeight: "950",
-                margin: 0,
-                letterSpacing: "2px",
-                lineHeight: 1.1,
-                display: "block",
-                width: "100%",
-              }}
-            >
-              Semantic Foresight
-              <br />
-              Intelligence
-            </h1>
-          </GradientText>
-
-          <div style={{ display: "block", width: "100%", marginTop: "1rem" }}>
-            <GradientText
-              colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
-              animationSpeed={8}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "1.1rem",
-                  fontWeight: "700",
-                  margin: "0 0 1.5rem 0",
-                  letterSpacing: "0.5px",
-                  lineHeight: 1.4,
-                  display: "block",
-                }}
-              >
-                Truth is not fixed.
-                <br />
-                It is rendered by the logic that observes it.
-              </p>
-            </GradientText>
-          </div>
-
-          {/* Buttons Container - Inside content overlay */}
-          <div
-            id="buttons-container"
+          <h1
             style={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "flex-start",
-              pointerEvents: "auto",
-              marginTop: "0.2rem",
+              fontFamily: "var(--font-display)",
+              fontSize: "3rem",
+              fontWeight: "950",
+              margin: 0,
+              letterSpacing: "2px",
+              lineHeight: 1.1,
+              display: "block",
+              width: "100%",
             }}
           >
-            {/* Enter Simulation Button */}
-            <button
-              id="enter-button"
-              onClick={(e) => {
-                console.log("Button click event triggered");
-                e.preventDefault();
-                e.stopPropagation();
-                handleButtonClick();
-              }}
-              style={{
-                width: "220px",
-                height: "50px",
-                background: "transparent",
-                border: "2px solid #61dca3",
-                borderRadius: "25px",
-                fontSize: "16px",
-                fontWeight: "700",
-                letterSpacing: "1px",
-                cursor: "pointer",
-                fontFamily: "var(--font-ui)",
-                textTransform: "uppercase",
-                transition: "all 0.3s ease",
-                pointerEvents: "auto",
-                padding: "0",
-                color: "#61dca3",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(97, 220, 163, 0.1)";
-                e.target.style.borderColor = "#61dca3";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.borderColor = "#61dca3";
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(97, 220, 163, 0.1)";
-                e.target.style.borderColor = "rgba(97, 220, 163, 0.8)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.borderColor = "rgba(97, 220, 163, 0.6)";
-              }}
-            >
-              ENTER SIMULATION
-            </button>
+            Semantic Foresight<br />Intelligence
+          </h1>
+        </GradientText>
 
-            {/* Team Button */}
-            <button
-              id="connect-button"
-              onClick={(e) => {
-                console.log(
-                  "Connect button clicked - navigating to stakeholders section",
-                );
-                e.preventDefault();
-                e.stopPropagation();
-                navigate("/vigilum#stakeholders");
-              }}
+        <div style={{ display: "block", width: "100%", marginTop: "1rem" }}>
+          <GradientText
+            colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
+            animationSpeed={8}
+          >
+            <p
               style={{
-                width: "180px",
-                height: "50px",
-                background: "transparent",
-                border: "2px solid #61b3dc",
-                borderRadius: "25px",
-                fontSize: "16px",
+                fontFamily: "var(--font-body)",
+                fontSize: "1.1rem",
                 fontWeight: "700",
-                letterSpacing: "1px",
-                cursor: "pointer",
-                fontFamily: "var(--font-ui)",
-                textTransform: "uppercase",
-                transition: "all 0.3s ease",
-                pointerEvents: "auto",
-                padding: "0",
-                color: "#61b3dc",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(97, 179, 220, 0.1)";
-                e.target.style.borderColor = "#61b3dc";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.borderColor = "#61b3dc";
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(97, 179, 220, 0.1)";
-                e.target.style.borderColor = "rgba(97, 179, 220, 0.8)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.borderColor = "rgba(97, 179, 220, 0.6)";
+                margin: "0 0 1.5rem 0",
+                letterSpacing: "0.5px",
+                lineHeight: 1.4,
+                display: "block",
               }}
             >
-              CONNECT
-            </button>
-          </div>
+              Truth is not fixed.<br />It is rendered by the logic that observes it.
+            </p>
+          </GradientText>
         </div>
+
+        {/* Buttons Container - Inside content overlay */}
+        <div
+          id="buttons-container"
+          style={{
+            display: "flex",
+            gap: "20px",
+            justifyContent: "flex-start",
+            pointerEvents: "auto",
+            marginTop: "0.2rem",
+          }}
+        >
+          {/* Enter Simulation Button */}
+          <button
+            id="enter-button"
+            onClick={(e) => {
+              console.log("Button click event triggered");
+              e.preventDefault();
+              e.stopPropagation();
+              handleButtonClick();
+            }}
+            style={{
+              width: "220px",
+              height: "50px",
+              background: "transparent",
+              border: "2px solid #61dca3",
+              borderRadius: "25px",
+              fontSize: "16px",
+              fontWeight: "700",
+              letterSpacing: "1px",
+              cursor: "pointer",
+              fontFamily: "var(--font-ui)",
+              textTransform: "uppercase",
+              transition: "all 0.3s ease",
+              pointerEvents: "auto",
+              padding: "0",
+              color: "#61dca3",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(97, 220, 163, 0.1)";
+              e.target.style.borderColor = "#61dca3";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "transparent";
+              e.target.style.borderColor = "#61dca3";
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(97, 220, 163, 0.1)";
+              e.target.style.borderColor = "rgba(97, 220, 163, 0.8)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "transparent";
+              e.target.style.borderColor = "rgba(97, 220, 163, 0.6)";
+            }}
+          >
+            ENTER SIMULATION
+          </button>
+
+          {/* Team Button */}
+          <button
+            id="connect-button"
+            onClick={(e) => {
+              console.log(
+                "Connect button clicked - navigating to stakeholders section",
+              );
+              e.preventDefault();
+              e.stopPropagation();
+              navigate("/vigilum#stakeholders");
+            }}
+            style={{
+              width: "180px",
+              height: "50px",
+              background: "transparent",
+              border: "2px solid #61b3dc",
+              borderRadius: "25px",
+              fontSize: "16px",
+              fontWeight: "700",
+              letterSpacing: "1px",
+              cursor: "pointer",
+              fontFamily: "var(--font-ui)",
+              textTransform: "uppercase",
+              transition: "all 0.3s ease",
+              pointerEvents: "auto",
+              padding: "0",
+              color: "#61b3dc",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(97, 179, 220, 0.1)";
+              e.target.style.borderColor = "#61b3dc";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "transparent";
+              e.target.style.borderColor = "#61b3dc";
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(97, 179, 220, 0.1)";
+              e.target.style.borderColor = "rgba(97, 179, 220, 0.8)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "transparent";
+              e.target.style.borderColor = "rgba(97, 179, 220, 0.6)";
+            }}
+          >
+            CONNECT
+          </button>
+        </div>
+      </div>
       )}
 
       <style>{`
