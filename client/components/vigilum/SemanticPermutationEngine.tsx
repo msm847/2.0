@@ -1134,7 +1134,8 @@ const SemanticPermutationEngine = () => {
                 </div>
               );
             })}
-          </div>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Live Formula */}
           <div className="text-center">
