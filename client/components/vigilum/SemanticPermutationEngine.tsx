@@ -1030,15 +1030,7 @@ const SemanticPermutationEngine = () => {
           </div>
 
           {/* Operator Cards with Flip Animation */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={operatorVersion}
-              className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
               {getCurrentSequence.map((opId, index) => {
                 const operator = getCurrentOperators.find(
                   (op) => op.id === opId,
