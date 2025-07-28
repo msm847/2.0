@@ -146,13 +146,13 @@ const OPERATORS = [
     id: "I",
     name: "Indirection",
     fullName: "Indirection",
-    weight: 0.09,
-    symbol: "A",
-    glyph: "⚬",
-    affects: ["ε", "P", "A"],
+    weight: 0.22,
+    symbol: "I",
+    glyph: "⦿",
+    affects: ["L", "P", "V"],
     position_sensitive: true,
-    override_targets: ["R"],
-    color: "#8B5CF6", // Vigilum purple
+    override_targets: ["A", "R"],
+    color: "#06B6D4", // Cyan
     description:
       "This operator quantifies environmental pressure effects and temporal distortions that compress decision timeframes and alter system responses under stress conditions.",
     calculation: {
@@ -984,7 +984,7 @@ const SemanticPermutationEngine = () => {
                       >
                         {/* Scroll hint */}
                         <div className="text-xs text-gray-500 font-mono mb-2">
-                          <span className="text-lg">���</span> Scroll for more
+                          <span className="text-lg">↓</span> Scroll for more
                           details
                         </div>
 
