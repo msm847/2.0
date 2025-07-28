@@ -1114,11 +1114,7 @@ const SemanticPermutationEngine = () => {
               LIVE MATHEMATICAL FORMULA
             </div>
             {permutationResult && (
-              <div
-                className={`text-lg font-mono text-white transition-opacity duration-300 ${
-                  isCalculating ? 'opacity-30' : 'opacity-100'
-                }`}
-              >
+              <div className="text-lg font-mono text-white">
                 ϕ(c,𝓔) ={" "}
                 {getCurrentSequence.map((op, i) => (
                   <span key={`${operatorVersion}-${op}-${i}`}>
