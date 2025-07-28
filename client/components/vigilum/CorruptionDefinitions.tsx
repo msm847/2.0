@@ -1391,9 +1391,10 @@ const BoundaryLogicCarousel = () => {
         <div
           style={{
             marginTop: "12px",
-            flex: 1,
+            height: "180px",
             display: "flex",
             flexDirection: "column",
+            overflow: "hidden",
           }}
         >
           <blockquote
