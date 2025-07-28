@@ -1309,7 +1309,7 @@ const BoundaryLogicCarousel = () => {
           cursor: "default",
           width: "320px",
           height: "auto",
-          minHeight: "550px",
+          minHeight: "650px",
           flexShrink: 0,
           transform: isActive ? "scale(1.04)" : "scale(1)",
           zIndex: isActive ? 2 : 1,
