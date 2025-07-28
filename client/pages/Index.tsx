@@ -210,7 +210,7 @@ export default function Index() {
               border: "2px solid #61dca3",
               borderRadius: "25px",
               fontSize: "16px",
-              fontWeight: "500",
+              fontWeight: "700",
               letterSpacing: "1px",
               cursor: "pointer",
               fontFamily: "var(--font-ui)",
