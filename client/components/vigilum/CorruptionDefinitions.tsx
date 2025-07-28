@@ -36,31 +36,31 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         cronyism: {
-          state: "–",
+          state: "?",
           tooltip:
             "Not specifically addressed in OECD anti-corruption framework. [SB]",
           typology: ["SB"],
         },
         fraud: {
-          state: "–",
+          state: "✓",
           tooltip:
             "Outside scope of anti-bribery convention, addressed in separate frameworks. [SB]",
           typology: ["SB"],
         },
         assetLaundering: {
-          state: "?",
+          state: "✓",
           tooltip:
             "Addressed through FATF coordination and financial intelligence measures. [RT]",
           typology: ["RT"],
         },
         regulatoryArbitrage: {
-          state: "✓",
+          state: "?",
           tooltip:
             "Central concern in OECD work on regulatory coherence and international coordination. [CI]",
           typology: ["CI"],
         },
         nepotism: {
-          state: "–",
+          state: "?",
           tooltip:
             "Not directly addressed in OECD anti-corruption instruments. [SB]",
           typology: ["SB"],
