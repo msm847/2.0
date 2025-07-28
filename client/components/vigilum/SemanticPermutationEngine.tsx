@@ -117,32 +117,30 @@ const OPERATORS = [
       "Increasing 'R' constrains variability and enforces systematic behavioral patterns.",
   },
   {
-    id: "P",
-    name: "Proxy Actor",
-    fullName: "Proxy Actor Intermediation",
-    weight: 0.13,
-    symbol: "P",
-    glyph: "⧬",
-    affects: ["A", "R", "L"],
+    id: "F",
+    name: "Fracture",
+    fullName: "Fracture",
+    weight: 0.09,
+    symbol: "F",
+    glyph: "⚬",
+    affects: ["ε", "P", "A"],
     position_sensitive: true,
-    override_targets: ["V"],
-    color: "#8B5CF6", // Vigilum purple
+    override_targets: ["R"],
+    color: "#F59E0B", // Amber
     description:
-      "Proxy logic is low to moderate risk on its own, but forms hazardous channels when combined with liability shifts or soft operators. Proxy → Masking → Liability Shift = classic laundering pattern.",
+      "Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system's outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about \"multiple signatures\" or \"distributed roles\"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.",
     calculation: {
-      formula: "ϕ(P) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
-      weights: { w1: 0.13, w2: 0.16, w3: 0.2, w4: 0.07 },
+      formula: "ϕ(F) = 0.09·H + 0.12·S + 0.15·B + 0.04·W + γ(Seq,𝓔)",
+      weights: { w1: 0.09, w2: 0.12, w3: 0.15, w4: 0.04 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
         B: "Black operator masking strength",
         W: "White operator transparency level",
-        gamma:
-          "If Proxy is sandwiched by Soft/Black operators, γ = +0.14; if Proxy precedes Audit, γ = –0.04",
+        gamma: "Fragmentation complexity modifier",
       },
     },
-    impact:
-      "Inserts an intermediary or delegated actor to perform/absorb institutional functions.",
+    impact: "Distributes accountability across multiple actors to create blind spots.",
   },
   {
     id: "A",
