@@ -650,7 +650,7 @@ const SemanticPermutationEngine = () => {
         resonanceModifier: resonanceModifier,
       };
     },
-    [calculateOperatorValue, getCurrentOperators],
+    [getCurrentOperators, operatorVersion, operatorSequence],
   );
 
   // Calculate tensor effects based on operator sequence
@@ -1820,7 +1820,7 @@ const SemanticPermutationEngine = () => {
                   className="mb-6"
                 >
                   <h4 className="text-sm font-bold text-white font-mono mb-4">
-                    TEMPORAL EXECUTION TRACE (t��� → t���)
+                    TEMPORAL EXECUTION TRACE (t��� → t₅)
                   </h4>
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {executionTrace.map((step, index) => (
