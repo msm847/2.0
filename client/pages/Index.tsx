@@ -154,10 +154,10 @@ export default function Index() {
               fontWeight: "900",
               margin: 0,
               letterSpacing: "2px",
-              whiteSpace: "nowrap",
+              lineHeight: 1.1,
             }}
           >
-            Semantic Foresight Intelligence
+            Semantic Foresight<br />Intelligence
           </h1>
         </GradientText>
         <GradientText
