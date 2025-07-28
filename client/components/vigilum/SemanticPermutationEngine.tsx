@@ -909,26 +909,7 @@ const SemanticPermutationEngine = () => {
         </div>
 
         {/* Interactive Operator Cards */}
-        <div className="mb-12 relative">
-          {/* Calculating overlay */}
-          <AnimatePresence>
-            {isCalculating && (
-              <motion.div
-                className="absolute inset-0 bg-gray-900 bg-opacity-50 rounded-xl z-20 flex items-center justify-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
-              >
-                <div className="bg-gray-800 border border-green-400/30 px-6 py-3 rounded-lg shadow-lg">
-                  <div className="flex items-center space-x-3">
-                    <RefreshCw className="w-5 h-5 animate-spin text-green-400" />
-                    <span className="text-sm font-mono text-green-400 font-medium">Calculating...</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+        <div className="mb-12">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-6">
               <div className="flex gap-2">
