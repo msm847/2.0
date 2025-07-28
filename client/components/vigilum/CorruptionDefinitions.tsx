@@ -234,7 +234,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Core focus through Anti-Money Laundering Directive and financial intelligence coordination. [CI]",
           typology: ["CI"],
@@ -1076,7 +1076,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "–",
+          state: "��",
           tooltip: "Legal advocacy excluded from NIB enforcement scope. [SB]",
           typology: ["SB"],
         },
@@ -1309,7 +1309,7 @@ const BoundaryLogicCarousel = () => {
           cursor: "default",
           width: "320px",
           height: "auto",
-          minHeight: "470px",
+          minHeight: "550px",
           flexShrink: 0,
           transform: isActive ? "scale(1.04)" : "scale(1)",
           zIndex: isActive ? 2 : 1,
