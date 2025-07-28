@@ -334,10 +334,11 @@ const OPERATORS_V2 = [
     id: "A",
     name: "Aggregation",
     fullName: "Aggregation",
-    weight: 0.12,
+    weight: 0.45, // Updated baseline weight
     symbol: "A",
     glyph: "⊕",
     affects: ["P", "L", "R"],
+    typology: [0.1, 0.7, 0.6, 0.1], // [H, S, B, W]
     position_sensitive: true,
     override_targets: ["V", "ε"],
     color: "#10B981", // Green
