@@ -187,7 +187,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         nepotism: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Recognized as corruption type affecting institutional integrity. [CI]",
           typology: ["CI"],
@@ -1286,13 +1286,13 @@ const BoundaryLogicCarousel = () => {
   const getTagColor = (state) => {
     switch (state) {
       case "✓":
-        return "#10B981"; // Included
+        return "#059669"; // Included - more muted green
       case "–":
-        return "#9CA3AF"; // Excluded
+        return "#6B7280"; // Excluded - slightly darker gray
       case "?":
-        return "#F59E0B"; // Ambiguous
+        return "#D97706"; // Ambiguous - more muted amber
       default:
-        return "#9CA3AF";
+        return "#6B7280";
     }
   };
 
@@ -2315,7 +2315,7 @@ const institutionalData = {
         },
         {
           name: "OCCRP",
-          logo: "📰",
+          logo: "��",
           definition:
             "Corruption includes bribery, embezzlement, fraud, money laundering, nepotism, and abuse of power for personal or political gain.",
           source: "OCCRP, investigative framework",
