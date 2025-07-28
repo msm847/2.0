@@ -994,12 +994,16 @@ const SemanticPermutationEngine = () => {
                   onDrop={(e) => handleDrop(e, index)}
                 >
                   <motion.div
-                    className="relative w-full h-full transition-transform duration-600"
+                    className="relative w-full h-full transition-transform duration-700 ease-out"
                     style={{
                       transformStyle: "preserve-3d",
                       transform: isFlipped
                         ? "rotateY(180deg)"
                         : "rotateY(0deg)",
+                    }}
+                    transition={{
+                      duration: 0.7,
+                      ease: "easeOut"
                     }}
                   >
                     {/* Front Face */}
