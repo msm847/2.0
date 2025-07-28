@@ -168,7 +168,7 @@ const OPERATORS = [
     fullName: "Indirection",
     weight: 0.75, // Updated baseline weight
     symbol: "I",
-    typology: [0.0, 0.7, 0.9, 0.0], // [H, S, B, W]
+    typology: [0.00, 0.80, 0.95, 0.05], // [H, S, B, W]
     glyph: "⦿",
     affects: ["L", "P", "V"],
     position_sensitive: true,
@@ -1621,7 +1621,7 @@ const SemanticPermutationEngine = () => {
                   <div className="text-sm font-bold text-white font-mono">
                     {permutationResult.mathematical_result.phi.toFixed(3)}
                   </div>
-                  <div className="text-xs text-gray-400">���� RESULT</div>
+                  <div className="text-xs text-gray-400">�� RESULT</div>
                 </div>
                 <div
                   className="text-center p-3 rounded-lg border transition-all duration-200 hover:scale-105"
