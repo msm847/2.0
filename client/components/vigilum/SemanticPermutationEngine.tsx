@@ -442,16 +442,20 @@ const SemanticPermutationEngine = () => {
     }
   }, [operatorVersion]);
 
-  // Toggle card flip
-  const toggleCard = (operatorId: string) => {
-    const newFlipped = new Set(flippedCards);
-    if (newFlipped.has(operatorId)) {
-      newFlipped.delete(operatorId);
-    } else {
-      newFlipped.add(operatorId);
-    }
-    setFlippedCards(newFlipped);
-  };
+  // Debounced toggle card flip to prevent rapid state changes
+  const toggleCard = useCallback((operatorId: string) => {
+    if (isCalculatingRef.current) return;
+
+    setFlippedCards(prev => {
+      const newFlipped = new Set(prev);
+      if (newFlipped.has(operatorId)) {
+        newFlipped.delete(operatorId);
+      } else {
+        newFlipped.add(operatorId);
+      }
+      return newFlipped;
+    });
+  }, []);
 
   // Calculate mathematical operator values
   const calculateOperatorValue = useCallback(
