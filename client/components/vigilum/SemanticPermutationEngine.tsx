@@ -1192,30 +1192,34 @@ const SemanticPermutationEngine = () => {
             <div className="text-sm font-mono text-gray-400 mb-2">
               LIVE MATHEMATICAL FORMULA
             </div>
-            {permutationResult && !isCalculating && (
-              <div className="text-lg font-mono text-white">
-                  ϕ(c,𝓔) ={" "}
-                  {getCurrentSequence.map((op, i) => (
-                    <span key={`${operatorVersion}-${op}-${i}`}>
-                      {i > 0 && " + "}
-                      <span
-                        style={{
-                          color: getCurrentOperators.find((o) => o.id === op)
-                            ?.color,
-                        }}
-                      >
-                        {getCurrentOperators
-                          .find((o) => o.id === op)
-                          ?.weight?.toFixed(1) || "0.0"}
-                        {op}
-                      </span>
+            {permutationResult && (
+              <div
+                className={`text-lg font-mono text-white transition-opacity duration-300 ${
+                  isCalculating ? 'opacity-30' : 'opacity-100'
+                }`}
+              >
+                ϕ(c,𝓔) ={" "}
+                {getCurrentSequence.map((op, i) => (
+                  <span key={`${operatorVersion}-${op}-${i}`}>
+                    {i > 0 && " + "}
+                    <span
+                      style={{
+                        color: getCurrentOperators.find((o) => o.id === op)
+                          ?.color,
+                      }}
+                    >
+                      {getCurrentOperators
+                        .find((o) => o.id === op)
+                        ?.weight?.toFixed(1) || "0.0"}
+                      {op}
                     </span>
-                  ))}{" "}
-                  + ∇𝓔 ={" "}
-                  <span className="text-green-400">
-                    {permutationResult.mathematical_result.phi.toFixed(3)}
                   </span>
-                </div>
+                ))}{" "}
+                + ∇𝓔 ={" "}
+                <span className="text-green-400">
+                  {permutationResult.mathematical_result.phi.toFixed(3)}
+                </span>
+              </div>
               )}
           </div>
         </div>
