@@ -296,7 +296,7 @@ const OPERATORS_V2 = [
     calculation: {
       formula:
         "N = w₁ × network_density + w₂ × influence_centrality + w�� × dependency_depth",
-      weights: { w1: 0.3, w2: 0.4, w3: 0.3 },
+      weights: { w1: 0.18, w2: 0.22, w3: 0.20, w4: 0.06 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
