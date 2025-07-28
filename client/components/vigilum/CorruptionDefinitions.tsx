@@ -358,7 +358,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "✓",
+          state: "?",
           tooltip: "Investigated when connected to corruption proceeds. [CI]",
           typology: ["CI"],
         },
