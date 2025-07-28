@@ -225,13 +225,14 @@ const OPERATORS_V2 = [
     id: "S",
     name: "Simulation",
     fullName: "Simulation",
-    weight: 0.1,
+    weight: 0.60, // Updated baseline weight
     symbol: "S",
     glyph: "⟐",
     affects: ["V", "L", "ε"],
     position_sensitive: true,
     override_targets: ["A"],
     color: "#06B6D4", // Cyan
+    typology: [0.0, 1.0, 0.6, 0.3], // [H, S, B, W]
     description:
       'Simulation transforms structural risk by replicating the surface appearance of compliance, oversight, or procedural integrity without enforcing any actual constraint. This operator is executed through symbolic actions—non-binding audits, advisory committees, or reviews whose outcomes do not alter the system\'s real operation. In effect, simulation "fools" both internal and external observers: it provides the audit trail, the ritual, and the reporting, yet all actors know the process is performative. Simulation is not mere theater; it is the central defense of advanced captured systems, absorbing pressure from regulators, the public, or oversight bodies while ensuring that true power dynamics remain untouched. When simulation dominates, the system becomes audit-proof and sanction-resistant—not because it is safe, but because it is semantically and operationally insulated from intervention.',
     calculation: {
