@@ -94,8 +94,7 @@ export default function Index() {
             border: "none",
             display: "block",
             width: "100%",
-            height: "120%",
-            marginTop: "15%",
+            height: "100%",
             colorScheme: "only light",
           }}
           onLoad={() => setRobotAnimationFinished(true)}
