@@ -1698,4 +1698,4 @@ const SemanticPermutationEngine = () => {
   );
 };
 
-export default SemanticPermutationEngine;
+export default memo(SemanticPermutationEngine);
