@@ -40,10 +40,10 @@ const SYSTEM_LAYERS = {
 const ADJACENCY_MATRIX = {
   // Major adjacencies
   "S-O": 0.15,
-  "S-M": 0.10,
+  "S-M": 0.1,
   "A-XT": 0.12,
   "I-F": 0.08,
-  "C-R": 0.10,
+  "C-R": 0.1,
   "H-*": -0.12, // H dampens all following operators
   // Add more as needed
 };
@@ -61,7 +61,7 @@ const OPERATORS = [
     position_sensitive: true,
     override_targets: [],
     color: "#10B981", // Vigilum mint
-    typology: [1.00, 0.00, 0.00, 0.80], // [H, S, B, W]
+    typology: [1.0, 0.0, 0.0, 0.8], // [H, S, B, W]
     description:
       "Unbreakable Constraint defines a boundary that cannot be crossed or dissolved from within the system, no matter what other operators are invoked. It requires an external, independent actor—often a regulator, court, or sovereign authority—to permit an exception or breach, and even then only under conditions that are hard-coded and immutable. This operator represents true structural friction: it is the only reliable defense against capture or override, because it is designed to be non-negotiable and to survive attempts at internal nullification or simulation. In institutional logic, genuine unbreakable constraints are rare and valuable, marking the difference between simulated compliance and actual legal or operational immovability. Where most controls can be circumvented through sophisticated clause sequencing or discretionary override, an unbreakable constraint draws an absolute line, forcing all actors to operate within its bounds or face existential system breakdown.",
     calculation: {
@@ -82,14 +82,14 @@ const OPERATORS = [
     id: "O",
     name: "Override",
     fullName: "Override",
-    weight: 0.90, // Updated baseline weight (amplifying)
+    weight: 0.9, // Updated baseline weight (amplifying)
     symbol: "O",
     glyph: "⊗",
     affects: ["L", "P", "V"],
     position_sensitive: true,
     override_targets: ["H", "XT", "F", "I"],
     color: "#EF4444", // Vigilum red
-    typology: [0.00, 0.85, 0.65, 0.10], // [H, S, B, W]
+    typology: [0.0, 0.85, 0.65, 0.1], // [H, S, B, W]
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
@@ -110,10 +110,10 @@ const OPERATORS = [
     id: "XT",
     name: "Extraction/Transfer",
     fullName: "Extraction/Transfer",
-    weight: 0.80, // Updated baseline weight
+    weight: 0.8, // Updated baseline weight
     symbol: "L",
     glyph: "⧨",
-    typology: [0.10, 0.60, 1.00, 0.20], // [H, S, B, W]
+    typology: [0.1, 0.6, 1.0, 0.2], // [H, S, B, W]
     affects: ["R", "P", "V"],
     position_sensitive: true,
     override_targets: ["ε"],
@@ -138,14 +138,14 @@ const OPERATORS = [
     id: "F",
     name: "Fracture",
     fullName: "Fracture",
-    weight: 0.70, // Updated baseline weight
+    weight: 0.7, // Updated baseline weight
     symbol: "F",
     glyph: "⚬",
     affects: ["ε", "P", "A"],
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F59E0B", // Amber
-    typology: [0.20, 0.80, 0.75, 0.15], // [H, S, B, W]
+    typology: [0.2, 0.8, 0.75, 0.15], // [H, S, B, W]
     description:
       'Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system\'s outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about "multiple signatures" or "distributed roles"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.',
     calculation: {
@@ -168,7 +168,7 @@ const OPERATORS = [
     fullName: "Indirection",
     weight: 0.75, // Updated baseline weight
     symbol: "I",
-    typology: [0.00, 0.80, 0.95, 0.05], // [H, S, B, W]
+    typology: [0.0, 0.8, 0.95, 0.05], // [H, S, B, W]
     glyph: "⦿",
     affects: ["L", "P", "V"],
     position_sensitive: true,
@@ -225,14 +225,14 @@ const OPERATORS_V2 = [
     id: "S",
     name: "Simulation",
     fullName: "Simulation",
-    weight: 0.60, // Updated baseline weight
+    weight: 0.6, // Updated baseline weight
     symbol: "S",
     glyph: "⟐",
     affects: ["V", "L", "ε"],
     position_sensitive: true,
     override_targets: ["A"],
     color: "#06B6D4", // Cyan
-    typology: [0.05, 0.95, 0.70, 0.35], // [H, S, B, W]
+    typology: [0.05, 0.95, 0.7, 0.35], // [H, S, B, W]
     description:
       'Simulation transforms structural risk by replicating the surface appearance of compliance, oversight, or procedural integrity without enforcing any actual constraint. This operator is executed through symbolic actions—non-binding audits, advisory committees, or reviews whose outcomes do not alter the system\'s real operation. In effect, simulation "fools" both internal and external observers: it provides the audit trail, the ritual, and the reporting, yet all actors know the process is performative. Simulation is not mere theater; it is the central defense of advanced captured systems, absorbing pressure from regulators, the public, or oversight bodies while ensuring that true power dynamics remain untouched. When simulation dominates, the system becomes audit-proof and sanction-resistant—not because it is safe, but because it is semantically and operationally insulated from intervention.',
     calculation: {
@@ -259,7 +259,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F97316", // Orange
-    typology: [0.00, 0.85, 1.00, 0.05], // [H, S, B, W]
+    typology: [0.0, 0.85, 1.0, 0.05], // [H, S, B, W]
     description:
       'Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system\'s real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined "strategic partnerships," complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.',
     calculation: {
@@ -286,7 +286,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["V", "L"],
     color: "#8B5CF6", // Purple
-    typology: [0.05, 0.80, 0.85, 0.10], // [H, S, B, W]
+    typology: [0.05, 0.8, 0.85, 0.1], // [H, S, B, W]
     description:
       'Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how "urgent" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.',
     calculation: {
@@ -306,14 +306,14 @@ const OPERATORS_V2 = [
     id: "R",
     name: "Reinjection",
     fullName: "Reinjection",
-    weight: 0.50, // Updated baseline weight
+    weight: 0.5, // Updated baseline weight
     symbol: "R",
     glyph: "⟲",
     affects: ["L", "A", "V"],
     position_sensitive: true,
     override_targets: ["P", "ε"],
     color: "#EF4444", // Red
-    typology: [0.00, 0.75, 0.70, 0.20], // [H, S, B, W]
+    typology: [0.0, 0.75, 0.7, 0.2], // [H, S, B, W]
     description:
       'Reinjection brings previously excluded, neutralized, or extracted risk, value, or process back into the system through a new channel, often after surface closure or apparent remediation. This operator allows systems to "recycle" loopholes, funds, or structural exposures by rebranding, repackaging, or relaunching them under a different guise. Reinjection is critical in systems with dynamic oversight: whenever a risk pathway appears to have been blocked, but later resurfaces via a different actor, fund, or clause, reinjection is at work. It is the structural answer to "loophole whack-a-mole"—no matter how many times a vulnerability is closed, the logic of reinjection guarantees its return unless the system is hardened at the root.',
     calculation: {
@@ -338,7 +338,7 @@ const OPERATORS_V2 = [
     symbol: "A",
     glyph: "⊕",
     affects: ["P", "L", "R"],
-    typology: [0.10, 0.75, 0.70, 0.10], // [H, S, B, W]
+    typology: [0.1, 0.75, 0.7, 0.1], // [H, S, B, W]
     position_sensitive: true,
     override_targets: ["V", "ε"],
     color: "#10B981", // Green
@@ -429,26 +429,36 @@ const computeMatrixCell = (V1op: any, V2op: any): number => {
   let kernel = 1.0;
 
   // Kernel logic modifiers
-  if (V1op.id === 'O') return 0.0; // Override nullifies interaction
-  if (V1op.id === 'H') kernel *= 0.4; // Hard constraint dampening
-  if (V1op.id === 'XT' && ['S', 'M', 'A'].includes(V2op.id)) kernel *= 1.3; // Extraction amplifies simulation/masking/aggregation
-  if (V1op.id === 'F' && ['C', 'R'].includes(V2op.id)) kernel *= (1 + (Math.random() - 0.5) * 0.2); // Fracture adds noise to compression/reinjection
-  if (V1op.id === 'I' && V2op.typology[2] > 0.7) kernel *= 1.1; // Indirection amplifies high-black operators
+  if (V1op.id === "O") return 0.0; // Override nullifies interaction
+  if (V1op.id === "H") kernel *= 0.4; // Hard constraint dampening
+  if (V1op.id === "XT" && ["S", "M", "A"].includes(V2op.id)) kernel *= 1.3; // Extraction amplifies simulation/masking/aggregation
+  if (V1op.id === "F" && ["C", "R"].includes(V2op.id))
+    kernel *= 1 + (Math.random() - 0.5) * 0.2; // Fracture adds noise to compression/reinjection
+  if (V1op.id === "I" && V2op.typology[2] > 0.7) kernel *= 1.1; // Indirection amplifies high-black operators
 
   return +(base * (1 + 0.2 * typologyResonance) * kernel);
 };
 
-const getTypologyResonance = (typology1: number[], typology2: number[]): number => {
-  return typology1[0] * typology2[0] + typology1[1] * typology2[1] + typology1[2] * typology2[2] + typology1[3] * typology2[3];
+const getTypologyResonance = (
+  typology1: number[],
+  typology2: number[],
+): number => {
+  return (
+    typology1[0] * typology2[0] +
+    typology1[1] * typology2[1] +
+    typology1[2] * typology2[2] +
+    typology1[3] * typology2[3]
+  );
 };
 
 const getKernelModifier = (V1op: any, V2op: any): number => {
   let kernel = 1.0;
-  if (V1op.id === 'O') return 0.0;
-  if (V1op.id === 'H') kernel *= 0.4;
-  if (V1op.id === 'XT' && ['S', 'M', 'A'].includes(V2op.id)) kernel *= 1.3;
-  if (V1op.id === 'F' && ['C', 'R'].includes(V2op.id)) kernel *= (1 + (Math.random() - 0.5) * 0.2);
-  if (V1op.id === 'I' && V2op.typology[2] > 0.7) kernel *= 1.1;
+  if (V1op.id === "O") return 0.0;
+  if (V1op.id === "H") kernel *= 0.4;
+  if (V1op.id === "XT" && ["S", "M", "A"].includes(V2op.id)) kernel *= 1.3;
+  if (V1op.id === "F" && ["C", "R"].includes(V2op.id))
+    kernel *= 1 + (Math.random() - 0.5) * 0.2;
+  if (V1op.id === "I" && V2op.typology[2] > 0.7) kernel *= 1.1;
   return kernel;
 };
 
@@ -568,11 +578,11 @@ const SemanticPermutationEngine = () => {
 
       // Get V1 composite vector for environmental coupling
       const isV2 = operatorVersion === "v2";
-      const v1Ops = OPERATORS.filter(op => operatorSequence.includes(op.id));
+      const v1Ops = OPERATORS.filter((op) => operatorSequence.includes(op.id));
       let v1Vector = [0, 0, 0, 0]; // [H, S, B, W]
 
       if (isV2 && v1Ops.length > 0) {
-        v1Ops.forEach(op => {
+        v1Ops.forEach((op) => {
           for (let i = 0; i < 4; i++) {
             v1Vector[i] += op.typology[i] * op.weight;
           }
@@ -595,9 +605,13 @@ const SemanticPermutationEngine = () => {
         if (isV2) {
           const [h_v1, s_v1, b_v1, w_v1] = v1Vector;
           // If V1 is highly Black, amplify Black-prone V2 operators
-          if (b_v1 > 0.7 && operator.typology[2] > 0.6) epsilon += 0.20;
+          if (b_v1 > 0.7 && operator.typology[2] > 0.6) epsilon += 0.2;
           // If V1 is highly Hard, dampen Soft/Black V2 operators
-          if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) epsilon -= 0.12;
+          if (
+            h_v1 > 0.6 &&
+            (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)
+          )
+            epsilon -= 0.12;
         }
 
         // Exact positional modifier (ρᵢ) as specified
@@ -611,13 +625,14 @@ const SemanticPermutationEngine = () => {
 
         // Start dampening: only H gets penalty
         if (index === 0 && opId === "H") {
-          positionalModifier = -0.10;
+          positionalModifier = -0.1;
         }
 
         // All other operators and positions: 0 by default
 
         // Effective weight: αᵢ × (1 + εᵢ) + ρᵢ
-        const effectiveWeight = operator.weight * (1 + epsilon) + positionalModifier;
+        const effectiveWeight =
+          operator.weight * (1 + epsilon) + positionalModifier;
         phi += effectiveWeight;
         formulaTerms.push(`${effectiveWeight.toFixed(2)}${opId}`);
 
@@ -640,10 +655,10 @@ const SemanticPermutationEngine = () => {
 
         // Major adjacencies
         if (currentOp === "S" && nextOp === "O") adjacencyModifier = 0.15;
-        else if (currentOp === "S" && nextOp === "M") adjacencyModifier = 0.10;
+        else if (currentOp === "S" && nextOp === "M") adjacencyModifier = 0.1;
         else if (currentOp === "A" && nextOp === "XT") adjacencyModifier = 0.12;
         else if (currentOp === "I" && nextOp === "F") adjacencyModifier = 0.08;
-        else if (currentOp === "C" && nextOp === "R") adjacencyModifier = 0.10;
+        else if (currentOp === "C" && nextOp === "R") adjacencyModifier = 0.1;
         else if (currentOp === "H") adjacencyModifier = -0.12; // H dampens all
 
         adjacencySum += adjacencyModifier;
@@ -651,41 +666,48 @@ const SemanticPermutationEngine = () => {
 
       if (adjacencySum !== 0) {
         phi += adjacencySum;
-        formulaTerms.push(`${adjacencySum > 0 ? '+' : ''}${adjacencySum.toFixed(2)}λ`);
+        formulaTerms.push(
+          `${adjacencySum > 0 ? "+" : ""}${adjacencySum.toFixed(2)}λ`,
+        );
       }
 
       // 3. Positional modifiers are now integrated into individual operator weights above
 
       // 4. Typology resonance (γ)
       let resonanceModifier = 0;
-      let softCount = 0, blackCount = 0, hardCount = 0, whiteCount = 0;
+      let softCount = 0,
+        blackCount = 0,
+        hardCount = 0,
+        whiteCount = 0;
 
-      sequence.forEach(opId => {
-        const operator = getCurrentOperators.find(op => op.id === opId);
+      sequence.forEach((opId) => {
+        const operator = getCurrentOperators.find((op) => op.id === opId);
         if (operator) {
           if (operator.typology[1] >= 0.75) softCount++; // Soft >= 0.75
-          if (operator.typology[2] >= 0.70) blackCount++; // Black >= 0.70
-          if (operator.typology[0] >= 0.20) hardCount++; // Hard >= 0.20 (only H has 1.0, others have 0.0-0.20)
-          if (operator.typology[3] >= 0.20) whiteCount++; // White >= 0.20
+          if (operator.typology[2] >= 0.7) blackCount++; // Black >= 0.70
+          if (operator.typology[0] >= 0.2) hardCount++; // Hard >= 0.20 (only H has 1.0, others have 0.0-0.20)
+          if (operator.typology[3] >= 0.2) whiteCount++; // White >= 0.20
         }
       });
 
       // Soft/Black clustering = exponential risk
-      if (softCount >= 3) resonanceModifier += 0.20; // Increased from 0.15
+      if (softCount >= 3) resonanceModifier += 0.2; // Increased from 0.15
       if (blackCount >= 3) resonanceModifier += 0.25; // Increased from 0.20
 
       // Hard/White dampening = exponential safety
       if (hardCount >= 1) resonanceModifier -= 0.15; // H operator present
-      if (whiteCount >= 2) resonanceModifier -= 0.10; // Multiple white operators
+      if (whiteCount >= 2) resonanceModifier -= 0.1; // Multiple white operators
 
       if (resonanceModifier !== 0) {
         phi += resonanceModifier;
-        formulaTerms.push(`${resonanceModifier > 0 ? '+' : ''}${resonanceModifier.toFixed(2)}γ`);
+        formulaTerms.push(
+          `${resonanceModifier > 0 ? "+" : ""}${resonanceModifier.toFixed(2)}γ`,
+        );
       }
 
       return {
         phi,
-        formula: `φ(S|Φₑₙᵥ) = ${formulaTerms.join(' ')} = ${phi.toFixed(3)}`,
+        formula: `φ(S|Φₑₙᵥ) = ${formulaTerms.join(" ")} = ${phi.toFixed(3)}`,
         details: calculationDetails,
         v1Vector: v1Vector,
         adjacencySum: adjacencySum,
@@ -881,7 +903,8 @@ const SemanticPermutationEngine = () => {
 
         // First frame: Calculate tensor effects
         requestAnimationFrame(() => {
-          const { finalState: newFinalState, trace } = calculateTensorEffects(currentSeq);
+          const { finalState: newFinalState, trace } =
+            calculateTensorEffects(currentSeq);
           setFinalState(newFinalState);
           setExecutionTrace(trace);
 
@@ -891,7 +914,11 @@ const SemanticPermutationEngine = () => {
 
             // Third frame: Final result calculation
             requestAnimationFrame(() => {
-              const result = generatePermutationResult(currentSeq, newFinalState, trace);
+              const result = generatePermutationResult(
+                currentSeq,
+                newFinalState,
+                trace,
+              );
               setPermutationResult(result);
               setCalculationBreakdowns(result.mathematical_result.details);
 
@@ -1095,42 +1122,48 @@ const SemanticPermutationEngine = () => {
 
           {/* Operator Cards with Flip Animation */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-              {getCurrentSequence.map((opId, index) => {
-                const operator = getCurrentOperators.find(
-                  (op) => op.id === opId,
-                )!;
-                const isFlipped = flippedCards.has(opId);
-                const calculationData = calculationBreakdowns[opId];
-                const isNullified =
-                  checkActiveOverrides(opId, getCurrentSequence, index).length >
-                  0;
+            {getCurrentSequence.map((opId, index) => {
+              const operator = getCurrentOperators.find(
+                (op) => op.id === opId,
+              )!;
+              const isFlipped = flippedCards.has(opId);
+              const calculationData = calculationBreakdowns[opId];
+              const isNullified =
+                checkActiveOverrides(opId, getCurrentSequence, index).length >
+                0;
 
-                // Calculate effective weight with positional modifiers
-                const isV2 = operatorVersion === "v2";
-                let environmentalModifier = 0;
-                let positionalModifier = 0;
+              // Calculate effective weight with positional modifiers
+              const isV2 = operatorVersion === "v2";
+              let environmentalModifier = 0;
+              let positionalModifier = 0;
 
-                // Environmental modifier for V2
-                if (isV2 && permutationResult?.v1Vector) {
-                  const [h_v1, s_v1, b_v1, w_v1] = permutationResult.v1Vector;
-                  if (b_v1 > 0.7 && operator.typology[2] > 0.6) environmentalModifier += 0.20;
-                  if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) environmentalModifier -= 0.12;
-                }
+              // Environmental modifier for V2
+              if (isV2 && permutationResult?.v1Vector) {
+                const [h_v1, s_v1, b_v1, w_v1] = permutationResult.v1Vector;
+                if (b_v1 > 0.7 && operator.typology[2] > 0.6)
+                  environmentalModifier += 0.2;
+                if (
+                  h_v1 > 0.6 &&
+                  (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)
+                )
+                  environmentalModifier -= 0.12;
+              }
 
-                // Exact positional modifiers as specified
-                // Only specific operators in specific positions get modifiers
-                if (index === getCurrentSequence.length - 1) {
-                  // End position bonuses
-                  if (opId === "O") positionalModifier = 0.15;
-                  else if (opId === "XT") positionalModifier = 0.12;
-                }
-                else if (index === 0) {
-                  // Start position penalty
-                  if (opId === "H") positionalModifier = -0.10;
-                }
-                // All other positions and operators: 0.00 (default)
+              // Exact positional modifiers as specified
+              // Only specific operators in specific positions get modifiers
+              if (index === getCurrentSequence.length - 1) {
+                // End position bonuses
+                if (opId === "O") positionalModifier = 0.15;
+                else if (opId === "XT") positionalModifier = 0.12;
+              } else if (index === 0) {
+                // Start position penalty
+                if (opId === "H") positionalModifier = -0.1;
+              }
+              // All other positions and operators: 0.00 (default)
 
-                const effectiveWeight = operator.weight * (1 + environmentalModifier) + positionalModifier;
+              const effectiveWeight =
+                operator.weight * (1 + environmentalModifier) +
+                positionalModifier;
 
               return (
                 <div
@@ -1153,7 +1186,7 @@ const SemanticPermutationEngine = () => {
                     }}
                     transition={{
                       duration: 0.7,
-                      ease: "easeOut"
+                      ease: "easeOut",
                     }}
                   >
                     {/* Front Face */}
@@ -1206,19 +1239,28 @@ const SemanticPermutationEngine = () => {
                       {/* Position modifier display - always show */}
                       <div className="text-xs font-mono text-gray-300 mt-2 text-center">
                         <div className="text-gray-400">Position:</div>
-                        <div className={`font-medium ${
-                          positionalModifier > 0 ? "text-green-400" :
-                          positionalModifier < 0 ? "text-red-400" : "text-gray-500"
-                        }`}>
-                          {positionalModifier > 0 ? '+' : ''}{positionalModifier.toFixed(2)}
+                        <div
+                          className={`font-medium ${
+                            positionalModifier > 0
+                              ? "text-green-400"
+                              : positionalModifier < 0
+                                ? "text-red-400"
+                                : "text-gray-500"
+                          }`}
+                        >
+                          {positionalModifier > 0 ? "+" : ""}
+                          {positionalModifier.toFixed(2)}
                         </div>
 
                         {/* Environmental modifier for V2 */}
                         {environmentalModifier !== 0 && (
                           <div className="mt-1">
                             <div className="text-gray-400">Environment:</div>
-                            <div className={`font-medium ${environmentalModifier > 0 ? "text-blue-400" : "text-orange-400"}`}>
-                              {environmentalModifier > 0 ? '+' : ''}{environmentalModifier.toFixed(2)}
+                            <div
+                              className={`font-medium ${environmentalModifier > 0 ? "text-blue-400" : "text-orange-400"}`}
+                            >
+                              {environmentalModifier > 0 ? "+" : ""}
+                              {environmentalModifier.toFixed(2)}
                             </div>
                           </div>
                         )}
@@ -1316,8 +1358,13 @@ const SemanticPermutationEngine = () => {
                           ?.color,
                       }}
                     >
-                      {permutationResult?.details?.[op]?.effectiveWeight?.toFixed(1) ||
-                       getCurrentOperators.find((o) => o.id === op)?.weight?.toFixed(1) || "0.0"}
+                      {permutationResult?.details?.[
+                        op
+                      ]?.effectiveWeight?.toFixed(1) ||
+                        getCurrentOperators
+                          .find((o) => o.id === op)
+                          ?.weight?.toFixed(1) ||
+                        "0.0"}
                       {op}
                     </span>
                   </span>
@@ -1327,7 +1374,7 @@ const SemanticPermutationEngine = () => {
                   {permutationResult.mathematical_result.phi.toFixed(3)}
                 </span>
               </div>
-              )}
+            )}
           </div>
         </div>
 
@@ -1354,7 +1401,9 @@ const SemanticPermutationEngine = () => {
                   <div className="bg-gray-800 border border-green-400/30 px-5 py-3 rounded-lg shadow-lg">
                     <div className="flex items-center space-x-3">
                       <RefreshCw className="w-5 h-5 animate-spin text-green-400" />
-                      <span className="text-sm font-mono text-green-400 font-medium">Calculating...</span>
+                      <span className="text-sm font-mono text-green-400 font-medium">
+                        Calculating...
+                      </span>
                     </div>
                   </div>
                 </motion.div>
@@ -1375,7 +1424,9 @@ const SemanticPermutationEngine = () => {
             <div className="flex flex-col flex-1 min-h-0">
               {/* V2 Column Headers */}
               <div className="grid grid-cols-6 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
-                <div className="h-8 flex items-center justify-center text-gray-500">V1↓/V2→</div>
+                <div className="h-8 flex items-center justify-center text-gray-500">
+                  V1↓/V2→
+                </div>
                 {OPERATORS_V2.slice(0, 5).map((op) => (
                   <div
                     key={op.id}
@@ -1394,10 +1445,7 @@ const SemanticPermutationEngine = () => {
               {/* Matrix rows - V1 operators as rows */}
               <div className="flex-1 flex flex-col justify-between gap-2">
                 {OPERATORS.slice(0, 5).map((v1Op, rowIndex) => (
-                  <div
-                    key={v1Op.id}
-                    className="grid grid-cols-6 gap-2 flex-1"
-                  >
+                  <div key={v1Op.id} className="grid grid-cols-6 gap-2 flex-1">
                     {/* V1 Row Header */}
                     <div
                       className="text-xs font-mono flex items-center justify-center px-1 rounded border transition-all duration-200 hover:scale-105"
@@ -1421,35 +1469,39 @@ const SemanticPermutationEngine = () => {
                           key={`${v1Op.id}-${v2Op.id}`}
                           className="rounded-md flex flex-col items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border cursor-pointer group relative"
                           style={{
-                            backgroundColor: cellValue === 0
-                              ? "rgba(55, 65, 81, 0.8)"
-                              : normalizedValue < 0.3
-                                ? `rgba(16, 185, 129, ${Math.max(0.2, normalizedValue)})`
-                                : normalizedValue < 0.7
-                                  ? `rgba(245, 158, 11, ${Math.max(0.3, normalizedValue)})`
-                                  : `rgba(239, 68, 68, ${Math.max(0.4, normalizedValue)})`,
+                            backgroundColor:
+                              cellValue === 0
+                                ? "rgba(55, 65, 81, 0.8)"
+                                : normalizedValue < 0.3
+                                  ? `rgba(16, 185, 129, ${Math.max(0.2, normalizedValue)})`
+                                  : normalizedValue < 0.7
+                                    ? `rgba(245, 158, 11, ${Math.max(0.3, normalizedValue)})`
+                                    : `rgba(239, 68, 68, ${Math.max(0.4, normalizedValue)})`,
                             color: normalizedValue > 0.5 ? "white" : "#f3f4f6",
-                            borderColor: cellValue === 0
-                              ? "rgba(107, 114, 128, 0.3)"
-                              : normalizedValue < 0.3
-                                ? "rgba(16, 185, 129, 0.5)"
-                                : normalizedValue < 0.7
-                                  ? "rgba(245, 158, 11, 0.5)"
-                                  : "rgba(239, 68, 68, 0.5)",
-                            boxShadow: normalizedValue > 0.7
-                              ? "0 0 8px rgba(239, 68, 68, 0.3)"
-                              : "none",
+                            borderColor:
+                              cellValue === 0
+                                ? "rgba(107, 114, 128, 0.3)"
+                                : normalizedValue < 0.3
+                                  ? "rgba(16, 185, 129, 0.5)"
+                                  : normalizedValue < 0.7
+                                    ? "rgba(245, 158, 11, 0.5)"
+                                    : "rgba(239, 68, 68, 0.5)",
+                            boxShadow:
+                              normalizedValue > 0.7
+                                ? "0 0 8px rgba(239, 68, 68, 0.3)"
+                                : "none",
                             minHeight: "3rem",
                           }}
                           whileHover={{ scale: 1.05 }}
                           animate={{
-                            backgroundColor: cellValue === 0
-                              ? "rgba(55, 65, 81, 0.8)"
-                              : normalizedValue < 0.3
-                                ? `rgba(16, 185, 129, ${Math.max(0.2, normalizedValue)})`
-                                : normalizedValue < 0.7
-                                  ? `rgba(245, 158, 11, ${Math.max(0.3, normalizedValue)})`
-                                  : `rgba(239, 68, 68, ${Math.max(0.4, normalizedValue)})`,
+                            backgroundColor:
+                              cellValue === 0
+                                ? "rgba(55, 65, 81, 0.8)"
+                                : normalizedValue < 0.3
+                                  ? `rgba(16, 185, 129, ${Math.max(0.2, normalizedValue)})`
+                                  : normalizedValue < 0.7
+                                    ? `rgba(245, 158, 11, ${Math.max(0.3, normalizedValue)})`
+                                    : `rgba(239, 68, 68, ${Math.max(0.4, normalizedValue)})`,
                           }}
                           transition={{ duration: 0.3 }}
                         >
@@ -1460,12 +1512,24 @@ const SemanticPermutationEngine = () => {
                           {/* Tooltip */}
                           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none">
                             <div className="bg-gray-900 border border-gray-600 rounded-lg p-3 text-xs font-mono whitespace-nowrap shadow-lg">
-                              <div className="text-white font-bold mb-1">{v1Op.id} × {v2Op.id}</div>
+                              <div className="text-white font-bold mb-1">
+                                {v1Op.id} × {v2Op.id}
+                              </div>
                               <div className="text-gray-300">
-                                Base: {(v1Op.weight * v2Op.weight).toFixed(3)}<br/>
-                                Resonance: {getTypologyResonance(v1Op.typology, v2Op.typology).toFixed(3)}<br/>
-                                Kernel: {getKernelModifier(v1Op, v2Op).toFixed(3)}<br/>
-                                <span className="text-green-400">Final: {cellValue.toFixed(3)}</span>
+                                Base: {(v1Op.weight * v2Op.weight).toFixed(3)}
+                                <br />
+                                Resonance:{" "}
+                                {getTypologyResonance(
+                                  v1Op.typology,
+                                  v2Op.typology,
+                                ).toFixed(3)}
+                                <br />
+                                Kernel:{" "}
+                                {getKernelModifier(v1Op, v2Op).toFixed(3)}
+                                <br />
+                                <span className="text-green-400">
+                                  Final: {cellValue.toFixed(3)}
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -1481,10 +1545,18 @@ const SemanticPermutationEngine = () => {
                 <div className="flex justify-between items-center text-xs font-mono">
                   <span className="text-gray-400">Matrix Sum:</span>
                   <span className="text-green-400 font-bold">
-                    {OPERATORS.slice(0, 5).reduce((sum, v1Op) =>
-                      sum + OPERATORS_V2.slice(0, 5).reduce((rowSum, v2Op) =>
-                        rowSum + computeMatrixCell(v1Op, v2Op), 0), 0
-                    ).toFixed(3)}
+                    {OPERATORS.slice(0, 5)
+                      .reduce(
+                        (sum, v1Op) =>
+                          sum +
+                          OPERATORS_V2.slice(0, 5).reduce(
+                            (rowSum, v2Op) =>
+                              rowSum + computeMatrixCell(v1Op, v2Op),
+                            0,
+                          ),
+                        0,
+                      )
+                      .toFixed(3)}
                   </span>
                 </div>
               </div>
@@ -1511,7 +1583,9 @@ const SemanticPermutationEngine = () => {
                 >
                   <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
                     <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
-                    <span className="text-sm font-mono text-green-400">Calculating...</span>
+                    <span className="text-sm font-mono text-green-400">
+                      Calculating...
+                    </span>
                   </div>
                 </motion.div>
               )}
@@ -1695,7 +1769,9 @@ const SemanticPermutationEngine = () => {
                   >
                     <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
                       <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
-                      <span className="text-sm font-mono text-green-400">Calculating...</span>
+                      <span className="text-sm font-mono text-green-400">
+                        Calculating...
+                      </span>
                     </div>
                   </motion.div>
                 )}
@@ -1906,7 +1982,9 @@ const SemanticPermutationEngine = () => {
                 >
                   <div className="flex items-center space-x-3 bg-gray-800 bg-opacity-80 px-4 py-2 rounded-lg">
                     <RefreshCw className="w-4 h-4 animate-spin text-green-400" />
-                    <span className="text-sm font-mono text-green-400">Calculating...</span>
+                    <span className="text-sm font-mono text-green-400">
+                      Calculating...
+                    </span>
                   </div>
                 </motion.div>
               )}
