@@ -531,32 +531,127 @@ const SemanticPermutationEngine = () => {
       let formulaTerms: string[] = [];
       let calculationDetails: any = {};
 
-      sequence.forEach((opId) => {
+      // Get V1 composite vector for environmental coupling
+      const isV2 = operatorVersion === "v2";
+      const v1Ops = OPERATORS.filter(op => operatorSequence.includes(op.id));
+      let v1Vector = [0, 0, 0, 0]; // [H, S, B, W]
+
+      if (isV2 && v1Ops.length > 0) {
+        v1Ops.forEach(op => {
+          for (let i = 0; i < 4; i++) {
+            v1Vector[i] += op.typology[i] * op.weight;
+          }
+        });
+        const totalWeight = v1Ops.reduce((sum, op) => sum + op.weight, 0);
+        if (totalWeight > 0) {
+          for (let i = 0; i < 4; i++) {
+            v1Vector[i] /= totalWeight;
+          }
+        }
+      }
+
+      // 1. Enhanced operator calculations with new weights and environmental coupling
+      sequence.forEach((opId, index) => {
         const operator = getCurrentOperators.find((op) => op.id === opId);
         if (!operator) return;
 
-        const { value, breakdown } = calculateOperatorValue(
-          operator,
-          environmentGradient,
-        );
+        // Environmental modifier (εᵢ) for V2 operators
+        let epsilon = 0;
+        if (isV2) {
+          const [h_v1, s_v1, b_v1, w_v1] = v1Vector;
+          // If V1 is highly Black, amplify Black-prone V2 operators
+          if (b_v1 > 0.7 && operator.typology[2] > 0.6) epsilon += 0.20;
+          // If V1 is highly Hard, dampen Soft/Black V2 operators
+          if (h_v1 > 0.6 && (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)) epsilon -= 0.12;
+        }
 
-        phi += operator.weight * value;
-        formulaTerms.push(`${operator.weight.toFixed(1)}${opId}`);
+        // Effective weight: αᵢ × (1 + εᵢ)
+        const effectiveWeight = operator.weight * (1 + epsilon);
+        phi += effectiveWeight;
+        formulaTerms.push(`${effectiveWeight.toFixed(2)}${opId}`);
+
         calculationDetails[opId] = {
-          value,
-          breakdown,
-          weight: operator.weight,
+          baselineWeight: operator.weight,
+          environmentalModifier: epsilon,
+          effectiveWeight: effectiveWeight,
+          typology: operator.typology,
         };
       });
 
-      phi += environmentGradient;
-      formulaTerms.push(`∇𝓔`);
+      // 2. Adjacency modifiers (λᵢ,ⱼ)
+      let adjacencySum = 0;
+      for (let i = 0; i < sequence.length - 1; i++) {
+        const currentOp = sequence[i];
+        const nextOp = sequence[i + 1];
+        let adjacencyModifier = 0;
+
+        // Major adjacencies
+        if (currentOp === "S" && nextOp === "O") adjacencyModifier = 0.15;
+        else if (currentOp === "S" && nextOp === "M") adjacencyModifier = 0.10;
+        else if (currentOp === "A" && nextOp === "XT") adjacencyModifier = 0.12;
+        else if (currentOp === "I" && nextOp === "F") adjacencyModifier = 0.08;
+        else if (currentOp === "C" && nextOp === "R") adjacencyModifier = 0.10;
+        else if (currentOp === "H") adjacencyModifier = -0.12; // H dampens all
+
+        adjacencySum += adjacencyModifier;
+      }
+
+      if (adjacencySum !== 0) {
+        phi += adjacencySum;
+        formulaTerms.push(`${adjacencySum > 0 ? '+' : ''}${adjacencySum.toFixed(2)}λ`);
+      }
+
+      // 3. Positional modifiers (ρᵢ)
+      let positionalSum = 0;
+      sequence.forEach((opId, index) => {
+        let positionalModifier = 0;
+        // End amplification
+        if (index === sequence.length - 1) {
+          if (opId === "O") positionalModifier = 0.15;
+          else if (opId === "XT") positionalModifier = 0.12;
+        }
+        // Start dampening
+        if (index === 0 && opId === "H") positionalModifier = -0.10;
+        positionalSum += positionalModifier;
+      });
+
+      if (positionalSum !== 0) {
+        phi += positionalSum;
+        formulaTerms.push(`${positionalSum > 0 ? '+' : ''}${positionalSum.toFixed(2)}ρ`);
+      }
+
+      // 4. Typology resonance (γ)
+      let resonanceModifier = 0;
+      let softCount = 0, blackCount = 0, hardCount = 0, whiteCount = 0;
+
+      sequence.forEach(opId => {
+        const operator = getCurrentOperators.find(op => op.id === opId);
+        if (operator) {
+          if (operator.typology[1] > 0.7) softCount++;
+          if (operator.typology[2] > 0.8) blackCount++;
+          if (operator.typology[0] > 0.6) hardCount++;
+          if (operator.typology[3] > 0.6) whiteCount++;
+        }
+      });
+
+      if (softCount >= 3) resonanceModifier += 0.15;
+      if (blackCount >= 3) resonanceModifier += 0.20;
+      if (hardCount >= 2) resonanceModifier -= 0.15;
+      if (whiteCount >= 2) resonanceModifier -= 0.10;
+
+      if (resonanceModifier !== 0) {
+        phi += resonanceModifier;
+        formulaTerms.push(`${resonanceModifier > 0 ? '+' : ''}${resonanceModifier.toFixed(2)}γ`);
+      }
 
       return {
         phi,
-        formula: `ϕ(c,𝓔) = ${formulaTerms.join(" + ")} = ${phi.toFixed(3)}`,
+        formula: `φ(S|Φₑₙᵥ) = ${formulaTerms.join(' ')} = ${phi.toFixed(3)}`,
         details: calculationDetails,
-        environmentGradient,
+        v1Vector: v1Vector,
+        adjacencySum: adjacencySum,
+        positionalSum: positionalSum,
+        resonanceModifier: resonanceModifier,
       };
     },
     [calculateOperatorValue, getCurrentOperators],
