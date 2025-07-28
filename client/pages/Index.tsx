@@ -107,9 +107,10 @@ export default function Index() {
 
 
 
-      {/* Content Overlay */}
-      <div
-        id="content-overlay"
+      {/* Content Overlay - Only show when Spline is loaded */}
+      {splineLoaded && (
+        <div
+          id="content-overlay"
         style={{
           position: "absolute",
           top: "50%",
