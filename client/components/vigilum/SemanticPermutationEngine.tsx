@@ -189,7 +189,7 @@ const OPERATORS = [
       "Reflex risk is contextual: reduces actor discretion, but can be weaponized if environment operator (𝓔) is high entropy/disordered.",
     calculation: {
       formula:
-        "O = w₁ × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
+        "O = w��� × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         bypass_strength: "Capacity to circumvent standard procedures",
@@ -1185,8 +1185,7 @@ const SemanticPermutationEngine = () => {
                 </div>
               );
             })}
-            </motion.div>
-          </AnimatePresence>
+          </div>
 
           {/* Live Formula */}
           <div className="text-center">
