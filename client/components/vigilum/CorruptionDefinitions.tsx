@@ -940,7 +940,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F96450dcffb7742d9a9b1ade768883238?format=webp&width=800",
       logo: "🌎",
       definition:
-        "The offering, giving, receiving, or soliciting, directly or indirectly, anything of value to influence improperly the actions of another party.",
+        "The IDB defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. This policy applies to all individuals or entities participating in IDB-funded projects or transactions.",
       citation: {
         text: "IDB Invest Integrity Framework",
         url: "https://www.iadb.org/en/who-we-are/how-we-are-organized/departments-offices-and-sectors/office-institutional-integrity",
