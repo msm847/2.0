@@ -763,11 +763,11 @@ const SemanticPermutationEngine = () => {
     e.dataTransfer.dropEffect = "move";
   };
 
-  const handleDrop = (e: React.DragEvent, targetIndex: number) => {
+  const handleDrop = useCallback((e: React.DragEvent, targetIndex: number) => {
     e.preventDefault();
     if (!draggedOperator) return;
 
-    const newSequence = [...getCurrentSequence()];
+    const newSequence = [...getCurrentSequence];
     const draggedIndex = newSequence.indexOf(draggedOperator);
 
     newSequence.splice(draggedIndex, 1);
@@ -775,7 +775,7 @@ const SemanticPermutationEngine = () => {
 
     setCurrentSequence(newSequence);
     setDraggedOperator(null);
-  };
+  }, [draggedOperator, getCurrentSequence, setCurrentSequence]);
 
   const shuffleOperators = useCallback(() => {
     if (isCalculatingRef.current) return;
