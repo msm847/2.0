@@ -106,11 +106,13 @@ const OPERATORS = [
     calculation: {
       formula:
         "ϕ(XT) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
-      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+      weights: { w1: 0.13, w2: 0.16, w3: 0.2, w4: 0.07 },
       variables: {
-        pattern_strength: "Degree of institutionalized response patterns",
-        automation_depth: "Level of automated compliance mechanisms",
-        override_resistance: "Structural resistance to external modification",
+        H: "Hard operator intensity coefficient",
+        S: "Soft operator configuration depth",
+        B: "Black operator masking strength",
+        W: "White operator transparency level",
+        gamma: "Transfer pathway complexity modifier",
       },
     },
     impact:
@@ -274,7 +276,7 @@ const OPERATORS_V2 = [
       variables: {
         ε_env: "Environmental disruption coefficient",
         gamma:
-          "Multiplies risk of adjacent Black/Soft by 1.25–1.45 if high disruption; divides by 0.7 if stabilizing",
+          "Multiplies risk of adjacent Black/Soft by 1.25��1.45 if high disruption; divides by 0.7 if stabilizing",
       },
     },
     impact:
