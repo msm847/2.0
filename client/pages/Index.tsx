@@ -162,26 +162,7 @@ export default function Index() {
             Semantic Foresight<br />Intelligence
           </h1>
         </GradientText>
-        <GradientText
-          colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
-          animationSpeed={8}
-          style={{ display: "block", width: "100%" }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "1.1rem",
-              fontWeight: "700",
-              margin: "1rem 0 1.5rem 0",
-              letterSpacing: "0.5px",
-              lineHeight: 1.4,
-              display: "block",
-              width: "100%",
-            }}
-          >
-            Truth is not fixed.<br />It is rendered by the logic that observes it.
-          </p>
-        </GradientText>
+
 
         {/* Buttons Container - Inside content overlay */}
         <div
