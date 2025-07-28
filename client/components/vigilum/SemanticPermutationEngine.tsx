@@ -1221,8 +1221,8 @@ const SemanticPermutationEngine = () => {
               {["ACTIVE", "NULLIFIED", "BYPASS", "CONSTRAINT"].map((status) => {
                 const count = OVERRIDE_MATRIX.filter((override) => {
                   const isActive =
-                    getCurrentSequence().indexOf(override.from) <
-                    getCurrentSequence().indexOf(override.to);
+                    getCurrentSequence.indexOf(override.from) <
+                    getCurrentSequence.indexOf(override.to);
                   return status === "ACTIVE"
                     ? isActive
                     : status === "NULLIFIED"
