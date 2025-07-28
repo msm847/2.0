@@ -259,7 +259,7 @@ const boundaryLogicData = {
       logoUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd90d804729d2429aa2af488e9a85fa01?format=webp&width=800",
       logo: "💰",
       definition:
-        "Corruption offences such as bribery, embezzlement, trading in influence, abuse of functions and other offences are generally committed for private gain…",
+        "Corruption refers to the misuse of public office or powers for personal benefit, including acts such as bribery, embezzlement, trading in influence, and abuse of functions. FATF focuses on corruption's integration with money laundering and the concealment of illicit proceeds within the financial system.",
       citation: {
         text: "FATF, Reference Guide and Information Note on Fight Against Corruption",
         url: "https://www.fatf-gafi.org/en/topics/corruption.html",
