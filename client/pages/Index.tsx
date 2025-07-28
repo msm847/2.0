@@ -83,7 +83,7 @@ export default function Index() {
         }}
       >
         <iframe
-          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/"
+          src="https://my.spline.design/interactiveaiwebsite-d8mT2b5DLHsgWMmgJ26aRFqj/?nocache=true&t=new"
           frameBorder="0"
           width="100%"
           height="100%"
