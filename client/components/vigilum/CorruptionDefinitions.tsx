@@ -449,7 +449,7 @@ const boundaryLogicData = {
       name: "G20 ACWG",
       logoUrl:
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5a9ed7f1fb364a86a871f7b2d1c86fcc?format=webp&width=800",
-      logo: "🌐",
+      logo: "����",
       definition:
         "Corruption is recognized as the abuse of entrusted authority for private gain, posing significant risks to market integrity, fair competition, and public trust. The G20 ACWG emphasizes corruption's systemic impact on governance, economic development, and the rule of law.",
       citation: {
@@ -1327,7 +1327,7 @@ const BoundaryLogicCarousel = () => {
           cursor: "default",
           width: "320px",
           height: "auto",
-          minHeight: "450px",
+          minHeight: "520px",
           flexShrink: 0,
           transform: isActive ? "scale(1.04)" : "scale(1)",
           zIndex: isActive ? 2 : 1,
