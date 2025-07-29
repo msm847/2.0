@@ -890,144 +890,21 @@ const Partners = () => {
 
   // Validation functions
   const validateEmail = (email) => {
-    // Basic format check
+    // Basic format check - simplified and more permissive
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       return false;
     }
 
-    // Check for valid TLD (top-level domain)
-    const validTLDs = [
-      "com",
-      "org",
-      "net",
-      "edu",
-      "gov",
-      "mil",
-      "int",
-      "eu",
-      "uk",
-      "de",
-      "fr",
-      "it",
-      "es",
-      "nl",
-      "be",
-      "ch",
-      "at",
-      "se",
-      "dk",
-      "no",
-      "fi",
-      "pl",
-      "cz",
-      "hu",
-      "ro",
-      "bg",
-      "hr",
-      "si",
-      "sk",
-      "lt",
-      "lv",
-      "ee",
-      "ie",
-      "pt",
-      "gr",
-      "cy",
-      "mt",
-      "lu",
-      "ca",
-      "au",
-      "nz",
-      "jp",
-      "kr",
-      "cn",
-      "in",
-      "br",
-      "mx",
-      "ar",
-      "cl",
-      "co",
-      "pe",
-      "uy",
-      "ve",
-      "za",
-      "ng",
-      "ke",
-      "eg",
-      "ma",
-      "tn",
-      "dz",
-      "ly",
-      "sd",
-      "et",
-      "gh",
-      "tz",
-      "ug",
-      "zw",
-      "bw",
-      "zm",
-      "mw",
-      "rw",
-      "bi",
-      "dj",
-      "so",
-      "ru",
-      "ua",
-      "by",
-      "md",
-      "ge",
-      "am",
-      "az",
-      "kz",
-      "kg",
-      "tj",
-      "tm",
-      "uz",
-      "mn",
-      "ir",
-      "iq",
-      "tr",
-      "sy",
-      "lb",
-      "jo",
-      "ps",
-      "il",
-      "sa",
-      "ae",
-      "kw",
-      "qa",
-      "bh",
-      "om",
-      "ye",
-      "af",
-      "pk",
-      "bd",
-      "lk",
-      "mv",
-      "np",
-      "bt",
-      "mm",
-      "th",
-      "la",
-      "kh",
-      "vn",
-      "my",
-      "sg",
-      "id",
-      "ph",
-      "tl",
-    ];
-
     const domain = email.split("@")[1];
     if (!domain) return false;
 
-    const tld = domain.split(".").pop().toLowerCase();
-    if (!validTLDs.includes(tld)) {
+    // Check for minimum domain structure (must have at least one dot)
+    if (!domain.includes(".")) {
       return false;
     }
 
-    // Block obvious fake patterns
+    // Block only obvious fake patterns
     const fakeDomainPatterns = [
       /test\.test/,
       /fake\.fake/,
@@ -1035,13 +912,6 @@ const Partners = () => {
       /temp\.temp/,
       /demo\.demo/,
       /sample\.sample/,
-      /asdf\.asdf/,
-      /qwerty\.qwerty/,
-      /123\.123/,
-      /abc\.abc/,
-      /xxx\.xxx/,
-      /^.@[a-z]\.com$/, // single letter domains
-      /^.@[a-z]{2}\.com$/, // two letter suspicious domains
     ];
 
     const lowerEmail = email.toLowerCase();
@@ -1051,30 +921,6 @@ const Partners = () => {
       }
     }
 
-    // Check for minimum domain name length
-    const domainName = domain.split(".")[0];
-    if (domainName.length < 2) {
-      return false;
-    }
-
-    // Check for common business/institutional domains
-    const businessDomains = [
-      "gmail.com",
-      "outlook.com",
-      "hotmail.com",
-      "yahoo.com",
-      "icloud.com",
-      "protonmail.com",
-      "live.com",
-      "msn.com",
-      "aol.com",
-      "mail.com",
-      "zoho.com",
-      "fastmail.com",
-      "tutanota.com",
-    ];
-
-    // For institutional form, we'll be more lenient but still block obvious fakes
     return true;
   };
 
