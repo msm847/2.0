@@ -1798,20 +1798,13 @@ const BoundaryLogicCarousel = () => {
               const scrollLeft = container.scrollLeft;
               const maxScroll = container.scrollWidth - container.clientWidth;
 
-              // Debounce scroll updates to prevent crashes
-              if (scrollTimeoutRef.current) {
-                clearTimeout(scrollTimeoutRef.current);
+              if (scrollLeft <= 1) {
+                setScrollPosition("start");
+              } else if (scrollLeft >= maxScroll - 5) {
+                setScrollPosition("end");
+              } else {
+                setScrollPosition("middle");
               }
-
-              scrollTimeoutRef.current = setTimeout(() => {
-                if (scrollLeft === 0) {
-                  setScrollPosition("start");
-                } else if (scrollLeft >= maxScroll - 5) {
-                  setScrollPosition("end");
-                } else {
-                  setScrollPosition("middle");
-                }
-              }, 50);
             }}
           >
             {currentData.map((institution) => (
@@ -1990,7 +1983,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪���",
+          logo: "�������",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
@@ -2393,7 +2386,7 @@ const institutionalData = {
         },
         {
           name: "Global Witness",
-          logo: "👁️",
+          logo: "��️",
           definition:
             "Corruption encompasses bribery, embezzlement, abuse of power, and any misuse of position for personal, political, or commercial advantage.",
           source: "Global Witness, investigative reports",
