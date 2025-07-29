@@ -685,7 +685,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Addressed through governance indicators and regulatory quality measures. [CI]",
           typology: ["CI"],
@@ -1756,10 +1756,11 @@ const BoundaryLogicCarousel = () => {
             marginBottom: "8px",
             fontFamily: "monospace",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "center",
             gap: "8px",
-            height: "20px"
+            height: "20px",
+            marginLeft: "80px"
           }}>
             <span style={{ width: "12px", textAlign: "center" }}>
               {(scrollPosition === "middle" || scrollPosition === "end") && "←"}
@@ -2207,7 +2208,7 @@ const institutionalData = {
       institutions: [
         {
           name: "Siemens AG",
-          logo: "��",
+          logo: "⚡",
           definition:
             "Corruption includes bribery, kickbacks, facilitation payments, and any abuse of position for personal or company benefit.",
           source: "Siemens AG, compliance guidelines",
