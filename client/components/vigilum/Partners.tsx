@@ -1194,11 +1194,28 @@ const Partners = () => {
     const hasValidEmail = businessEmail.trim() && validateEmail(businessEmail);
     const hasCountry = country.trim();
     const hasCompany = company.trim();
-    const hasJobTitle =
-      isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
+
+    // Job title validation: only required for non-students
+    const hasJobTitle = isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
+
     const hasProjectDescription = projectDescription.trim();
     const hasPrivacyAccepted = privacyAccepted;
     const hasRobotVerification = robotVerified;
+
+    // Debug: log validation status in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Form validation status:', {
+        hasFullName,
+        hasValidEmail,
+        hasCountry,
+        hasCompany,
+        hasJobTitle,
+        hasProjectDescription,
+        hasPrivacyAccepted,
+        hasRobotVerification,
+        isStudent
+      });
+    }
 
     return (
       hasFullName &&
