@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Carousel from "@/components/ui/Carousel";
 
@@ -900,7 +900,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Core prohibited practice in IFC private sector operations. [CI]",
           typology: ["CI"],
