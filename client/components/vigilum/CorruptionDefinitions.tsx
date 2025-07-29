@@ -1761,7 +1761,7 @@ const BoundaryLogicCarousel = () => {
             gap: "8px",
             height: "20px",
             marginLeft: "-105px",
-            textShadow: "0 0 8px rgba(156, 163, 175, 0.6), 0 0 16px rgba(156, 163, 175, 0.3)"
+            textShadow: "0 0 12px rgba(156, 163, 175, 0.9), 0 0 24px rgba(156, 163, 175, 0.6), 0 0 36px rgba(156, 163, 175, 0.3)"
           }}>
             ← Scroll →
           </div>
