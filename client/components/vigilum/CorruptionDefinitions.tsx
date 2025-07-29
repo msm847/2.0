@@ -748,7 +748,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Addressed through EU regulatory coordination and project compliance. [DG]",
           typology: ["DG"],
@@ -1233,15 +1233,8 @@ const BoundaryLogicCarousel = () => {
   const [showCompareMode, setShowCompareMode] = useState(false);
   const [hoveredTag, setHoveredTag] = useState(null);
   const [scrollPosition, setScrollPosition] = useState("start");
-
   const carouselRef = useRef(null);
-
-  useEffect(() => {
-    setScrollPosition("start");
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = 0;
-    }
-  }, [activeGroup]);
+  const scrollTimeoutRef = useRef(null);
 
   const currentData = boundaryLogicData[activeGroup];
 
