@@ -47,7 +47,7 @@ const cardData = [
         name: "Mihail Martynov",
         role: "Strategic Co-Founder",
         description:
-          "Principal strategist and founding team leader shaping Vigilum's structural intelligence capabilities while overseeing cross-team integration and strategic partnerships",
+          "Orchestrates strategic operations, platform development, and team coordination.",
         imageUrl: "/placeholder.svg",
       },
       {
