@@ -107,7 +107,7 @@ const modules = [
   {
     id: "veris",
     name: "VERIS",
-    subtitle: "Structural Risk Index",
+    subtitle: "Risk Index",
     tagline:
       "Integrity is a projection in risk space—fragility is its spectral collapse.",
     description:
