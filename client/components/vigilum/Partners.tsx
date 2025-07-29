@@ -214,10 +214,10 @@ const Partners = () => {
   const [phone, setPhone] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
-  const [country, setCountry] = useState("Lithuania");
-  const [countrySearch, setCountrySearch] = useState("Lithuania");
+  const [country, setCountry] = useState("");
+  const [countrySearch, setCountrySearch] = useState("");
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
-  const [phonePlaceholder, setPhonePlaceholder] = useState("+370");
+  const [phonePlaceholder, setPhonePlaceholder] = useState("+...");
   const [projectDescription, setProjectDescription] = useState("");
   const [attachedFiles, setAttachedFiles] = useState([]);
   const [scrollIntensity, setScrollIntensity] = useState(0);
