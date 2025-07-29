@@ -1876,7 +1876,7 @@ const Partners = () => {
                       <div className="flex">
                         {/* Country Code Box */}
                         <div className="flex items-center px-3 py-3 bg-green-600 border border-green-500 rounded-l-lg text-white font-mono text-sm font-medium">
-                          {phonePlaceholder || "+1"}
+                          {phonePlaceholder}
                         </div>
                         {/* Phone Input */}
                         <input
