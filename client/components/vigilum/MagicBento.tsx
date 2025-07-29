@@ -555,14 +555,16 @@ const TeamCarousel = ({ card }) => {
       <h2
         className="card__title"
         style={{
-          fontSize: "30px",
-          marginBottom: "20px",
+          position: "absolute",
+          top: "20px",
+          left: "20px",
+          fontSize: "16px",
+          margin: "0",
           color: "#9DE6C6",
           fontWeight: "400",
-          textAlign: "center",
         }}
       >
-        {card.title}
+        Team
       </h2>
 
       <div
@@ -574,6 +576,7 @@ const TeamCarousel = ({ card }) => {
           position: "relative",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
+          marginTop: "60px",
         }}
       >
         {/* Profile Image */}
