@@ -2039,6 +2039,31 @@ const Partners = () => {
                       </div>
                     </div>
 
+                    {/* Submit Button - Left aligned above privacy */}
+                    <div className="flex justify-start mb-6">
+                      <div className="relative group">
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting || !isFormValid()}
+                          className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          style={{ textTransform: "none" }}
+                        >
+                          {isSubmitting ? "Sending..." : "Send an Inquiry"}
+                        </Button>
+
+                        {/* Tooltip for disabled button */}
+                        {!isFormValid() && !isSubmitting && (
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+                            {!robotVerified
+                              ? "Please complete the reCAPTCHA verification"
+                              : "Please fill out all required fields to continue"
+                            }
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
                     {/* Verification and Privacy */}
                     <div className="space-y-6">
                       {/* Privacy Policy - Enterprise Grade */}
