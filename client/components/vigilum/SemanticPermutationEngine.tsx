@@ -1051,7 +1051,8 @@ const SemanticPermutationEngine = () => {
           </motion.h2>
           <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
             <p>
-              No abstraction. Contract logic and operational context rendered as quantifiable outcome.
+              No abstraction. Contract logic and operational context rendered as
+              quantifiable outcome.
             </p>
           </div>
         </div>
@@ -1405,8 +1406,6 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
 
-
-
             <div className="flex flex-col flex-1 min-h-0">
               {/* V2 Column Headers */}
               <div className="grid grid-cols-6 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
@@ -1419,7 +1418,9 @@ const SemanticPermutationEngine = () => {
                     <span className="text-xs font-mono mr-0.5">V2</span>
                     <span className="text-sm">→</span>
                   </div>
-                  <div className="text-lg font-mono text-green-400 font-bold">⊗</div>
+                  <div className="text-lg font-mono text-green-400 font-bold">
+                    ⊗
+                  </div>
                 </div>
                 {OPERATORS_V2.slice(0, 5).map((op) => (
                   <div
@@ -1584,9 +1585,6 @@ const SemanticPermutationEngine = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-
-
-
 
             {/* Override Graph Visualization - Compact */}
             <div className="space-y-2 max-h-64 overflow-y-auto">

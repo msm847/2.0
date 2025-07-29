@@ -1464,15 +1464,32 @@ const Partners = () => {
               >
                 Systemic risk is a function of structure, not individual intent.
                 <br />
-                Exposure arises from the way legal, procedural, and contractual forms encode discretion, sequence overrides, and fragment recognition.
+                Exposure arises from the way legal, procedural, and contractual
+                forms encode discretion, sequence overrides, and fragment
+                recognition.
                 <br />
-                Failure is not an absence of rules, but their orchestration–where legal form enables extraction under the pretense of oversight.
+                Failure is not an absence of rules, but their
+                orchestration–where legal form enables extraction under the
+                pretense of oversight.
                 <br />
                 <br />
-                Oversight that does not model system logic operates in hindsight by definition. Only the simulation of structural sequence, override pathways, and context-dependent interpretation can render systemic risk computable at the point of design. Structural exposure is a product of system architecture, not personal conduct.
+                Oversight that does not model system logic operates in hindsight
+                by definition. Only the simulation of structural sequence,
+                override pathways, and context-dependent interpretation can
+                render systemic risk computable at the point of design.
+                Structural exposure is a product of system architecture, not
+                personal conduct.
                 <br />
                 <br />
-                What you explored above is an early, condensed demonstration–structurally isolated from the underlying Vigilum system. The interface is intended for preliminary engagement and does not reflect the scope or complexity of the operational platform in development. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
+                What you explored above is an early, condensed
+                demonstration–structurally isolated from the underlying Vigilum
+                system. The interface is intended for preliminary engagement and
+                does not reflect the scope or complexity of the operational
+                platform in development. Collaboration is open to institutions,
+                researchers, and practitioners positioned to contribute to this
+                work. All engagements are strictly confidential and directed
+                toward the joint development of public-interest oversight
+                infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
@@ -1486,7 +1503,10 @@ const Partners = () => {
                     lineHeight: "1.6",
                   }}
                 >
-                  "When meaning fragments, truth becomes private property–an arena for competing realities. Oversight and justice only work if everyone sees the same facts, at the same time, without distortion."
+                  "When meaning fragments, truth becomes private property–an
+                  arena for competing realities. Oversight and justice only work
+                  if everyone sees the same facts, at the same time, without
+                  distortion."
                 </p>
                 <p
                   className="font-medium"
@@ -1570,7 +1590,9 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Map the latent geometry of structural risk–how permissions, obligations, and constraints intersect across legal, procedural, and operational planes.
+                      Map the latent geometry of structural risk–how
+                      permissions, obligations, and constraints intersect across
+                      legal, procedural, and operational planes.
                     </p>
                   </div>
                 </div>
@@ -1634,7 +1656,8 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Project how risk amplifies or attenuates as a function of sequence, adjacency, and environmental resonance.
+                      Project how risk amplifies or attenuates as a function of
+                      sequence, adjacency, and environmental resonance.
                     </p>
                   </div>
                 </div>
@@ -1716,7 +1739,9 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Diagnose the thresholds where institutional contradiction is neutralized–where facts lose the capacity to generate escalation, and meaning exits the system.
+                      Diagnose the thresholds where institutional contradiction
+                      is neutralized–where facts lose the capacity to generate
+                      escalation, and meaning exits the system.
                     </p>
                   </div>
                 </div>
@@ -2014,7 +2039,10 @@ const Partners = () => {
                     </div>
 
                     {/* Submit Button - Left aligned above privacy */}
-                    <div className="flex justify-start mb-6" style={{ marginTop: "24px" }}>
+                    <div
+                      className="flex justify-start mb-6"
+                      style={{ marginTop: "24px" }}
+                    >
                       <div className="relative group">
                         <Button
                           type="submit"
@@ -2030,8 +2058,7 @@ const Partners = () => {
                           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
                             {!robotVerified
                               ? "Please complete the reCAPTCHA verification"
-                              : "Please fill out all required fields to continue"
-                            }
+                              : "Please fill out all required fields to continue"}
                             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
                           </div>
                         )}
@@ -2041,23 +2068,30 @@ const Partners = () => {
                     {/* Verification and Privacy */}
                     <div className="space-y-4">
                       {/* reCAPTCHA */}
-                      <div className={`flex justify-start mt-6 mb-3 p-2 rounded-lg transition-colors ${showValidationErrors && !robotVerified ? 'bg-red-900/20 border border-red-500/50' : ''}`}>
+                      <div
+                        className={`flex justify-start mt-6 mb-3 p-2 rounded-lg transition-colors ${showValidationErrors && !robotVerified ? "bg-red-900/20 border border-red-500/50" : ""}`}
+                      >
                         <ReCAPTCHA
-                            ref={recaptchaRef}
-                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
-                            onChange={handleRecaptcha}
-                            onExpired={() => {
-                              setRobotVerified(false);
-                              setRecaptchaToken("");
-                            }}
-                            theme="dark"
-                            size="normal"
-                          />
+                          ref={recaptchaRef}
+                          sitekey={
+                            import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
+                            "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                          }
+                          onChange={handleRecaptcha}
+                          onExpired={() => {
+                            setRobotVerified(false);
+                            setRecaptchaToken("");
+                          }}
+                          theme="dark"
+                          size="normal"
+                        />
                       </div>
 
                       {/* Privacy Policy - Enterprise Grade */}
                       <div className="space-y-4">
-                        <div className={`flex items-center space-x-4 py-2 px-2 rounded-lg transition-colors ${showValidationErrors && !privacyAccepted ? 'bg-red-900/20 border border-red-500/50' : ''}`}>
+                        <div
+                          className={`flex items-center space-x-4 py-2 px-2 rounded-lg transition-colors ${showValidationErrors && !privacyAccepted ? "bg-red-900/20 border border-red-500/50" : ""}`}
+                        >
                           <input
                             type="checkbox"
                             id="privacy-check"
@@ -2097,11 +2131,8 @@ const Partners = () => {
                             regarding how we will handle this information.
                           </label>
                         </div>
-
                       </div>
                     </div>
-
-
                   </form>
                 </div>
               </motion.div>
