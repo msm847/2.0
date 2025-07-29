@@ -1582,50 +1582,7 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
 
-            {/* Status Summary */}
-            <div className="grid grid-cols-4 gap-2 mb-6">
-              {["ACTIVE", "NULLIFIED", "BYPASS", "CONSTRAINT"].map((status) => {
-                const count = OVERRIDE_MATRIX.filter((override) => {
-                  const isActive =
-                    getCurrentSequence.indexOf(override.from) <
-                    getCurrentSequence.indexOf(override.to);
-                  return status === "ACTIVE"
-                    ? isActive
-                    : status === "NULLIFIED"
-                      ? !isActive
-                      : status === override.type;
-                }).length;
 
-                return (
-                  <div
-                    key={status}
-                    className="text-center p-2 rounded border transition-all duration-200 hover:scale-105"
-                    style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.03)",
-                      backdropFilter: "blur(8px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
-                    }}
-                  >
-                    <div
-                      className="text-lg font-bold font-mono"
-                      style={{
-                        color:
-                          status === "ACTIVE"
-                            ? "#ef4444"
-                            : status === "NULLIFIED"
-                              ? "#6b7280"
-                              : "#10b981",
-                      }}
-                    >
-                      {count}
-                    </div>
-                    <div className="text-xs text-gray-400 font-mono">
-                      {status}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
 
             {/* Override Graph Visualization - Compact */}
             <div className="space-y-2 max-h-64 overflow-y-auto">
