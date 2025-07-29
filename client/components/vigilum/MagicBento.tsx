@@ -1093,8 +1093,8 @@ const MagicBento = ({
                       </h2>
                       <p
                         style={{
-                          fontSize: "17px",
-                          lineHeight: "25px",
+                          fontSize: "18px",
+                          lineHeight: "26px",
                           color: "#E5E5E5",
                           marginBottom: "8px",
                           fontWeight: "300",
