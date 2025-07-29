@@ -1716,9 +1716,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Diagnose where contradiction dissolves and truth exits the
-                      system. Reconstruct the pathways for meaning to re-enter
-                      institutional logic.
+                      Diagnose the thresholds where institutional contradiction is neutralized–where facts lose the capacity to generate escalation, and meaning exits the system.
                     </p>
                   </div>
                 </div>
