@@ -41,7 +41,7 @@ const cardData = [
         role: "Founder & System Architect",
         description:
           "Leads technical innovation and system architecture. Oversees all platform development.",
-        imageUrl: "/placeholder.svg",
+        imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fee53c7aa65024702a4b9f670a39a113d?format=webp&width=800",
       },
       {
         name: "Mihail Martynov",
