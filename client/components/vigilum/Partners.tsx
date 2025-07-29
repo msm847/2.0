@@ -1041,15 +1041,16 @@ const Partners = () => {
     const hasCompany = company.trim();
 
     // Job title validation: only required for non-students
-    const hasJobTitle = isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
+    const hasJobTitle =
+      isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
 
     const hasProjectDescription = projectDescription.trim();
     const hasPrivacyAccepted = privacyAccepted;
     const hasRobotVerification = true; // Temporarily disabled for testing
 
     // Debug: log validation status in development
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Form validation status:', {
+    if (process.env.NODE_ENV === "development") {
+      console.log("Form validation status:", {
         hasFullName,
         hasValidEmail,
         hasCountry,
@@ -1058,7 +1059,7 @@ const Partners = () => {
         hasProjectDescription,
         hasPrivacyAccepted,
         hasRobotVerification,
-        isStudent
+        isStudent,
       });
     }
 

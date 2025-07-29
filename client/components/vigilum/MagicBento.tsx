@@ -41,14 +41,16 @@ const cardData = [
         role: "Founder & System Architect",
         description:
           "Leads technical innovation and system architecture. Oversees all platform development.",
-        imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fee53c7aa65024702a4b9f670a39a113d?format=webp&width=800",
+        imageUrl:
+          "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fee53c7aa65024702a4b9f670a39a113d?format=webp&width=800",
       },
       {
         name: "Mihail Martynov",
         role: "Strategic Co-Founder",
         description:
           "Orchestrates strategic operations, platform development, and team coordination.",
-        imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F305c959a26d64f34998aec1bc8fd5a2b?format=webp&width=800",
+        imageUrl:
+          "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F305c959a26d64f34998aec1bc8fd5a2b?format=webp&width=800",
       },
       {
         name: "Ričardas Blaškevič",
