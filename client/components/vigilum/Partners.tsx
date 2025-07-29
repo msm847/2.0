@@ -1664,7 +1664,11 @@ const Partners = () => {
                     action="/thank-you"
                   >
                     {/* Honeypot field for spam protection */}
-                    <input type="hidden" name="bot-field" style={{ display: "none" }} />
+                    <input
+                      type="hidden"
+                      name="bot-field"
+                      style={{ display: "none" }}
+                    />
 
                     {/* Personal Information - Single Column */}
                     <div>
