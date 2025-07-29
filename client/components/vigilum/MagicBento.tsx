@@ -44,10 +44,10 @@ const cardData = [
         imageUrl: "/placeholder.svg",
       },
       {
-        name: "Misha Martynov",
-        role: "Founding Team & Chief of Staff",
+        name: "Mihail Martynov",
+        role: "Founding Partner & Strategic Director",
         description:
-          "Drives web implementation, integration across teams, and external partnerships.",
+          "Principal strategist and founding team leader",
         imageUrl: "/placeholder.svg",
       },
       {
