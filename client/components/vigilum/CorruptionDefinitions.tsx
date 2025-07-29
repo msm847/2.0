@@ -1749,15 +1749,18 @@ const BoundaryLogicCarousel = () => {
             }}
           />
 
-          {/* Scroll Indicator */}
+          {/* Dynamic Scroll Indicator */}
           <div style={{
-            fontSize: "12px",
+            fontSize: "14px",
             color: "#9CA3AF",
             marginBottom: "8px",
             textAlign: "center",
-            fontFamily: "monospace"
+            fontFamily: "monospace",
+            height: "20px"
           }}>
-            ← Scroll to explore institutions →
+            {scrollPosition === "start" && "→"}
+            {scrollPosition === "middle" && "← →"}
+            {scrollPosition === "end" && "←"}
           </div>
 
           {/* Carousel */}
@@ -1772,6 +1775,19 @@ const BoundaryLogicCarousel = () => {
               scrollbarWidth: "thin",
               maxWidth: "660px", // 2 cards (320px each) visible with proper spacing
               margin: "0",
+            }}
+            onScroll={(e) => {
+              const container = e.target;
+              const scrollLeft = container.scrollLeft;
+              const maxScroll = container.scrollWidth - container.clientWidth;
+
+              if (scrollLeft === 0) {
+                setScrollPosition("start");
+              } else if (scrollLeft >= maxScroll - 5) { // 5px threshold for end
+                setScrollPosition("end");
+              } else {
+                setScrollPosition("middle");
+              }
             }}
           >
             {currentData.map((institution) => (
