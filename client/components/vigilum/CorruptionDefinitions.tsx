@@ -1751,16 +1751,16 @@ const BoundaryLogicCarousel = () => {
 
           {/* Dynamic Scroll Indicator */}
           <div style={{
-            fontSize: "14px",
+            fontSize: "12px",
             color: "#9CA3AF",
             marginBottom: "8px",
             textAlign: "center",
             fontFamily: "monospace",
             height: "20px"
           }}>
-            {scrollPosition === "start" && "→"}
-            {scrollPosition === "middle" && "← →"}
-            {scrollPosition === "end" && "←"}
+            {scrollPosition === "start" && "Scroll →"}
+            {scrollPosition === "middle" && "← Scroll →"}
+            {scrollPosition === "end" && "← Scroll"}
           </div>
 
           {/* Carousel */}
