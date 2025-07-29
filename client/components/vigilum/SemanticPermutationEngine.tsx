@@ -1049,12 +1049,11 @@ const SemanticPermutationEngine = () => {
           >
             Semantic Permutation Engine
           </motion.h2>
-          <p
-            className="text-xl font-mono max-w-4xl mx-auto leading-relaxed"
-            style={{ color: "#9CA3AF" }}
-          >
-            No abstraction. Contract logic and operational context rendered as quantifiable outcome.
-          </p>
+          <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
+            <p>
+              No abstraction. Contract logic and operational context rendered as quantifiable outcome.
+            </p>
+          </div>
         </div>
 
         {/* Interactive Operator Cards */}
