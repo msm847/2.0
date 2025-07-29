@@ -429,8 +429,8 @@ const TeamContact = () => {
     <div
       style={{
         background: `linear-gradient(120deg,
-        rgba(28, 33, 27, ${1 - scrollDepth * 0.2}) 0%,
-        rgba(40, 58, 47, ${1 - scrollDepth * 0.1}) 100%)`,
+        rgba(10, 15, 13, ${1 - scrollDepth * 0.2}) 0%,
+        rgba(10, 15, 13, ${1 - scrollDepth * 0.1}) 100%)`,
         transition: "background 0.2s ease-out",
       }}
     >
