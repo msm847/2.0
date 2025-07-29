@@ -2109,6 +2109,23 @@ const Partners = () => {
                           data protection laws (including GDPR).
                         </div>
                       </div>
+
+                      {/* reCAPTCHA - Professional styling */}
+                      <div className="flex justify-center mt-6 mb-4">
+                        <div className="p-4 bg-gray-800/50 border border-gray-600 rounded-lg backdrop-blur-sm">
+                          <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                            onChange={handleRecaptcha}
+                            onExpired={() => {
+                              setRobotVerified(false);
+                              setRecaptchaToken("");
+                            }}
+                            theme="dark"
+                            size="normal"
+                          />
+                        </div>
+                      </div>
                     </div>
 
                     {/* Submit Button - Centered with balanced spacing */}
