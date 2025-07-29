@@ -1663,6 +1663,9 @@ const Partners = () => {
                     data-netlify-honeypot="bot-field"
                     action="/thank-you"
                   >
+                    {/* Honeypot field for spam protection */}
+                    <input type="hidden" name="bot-field" style={{ display: "none" }} />
+
                     {/* Personal Information - Single Column */}
                     <div>
                       <label className="block text-sm font-medium text-green-400 mb-2">
