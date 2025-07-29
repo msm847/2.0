@@ -1234,6 +1234,11 @@ const BoundaryLogicCarousel = () => {
   const [hoveredTag, setHoveredTag] = useState(null);
   const [scrollPosition, setScrollPosition] = useState("start");
 
+  // Reset scroll position when data changes
+  useEffect(() => {
+    setScrollPosition("start");
+  }, [activeGroup]);
+
   const currentData = boundaryLogicData[activeGroup];
 
   // Theme Configuration - Vigilum Brand Tokens
