@@ -54,15 +54,8 @@ const LightRays = ({
   className = "",
 }) => {
   const containerRef = useRef(null);
-  const uniformsRef = useRef(null);
-  const rendererRef = useRef(null);
-  const mouseRef = useRef({ x: 0.5, y: 0.5 });
-  const smoothMouseRef = useRef({ x: 0.5, y: 0.5 });
-  const animationIdRef = useRef(null);
-  const meshRef = useRef(null);
-  const cleanupFunctionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const observerRef = useRef(null);
+
+  // Simplified fallback component without WebGL functionality
 
   useEffect(() => {
     if (!containerRef.current) return;
