@@ -1234,13 +1234,16 @@ const BoundaryLogicCarousel = () => {
   const [hoveredTag, setHoveredTag] = useState(null);
   const [scrollPosition, setScrollPosition] = useState("start");
   const carouselRef = useRef(null);
-  const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
+    // Force reset to start position on group change
     setScrollPosition("start");
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = 0;
-    }
+    setTimeout(() => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollLeft = 0;
+        setScrollPosition("start");
+      }
+    }, 100);
   }, [activeGroup]);
 
   const currentData = boundaryLogicData[activeGroup];
