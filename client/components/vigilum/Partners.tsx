@@ -2041,7 +2041,7 @@ const Partners = () => {
                     {/* Verification and Privacy */}
                     <div className="space-y-4">
                       {/* reCAPTCHA */}
-                      <div className={`flex justify-start mt-4 mb-4 p-2 rounded-lg transition-colors ${showValidationErrors && !robotVerified ? 'bg-red-900/20 border border-red-500/50' : ''}`}>
+                      <div className={`flex justify-start mt-6 mb-3 p-2 rounded-lg transition-colors ${showValidationErrors && !robotVerified ? 'bg-red-900/20 border border-red-500/50' : ''}`}>
                         <ReCAPTCHA
                             ref={recaptchaRef}
                             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
