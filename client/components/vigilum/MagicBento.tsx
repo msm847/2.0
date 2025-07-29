@@ -555,11 +555,8 @@ const TeamCarousel = ({ card }) => {
       <h2
         className="card__title"
         style={{
-          position: "absolute",
-          top: "20px",
-          left: "20px",
-          fontSize: "16px",
-          margin: "0",
+          fontSize: "30px",
+          marginBottom: "10px",
           color: "#9DE6C6",
           fontWeight: "400",
         }}
