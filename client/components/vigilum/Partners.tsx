@@ -1664,8 +1664,16 @@ const Partners = () => {
                     action="/thank-you"
                   >
                     {/* Netlify Forms identification */}
-                    <input type="hidden" name="form-name" value="vigilum-engagement-intake" />
-                    <input type="hidden" name="bot-field" style={{ display: "none" }} />
+                    <input
+                      type="hidden"
+                      name="form-name"
+                      value="vigilum-engagement-intake"
+                    />
+                    <input
+                      type="hidden"
+                      name="bot-field"
+                      style={{ display: "none" }}
+                    />
 
                     {/* Personal Information - Single Column */}
                     <div>
