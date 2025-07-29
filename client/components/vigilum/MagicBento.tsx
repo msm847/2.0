@@ -46,9 +46,9 @@ const cardData = [
       },
       {
         name: "Mihail Martynov",
-        role: "Strategic Co-Founder",
+        role: "Founding Team & Chief of Staff",
         description:
-          "Orchestrates strategic operations, platform development, and team coordination.",
+          "Drives web implementation, team coordination, talent acquisition, and external partnerships.",
         imageUrl:
           "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F305c959a26d64f34998aec1bc8fd5a2b?format=webp&width=800",
       },
