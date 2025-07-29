@@ -1409,10 +1409,7 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
 
-            {/* Matrix Description */}
-            <div className="text-xs text-gray-400 font-mono mb-4 flex-shrink-0">
-              V1 operators (rows) ⊗ V2 operators (columns) = interaction values
-            </div>
+
 
             <div className="flex flex-col flex-1 min-h-0">
               {/* V2 Column Headers */}
