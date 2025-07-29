@@ -2043,7 +2043,7 @@ const Partners = () => {
                     <div className="space-y-6">
                       {/* Privacy Policy - Enterprise Grade */}
                       <div className="space-y-4">
-                        <div className="flex items-start space-x-4 py-2">
+                        <div className="flex items-center space-x-4 py-2">
                           <input
                             type="checkbox"
                             id="privacy-check"
@@ -2051,7 +2051,7 @@ const Partners = () => {
                             onChange={(e) =>
                               setPrivacyAccepted(e.target.checked)
                             }
-                            className="w-4 h-4 appearance-none bg-gray-800 border border-gray-600 rounded cursor-pointer focus:ring-green-500 focus:ring-2 checked:bg-gray-800 checked:border-gray-600 relative mt-1 flex-shrink-0"
+                            className="w-4 h-4 appearance-none bg-gray-800 border border-gray-600 rounded cursor-pointer focus:ring-green-500 focus:ring-2 checked:bg-gray-800 checked:border-gray-600 relative flex-shrink-0"
                             style={{
                               backgroundImage: privacyAccepted
                                 ? `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e")`
