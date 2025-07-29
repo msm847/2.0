@@ -57,7 +57,7 @@ const cardData = [
         role: "Media Coordinator",
         description:
           "Leads social media, content strategy,\nand video production.",
-        imageUrl: "/placeholder.svg",
+        imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F12d37d76bae3402ca48fa9a7ea03a60c?format=webp&width=800",
       },
     ],
   },
