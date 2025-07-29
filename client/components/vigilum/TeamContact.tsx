@@ -445,7 +445,7 @@ const TeamContact = () => {
                 style={{
                   fontFamily: "IBM Plex Sans, sans-serif",
                   fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
-                  color: "#9CA3AF",
+                  color: "#E5F3ED",
                 }}
               >
                 Mandate & Team
