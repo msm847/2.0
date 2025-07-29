@@ -1842,6 +1842,7 @@ const Partners = () => {
                       </label>
                       <input
                         type="text"
+                        name="job_title"
                         value={jobTitle}
                         onChange={handleJobTitleSearch}
                         onFocus={() =>
