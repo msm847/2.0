@@ -1331,12 +1331,21 @@ const Partners = () => {
     setIsSubmitting(true);
     setError("");
 
-    // Validate reCAPTCHA
-    if (!robotVerified || !recaptchaToken) {
-      setError("Please complete the reCAPTCHA verification.");
+    // Check if form is valid
+    if (!isFormValid()) {
+      setShowValidationErrors(true);
+      if (!robotVerified || !recaptchaToken) {
+        setError("Please complete the reCAPTCHA verification.");
+      } else if (!privacyAccepted) {
+        setError("Please accept the privacy policy to continue.");
+      } else {
+        setError("Please fill out all required fields to continue.");
+      }
       setIsSubmitting(false);
       return;
     }
+
+    setShowValidationErrors(false);
 
     try {
       // Send contact form using email service
