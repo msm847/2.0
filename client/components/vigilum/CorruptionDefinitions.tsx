@@ -900,7 +900,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Core prohibited practice in IFC private sector operations. [CI]",
           typology: ["CI"],
@@ -1786,6 +1786,7 @@ const BoundaryLogicCarousel = () => {
 
           {/* Carousel */}
           <div
+            ref={carouselRef}
             className="carousel-container"
             style={{
               display: "flex",
@@ -2017,7 +2018,7 @@ const institutionalData = {
         },
         {
           name: "US Department of Justice",
-          logo: "🇺🇸",
+          logo: "🇺����",
           definition:
             "The offering, giving, receiving, or soliciting of anything of value to influence the actions of an official in the discharge of public or commercial duties.",
           source: "DOJ, official website",
