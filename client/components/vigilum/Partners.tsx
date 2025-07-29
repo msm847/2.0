@@ -1428,7 +1428,7 @@ const Partners = () => {
         <div className="mx-auto px-16" style={{ maxWidth: "1280px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-8">
             {/* StakeholderHeroBlock - Left Side */}
-            <motion.div
+            <div
               className="flex flex-col"
               style={{
                 flexBasis: "48%",
@@ -1436,9 +1436,6 @@ const Partners = () => {
                 gap: "36px",
                 height: "fit-content",
               }}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
             >
               {/* Main Headline */}
               <h2
