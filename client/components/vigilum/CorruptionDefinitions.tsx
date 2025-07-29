@@ -1804,7 +1804,7 @@ const BoundaryLogicCarousel = () => {
             height: "670px",
             minHeight: "670px",
             overflowY: "auto",
-            transform: "translateX(-100px) translateY(16px)",
+            transform: "translateX(-100px) translateY(60px)",
             width: "calc(100% + 40px)",
             position: "relative",
           }}
