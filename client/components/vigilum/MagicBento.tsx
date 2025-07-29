@@ -56,7 +56,7 @@ const cardData = [
         name: "Ričardas Blaškevič",
         role: "Media Coordinator",
         description:
-          "Leads social media, content strategy, and video production.",
+          "Leads social media, content strategy,\nand video production.",
         imageUrl: "/placeholder.svg",
       },
     ],
