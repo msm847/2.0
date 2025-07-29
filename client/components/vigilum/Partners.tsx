@@ -2040,7 +2040,7 @@ const Partners = () => {
                     </div>
 
                     {/* Submit Button - Left aligned above privacy */}
-                    <div className="flex justify-start mb-6">
+                    <div className="flex justify-start mb-6" style={{ marginTop: "24px" }}>
                       <div className="relative group">
                         <Button
                           type="submit"
