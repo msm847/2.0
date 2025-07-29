@@ -1604,7 +1604,6 @@ const SemanticPermutationEngine = () => {
                   OVERRIDE RESOLUTION PATH
                 </h3>
               </div>
-              <Network className="w-5 h-5 text-gray-400" />
             </div>
 
             {/* Status Summary */}
