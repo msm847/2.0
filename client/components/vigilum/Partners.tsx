@@ -1687,6 +1687,7 @@ const Partners = () => {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         value={businessEmail}
                         onChange={(e) => setBusinessEmail(e.target.value)}
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
