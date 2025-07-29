@@ -1476,11 +1476,7 @@ const Partners = () => {
                     lineHeight: "1.6",
                   }}
                 >
-                  "What the citizen sees as scandal, the institution encodes as
-                  procedure, the law validates as form, and the structure
-                  routinizes as extraction. When recognition fragments,
-                  contradiction dissolves—truth is subtracted from the system's
-                  operation."
+                  "When meaning fragments, truth becomes private property–an arena for competing realities. Oversight and justice only work if everyone sees the same facts, at the same time, without distortion."
                 </p>
                 <p
                   className="font-medium"
