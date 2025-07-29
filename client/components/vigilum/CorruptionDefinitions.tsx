@@ -10,7 +10,7 @@ const boundaryLogicData = {
       name: "OECD",
       logoUrl:
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
-      logo: "🌐",
+      logo: "����",
       definition:
         "Corruption is generally understood as the intentional abuse of public or private office for undue advantage, including bribery, embezzlement, and related misconduct. The OECD establishes offence-specific standards rather than a single definition, recognizing the diversity of national legal systems.",
       citation: {
@@ -924,7 +924,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         fraud: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Core prohibited practice in IFC investment operations. [CI]",
           typology: ["CI"],
@@ -1749,7 +1749,7 @@ const BoundaryLogicCarousel = () => {
             }}
           />
 
-          {/* Dynamic Scroll Indicator */}
+          {/* Static Scroll Indicator */}
           <div style={{
             fontSize: "12px",
             color: "#9CA3AF",
@@ -1762,9 +1762,7 @@ const BoundaryLogicCarousel = () => {
             height: "20px",
             marginLeft: "-100px"
           }}>
-            {scrollPosition === "start" && "Scroll →"}
-            {scrollPosition === "middle" && "← Scroll →"}
-            {scrollPosition === "end" && "← Scroll"}
+            ← Scroll →
           </div>
 
           {/* Carousel */}
