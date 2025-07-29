@@ -2065,7 +2065,7 @@ const Partners = () => {
                           <label
                             htmlFor="privacy-check"
                             className="text-gray-300 leading-relaxed"
-                            style={{ fontSize: "14px" }}
+                            style={{ fontSize: "12px" }}
                           >
                             See our{" "}
                             <button
