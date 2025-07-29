@@ -1409,7 +1409,7 @@ const BoundaryLogicCarousel = () => {
         <div
           style={{
             marginTop: "12px",
-            height: "350px",
+            height: "420px",
             display: "flex",
             flexDirection: "column",
             overflow: "hidden",
