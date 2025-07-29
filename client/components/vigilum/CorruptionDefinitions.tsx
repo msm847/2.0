@@ -1748,6 +1748,17 @@ const BoundaryLogicCarousel = () => {
             }}
           />
 
+          {/* Scroll Indicator */}
+          <div style={{
+            fontSize: "12px",
+            color: "#9CA3AF",
+            marginBottom: "8px",
+            textAlign: "center",
+            fontFamily: "monospace"
+          }}>
+            ← Scroll to explore institutions →
+          </div>
+
           {/* Carousel */}
           <div
             className="carousel-container"
