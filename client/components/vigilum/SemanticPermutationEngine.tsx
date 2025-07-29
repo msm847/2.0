@@ -1064,7 +1064,7 @@ const SemanticPermutationEngine = () => {
         <div className="mb-12">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-6">
-              <div className="flex gap-2">
+              <div className="flex gap-4">
                 <button
                   onClick={() => {
                     if (operatorVersion === "v1") return;
