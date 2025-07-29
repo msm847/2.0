@@ -117,7 +117,7 @@ const OPERATORS = [
     affects: ["R", "P", "V"],
     position_sensitive: true,
     override_targets: ["ε"],
-    color: "#EF4444", // Vigilum red
+    color: "#8B5CF6", // Purple (same as Compression)
     description:
       "Extraction/Transfer is the core operator through which value, risk, decision rights, or liability are structurally moved out of the originating system, either to external entities, hidden intermediaries, or parallel structures. It operates regardless of surface compliance: whenever a contract, statute, or policy grants the right to shift money, responsibility, or control beyond the oversight boundary, this operator is in play. Extraction may be explicit (fees to an offshore partner, liability shifted to a subcontractor) or disguised (service flows through opaque SPVs), but in every case it severs the internal chain of accountability. This operator is what transforms system resilience into system exposure: once activated, internal safeguards, audits, or rules have no purchase over the extracted asset or risk. In governance and procurement, repeated application of extraction/transfer is the primary channel for laundering, asset flight, or regulatory arbitrage.",
     calculation: {
@@ -178,7 +178,7 @@ const OPERATORS = [
       "Indirection routes control, decision-making, or value through a chain of proxies, affiliates, or off-ledger vehicles to obscure the true path and ultimate beneficiary. Unlike masking, which operates through ambiguity or complexity, indirection creates a formally correct but substantively misleading sequence of actors or steps. Its essence is to break the link between apparent and real control: what appears as an arms-length transaction or compliant process is, in fact, a channel for concealed influence or extraction. Indirection is the favored tool of those seeking to avoid scrutiny—political actors, oligarchic networks, or multinationals structuring around sanctions or procurement caps. Its detection requires not just reading the contract, but reconstructing the real-world flow of authority, money, or risk through layered intermediaries that are often outside standard audit reach.",
     calculation: {
       formula:
-        "ε = w₁ × pressure_coefficient + w���� × temporal_compression + w₃ × distortion_amplitude",
+        "ε = w₁ × pressure_coefficient + w���� × temporal_compression + w�� × distortion_amplitude",
       weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
       variables: {
         H: "Hard operator intensity coefficient",
