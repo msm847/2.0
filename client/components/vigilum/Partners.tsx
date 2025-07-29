@@ -1634,9 +1634,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Simulate alternative clause sequences and environmental
-                      settings to project risk space and expose pre-encoded
-                      extraction logic.
+                      Project how risk amplifies or attenuates as a function of sequence, adjacency, and environmental resonance.
                     </p>
                   </div>
                 </div>
