@@ -1394,7 +1394,7 @@ const Partners = () => {
   return (
     <div
       style={{
-        background: "radial-gradient(circle, #0C2017 0%, #10291C 100%)",
+        background: "radial-gradient(circle, #0a0f0d 0%, #0a0f0d 100%)",
       }}
     >
       {/* STAKEHOLDERS SECTION */}
