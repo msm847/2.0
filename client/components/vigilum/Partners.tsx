@@ -1743,7 +1743,7 @@ const Partners = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Right Side - Form Container */}
             <div className="space-y-6">
