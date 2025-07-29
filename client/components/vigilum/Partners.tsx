@@ -2112,7 +2112,6 @@ const Partners = () => {
                             theme="dark"
                             size="normal"
                           />
-                        </div>
                       </div>
                     </div>
 
