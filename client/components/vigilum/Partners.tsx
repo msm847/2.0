@@ -1754,7 +1754,7 @@ const Partners = () => {
                   backdropFilter: "blur(10px)",
                 }}
               >
-                <div className="p-8">
+                <div className="p-6">
                   <div className="flex items-center space-x-3 mb-6">
                     <Briefcase className="w-6 h-6 text-green-400" />
                     <h3 className="text-2xl font-bold text-white font-display">
