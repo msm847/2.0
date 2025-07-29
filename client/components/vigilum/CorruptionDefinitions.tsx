@@ -1241,9 +1241,9 @@ const BoundaryLogicCarousel = () => {
       primary: "#18291B",
       secondary: "#059669",
       background: "linear-gradient(135deg, #18291B, #0F1E14)",
-      cardBg: "#FFFFFF",
-      textPrimary: "#2D3329",
-      accent: "#16A34A",
+      cardBg: "#18291B",
+      textPrimary: "#E5F3ED",
+      accent: "#059669",
     },
     international: {
       primary: "#465B6E",
@@ -1251,7 +1251,7 @@ const BoundaryLogicCarousel = () => {
       background: "linear-gradient(135deg, #EAEEF2, #465B6E)",
       cardBg: "#F8FAFC",
       textPrimary: "#1E293B",
-      accent: "#2563EB",
+      accent: "#3B82F6",
     },
   };
 
