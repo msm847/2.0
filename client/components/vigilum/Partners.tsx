@@ -1654,7 +1654,15 @@ const Partners = () => {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-4"
+                    method="POST"
+                    name="vigilum-engagement-intake"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    action="/thank-you"
+                  >
                     {/* Personal Information - Single Column */}
                     <div>
                       <label className="block text-sm font-medium text-green-400 mb-2">
