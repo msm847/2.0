@@ -10,7 +10,7 @@ const boundaryLogicData = {
       name: "OECD",
       logoUrl:
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F7414deae428c4c088326b2b2dbb6c914?format=webp&width=800",
-      logo: "����",
+      logo: "🌐",
       definition:
         "Corruption is generally understood as the intentional abuse of public or private office for undue advantage, including bribery, embezzlement, and related misconduct. The OECD establishes offence-specific standards rather than a single definition, recognizing the diversity of national legal systems.",
       citation: {
@@ -900,7 +900,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Core prohibited practice in IFC private sector operations. [CI]",
           typology: ["CI"],
@@ -1767,7 +1767,6 @@ const BoundaryLogicCarousel = () => {
 
           {/* Carousel */}
           <div
-            ref={carouselRef}
             className="carousel-container"
             style={{
               display: "flex",
@@ -1778,19 +1777,6 @@ const BoundaryLogicCarousel = () => {
               scrollbarWidth: "thin",
               maxWidth: "660px", // 2 cards (320px each) visible with proper spacing
               margin: "0",
-            }}
-            onScroll={(e) => {
-              const container = e.target;
-              const scrollLeft = container.scrollLeft;
-              const maxScroll = container.scrollWidth - container.clientWidth;
-
-              if (scrollLeft <= 1) {
-                setScrollPosition("start");
-              } else if (scrollLeft >= maxScroll - 5) {
-                setScrollPosition("end");
-              } else {
-                setScrollPosition("middle");
-              }
             }}
           >
             {currentData.map((institution) => (
