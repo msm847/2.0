@@ -316,26 +316,26 @@ const PerceptionPerspective = () => {
   // Theme configurations
   const themes = {
     perception: {
-      backgroundColor: "linear-gradient(135deg, #04110D, #0B231A)", // Root perception with deepening gradient
+      backgroundColor: "linear-gradient(135deg, #0a1c15, #123528)", // Root perception with deepening gradient
       borderColor: "#E5F3ED", // Same as text color
-      glowColor: "rgba(229, 243, 237, 0.6)", // Same as text color with opacity
+      glowColor: "rgba(229, 243, 237, 0.06)", // Subtle glow
       accentColor: "#34D399",
       textColor: "#E5F3ED", // Off-white green, sharp against black
     },
     perspective: {
       backgroundColor:
-        "radial-gradient(ellipse at center, #2F4D3F 0%, #1D3328 100%)", // Semantic refraction with lateral shift
+        "radial-gradient(ellipse at center, #223c32 0%, #1c2f26 100%)", // Semantic refraction with lateral shift
       borderColor: "#E5F3ED", // Same white as perception TrueFocus box
-      glowColor: "rgba(229, 243, 237, 0.6)", // Same white with opacity as perception
+      glowColor: "rgba(229, 243, 237, 0.06)", // Subtle glow
       accentColor: "#60A5FA",
-      textColor: "#EAE2CC", // Bone/linen contrast for structural tone
+      textColor: "#E5F3ED", // Updated to match primary text
     },
     default: {
-      backgroundColor: "#0D1510",
-      borderColor: "#17B58F",
-      glowColor: "rgba(23, 181, 143, 0.6)",
-      accentColor: "#17B58F",
-      textColor: "#F5F5F5",
+      backgroundColor: "#0a0f0d",
+      borderColor: "#1f2a24",
+      glowColor: "rgba(229, 243, 237, 0.06)",
+      accentColor: "#347646",
+      textColor: "#E5F3ED",
     },
   };
 
