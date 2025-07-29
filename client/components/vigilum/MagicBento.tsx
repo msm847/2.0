@@ -22,7 +22,7 @@ const cardData = [
     color: "#10201C",
     title: "Vision",
     description:
-      "A world where the mechanics of loss are surfaced before they can take root– where institutions no longer react, but continually self-correct, dissolving risk before it becomes harm.\n\nHere, governance is not a spectacle of procedures or delayed consequence, but a living architecture of prevention.\n\nTrust is no longer performed, but embedded–anchored in transparent structure and the continuous neutralization of extraction at its source.\n\nSociety becomes resilient by design, and the game of concealment, loopholes, and loss becomes obsolete.",
+      "A future where risk is not simply managed but anticipated–where institutions gain the ability to surface and neutralize structural vulnerabilities before they become public crises.\nVigilum envisions governance as a living system, continually modeling its own logic and adapting in real time. Contracts, regulations, and procedures are no longer static or opaque; they become transparent frameworks whose effects can be measured, simulated, and improved.\nTrust is not a matter of silence, but of shared recognition: when all actors can observe, verify, and interrogate system logic in real time.",
     secondaryDescription: "",
     url: "/core-principles",
     isVision: true,
