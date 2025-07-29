@@ -635,6 +635,7 @@ const TeamCarousel = ({ card }) => {
               color: "#E5E5E5",
               fontWeight: "300",
               margin: "0",
+              whiteSpace: "pre-line",
             }}
           >
             {member.description}
