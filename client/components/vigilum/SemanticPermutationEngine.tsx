@@ -1048,7 +1048,10 @@ const SemanticPermutationEngine = () => {
           >
             Semantic Permutation Engine
           </motion.h2>
-          <p className="text-xl font-mono max-w-4xl mx-auto leading-relaxed" style={{ color: "#9CA3AF" }}>
+          <p
+            className="text-xl font-mono max-w-4xl mx-auto leading-relaxed"
+            style={{ color: "#9CA3AF" }}
+          >
             Mathematical operators governing structural logic permutation
             through non-commutative semantic transformation. Each operator
             applies deterministic effects calculated via explicit mathematical
