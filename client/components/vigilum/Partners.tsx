@@ -2020,8 +2020,8 @@ const Partners = () => {
                           }}
                           placeholder={
                             isStudent
-                              ? "Please describe your research area, academic project, thesis topic, or areas of study that relate to governance, policy analysis, or institutional research. include any specific interests in transparency, compliance, or public administration…"
-                              : "Please provide as much relevant structural detail as possible regarding your institution, scenario, and objectives..."
+                              ? "Share your thesis topic, core methodology, and any governance benchmarks you wish to test or refine..."
+                              : "Briefly profile your organization, the oversight challenge at hand, and the kind of expertise or toolset you hope to access..."
                           }
                           rows={6}
                           className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white resize-none focus:border-green-500 focus:outline-none transition-colors"
