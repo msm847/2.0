@@ -2067,8 +2067,7 @@ const Partners = () => {
                             className="text-gray-300 leading-relaxed"
                             style={{ fontSize: "14px" }}
                           >
-                            I confirm that I have read and fully understood the
-                            Vigilum{" "}
+                            Please see our{" "}
                             <button
                               type="button"
                               onClick={() => setShowPrivacyModal(true)}
@@ -2081,8 +2080,7 @@ const Partners = () => {
                             >
                               Privacy Policy
                             </button>{" "}
-                            and Data Use Statement, and expressly consent to the
-                            processing of my information as described therein.
+                            regarding how we will handle this information.
                           </label>
                         </div>
 
