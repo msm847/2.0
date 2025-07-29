@@ -111,7 +111,7 @@ const OPERATORS = [
     name: "Extraction/Transfer",
     fullName: "Extraction/Transfer",
     weight: 0.8, // Updated baseline weight
-    symbol: "L",
+    symbol: "XT",
     glyph: "⧨",
     typology: [0.1, 0.6, 1.0, 0.2], // [H, S, B, W]
     affects: ["R", "P", "V"],
