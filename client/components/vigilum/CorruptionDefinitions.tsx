@@ -1233,7 +1233,6 @@ const BoundaryLogicCarousel = () => {
   const [showCompareMode, setShowCompareMode] = useState(false);
   const [hoveredTag, setHoveredTag] = useState(null);
 
-
   const currentData = boundaryLogicData[activeGroup];
 
   // Theme Configuration - Vigilum Brand Tokens
@@ -1750,19 +1749,22 @@ const BoundaryLogicCarousel = () => {
           />
 
           {/* Static Scroll Indicator */}
-          <div style={{
-            fontSize: "12px",
-            color: "#9CA3AF",
-            marginBottom: "8px",
-            fontFamily: "monospace",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "8px",
-            height: "20px",
-            marginLeft: "-105px",
-            textShadow: "0 0 12px rgba(156, 163, 175, 0.9), 0 0 24px rgba(156, 163, 175, 0.6), 0 0 36px rgba(156, 163, 175, 0.3)"
-          }}>
+          <div
+            style={{
+              fontSize: "12px",
+              color: "#9CA3AF",
+              marginBottom: "8px",
+              fontFamily: "monospace",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+              height: "20px",
+              marginLeft: "-105px",
+              textShadow:
+                "0 0 12px rgba(156, 163, 175, 0.9), 0 0 24px rgba(156, 163, 175, 0.6), 0 0 36px rgba(156, 163, 175, 0.3)",
+            }}
+          >
             ← Scroll →
           </div>
 
