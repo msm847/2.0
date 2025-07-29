@@ -1234,9 +1234,14 @@ const BoundaryLogicCarousel = () => {
   const [hoveredTag, setHoveredTag] = useState(null);
   const [scrollPosition, setScrollPosition] = useState("start");
 
+  const carouselRef = useRef(null);
+
   // Reset scroll position when data changes
   useEffect(() => {
     setScrollPosition("start");
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = 0;
+    }
     console.log('Group changed, reset to start:', activeGroup);
   }, [activeGroup]);
 
