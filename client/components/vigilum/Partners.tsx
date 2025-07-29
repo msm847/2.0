@@ -1328,6 +1328,13 @@ const Partners = () => {
     setIsSubmitting(true);
     setError("");
 
+    // Validate reCAPTCHA
+    if (!robotVerified || !recaptchaToken) {
+      setError("Please complete the reCAPTCHA verification.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       // Send contact form using email service
       await sendContactForm({
@@ -1340,6 +1347,7 @@ const Partners = () => {
         projectDescription,
         attachedFiles,
         isStudent,
+        recaptchaToken,
       });
 
       setIsSubmitted(true);
