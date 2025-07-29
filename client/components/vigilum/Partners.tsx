@@ -2063,7 +2063,7 @@ const Partners = () => {
 
                       {/* Privacy Policy - Enterprise Grade */}
                       <div className="space-y-4">
-                        <div className="flex items-center space-x-4 py-2">
+                        <div className={`flex items-center space-x-4 py-2 px-2 rounded-lg transition-colors ${showValidationErrors && !privacyAccepted ? 'bg-red-900/20 border border-red-500/50' : ''}`}>
                           <input
                             type="checkbox"
                             id="privacy-check"
