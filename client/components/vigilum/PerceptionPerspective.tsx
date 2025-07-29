@@ -331,7 +331,7 @@ const PerceptionPerspective = () => {
       textColor: "#E5F3ED", // Updated to match primary text
     },
     default: {
-      backgroundColor: "#0a0f0d",
+      backgroundColor: "radial-gradient(circle, #0a1418 0%, #0d1f1a 100%)",
       borderColor: "#1f2a24",
       glowColor: "rgba(229, 243, 237, 0.06)",
       accentColor: "#347646",
