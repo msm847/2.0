@@ -1047,7 +1047,7 @@ const SemanticPermutationEngine = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Semantic Permutation Engine
+            Semantic Permutation State Rendering
           </motion.h2>
           <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
             <p>
