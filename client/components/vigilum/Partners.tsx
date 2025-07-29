@@ -2039,7 +2039,7 @@ const Partners = () => {
                     </div>
 
                     {/* Verification and Privacy */}
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       {/* reCAPTCHA */}
                       <div className={`flex justify-start mt-4 mb-4 p-2 rounded-lg transition-colors ${showValidationErrors && !robotVerified ? 'bg-red-900/20 border border-red-500/50' : ''}`}>
                         <ReCAPTCHA
