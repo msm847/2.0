@@ -1414,10 +1414,11 @@ const SemanticPermutationEngine = () => {
             <div className="flex flex-col flex-1 min-h-0">
               {/* V2 Column Headers */}
               <div className="grid grid-cols-6 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
-                <div className="h-8 flex items-center justify-center relative bg-gradient-to-br from-gray-800 to-gray-900 rounded border border-gray-600">
-                  <div className="text-xs font-mono text-gray-300 font-bold">⊗</div>
-                  <div className="absolute top-0 left-1 text-[8px] text-gray-500">V1</div>
-                  <div className="absolute bottom-0 right-1 text-[8px] text-gray-500">V2</div>
+                <div className="h-8 flex items-center justify-center relative bg-gradient-to-br from-green-900/40 to-gray-900/60 rounded-lg border border-green-500/30 backdrop-blur-sm">
+                  <div className="text-lg font-mono text-green-400 font-bold">×</div>
+                  <div className="absolute -top-1 -left-1 text-xs text-green-500/70 font-mono">V1</div>
+                  <div className="absolute -bottom-1 -right-1 text-xs text-green-500/70 font-mono">V2</div>
+                  <div className="absolute inset-0 bg-green-400/5 rounded-lg"></div>
                 </div>
                 {OPERATORS_V2.slice(0, 5).map((op) => (
                   <div
