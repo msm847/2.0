@@ -89,7 +89,7 @@ const modules = [
   {
     id: "vigilo-core",
     name: "VIGILO CORE",
-    subtitle: "Signal Integration",
+    subtitle: "Intelligence Synthesis",
     tagline:
       "Pattern resonance is system exposure; escalation is logic actualized.",
     description:
