@@ -1701,6 +1701,7 @@ const Partners = () => {
                       </label>
                       <input
                         type="text"
+                        name="country"
                         value={countrySearch}
                         onChange={handleCountrySearch}
                         onFocus={() => setShowCountryDropdown(true)}
