@@ -1286,11 +1286,11 @@ const BoundaryLogicCarousel = () => {
   const getTagColor = (state) => {
     switch (state) {
       case "✓":
-        return "#059669"; // Included - more muted green
+        return "#059669"; // Included - professional green
       case "–":
-        return "#6B7280"; // Excluded - slightly darker gray
+        return "#6B7280"; // Excluded - muted gray
       case "?":
-        return "#D97706"; // Ambiguous - more muted amber
+        return "#D97706"; // Ambiguous - professional amber
       default:
         return "#6B7280";
     }
