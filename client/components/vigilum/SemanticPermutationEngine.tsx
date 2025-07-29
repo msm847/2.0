@@ -121,7 +121,7 @@ const OPERATORS = [
     description:
       "Extraction/Transfer is the core operator through which value, risk, decision rights, or liability are structurally moved out of the originating system, either to external entities, hidden intermediaries, or parallel structures. It operates regardless of surface compliance: whenever a contract, statute, or policy grants the right to shift money, responsibility, or control beyond the oversight boundary, this operator is in play. Extraction may be explicit (fees to an offshore partner, liability shifted to a subcontractor) or disguised (service flows through opaque SPVs), but in every case it severs the internal chain of accountability. This operator is what transforms system resilience into system exposure: once activated, internal safeguards, audits, or rules have no purchase over the extracted asset or risk. In governance and procurement, repeated application of extraction/transfer is the primary channel for laundering, asset flight, or regulatory arbitrage.",
     calculation: {
-      formula: "ϕ(XT) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + γ(Seq,𝓔)",
+      formula: "ϕ(XT) = 0.13·H + 0.16·S + 0.20·B + 0.07·W + ��(Seq,𝓔)",
       weights: { w1: 0.13, w2: 0.16, w3: 0.2, w4: 0.07 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -1321,22 +1321,6 @@ const SemanticPermutationEngine = () => {
                         <p className="text-xs text-gray-300 font-mono leading-relaxed mb-3">
                           {operator.description}
                         </p>
-
-                        {/* Mathematical Representation */}
-                        <div className="mb-3">
-                          <div className="text-xs text-gray-400 font-mono mb-1">
-                            Mathematical Representation:
-                          </div>
-                          <div className="text-xs text-white font-mono bg-gray-800 p-2 rounded">
-                            {operator.calculation.formula}
-                          </div>
-                        </div>
-
-                        {/* Impact Statement */}
-                        <div className="text-xs text-gray-300 font-mono">
-                          <span className="text-gray-400">Impact:</span>{" "}
-                          {operator.impact}
-                        </div>
                       </div>
                     </div>
                   </motion.div>
