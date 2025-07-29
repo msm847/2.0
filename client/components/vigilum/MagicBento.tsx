@@ -573,7 +573,6 @@ const TeamCarousel = ({ card }) => {
           position: "relative",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
-          marginTop: "60px",
         }}
       >
         {/* Profile Image */}
