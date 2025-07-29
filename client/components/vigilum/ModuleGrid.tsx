@@ -188,19 +188,16 @@ const ModuleGrid = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 mt-8">
-          <motion.h2
+          <h2
             className="mb-8 font-semibold leading-tight"
             style={{
               fontFamily: "IBM Plex Sans, sans-serif",
               fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
               color: "#E5F3ED",
             }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
           >
             Core Modules
-          </motion.h2>
+          </h2>
         </div>
 
         {/* Module Grid - 2x4 responsive layout */}

@@ -20,19 +20,16 @@ const UseCases = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 mt-8">
-            <motion.h2
+            <h2
               className="mb-8 font-semibold leading-tight"
               style={{
                 fontFamily: "IBM Plex Sans, sans-serif",
                 fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
                 color: "#E5F3ED",
               }}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
             >
               Retrospective Clause Mapping
-            </motion.h2>
+            </h2>
             <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
               <p>
                 Each sphere node is a live loophole profile: source, mechanism,

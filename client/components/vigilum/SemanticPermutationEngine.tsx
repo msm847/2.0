@@ -673,7 +673,7 @@ const SemanticPermutationEngine = () => {
 
       // 3. Positional modifiers are now integrated into individual operator weights above
 
-      // 4. Typology resonance (γ)
+      // 4. Typology resonance (��)
       let resonanceModifier = 0;
       let softCount = 0,
         blackCount = 0,
@@ -1036,19 +1036,16 @@ const SemanticPermutationEngine = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 mt-8">
-          <motion.h2
+          <h2
             className="mb-8 font-semibold leading-tight"
             style={{
               fontFamily: "IBM Plex Sans, sans-serif",
               fontSize: "clamp(2.4rem, 3.4vw, 3rem)",
               color: "#E5F3ED",
             }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
           >
             Semantic Permutation State Rendering
-          </motion.h2>
+          </h2>
           <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
             <p>
               No abstraction. Contract logic and operational context rendered as
