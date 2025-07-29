@@ -28,15 +28,15 @@ const LightRays = ({
       ref={containerRef}
       className={`light-rays-container ${className}`.trim()}
       style={{
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
         background: `radial-gradient(ellipse at center, ${raysColor}20 0%, transparent 50%)`,
         opacity: pulsating ? 0.5 : 0.3,
-        animation: pulsating ? 'pulse 2s infinite' : 'none',
+        animation: pulsating ? "pulse 2s infinite" : "none",
       }}
     />
   );
