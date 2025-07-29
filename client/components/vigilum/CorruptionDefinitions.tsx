@@ -924,7 +924,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         fraud: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Core prohibited practice in IFC investment operations. [CI]",
           typology: ["CI"],
@@ -1232,19 +1232,7 @@ const BoundaryLogicCarousel = () => {
   const [selectedTerm, setSelectedTerm] = useState("bribery");
   const [showCompareMode, setShowCompareMode] = useState(false);
   const [hoveredTag, setHoveredTag] = useState(null);
-  const [scrollPosition, setScrollPosition] = useState("start");
-  const carouselRef = useRef(null);
 
-  useEffect(() => {
-    // Force reset to start position on group change
-    setScrollPosition("start");
-    setTimeout(() => {
-      if (carouselRef.current) {
-        carouselRef.current.scrollLeft = 0;
-        setScrollPosition("start");
-      }
-    }, 100);
-  }, [activeGroup]);
 
   const currentData = boundaryLogicData[activeGroup];
 
@@ -1983,7 +1971,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "�������",
+          logo: "🇪���",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
@@ -2386,7 +2374,7 @@ const institutionalData = {
         },
         {
           name: "Global Witness",
-          logo: "��️",
+          logo: "👁️",
           definition:
             "Corruption encompasses bribery, embezzlement, abuse of power, and any misuse of position for personal, political, or commercial advantage.",
           source: "Global Witness, investigative reports",
