@@ -1749,28 +1749,6 @@ const BoundaryLogicCarousel = () => {
             }}
           />
 
-          {/* Dynamic Scroll Indicator */}
-          <div style={{
-            fontSize: "12px",
-            color: "#9CA3AF",
-            marginBottom: "8px",
-            textAlign: "center",
-            fontFamily: "monospace",
-            height: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "8px"
-          }}>
-            <span style={{ width: "12px", textAlign: "center" }}>
-              {(scrollPosition === "middle" || scrollPosition === "end") && "←"}
-            </span>
-            <span>Scroll</span>
-            <span style={{ width: "12px", textAlign: "center" }}>
-              {(scrollPosition === "start" || scrollPosition === "middle") && "→"}
-            </span>
-          </div>
-
           {/* Carousel */}
           <div
             className="carousel-container"
@@ -1783,6 +1761,7 @@ const BoundaryLogicCarousel = () => {
               scrollbarWidth: "thin",
               maxWidth: "660px", // 2 cards (320px each) visible with proper spacing
               margin: "0",
+              position: "relative",
             }}
             onScroll={(e) => {
               const container = e.target;
@@ -1798,6 +1777,34 @@ const BoundaryLogicCarousel = () => {
               }
             }}
           >
+            {/* Dynamic Scroll Indicator - Overlaid in center */}
+            <div style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              fontSize: "12px",
+              color: "#9CA3AF",
+              fontFamily: "monospace",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+              zIndex: 10,
+              pointerEvents: "none",
+              background: "rgba(0, 0, 0, 0.7)",
+              padding: "4px 8px",
+              borderRadius: "12px",
+              backdropFilter: "blur(4px)"
+            }}>
+              <span style={{ width: "12px", textAlign: "center" }}>
+                {(scrollPosition === "middle" || scrollPosition === "end") && "←"}
+              </span>
+              <span>Scroll</span>
+              <span style={{ width: "12px", textAlign: "center" }}>
+                {(scrollPosition === "start" || scrollPosition === "middle") && "→"}
+              </span>
+            </div>
             {currentData.map((institution) => (
               <div key={institution.id} style={{ scrollSnapAlign: "start" }}>
                 <InstitutionCard
@@ -2236,7 +2243,7 @@ const institutionalData = {
         },
         {
           name: "Deloitte",
-          logo: "📊",
+          logo: "����",
           definition:
             "Corruption encompasses bribery, fraud, money laundering, and any improper use of position or information for personal gain.",
           source: "Deloitte, compliance framework",
