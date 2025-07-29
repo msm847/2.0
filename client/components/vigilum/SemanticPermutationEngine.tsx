@@ -1028,8 +1028,8 @@ const SemanticPermutationEngine = () => {
     <div
       className="py-20 px-4"
       style={{
-        background: "linear-gradient(90deg, #213829 0%, #23272b 100%)",
-        backgroundColor: "#213829",
+        background: "linear-gradient(90deg, #1e2d26 0%, #1f2225 100%)",
+        backgroundColor: "#1e2d26",
       }}
     >
       <div className="container mx-auto max-w-7xl">
