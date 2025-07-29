@@ -1232,6 +1232,7 @@ const BoundaryLogicCarousel = () => {
   const [selectedTerm, setSelectedTerm] = useState("bribery");
   const [showCompareMode, setShowCompareMode] = useState(false);
   const [hoveredTag, setHoveredTag] = useState(null);
+  const [scrollPosition, setScrollPosition] = useState("start");
 
   const currentData = boundaryLogicData[activeGroup];
 
