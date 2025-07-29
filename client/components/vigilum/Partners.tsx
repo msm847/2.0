@@ -1724,7 +1724,7 @@ const Partners = () => {
             </motion.div>
 
             {/* Right Side - Form Container */}
-            <div className="space-y-6">
+            <div className="space-y-6" style={{ maxHeight: "800px", overflow: "hidden" }}>
               {/* Success Message */}
               {isSubmitted && (
                 <motion.div
