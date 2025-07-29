@@ -900,7 +900,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Core prohibited practice in IFC private sector operations. [CI]",
           typology: ["CI"],
@@ -1760,7 +1760,7 @@ const BoundaryLogicCarousel = () => {
             alignItems: "center",
             gap: "8px",
             height: "20px",
-            marginLeft: "-100px"
+            marginLeft: "-105px"
           }}>
             ← Scroll →
           </div>
