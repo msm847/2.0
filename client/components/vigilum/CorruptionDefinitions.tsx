@@ -346,7 +346,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         shellCompany: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Investigated when used for corruption or money laundering purposes. [CI]",
           typology: ["CI"],
@@ -1235,6 +1235,13 @@ const BoundaryLogicCarousel = () => {
   const [scrollPosition, setScrollPosition] = useState("start");
   const carouselRef = useRef(null);
   const scrollTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    setScrollPosition("start");
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = 0;
+    }
+  }, [activeGroup]);
 
   const currentData = boundaryLogicData[activeGroup];
 
