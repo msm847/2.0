@@ -1752,6 +1752,7 @@ const Partners = () => {
                         {/* Phone Input */}
                         <input
                           type="tel"
+                          name="phone"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           className="flex-1 p-3 bg-gray-800 border border-gray-600 border-l-0 rounded-r-lg text-white focus:border-green-500 focus:outline-none transition-colors"
