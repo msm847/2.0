@@ -2132,7 +2132,7 @@ const Partners = () => {
                     </div>
                   </form>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
