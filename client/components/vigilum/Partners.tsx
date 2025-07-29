@@ -2067,7 +2067,7 @@ const Partners = () => {
                     {/* Verification and Privacy */}
                     <div className="space-y-6">
                       {/* reCAPTCHA */}
-                      <div className="flex justify-start mt-6 mb-4">
+                      <div className="flex justify-start mt-8 mb-4">
                         <ReCAPTCHA
                             ref={recaptchaRef}
                             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
