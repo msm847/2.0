@@ -894,7 +894,8 @@ const SemanticPermutationEngine = () => {
     if (isCalculatingRef.current) return;
 
     isCalculatingRef.current = true;
-    setIsCalculating(true);
+    // Skip the overlay for instant operations like shuffle
+    setIsCalculating(false);
 
     // Split calculations across multiple frames for smoothness
     requestAnimationFrame(() => {
