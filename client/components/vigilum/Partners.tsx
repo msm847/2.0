@@ -1886,6 +1886,7 @@ const Partners = () => {
                       </label>
                       <div className="relative">
                         <textarea
+                          name="description"
                           value={projectDescription}
                           onChange={(e) => {
                             if (e.target.value.length <= 4000) {
