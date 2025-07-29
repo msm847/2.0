@@ -301,7 +301,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         assetLaundering: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Primary focus area - money laundering is core FATF mandate. [CI]",
           typology: ["CI"],
@@ -786,7 +786,7 @@ const boundaryLogicData = {
           typology: ["SB"],
         },
         shellCompany: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Investigated when used to facilitate prohibited practices in EBRD operations. [CI]",
           typology: ["CI"],
@@ -1760,7 +1760,7 @@ const BoundaryLogicCarousel = () => {
             alignItems: "center",
             gap: "8px",
             height: "20px",
-            marginLeft: "40px"
+            marginLeft: "30px"
           }}>
             <span style={{ width: "12px", textAlign: "center" }}>
               {(scrollPosition === "middle" || scrollPosition === "end") && "←"}
