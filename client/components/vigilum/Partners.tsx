@@ -233,6 +233,7 @@ const Partners = () => {
   const [showJobTitleDropdown, setShowJobTitleDropdown] = useState(false);
   const [companySearch, setCompanySearch] = useState("");
   const [showUniversityDropdown, setShowUniversityDropdown] = useState(false);
+  const [showValidationErrors, setShowValidationErrors] = useState(false);
   const fileInputRef = useRef(null);
   const recaptchaRef = useRef(null);
 
