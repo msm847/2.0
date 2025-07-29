@@ -1600,7 +1600,7 @@ const Partners = () => {
                       }}
                     >
                       Diagnose the thresholds where institutional contradiction
-                      is neutralized–where facts lose the capacity to generate
+                      is neutralized��where facts lose the capacity to generate
                       escalation, and meaning exits the system.
                     </p>
                   </div>
@@ -1663,12 +1663,9 @@ const Partners = () => {
                     data-netlify-honeypot="bot-field"
                     action="/thank-you"
                   >
-                    {/* Honeypot field for spam protection */}
-                    <input
-                      type="hidden"
-                      name="bot-field"
-                      style={{ display: "none" }}
-                    />
+                    {/* Netlify Forms identification */}
+                    <input type="hidden" name="form-name" value="vigilum-engagement-intake" />
+                    <input type="hidden" name="bot-field" style={{ display: "none" }} />
 
                     {/* Personal Information - Single Column */}
                     <div>
