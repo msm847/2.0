@@ -1903,11 +1903,7 @@ const Partners = () => {
                           company.length > 0 &&
                           setShowUniversityDropdown(true)
                         }
-                        placeholder={
-                          isStudent
-                            ? "Search for your university or type to find it..."
-                            : "Enter your company or institution name..."
-                        }
+                        placeholder=""
                         className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:border-green-500 focus:outline-none transition-colors"
                         required
                       />
