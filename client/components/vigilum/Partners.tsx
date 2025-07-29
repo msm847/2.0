@@ -1459,11 +1459,7 @@ const Partners = () => {
                 Failure is not an absence of rules, but their orchestration–where legal form enables extraction under the pretense of oversight.
                 <br />
                 <br />
-                Oversight that does not model system logic operates in hindsight by definition.
-                <br />
-                Only the simulation of structural sequence, override pathways, and context-dependent interpretation can render systemic risk computable at the point of design.
-                <br />
-                Structural exposure is a product of system architecture, not personal conduct.
+                Oversight that does not model system logic operates in hindsight by definition. Only the simulation of structural sequence, override pathways, and context-dependent interpretation can render systemic risk computable at the point of design. Structural exposure is a product of system architecture, not personal conduct.
                 <br />
                 <br />
                 What you explored above is an early, condensed demonstration–structurally isolated from the underlying Vigilum system. The interface is intended for preliminary engagement and does not reflect the scope or complexity of the operational platform in development. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work. All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
