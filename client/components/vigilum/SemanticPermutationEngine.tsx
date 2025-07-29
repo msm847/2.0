@@ -1522,8 +1522,8 @@ const SemanticPermutationEngine = () => {
 
               {/* Matrix Summary */}
               <div className="mt-4 pt-4 border-t border-gray-600 flex-shrink-0">
-                <div className="flex justify-between items-center text-xs font-mono">
-                  <span className="text-gray-400">Matrix Sum:</span>
+                <div className="flex items-center text-xs font-mono">
+                  <span className="text-gray-400">Matrix Sum:&nbsp;</span>
                   <span className="text-green-400 font-bold">
                     {OPERATORS.slice(0, 5)
                       .reduce(
