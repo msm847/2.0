@@ -1570,9 +1570,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Reveal how risk propagates through clause order, override
-                      chains, and recognition collapse. Mapping structure is the
-                      first step in governance repair.
+                      Map the latent geometry of structural risk–how permissions, obligations, and constraints intersect across legal, procedural, and operational planes.
                     </p>
                   </div>
                 </div>
