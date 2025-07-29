@@ -2066,6 +2066,21 @@ const Partners = () => {
 
                     {/* Verification and Privacy */}
                     <div className="space-y-6">
+                      {/* reCAPTCHA */}
+                      <div className="flex justify-start mt-6 mb-4">
+                        <ReCAPTCHA
+                            ref={recaptchaRef}
+                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                            onChange={handleRecaptcha}
+                            onExpired={() => {
+                              setRobotVerified(false);
+                              setRecaptchaToken("");
+                            }}
+                            theme="dark"
+                            size="normal"
+                          />
+                      </div>
+
                       {/* Privacy Policy - Enterprise Grade */}
                       <div className="space-y-4">
                         <div className="flex items-center space-x-4 py-2">
