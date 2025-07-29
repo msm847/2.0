@@ -2099,10 +2099,9 @@ const Partners = () => {
                         </div>
                       </div>
 
-                      {/* reCAPTCHA - Professional styling */}
-                      <div className="flex justify-center mt-6 mb-4">
-                        <div className="p-4 bg-gray-800/50 border border-gray-600 rounded-lg backdrop-blur-sm">
-                          <ReCAPTCHA
+                      {/* reCAPTCHA */}
+                      <div className="flex justify-start mt-6 mb-4">
+                        <ReCAPTCHA
                             ref={recaptchaRef}
                             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
                             onChange={handleRecaptcha}
