@@ -1570,17 +1570,7 @@ const SemanticPermutationEngine = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-3">
-                <div
-                  className="w-1 h-6 rounded"
-                  style={{ backgroundColor: "#10b981" }}
-                />
-                <h3 className="text-lg font-bold text-white font-mono">
-                  OVERRIDE RESOLUTION PATH
-                </h3>
-              </div>
-            </div>
+
 
 
 
