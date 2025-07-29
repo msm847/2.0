@@ -1393,7 +1393,14 @@ const SemanticPermutationEngine = () => {
               <h3 className="text-lg font-bold text-white font-mono">
                 V1×V2 INTERACTION MATRIX
               </h3>
-              <BarChart3 className="w-5 h-5 text-gray-400" />
+              <div className="w-5 h-5 text-gray-400 flex items-center justify-center">
+                <div className="relative">
+                  <div className="w-3 h-3 border border-current opacity-60 transform rotate-12"></div>
+                  <div className="w-3 h-3 border border-current absolute top-0.5 left-0.5 transform -rotate-12"></div>
+                  <div className="w-1 h-1 bg-current absolute top-1 left-1 opacity-80"></div>
+                  <div className="w-1 h-1 bg-current absolute top-2 left-2 opacity-60"></div>
+                </div>
+              </div>
             </div>
 
             {/* Matrix Description */}
