@@ -1785,12 +1785,26 @@ const BoundaryLogicCarousel = () => {
               const scrollLeft = container.scrollLeft;
               const maxScroll = container.scrollWidth - container.clientWidth;
 
-              if (scrollLeft === 0) {
+              if (scrollLeft <= 1) {
                 setScrollPosition("start");
-              } else if (scrollLeft >= maxScroll - 5) { // 5px threshold for end
+              } else if (scrollLeft >= maxScroll - 10) {
                 setScrollPosition("end");
               } else {
                 setScrollPosition("middle");
+              }
+            }}
+            ref={(el) => {
+              if (el) {
+                // Initialize scroll position on mount
+                const scrollLeft = el.scrollLeft;
+                const maxScroll = el.scrollWidth - el.clientWidth;
+                if (scrollLeft <= 1) {
+                  setScrollPosition("start");
+                } else if (scrollLeft >= maxScroll - 10) {
+                  setScrollPosition("end");
+                } else {
+                  setScrollPosition("middle");
+                }
               }
             }}
           >
