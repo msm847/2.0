@@ -32,12 +32,7 @@ const UseCases = () => {
             </h2>
             <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
               <p>
-                Each sphere node is a live loophole profile: source, mechanism,
-                risk, and real-world scenario.
-              </p>
-              <p>
-                Scroll to surface the architectures of bypass that shape
-                procurement across the EU.
+                Real-time pattern topology across EU procurement: nodes link engineered loopholes to source clauses, mechanism logic, and scenario models, exposing compliance-embedded risk clusters.
               </p>
             </div>
           </div>
