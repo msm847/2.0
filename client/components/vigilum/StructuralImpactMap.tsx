@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 // Structural type color mapping
 const getStructuralTypeColor = (type) => {
   const colors = {
-    extraction: "#DC2626", // Red - Extraction type
+    extraction: "#B91C1C", // Red - Extraction type
     simulation: "#3B82F6", // Institutional blue - Simulation type
     shadow: "#6B7280", // Grey/Black - Shadow type
     drift: "#EA580C", // Orange - Drift type
-    collapse: "#8B5CF6", // Purple - Trust Collapse type
+    collapse: "#7C3AED", // Purple - Trust Collapse type
   };
   return colors[type] || "#9CA3AF";
 };
