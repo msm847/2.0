@@ -1767,10 +1767,7 @@ const Partners = () => {
               )}
 
               {/* Contact Form */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+              <div
                 className="rounded-lg"
                 style={{
                   background: "rgba(16, 32, 28, 0.95)",
