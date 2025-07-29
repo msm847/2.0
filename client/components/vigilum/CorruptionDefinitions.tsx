@@ -1649,7 +1649,7 @@ const BoundaryLogicCarousel = () => {
           justifyContent: "flex-start",
           marginBottom: "16px",
           padding: "8px",
-          marginLeft: "80px",
+          marginLeft: "75px",
         }}
       >
         <button
