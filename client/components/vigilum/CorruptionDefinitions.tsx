@@ -1237,7 +1237,14 @@ const BoundaryLogicCarousel = () => {
   // Reset scroll position when data changes
   useEffect(() => {
     setScrollPosition("start");
+    console.log('Group changed, reset to start:', activeGroup);
   }, [activeGroup]);
+
+  // Force initial state on mount
+  useEffect(() => {
+    setScrollPosition("start");
+    console.log('Component mounted, set to start');
+  }, []);
 
   const currentData = boundaryLogicData[activeGroup];
 
