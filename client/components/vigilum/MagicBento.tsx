@@ -45,16 +45,16 @@ const cardData = [
       },
       {
         name: "Mihail Martynov",
-        role: "Founding Partner & Strategic Director",
+        role: "Strategic Co-Founder",
         description:
-          "Principal strategist and founding team leader",
+          "Principal strategist and founding team leader shaping Vigilum's structural intelligence capabilities while overseeing cross-team integration and strategic partnerships",
         imageUrl: "/placeholder.svg",
       },
       {
         name: "Ričardas Blaškevič",
         role: "Media Coordinator",
         description:
-          "Supports the team with content creation, visual materials, and communication tasks",
+          "Leads content creation, visual materials, and communication tasks",
         imageUrl: "/placeholder.svg",
       },
     ],
