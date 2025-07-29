@@ -1236,21 +1236,6 @@ const BoundaryLogicCarousel = () => {
 
   const carouselRef = useRef(null);
 
-  // Reset scroll position when data changes
-  useEffect(() => {
-    setScrollPosition("start");
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = 0;
-    }
-    console.log('Group changed, reset to start:', activeGroup);
-  }, [activeGroup]);
-
-  // Force initial state on mount
-  useEffect(() => {
-    setScrollPosition("start");
-    console.log('Component mounted, set to start');
-  }, []);
-
   const currentData = boundaryLogicData[activeGroup];
 
   // Theme Configuration - Vigilum Brand Tokens
@@ -2018,7 +2003,7 @@ const institutionalData = {
         },
         {
           name: "US Department of Justice",
-          logo: "🇺����",
+          logo: "🇺🇸",
           definition:
             "The offering, giving, receiving, or soliciting of anything of value to influence the actions of an official in the discharge of public or commercial duties.",
           source: "DOJ, official website",
