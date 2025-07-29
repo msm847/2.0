@@ -2067,7 +2067,7 @@ const Partners = () => {
                             className="text-gray-300 leading-relaxed"
                             style={{ fontSize: "12px" }}
                           >
-                            See our{" "}
+                            Please see our{" "}
                             <button
                               type="button"
                               onClick={() => setShowPrivacyModal(true)}
@@ -2080,7 +2080,7 @@ const Partners = () => {
                             >
                               Privacy Policy
                             </button>{" "}
-                            for details.
+                            regarding how we will handle this information.
                           </label>
                         </div>
 
