@@ -217,7 +217,7 @@ const Partners = () => {
   const [country, setCountry] = useState("");
   const [countrySearch, setCountrySearch] = useState("");
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
-  const [phonePlaceholder, setPhonePlaceholder] = useState("+...");
+  const [phonePlaceholder, setPhonePlaceholder] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [attachedFiles, setAttachedFiles] = useState([]);
   const [scrollIntensity, setScrollIntensity] = useState(0);
