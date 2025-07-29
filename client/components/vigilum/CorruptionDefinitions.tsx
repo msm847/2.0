@@ -1756,11 +1756,19 @@ const BoundaryLogicCarousel = () => {
             marginBottom: "8px",
             textAlign: "center",
             fontFamily: "monospace",
-            height: "20px"
+            height: "20px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "8px"
           }}>
-            {scrollPosition === "start" && "Scroll →"}
-            {scrollPosition === "middle" && "← Scroll →"}
-            {scrollPosition === "end" && "← Scroll"}
+            <span style={{ width: "12px", textAlign: "center" }}>
+              {(scrollPosition === "middle" || scrollPosition === "end") && "←"}
+            </span>
+            <span>Scroll</span>
+            <span style={{ width: "12px", textAlign: "center" }}>
+              {(scrollPosition === "start" || scrollPosition === "middle") && "→"}
+            </span>
           </div>
 
           {/* Carousel */}
