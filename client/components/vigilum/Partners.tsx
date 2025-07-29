@@ -925,8 +925,7 @@ const Partners = () => {
   };
 
   const validateFullName = (name) => {
-    const words = name.trim().split(/\s+/);
-    return words.length >= 2 && words.every((word) => word.length > 0);
+    return name.trim().length > 0;
   };
 
   const validateJobTitle = (title) => {
