@@ -28,7 +28,7 @@ const UseCases = () => {
                 color: "#E5F3ED",
               }}
             >
-              Loophole Pattern Recognition
+              Loophole Pattern Mapping
             </h2>
             <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
               <p>
