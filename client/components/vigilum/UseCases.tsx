@@ -32,9 +32,7 @@ const UseCases = () => {
             </h2>
             <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
               <p>
-                Real-time pattern topology across EU procurement: nodes link
-                engineered loopholes to source clauses, mechanism logic, and
-                scenario models, exposing compliance-embedded risk clusters.
+                Real-time pattern topology across EU procurement: nodes model how structural gaps and clause interactions propagate through contract logic and operational context, revealing clusters of risk embedded within compliance frameworks.
               </p>
             </div>
           </div>
