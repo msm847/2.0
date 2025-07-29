@@ -346,7 +346,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         shellCompany: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Investigated when used for corruption or money laundering purposes. [CI]",
           typology: ["CI"],
@@ -1788,15 +1788,21 @@ const BoundaryLogicCarousel = () => {
               const scrollLeft = container.scrollLeft;
               const maxScroll = container.scrollWidth - container.clientWidth;
 
-              if (scrollLeft === 0) {
-                setScrollPosition("start");
-              } else if (scrollLeft >= maxScroll - 5) {
-                setScrollPosition("end");
-              } else {
-                setScrollPosition("middle");
+              // Debounce scroll updates to prevent crashes
+              if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
               }
+
+              scrollTimeoutRef.current = setTimeout(() => {
+                if (scrollLeft === 0) {
+                  setScrollPosition("start");
+                } else if (scrollLeft >= maxScroll - 5) {
+                  setScrollPosition("end");
+                } else {
+                  setScrollPosition("middle");
+                }
+              }, 50);
             }}
-            onLoad={() => setScrollPosition("start")}
           >
             {currentData.map((institution) => (
               <div key={institution.id} style={{ scrollSnapAlign: "start" }}>
