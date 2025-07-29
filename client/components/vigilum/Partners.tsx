@@ -1381,6 +1381,25 @@ const Partners = () => {
     }
   };
 
+  // Form validation function
+  const isFormValid = () => {
+    return (
+      fullName.trim() !== "" &&
+      businessEmail.trim() !== "" &&
+      jobTitle.trim() !== "" &&
+      company.trim() !== "" &&
+      projectDescription.trim() !== "" &&
+      privacyAccepted &&
+      robotVerified
+    );
+  };
+
+  // Handle reCAPTCHA verification
+  const handleRecaptcha = (token) => {
+    setRecaptchaToken(token);
+    setRobotVerified(!!token);
+  };
+
   // Auto-reset success message after 5 seconds
   useEffect(() => {
     if (isSubmitted) {
