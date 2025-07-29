@@ -455,7 +455,7 @@ const TeamContact = () => {
                 style={{
                   fontFamily: "IBM Plex Sans, sans-serif",
                   fontSize: "18px",
-                  color: "#A5C9B7",
+                  color: "#9CA3AF",
                   textAlign: "center",
                   margin: "0",
                   lineHeight: "1.5",
