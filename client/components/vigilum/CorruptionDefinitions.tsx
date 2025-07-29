@@ -408,7 +408,7 @@ const boundaryLogicData = {
           typology: ["DG"],
         },
         shellCompany: {
-          state: "�����",
+          state: "���",
           tooltip:
             "Addressed through UNCAC asset recovery and beneficial ownership provisions. [CI]",
           typology: ["CI"],
@@ -1327,7 +1327,7 @@ const BoundaryLogicCarousel = () => {
           cursor: "default",
           width: "320px",
           height: "auto",
-          minHeight: "580px",
+          minHeight: "450px",
           flexShrink: 0,
           transform: isActive ? "scale(1.04)" : "scale(1)",
           zIndex: isActive ? 2 : 1,
@@ -2880,7 +2880,7 @@ const CorruptionDefinitions = ({ onNavigate }) => {
                     cursor: "pointer",
                   }}
                 >
-                  ✕
+                  ��
                 </button>
               </div>
 
