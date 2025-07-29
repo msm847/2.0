@@ -1197,6 +1197,7 @@ const Partners = () => {
       isStudent || (jobTitle.trim() && validateJobTitle(jobTitle).isValid);
     const hasProjectDescription = projectDescription.trim();
     const hasPrivacyAccepted = privacyAccepted;
+    const hasRobotVerification = robotVerified;
 
     return (
       hasFullName &&
@@ -1205,7 +1206,8 @@ const Partners = () => {
       hasCompany &&
       hasJobTitle &&
       hasProjectDescription &&
-      hasPrivacyAccepted
+      hasPrivacyAccepted &&
+      hasRobotVerification
     );
   };
 
