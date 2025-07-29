@@ -1797,6 +1797,7 @@ const Partners = () => {
                       </div>
                       <input
                         type="text"
+                        name="company"
                         value={company}
                         onChange={handleCompanySearch}
                         onFocus={() =>
