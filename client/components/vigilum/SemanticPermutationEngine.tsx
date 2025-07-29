@@ -1309,14 +1309,6 @@ const SemanticPermutationEngine = () => {
                           details
                         </div>
 
-                        {/* Operator Full Name */}
-                        <div
-                          className="text-sm font-bold font-mono mb-2 flex-shrink-0"
-                          style={{ color: operator.color }}
-                        >
-                          {operator.symbol} — {operator.fullName}
-                        </div>
-
                         {/* Description */}
                         <p className="text-xs text-gray-300 font-mono leading-relaxed mb-3">
                           {operator.description}
