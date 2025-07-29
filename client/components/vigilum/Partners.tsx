@@ -2048,7 +2048,7 @@ const Partners = () => {
                           className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                           style={{ textTransform: "none" }}
                         >
-                          {isSubmitting ? "Sending..." : "Send an Inquiry"}
+                          {isSubmitting ? "Sending..." : "Submit"}
                         </Button>
 
                         {/* Tooltip for disabled button */}
