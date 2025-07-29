@@ -1991,7 +1991,7 @@ const Partners = () => {
                           }}
                           placeholder={
                             isStudent
-                              ? "Please describe your research area, academic project, thesis topic, or areas of study that relate to governance, policy analysis, or institutional research. Include your academic level (undergraduate, graduate, PhD) and any specific interests in transparency, compliance, or public administration..."
+                              ? "Please describe your research area, academic project, thesis topic, or areas of study that relate to governance, policy analysis, or institutional research. include any specific interests in transparency, compliance, or public administration…"
                               : "Please provide as much relevant structural detail as possible regarding your institution, scenario, and objectives..."
                           }
                           rows={6}
