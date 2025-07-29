@@ -748,7 +748,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "✓",
+          state: "��",
           tooltip:
             "Addressed through EU regulatory coordination and project compliance. [DG]",
           typology: ["DG"],
@@ -1196,7 +1196,7 @@ const termDefinitions = {
     analysis:
       "Shell company structuring refers to the use of legal entities with minimal real operations to facilitate transactions, hold assets, or obscure ownership. Divergence occurs in transparency standards, registration requirements, and how easily underlying actors can be linked to shells. While shells are criminalized when linked to clear predicate offenses, most global systems permit their use for asset protection, privacy, or investment structuring. Beneficial ownership disclosure is frequently weak, and mass incorporation is normalized in cross-border deals, funds, and sovereign wealth vehicles. Shells simulate legitimacy via formal compliance but systematically dissolve liability and origin, embedding opacity and enabling flows from bribery, asset laundering, or regulatory arbitrage.",
     consequence:
-      "Opaque entities institutionalize the fracture of responsibility by design. Ownership, control, and asset flows are decoupled from identity, transforming the risk landscape into a multidimensional space where due diligence is always partial and loss is always retroactive. This architecture not only enables extraction to persist untraced, but also provides an off-ledger mechanism for risk absorption���rendering detection episodic and remediation structurally impossible without upstream redesign.",
+      "Opaque entities institutionalize the fracture of responsibility by design. Ownership, control, and asset flows are decoupled from identity, transforming the risk landscape into a multidimensional space where due diligence is always partial and loss is always retroactive. This architecture not only enables extraction to persist untraced, but also provides an off-ledger mechanism for risk absorption—rendering detection episodic and remediation structurally impossible without upstream redesign.",
   },
 };
 
@@ -1235,6 +1235,13 @@ const BoundaryLogicCarousel = () => {
   const [scrollPosition, setScrollPosition] = useState("start");
 
   const carouselRef = useRef(null);
+
+  useEffect(() => {
+    setScrollPosition("start");
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = 0;
+    }
+  }, [activeGroup]);
 
   const currentData = boundaryLogicData[activeGroup];
 
