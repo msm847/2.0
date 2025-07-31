@@ -1600,7 +1600,7 @@ const Partners = () => {
                       }}
                     >
                       Diagnose the thresholds where institutional contradiction
-                      is neutralized��where facts lose the capacity to generate
+                      is neutralized—where facts lose the capacity to generate
                       escalation, and meaning exits the system.
                     </p>
                   </div>
