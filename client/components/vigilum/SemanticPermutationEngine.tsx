@@ -19,10 +19,10 @@ import {
 
 // Mathematical Operator Weights (configurable for v2)
 const OPERATOR_WEIGHTS = {
-  A: 0.7,
-  R: 0.1,
+  A: 0.0,
+  R: 0.0,
   V: 0.0,
-  ε: 1.0,
+  ε: 0.0,
   O: 0.0,
 };
 
@@ -54,7 +54,7 @@ const OPERATORS = [
     id: "H",
     name: "Unbreakable Constraint",
     fullName: "Unbreakable Constraint",
-    weight: 0.15, // Updated baseline weight (dampening)
+    weight: 0.0, // Updated baseline weight (dampening)
     symbol: "H",
     glyph: "⬛",
     affects: ["L", "P", "V"],
@@ -82,7 +82,7 @@ const OPERATORS = [
     id: "O",
     name: "Override",
     fullName: "Override",
-    weight: 0.9, // Updated baseline weight (amplifying)
+    weight: 0.0, // Updated baseline weight (amplifying)
     symbol: "O",
     glyph: "⊗",
     affects: ["L", "P", "V"],
@@ -110,7 +110,7 @@ const OPERATORS = [
     id: "XT",
     name: "Extraction/Transfer",
     fullName: "Extraction/Transfer",
-    weight: 0.8, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "XT",
     glyph: "⧨",
     typology: [0.1, 0.6, 1.0, 0.2], // [H, S, B, W]
@@ -138,7 +138,7 @@ const OPERATORS = [
     id: "F",
     name: "Fracture",
     fullName: "Fracture",
-    weight: 0.7, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "F",
     glyph: "⚬",
     affects: ["ε", "P", "A"],
@@ -166,7 +166,7 @@ const OPERATORS = [
     id: "I",
     name: "Indirection",
     fullName: "Indirection",
-    weight: 0.75, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "I",
     typology: [0.0, 0.8, 0.95, 0.05], // [H, S, B, W]
     glyph: "⦿",
@@ -195,7 +195,7 @@ const OPERATORS = [
     id: "R",
     name: "Reflex",
     fullName: "Reflex and Automatic Response",
-    weight: 0.22,
+    weight: 0.0,
     symbol: "R",
     glyph: "���",
     affects: ["L", "P", "V"],
@@ -225,7 +225,7 @@ const OPERATORS_V2 = [
     id: "S",
     name: "Simulation",
     fullName: "Simulation",
-    weight: 0.6, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "S",
     glyph: "⟐",
     affects: ["V", "L", "ε"],
@@ -252,7 +252,7 @@ const OPERATORS_V2 = [
     id: "M",
     name: "Masking",
     fullName: "Masking and Semantic Opacity",
-    weight: 0.65, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "M",
     glyph: "⧨",
     affects: ["L", "A", "P"],
@@ -279,7 +279,7 @@ const OPERATORS_V2 = [
     id: "C",
     name: "Compression",
     fullName: "Compression",
-    weight: 0.55, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "C",
     glyph: "⊞",
     affects: ["ε", "P", "R"],
@@ -306,7 +306,7 @@ const OPERATORS_V2 = [
     id: "R",
     name: "Reinjection",
     fullName: "Reinjection",
-    weight: 0.5, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "R",
     glyph: "��",
     affects: ["L", "A", "V"],
@@ -334,7 +334,7 @@ const OPERATORS_V2 = [
     id: "A",
     name: "Aggregation",
     fullName: "Aggregation",
-    weight: 0.45, // Updated baseline weight
+    weight: 0.0, // Updated baseline weight
     symbol: "A",
     glyph: "⊕",
     affects: ["P", "L", "R"],
@@ -419,47 +419,18 @@ const OVERRIDE_MATRIX = [
 
 // V1×V2 Matrix Computation Functions
 const computeMatrixCell = (V1op: any, V2op: any): number => {
-  const alpha = V1op.weight;
-  const beta = V2op.weight;
-  const [h1, s1, b1, w1] = V1op.typology;
-  const [h2, s2, b2, w2] = V2op.typology;
-
-  let base = alpha * beta;
-  let typologyResonance = h1 * h2 + s1 * s2 + b1 * b2 + w1 * w2;
-  let kernel = 1.0;
-
-  // Kernel logic modifiers
-  if (V1op.id === "O") return 0.0; // Override nullifies interaction
-  if (V1op.id === "H") kernel *= 0.4; // Hard constraint dampening
-  if (V1op.id === "XT" && ["S", "M", "A"].includes(V2op.id)) kernel *= 1.3; // Extraction amplifies simulation/masking/aggregation
-  if (V1op.id === "F" && ["C", "R"].includes(V2op.id))
-    kernel *= 1 + (Math.random() - 0.5) * 0.2; // Fracture adds noise to compression/reinjection
-  if (V1op.id === "I" && V2op.typology[2] > 0.7) kernel *= 1.1; // Indirection amplifies high-black operators
-
-  return +(base * (1 + 0.2 * typologyResonance) * kernel);
+  return 0.0;
 };
 
 const getTypologyResonance = (
   typology1: number[],
   typology2: number[],
 ): number => {
-  return (
-    typology1[0] * typology2[0] +
-    typology1[1] * typology2[1] +
-    typology1[2] * typology2[2] +
-    typology1[3] * typology2[3]
-  );
+  return 0.0;
 };
 
 const getKernelModifier = (V1op: any, V2op: any): number => {
-  let kernel = 1.0;
-  if (V1op.id === "O") return 0.0;
-  if (V1op.id === "H") kernel *= 0.4;
-  if (V1op.id === "XT" && ["S", "M", "A"].includes(V2op.id)) kernel *= 1.3;
-  if (V1op.id === "F" && ["C", "R"].includes(V2op.id))
-    kernel *= 1 + (Math.random() - 0.5) * 0.2;
-  if (V1op.id === "I" && V2op.typology[2] > 0.7) kernel *= 1.1;
-  return kernel;
+  return 0.0;
 };
 
 const SemanticPermutationEngine = () => {
@@ -533,37 +504,7 @@ const SemanticPermutationEngine = () => {
   // Calculate mathematical operator values
   const calculateOperatorValue = useCallback(
     (operator: any, environmentGradient: number = 0.1) => {
-      const { calculation } = operator;
-      let total = 0;
-      let breakdown = [];
-
-      // Simulate variable values based on operator weight and environmental factors
-      Object.entries(calculation.weights).forEach(([key, weight]) => {
-        const variableName = key.replace("w", "");
-        const variableKey = Object.keys(calculation.variables)[
-          parseInt(variableName) - 1
-        ];
-        // Simulate realistic variable values influenced by environmental gradient
-        const baseValue = 0.5 + Math.sin(operator.weight * Math.PI) * 0.3;
-        const environmentalInfluence =
-          environmentGradient * (Math.random() * 0.4 - 0.2);
-        const variableValue = Math.max(
-          0,
-          Math.min(1, baseValue + environmentalInfluence),
-        );
-
-        const contribution = (weight as number) * variableValue;
-        total += contribution;
-
-        breakdown.push({
-          weight: weight,
-          variable: variableKey,
-          value: variableValue,
-          contribution: contribution,
-        });
-      });
-
-      return { value: total, breakdown };
+      return { value: 0.0, breakdown: [] };
     },
     [],
   );
@@ -707,7 +648,7 @@ const SemanticPermutationEngine = () => {
 
       return {
         phi,
-        formula: `φ(S|Φₑₙᵥ) = ${formulaTerms.join(" ")} = ${phi.toFixed(3)}`,
+        formula: `φ(S|Φₑₙ��) = ${formulaTerms.join(" ")} = ${phi.toFixed(3)}`,
         details: calculationDetails,
         v1Vector: v1Vector,
         adjacencySum: adjacencySum,
