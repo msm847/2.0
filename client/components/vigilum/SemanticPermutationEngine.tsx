@@ -558,7 +558,9 @@ const SemanticPermutationEngine = () => {
                           }}
                           whileHover={{ scale: 1.05 }}
                         >
-                          <span className="text-center leading-tight">0.00</span>
+                          <span className="text-center leading-tight">
+                            0.00
+                          </span>
 
                           {/* Tooltip */}
                           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none">
@@ -603,11 +605,7 @@ const SemanticPermutationEngine = () => {
               backgroundColor: "rgba(16, 44, 34, 0.7)",
               borderColor: "rgba(34, 68, 54, 0.8)",
             }}
-          >
-
-
-
-          </div>
+          ></div>
         </div>
 
         {/* Simple Results Display */}
@@ -790,7 +788,8 @@ const SemanticPermutationEngine = () => {
                             </span>
                           </div>
                           <div className="text-xs text-gray-400">
-                            No mathematical operations performed - visual interface only
+                            No mathematical operations performed - visual
+                            interface only
                           </div>
                         </div>
                       );

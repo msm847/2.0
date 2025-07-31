@@ -106,8 +106,6 @@ const ModulePageTemplate = ({
     return () => clearInterval(interval);
   }, [moduleData.patternArchive.length]);
 
-
-
   const runSimulation = (index: number) => {
     setActiveSimulation(index);
     setTimeout(() => setActiveSimulation(null), 3000);
@@ -253,8 +251,6 @@ const ModulePageTemplate = ({
                   </div>
                 </div>
               </div>
-
-
             </div>
 
             {/* Semantic Interface Background */}
@@ -298,8 +294,6 @@ const ModulePageTemplate = ({
                 </div>
               </div>
             </div>
-
-
 
             {/* Cross-Module Switch Panel */}
             <div className="text-center mb-16">

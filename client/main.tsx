@@ -59,48 +59,48 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/vigilum" element={<VigilumPage />} />
-          <Route path="/module/clavis" element={<CLAVISModulePage />} />
-          <Route path="/module/obscura" element={<OBSCURAModulePage />} />
-          <Route path="/module/nullum" element={<NULLUMModulePage />} />
-          <Route
-            path="/module/nexus-potentia"
-            element={<NEXUSPOTENTIAModulePage />}
-          />
-          <Route
-            path="/module/vigilo-core"
-            element={<VIGILOCOREModulePage />}
-          />
-          <Route path="/module/veris" element={<VERISModulePage />} />
-          <Route path="/module/sentium" element={<SENTIUMModulePage />} />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/vigilum" element={<VigilumPage />} />
+            <Route path="/module/clavis" element={<CLAVISModulePage />} />
+            <Route path="/module/obscura" element={<OBSCURAModulePage />} />
+            <Route path="/module/nullum" element={<NULLUMModulePage />} />
+            <Route
+              path="/module/nexus-potentia"
+              element={<NEXUSPOTENTIAModulePage />}
+            />
+            <Route
+              path="/module/vigilo-core"
+              element={<VIGILOCOREModulePage />}
+            />
+            <Route path="/module/veris" element={<VERISModulePage />} />
+            <Route path="/module/sentium" element={<SENTIUMModulePage />} />
 
-          <Route
-            path="/core-intelligence/solution"
-            element={<SolutionPage />}
-          />
-          <Route path="/core-intelligence/method" element={<MethodPage />} />
-          <Route path="/core-intelligence/system" element={<SystemPage />} />
-          <Route path="/core-intelligence/impact" element={<ImpactPage />} />
-          <Route
-            path="/core-intelligence/deployment"
-            element={<DeploymentPage />}
-          />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/collaboration" element={<Collaboration />} />
-          <Route path="/automation" element={<Automation />} />
-          <Route path="/integration" element={<Integration />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="/core-principles" element={<CorePrinciples />} />
-          <Route path="/actors" element={<Actors />} />
-          <Route path="/contact-form" element={<ContactForm />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+            <Route
+              path="/core-intelligence/solution"
+              element={<SolutionPage />}
+            />
+            <Route path="/core-intelligence/method" element={<MethodPage />} />
+            <Route path="/core-intelligence/system" element={<SystemPage />} />
+            <Route path="/core-intelligence/impact" element={<ImpactPage />} />
+            <Route
+              path="/core-intelligence/deployment"
+              element={<DeploymentPage />}
+            />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/collaboration" element={<Collaboration />} />
+            <Route path="/automation" element={<Automation />} />
+            <Route path="/integration" element={<Integration />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="/core-principles" element={<CorePrinciples />} />
+            <Route path="/actors" element={<Actors />} />
+            <Route path="/contact-form" element={<ContactForm />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
       </GlobalCorruptionCounterProvider>
     </TooltipProvider>
   </QueryClientProvider>

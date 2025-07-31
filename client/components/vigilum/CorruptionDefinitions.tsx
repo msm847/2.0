@@ -2729,7 +2729,14 @@ const InstitutionCard = ({ institution }) => {
   );
 };
 
-const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, selectedButton, setSelectedButton, setVisitedSections }) => {
+const CorruptionDefinitions = ({
+  onNavigate,
+  showFloatingNav,
+  isMainNavOpen,
+  selectedButton,
+  setSelectedButton,
+  setVisitedSections,
+}) => {
   const [showCompareAll, setShowCompareAll] = useState(false);
   const [modalActiveGroup, setModalActiveGroup] = useState("regulatory"); // For modal group selection
   const [activeCarousel, setActiveCarousel] = useState(0);
@@ -2847,7 +2854,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               style={{
                 display: "flex",
                 alignItems: "flex-start",
-                marginTop: "8px"
+                marginTop: "8px",
               }}
             >
               <motion.button
@@ -2877,16 +2884,13 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background =
-                    "rgba(16, 185, 129, 0.25)";
+                  e.currentTarget.style.background = "rgba(16, 185, 129, 0.25)";
                   e.currentTarget.style.boxShadow =
                     "0 0 25px rgba(16, 185, 129, 0.6)";
-                  e.currentTarget.style.borderColor =
-                    "rgba(16, 185, 129, 0.8)";
+                  e.currentTarget.style.borderColor = "rgba(16, 185, 129, 0.8)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background =
-                    "rgba(16, 185, 129, 0.15)";
+                  e.currentTarget.style.background = "rgba(16, 185, 129, 0.15)";
                   e.currentTarget.style.boxShadow =
                     "0 8px 32px rgba(0,0,0,0.2)";
                   e.currentTarget.style.borderColor =

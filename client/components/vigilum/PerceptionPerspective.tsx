@@ -212,8 +212,6 @@ const PerceptionPerspective = () => {
     setActiveSection(null);
   }, []);
 
-
-
   // Reset to instruction section when navigating via hash to this section
   useEffect(() => {
     if (location.hash === "#perception-perspective") {
@@ -562,7 +560,8 @@ const PerceptionPerspective = () => {
                         style={{
                           width: "100%",
                           height: "100%",
-                          background: "radial-gradient(ellipse at center, #0a1418 0%, #050a0c 100%)",
+                          background:
+                            "radial-gradient(ellipse at center, #0a1418 0%, #050a0c 100%)",
                           borderRadius: "10px",
                           border: "1px solid #222",
                           display: "flex",
@@ -605,11 +604,23 @@ const PerceptionPerspective = () => {
                             letterSpacing: "2px",
                           }}
                         >
-                          <div style={{ marginBottom: "12px", fontSize: "18px", opacity: 0.5 }}>
+                          <div
+                            style={{
+                              marginBottom: "12px",
+                              fontSize: "18px",
+                              opacity: 0.5,
+                            }}
+                          >
                             ◉ REC
                           </div>
                           <div>PERCEPTION FEED</div>
-                          <div style={{ fontSize: "16px", marginTop: "12px", opacity: 0.6 }}>
+                          <div
+                            style={{
+                              fontSize: "16px",
+                              marginTop: "12px",
+                              opacity: 0.6,
+                            }}
+                          >
                             [VIDEO_INPUT_READY]
                           </div>
                         </div>
@@ -622,7 +633,8 @@ const PerceptionPerspective = () => {
                             left: "15%",
                             width: "30%",
                             height: "40%",
-                            background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%)",
+                            background:
+                              "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%)",
                             borderRadius: "50%",
                             transform: "rotate(-20deg)",
                             pointerEvents: "none",
@@ -770,8 +782,6 @@ const PerceptionPerspective = () => {
                     />
                   </motion.div>
                 )}
-
-
               </>
             )}
           </motion.div>

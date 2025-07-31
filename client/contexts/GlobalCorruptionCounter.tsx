@@ -4,17 +4,24 @@ interface GlobalCorruptionCounterContextType {
   globalLoss: number;
 }
 
-const GlobalCorruptionCounterContext = createContext<GlobalCorruptionCounterContextType | null>(null);
+const GlobalCorruptionCounterContext =
+  createContext<GlobalCorruptionCounterContextType | null>(null);
 
 export const useGlobalCorruptionCounter = () => {
   const context = useContext(GlobalCorruptionCounterContext);
   if (!context) {
-    throw new Error("useGlobalCorruptionCounter must be used within GlobalCorruptionCounterProvider");
+    throw new Error(
+      "useGlobalCorruptionCounter must be used within GlobalCorruptionCounterProvider",
+    );
   }
   return context;
 };
 
-export const GlobalCorruptionCounterProvider = ({ children }: { children: React.ReactNode }) => {
+export const GlobalCorruptionCounterProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [globalLoss, setGlobalLoss] = useState(0);
 
   // Single global counter that runs continuously
