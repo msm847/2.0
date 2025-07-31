@@ -545,76 +545,7 @@ const PerceptionPerspective = () => {
                   </motion.div>
                 )}
 
-                {/* Floating Contextual Navigation - Only show when in perception/perspective sections and main nav is closed */}
-                {showFloatingNav && !isMainNavOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 100 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-24 left-8 z-30 flex flex-col gap-3"
-                  >
-                    <motion.button
-                      onClick={() => {
-                        if (selectedButton === "Cultural") {
-                          setSelectedButton("Social");
-                          setVisitedSections(
-                            (prev) => new Set([...prev, "Cultural", "Social"]),
-                          );
-                        } else {
-                          setSelectedButton("Cultural");
-                          setVisitedSections(
-                            (prev) => new Set([...prev, "Cultural"]),
-                          );
-                        }
-                      }}
-                      className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
-                      style={{
-                        background: "rgba(16, 185, 129, 0.15)",
-                        color: "#9DE6C6",
-                        border: "1px solid rgba(157, 230, 198, 0.4)",
-                        backdropFilter: "blur(15px)",
-                        boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-                        fontFamily: "var(--font-display)",
-                        letterSpacing: "0.5px",
-                        textTransform: "uppercase",
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background =
-                          "rgba(16, 185, 129, 0.25)";
-                        e.currentTarget.style.boxShadow =
-                          "0 0 25px rgba(16, 185, 129, 0.6)";
-                        e.currentTarget.style.borderColor =
-                          "rgba(16, 185, 129, 0.8)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background =
-                          "rgba(16, 185, 129, 0.15)";
-                        e.currentTarget.style.boxShadow =
-                          "0 8px 32px rgba(0,0,0,0.2)";
-                        e.currentTarget.style.borderColor =
-                          "rgba(157, 230, 198, 0.4)";
-                      }}
-                    >
-                      {selectedButton === "Cultural" ? (
-                        <>→ Consequences of Corruption</>
-                      ) : (
-                        <>
-                          What is Corruption?{" "}
-                          <span
-                            style={{
-                              transform: "rotate(180deg)",
-                              display: "inline-block",
-                            }}
-                          >
-                            →
-                          </span>
-                        </>
-                      )}
-                    </motion.button>
-                  </motion.div>
-                )}
+
               </>
             )}
           </motion.div>
