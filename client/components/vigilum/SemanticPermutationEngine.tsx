@@ -179,7 +179,7 @@ const OPERATORS = [
     calculation: {
       formula:
         "ε = w₁ × pressure_coefficient + w���� × temporal_compression + w�� × distortion_amplitude",
-      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
