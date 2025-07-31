@@ -648,7 +648,7 @@ const SemanticPermutationEngine = () => {
 
       return {
         phi,
-        formula: `φ(S|Φₑₙ��) = ${formulaTerms.join(" ")} = ${phi.toFixed(3)}`,
+        formula: `φ(S|Φₑₙᵥ) = ${formulaTerms.join(" ")} = ${phi.toFixed(3)}`,
         details: calculationDetails,
         v1Vector: v1Vector,
         adjacencySum: adjacencySum,
@@ -671,56 +671,8 @@ const SemanticPermutationEngine = () => {
         if (!operator) return;
 
         const inputState = { ...currentState };
-
-        // Apply positional modifiers
-        const positionMultiplier = index === 0 ? 1.3 : 1.0;
-
-        // Check for overrides
         const activeOverrides = checkActiveOverrides(opId, sequence, index);
         const isNullified = activeOverrides.length > 0;
-
-        if (!isNullified) {
-          // Apply effects based on operator's mathematical properties
-          operator.affects.forEach((layer) => {
-            const currentValue =
-              currentState[layer as keyof typeof currentState] || 0;
-            const operatorInfluence =
-              operator.weight * positionMultiplier * 0.3;
-
-            // Apply operator-specific transformations
-            switch (operator.id) {
-              case "A":
-                currentState[layer as keyof typeof currentState] = Math.min(
-                  1,
-                  currentValue + operatorInfluence,
-                );
-                break;
-              case "R":
-                currentState[layer as keyof typeof currentState] = Math.max(
-                  0,
-                  currentValue - operatorInfluence * 0.5,
-                );
-                break;
-              case "V":
-                currentState[layer as keyof typeof currentState] = Math.abs(
-                  currentValue - operatorInfluence * 0.7,
-                );
-                break;
-              case "ε":
-                currentState[layer as keyof typeof currentState] = Math.min(
-                  1,
-                  currentValue + operatorInfluence * 1.2,
-                );
-                break;
-              case "O":
-                currentState[layer as keyof typeof currentState] = Math.max(
-                  0,
-                  currentValue - operatorInfluence * 0.8,
-                );
-                break;
-            }
-          });
-        }
 
         trace.push({
           t: index,
@@ -729,7 +681,7 @@ const SemanticPermutationEngine = () => {
           input_state: inputState,
           output_state: { ...currentState },
           nullified: isNullified,
-          position_multiplier: positionMultiplier,
+          position_multiplier: 1.0,
           active_overrides: activeOverrides,
         });
       });
@@ -790,40 +742,26 @@ const SemanticPermutationEngine = () => {
       const formulaResult = calculatePermutationFormula(sequence);
 
       const riskVector = {
-        DG: Math.min(
-          1,
-          finalState.P * 0.3 + finalState.A * 0.4 + finalState.ε * 0.3,
-        ),
-        CI: Math.min(1, finalState.L * 0.4 + finalState.V * 0.6),
-        RT: Math.min(1, finalState.R * 0.5 + finalState.P * 0.5),
-        SB: Math.min(
-          1,
-          finalState.V * 0.3 + finalState.R * 0.4 + finalState.ε * 0.3,
-        ),
+        DG: 0.0,
+        CI: 0.0,
+        RT: 0.0,
+        SB: 0.0,
       };
-
-      const dominantTypology = Object.entries(riskVector).reduce((a, b) =>
-        riskVector[a[0]] > riskVector[b[0]] ? a : b,
-      )[0];
 
       return {
         permutation: sequence,
         mathematical_result: formulaResult,
         final_state: {
-          legal_validity: finalState.L > 0.5,
-          procedural_integrity: finalState.P > 0.6,
-          reflex_space: finalState.R < 0.3 ? "collapsed" : "operational",
-          perceived_transparency: finalState.V > 0.4,
-          actual_escalation_possible: finalState.P > 0.7 && finalState.A > 0.6,
-          compliance_illusion_depth: Math.max(
-            0,
-            1 - Math.abs(finalState.L - finalState.V),
-          ),
-          dominant_typology: dominantTypology,
+          legal_validity: false,
+          procedural_integrity: false,
+          reflex_space: "operational",
+          perceived_transparency: false,
+          actual_escalation_possible: false,
+          compliance_illusion_depth: 0.0,
+          dominant_typology: "DG",
         },
         projection_vector: riskVector,
-        decoherence_score:
-          1 - Object.values(finalState).reduce((a, b) => a + b, 0) / 6,
+        decoherence_score: 0.0,
         execution_trace: trace,
       };
     },
