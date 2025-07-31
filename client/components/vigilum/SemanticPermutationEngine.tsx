@@ -345,8 +345,8 @@ const OPERATORS_V2 = [
     description:
       'Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
     calculation: {
-      formula: "ϕ(A) = 0.12·H + 0.16·S + 0.14·B + 0.08·W + γ(Seq,𝓔)",
-      weights: { w1: 0.12, w2: 0.16, w3: 0.14, w4: 0.08 },
+      formula: "ϕ(A) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
