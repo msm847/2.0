@@ -615,78 +615,7 @@ const SemanticPermutationEngine = () => {
               </div>
             </div>
 
-            {/* Override Graph Visualization - Simple display */}
-            <div className="space-y-3 max-h-64 overflow-y-auto">
-              {/* Mock override relationships */}
-              {[
-                { from: "O", to: "H", type: "NULLIFICATION", active: false },
-                { from: "O", to: "F", type: "BYPASS", active: false },
-                { from: "XT", to: "V", type: "MASKING", active: false },
-                { from: "I", to: "A", type: "CONSTRAINT", active: false },
-                { from: "F", to: "R", type: "COMPRESSION", active: false },
-              ].map((override, index) => {
-                const fromOp = getCurrentOperators().find(
-                  (op) => op.id === override.from,
-                );
-                const toOp = getCurrentOperators().find(
-                  (op) => op.id === override.to,
-                );
-                if (!fromOp || !toOp) return null;
 
-                return (
-                  <motion.div
-                    key={index}
-                    className="p-3 rounded border border-gray-600 bg-gray-800/20"
-                  >
-                    {/* Node Connection */}
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-2">
-                        <div
-                          className="text-xs font-mono font-bold px-2 py-1 rounded"
-                          style={{
-                            backgroundColor: `${fromOp.color}30`,
-                            color: fromOp.color,
-                          }}
-                        >
-                          {override.from}
-                        </div>
-                        <div className="text-xs text-gray-400">→</div>
-                        <div
-                          className="text-xs font-mono font-bold px-2 py-1 rounded"
-                          style={{
-                            backgroundColor: `${toOp.color}30`,
-                            color: toOp.color,
-                          }}
-                        >
-                          {override.to}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Override Description */}
-                    <div className="text-xs text-gray-300 font-mono leading-relaxed">
-                    </div>
-
-                    {/* Type Badge */}
-                    <div className="flex justify-between items-center mt-2">
-                      <div
-                        className="text-xs font-mono px-2 py-0.5 rounded"
-                        style={{
-                          backgroundColor: "rgba(107, 114, 128, 0.2)",
-                          color: "#9ca3af",
-                        }}
-                      >
-                        {override.type}
-                      </div>
-
-                      <div className="text-xs text-gray-500 font-mono">
-                        INACTIVE
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
           </div>
         </div>
 
