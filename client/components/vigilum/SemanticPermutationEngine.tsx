@@ -263,8 +263,8 @@ const OPERATORS_V2 = [
     description:
       'Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system\'s real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined "strategic partnerships," complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.',
     calculation: {
-      formula: "ϕ(M) = 0.05·H + 0.25·S + 0.33·B + 0.02·W + γ(Seq,𝓔)",
-      weights: { w1: 0.05, w2: 0.25, w3: 0.33, w4: 0.02 },
+      formula: "ϕ(M) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
@@ -290,8 +290,8 @@ const OPERATORS_V2 = [
     description:
       'Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how "urgent" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.',
     calculation: {
-      formula: "ϕ(C) = 0.15·H + 0.20·S + 0.18·B + 0.03·W + γ(Seq,𝓔)",
-      weights: { w1: 0.15, w2: 0.2, w3: 0.18, w4: 0.03 },
+      formula: "ϕ(C) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
@@ -319,7 +319,7 @@ const OPERATORS_V2 = [
     calculation: {
       formula:
         "N = w₁ × network_density + w₂ × influence_centrality + w�� × dependency_depth",
-      weights: { w1: 0.18, w2: 0.22, w3: 0.2, w4: 0.06 },
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
