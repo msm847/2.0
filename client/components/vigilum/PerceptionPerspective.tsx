@@ -548,7 +548,14 @@ const PerceptionPerspective = () => {
                     transition={{ duration: 0.6 }}
                     className="mt-8 -mx-32 max-w-none"
                   >
-                    <StructuralImpactMap onNavigate={setSelectedButton} />
+                    <StructuralImpactMap
+                      onNavigate={setSelectedButton}
+                      showFloatingNav={showFloatingNav}
+                      isMainNavOpen={isMainNavOpen}
+                      selectedButton={selectedButton}
+                      setSelectedButton={setSelectedButton}
+                      setVisitedSections={setVisitedSections}
+                    />
                   </motion.div>
                 )}
 
