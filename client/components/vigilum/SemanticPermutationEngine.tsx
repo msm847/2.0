@@ -149,8 +149,8 @@ const OPERATORS = [
     description:
       'Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system\'s outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about "multiple signatures" or "distributed roles"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.',
     calculation: {
-      formula: "ϕ(F) = 0.09·H + 0.12·S + 0.15·B + 0.04·W + γ(Seq,𝓔)",
-      weights: { w1: 0.09, w2: 0.12, w3: 0.15, w4: 0.04 },
+      formula: "ϕ(F) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
         S: "Soft operator configuration depth",
@@ -207,7 +207,7 @@ const OPERATORS = [
     calculation: {
       formula:
         "O = w₁ × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
-      weights: { w1: 0.4, w2: 0.3, w3: 0.3 },
+      weights: { w1: 0.0, w2: 0.0, w3: 0.0 },
       variables: {
         bypass_strength: "Capacity to circumvent standard procedures",
         nullification_depth: "Degree of constraint neutralization capability",
