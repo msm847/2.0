@@ -6,6 +6,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { GlobalCorruptionCounterProvider } from "@/contexts/GlobalCorruptionCounter";
 import Index from "./pages/Index";
 import VigilumPage from "./pages/Vigilum";
 import NotFound from "./pages/NotFound";
@@ -54,9 +55,10 @@ if (import.meta.env.DEV) {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+      <GlobalCorruptionCounterProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/vigilum" element={<VigilumPage />} />
@@ -99,6 +101,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </GlobalCorruptionCounterProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
