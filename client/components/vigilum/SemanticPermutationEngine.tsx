@@ -39,12 +39,12 @@ const SYSTEM_LAYERS = {
 // Adjacency Matrix for operator pair modifiers
 const ADJACENCY_MATRIX = {
   // Major adjacencies
-  "S-O": 0.15,
-  "S-M": 0.1,
-  "A-XT": 0.12,
-  "I-F": 0.08,
-  "C-R": 0.1,
-  "H-*": -0.12, // H dampens all following operators
+  "S-O": 0.0,
+  "S-M": 0.0,
+  "A-XT": 0.0,
+  "I-F": 0.0,
+  "C-R": 0.0,
+  "H-*": 0.0, // H dampens all following operators
   // Add more as needed
 };
 
@@ -559,12 +559,7 @@ const SemanticPermutationEngine = () => {
         let adjacencyModifier = 0;
 
         // Major adjacencies
-        if (currentOp === "S" && nextOp === "O") adjacencyModifier = 0.15;
-        else if (currentOp === "S" && nextOp === "M") adjacencyModifier = 0.1;
-        else if (currentOp === "A" && nextOp === "XT") adjacencyModifier = 0.12;
-        else if (currentOp === "I" && nextOp === "F") adjacencyModifier = 0.08;
-        else if (currentOp === "C" && nextOp === "R") adjacencyModifier = 0.1;
-        else if (currentOp === "H") adjacencyModifier = -0.12; // H dampens all
+        adjacencyModifier = 0.0;
 
         adjacencySum += adjacencyModifier;
       }
@@ -596,12 +591,7 @@ const SemanticPermutationEngine = () => {
       });
 
       // Soft/Black clustering = exponential risk
-      if (softCount >= 3) resonanceModifier += 0.2; // Increased from 0.15
-      if (blackCount >= 3) resonanceModifier += 0.25; // Increased from 0.20
-
-      // Hard/White dampening = exponential safety
-      if (hardCount >= 1) resonanceModifier -= 0.15; // H operator present
-      if (whiteCount >= 2) resonanceModifier -= 0.1; // Multiple white operators
+      resonanceModifier = 0.0;
 
       if (resonanceModifier !== 0) {
         phi += resonanceModifier;
