@@ -800,7 +800,7 @@ const AdvisoryCarousel = ({ card }) => {
           gap: "24px",
           flex: "1",
           alignItems: "center",
-          marginTop: "32px",
+          marginTop: "16px",
           opacity: isTransitioning ? 0.5 : 1,
           transition: "opacity 0.15s ease",
         }}
