@@ -1211,22 +1211,36 @@ const Partners = () => {
     setShowValidationErrors(false);
 
     try {
-      // Send contact form using email service
-      await sendContactForm({
-        fullName,
-        businessEmail,
-        phone,
-        jobTitle,
-        company,
-        country,
-        projectDescription,
-        attachedFiles,
-        isStudent,
-        recaptchaToken,
+      // Submit to Netlify Forms
+      const formData = new FormData();
+      formData.append("form-name", "vigilum-engagement-intake");
+      formData.append("full_name", fullName);
+      formData.append("email", businessEmail);
+      formData.append("country", country);
+      formData.append("phone", phone);
+      formData.append("company", company);
+      formData.append("job_title", jobTitle);
+      formData.append("description", projectDescription);
+      formData.append("is_student", isStudent ? "Yes" : "No");
+      formData.append("g-recaptcha-response", recaptchaToken);
+
+      // Add attached files
+      attachedFiles.forEach((file, index) => {
+        formData.append(`file_${index}`, file);
       });
 
-      setIsSubmitted(true);
-      resetForm();
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        resetForm();
+      } else {
+        throw new Error("Form submission failed");
+      }
     } catch (error) {
       console.error("Error sending form:", error);
       setError(
