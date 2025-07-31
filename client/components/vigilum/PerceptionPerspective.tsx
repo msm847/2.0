@@ -211,19 +211,7 @@ const PerceptionPerspective = () => {
     setActiveSection(null);
   }, []);
 
-  // Global corruption loss counter - always runs except on home page
-  useEffect(() => {
-    let interval;
-    if (location.pathname !== "/") {
-      // Run on all pages except home page
-      interval = setInterval(() => {
-        setGlobalLoss((prev) => prev + 114169);
-      }, 1000);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [location.pathname]);
+
 
   // Reset to instruction section when navigating via hash to this section
   useEffect(() => {
