@@ -48,11 +48,22 @@ const GlobalCorruptionDisplay = () => {
       <div
         style={{
           fontSize: "11px",
-          color: "#9DE6C6",
-          opacity: 0.8,
+          color: "#9CA3AF",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
         }}
       >
-        /per second
+        <div
+          style={{
+            width: "6px",
+            height: "6px",
+            borderRadius: "50%",
+            background: "#9DE6C6",
+            animation: "pulse 2s infinite",
+          }}
+        />
+        Live since you started exploring
       </div>
     </div>,
     document.body,
