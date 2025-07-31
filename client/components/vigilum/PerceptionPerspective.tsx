@@ -531,17 +531,17 @@ const PerceptionPerspective = () => {
                   {/* TV Outer Frame */}
                   <div
                     style={{
-                      width: "500px",
-                      height: "380px",
+                      width: "800px",
+                      height: "550px",
                       background: "linear-gradient(145deg, #2a2a2a, #1a1a1a)",
-                      borderRadius: "25px",
-                      padding: "30px",
+                      borderRadius: "35px",
+                      padding: "40px",
                       boxShadow: `
-                        inset 0 0 40px rgba(0,0,0,0.8),
-                        0 0 50px rgba(0,0,0,0.6),
-                        0 20px 40px rgba(0,0,0,0.4)
+                        inset 0 0 60px rgba(0,0,0,0.8),
+                        0 0 80px rgba(0,0,0,0.6),
+                        0 30px 60px rgba(0,0,0,0.4)
                       `,
-                      border: "3px solid #333",
+                      border: "4px solid #333",
                       position: "relative",
                     }}
                   >
@@ -598,18 +598,18 @@ const PerceptionPerspective = () => {
                         <div
                           style={{
                             color: "#E5F3ED",
-                            fontSize: "16px",
+                            fontSize: "24px",
                             textAlign: "center",
                             opacity: 0.7,
                             fontFamily: "monospace",
-                            letterSpacing: "1px",
+                            letterSpacing: "2px",
                           }}
                         >
-                          <div style={{ marginBottom: "8px", fontSize: "12px", opacity: 0.5 }}>
+                          <div style={{ marginBottom: "12px", fontSize: "18px", opacity: 0.5 }}>
                             ◉ REC
                           </div>
                           <div>PERCEPTION FEED</div>
-                          <div style={{ fontSize: "12px", marginTop: "8px", opacity: 0.6 }}>
+                          <div style={{ fontSize: "16px", marginTop: "12px", opacity: 0.6 }}>
                             [VIDEO_INPUT_READY]
                           </div>
                         </div>
@@ -635,21 +635,21 @@ const PerceptionPerspective = () => {
                     <div
                       style={{
                         position: "absolute",
-                        bottom: "20px",
-                        right: "25px",
+                        bottom: "30px",
+                        right: "35px",
                         display: "flex",
-                        gap: "12px",
+                        gap: "16px",
                         alignItems: "center",
                       }}
                     >
                       {/* Power LED */}
                       <div
                         style={{
-                          width: "8px",
-                          height: "8px",
+                          width: "12px",
+                          height: "12px",
                           borderRadius: "50%",
                           background: "#00ff00",
-                          boxShadow: "0 0 10px #00ff00",
+                          boxShadow: "0 0 15px #00ff00",
                           animation: "pulse 2s infinite",
                         }}
                       />
@@ -659,25 +659,25 @@ const PerceptionPerspective = () => {
                         <div
                           key={i}
                           style={{
-                            width: "25px",
-                            height: "25px",
+                            width: "35px",
+                            height: "35px",
                             borderRadius: "50%",
                             background: "linear-gradient(145deg, #333, #111)",
-                            border: "1px solid #555",
+                            border: "2px solid #555",
                             position: "relative",
-                            boxShadow: "inset 0 0 8px rgba(0,0,0,0.5)",
+                            boxShadow: "inset 0 0 12px rgba(0,0,0,0.5)",
                           }}
                         >
                           <div
                             style={{
                               position: "absolute",
-                              top: "2px",
+                              top: "3px",
                               left: "50%",
-                              width: "2px",
-                              height: "8px",
+                              width: "3px",
+                              height: "12px",
                               background: "#666",
                               transform: "translateX(-50%)",
-                              borderRadius: "1px",
+                              borderRadius: "2px",
                             }}
                           />
                         </div>
@@ -688,12 +688,12 @@ const PerceptionPerspective = () => {
                     <div
                       style={{
                         position: "absolute",
-                        bottom: "8px",
-                        left: "30px",
+                        bottom: "12px",
+                        left: "40px",
                         color: "#666",
-                        fontSize: "10px",
+                        fontSize: "14px",
                         fontFamily: "monospace",
-                        letterSpacing: "2px",
+                        letterSpacing: "3px",
                       }}
                     >
                       VIGILUM-84
@@ -704,14 +704,14 @@ const PerceptionPerspective = () => {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "-25px",
+                      bottom: "-35px",
                       left: "50%",
                       transform: "translateX(-50%)",
-                      width: "120px",
-                      height: "25px",
+                      width: "180px",
+                      height: "35px",
                       background: "linear-gradient(145deg, #2a2a2a, #1a1a1a)",
-                      borderRadius: "0 0 8px 8px",
-                      border: "2px solid #333",
+                      borderRadius: "0 0 12px 12px",
+                      border: "3px solid #333",
                       borderTop: "none",
                     }}
                   />
