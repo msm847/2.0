@@ -77,7 +77,7 @@ const LightRays = ({
         const entry = entries[0];
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observerRef.current.observe(containerRef.current);
@@ -99,7 +99,7 @@ const LightRays = ({
     }
 
     const initializeWebGL = async () => {
-      if (!containerRef.current || typeof window === 'undefined') return;
+      if (!containerRef.current || typeof window === "undefined") return;
 
       try {
         // Only attempt to load OGL in browser environment
@@ -260,7 +260,8 @@ void main() {
 
           renderer.dpr = Math.min(window.devicePixelRatio, 2);
 
-          const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
+          const { clientWidth: wCSS, clientHeight: hCSS } =
+            containerRef.current;
           renderer.setSize(wCSS, hCSS);
 
           const dpr = renderer.dpr;
@@ -275,7 +276,11 @@ void main() {
         };
 
         const loop = (t) => {
-          if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
+          if (
+            !rendererRef.current ||
+            !uniformsRef.current ||
+            !meshRef.current
+          ) {
             return;
           }
 
@@ -339,13 +344,12 @@ void main() {
           uniformsRef.current = null;
           meshRef.current = null;
         };
-
       } catch (error) {
         console.warn("Failed to load OGL library:", error);
         // Fallback to CSS-based light rays
         if (containerRef.current) {
-          containerRef.current.innerHTML = '';
-          const fallbackDiv = document.createElement('div');
+          containerRef.current.innerHTML = "";
+          const fallbackDiv = document.createElement("div");
           fallbackDiv.style.cssText = `
             position: absolute;
             top: 0;
@@ -354,7 +358,7 @@ void main() {
             height: 100%;
             background: radial-gradient(ellipse at center, ${raysColor}20 0%, transparent 50%);
             opacity: ${pulsating ? 0.5 : 0.3};
-            animation: ${pulsating ? 'pulse 2s infinite' : 'none'};
+            animation: ${pulsating ? "pulse 2s infinite" : "none"};
             pointer-events: none;
           `;
           containerRef.current.appendChild(fallbackDiv);
