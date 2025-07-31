@@ -7,6 +7,7 @@ import SplitText from "@/components/ui/SplitText";
 import CorruptionDefinitions from "./CorruptionDefinitions";
 import StructuralImpactMap from "./StructuralImpactMap";
 import LightRays from "./LightRays";
+import GlobalCorruptionDisplay from "./GlobalCorruptionDisplay";
 import "./TrueFocus.css";
 
 // Add CSS-in-JS for 3D pulsating button animations
