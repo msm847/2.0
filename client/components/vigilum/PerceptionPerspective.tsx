@@ -529,7 +529,14 @@ const PerceptionPerspective = () => {
                     transition={{ duration: 0.6 }}
                     className="mt-2 -mx-32 max-w-none"
                   >
-                    <CorruptionDefinitions onNavigate={setSelectedButton} />
+                    <CorruptionDefinitions
+                      onNavigate={setSelectedButton}
+                      showFloatingNav={showFloatingNav}
+                      isMainNavOpen={isMainNavOpen}
+                      selectedButton={selectedButton}
+                      setSelectedButton={setSelectedButton}
+                      setVisitedSections={setVisitedSections}
+                    />
                   </motion.div>
                 )}
 
