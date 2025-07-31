@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import { Renderer, Program, Triangle, Mesh } from "ogl";
 import "./LightRays.css";
 
 const DEFAULT_COLOR = "#ffffff";
@@ -61,7 +60,26 @@ const LightRays = ({
   const meshRef = useRef(null);
   const cleanupFunctionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [oglLoaded, setOglLoaded] = useState(false);
   const observerRef = useRef(null);
+
+  // Dynamic import for OGL to handle deployment issues
+  const [OGL, setOGL] = useState(null);
+
+  useEffect(() => {
+    const loadOGL = async () => {
+      try {
+        const oglModule = await import("ogl");
+        setOGL(oglModule);
+        setOglLoaded(true);
+      } catch (error) {
+        console.warn("Failed to load OGL library:", error);
+        setOglLoaded(false);
+      }
+    };
+
+    loadOGL();
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -85,7 +103,7 @@ const LightRays = ({
   }, []);
 
   useEffect(() => {
-    if (!isVisible || !containerRef.current) return;
+    if (!isVisible || !containerRef.current || !oglLoaded || !OGL) return;
 
     if (cleanupFunctionRef.current) {
       cleanupFunctionRef.current();
@@ -93,11 +111,13 @@ const LightRays = ({
     }
 
     const initializeWebGL = async () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !OGL) return;
 
       await new Promise((resolve) => setTimeout(resolve, 10));
 
-      if (!containerRef.current) return;
+      if (!containerRef.current || !OGL) return;
+
+      const { Renderer, Program, Triangle, Mesh } = OGL;
 
       const renderer = new Renderer({
         dpr: Math.min(window.devicePixelRatio, 2),
@@ -342,6 +362,8 @@ void main() {
     };
   }, [
     isVisible,
+    oglLoaded,
+    OGL,
     raysOrigin,
     raysColor,
     raysSpeed,
@@ -357,7 +379,7 @@ void main() {
   ]);
 
   useEffect(() => {
-    if (!uniformsRef.current || !containerRef.current || !rendererRef.current)
+    if (!uniformsRef.current || !containerRef.current || !rendererRef.current || !oglLoaded)
       return;
 
     const u = uniformsRef.current;
@@ -391,6 +413,7 @@ void main() {
     mouseInfluence,
     noiseAmount,
     distortion,
+    oglLoaded,
   ]);
 
   useEffect(() => {
@@ -407,6 +430,26 @@ void main() {
       return () => window.removeEventListener("mousemove", handleMouseMove);
     }
   }, [followMouse]);
+
+  // Fallback display when OGL fails to load
+  if (!oglLoaded) {
+    return (
+      <div
+        ref={containerRef}
+        className={`light-rays-container ${className}`.trim()}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+          background: `radial-gradient(ellipse at center, ${raysColor}20 0%, transparent 50%)`,
+          opacity: pulsating ? 0.5 : 0.3,
+        }}
+      />
+    );
+  }
 
   return (
     <div
