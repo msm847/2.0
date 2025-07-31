@@ -665,7 +665,6 @@ const SemanticPermutationEngine = () => {
 
                     {/* Override Description */}
                     <div className="text-xs text-gray-300 font-mono leading-relaxed">
-                      No override relationships active - visual interface only
                     </div>
 
                     {/* Type Badge */}
