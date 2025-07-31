@@ -541,47 +541,11 @@ const SemanticPermutationEngine = () => {
         const operator = getCurrentOperators.find((op) => op.id === opId);
         if (!operator) return;
 
-        // Environmental modifier (εᵢ) for V2 operators
-        let epsilon = 0;
-        if (isV2) {
-          const [h_v1, s_v1, b_v1, w_v1] = v1Vector;
-          // If V1 is highly Black, amplify Black-prone V2 operators
-          if (b_v1 > 0.7 && operator.typology[2] > 0.6) epsilon += 0.2;
-          // If V1 is highly Hard, dampen Soft/Black V2 operators
-          if (
-            h_v1 > 0.6 &&
-            (operator.typology[1] > 0.7 || operator.typology[2] > 0.6)
-          )
-            epsilon -= 0.12;
-        }
-
-        // Exact positional modifier (ρᵢ) as specified
-        let positionalModifier = 0;
-
-        // End amplification: only O and XT get bonuses
-        if (index === sequence.length - 1) {
-          if (opId === "O") positionalModifier = 0.15;
-          else if (opId === "XT") positionalModifier = 0.12;
-        }
-
-        // Start dampening: only H gets penalty
-        if (index === 0 && opId === "H") {
-          positionalModifier = -0.1;
-        }
-
-        // All other operators and positions: 0 by default
-
-        // Effective weight: αᵢ × (1 + εᵢ) + ρᵢ
-        const effectiveWeight =
-          operator.weight * (1 + epsilon) + positionalModifier;
-        phi += effectiveWeight;
-        formulaTerms.push(`${effectiveWeight.toFixed(2)}${opId}`);
-
         calculationDetails[opId] = {
-          baselineWeight: operator.weight,
-          environmentalModifier: epsilon,
-          positionalModifier: positionalModifier,
-          effectiveWeight: effectiveWeight,
+          baselineWeight: 0.0,
+          environmentalModifier: 0.0,
+          positionalModifier: 0.0,
+          effectiveWeight: 0.0,
           typology: operator.typology,
           position: index,
         };
