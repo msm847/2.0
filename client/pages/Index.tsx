@@ -245,10 +245,6 @@ export default function Index() {
               }}
               onMouseEnter={(e) => {
                 e.target.style.background = "rgba(97, 179, 220, 0.1)";
-                e.target.style.borderColor = "#61b3dc";
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(97, 179, 220, 0.1)";
                 e.target.style.borderColor = "rgba(97, 179, 220, 0.8)";
               }}
               onMouseLeave={(e) => {
