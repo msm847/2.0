@@ -15,7 +15,7 @@ export const useGlobalCorruptionCounter = () => {
 };
 
 export const GlobalCorruptionCounterProvider = ({ children }: { children: React.ReactNode }) => {
-  const [globalLoss, setGlobalLoss] = useState(87432198);
+  const [globalLoss, setGlobalLoss] = useState(0);
 
   // Single global counter that runs continuously
   useEffect(() => {
