@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { createPortal } from "react-dom";
 import {
   ArrowLeft,
   ChevronLeft,
@@ -83,7 +84,9 @@ const ModulePageTemplate = ({
 }: ModulePageTemplateProps) => {
   const [activeSimulation, setActiveSimulation] = useState<number | null>(null);
   const [currentPatternIndex, setCurrentPatternIndex] = useState(0);
+  const [globalLoss, setGlobalLoss] = useState(87432198);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const currentModuleIndex = modules.indexOf(moduleData.id);
   const prevModule = modules[currentModuleIndex - 1];
@@ -104,6 +107,15 @@ const ModulePageTemplate = ({
 
     return () => clearInterval(interval);
   }, [moduleData.patternArchive.length]);
+
+  // Global corruption loss counter - runs on all module pages
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGlobalLoss((prev) => prev + 114169);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const runSimulation = (index: number) => {
     setActiveSimulation(index);
