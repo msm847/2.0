@@ -61,7 +61,7 @@ const OPERATORS = [
     position_sensitive: true,
     override_targets: [],
     color: "#10B981", // Vigilum mint
-    typology: [1.0, 0.0, 0.0, 0.8], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       "Unbreakable Constraint defines a boundary that cannot be crossed or dissolved from within the system, no matter what other operators are invoked. It requires an external, independent actor—often a regulator, court, or sovereign authority—to permit an exception or breach, and even then only under conditions that are hard-coded and immutable. This operator represents true structural friction: it is the only reliable defense against capture or override, because it is designed to be non-negotiable and to survive attempts at internal nullification or simulation. In institutional logic, genuine unbreakable constraints are rare and valuable, marking the difference between simulated compliance and actual legal or operational immovability. Where most controls can be circumvented through sophisticated clause sequencing or discretionary override, an unbreakable constraint draws an absolute line, forcing all actors to operate within its bounds or face existential system breakdown.",
     calculation: {
@@ -89,7 +89,7 @@ const OPERATORS = [
     position_sensitive: true,
     override_targets: ["H", "XT", "F", "I"],
     color: "#EF4444", // Vigilum red
-    typology: [0.0, 0.85, 0.65, 0.1], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
@@ -113,7 +113,7 @@ const OPERATORS = [
     weight: 0.0, // Updated baseline weight
     symbol: "XT",
     glyph: "⧨",
-    typology: [0.1, 0.6, 1.0, 0.2], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     affects: ["R", "P", "V"],
     position_sensitive: true,
     override_targets: ["ε"],
@@ -145,7 +145,7 @@ const OPERATORS = [
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F59E0B", // Amber
-    typology: [0.2, 0.8, 0.75, 0.15], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       'Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system\'s outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about "multiple signatures" or "distributed roles"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.',
     calculation: {
@@ -168,7 +168,7 @@ const OPERATORS = [
     fullName: "Indirection",
     weight: 0.0, // Updated baseline weight
     symbol: "I",
-    typology: [0.0, 0.8, 0.95, 0.05], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     glyph: "⦿",
     affects: ["L", "P", "V"],
     position_sensitive: true,
@@ -232,7 +232,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["A"],
     color: "#06B6D4", // Cyan
-    typology: [0.05, 0.95, 0.7, 0.35], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       'Simulation transforms structural risk by replicating the surface appearance of compliance, oversight, or procedural integrity without enforcing any actual constraint. This operator is executed through symbolic actions—non-binding audits, advisory committees, or reviews whose outcomes do not alter the system\'s real operation. In effect, simulation "fools" both internal and external observers: it provides the audit trail, the ritual, and the reporting, yet all actors know the process is performative. Simulation is not mere theater; it is the central defense of advanced captured systems, absorbing pressure from regulators, the public, or oversight bodies while ensuring that true power dynamics remain untouched. When simulation dominates, the system becomes audit-proof and sanction-resistant—not because it is safe, but because it is semantically and operationally insulated from intervention.',
     calculation: {
@@ -259,7 +259,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["R"],
     color: "#F97316", // Orange
-    typology: [0.0, 0.85, 1.0, 0.05], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       'Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system\'s real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined "strategic partnerships," complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.',
     calculation: {
@@ -286,7 +286,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["V", "L"],
     color: "#8B5CF6", // Purple
-    typology: [0.05, 0.8, 0.85, 0.1], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       'Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how "urgent" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.',
     calculation: {
@@ -313,7 +313,7 @@ const OPERATORS_V2 = [
     position_sensitive: true,
     override_targets: ["P", "ε"],
     color: "#EF4444", // Red
-    typology: [0.0, 0.75, 0.7, 0.2], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     description:
       'Reinjection brings previously excluded, neutralized, or extracted risk, value, or process back into the system through a new channel, often after surface closure or apparent remediation. This operator allows systems to "recycle" loopholes, funds, or structural exposures by rebranding, repackaging, or relaunching them under a different guise. Reinjection is critical in systems with dynamic oversight: whenever a risk pathway appears to have been blocked, but later resurfaces via a different actor, fund, or clause, reinjection is at work. It is the structural answer to "loophole whack-a-mole"—no matter how many times a vulnerability is closed, the logic of reinjection guarantees its return unless the system is hardened at the root.',
     calculation: {
@@ -338,7 +338,7 @@ const OPERATORS_V2 = [
     symbol: "A",
     glyph: "⊕",
     affects: ["P", "L", "R"],
-    typology: [0.1, 0.75, 0.7, 0.1], // [H, S, B, W]
+    typology: [0.0, 0.0, 0.0, 0.0], // [H, S, B, W]
     position_sensitive: true,
     override_targets: ["V", "ε"],
     color: "#10B981", // Green
