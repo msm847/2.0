@@ -621,23 +621,8 @@ const PerceptionPerspective = () => {
         </div>
       </div>
 
-      {/* Global Corruption Count - shown on all pages including home */}
       {/* Global Corruption Count - managed globally */}
       <GlobalCorruptionDisplay />
-            <div
-              style={{
-                width: "6px",
-                height: "6px",
-                borderRadius: "50%",
-                background: "#9DE6C6",
-                animation: "pulse 2s infinite",
-              }}
-            />
-            Live since you started exploring
-          </div>
-        </div>,
-        document.body,
-      )}
     </section>
   );
 };
