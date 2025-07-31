@@ -65,7 +65,7 @@ const OPERATORS = [
     description:
       "Unbreakable Constraint defines a boundary that cannot be crossed or dissolved from within the system, no matter what other operators are invoked. It requires an external, independent actor—often a regulator, court, or sovereign authority—to permit an exception or breach, and even then only under conditions that are hard-coded and immutable. This operator represents true structural friction: it is the only reliable defense against capture or override, because it is designed to be non-negotiable and to survive attempts at internal nullification or simulation. In institutional logic, genuine unbreakable constraints are rare and valuable, marking the difference between simulated compliance and actual legal or operational immovability. Where most controls can be circumvented through sophisticated clause sequencing or discretionary override, an unbreakable constraint draws an absolute line, forcing all actors to operate within its bounds or face existential system breakdown.",
     calculation: {
-      formula: "ϕ(H) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -93,7 +93,7 @@ const OPERATORS = [
     description:
       "Override is a structural operator that allows any previously established rule, safeguard, or procedure to be suspended or bypassed at a single decision point, typically by an actor granted exceptional authority or via a clause that explicitly nullifies prior constraints. When present, this operator acts as the system's escape valve—turning hard rules into soft preferences by permitting discretionary exceptions regardless of the surrounding structure. In practice, overrides are often embedded as \"notwithstanding\" clauses, emergency provisions, or catch-all authorizations, making them the prime mechanism for legal extraction, regulatory evasion, or late-stage risk injection. The presence of an override transforms the entire risk profile of a system: it signals that no matter how many controls are built in, a single invocation can route around them, erasing the boundary between compliance and discretionary power. This operator is the true test of whether a system's constraints are real or merely provisional.",
     calculation: {
-      formula: "ϕ(O) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -121,7 +121,7 @@ const OPERATORS = [
     description:
       "Extraction/Transfer is the core operator through which value, risk, decision rights, or liability are structurally moved out of the originating system, either to external entities, hidden intermediaries, or parallel structures. It operates regardless of surface compliance: whenever a contract, statute, or policy grants the right to shift money, responsibility, or control beyond the oversight boundary, this operator is in play. Extraction may be explicit (fees to an offshore partner, liability shifted to a subcontractor) or disguised (service flows through opaque SPVs), but in every case it severs the internal chain of accountability. This operator is what transforms system resilience into system exposure: once activated, internal safeguards, audits, or rules have no purchase over the extracted asset or risk. In governance and procurement, repeated application of extraction/transfer is the primary channel for laundering, asset flight, or regulatory arbitrage.",
     calculation: {
-      formula: "ϕ(XT) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -149,7 +149,7 @@ const OPERATORS = [
     description:
       'Fracture atomizes accountability by distributing critical process steps, approvals, or decision points across multiple actors, departments, or legal entities in such a way that no one node has full visibility or control. The result is structural ambiguity: each participant can plausibly deny knowledge or responsibility for the system\'s outcomes, while risk or value moves seamlessly through the gaps. This operator is not simply about "multiple signatures" or "distributed roles"—it is about the deliberate engineering of blind spots, so that failure, loss, or extraction cannot be traced to a single decision or clause. Fracture is the backbone of modern institutional evasion: it enables complex laundering, diffuses blame, and makes audit trails meaningless unless re-aggregated with forensic effort. Where fracture is present, even the best oversight bodies are forced to reconstruct the puzzle after the fact, often too late for remediation.',
     calculation: {
-      formula: "ϕ(F) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -206,7 +206,7 @@ const OPERATORS = [
       "Reflex risk is contextual: reduces actor discretion, but can be weaponized if environment operator (𝓔) is high entropy/disordered.",
     calculation: {
       formula:
-        "O = w₁ × bypass_strength + w₂ × nullification_depth + w₃ × constraint_override",
+        "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0 },
       variables: {
         bypass_strength: "Capacity to circumvent standard procedures",
@@ -263,7 +263,7 @@ const OPERATORS_V2 = [
     description:
       'Masking is the deliberate obscuring of risk, intent, or extraction logic through layers of legal complexity, ambiguous terminology, or non-transparent structures. Unlike simulation (which creates the appearance of constraint), masking ensures that the system\'s real operation cannot be reconstructed without insider knowledge or deep forensic analysis. Masking can be achieved via undefined "strategic partnerships," complex cross-border arrangements, or simply by using language that is so broad or nuanced that it resists interpretation. This operator is the engine of legal opacity: it allows extraction or evasion to occur in plain sight, safe behind procedural or technical camouflage. When masking is deployed, even a diligent regulator or auditor may certify compliance while missing the core transformation taking place beneath the legal surface.',
     calculation: {
-      formula: "ϕ(M) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -290,7 +290,7 @@ const OPERATORS_V2 = [
     description:
       'Compression accelerates or condenses decision cycles, procedural stages, or review windows to such a degree that meaningful oversight, contestation, or deliberation becomes structurally impossible. This operator is activated through emergency timelines, stacked deadlines, or forced simultaneity of process—tools that create an artificial sense of urgency or inevitability. Compression disables the normal operation of checks and balances: by forcing actors to choose or sign off with minimal information and no time for scrutiny, it maximizes the probability of error, oversight, or opportunistic capture. In procurement, policy, or regulation, compression is how "urgent" contracts are awarded, how complex reforms are rushed through, and how backdoor risk is laundered into official decisions without opposition.',
     calculation: {
-      formula: "ϕ(C) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
@@ -345,7 +345,7 @@ const OPERATORS_V2 = [
     description:
       'Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
     calculation: {
-      formula: "ϕ(A) = 0.00·H + 0.00·S + 0.00·B + 0.00·W + γ(Seq,𝓔)",
+      formula: "",
       weights: { w1: 0.0, w2: 0.0, w3: 0.0, w4: 0.0 },
       variables: {
         H: "Hard operator intensity coefficient",
