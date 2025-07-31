@@ -77,7 +77,7 @@ const OPERATORS_V1 = [
   },
 ];
 
-// V2 Operators - Pure UI/UX data (no mathematics)  
+// V2 Operators - Pure UI/UX data (no mathematics)
 const OPERATORS_V2 = [
   {
     id: "S",
@@ -131,7 +131,7 @@ const OPERATORS_V2 = [
     glyph: "⊕",
     color: "#10B981",
     description:
-      'Aggregation combines multiple minor actions, decisions, or actors��each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
+      'Aggregation combines multiple minor actions, decisions, or actors—each innocuous or low-risk in isolation—into an emergent, cumulative exposure that becomes significant only in aggregate. The operator functions invisibly when oversight focuses on thresholds, single transactions, or compartmentalized decisions: by splitting large risk or extraction pathways into a series of small, authorized steps, aggregation achieves the same structural outcome as a single, high-risk move but with none of the visibility or friction. This is the engine of "smurfing" in money laundering, serial contract splitting in procurement, or repetitive low-level approvals that bypass systemic limits. Aggregation is difficult to detect except through systemic analysis: it thrives in systems where rules are local, but extraction is global.',
     impact: "Combines minor actions into significant cumulative exposure.",
   },
 ];
@@ -462,6 +462,231 @@ const SemanticPermutationEngine = () => {
                 </span>
               ))}{" "}
               + ∇𝓔 = <span className="text-green-400">0.000</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Analysis Grid - Matrix and Override sections */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* V1×V2 Interaction Matrix */}
+          <div
+            className="rounded-lg p-6 border h-full flex flex-col relative"
+            style={{
+              backgroundColor: "rgba(16, 44, 34, 0.7)",
+              borderColor: "rgba(34, 68, 54, 0.8)",
+            }}
+          >
+            <div className="flex items-center justify-between mb-4 flex-shrink-0">
+              <h3 className="text-lg font-bold text-white font-mono">
+                V1×V2 INTERACTION MATRIX
+              </h3>
+              <div className="w-6 h-6 text-gray-400 relative">
+                <div className="grid grid-cols-3 gap-0.5 w-full h-full">
+                  <div className="bg-current opacity-40 rounded-sm"></div>
+                  <div className="bg-current opacity-60 rounded-sm"></div>
+                  <div className="bg-current opacity-30 rounded-sm"></div>
+                  <div className="bg-current opacity-70 rounded-sm"></div>
+                  <div className="bg-current opacity-50 rounded-sm"></div>
+                  <div className="bg-current opacity-80 rounded-sm"></div>
+                  <div className="bg-current opacity-35 rounded-sm"></div>
+                  <div className="bg-current opacity-65 rounded-sm"></div>
+                  <div className="bg-current opacity-45 rounded-sm"></div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-current opacity-10 rounded"></div>
+              </div>
+            </div>
+
+            <div className="flex flex-col flex-1 min-h-0">
+              {/* V2 Column Headers */}
+              <div className="grid grid-cols-6 gap-2 text-xs font-mono text-gray-400 mb-3 flex-shrink-0">
+                <div className="h-8 flex items-center justify-center relative bg-gradient-to-br from-green-900/40 to-gray-900/60 rounded-lg border border-green-500/30 backdrop-blur-sm">
+                  <div className="absolute left-1 top-1/2 transform -translate-y-1/2 flex items-center text-green-400">
+                    <span className="text-xs font-mono mr-0.5">V1</span>
+                    <span className="text-sm">↓</span>
+                  </div>
+                  <div className="absolute right-1 top-1/2 transform -translate-y-1/2 flex items-center text-green-400">
+                    <span className="text-xs font-mono mr-0.5">V2</span>
+                    <span className="text-sm">→</span>
+                  </div>
+                  <div className="text-lg font-mono text-green-400 font-bold">
+                    ⊗
+                  </div>
+                </div>
+                {OPERATORS_V2.slice(0, 5).map((op) => (
+                  <div
+                    key={op.id}
+                    className="h-8 text-center px-1 rounded flex items-center justify-center border transition-all duration-200 hover:scale-105"
+                    style={{
+                      backgroundColor: `${op.color}20`,
+                      borderColor: `${op.color}40`,
+                      color: op.color,
+                    }}
+                  >
+                    {op.id}
+                  </div>
+                ))}
+              </div>
+
+              {/* Matrix rows - V1 operators as rows */}
+              <div className="flex-1 flex flex-col justify-between gap-2">
+                {OPERATORS_V1.slice(0, 5).map((v1Op, rowIndex) => (
+                  <div key={v1Op.id} className="grid grid-cols-6 gap-2 flex-1">
+                    {/* V1 Row Header */}
+                    <div
+                      className="text-xs font-mono flex items-center justify-center px-1 rounded border transition-all duration-200 hover:scale-105"
+                      style={{
+                        backgroundColor: `${v1Op.color}20`,
+                        borderColor: `${v1Op.color}40`,
+                        color: v1Op.color,
+                        minHeight: "3rem",
+                      }}
+                    >
+                      {v1Op.id}
+                    </div>
+
+                    {/* Matrix cells - all showing 0.00 */}
+                    {OPERATORS_V2.slice(0, 5).map((v2Op, colIndex) => {
+                      return (
+                        <motion.div
+                          key={`${v1Op.id}-${v2Op.id}`}
+                          className="rounded-md flex flex-col items-center justify-center text-xs font-mono font-bold transition-all duration-300 hover:scale-105 border cursor-pointer group relative"
+                          style={{
+                            backgroundColor: "rgba(55, 65, 81, 0.8)",
+                            color: "#f3f4f6",
+                            borderColor: "rgba(107, 114, 128, 0.3)",
+                            minHeight: "3rem",
+                          }}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <span className="text-center leading-tight">0.00</span>
+
+                          {/* Tooltip */}
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30 pointer-events-none">
+                            <div className="bg-gray-900 border border-gray-600 rounded-lg p-3 text-xs font-mono whitespace-nowrap shadow-lg">
+                              <div className="text-white font-bold mb-1">
+                                {v1Op.id} × {v2Op.id}
+                              </div>
+                              <div className="text-gray-300">
+                                Base: 0.000
+                                <br />
+                                Resonance: 0.000
+                                <br />
+                                Kernel: 0.000
+                                <br />
+                                <span className="text-green-400">
+                                  Final: 0.000
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+
+              {/* Matrix Summary */}
+              <div className="mt-4 pt-4 border-t border-gray-600 flex-shrink-0">
+                <div className="flex items-center text-xs font-mono">
+                  <span className="text-gray-400">Matrix Sum:&nbsp;</span>
+                  <span className="text-green-400 font-bold">0.000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Override Resolution Path */}
+          <div
+            className="rounded-lg p-6 border relative"
+            style={{
+              backgroundColor: "rgba(16, 44, 34, 0.7)",
+              borderColor: "rgba(34, 68, 54, 0.8)",
+            }}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-white font-mono">
+                OVERRIDE RESOLUTION PATH
+              </h3>
+              <div className="w-5 h-5 text-gray-400">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 10 9 10s9-4.45 9-10V7l-10-5z"/>
+                </svg>
+              </div>
+            </div>
+
+            {/* Override Graph Visualization - Simple display */}
+            <div className="space-y-3 max-h-64 overflow-y-auto">
+              {/* Mock override relationships */}
+              {[
+                { from: "O", to: "H", type: "NULLIFICATION", active: false },
+                { from: "O", to: "F", type: "BYPASS", active: false },
+                { from: "XT", to: "V", type: "MASKING", active: false },
+                { from: "I", to: "A", type: "CONSTRAINT", active: false },
+                { from: "F", to: "R", type: "COMPRESSION", active: false },
+              ].map((override, index) => {
+                const fromOp = getCurrentOperators().find(
+                  (op) => op.id === override.from,
+                );
+                const toOp = getCurrentOperators().find(
+                  (op) => op.id === override.to,
+                );
+                if (!fromOp || !toOp) return null;
+
+                return (
+                  <motion.div
+                    key={index}
+                    className="p-3 rounded border border-gray-600 bg-gray-800/20"
+                  >
+                    {/* Node Connection */}
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <div
+                          className="text-xs font-mono font-bold px-2 py-1 rounded"
+                          style={{
+                            backgroundColor: `${fromOp.color}30`,
+                            color: fromOp.color,
+                          }}
+                        >
+                          {override.from}
+                        </div>
+                        <div className="text-xs text-gray-400">→</div>
+                        <div
+                          className="text-xs font-mono font-bold px-2 py-1 rounded"
+                          style={{
+                            backgroundColor: `${toOp.color}30`,
+                            color: toOp.color,
+                          }}
+                        >
+                          {override.to}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Override Description */}
+                    <div className="text-xs text-gray-300 font-mono leading-relaxed">
+                      No override relationships active - visual interface only
+                    </div>
+
+                    {/* Type Badge */}
+                    <div className="flex justify-between items-center mt-2">
+                      <div
+                        className="text-xs font-mono px-2 py-0.5 rounded"
+                        style={{
+                          backgroundColor: "rgba(107, 114, 128, 0.2)",
+                          color: "#9ca3af",
+                        }}
+                      >
+                        {override.type}
+                      </div>
+
+                      <div className="text-xs text-gray-500 font-mono">
+                        INACTIVE
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
