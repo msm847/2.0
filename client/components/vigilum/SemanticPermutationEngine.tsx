@@ -604,16 +604,7 @@ const SemanticPermutationEngine = () => {
               borderColor: "rgba(34, 68, 54, 0.8)",
             }}
           >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-white font-mono">
-                OVERRIDE RESOLUTION PATH
-              </h3>
-              <div className="w-5 h-5 text-gray-400">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 10 9 10s9-4.45 9-10V7l-10-5z"/>
-                </svg>
-              </div>
-            </div>
+
 
 
           </div>
