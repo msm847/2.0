@@ -519,6 +519,218 @@ const PerceptionPerspective = () => {
               </div>
             )}
 
+            {activeSection === "perception" && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mt-12 flex justify-center"
+              >
+                {/* Vintage TV Frame */}
+                <div className="relative">
+                  {/* TV Outer Frame */}
+                  <div
+                    style={{
+                      width: "500px",
+                      height: "380px",
+                      background: "linear-gradient(145deg, #2a2a2a, #1a1a1a)",
+                      borderRadius: "25px",
+                      padding: "30px",
+                      boxShadow: `
+                        inset 0 0 40px rgba(0,0,0,0.8),
+                        0 0 50px rgba(0,0,0,0.6),
+                        0 20px 40px rgba(0,0,0,0.4)
+                      `,
+                      border: "3px solid #333",
+                      position: "relative",
+                    }}
+                  >
+                    {/* TV Screen Frame */}
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "85%",
+                        background: "linear-gradient(145deg, #111, #000)",
+                        borderRadius: "15px",
+                        padding: "8px",
+                        border: "2px solid #444",
+                        boxShadow: "inset 0 0 30px rgba(0,0,0,0.9)",
+                      }}
+                    >
+                      {/* Screen Content Area */}
+                      <div
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          background: "radial-gradient(ellipse at center, #0a1418 0%, #050a0c 100%)",
+                          borderRadius: "10px",
+                          border: "1px solid #222",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          position: "relative",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {/* TV Static/Noise Effect */}
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            opacity: 0.03,
+                            background: `
+                              repeating-linear-gradient(
+                                0deg,
+                                transparent,
+                                transparent 2px,
+                                rgba(255,255,255,0.1) 2px,
+                                rgba(255,255,255,0.1) 4px
+                              )
+                            `,
+                            animation: "tvStatic 0.1s infinite linear",
+                          }}
+                        />
+
+                        {/* Placeholder for Future Video */}
+                        <div
+                          style={{
+                            color: "#E5F3ED",
+                            fontSize: "16px",
+                            textAlign: "center",
+                            opacity: 0.7,
+                            fontFamily: "monospace",
+                            letterSpacing: "1px",
+                          }}
+                        >
+                          <div style={{ marginBottom: "8px", fontSize: "12px", opacity: 0.5 }}>
+                            ◉ REC
+                          </div>
+                          <div>PERCEPTION FEED</div>
+                          <div style={{ fontSize: "12px", marginTop: "8px", opacity: 0.6 }}>
+                            [VIDEO_INPUT_READY]
+                          </div>
+                        </div>
+
+                        {/* Screen Glare Effect */}
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: "10%",
+                            left: "15%",
+                            width: "30%",
+                            height: "40%",
+                            background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%)",
+                            borderRadius: "50%",
+                            transform: "rotate(-20deg)",
+                            pointerEvents: "none",
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* TV Controls */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "20px",
+                        right: "25px",
+                        display: "flex",
+                        gap: "12px",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* Power LED */}
+                      <div
+                        style={{
+                          width: "8px",
+                          height: "8px",
+                          borderRadius: "50%",
+                          background: "#00ff00",
+                          boxShadow: "0 0 10px #00ff00",
+                          animation: "pulse 2s infinite",
+                        }}
+                      />
+
+                      {/* Control Knobs */}
+                      {[1, 2].map((i) => (
+                        <div
+                          key={i}
+                          style={{
+                            width: "25px",
+                            height: "25px",
+                            borderRadius: "50%",
+                            background: "linear-gradient(145deg, #333, #111)",
+                            border: "1px solid #555",
+                            position: "relative",
+                            boxShadow: "inset 0 0 8px rgba(0,0,0,0.5)",
+                          }}
+                        >
+                          <div
+                            style={{
+                              position: "absolute",
+                              top: "2px",
+                              left: "50%",
+                              width: "2px",
+                              height: "8px",
+                              background: "#666",
+                              transform: "translateX(-50%)",
+                              borderRadius: "1px",
+                            }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* TV Brand Label */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "8px",
+                        left: "30px",
+                        color: "#666",
+                        fontSize: "10px",
+                        fontFamily: "monospace",
+                        letterSpacing: "2px",
+                      }}
+                    >
+                      VIGILUM-84
+                    </div>
+                  </div>
+
+                  {/* TV Stand */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "-25px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: "120px",
+                      height: "25px",
+                      background: "linear-gradient(145deg, #2a2a2a, #1a1a1a)",
+                      borderRadius: "0 0 8px 8px",
+                      border: "2px solid #333",
+                      borderTop: "none",
+                    }}
+                  />
+                </div>
+
+                {/* Add TV static animation */}
+                <style>{`
+                  @keyframes tvStatic {
+                    0% { transform: translateY(0); }
+                    100% { transform: translateY(-4px); }
+                  }
+                  @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.3; }
+                  }
+                `}</style>
+              </motion.div>
+            )}
+
             {activeSection === "perspective" && (
               <>
                 {/* Show Cultural content by default */}
