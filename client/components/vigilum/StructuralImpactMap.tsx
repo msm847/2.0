@@ -1595,40 +1595,16 @@ const StructuralImpactMap = ({
             marginBottom: "12px",
           }}
         >
-          <div style={{ maxWidth: "50%" }}>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 2.5rem)",
-                fontWeight: "600",
-                color: "#9DE6C6",
-                margin: "0 0 8px 0",
-                fontFamily: "var(--font-display)",
-              }}
-            >
+          <div style={{ maxWidth: "70%" }}>
+            <h2 className="text-4xl font-semibold text-green-400 mb-3 font-display">
               Corruption Impact Topology
             </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#FFFFFF",
-                margin: "0 0 8px 0",
-                fontStyle: "italic",
-              }}
-            >
+            <p className="text-lg text-white mb-2 italic font-light">
               What appears as isolated harm is, in fact, systemic propagation.
             </p>
-            <p
-              style={{
-                fontSize: "16px",
-                color: "#E5E5E5",
-                margin: "0",
-                lineHeight: "1.6",
-                whiteSpace: "nowrap",
-              }}
-            >
+            <p className="text-base text-gray-300 mb-0 leading-relaxed">
               Examine how design-level risk migrates across the economy,
-              institutions, and public trust,
-              <br />
+              institutions, and public trust,<br />
               producing consequences that outpace any single event.
             </p>
           </div>
