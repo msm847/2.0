@@ -149,21 +149,21 @@ export default function Index() {
           }}
         >
           <div
-            className="flex items-center cursor-pointer transition-all duration-300"
+            className="flex flex-col items-center cursor-pointer transition-all duration-300"
             style={{
               fontFamily: "var(--font-display)",
             }}
           >
             {/* Logo Icon */}
             <div
-              className="w-8 h-8 rounded-lg mr-3 flex items-center justify-center transition-all duration-300"
+              className="w-12 h-12 rounded-xl mb-2 flex items-center justify-center transition-all duration-300"
               style={{
                 background: "linear-gradient(135deg, #61dca3, #7dd4ba)",
-                boxShadow: "0 4px 12px rgba(97, 220, 163, 0.3)",
+                boxShadow: "0 6px 20px rgba(97, 220, 163, 0.4)",
               }}
             >
               <span
-                className="text-white font-bold text-lg"
+                className="text-white font-bold text-2xl"
                 style={{
                   fontFamily: "var(--font-display)",
                 }}
@@ -178,9 +178,9 @@ export default function Index() {
               animationSpeed={8}
               className="font-semibold"
               style={{
-                fontSize: "20px",
+                fontSize: "18px",
                 fontWeight: "600",
-                letterSpacing: "0.5px"
+                letterSpacing: "1px"
               }}
             >
               VIGILUM
