@@ -94,6 +94,48 @@ export default function Index() {
         />
       </div>
 
+      {/* Top Navigation Buttons */}
+      {splineLoaded && (
+        <div
+          style={{
+            position: "absolute",
+            top: "40px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            gap: "48px",
+            zIndex: 4,
+          }}
+        >
+          {["About", "Journal", "Whitepaper"].map((label) => (
+            <button
+              key={label}
+              className="relative bg-transparent border-none cursor-pointer text-white text-lg font-light tracking-wide transition-colors duration-300 group"
+              style={{
+                fontFamily: "var(--font-display)",
+                padding: "12px 0",
+                background: "none",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#2D6B4F";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              {label}
+              {/* Hover underline */}
+              <span
+                className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"
+                style={{
+                  backgroundColor: "#2D6B4F",
+                }}
+              />
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Content Overlay - Only show when Spline is loaded */}
       {splineLoaded && (
         <div
