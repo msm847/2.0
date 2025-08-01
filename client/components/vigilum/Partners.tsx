@@ -1069,9 +1069,7 @@ const Partners = () => {
     );
   };
 
-  // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
-  // Current key is Google's test key - get your own from: https://www.google.com/recaptcha/admin
-  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+
 
   useEffect(() => {
     const handleScroll = () => {
