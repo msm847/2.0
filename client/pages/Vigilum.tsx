@@ -9,6 +9,7 @@ import SemanticPermutationEngine from "@/components/vigilum/SemanticPermutationE
 import UseCases from "@/components/vigilum/UseCases";
 import TeamContact from "@/components/vigilum/TeamContact";
 import Partners from "@/components/vigilum/Partners";
+import { BACKGROUNDS } from "../lib/backgrounds";
 
 const VigilumPage = () => {
   const location = useLocation();
