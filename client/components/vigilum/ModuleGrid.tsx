@@ -20,7 +20,8 @@ const modules = [
     id: "clavis",
     name: "CLAVIS",
     subtitle: "Clause Intelligence",
-    tagline: "",
+    tagline:
+      "Each clause is abstracted into a typology-projected structural operator sequence.",
     description:
       "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields for logic-based risk detection.",
     color: "#1a3d82",
@@ -143,7 +144,7 @@ const modules = [
     id: "unallocated",
     name: "UNALLOCATED MODULE",
     subtitle: "Reserved Operator",
-    tagline: "Logical capacity is reserved for future integration and schema extension.",
+    tagline: "",
     description:
       "Semantic placeholder for emergent detection logic; system extensibility is encoded as constraint in reserve.",
     color: "#1c1c1c",
