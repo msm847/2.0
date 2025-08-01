@@ -721,7 +721,7 @@ const Partners = () => {
     "University of Turku",
     "University of Tampere",
     "University of Oulu",
-    "University of Jyväskyl��",
+    "University of Jyväskylä",
     "University of Eastern Finland",
     "Åbo Akademi University",
 
@@ -1087,15 +1087,7 @@ const Partners = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleRecaptchaChange = (token) => {
-    setRecaptchaToken(token);
-    setRobotVerified(!!token);
-  };
 
-  const handleRecaptchaExpired = () => {
-    setRecaptchaToken("");
-    setRobotVerified(false);
-  };
 
   const handleCountrySearch = (e) => {
     setCountrySearch(e.target.value);
