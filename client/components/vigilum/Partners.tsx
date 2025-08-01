@@ -224,8 +224,6 @@ const Partners = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
-  const [robotVerified, setRobotVerified] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [isStudent, setIsStudent] = useState(false);
@@ -235,7 +233,6 @@ const Partners = () => {
   const [showUniversityDropdown, setShowUniversityDropdown] = useState(false);
   const [showValidationErrors, setShowValidationErrors] = useState(false);
   const fileInputRef = useRef(null);
-  const recaptchaRef = useRef(null);
 
   // Common job titles for suggestions
   const COMMON_JOB_TITLES = [
@@ -1072,10 +1069,6 @@ const Partners = () => {
     );
   };
 
-  // TODO: Replace with your actual Google reCAPTCHA site key to remove "test purposes only" message
-  // Current key is Google's test key - get your own from: https://www.google.com/recaptcha/admin
-  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -1086,16 +1079,6 @@ const Partners = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleRecaptchaChange = (token) => {
-    setRecaptchaToken(token);
-    setRobotVerified(!!token);
-  };
-
-  const handleRecaptchaExpired = () => {
-    setRecaptchaToken("");
-    setRobotVerified(false);
-  };
 
   const handleCountrySearch = (e) => {
     setCountrySearch(e.target.value);
@@ -1658,6 +1641,10 @@ const Partners = () => {
                     name="structural-engagement-intake"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
+<<<<<<< HEAD
+=======
+                    encType="multipart/form-data"
+>>>>>>> 46366cff55e0c367c766baa0a771ef9389834f6e
                   >
                     {/* Netlify Forms identification */}
                     <input
@@ -1991,6 +1978,34 @@ const Partners = () => {
                         </div>
                       </div>
                     </div>
+                  </form>
+
+                  {/* Hidden static form for Netlify Forms detection */}
+                  <form
+                    name="structural-engagement-intake"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    encType="multipart/form-data"
+                    style={{ display: "none" }}
+                  >
+                    <input
+                      type="hidden"
+                      name="form-name"
+                      value="structural-engagement-intake"
+                    />
+                    <input type="hidden" name="bot-field" />
+                    <input type="text" name="full_name" />
+                    <input type="email" name="email" />
+                    <input type="text" name="country" />
+                    <input type="tel" name="phone" />
+                    <input type="text" name="company" />
+                    <input type="text" name="job_title" />
+                    <textarea name="description"></textarea>
+                    <input type="text" name="is_student" />
+                    <input type="file" name="file_0" />
+                    <input type="file" name="file_1" />
+                    <input type="file" name="file_2" />
                   </form>
                 </div>
               </div>
