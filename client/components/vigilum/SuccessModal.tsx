@@ -31,7 +31,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
     "M50,30 Q70,50 90,30",
     "M10,50 Q30,30 50,50",
     "M50,70 Q30,50 10,70",
-    "M90,70 Q70,50 50,70"
+    "M90,70 Q70,50 50,70",
   ];
 
   return (
@@ -55,11 +55,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{
               duration: 0.4,
-              ease: [0.25, 0.46, 0.45, 0.94]
+              ease: [0.25, 0.46, 0.45, 0.94],
             }}
             className="relative w-full max-w-lg mx-auto"
             style={{
-              background: "radial-gradient(ellipse at center, #0a1418 0%, #0d1f1a 100%)",
+              background:
+                "radial-gradient(ellipse at center, #0a1418 0%, #0d1f1a 100%)",
               border: "1px solid rgba(157, 230, 198, 0.2)",
               borderRadius: "24px",
               padding: "40px",
@@ -121,7 +122,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                     className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{
                       background: "linear-gradient(135deg, #10B981, #059669)",
-                      boxShadow: "0 0 20px rgba(16, 185, 129, 0.4)"
+                      boxShadow: "0 0 20px rgba(16, 185, 129, 0.4)",
                     }}
                   >
                     {animationStep >= 2 ? (
@@ -133,7 +134,10 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 </motion.div>
 
                 {/* Network connection lines */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+                <svg
+                  className="absolute inset-0 w-full h-full"
+                  viewBox="0 0 100 100"
+                >
                   {connectionPaths.map((path, index) => (
                     <motion.path
                       key={index}
@@ -145,15 +149,15 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                       initial={{ pathLength: 0, opacity: 0 }}
                       animate={{
                         pathLength: animationStep >= 1 ? 1 : 0,
-                        opacity: animationStep >= 1 ? 0.8 : 0
+                        opacity: animationStep >= 1 ? 0.8 : 0,
                       }}
                       transition={{
                         delay: 0.5 + index * 0.1,
                         duration: 0.8,
-                        ease: "easeInOut"
+                        ease: "easeInOut",
                       }}
                       style={{
-                        filter: "drop-shadow(0 0 4px rgba(16, 185, 129, 0.5))"
+                        filter: "drop-shadow(0 0 4px rgba(16, 185, 129, 0.5))",
                       }}
                     />
                   ))}
@@ -161,14 +165,17 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
 
                 {/* Network nodes */}
                 {[
-                  { x: 20, y: 20 }, { x: 80, y: 20 }, { x: 20, y: 80 }, { x: 80, y: 80 }
+                  { x: 20, y: 20 },
+                  { x: 80, y: 20 },
+                  { x: 20, y: 80 },
+                  { x: 80, y: 80 },
                 ].map((node, index) => (
                   <motion.div
                     key={index}
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{
                       scale: animationStep >= 1 ? 1 : 0,
-                      opacity: animationStep >= 1 ? 1 : 0
+                      opacity: animationStep >= 1 ? 1 : 0,
                     }}
                     transition={{ delay: 0.7 + index * 0.05, duration: 0.3 }}
                     className="absolute w-2 h-2 rounded-full"
@@ -177,7 +184,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                       top: `${node.y}%`,
                       transform: "translate(-50%, -50%)",
                       background: "#10B981",
-                      boxShadow: "0 0 8px rgba(16, 185, 129, 0.6)"
+                      boxShadow: "0 0 8px rgba(16, 185, 129, 0.6)",
                     }}
                   />
                 ))}
@@ -210,7 +217,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   background: "linear-gradient(135deg, #FFFFFF, #10B981)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  backgroundClip: "text"
+                  backgroundClip: "text",
                 }}
               >
                 Your Insight Fortifies the Structure
@@ -220,7 +227,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 className="text-lg mb-6 leading-relaxed"
                 style={{ color: "#E5F3ED" }}
               >
-                Thank you for contributing to Vigilum's mission of detecting hidden governance risks before they embed. Together, we build foresight into integrity.
+                Thank you for contributing to Vigilum's mission of detecting
+                hidden governance risks before they embed. Together, we build
+                foresight into integrity.
               </p>
 
               <motion.div
@@ -230,14 +239,16 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 className="p-4 rounded-lg border"
                 style={{
                   background: "rgba(16, 185, 129, 0.1)",
-                  borderColor: "rgba(16, 185, 129, 0.3)"
+                  borderColor: "rgba(16, 185, 129, 0.3)",
                 }}
               >
                 <p
                   className="text-sm font-medium italic"
                   style={{ color: "#10B981" }}
                 >
-                  "Just as we uncover procedural facades like those in the Vilnius Stadium case, your input helps reveal structural truths."
+                  "Just as we uncover procedural facades like those in the
+                  Vilnius Stadium case, your input helps reveal structural
+                  truths."
                 </p>
               </motion.div>
             </motion.div>
@@ -256,11 +267,11 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   background: "linear-gradient(135deg, #10B981, #059669)",
                   color: "#FFFFFF",
                   border: "1px solid rgba(16, 185, 129, 0.5)",
-                  fontFamily: "IBM Plex Sans, sans-serif"
+                  fontFamily: "IBM Plex Sans, sans-serif",
                 }}
                 whileHover={{
                   scale: 1.02,
-                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.4)"
+                  boxShadow: "0 0 25px rgba(16, 185, 129, 0.4)",
                 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -279,7 +290,8 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
-                    background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)",
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)",
                   }}
                 />
               </motion.button>
@@ -292,13 +304,13 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 boxShadow: [
                   "0 0 20px rgba(16, 185, 129, 0.1)",
                   "0 0 40px rgba(16, 185, 129, 0.2)",
-                  "0 0 20px rgba(16, 185, 129, 0.1)"
-                ]
+                  "0 0 20px rgba(16, 185, 129, 0.1)",
+                ],
               }}
               transition={{
                 duration: 3,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
           </motion.div>
