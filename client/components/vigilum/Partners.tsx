@@ -1570,9 +1570,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Diagnose the thresholds where institutional contradiction
-                      is neutralized—where facts lose the capacity to generate
-                      escalation, and meaning exits the system.
+                      Locate the structural discontinuities where meaning cannot propagate–where contradiction is defused before it can trigger escalation.
                     </p>
                   </div>
                 </div>
