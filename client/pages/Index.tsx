@@ -118,8 +118,8 @@ export default function Index() {
               }}
             >
               <GradientText
-                colors={["#1a3d2e", "#2d6b4f", "#61dca3", "#2d6b4f", "#1a3d2e"]}
-                animationSpeed={6}
+                colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
+                animationSpeed={8}
                 className="font-light"
                 style={{ fontWeight: "300", fontSize: "18px", letterSpacing: "0.05em" }}
               >
