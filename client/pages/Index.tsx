@@ -110,25 +110,26 @@ export default function Index() {
           {["About", "Journal", "Whitepaper"].map((label) => (
             <button
               key={label}
-              className="relative bg-transparent border-none cursor-pointer text-white text-lg font-light tracking-wide transition-colors duration-300 group"
+              className="relative bg-transparent border-none cursor-pointer text-lg font-light tracking-wide transition-all duration-300 group"
               style={{
                 fontFamily: "var(--font-display)",
                 padding: "12px 0",
                 background: "none",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#2D6B4F";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "white";
-              }}
             >
-              {label}
+              <GradientText
+                colors={["#1a3d2e", "#2d6b4f", "#61dca3", "#2d6b4f", "#1a3d2e"]}
+                animationSpeed={6}
+                className="font-light"
+                style={{ fontWeight: "300", fontSize: "18px", letterSpacing: "0.05em" }}
+              >
+                {label}
+              </GradientText>
               {/* Hover underline */}
               <span
-                className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"
+                className="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full"
                 style={{
-                  backgroundColor: "#2D6B4F",
+                  backgroundColor: "#61dca3",
                 }}
               />
             </button>
