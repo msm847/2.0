@@ -1774,24 +1774,7 @@ const StructuralImpactMap = ({
           boxSizing: "border-box",
         }}
       >
-        {/* Central Instruction Text */}
-        <div
-          style={{
-            position: "absolute",
-            top: "10%",
-            left: "20%",
-            transform: "translateY(-50%)",
-            textAlign: "left",
-            zIndex: 5,
-            pointerEvents: "none",
-            maxWidth: "350px",
-            whiteSpace: "nowrap",
-          }}
-        >
-          <div className="text-xs text-gray-300 leading-relaxed opacity-90">
-            Click each sphere to explore structural corruption axes
-          </div>
-        </div>
+
         {/* Nodes */}
         {nodes.map((node) => (
           <NetworkNode
