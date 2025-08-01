@@ -137,57 +137,7 @@ export default function Index() {
         </div>
       )}
 
-      {/* Logo - Top Left */}
-      {splineLoaded && (
-        <div
-          style={{
-            position: "absolute",
-            top: "40px",
-            left: "40px",
-            zIndex: 4,
-            pointerEvents: "auto",
-          }}
-        >
-          <div
-            className="flex flex-col items-center cursor-pointer transition-all duration-300"
-            style={{
-              fontFamily: "var(--font-display)",
-            }}
-          >
-            {/* Logo Icon */}
-            <div
-              className="w-12 h-12 rounded-xl mb-2 flex items-center justify-center transition-all duration-300"
-              style={{
-                background: "linear-gradient(135deg, #61dca3, #7dd4ba)",
-                boxShadow: "0 6px 20px rgba(97, 220, 163, 0.4)",
-              }}
-            >
-              <span
-                className="text-white font-bold text-2xl"
-                style={{
-                  fontFamily: "var(--font-display)",
-                }}
-              >
-                V
-              </span>
-            </div>
 
-            {/* Logo Text */}
-            <GradientText
-              colors={["#61dca3", "#7dd4ba", "#61b3dc", "#7dd4ba", "#61dca3"]}
-              animationSpeed={8}
-              className="font-semibold"
-              style={{
-                fontSize: "18px",
-                fontWeight: "600",
-                letterSpacing: "1px"
-              }}
-            >
-              VIGILUM
-            </GradientText>
-          </div>
-        </div>
-      )}
 
       {/* Content Overlay - Only show when Spline is loaded */}
       {splineLoaded && (
