@@ -1577,7 +1577,6 @@ const StructuralImpactMap = ({
   return (
     <div
       style={{
-        minHeight: "100vh",
         padding: "20px 20px",
         position: "relative",
         overflow: "hidden",
