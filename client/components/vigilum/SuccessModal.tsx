@@ -84,8 +84,6 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               <X className="w-5 h-5" />
             </motion.button>
 
-
-
             {/* Success Icon */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
@@ -126,8 +124,6 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 hidden governance risks before they embed. Together, we build
                 foresight into integrity.
               </p>
-
-
             </motion.div>
 
             {/* Continue Button */}

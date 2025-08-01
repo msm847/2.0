@@ -541,7 +541,7 @@ const getAnimationDelay = (nodeId) => {
     inequality: "1.6s",
     markets: "2.4s",
     environment: "3.2s",
-    trust: "4.0s"
+    trust: "4.0s",
   };
   return delays[nodeId] || "0s";
 };
@@ -1749,7 +1749,6 @@ const StructuralImpactMap = ({
           boxSizing: "border-box",
         }}
       >
-
         {/* Nodes */}
         {nodes.map((node) => (
           <NetworkNode
