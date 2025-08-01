@@ -31,7 +31,7 @@ const impactNetworkData = {
       actionableOutput:
         "Flag contracts where clause sequencing produces risk vectors above threshold; simulate extraction velocity over time.",
       headline:
-        "Corruption is not just leakage; it is a systemic multiplier—compounding over every contract, every cycle, and every loophole.",
+        "Corruption is not just leakage; it is a systemic multiplier���compounding over every contract, every cycle, and every loophole.",
       domainCounter: {
         ratePerSecond: 31666,
         unit: "USD",
@@ -387,7 +387,7 @@ const impactNetworkData = {
       id: "trust",
       label: "Trust & Security",
       axisTitle: "Impact 6",
-      position: { x: 82, y: 15 }, // 6th in line
+      position: { x: 82, y: 20 }, // 6th in line
       structuralLogic:
         "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
       shockingFact:
