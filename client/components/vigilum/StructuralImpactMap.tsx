@@ -344,7 +344,7 @@ const impactNetworkData = {
           source: "World Bank",
           icon: "🌪️",
         },
-        { text: "Climate targets missed by 60%", source: "UNEP", icon: "🌡��" },
+        { text: "Climate targets missed by 60%", source: "UNEP", icon: "🌡️" },
       ],
       timeline: [
         {
@@ -1760,7 +1760,7 @@ const StructuralImpactMap = ({
         style={{
           position: "relative",
           width: "100%",
-          height: "800px",
+          height: "450px",
           maxWidth: "1000px",
           margin: "20px auto 0 auto",
           padding: "40px",
