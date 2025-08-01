@@ -553,7 +553,7 @@ const Navigation = () => {
                 onClick={() => handleNavigation("#stakeholders")}
                 className={`${getButtonStyles("stakeholders", activeSection === "stakeholders")} text-left`}
               >
-                STAKEHOLDERS
+                CONNECT
               </button>
             </div>
           </div>
