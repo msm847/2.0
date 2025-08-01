@@ -1660,30 +1660,20 @@ const StructuralImpactMap = ({
                     );
                   }
                 }}
-                className="px-5 py-3 rounded-xl font-medium transition-all duration-300 text-sm"
+                className="px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 border"
                 style={{
-                  background: "rgba(16, 185, 129, 0.15)",
+                  backgroundColor: "transparent",
                   color: "#9DE6C6",
-                  border: "1px solid rgba(157, 230, 198, 0.4)",
-                  backdropFilter: "blur(15px)",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-                  fontFamily: "var(--font-display)",
-                  letterSpacing: "0.5px",
-                  textTransform: "uppercase",
+                  borderColor: "rgba(157, 230, 198, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(16, 185, 129, 0.25)";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 25px rgba(16, 185, 129, 0.6)";
-                  e.currentTarget.style.borderColor = "rgba(16, 185, 129, 0.8)";
+                  e.currentTarget.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                  e.currentTarget.style.borderColor = "#9DE6C6";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(16, 185, 129, 0.15)";
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 32px rgba(0,0,0,0.2)";
-                  e.currentTarget.style.borderColor =
-                    "rgba(157, 230, 198, 0.4)";
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.borderColor = "rgba(157, 230, 198, 0.3)";
                 }}
               >
                 {selectedButton === "Cultural" ? (
