@@ -345,7 +345,7 @@ const ModuleGrid = () => {
                       }}
                     >
                       <span className="flex items-center justify-center">
-                        COMING SOON
+                        RESERVED
                       </span>
                     </Button>
                   ) : (
