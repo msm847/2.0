@@ -1958,7 +1958,7 @@ const institutionalData = {
       institutions: [
         {
           name: "European Commission",
-          logo: "🇪���",
+          logo: "🇪�����",
           definition:
             "Corruption is any abuse of power for private gain, undermining good governance, rule of law, and fair competition.",
           source: "European Commission, official website",
@@ -2310,7 +2310,7 @@ const institutionalData = {
       institutions: [
         {
           name: "Transparency International",
-          logo: "🔍",
+          logo: "����",
           definition:
             "Corruption is the abuse of entrusted power for private gain.",
           source: "Transparency International, official website",
@@ -2907,18 +2907,12 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                   marginBottom: "24px",
                 }}
               >
-                <h3 style={{ fontSize: "24px", color: "#9DE6C6", margin: 0 }}>
+                <h3 className="text-2xl font-semibold text-green-400 m-0 font-display">
                   All Institutional Definitions
                 </h3>
                 <button
                   onClick={() => setShowCompareAll(false)}
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    color: "#9DE6C6",
-                    fontSize: "24px",
-                    cursor: "pointer",
-                  }}
+                  className="bg-transparent border-none text-green-400 text-2xl cursor-pointer hover:text-green-300 transition-colors"
                 >
                   ��
                 </button>
