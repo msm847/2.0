@@ -397,7 +397,7 @@ const impactNetworkData = {
       actionableOutput:
         "Surface early-warning signals for systemic collapse: simultaneous audit failures, market outflows, and rising regulatory amendments in a 12-month period.",
       headline:
-        "Trust isn't just perception—it's a structural property that can be modeled and lost.",
+        "Trust isn't just perception���it's a structural property that can be modeled and lost.",
       domainCounter: {
         ratePerSecond: 240,
         unit: "Refugees Created",
@@ -750,7 +750,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
           display: "flex",
           alignItems: "flex-start",
           justifyContent: "center",
-          padding: "10vh 20px 15vh",
+          padding: "11vh 20px 15vh",
         }}
         onClick={onClose}
       >
