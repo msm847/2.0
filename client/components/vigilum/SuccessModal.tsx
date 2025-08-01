@@ -15,7 +15,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
       const timer1 = setTimeout(() => setAnimationStep(1), 500);
       const timer2 = setTimeout(() => setAnimationStep(2), 1000);
       const timer3 = setTimeout(() => setAnimationStep(3), 1500);
-      
+
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
@@ -53,9 +53,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ 
-              duration: 0.4, 
-              ease: [0.25, 0.46, 0.45, 0.94] 
+            transition={{
+              duration: 0.4,
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
             className="relative w-full max-w-lg mx-auto"
             style={{
@@ -117,7 +117,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
                   className="absolute inset-0 flex items-center justify-center"
                 >
-                  <div 
+                  <div
                     className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{
                       background: "linear-gradient(135deg, #10B981, #059669)",
@@ -143,12 +143,12 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       initial={{ pathLength: 0, opacity: 0 }}
-                      animate={{ 
-                        pathLength: animationStep >= 1 ? 1 : 0, 
-                        opacity: animationStep >= 1 ? 0.8 : 0 
+                      animate={{
+                        pathLength: animationStep >= 1 ? 1 : 0,
+                        opacity: animationStep >= 1 ? 0.8 : 0
                       }}
-                      transition={{ 
-                        delay: 0.5 + index * 0.1, 
+                      transition={{
+                        delay: 0.5 + index * 0.1,
                         duration: 0.8,
                         ease: "easeInOut"
                       }}
@@ -166,9 +166,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   <motion.div
                     key={index}
                     initial={{ scale: 0, opacity: 0 }}
-                    animate={{ 
-                      scale: animationStep >= 1 ? 1 : 0, 
-                      opacity: animationStep >= 1 ? 1 : 0 
+                    animate={{
+                      scale: animationStep >= 1 ? 1 : 0,
+                      opacity: animationStep >= 1 ? 1 : 0
                     }}
                     transition={{ delay: 0.7 + index * 0.05, duration: 0.3 }}
                     className="absolute w-2 h-2 rounded-full"
@@ -203,7 +203,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="text-center mb-8"
             >
-              <h2 
+              <h2
                 className="text-2xl font-bold mb-4 leading-tight"
                 style={{
                   fontFamily: "IBM Plex Sans, sans-serif",
@@ -215,8 +215,8 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               >
                 Your Insight Fortifies the Structure
               </h2>
-              
-              <p 
+
+              <p
                 className="text-lg mb-6 leading-relaxed"
                 style={{ color: "#E5F3ED" }}
               >
@@ -233,13 +233,13 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   borderColor: "rgba(16, 185, 129, 0.3)"
                 }}
               >
-                <p 
+                <p
                   className="text-sm font-medium italic"
                   style={{ color: "#10B981" }}
                 >
                   "Just as we uncover procedural facades like those in the Vilnius Stadium case, your input helps reveal structural truths."
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Continue Button */}
@@ -258,7 +258,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   border: "1px solid rgba(16, 185, 129, 0.5)",
                   fontFamily: "IBM Plex Sans, sans-serif"
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   boxShadow: "0 0 25px rgba(16, 185, 129, 0.4)"
                 }}
@@ -274,7 +274,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                     →
                   </motion.div>
                 </span>
-                
+
                 {/* Hover glow effect */}
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -291,7 +291,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               animate={{
                 boxShadow: [
                   "0 0 20px rgba(16, 185, 129, 0.1)",
-                  "0 0 40px rgba(16, 185, 129, 0.2)", 
+                  "0 0 40px rgba(16, 185, 129, 0.2)",
                   "0 0 20px rgba(16, 185, 129, 0.1)"
                 ]
               }}
