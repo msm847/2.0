@@ -1305,22 +1305,8 @@ const Partners = () => {
                 }}
               >
                 Systemic risk is a function of structure, not individual intent.
-                <br />
-                Exposure arises from the way legal, procedural, and contractual
-                forms encode discretion, sequence overrides, and fragment
-                recognition.
-                <br />
-                Failure is not an absence of rules, but their
-                orchestration–where legal form enables extraction under the
-                pretense of oversight.
-                <br />
-                <br />
-                Oversight that does not model system logic operates in hindsight
-                by definition. Only the simulation of structural sequence,
-                override pathways, and context-dependent interpretation can
-                render systemic risk computable at the point of design.
-                Structural exposure is a product of system architecture, not
-                personal conduct.
+                Effective oversight requires modeling how clauses, structural functions, and environmental vectors interact across positional and typological space.
+                Yet without synchronized recognition, contradiction remains inert–unable to escalate across institutional thresholds.
                 <br />
                 <br />
                 What you explored above is an early, condensed
