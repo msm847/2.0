@@ -1043,7 +1043,6 @@ const Partners = () => {
 
     const hasProjectDescription = projectDescription.trim();
     const hasPrivacyAccepted = privacyAccepted;
-    const hasRobotVerification = true; // Temporarily disabled for testing
 
     // Debug: log validation status in development
     if (process.env.NODE_ENV === "development") {
@@ -1055,7 +1054,6 @@ const Partners = () => {
         hasJobTitle,
         hasProjectDescription,
         hasPrivacyAccepted,
-        hasRobotVerification,
         isStudent,
       });
     }
@@ -1067,8 +1065,7 @@ const Partners = () => {
       hasCompany &&
       hasJobTitle &&
       hasProjectDescription &&
-      hasPrivacyAccepted &&
-      hasRobotVerification
+      hasPrivacyAccepted
     );
   };
 
