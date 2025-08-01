@@ -1306,9 +1306,12 @@ const Partners = () => {
               >
                 Systemic risk is a function of structure, not individual intent.
                 <br />
-                Effective oversight requires modeling how clauses, structural functions, and environmental vectors interact across positional and typological space.
+                Effective oversight requires modeling how clauses, structural
+                functions, and environmental vectors interact across positional
+                and typological space.
                 <br />
-                When recognition systems converge, contradiction becomes computable–and escalation structurally possible.
+                When recognition systems converge, contradiction becomes
+                computable–and escalation structurally possible.
                 <br />
                 Structural foresight begins where perception becomes shared.
                 <br />
@@ -1488,7 +1491,9 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Render dynamic risk trajectories by computing how sequence, adjacency, and environmental resonance reconfigure structural exposure.
+                      Render dynamic risk trajectories by computing how
+                      sequence, adjacency, and environmental resonance
+                      reconfigure structural exposure.
                     </p>
                   </div>
                 </div>
@@ -1570,7 +1575,9 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Locate the structural discontinuities where meaning cannot propagate–where contradiction is defused before it can trigger escalation.
+                      Locate the structural discontinuities where meaning cannot
+                      propagate–where contradiction is defused before it can
+                      trigger escalation.
                     </p>
                   </div>
                 </div>
