@@ -88,8 +88,13 @@ export default function Index() {
           width="100%"
           height="100%"
           onLoad={() => {
-            setRobotAnimationFinished(true);
-            setSplineLoaded(true);
+            // Add smooth timing for better UX
+            setTimeout(() => {
+              setSplineLoaded(true);
+              setTimeout(() => {
+                setRobotAnimationFinished(true);
+              }, 300);
+            }, 200);
           }}
         />
       </div>
