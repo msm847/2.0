@@ -750,7 +750,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
           display: "flex",
           alignItems: "flex-start",
           justifyContent: "center",
-          padding: "12vh 20px 15vh",
+          padding: "10vh 20px 15vh",
         }}
         onClick={onClose}
       >
