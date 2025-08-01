@@ -492,18 +492,7 @@ const PerceptionPerspective = () => {
                     </div>
                   </div>
 
-                  <div
-                    className="text-lg font-semibold mb-6 transition-colors duration-1000"
-                    style={{ color: currentTheme.textColor }}
-                  >
-                    Choose Your Lens.
-                  </div>
-                  <div
-                    className="text-base leading-relaxed transition-colors duration-1000"
-                    style={{ color: currentTheme.textColor, opacity: 0.9 }}
-                  >
-                    Click either lens above to see how risk and meaning realign.
-                  </div>
+
                 </div>
               </div>
             )}
