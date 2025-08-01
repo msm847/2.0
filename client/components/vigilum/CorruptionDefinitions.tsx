@@ -2700,7 +2700,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
             marginBottom: "12px",
           }}
         >
-          <div style={{ maxWidth: "50%" }}>
+          <div style={{ maxWidth: "70%" }}>
             <h2 className="text-4xl font-semibold text-green-400 mb-3 font-display">
               What is Corruption?
             </h2>
