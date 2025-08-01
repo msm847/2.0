@@ -198,6 +198,17 @@ const ModuleGrid = () => {
           >
             Core Modules
           </h2>
+          <p
+            className="mb-8 leading-relaxed"
+            style={{
+              fontFamily: "IBM Plex Sans, sans-serif",
+              fontSize: "16px",
+              color: "#EAF8E2",
+              lineHeight: "1.6",
+            }}
+          >
+            Each module is an operator in Vigilum's risk calculus. Together, they render systemic risk as a visible and actionable system output.
+          </p>
         </div>
 
         {/* Module Grid - 2x4 responsive layout */}
