@@ -1305,7 +1305,9 @@ const Partners = () => {
                 }}
               >
                 Systemic risk is a function of structure, not individual intent.
+                <br />
                 Effective oversight requires modeling how clauses, structural functions, and environmental vectors interact across positional and typological space.
+                <br />
                 Yet without synchronized recognition, contradiction remains inert–unable to escalate across institutional thresholds.
                 <br />
                 <br />
