@@ -536,12 +536,12 @@ const ConnectionLine = ({
 // Generate random animation delay based on node ID for asynchronous pulsation
 const getAnimationDelay = (nodeId) => {
   const delays = {
-    economy: "0s",
-    institutions: "0.5s",
-    inequality: "1.0s",
-    markets: "1.5s",
-    environment: "2.0s",
-    trust: "2.5s",
+    economy: "-0s",
+    institutions: "-0.5s",
+    inequality: "-1.0s",
+    markets: "-1.5s",
+    environment: "-2.0s",
+    trust: "-2.5s",
   };
   return delays[nodeId] || "0s";
 };
