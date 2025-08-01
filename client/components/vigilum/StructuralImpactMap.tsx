@@ -317,7 +317,7 @@ const impactNetworkData = {
       id: "environment",
       label: "Environment",
       axisTitle: "Oversight Simulation & Evasion",
-      position: { x: 13, y: 12 }, // 10 o'clock
+      position: { x: 74, y: 25 }, // 5th in line
       structuralLogic:
         "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
       shockingFact:
