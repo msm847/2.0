@@ -119,7 +119,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               </h2>
 
               <p
-                className="text-lg mb-6 leading-relaxed"
+                className="text-lg mb-0 leading-relaxed"
                 style={{ color: "#E5F3ED" }}
               >
                 Thank you for contributing to Vigilum's mission of detecting
