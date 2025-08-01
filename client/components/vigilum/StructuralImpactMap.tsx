@@ -533,6 +533,19 @@ const ConnectionLine = ({
   );
 };
 
+// Generate random animation delay based on node ID for asynchronous pulsation
+const getAnimationDelay = (nodeId) => {
+  const delays = {
+    economy: "0s",
+    institutions: "0.8s",
+    inequality: "1.6s",
+    markets: "2.4s",
+    environment: "3.2s",
+    trust: "4.0s"
+  };
+  return delays[nodeId] || "0s";
+};
+
 // Enhanced network node with full container functionality
 const NetworkNode = ({
   node,
