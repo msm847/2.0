@@ -1836,21 +1836,14 @@ const BoundaryLogicCarousel = () => {
                 <button
                   key={term}
                   onClick={() => setSelectedTerm(term)}
+                  className="px-3 py-2 rounded-lg text-sm font-medium cursor-pointer capitalize transition-all duration-200"
                   style={{
-                    padding: "8px 12px",
                     border: `2px solid ${selectedTerm === term ? theme.secondary : "rgba(157, 230, 198, 0.3)"}`,
                     background:
                       selectedTerm === term
                         ? `${theme.secondary}22`
                         : "transparent",
                     color: "#FFFFFF",
-                    borderRadius: "8px",
-                    fontSize: "12px",
-                    fontWeight: "500",
-                    cursor: "pointer",
-                    textTransform: "capitalize",
-                    transition: "all 0.2s ease",
-                    fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
                   }}
                 >
                   {getTermDisplayName(term)}
