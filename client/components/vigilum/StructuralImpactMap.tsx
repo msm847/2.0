@@ -317,7 +317,7 @@ const impactNetworkData = {
       id: "environment",
       label: "Environment",
       axisTitle: "Impact 5",
-      position: { x: 66, y: 15 }, // 5th in line
+      position: { x: 66, y: 20 }, // 5th in line
       structuralLogic:
         "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
       shockingFact:
@@ -1647,7 +1647,7 @@ const StructuralImpactMap = ({
                 }}
               >
                 {selectedButton === "Cultural" ? (
-                  <>��� Consequences of Corruption</>
+                  <>→ Consequences of Corruption</>
                 ) : (
                   <>
                     What is Corruption?{" "}
