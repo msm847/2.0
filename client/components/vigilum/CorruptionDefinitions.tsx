@@ -2717,7 +2717,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               <p className="text-sm text-gray-300 font-normal leading-relaxed opacity-80">
                 💡 Boundaries determine what gets prosecuted or ignored.
                 <br />
-                Vigilum models how definitional scope constrains detection and redistributes structural exposure.
+                Vigilum models how scope constrains detection.
               </p>
             </div>
           </div>
