@@ -1317,15 +1317,9 @@ const Partners = () => {
                 Structural foresight begins where perception becomes shared.
                 <br />
                 <br />
-                What you explored above is an early, condensed
-                demonstration–structurally isolated from the underlying Vigilum
-                system. The interface is intended for preliminary engagement and
-                does not reflect the scope or complexity of the operational
-                platform in development. Collaboration is open to institutions,
-                researchers, and practitioners positioned to contribute to this
-                work. All engagements are strictly confidential and directed
-                toward the joint development of public-interest oversight
-                infrastructure.
+                What you explored above is an early, condensed demonstration–structurally isolated from the underlying Vigilum system. The interface is intended for preliminary engagement and does not reflect the scope or complexity of the operational platform in development. Collaboration is open to institutions, researchers, and practitioners positioned to contribute to this work.
+                <br />
+                All engagements are strictly confidential and directed toward the joint development of public-interest oversight infrastructure.
               </p>
 
               {/* 4. Founder Quote */}
