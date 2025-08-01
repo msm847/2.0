@@ -1858,17 +1858,7 @@ const BoundaryLogicCarousel = () => {
               {termDefinitions[selectedTerm]?.title || "Boundary Analysis"}
             </h3>
 
-            <p
-              style={{
-                fontSize: "15px",
-                lineHeight: "1.4",
-                color: "#A1B5C1",
-                marginBottom: "16px",
-                fontFamily: "SF Mono, Monaco, monospace",
-                letterSpacing: "0.01em",
-                textAlign: "left",
-              }}
-            >
+            <p className="text-sm leading-relaxed text-gray-400 mb-4 font-mono tracking-normal text-left">
               {termDefinitions[selectedTerm]?.analysis ||
                 "Structural analysis of boundary operations."}
             </p>
