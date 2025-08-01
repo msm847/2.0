@@ -1306,9 +1306,9 @@ const Partners = () => {
               >
                 Systemic risk is a function of structure, not individual intent.
                 <br />
-                Effective oversight requires modeling how clauses, structural
-                functions, and environmental vectors interact across positional
-                and typological space.
+                Effective oversight requires modeling how clauses, structural functions,
+                <br />
+                and environmental vectors interact across positional and typological space.
                 <br />
                 When recognition systems converge, contradiction becomes
                 computable–and escalation structurally possible.
