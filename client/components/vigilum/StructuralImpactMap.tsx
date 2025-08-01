@@ -276,7 +276,7 @@ const impactNetworkData = {
         {
           step: "Tender rigged",
           description: "Contracts awarded illegally",
-          icon: "📋",
+          icon: "��",
         },
         {
           step: "Unqualified winner",
@@ -585,11 +585,7 @@ const NetworkNode = ({
     border: `2px solid ${node.color}40`,
     cursor: "pointer",
     backdropFilter: "blur(10px)",
-    animation: isActive
-      ? `sphereGlow 1.8s ease-in-out infinite ${getAnimationDelay(node.id)}`
-      : isPropagationTarget
-        ? `sphereGlow 2.2s ease-in-out infinite ${getAnimationDelay(node.id)}`
-        : `sphereGlow 2.5s ease-in-out infinite ${getAnimationDelay(node.id)}`,
+    animation: `sphereGlow 3s ease-in-out infinite ${getAnimationDelay(node.id)}`,
     boxShadow: isActive
       ? `0 4px 8px rgba(0, 0, 0, 0.3)`
       : isHovered
