@@ -207,9 +207,9 @@ const PerceptionPerspective = () => {
     }
   };
 
-  // Ensure the instruction section always loads first
+  // Load perception section directly
   useEffect(() => {
-    setActiveSection(null);
+    setActiveSection("perception");
   }, []);
 
   // Reset to instruction section when navigating via hash to this section
