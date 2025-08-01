@@ -21,7 +21,7 @@ const modules = [
     name: "CLAVIS",
     subtitle: "Clause Intelligence",
     tagline:
-      "Structure is intent made computable; inversion exposes its risk topology.",
+      "Every clause is evaluated as a logic-bearing structural unit.",
     description:
       "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields for logic-based risk detection.",
     color: "#1a3d82",
