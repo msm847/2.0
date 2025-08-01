@@ -276,7 +276,7 @@ const impactNetworkData = {
         {
           step: "Tender rigged",
           description: "Contracts awarded illegally",
-          icon: "📋",
+          icon: "���",
         },
         {
           step: "Unqualified winner",
@@ -1582,6 +1582,14 @@ const StructuralImpactMap = ({
           @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
+          }
+          @keyframes sphereGlow {
+            0%, 100% {
+              filter: brightness(1) saturate(1);
+            }
+            50% {
+              filter: brightness(1.1) saturate(1.2);
+            }
           }
         `}</style>
 
