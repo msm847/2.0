@@ -111,7 +111,7 @@ const modules = [
     tagline:
       "Integrity is a projection in risk space—fragility is its spectral collapse.",
     description:
-      "Quantifies risk field intensities as a multidimensional signal, collapsing typology vectors into an integrated structural index.",
+      "Aggregates projection vectors across modules, measuring structural misalignment and collapsing semantic drift into a unified multidimensional index.",
     color: "#a65800",
     secondaryColor: "#b45309",
     textColor: "#f5d199",
