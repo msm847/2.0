@@ -224,6 +224,7 @@ const Partners = () => {
   const [scrollIntensity, setScrollIntensity] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [error, setError] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
