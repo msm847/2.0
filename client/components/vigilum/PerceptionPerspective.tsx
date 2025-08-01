@@ -212,10 +212,10 @@ const PerceptionPerspective = () => {
     setActiveSection("perception");
   }, []);
 
-  // Reset to instruction section when navigating via hash to this section
+  // Load perception section when navigating via hash to this section
   useEffect(() => {
     if (location.hash === "#perception-perspective") {
-      setActiveSection(null);
+      setActiveSection("perception");
     }
   }, [location.hash]);
 
