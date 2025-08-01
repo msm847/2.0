@@ -93,13 +93,9 @@ export default function Index() {
           width="100%"
           height="100%"
           onLoad={() => {
-            // Faster timing for quicker text appearance
-            setTimeout(() => {
-              setSplineLoaded(true);
-              setTimeout(() => {
-                setRobotAnimationFinished(true);
-              }, 100);
-            }, 50);
+            // All content appears together
+            setSplineLoaded(true);
+            setRobotAnimationFinished(true);
           }}
         />
       </div>
