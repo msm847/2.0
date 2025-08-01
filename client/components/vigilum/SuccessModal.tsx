@@ -91,7 +91,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
-              className="flex justify-center mb-6"
+              className="flex justify-center mb-4"
             >
               <div className="w-16 h-16 rounded-full bg-green-600/20 flex items-center justify-center">
                 <CheckCircle className="w-8 h-8 text-green-400" />
