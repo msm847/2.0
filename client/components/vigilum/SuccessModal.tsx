@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Eye, Key, CheckCircle } from "lucide-react";
+import { X, CheckCircle } from "lucide-react";
 
 interface SuccessModalProps {
   isOpen: boolean;
