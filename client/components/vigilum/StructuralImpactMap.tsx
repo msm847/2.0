@@ -84,7 +84,7 @@ const impactNetworkData = {
           intensity: 0.9,
         },
       ],
-      color: "#10B981",
+      color: "#065F46",
       structuralType: "extraction",
     },
     {
