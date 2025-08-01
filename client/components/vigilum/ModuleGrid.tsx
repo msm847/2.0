@@ -144,7 +144,7 @@ const modules = [
     id: "unallocated",
     name: "UNALLOCATED MODULE",
     subtitle: "Reserved Operator",
-    tagline: "",
+    tagline: "Logical capacity is reserved for future integration and schema extension.",
     description:
       "Semantic placeholder for emergent detection logic; system extensibility is encoded as constraint in reserve.",
     color: "#1c1c1c",
