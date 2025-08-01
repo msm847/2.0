@@ -1246,17 +1246,12 @@ const Partners = () => {
     setProjectDescription("");
     setAttachedFiles([]);
     setError("");
-    setRobotVerified(false);
-    setRecaptchaToken("");
     setPrivacyAccepted(false);
     setIsStudent(false);
     setJobTitleSearch("");
     setShowJobTitleDropdown(false);
     setCompanySearch("");
     setShowUniversityDropdown(false);
-    if (recaptchaRef.current) {
-      recaptchaRef.current.reset();
-    }
   };
 
 
