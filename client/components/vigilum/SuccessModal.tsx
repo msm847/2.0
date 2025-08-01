@@ -63,7 +63,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 "radial-gradient(ellipse at center, #0a1418 0%, #0d1f1a 100%)",
               border: "1px solid rgba(157, 230, 198, 0.2)",
               borderRadius: "24px",
-              padding: "40px",
+              padding: "24px",
               boxShadow: `
                 0 25px 50px -12px rgba(0, 0, 0, 0.8),
                 0 0 0 1px rgba(255, 255, 255, 0.05),
