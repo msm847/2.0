@@ -578,39 +578,10 @@ const NetworkNode = ({
         ? "sphereGlow 3s ease-in-out infinite"
         : "sphereGlow 4s ease-in-out infinite",
     boxShadow: isActive
-      ? `0 0 60px ${node.color}80,
-         0 0 120px ${node.color}60,
-         0 0 180px ${node.color}40,
-         0 8px 16px rgba(0, 0, 0, 0.3),
-         inset 0 1px 0 rgba(255, 255, 255, 0.3)`
+      ? `0 4px 8px rgba(0, 0, 0, 0.3)`
       : isHovered
-        ? `0 0 40px ${node.color}70,
-          0 0 80px ${node.color}50,
-          0 0 120px ${node.color}30,
-          0 12px 48px rgba(0, 0, 0, 0.3),
-          0 6px 24px rgba(0, 0, 0, 0.2),
-          inset 0 1px 0 rgba(255, 255, 255, 0.25),
-          inset 0 -1px 0 rgba(0, 0, 0, 0.15)
-        `
-        : isPropagationTarget
-          ? `
-            0 0 50px ${node.color}60,
-            0 0 100px ${node.color}40,
-            0 0 150px ${node.color}25,
-            0 8px 32px rgba(0, 0, 0, 0.25),
-            0 4px 16px rgba(0, 0, 0, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-          `
-          : `
-            0 0 30px ${node.color}50,
-            0 0 60px ${node.color}30,
-            0 0 90px ${node.color}20,
-            0 6px 24px rgba(0, 0, 0, 0.2),
-            0 3px 12px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.05)
-          `,
+        ? `0 6px 12px rgba(0, 0, 0, 0.2)`
+        : `0 2px 4px rgba(0, 0, 0, 0.1)`,
     zIndex: isActive ? 30 : isHovered ? 25 : isPropagationTarget ? 20 : 15,
   };
 
