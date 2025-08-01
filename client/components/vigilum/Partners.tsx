@@ -1984,6 +1984,30 @@ const Partners = () => {
                       </div>
                     </div>
                   </form>
+
+                  {/* Hidden static form for Netlify Forms detection */}
+                  <form
+                    name="structural-engagement-intake"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    encType="multipart/form-data"
+                    style={{ display: "none" }}
+                  >
+                    <input type="hidden" name="form-name" value="structural-engagement-intake" />
+                    <input type="hidden" name="bot-field" />
+                    <input type="text" name="full_name" />
+                    <input type="email" name="email" />
+                    <input type="text" name="country" />
+                    <input type="tel" name="phone" />
+                    <input type="text" name="company" />
+                    <input type="text" name="job_title" />
+                    <textarea name="description"></textarea>
+                    <input type="text" name="is_student" />
+                    <input type="file" name="file_0" />
+                    <input type="file" name="file_1" />
+                    <input type="file" name="file_2" />
+                  </form>
                 </div>
               </div>
             </div>
