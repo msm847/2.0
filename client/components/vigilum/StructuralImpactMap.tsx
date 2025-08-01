@@ -387,7 +387,7 @@ const impactNetworkData = {
       id: "trust",
       label: "Trust & Security",
       axisTitle: "Systemic Trust Collapse",
-      position: { x: 35, y: 50 }, // 6 o'clock
+      position: { x: 90, y: 25 }, // 6th in line
       structuralLogic:
         "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
       shockingFact:
