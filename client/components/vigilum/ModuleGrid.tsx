@@ -93,7 +93,7 @@ const modules = [
     tagline:
       "Pattern resonance is system exposure; escalation is logic actualized.",
     description:
-      "Aggregates projection vectors across modules, measuring structural misalignment and collapsing semantic drift into a unified multidimensional index.",
+      "Aggregates all module outputs into a dynamic risk lattice, triggering escalation when structural resonance achieves system-level coherence.",
     color: "#035e4a",
     secondaryColor: "#047857",
     textColor: "#c0f1e4",
