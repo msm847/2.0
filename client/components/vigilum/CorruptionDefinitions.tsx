@@ -289,7 +289,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         cronyism: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Relevant when involving financial flows that could constitute money laundering. [RT]",
           typology: ["RT"],
@@ -1025,7 +1025,7 @@ const boundaryLogicData = {
       },
       tags: {
         bribery: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Core prohibited practice in NDB operations and project financing. [CI]",
           typology: ["CI"],
@@ -1415,7 +1415,7 @@ const BoundaryLogicCarousel = () => {
             overflow: "hidden",
           }}
         >
-          <blockquote className="text-base italic text-green-400 m-0 mb-2 leading-relaxed flex-1 overflow-hidden">
+          <blockquote className="text-base italic text-white m-0 mb-2 leading-relaxed flex-1 overflow-hidden">
             "{institution.definition}"
           </blockquote>
 
