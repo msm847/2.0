@@ -1561,10 +1561,10 @@ const StructuralImpactMap = ({
           }
           @keyframes sphereGlow {
             0%, 100% {
-              filter: brightness(0.85) saturate(0.95);
+              filter: brightness(0.95) saturate(1.0);
             }
             50% {
-              filter: brightness(1.2) saturate(1.35);
+              filter: brightness(1.15) saturate(1.2);
             }
           }
         `}</style>
