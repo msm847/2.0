@@ -1194,12 +1194,10 @@ const Partners = () => {
     setIsSubmitting(true);
     setError("");
 
-    // Check if form is valid
+    // Check if form is valid (removed reCAPTCHA requirements)
     if (!isFormValid()) {
       setShowValidationErrors(true);
-      if (!robotVerified || !recaptchaToken) {
-        setError("Please complete the reCAPTCHA verification.");
-      } else if (!privacyAccepted) {
+      if (!privacyAccepted) {
         setError("Please accept the privacy policy to continue.");
       } else {
         setError("Please fill out all required fields to continue.");
@@ -1213,7 +1211,7 @@ const Partners = () => {
     try {
       // Submit to Netlify Forms
       const formData = new FormData();
-      formData.append("form-name", "vigilum-engagement-intake");
+      formData.append("form-name", "structural-engagement-intake");
       formData.append("full_name", fullName);
       formData.append("email", businessEmail);
       formData.append("country", country);
@@ -1222,22 +1220,21 @@ const Partners = () => {
       formData.append("job_title", jobTitle);
       formData.append("description", projectDescription);
       formData.append("is_student", isStudent ? "Yes" : "No");
-      formData.append("g-recaptcha-response", recaptchaToken);
 
-      // Add attached files
+      // Add attached files with proper naming for Netlify
       attachedFiles.forEach((file, index) => {
         formData.append(`file_${index}`, file);
       });
 
       const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        body: formData, // Use FormData directly for file uploads
       });
 
       if (response.ok) {
         setIsSubmitted(true);
         resetForm();
+        alert("Form submitted successfully!"); // Basic success notification
       } else {
         throw new Error("Form submission failed");
       }
