@@ -38,7 +38,8 @@ const modules = [
     id: "obscura",
     name: "OBSCURA",
     subtitle: "Procurement Distortion",
-    tagline: "Procurement is computed as a sequence of pre-encoded capture formats.",
+    tagline:
+      "Procurement is computed as a sequence of pre-encoded capture formats.",
     description:
       "Projects procedural flows as capture operators, rendering compression, exclusivity, and emergency logic as pre-structured nullification paths.",
     color: "#941b1b",
@@ -55,7 +56,8 @@ const modules = [
     id: "nullum",
     name: "NULLUM",
     subtitle: "Judicial Stalling",
-    tagline: "Delay is registered as an override-capable temporal suppression function.",
+    tagline:
+      "Delay is registered as an override-capable temporal suppression function.",
     description:
       "Vectorizes delay as an override mechanism, identifying temporal collapse and procedural bypass as latent constraint erasure.",
     color: "#1e232b",
@@ -198,11 +200,11 @@ const ModuleGrid = () => {
           >
             Core Modules
           </h2>
-          <p
-            className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto mb-8"
-          >
-            Each module is an operator in Vigilum's risk calculus.<br />
-            Together, they render systemic risk as a visible and actionable system output.
+          <p className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto mb-8">
+            Each module is an operator in Vigilum's risk calculus.
+            <br />
+            Together, they render systemic risk as a visible and actionable
+            system output.
           </p>
         </div>
 
@@ -412,8 +414,6 @@ const ModuleGrid = () => {
             );
           })}
         </div>
-
-
       </div>
     </div>
   );
