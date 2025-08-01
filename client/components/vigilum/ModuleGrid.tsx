@@ -201,7 +201,7 @@ const ModuleGrid = () => {
             System Operators
           </h2>
           <p className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto mb-8">
-            Each module is an operator in Vigilum's risk calculus.
+            Each engine is an operator in Vigilum's risk calculus.
             <br />
             Together, they render systemic risk as a visible and actionable
             system output.
