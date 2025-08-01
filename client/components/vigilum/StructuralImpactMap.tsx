@@ -537,11 +537,11 @@ const ConnectionLine = ({
 const getAnimationDelay = (nodeId) => {
   const delays = {
     economy: "0s",
-    institutions: "0.8s",
-    inequality: "1.6s",
-    markets: "2.4s",
-    environment: "3.2s",
-    trust: "4.0s",
+    institutions: "0.4s",
+    inequality: "0.8s",
+    markets: "1.2s",
+    environment: "1.6s",
+    trust: "2.0s",
   };
   return delays[nodeId] || "0s";
 };
