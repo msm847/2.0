@@ -1259,23 +1259,12 @@ const Partners = () => {
     setProjectDescription("");
     setAttachedFiles([]);
     setError("");
-    setRobotVerified(false);
-    setRecaptchaToken("");
     setPrivacyAccepted(false);
     setIsStudent(false);
     setJobTitleSearch("");
     setShowJobTitleDropdown(false);
     setCompanySearch("");
     setShowUniversityDropdown(false);
-    if (recaptchaRef.current) {
-      recaptchaRef.current.reset();
-    }
-  };
-
-  // Handle reCAPTCHA verification
-  const handleRecaptcha = (token) => {
-    setRecaptchaToken(token);
-    setRobotVerified(!!token);
   };
 
   // Auto-reset success message after 5 seconds
