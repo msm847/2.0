@@ -663,15 +663,7 @@ const NetworkNode = ({
         )}
 
         <div
-          style={{
-            fontSize: isActive ? "14px" : "12px",
-            fontWeight: "600",
-            color: "#FFFFFF",
-            marginBottom: isActive ? "4px" : "2px",
-            fontFamily: "var(--font-display)",
-            lineHeight: "1.1",
-            textAlign: "center",
-          }}
+          className={`${isActive ? "text-sm" : "text-xs"} font-semibold text-green-400 ${isActive ? "mb-1" : "mb-0.5"} font-display leading-tight text-center tracking-wide`}
         >
           {node.axisTitle || node.label}
         </div>
