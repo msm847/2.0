@@ -1308,7 +1308,7 @@ const Partners = () => {
                 <br />
                 Effective oversight requires modeling how clauses, structural functions, and environmental vectors interact across positional and typological space.
                 <br />
-                Yet without synchronized recognition, contradiction remains inert–unable to escalate across institutional thresholds.
+                When recognition systems converge, contradiction becomes computable–and escalation structurally possible.
                 <br />
                 Structural foresight begins where perception becomes shared.
                 <br />
