@@ -168,7 +168,7 @@ const impactNetworkData = {
     {
       id: "inequality",
       label: "Inequality",
-      axisTitle: "Behavioral Drift & Reflexive Erosion",
+      axisTitle: "Impact 3",
       position: { x: 34, y: 15 }, // 3rd in line
       structuralLogic:
         "Repeated exposure to non-binding reforms and simulated accountability compresses cognitive reflexes—normalizing evasion and teaching actors that structural outcomes are predetermined.",
