@@ -127,25 +127,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                 foresight into integrity.
               </p>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: animationStep >= 3 ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
-                className="p-4 rounded-lg border"
-                style={{
-                  background: "rgba(16, 185, 129, 0.1)",
-                  borderColor: "rgba(16, 185, 129, 0.3)",
-                }}
-              >
-                <p
-                  className="text-sm font-medium italic"
-                  style={{ color: "#10B981" }}
-                >
-                  "Just as we uncover procedural facades like those in the
-                  Vilnius Stadium case, your input helps reveal structural
-                  truths."
-                </p>
-              </motion.div>
+
             </motion.div>
 
             {/* Continue Button */}
