@@ -55,7 +55,7 @@ const modules = [
     id: "nullum",
     name: "NULLUM",
     subtitle: "Judicial Stalling",
-    tagline: "Delay is the systemic erasure of enforcement logic.",
+    tagline: "Delay is treated as a computational operator with erasure potential.",
     description:
       "Vectorizes delay as an override mechanism, identifying temporal collapse and procedural bypass as latent constraint erasure.",
     color: "#1e232b",
@@ -73,7 +73,7 @@ const modules = [
     name: "NEXUS POTENTIA",
     subtitle: "Influence Network",
     tagline:
-      "Power propagates in recursion; mapping reveals the hidden operator graph.",
+      "Relational paths are scanned for indirect override propagation and network persistence.",
     description:
       "Infers indirect control by reconstructing override topologies through relational propagation, revealing hidden operators embedded in institutional continuity.",
     color: "#4e27a6",
@@ -91,7 +91,7 @@ const modules = [
     name: "VIGILO CORE",
     subtitle: "Intelligence Synthesis",
     tagline:
-      "Pattern resonance is system exposure; escalation is logic actualized.",
+      "System integrity is measured by cross-module resonance and escalation thresholds.",
     description:
       "Aggregates all module outputs into a dynamic risk lattice, triggering escalation when structural resonance achieves system-level coherence.",
     color: "#035e4a",
@@ -109,7 +109,7 @@ const modules = [
     name: "VERIS",
     subtitle: "Risk Index",
     tagline:
-      "Integrity is a projection in risk space—fragility is its spectral collapse.",
+      "Typology drift is quantified as structural deformation under pressure.",
     description:
       "Aggregates projection vectors across modules, measuring structural misalignment and collapsing semantic drift into a unified risk lattice.",
     color: "#a65800",
@@ -127,7 +127,7 @@ const modules = [
     name: "SENTIUM",
     subtitle: "Civic Signal",
     tagline:
-      "Witness is vectorized; signal emerges through cross-structural resonance.",
+      "Perception is processed as a triangulated vector within system alignment space.",
     description:
       "Vectorizes testimonial input by aligning perception with typology fields, triangulating public resonance with system outputs for recursive validation.",
     color: "#036373",
