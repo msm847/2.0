@@ -1310,8 +1310,9 @@ const Partners = () => {
                 <br />
                 and environmental vectors interact across positional and typological space.
                 <br />
-                When recognition systems converge, contradiction becomes
-                computable–and escalation structurally possible.
+                When recognition systems converge, contradiction becomes computable–
+                <br />
+                and escalation structurally possible.
                 <br />
                 Structural foresight begins where perception becomes shared.
                 <br />
