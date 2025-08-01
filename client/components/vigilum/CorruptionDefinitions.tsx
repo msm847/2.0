@@ -2708,8 +2708,8 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               Every institution defines corruption in its own terms.
             </p>
             <p className="text-base text-gray-300 mb-0 leading-relaxed">
-              Compare how institutional definitions frame corruption as a discrete<br />
-              legal category rather than a continuous structural condition.
+              Compare how institutional definitions frame corruption as a discrete legal category<br />
+              rather than a continuous structural condition.
             </p>
 
             {/* Key Insight */}
@@ -2854,7 +2854,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                   onClick={() => setShowCompareAll(false)}
                   className="bg-transparent border-none text-green-400 text-2xl cursor-pointer hover:text-green-300 transition-colors"
                 >
-                  ���
+                  ��
                 </button>
               </div>
 
