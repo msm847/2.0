@@ -1186,9 +1186,7 @@ const Partners = () => {
     // Check if form is valid
     if (!isFormValid()) {
       setShowValidationErrors(true);
-      if (!robotVerified || !recaptchaToken) {
-        setError("Please complete the reCAPTCHA verification.");
-      } else if (!privacyAccepted) {
+      if (!privacyAccepted) {
         setError("Please accept the privacy policy to continue.");
       } else {
         setError("Please fill out all required fields to continue.");
@@ -1202,7 +1200,7 @@ const Partners = () => {
     try {
       // Submit to Netlify Forms
       const formData = new FormData();
-      formData.append("form-name", "vigilum-engagement-intake");
+      formData.append("form-name", "structural-engagement-intake");
       formData.append("full_name", fullName);
       formData.append("email", businessEmail);
       formData.append("country", country);
@@ -1211,7 +1209,6 @@ const Partners = () => {
       formData.append("job_title", jobTitle);
       formData.append("description", projectDescription);
       formData.append("is_student", isStudent ? "Yes" : "No");
-      formData.append("g-recaptcha-response", recaptchaToken);
 
       // Add attached files
       attachedFiles.forEach((file, index) => {
