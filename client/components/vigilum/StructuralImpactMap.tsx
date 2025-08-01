@@ -276,7 +276,7 @@ const impactNetworkData = {
         {
           step: "Tender rigged",
           description: "Contracts awarded illegally",
-          icon: "��",
+          icon: "📋",
         },
         {
           step: "Unqualified winner",
@@ -537,11 +537,11 @@ const ConnectionLine = ({
 const getAnimationDelay = (nodeId) => {
   const delays = {
     economy: "0s",
-    institutions: "0.4s",
-    inequality: "0.8s",
-    markets: "1.2s",
-    environment: "1.6s",
-    trust: "2.0s",
+    institutions: "0.5s",
+    inequality: "1.0s",
+    markets: "1.5s",
+    environment: "2.0s",
+    trust: "2.5s",
   };
   return delays[nodeId] || "0s";
 };
