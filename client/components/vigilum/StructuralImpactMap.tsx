@@ -1733,13 +1733,6 @@ const StructuralImpactMap = ({
           )}
       </div>
 
-      {/* Instruction Text */}
-      <div className="text-center mb-1">
-        <p className="text-sm text-gray-400 font-light italic">
-          Click any sphere to explore the multi-dimensional impact of corruption
-        </p>
-      </div>
-
       {/* Network Visualization */}
       <div
         style={{
@@ -1752,6 +1745,21 @@ const StructuralImpactMap = ({
           boxSizing: "border-box",
         }}
       >
+        {/* Instruction Text */}
+        <div
+          className="text-center"
+          style={{
+            position: "absolute",
+            top: "5px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 5,
+          }}
+        >
+          <p className="text-sm text-gray-400 font-light italic">
+            Click any sphere to explore the multi-dimensional impact of corruption
+          </p>
+        </div>
         {/* Nodes */}
         {nodes.map((node) => (
           <NetworkNode
