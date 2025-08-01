@@ -224,8 +224,6 @@ const Partners = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
-  const [robotVerified, setRobotVerified] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [isStudent, setIsStudent] = useState(false);
@@ -235,7 +233,6 @@ const Partners = () => {
   const [showUniversityDropdown, setShowUniversityDropdown] = useState(false);
   const [showValidationErrors, setShowValidationErrors] = useState(false);
   const fileInputRef = useRef(null);
-  const recaptchaRef = useRef(null);
 
   // Common job titles for suggestions
   const COMMON_JOB_TITLES = [
@@ -724,7 +721,7 @@ const Partners = () => {
     "University of Turku",
     "University of Tampere",
     "University of Oulu",
-    "University of Jyväskylä",
+    "University of Jyväskyl��",
     "University of Eastern Finland",
     "Åbo Akademi University",
 
