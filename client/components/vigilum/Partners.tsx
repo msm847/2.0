@@ -876,7 +876,7 @@ const Partners = () => {
     "Catholic University of Lublin",
     "University of Szczecin",
     "West Pomeranian University of Technology",
-    "Rzesz��w University of Technology",
+    "Rzesz���w University of Technology",
     "University of Rzeszów",
     "Maria Curie-Skłodowska University",
     "Lublin University of Technology",
@@ -1309,6 +1309,8 @@ const Partners = () => {
                 Effective oversight requires modeling how clauses, structural functions, and environmental vectors interact across positional and typological space.
                 <br />
                 Yet without synchronized recognition, contradiction remains inert–unable to escalate across institutional thresholds.
+                <br />
+                Structural foresight requires collective alignment–without coordinated perception, systemic risk remains invisible.
                 <br />
                 <br />
                 What you explored above is an early, condensed
