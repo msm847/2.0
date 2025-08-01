@@ -189,7 +189,7 @@ const impactNetworkData = {
         {
           text: "Public services cost up to 30% more",
           source: "Transparency International",
-          icon: "����",
+          icon: "������",
         },
         {
           text: "Petty corruption hurts the poor most",
@@ -1784,7 +1784,8 @@ const StructuralImpactMap = ({
             textAlign: "left",
             zIndex: 5,
             pointerEvents: "none",
-            maxWidth: "200px",
+            maxWidth: "350px",
+            whiteSpace: "nowrap",
           }}
         >
           <div className="text-sm font-medium text-green-400 mb-2 uppercase tracking-wide font-display">
