@@ -189,7 +189,7 @@ const impactNetworkData = {
         {
           text: "Public services cost up to 30% more",
           source: "Transparency International",
-          icon: "������",
+          icon: "����",
         },
         {
           text: "Petty corruption hurts the poor most",
@@ -1788,9 +1788,6 @@ const StructuralImpactMap = ({
             whiteSpace: "nowrap",
           }}
         >
-          <div className="text-sm font-medium text-green-400 mb-2 uppercase tracking-wide font-display">
-            Interactive Map
-          </div>
           <div className="text-xs text-gray-300 leading-relaxed opacity-90">
             Click each sphere to explore structural corruption axes
           </div>
