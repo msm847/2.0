@@ -129,7 +129,7 @@ const modules = [
     tagline:
       "Witness is vectorized; signal emerges through cross-structural resonance.",
     description:
-      "Encrypts testimonial input as analytic vectors, triangulating with system detections for recursive validation and escalation.",
+      "Vectorizes testimonial input by aligning perception with typology fields, triangulating public resonance with system outputs for recursive structural validation.",
     color: "#036373",
     secondaryColor: "#0e7490",
     textColor: "#a2e9f5",
