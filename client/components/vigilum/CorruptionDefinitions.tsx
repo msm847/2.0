@@ -187,7 +187,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         nepotism: {
-          state: "��",
+          state: "✓",
           tooltip:
             "Recognized as corruption type affecting institutional integrity. [CI]",
           typology: ["CI"],
