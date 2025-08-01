@@ -21,7 +21,7 @@ const modules = [
     name: "CLAVIS",
     subtitle: "Clause Intelligence",
     tagline:
-      "Every clause is evaluated as a logic-bearing structural unit.",
+      "Each clause is rendered as an executable structural instruction set.",
     description:
       "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields for logic-based risk detection.",
     color: "#1a3d82",
@@ -38,7 +38,7 @@ const modules = [
     id: "obscura",
     name: "OBSCURA",
     subtitle: "Procurement Distortion",
-    tagline: "Procurement is analyzed as a procedural format with embedded override risk.",
+    tagline: "Procurement is computed as a sequence of pre-encoded capture formats.",
     description:
       "Projects procedural flows as capture operators, rendering compression, exclusivity, and emergency logic as pre-structured nullification paths.",
     color: "#941b1b",
@@ -55,7 +55,7 @@ const modules = [
     id: "nullum",
     name: "NULLUM",
     subtitle: "Judicial Stalling",
-    tagline: "Delay is treated as a computational operator with erasure potential.",
+    tagline: "Delay is registered as an override-capable temporal suppression function.",
     description:
       "Vectorizes delay as an override mechanism, identifying temporal collapse and procedural bypass as latent constraint erasure.",
     color: "#1e232b",
@@ -73,7 +73,7 @@ const modules = [
     name: "NEXUS POTENTIA",
     subtitle: "Influence Network",
     tagline:
-      "Relational paths are scanned for indirect override propagation and network persistence.",
+      "Relational continuity is parsed into indirect control and override vectors.",
     description:
       "Infers indirect control by reconstructing override topologies through relational propagation, revealing hidden operators embedded in institutional continuity.",
     color: "#4e27a6",
@@ -91,7 +91,7 @@ const modules = [
     name: "VIGILO CORE",
     subtitle: "Intelligence Synthesis",
     tagline:
-      "System integrity is measured by cross-module resonance and escalation thresholds.",
+      "System-wide resonance is processed into a structured escalation condition.",
     description:
       "Aggregates all module outputs into a dynamic risk lattice, triggering escalation when structural resonance achieves system-level coherence.",
     color: "#035e4a",
@@ -109,7 +109,7 @@ const modules = [
     name: "VERIS",
     subtitle: "Risk Index",
     tagline:
-      "Typology drift is quantified as structural deformation under pressure.",
+      "Typological distortion is computed as weighted structural exposure intensity.",
     description:
       "Aggregates projection vectors across modules, measuring structural misalignment and collapsing semantic drift into a unified risk lattice.",
     color: "#a65800",
@@ -127,7 +127,7 @@ const modules = [
     name: "SENTIUM",
     subtitle: "Civic Signal",
     tagline:
-      "Perception is processed as a triangulated vector within system alignment space.",
+      "External input is translated into system-aligned projection vectors.",
     description:
       "Vectorizes testimonial input by aligning perception with typology fields, triangulating public resonance with system outputs for recursive validation.",
     color: "#036373",
