@@ -12,6 +12,11 @@ export default function Index() {
   const [splineLoaded, setSplineLoaded] = useState(false);
 
   useEffect(() => {
+    // Reset states for clean navigation
+    setSplineLoaded(false);
+    setRobotAnimationFinished(false);
+    setAnimationPlayed(false);
+
     setupAnimationTrigger();
   }, []);
 
