@@ -281,7 +281,7 @@ const impactNetworkData = {
         {
           step: "Unqualified winner",
           description: "Project given to incapable bidder",
-          icon: "⚠️",
+          icon: "⚠���",
         },
         {
           step: "Project fails",
@@ -1577,7 +1577,7 @@ const StructuralImpactMap = ({
   return (
     <div
       style={{
-        padding: "10px 20px",
+        padding: "72px 32px 10px",
         position: "relative",
         overflow: "hidden",
       }}
