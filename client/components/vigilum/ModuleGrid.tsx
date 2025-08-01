@@ -368,7 +368,13 @@ const ModuleGrid = () => {
                         }}
                       >
                         <span className="flex items-center justify-center gap-2">
-                          ANALYZE MODULE
+                          {module.id === "clavis" && "CLAUSE ENGINE"}
+                          {module.id === "obscura" && "PROCEDURE ENGINE"}
+                          {module.id === "nullum" && "TEMPORAL ENGINE"}
+                          {module.id === "nexus-potentia" && "CONTROL ENGINE"}
+                          {module.id === "vigilo-core" && "SYNTHESIS ENGINE"}
+                          {module.id === "veris" && "EXPOSURE ENGINE"}
+                          {module.id === "sentium" && "SIGNAL ENGINE"}
                           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </span>
                       </Button>
