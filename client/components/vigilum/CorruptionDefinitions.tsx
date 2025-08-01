@@ -432,7 +432,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         regulatoryArbitrage: {
-          state: "���",
+          state: "✓",
           tooltip:
             "Addressed through international cooperation and regulatory harmonization under UNCAC. [CI]",
           typology: ["CI"],
