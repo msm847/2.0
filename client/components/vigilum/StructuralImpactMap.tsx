@@ -50,7 +50,7 @@ const impactNetworkData = {
         {
           step: "Bribe paid",
           description: "Funds diverted from national budget",
-          icon: "���",
+          icon: "💸",
         },
         {
           step: "Funds lost",
@@ -1561,11 +1561,9 @@ const StructuralImpactMap = ({
           @keyframes sphereGlow {
             0%, 100% {
               filter: brightness(0.8) saturate(0.9);
-              transform: scale(1);
             }
             50% {
               filter: brightness(1.3) saturate(1.5);
-              transform: scale(1.05);
             }
           }
         `}</style>
