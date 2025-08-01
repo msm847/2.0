@@ -767,7 +767,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
             padding: "32px",
             maxWidth: "800px",
             width: "100%",
-            maxHeight: "80vh",
+            maxHeight: "90vh",
             overflowY: "auto",
             position: "relative",
           }}
