@@ -60,7 +60,7 @@ const impactNetworkData = {
         {
           step: "Growth slows",
           description: "National productivity stagnates",
-          icon: "����",
+          icon: "📉",
         },
       ],
       microCase: {
@@ -1766,10 +1766,10 @@ const StructuralImpactMap = ({
         style={{
           position: "relative",
           width: "100%",
-          height: "450px",
+          height: "300px",
           maxWidth: "1000px",
-          margin: "20px auto 0 auto",
-          padding: "40px",
+          margin: "10px auto 0 auto",
+          padding: "20px",
           boxSizing: "border-box",
         }}
       >
