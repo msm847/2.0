@@ -748,9 +748,9 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
           backdropFilter: "blur(8px)",
           zIndex: 1000,
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
-          padding: "5vh 20px",
+          padding: "15vh 20px 5vh",
         }}
         onClick={onClose}
       >
