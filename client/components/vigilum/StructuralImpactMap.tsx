@@ -380,7 +380,7 @@ const impactNetworkData = {
         },
         { toNode: "markets", effect: "Enables shadow flows", intensity: 0.7 },
       ],
-      color: "#047857",
+      color: "#8B5CF6",
       structuralType: "simulation",
     },
     {
