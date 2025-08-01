@@ -21,7 +21,7 @@ const impactNetworkData = {
       id: "economy",
       label: "Economy",
       axisTitle: "Extraction Multipliers",
-      position: { x: 15, y: 15 }, // 1st in line
+      position: { x: 8, y: 15 }, // 1st in line
       structuralLogic:
         "Corruption is not a single event—it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
       shockingFact:
