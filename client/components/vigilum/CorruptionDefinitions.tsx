@@ -1415,7 +1415,7 @@ const BoundaryLogicCarousel = () => {
             overflow: "hidden",
           }}
         >
-          <blockquote className="text-base italic text-white m-0 mb-2 leading-relaxed flex-1 overflow-hidden">
+          <blockquote className="text-base italic text-green-50 m-0 mb-2 leading-relaxed flex-1 overflow-hidden">
             "{institution.definition}"
           </blockquote>
 
