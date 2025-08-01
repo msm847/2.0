@@ -640,7 +640,7 @@ const boundaryLogicData = {
       name: "World Bank",
       logoUrl:
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2F5ea716e7499346d8923706521145718f?format=webp&width=800",
-      logo: "����",
+      logo: "������",
       definition:
         "The World Bank defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another party. Its policy framework targets all forms of undue influence or personal benefit that compromise fair decision-making in public or private contexts.",
       citation: {
@@ -1179,7 +1179,7 @@ const termDefinitions = {
   cronyism: {
     title: "Cronyism: Preferential Networks and Market Distortion",
     analysis:
-      'Cronyism centers on the preferential allocation of opportunities or resources to favored associates, often subverting meritocratic or competitive processes. Divergence emerges in legal thresholds, sectoral standards, and the extent of tolerated insider networks. Some markets criminalize cronyism in procurement or state contracting, while others normalize partnership selection and strategic alliances. Formal processes may simulate competition while reproducing insider control—through shortlists, selective tenders, or undisclosed relationships. Market competition is distorted as closed networks capture value, rendering entire sectors or economies "uninvestable" for global capital, and embedding fragility into supply chains and institutional performance.',
+      'Cronyism centers on the preferential allocation of opportunities or resources to favored associates, often subverting meritocratic or competitive processes. Divergence emerges in legal thresholds, sectoral standards, and the extent of tolerated insider networks. Some markets criminalize cronyism in procurement or state contracting, while others normalize partnership selection and strategic alliances. Formal processes may simulate competition while reproducing insider control���through shortlists, selective tenders, or undisclosed relationships. Market competition is distorted as closed networks capture value, rendering entire sectors or economies "uninvestable" for global capital, and embedding fragility into supply chains and institutional performance.',
     consequence:
       'Cronyism weaponizes relational proximity as a structural override, bypassing formal rules with informal power. Favor networks embed themselves in procurement, regulation, and oversight, creating a system where compliance is simulated but outcomes are pre-allocated. By formalizing informality, cronyism engineers a permanent split between official process and operational reality—producing an "insider\'s market" and encoding extraction as routine output.',
   },
@@ -2708,8 +2708,8 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               Every institution defines corruption in its own terms.
             </p>
             <p className="text-base text-gray-300 mb-0 leading-relaxed">
-              Explore how global authorities construct–and limit–the boundaries
-              of corruption.
+              Compare how institutional definitions frame corruption as a discrete<br />
+              legal category rather than a continuous structural condition.
             </p>
 
             {/* Key Insight */}
