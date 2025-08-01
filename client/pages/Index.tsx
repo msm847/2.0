@@ -326,12 +326,12 @@ export default function Index() {
           style={{
             position: "absolute",
             bottom: "40px",
-            right: "40px",
+            left: "40px",
             display: "flex",
             flexDirection: "column",
             gap: "16px",
             zIndex: 4,
-            alignItems: "flex-end",
+            alignItems: "flex-start",
           }}
         >
           {[
