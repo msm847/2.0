@@ -350,7 +350,7 @@ const impactNetworkData = {
         {
           step: "Permit bought",
           description: "Illegal logging authorized",
-          icon: "📄",
+          icon: "��",
         },
         {
           step: "Forest destroyed",
@@ -1601,7 +1601,7 @@ const StructuralImpactMap = ({
       <div
         style={{
           textAlign: "left",
-          marginBottom: "60px",
+          marginBottom: "32px",
           position: "relative",
           zIndex: 10,
         }}
