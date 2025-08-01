@@ -94,7 +94,10 @@ const Navigation = () => {
           {/* Return Button */}
           <div className="absolute left-4">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => {
+                // Clear any hash and navigate to clean home page
+                window.location.href = "/";
+              }}
               className="flex items-center font-display text-sm uppercase tracking-wider transition-all duration-300"
               style={{
                 backdropFilter: "blur(8px)",
