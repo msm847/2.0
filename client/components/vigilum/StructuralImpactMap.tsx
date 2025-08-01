@@ -247,7 +247,7 @@ const impactNetworkData = {
       id: "markets",
       label: "Markets",
       axisTitle: "Impact 4",
-      position: { x: 50, y: 15 }, // 4th in line
+      position: { x: 50, y: 20 }, // 4th in line
       structuralLogic:
         "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
       shockingFact:
@@ -1647,7 +1647,7 @@ const StructuralImpactMap = ({
                 }}
               >
                 {selectedButton === "Cultural" ? (
-                  <>→ Consequences of Corruption</>
+                  <>��� Consequences of Corruption</>
                 ) : (
                   <>
                     What is Corruption?{" "}
