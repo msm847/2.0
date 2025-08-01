@@ -220,7 +220,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
                   backgroundClip: "text",
                 }}
               >
-                Your Insight Fortifies the Structure
+                Your Engagement Drives Integrity Forward
               </h2>
 
               <p
