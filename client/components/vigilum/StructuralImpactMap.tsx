@@ -1734,7 +1734,7 @@ const StructuralImpactMap = ({
       </div>
 
       {/* Instruction Text */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-1">
         <p className="text-sm text-gray-400 font-light italic">
           Click any sphere to explore the multi-dimensional impact of corruption
         </p>
