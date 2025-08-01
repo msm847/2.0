@@ -316,7 +316,7 @@ const impactNetworkData = {
     {
       id: "environment",
       label: "Environment",
-      axisTitle: "Oversight Simulation & Evasion",
+      axisTitle: "Impact 5",
       position: { x: 66, y: 15 }, // 5th in line
       structuralLogic:
         "Superficial transparency and audit processes simulate control but function as self-cancelling rituals, enabling 'clean' compliance data to mask structural rot.",
@@ -1025,7 +1025,7 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
                         color: index < currentStep ? node.color : "#9CA3AF",
                       }}
                     >
-                      ���
+                      →
                     </div>
                   )}
                 </motion.div>
