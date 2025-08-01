@@ -75,7 +75,7 @@ const modules = [
     tagline:
       "Power propagates in recursion; mapping reveals the hidden operator graph.",
     description:
-      "Recursively infers indirect control structures, exposing latent influence via relational propagation and hidden override matrices.",
+      "Infers indirect control by reconstructing override topologies through relational propagation, revealing hidden operators embedded in institutional continuity.",
     color: "#4e27a6",
     secondaryColor: "#6d28d9",
     textColor: "#ded1f7",
