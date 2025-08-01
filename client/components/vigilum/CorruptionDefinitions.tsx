@@ -2929,8 +2929,8 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               >
                 <button
                   onClick={() => setModalActiveGroup("regulatory")}
+                  className="px-6 py-3 rounded-xl text-base font-semibold font-display cursor-pointer transition-all duration-300 uppercase tracking-wider"
                   style={{
-                    padding: "12px 24px",
                     background:
                       modalActiveGroup === "regulatory"
                         ? "rgba(16, 185, 129, 0.2)"
@@ -2938,22 +2938,14 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                     color:
                       modalActiveGroup === "regulatory" ? "#10B981" : "#9DE6C6",
                     border: `2px solid ${modalActiveGroup === "regulatory" ? "#10B981" : "rgba(157, 230, 198, 0.3)"}`,
-                    borderRadius: "12px",
-                    fontSize: "16px",
-                    fontWeight: "600",
-                    fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
                   }}
                 >
                   Regulatory / Judicial
                 </button>
                 <button
                   onClick={() => setModalActiveGroup("international")}
+                  className="px-6 py-3 rounded-xl text-base font-semibold font-display cursor-pointer transition-all duration-300 uppercase tracking-wider"
                   style={{
-                    padding: "12px 24px",
                     background:
                       modalActiveGroup === "international"
                         ? "rgba(59, 130, 246, 0.2)"
@@ -2963,14 +2955,6 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                         ? "#3B82F6"
                         : "#9DE6C6",
                     border: `2px solid ${modalActiveGroup === "international" ? "#3B82F6" : "rgba(157, 230, 198, 0.3)"}`,
-                    borderRadius: "12px",
-                    fontSize: "16px",
-                    fontWeight: "600",
-                    fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
                   }}
                 >
                   IFI / Multilateral
