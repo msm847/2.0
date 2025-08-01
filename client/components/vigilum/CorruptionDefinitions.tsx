@@ -1803,17 +1803,7 @@ const BoundaryLogicCarousel = () => {
         >
           {/* Term Navigation Row */}
           <div style={{ marginBottom: "24px" }}>
-            <h4
-              style={{
-                margin: "0 0 16px 0",
-                fontSize: "18px",
-                fontWeight: "700",
-                color: "#9DE6C6",
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                fontFamily: "SF Mono, Monaco, monospace",
-              }}
-            >
+            <h4 className="text-lg font-bold text-green-400 mb-4 uppercase tracking-wider font-mono">
               BOUNDARY ANALYSIS
             </h4>
             <div
