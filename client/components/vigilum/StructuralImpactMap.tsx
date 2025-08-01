@@ -91,7 +91,7 @@ const impactNetworkData = {
       id: "institutions",
       label: "Institutions",
       axisTitle: "Compliance Inversion",
-      position: { x: 21, y: 25 }, // 2nd in line
+      position: { x: 28, y: 15 }, // 2nd in line
       structuralLogic:
         "When compliance systems are engineered for appearance, not substance, oversight becomes a simulacrum—reforms actually drive new extraction logics.",
       shockingFact:
