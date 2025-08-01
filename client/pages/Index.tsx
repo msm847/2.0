@@ -319,6 +319,76 @@ export default function Index() {
           }
         }
       `}</style>
+
+      {/* Social Media Handles - Bottom Right */}
+      {splineLoaded && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "40px",
+            right: "40px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+            zIndex: 4,
+            alignItems: "flex-end",
+          }}
+        >
+          {[
+            { platform: "Instagram", handle: "@vigilum.ai", url: "#" },
+            { platform: "LinkedIn", handle: "@vigilum-intelligence", url: "#" },
+            { platform: "X", handle: "@vigilum_ai", url: "#" },
+          ].map((social) => (
+            <a
+              key={social.platform}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 transition-all duration-300"
+              style={{
+                textDecoration: "none",
+                pointerEvents: "auto",
+              }}
+            >
+              <span
+                className="text-sm font-light tracking-wide transition-colors duration-300"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "#61dca3",
+                  opacity: "0.7",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = "1";
+                  e.currentTarget.style.color = "#7dd4ba";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = "0.7";
+                  e.currentTarget.style.color = "#61dca3";
+                }}
+              >
+                {social.handle}
+              </span>
+              <div
+                className="w-2 h-2 rounded-full transition-all duration-300"
+                style={{
+                  backgroundColor: "#61dca3",
+                  opacity: "0.5",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = "1";
+                  e.currentTarget.style.backgroundColor = "#7dd4ba";
+                  e.currentTarget.style.transform = "scale(1.2)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = "0.5";
+                  e.currentTarget.style.backgroundColor = "#61dca3";
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+              />
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
