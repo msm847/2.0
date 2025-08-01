@@ -226,7 +226,7 @@ export default function Index() {
                 height: "50px",
                 background: "transparent",
                 border: "2px solid #61dca3",
-                borderRadius: "25px",
+                borderRadius: "8px",
                 fontSize: "16px",
                 fontWeight: "700",
                 letterSpacing: "1px",
