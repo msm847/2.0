@@ -1267,11 +1267,7 @@ const Partners = () => {
     }
   };
 
-  // Handle reCAPTCHA verification
-  const handleRecaptcha = (token) => {
-    setRecaptchaToken(token);
-    setRobotVerified(!!token);
-  };
+
 
   // Auto-reset success message after 5 seconds
   useEffect(() => {
