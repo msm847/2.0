@@ -357,7 +357,7 @@ export default function Index() {
             },
             {
               platform: "X",
-              handle: "vigilum.ai",
+              handle: "@vigilum.ai",
               url: "#",
               icon: (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
