@@ -2698,31 +2698,13 @@ const InstitutionCard = ({ institution }) => {
           />
         </div>
 
-        <h4
-          style={{
-            fontSize: "20px",
-            fontWeight: "600",
-            color: "#FFFFFF",
-            margin: "0",
-            textAlign: "center",
-          }}
-        >
+        <h4 className="text-lg font-semibold text-white m-0 text-center font-display">
           {institution.name}
         </h4>
       </div>
 
       {/* Left-aligned Definition */}
-      <p
-        style={{
-          fontSize: "15px",
-          fontStyle: "italic",
-          color: "#E5E5E5",
-          lineHeight: "1.6",
-          margin: "0",
-          textAlign: "left",
-          width: "100%",
-        }}
-      >
+      <p className="text-sm italic text-gray-300 leading-relaxed m-0 text-left w-full">
         "{institution.definition}"
       </p>
     </div>
@@ -2791,7 +2773,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
             {/* Key Insight */}
             <div className="mt-4 mb-2">
               <p className="text-sm text-gray-300 font-normal leading-relaxed opacity-80">
-                💡 Institutional boundaries determine what can be prosecuted,
+                ���� Institutional boundaries determine what can be prosecuted,
                 managed, or ignored.
                 <br />
                 Vigilum models how these definitions produce blindspots and
