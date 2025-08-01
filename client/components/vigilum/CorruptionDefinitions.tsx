@@ -1449,7 +1449,7 @@ const BoundaryLogicCarousel = () => {
               style={{
                 background: "none",
                 border: "none",
-                color: "#9DE6C6",
+                color: "#A1B5C1",
                 fontSize: "12px",
                 cursor: "pointer",
                 padding: "0",
@@ -1468,7 +1468,7 @@ const BoundaryLogicCarousel = () => {
                 e.currentTarget.style.color = "#FFFFFF";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#9DE6C6";
+                e.currentTarget.style.color = "#A1B5C1";
               }}
               title={`View source: ${institution.citation.text}`}
             >
