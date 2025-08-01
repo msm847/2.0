@@ -244,7 +244,7 @@ const SemanticPermutationEngine = () => {
               color: "#E5F3ED",
             }}
           >
-            Semantic Permutation State Rendering
+            Structural Logic Permutator
           </h2>
           <div className="text-xl text-gray-400 font-light leading-relaxed text-center max-w-4xl mx-auto">
             <p>
