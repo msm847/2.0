@@ -1215,8 +1215,8 @@ const Partners = () => {
 
       if (response.ok) {
         setIsSubmitted(true);
+        setShowSuccessModal(true);
         resetForm();
-        alert("Form submitted successfully!"); // Basic success notification
       } else {
         throw new Error("Form submission failed");
       }
