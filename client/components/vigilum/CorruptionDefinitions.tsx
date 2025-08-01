@@ -214,7 +214,7 @@ const boundaryLogicData = {
           typology: ["CI"],
         },
         lobbying: {
-          state: "✓",
+          state: "���",
           tooltip:
             "Regulated through transparency register but not criminalized unless involving improper influence. [DG]",
           typology: ["DG"],
@@ -579,7 +579,7 @@ const boundaryLogicData = {
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd13ace4acefa49238b479c2abc49255d?format=webp&width=800",
       logo: "💰",
       definition:
-        "The IMF defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another person or entity���including bribes, facilitation payments, or similar inducements. This definition applies to any public or private actor whose conduct undermines integrity in financial transactions and governance.",
+        "The IMF defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another person or entity—including bribes, facilitation payments, or similar inducements. This definition applies to any public or private actor whose conduct undermines integrity in financial transactions and governance.",
       citation: {
         text: "IMF Anti-Fraud Anti-Corruption Policy, January 2025",
         url: "https://www.imf.org/en/Topics/governance-and-anti-corruption",
@@ -1151,7 +1151,7 @@ const termDefinitions = {
   fraud: {
     title: "Fraud: Deception, Disclosure, and Structural Blindspots",
     analysis:
-      'Fraud converges on intentional deception for gain, achieved through misrepresentation, concealment, or omission. Divergence emerges in how materiality, intent, and threshold for criminal enforcement are drawn across jurisdictions and industries. While criminal codes prosecute overt schemes—like false invoicing or asset misappropriation—many legal systems allow structural fraud through regulatory loopholes, creative accounting, or misleading disclosures. Complex financial products and off-balance-sheet vehicles can simulate legitimacy, blurring the distinction between regulatory error and criminal intent. Legal formatting reframes fraud as compliance failure or "market innovation" rather than extraction, allowing systemic risk to accumulate off-ledger. For institutional investors, latent fraud risk becomes reputational tail risk and regulatory exposure long after the act.',
+      'Fraud converges on intentional deception for gain, achieved through misrepresentation, concealment, or omission. Divergence emerges in how materiality, intent, and threshold for criminal enforcement are drawn across jurisdictions and industries. While criminal codes prosecute overt schemes—like false invoicing or asset misappropriation��many legal systems allow structural fraud through regulatory loopholes, creative accounting, or misleading disclosures. Complex financial products and off-balance-sheet vehicles can simulate legitimacy, blurring the distinction between regulatory error and criminal intent. Legal formatting reframes fraud as compliance failure or "market innovation" rather than extraction, allowing systemic risk to accumulate off-ledger. For institutional investors, latent fraud risk becomes reputational tail risk and regulatory exposure long after the act.',
     consequence:
       "Fraud transforms the logic of detection into a probabilistic event—outpacing audits by distributing exposure across actors, channels, and time. Compliance frameworks simulate control but are fragmented by design, allowing extractive maneuvers to pass as routine operations. Systemic fraud is not an exception, but an emergent property: risk migrates through legal seams, and structural vulnerability is recalibrated with each new circumvention.",
   },
