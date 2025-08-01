@@ -1672,16 +1672,15 @@ const Partners = () => {
                     onSubmit={handleSubmit}
                     className="space-y-4"
                     method="POST"
-                    name="vigilum-engagement-intake"
+                    name="structural-engagement-intake"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
-                    action="/thank-you"
                   >
                     {/* Netlify Forms identification */}
                     <input
                       type="hidden"
                       name="form-name"
-                      value="vigilum-engagement-intake"
+                      value="structural-engagement-intake"
                     />
                     <input
                       type="hidden"
