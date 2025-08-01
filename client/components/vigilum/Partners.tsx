@@ -1641,10 +1641,7 @@ const Partners = () => {
                     name="structural-engagement-intake"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
-<<<<<<< HEAD
-=======
                     encType="multipart/form-data"
->>>>>>> 46366cff55e0c367c766baa0a771ef9389834f6e
                   >
                     {/* Netlify Forms identification */}
                     <input
