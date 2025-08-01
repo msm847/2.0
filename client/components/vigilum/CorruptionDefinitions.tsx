@@ -2715,9 +2715,9 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
             {/* Key Insight */}
             <div className="mt-4 mb-2">
               <p className="text-sm text-gray-300 font-normal leading-relaxed opacity-80">
-                💡 Boundaries determine what gets prosecuted or ignored.
+                💡 Institutional boundaries determine what can be prosecuted, managed, or ignored.
                 <br />
-                Vigilum models how scope constrains detection.
+                Vigilum models how definitional scope constrains detection and redistributes structural exposure.
               </p>
             </div>
           </div>
@@ -2854,7 +2854,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                   onClick={() => setShowCompareAll(false)}
                   className="bg-transparent border-none text-green-400 text-2xl cursor-pointer hover:text-green-300 transition-colors"
                 >
-                  ��
+                  ���
                 </button>
               </div>
 
