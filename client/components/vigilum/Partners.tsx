@@ -1945,8 +1945,6 @@ const Partners = () => {
 
                     {/* Verification and Privacy */}
                     <div className="space-y-4">
-
-
                       {/* Privacy Policy - Enterprise Grade */}
                       <div className="space-y-4">
                         <div
