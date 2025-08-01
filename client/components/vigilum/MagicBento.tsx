@@ -12,7 +12,7 @@ const cardData = [
     color: "#10201C",
     title: "Purpose",
     description:
-      "Vigilum is a structural foresight engine that models governance as a dynamic risk field–reconstructing contracts, procedures, and networks as an integrated logic system. Each clause, threshold, and override is computed as an operator, while real-world events and contextual variables are ingested live to simulate the true flows of discretion, escalation, and systemic exposure.\nBy vectorizing legal architecture and simulating operator interactions, Vigilum reveals how override chains, compliance simulations, and latent extraction paths converge–surfacing structural blind spots before risk becomes realized loss.\nBuilt for public, private, and hybrid systems, Vigilum adapts to any institutional format–delivering foresight, precision, and resilience at every scale.",
+      "Vigilum is a structural foresight engine that models governance as a dynamic risk field–reconstructing contracts, procedures, and networks as an integrated logic system. Each clause, threshold, and override is computed as an operator, while real-world events and contextual variables are ingested live to simulate the true flows of discretion, escalation, and systemic exposure.\nBy vectorizing legal architecture and simulating operator interactions, Vigilum reveals how override chains, compliance simulations, and latent extraction paths converge–surfacing structural blind spots before risk becomes realized loss.\nBuilt for public, private, and hybrid systems, Vigilum adapts to any institutional format.",
     secondaryDescription: "",
     signature: "",
     url: "/core-principles",
