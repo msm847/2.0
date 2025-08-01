@@ -2773,7 +2773,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
             {/* Key Insight */}
             <div className="mt-4 mb-2">
               <p className="text-sm text-gray-300 font-normal leading-relaxed opacity-80">
-                ���� Institutional boundaries determine what can be prosecuted,
+                💡 Institutional boundaries determine what can be prosecuted,
                 managed, or ignored.
                 <br />
                 Vigilum models how these definitions produce blindspots and
