@@ -2653,7 +2653,14 @@ const InstitutionCard = ({ institution }) => {
   );
 };
 
-const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, selectedButton, setSelectedButton, setVisitedSections }) => {
+const CorruptionDefinitions = ({
+  onNavigate,
+  showFloatingNav,
+  isMainNavOpen,
+  selectedButton,
+  setSelectedButton,
+  setVisitedSections,
+}) => {
   const [showCompareAll, setShowCompareAll] = useState(false);
   const [modalActiveGroup, setModalActiveGroup] = useState("regulatory"); // For modal group selection
   const [activeCarousel, setActiveCarousel] = useState(0);
@@ -2708,16 +2715,20 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               Every institution defines corruption in its own terms.
             </p>
             <p className="text-base text-gray-300 mb-0 leading-relaxed">
-              Compare how institutional definitions frame corruption as a discrete legal category<br />
+              Compare how institutional definitions frame corruption as a
+              discrete legal category
+              <br />
               rather than a continuous structural condition.
             </p>
 
             {/* Key Insight */}
             <div className="mt-4 mb-2">
               <p className="text-sm text-gray-300 font-normal leading-relaxed opacity-80">
-                💡 Institutional boundaries determine what can be prosecuted, managed, or ignored.
+                💡 Institutional boundaries determine what can be prosecuted,
+                managed, or ignored.
                 <br />
-                Vigilum models how definitional scope constrains detection and redistributes structural exposure.
+                Vigilum models how definitional scope constrains detection and
+                redistributes structural exposure.
               </p>
             </div>
           </div>
@@ -2732,7 +2743,7 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
               style={{
                 display: "flex",
                 alignItems: "flex-start",
-                marginTop: "8px"
+                marginTop: "8px",
               }}
             >
               <motion.button
@@ -2757,12 +2768,14 @@ const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, sel
                 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(157, 230, 198, 0.1)";
                   e.currentTarget.style.borderColor = "#9DE6C6";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.borderColor = "rgba(157, 230, 198, 0.3)";
+                  e.currentTarget.style.borderColor =
+                    "rgba(157, 230, 198, 0.3)";
                 }}
               >
                 {selectedButton === "Cultural" ? (

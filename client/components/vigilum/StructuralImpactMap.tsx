@@ -572,7 +572,11 @@ const NetworkNode = ({
     border: `2px solid ${node.color}40`,
     cursor: "pointer",
     backdropFilter: "blur(10px)",
-    animation: isActive ? "sphereGlow 2s ease-in-out infinite" : isPropagationTarget ? "sphereGlow 3s ease-in-out infinite" : "sphereGlow 4s ease-in-out infinite",
+    animation: isActive
+      ? "sphereGlow 2s ease-in-out infinite"
+      : isPropagationTarget
+        ? "sphereGlow 3s ease-in-out infinite"
+        : "sphereGlow 4s ease-in-out infinite",
     boxShadow: isActive
       ? `0 0 60px ${node.color}80,
          0 0 120px ${node.color}60,
@@ -1620,7 +1624,8 @@ const StructuralImpactMap = ({
             </p>
             <p className="text-base text-gray-300 mb-0 leading-relaxed">
               Examine how design-level risk migrates across the economy,
-              institutions, and public trust,<br />
+              institutions, and public trust,
+              <br />
               producing consequences that outpace any single event.
             </p>
           </div>
@@ -1660,12 +1665,14 @@ const StructuralImpactMap = ({
                 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "rgba(157, 230, 198, 0.1)";
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(157, 230, 198, 0.1)";
                   e.currentTarget.style.borderColor = "#9DE6C6";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.borderColor = "rgba(157, 230, 198, 0.3)";
+                  e.currentTarget.style.borderColor =
+                    "rgba(157, 230, 198, 0.3)";
                 }}
               >
                 {selectedButton === "Cultural" ? (
