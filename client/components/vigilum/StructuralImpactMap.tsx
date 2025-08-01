@@ -459,7 +459,7 @@ const impactNetworkData = {
           intensity: 0.85,
         },
       ],
-      color: "#22C55E",
+      color: "#EF4444",
       structuralType: "collapse",
     },
   ],
