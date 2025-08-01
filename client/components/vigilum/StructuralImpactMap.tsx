@@ -1760,10 +1760,10 @@ const StructuralImpactMap = ({
         style={{
           position: "relative",
           width: "100%",
-          height: "800px",
-          maxWidth: "1000px",
+          height: "500px",
+          maxWidth: "700px",
           margin: "20px auto 0 auto",
-          padding: "80px",
+          padding: "40px",
           boxSizing: "border-box",
         }}
       >
