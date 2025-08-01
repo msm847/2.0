@@ -23,7 +23,7 @@ const impactNetworkData = {
       axisTitle: "Extraction Multipliers",
       position: { x: 35, y: 0 }, // 12 o'clock
       structuralLogic:
-        "Corruption is not a single event��it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
+        "Corruption is not a single event—it is a multiplier embedded in design, compounding leakage across budgets, deals, and time.",
       shockingFact:
         "In major infrastructure projects, compliant extraction channels often outpace criminal theft 2:1, draining billions through 'legal' structures.",
       dataPoint:
@@ -344,7 +344,7 @@ const impactNetworkData = {
           source: "World Bank",
           icon: "🌪️",
         },
-        { text: "Climate targets missed by 60%", source: "UNEP", icon: "🌡️" },
+        { text: "Climate targets missed by 60%", source: "UNEP", icon: "🌡��" },
       ],
       timeline: [
         {
@@ -1760,7 +1760,7 @@ const StructuralImpactMap = ({
         style={{
           position: "relative",
           width: "100%",
-          height: "500px",
+          height: "800px",
           maxWidth: "1000px",
           margin: "20px auto 0 auto",
           padding: "40px",
