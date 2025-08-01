@@ -579,7 +579,7 @@ const boundaryLogicData = {
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Fd13ace4acefa49238b479c2abc49255d?format=webp&width=800",
       logo: "💰",
       definition:
-        "The IMF defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another person or entity—including bribes, facilitation payments, or similar inducements. This definition applies to any public or private actor whose conduct undermines integrity in financial transactions and governance.",
+        "The IMF defines corruption as the offering, giving, receiving, or soliciting, directly or indirectly, anything of value to improperly influence the actions of another person or entity���including bribes, facilitation payments, or similar inducements. This definition applies to any public or private actor whose conduct undermines integrity in financial transactions and governance.",
       citation: {
         text: "IMF Anti-Fraud Anti-Corruption Policy, January 2025",
         url: "https://www.imf.org/en/Topics/governance-and-anti-corruption",
@@ -1750,8 +1750,6 @@ const BoundaryLogicCarousel = () => {
               gap: "8px",
               height: "20px",
               marginLeft: "-105px",
-              textShadow:
-                "0 0 12px rgba(156, 163, 175, 0.9), 0 0 24px rgba(156, 163, 175, 0.6), 0 0 36px rgba(156, 163, 175, 0.3)",
             }}
           >
             ← Scroll →
