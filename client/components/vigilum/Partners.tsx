@@ -1488,8 +1488,7 @@ const Partners = () => {
                         lineHeight: "1.5",
                       }}
                     >
-                      Project how risk amplifies or attenuates as a function of
-                      sequence, adjacency, and environmental resonance.
+                      Render dynamic risk trajectories by computing how sequence, adjacency, and environmental resonance reconfigure structural exposure.
                     </p>
                   </div>
                 </div>
