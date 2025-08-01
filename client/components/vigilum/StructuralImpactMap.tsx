@@ -586,10 +586,10 @@ const NetworkNode = ({
     cursor: "pointer",
     backdropFilter: "blur(10px)",
     animation: isActive
-      ? `sphereGlow 2s ease-in-out infinite ${getAnimationDelay(node.id)}`
+      ? `sphereGlow 1.8s ease-in-out infinite ${getAnimationDelay(node.id)}`
       : isPropagationTarget
-        ? `sphereGlow 3s ease-in-out infinite ${getAnimationDelay(node.id)}`
-        : `sphereGlow 4s ease-in-out infinite ${getAnimationDelay(node.id)}`,
+        ? `sphereGlow 2.2s ease-in-out infinite ${getAnimationDelay(node.id)}`
+        : `sphereGlow 2.5s ease-in-out infinite ${getAnimationDelay(node.id)}`,
     boxShadow: isActive
       ? `0 4px 8px rgba(0, 0, 0, 0.3)`
       : isHovered
