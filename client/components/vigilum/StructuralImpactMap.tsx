@@ -1791,7 +1791,7 @@ const StructuralImpactMap = ({
             Interactive Map
           </div>
           <div className="text-xs text-gray-300 leading-relaxed opacity-90">
-            Click each sphere to explore<br />structural corruption axes
+            Click each sphere to explore structural corruption axes
           </div>
         </div>
         {/* Nodes */}
