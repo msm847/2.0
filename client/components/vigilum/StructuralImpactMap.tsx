@@ -116,7 +116,7 @@ const impactNetworkData = {
         {
           text: "Trust in institutions 2–3x lower",
           source: "OECD",
-          icon: "🏛️",
+          icon: "🏛��",
         },
         {
           text: "Democratic processes undermined",
@@ -1731,6 +1731,13 @@ const StructuralImpactMap = ({
             </div>,
             document.body,
           )}
+      </div>
+
+      {/* Instruction Text */}
+      <div className="text-center mb-4">
+        <p className="text-sm text-gray-400 font-light italic">
+          Click any sphere to explore structural impact details
+        </p>
       </div>
 
       {/* Network Visualization */}
