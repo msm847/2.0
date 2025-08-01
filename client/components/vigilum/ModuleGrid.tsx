@@ -207,7 +207,8 @@ const ModuleGrid = () => {
               lineHeight: "1.6",
             }}
           >
-            Each module is an operator in Vigilum's risk calculus. Together, they render systemic risk as a visible and actionable system output.
+            Each module is an operator in Vigilum's risk calculus.<br />
+            Together, they render systemic risk as a visible and actionable system output.
           </p>
         </div>
 
