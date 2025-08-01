@@ -1778,10 +1778,10 @@ const StructuralImpactMap = ({
         <div
           style={{
             position: "absolute",
-            top: "20%",
-            left: "40.5%",
-            transform: "translate(-50%, -50%)",
-            textAlign: "center",
+            top: "10%",
+            left: "20%",
+            transform: "translateY(-50%)",
+            textAlign: "left",
             zIndex: 5,
             pointerEvents: "none",
             maxWidth: "200px",
