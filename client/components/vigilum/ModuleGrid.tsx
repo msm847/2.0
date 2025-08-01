@@ -21,7 +21,7 @@ const modules = [
     name: "CLAVIS",
     subtitle: "Clause Intelligence",
     tagline:
-      "Each clause is rendered as an executable structural instruction set.",
+      "Each clause is formally structured as a discrete structural logic unit.",
     description:
       "Decomposes contract syntax into risk operators, mapping override chains and embedding discretionary vector fields for logic-based risk detection.",
     color: "#1a3d82",
@@ -127,7 +127,7 @@ const modules = [
     name: "SENTIUM",
     subtitle: "Civic Signal",
     tagline:
-      "External input is translated into system-aligned projection vectors.",
+      "Testimonial input is structurally encoded as a vector for typology alignment.",
     description:
       "Vectorizes testimonial input by aligning perception with typology fields, triangulating public resonance with system outputs for recursive validation.",
     color: "#036373",
