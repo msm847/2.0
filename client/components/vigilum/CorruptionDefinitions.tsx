@@ -199,7 +199,7 @@ const boundaryLogicData = {
       name: "European Commission",
       logoUrl:
         "https://cdn.builder.io/api/v1/image/assets%2F41e98af6d24e4f21a2289029be813332%2Ff42ebbbdb41340ae9cd165528a36e1d9?format=webp&width=800",
-      logo: "🇪🇺",
+      logo: "���🇺",
       definition:
         "Corruption is commonly understood as the abuse of entrusted power for private gain, manifesting across multiple sectors and institutional settings. The Commission recognizes the complexity of corruption, including both public and private sector forms, and links it to broader risks for democracy and market integrity.",
       citation: {
@@ -2729,14 +2729,7 @@ const InstitutionCard = ({ institution }) => {
   );
 };
 
-const CorruptionDefinitions = ({
-  onNavigate,
-  showFloatingNav,
-  isMainNavOpen,
-  selectedButton,
-  setSelectedButton,
-  setVisitedSections,
-}) => {
+const CorruptionDefinitions = ({ onNavigate, showFloatingNav, isMainNavOpen, selectedButton, setSelectedButton, setVisitedSections }) => {
   const [showCompareAll, setShowCompareAll] = useState(false);
   const [modalActiveGroup, setModalActiveGroup] = useState("regulatory"); // For modal group selection
   const [activeCarousel, setActiveCarousel] = useState(0);
@@ -2784,57 +2777,20 @@ const CorruptionDefinitions = ({
           }}
         >
           <div style={{ maxWidth: "50%" }}>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 2.5rem)",
-                fontWeight: "600",
-                color: "#9DE6C6",
-                margin: "0 0 12px 0",
-                fontFamily: "var(--font-display)",
-              }}
-            >
+            <h2 className="text-4xl font-semibold text-green-400 mb-3 font-display">
               What is Corruption?
             </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#FFFFFF",
-                margin: "0 0 8px 0",
-                fontStyle: "italic",
-              }}
-            >
+            <p className="text-lg text-white mb-2 italic font-light">
               Every institution defines corruption in its own terms.
             </p>
-            <p
-              style={{
-                fontSize: "16px",
-                color: "#E5E5E5",
-                margin: "0",
-                lineHeight: "1.6",
-                whiteSpace: "nowrap",
-              }}
-            >
+            <p className="text-base text-gray-300 mb-0 leading-relaxed">
               Explore how global authorities construct–and limit–the boundaries
               of corruption.
             </p>
 
             {/* Key Insight */}
-            <div
-              style={{
-                marginTop: "16px",
-                marginBottom: "8px",
-              }}
-            >
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: "13px",
-                  color: "#E5E5E5",
-                  fontWeight: "400",
-                  lineHeight: "1.5",
-                  opacity: 0.8,
-                }}
-              >
+            <div className="mt-4 mb-2">
+              <p className="text-sm text-gray-300 font-normal leading-relaxed opacity-80">
                 💡 Institutional boundaries determine what can be prosecuted,
                 managed, or ignored.
                 <br />
@@ -2854,7 +2810,7 @@ const CorruptionDefinitions = ({
               style={{
                 display: "flex",
                 alignItems: "flex-start",
-                marginTop: "8px",
+                marginTop: "8px"
               }}
             >
               <motion.button
@@ -2884,13 +2840,16 @@ const CorruptionDefinitions = ({
                 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(16, 185, 129, 0.25)";
+                  e.currentTarget.style.background =
+                    "rgba(16, 185, 129, 0.25)";
                   e.currentTarget.style.boxShadow =
                     "0 0 25px rgba(16, 185, 129, 0.6)";
-                  e.currentTarget.style.borderColor = "rgba(16, 185, 129, 0.8)";
+                  e.currentTarget.style.borderColor =
+                    "rgba(16, 185, 129, 0.8)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(16, 185, 129, 0.15)";
+                  e.currentTarget.style.background =
+                    "rgba(16, 185, 129, 0.15)";
                   e.currentTarget.style.boxShadow =
                     "0 8px 32px rgba(0,0,0,0.2)";
                   e.currentTarget.style.borderColor =
