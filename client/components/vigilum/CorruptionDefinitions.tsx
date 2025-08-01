@@ -1158,7 +1158,7 @@ const termDefinitions = {
   nepotism: {
     title: "Nepotism: Embedded Networks and Discretionary Capture",
     analysis:
-      'Nepotism is universally recognized as allocating advantage based on kinship or personal ties, in conflict with meritocratic principles. Divergence arises in how the practice is criminalized, normalized, or left to managerial discretion across sectors and cultures. Public rules may prohibit nepotism in specific offices but leave broad gaps, while private organizations often frame family hiring as trust or tradition. Disclosure, recusal, and "fit and proper" tests simulate integrity but rarely challenge underlying network advantage. In markets where nepotism is normalized, governance signals are distorted and opportunity allocation shifts from open competition to closed networks���especially in family-controlled conglomerates, state enterprises, or emerging market firms.',
+      'Nepotism is universally recognized as allocating advantage based on kinship or personal ties, in conflict with meritocratic principles. Divergence arises in how the practice is criminalized, normalized, or left to managerial discretion across sectors and cultures. Public rules may prohibit nepotism in specific offices but leave broad gaps, while private organizations often frame family hiring as trust or tradition. Disclosure, recusal, and "fit and proper" tests simulate integrity but rarely challenge underlying network advantage. In markets where nepotism is normalized, governance signals are distorted and opportunity allocation shifts from open competition to closed networks—especially in family-controlled conglomerates, state enterprises, or emerging market firms.',
     consequence:
       "Nepotism embeds privilege as a logic gate, replacing formal meritocracy with recursive self-reinforcement. By cloaking selection bias as trust or cultural fit, institutions nullify accountability and lock alternative talent out of circulation. Oversight mechanisms are structurally defanged—performance is simulated, but network continuity is guaranteed. Over time, nepotism produces self-insulating systems where exclusion, erosion of trust, and strategic blindness are endemic, not accidental.",
   },
@@ -1876,16 +1876,7 @@ const BoundaryLogicCarousel = () => {
               <p className="text-sm font-semibold text-green-400 mb-2 uppercase tracking-wide font-display text-left">
                 STRUCTURAL CONSEQUENCE
               </p>
-              <p
-                style={{
-                  fontSize: "13px",
-                  color: "#FFFFFF",
-                  margin: 0,
-                  lineHeight: "1.5",
-                  fontFamily: "Alliance No2, Helvetica Neue, sans-serif",
-                  textAlign: "left",
-                }}
-              >
+              <p className="text-sm text-white m-0 leading-relaxed text-left">
                 {termDefinitions[selectedTerm]?.consequence ||
                   "Boundary effects on recognition and transfer systems."}
               </p>
