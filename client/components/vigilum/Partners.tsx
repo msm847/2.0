@@ -1069,8 +1069,6 @@ const Partners = () => {
     );
   };
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -1081,8 +1079,6 @@ const Partners = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-
 
   const handleCountrySearch = (e) => {
     setCountrySearch(e.target.value);
@@ -1253,8 +1249,6 @@ const Partners = () => {
     setCompanySearch("");
     setShowUniversityDropdown(false);
   };
-
-
 
   // Auto-reset success message after 5 seconds
   useEffect(() => {
@@ -1935,8 +1929,6 @@ const Partners = () => {
 
                     {/* Verification and Privacy */}
                     <div className="space-y-4">
-
-
                       {/* Privacy Policy - Enterprise Grade */}
                       <div className="space-y-4">
                         <div
@@ -1994,7 +1986,11 @@ const Partners = () => {
                     encType="multipart/form-data"
                     style={{ display: "none" }}
                   >
-                    <input type="hidden" name="form-name" value="structural-engagement-intake" />
+                    <input
+                      type="hidden"
+                      name="form-name"
+                      value="structural-engagement-intake"
+                    />
                     <input type="hidden" name="bot-field" />
                     <input type="text" name="full_name" />
                     <input type="email" name="email" />
