@@ -103,7 +103,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="text-center mb-8"
+              className="text-center mb-4"
             >
               <h2
                 className="text-2xl font-bold mb-4 leading-tight"
