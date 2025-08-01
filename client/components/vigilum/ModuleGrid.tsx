@@ -38,7 +38,7 @@ const modules = [
     id: "obscura",
     name: "OBSCURA",
     subtitle: "Procurement Distortion",
-    tagline: "Design is camouflage; compression preformats extraction.",
+    tagline: "Procurement is analyzed as a procedural format with embedded override risk.",
     description:
       "Projects procedural flows as capture operators, rendering compression, exclusivity, and emergency logic as pre-structured nullification paths.",
     color: "#941b1b",
