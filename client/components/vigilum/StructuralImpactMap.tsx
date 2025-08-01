@@ -1764,33 +1764,10 @@ const StructuralImpactMap = ({
             maxWidth: "200px",
           }}
         >
-          <div
-            style={{
-              fontSize: "14px",
-              color: "#9DE6C6",
-              fontWeight: "500",
-              marginBottom: "8px",
-              textTransform: "uppercase",
-              letterSpacing: "0.5px",
-              fontFamily: "var(--font-display)",
-              textShadow:
-                "0 0 8px rgba(157, 230, 198, 0.6), 0 0 16px rgba(157, 230, 198, 0.4), 0 0 24px rgba(157, 230, 198, 0.2)",
-              filter: "drop-shadow(0 0 6px rgba(157, 230, 198, 0.8))",
-            }}
-          >
+          <div className="text-sm font-medium text-green-400 mb-2 uppercase tracking-wide font-display">
             Interactive Map
           </div>
-          <div
-            style={{
-              fontSize: "12px",
-              color: "#E5E5E5",
-              lineHeight: "1.4",
-              opacity: 0.9,
-              textShadow:
-                "0 0 6px rgba(229, 229, 229, 0.5), 0 0 12px rgba(229, 229, 229, 0.3)",
-              filter: "drop-shadow(0 0 4px rgba(229, 229, 229, 0.6))",
-            }}
-          >
+          <div className="text-xs text-gray-300 leading-relaxed opacity-90">
             Click each sphere to explore structural corruption axes
           </div>
         </div>
