@@ -38,7 +38,7 @@ const VigilumPage = () => {
     <div
       className="min-h-screen text-gray-100 font-body relative overflow-hidden"
       style={{
-        background: "radial-gradient(circle, #0B1E16 0%, #050D0A 100%)",
+        background: BACKGROUNDS.PRIMARY_RADIAL,
         width: "100%",
         maxWidth: "100vw",
         overflowX: "hidden",
