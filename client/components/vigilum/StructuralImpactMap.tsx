@@ -247,7 +247,7 @@ const impactNetworkData = {
       id: "markets",
       label: "Markets",
       axisTitle: "Shadow Market Creation",
-      position: { x: 13, y: 38 }, // 8 o'clock
+      position: { x: 58, y: 25 }, // 4th in line
       structuralLogic:
         "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
       shockingFact:
