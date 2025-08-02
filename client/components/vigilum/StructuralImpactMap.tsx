@@ -90,7 +90,7 @@ const impactNetworkData = {
     {
       id: "institutions",
       label: "Institutions",
-      axisTitle: "Impact 2",
+      axisTitle: "Political Capture",
       position: { x: 18, y: 20 }, // 2nd in line
       structuralLogic:
         "When compliance systems are engineered for appearance, not substance, oversight becomes a simulacrum—reforms actually drive new extraction logics.",
