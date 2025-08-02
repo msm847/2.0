@@ -386,7 +386,7 @@ const impactNetworkData = {
     {
       id: "trust",
       label: "Trust & Security",
-      axisTitle: "Impact 6",
+      axisTitle: "Judicial Impunity",
       position: { x: 82, y: 20 }, // 6th in line
       structuralLogic:
         "As extraction, simulation, and behavioral drift reinforce each other, trust becomes structurally uncomputable—leading to capital flight, governance disintegration, or legitimacy crises.",
