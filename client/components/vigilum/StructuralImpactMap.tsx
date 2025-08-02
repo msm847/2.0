@@ -707,30 +707,167 @@ const NetworkNode = ({
   );
 };
 
-// Node detail modal with timeline and micro-case
-const NodeDetailModal = ({ node, onClose, userPath }) => {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [nodeCounter, setNodeCounter] = useState(0);
+// Get theme colors for each node
+const getThemeColor = (nodeId) => {
+  const colors = {
+    economy: "#FF6B6B",
+    institutions: "#956AFF",
+    inequality: "#6C63FF",
+    markets: "#FFB84D",
+    environment: "#33C06F",
+    trust: "#2EC4B6",
+  };
+  return colors[nodeId] || "#9CA3AF";
+};
+
+// Get live metric data for each node
+const getLiveMetricData = (nodeId) => {
+  const metrics = {
+    economy: {
+      label: "Public Wealth Lost",
+      rate: 82400, // $2.6T / 31,557,600 seconds
+      format: "currency",
+    },
+    markets: {
+      label: "Infrastructure Dollars Siphoned",
+      rate: 12700, // $400B / 31,557,600 seconds
+      format: "currency",
+    },
+    institutions: {
+      label: "Rent-Seeking Gains Clocked",
+      rate: 6900, // $220B / 31,557,600 seconds
+      format: "currency",
+    },
+    trust: {
+      label: "Bribes Changing Verdicts",
+      rate: 0.3, // 18 per minute = 0.3 per second
+      format: "number",
+      unit: "transactions",
+    },
+    inequality: {
+      label: "Health & Education Funds Drained",
+      rate: 14400, // $455B / 31,557,600 seconds
+      format: "currency",
+    },
+    environment: {
+      label: "Forest Hectares Lost",
+      rate: 0.48, // 15M ha / 31,557,600 seconds
+      format: "decimal",
+      unit: "hectares",
+    },
+  };
+  return metrics[nodeId];
+};
+
+// Get facts for each node
+const getFactsData = (nodeId) => {
+  const facts = {
+    economy: [
+      { title: "Global GDP drag", text: "corruption erodes 5% of output annually." },
+      { title: "Capital flight", text: "$1 of bribes → $3 of illegal outflows." },
+      { title: "SME choke-off", text: "1 in 3 firms worldwide admits paying facilitation fees." },
+      { title: "Productivity shock", text: "nations crossing CPI 50 gain 17% higher FDI inflow." },
+    ],
+    markets: [
+      { title: "Siphoned funds", text: "20-25% of public-works spending vanishes in graft." },
+      { title: "Cost inflation", text: "$340 bn lost yearly on construction cost inflation alone." },
+      { title: "Project delays", text: "Mega-project delays average 31% longer in high-CPI countries." },
+      { title: "Waste projection", text: "By 2030 up to US$6 trillion in roads, rails, dams could be wasted." },
+    ],
+    institutions: [
+      { title: "Credit advantage", text: "Connected firms in captured states enjoy 28% cheaper public credit." },
+      { title: "Regulatory benefits", text: "Regulatory loopholes raise insiders' profit margins by up to 20%." },
+      { title: "Growth impact", text: "Every 1 pt fall in V-Dem Regulatory Quality → 0.5% GDP growth loss." },
+      { title: "PPP corruption", text: "One-third of global PPP value awarded to bidders with hidden cross-ownership links." },
+    ],
+    trust: [
+      { title: "Unofficial fees", text: "Up to 60% of court users in surveyed nations pay unofficial fees." },
+      { title: "Case backlogs", text: "Case backlogs exceed 100 million filings in low-capacity systems." },
+      { title: "Conviction rates", text: "Conviction rate for high-level graft averages < 1%." },
+      { title: "Expired fines", text: "Every year stalled cases let US$6 bn in fines expire unchecked." },
+    ],
+    inequality: [
+      { title: "Child mortality", text: "Corruption in hospitals kills 140,000 children annually." },
+      { title: "Healthcare costs", text: "Informal payments eat 13% of poor households' clinic budgets." },
+      { title: "Education theft", text: "School-textbook theft reaches 50-90% in high-risk districts." },
+      { title: "Public concern", text: "54% of citizens worldwide call inequality a 'very big problem'." },
+    ],
+    environment: [
+      { title: "Illegal logging", text: "Illegal logging yields up to US$100 bn a year for criminal networks." },
+      { title: "Carbon impact", text: "Deforestation already drives 17% of global carbon emissions." },
+      { title: "Wildlife trafficking", text: "One-fifth of wildlife trade is trafficked through bribed border posts." },
+      { title: "CPI correlation", text: "Each 1% rise in CPI score cuts deforestation rates 2.4%." },
+    ],
+  };
+  return facts[nodeId] || [];
+};
+
+// Get system interlinks for each node
+const getSystemInterlinks = (nodeId) => {
+  const interlinks = {
+    economy: [
+      { target: "markets", text: "Feeds Infrastructure Collapse by shrinking maintenance budgets" },
+      { target: "inequality", text: "Amplifies Social Inequality through regressive revenue gaps" },
+    ],
+    markets: [
+      { target: "economy", text: "Stokes Economic Devastation through dead-weight debt" },
+      { target: "institutions", text: "Entrenches Political Capture by rewarding allied contractors" },
+    ],
+    institutions: [
+      { target: "trust", text: "Breeds Judicial Impunity via appointment leverage" },
+      { target: "environment", text: "Drives Environmental Degradation when oversight chiefs are stakeholders" },
+    ],
+    trust: [
+      { target: "institutions", text: "Enables Political Capture by erasing legal risk" },
+      { target: "inequality", text: "Extends Social Inequality when only the wealthy secure outcomes" },
+    ],
+    inequality: [
+      { target: "economy", text: "Reinforces Economic Devastation via lost human capital" },
+      { target: "environment", text: "Ignites Environmental Degradation as poor rely on illicit logging" },
+    ],
+    environment: [
+      { target: "markets", text: "Magnifies Infrastructure Collapse through landslide-prone terrains" },
+      { target: "economy", text: "Feeds Economic Devastation by erasing natural-capital revenues" },
+    ],
+  };
+  return interlinks[nodeId] || [];
+};
+
+// New Palantir-style modal component
+const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
+  const [liveMetric, setLiveMetric] = useState(0);
 
   useEffect(() => {
-    if (node?.domainCounter) {
+    const metricData = getLiveMetricData(node.id);
+    if (metricData) {
       const interval = setInterval(() => {
-        setNodeCounter((prev) => prev + node.domainCounter.ratePerSecond);
+        setLiveMetric((prev) => prev + metricData.rate);
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [node]);
-
-  useEffect(() => {
-    if (node?.timeline) {
-      const timer = setTimeout(() => {
-        setCurrentStep((prev) => (prev + 1) % node.timeline.length);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [currentStep, node]);
+  }, [node.id]);
 
   if (!node) return null;
+
+  const themeColor = getThemeColor(node.id);
+  const metricData = getLiveMetricData(node.id);
+  const facts = getFactsData(node.id);
+  const interlinks = getSystemInterlinks(node.id);
+
+  const formatMetric = (value) => {
+    if (!metricData) return "0";
+
+    switch (metricData.format) {
+      case "currency":
+        return `$${Math.floor(value).toLocaleString()}`;
+      case "decimal":
+        return value.toFixed(2);
+      case "number":
+        return Math.floor(value).toLocaleString();
+      default:
+        return Math.floor(value).toLocaleString();
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -748,9 +885,9 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
           backdropFilter: "blur(8px)",
           zIndex: 1000,
           display: "flex",
-          alignItems: "flex-start",
+          alignItems: "center",
           justifyContent: "center",
-          padding: "11vh 20px 15vh",
+          padding: "20px",
         }}
         onClick={onClose}
       >
@@ -759,344 +896,207 @@ const NodeDetailModal = ({ node, onClose, userPath }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           onClick={(e) => e.stopPropagation()}
+          data-theme="light"
           style={{
-            background: "rgba(0, 0, 0, 0.95)",
-            backdropFilter: "blur(20px)",
-            border: `2px solid ${node.color}40`,
-            borderRadius: "24px",
-            padding: "32px",
-            maxWidth: "600px",
+            background: "#F5F7FA",
+            borderRadius: "12px",
+            padding: "40px",
+            maxWidth: "640px",
             width: "100%",
-            maxHeight: "85vh",
+            maxHeight: "90vh",
             overflowY: "auto",
             position: "relative",
+            fontFamily: "Inter, sans-serif",
+            color: "#1B1F27",
           }}
         >
           {/* Close button */}
           <button
             onClick={onClose}
+            data-close-modal
             style={{
               position: "absolute",
               top: "16px",
               right: "16px",
               background: "transparent",
               border: "none",
-              color: "#9CA3AF",
+              color: "#6C7A89",
               cursor: "pointer",
-              fontSize: "20px",
+              fontSize: "24px",
               padding: "8px",
+              lineHeight: 1,
             }}
           >
             ✕
           </button>
 
-          {/* Header */}
-          <div style={{ marginBottom: "32px" }}>
-            <h2
-              style={{
-                fontSize: "28px",
-                fontWeight: "700",
-                color: node.color,
-                margin: "0 0 20px 0",
-                fontFamily: "var(--font-display)",
-                textAlign: "left",
-                letterSpacing: "0.5px",
-              }}
-            >
-              {node.axisTitle}
-            </h2>
-            <p
-              style={{
-                fontSize: "16px",
-                color: "#E5E5E5",
-                fontWeight: "400",
-                lineHeight: "1.5",
-                margin: "0 0 16px 0",
-              }}
-            >
-              {node.structuralLogic}
-            </p>
-            <div
-              style={{
-                padding: "12px 16px",
-                background: "rgba(239, 68, 68, 0.1)",
-                border: "1px solid rgba(239, 68, 68, 0.3)",
-                borderRadius: "8px",
-                borderLeft: `4px solid ${node.color}`,
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "#FFFFFF",
-                  fontWeight: "500",
-                  margin: "0",
-                  fontStyle: "italic",
-                }}
-              >
-                💥 {node.shockingFact}
-              </p>
-            </div>
-          </div>
+          {/* Headline (H1) */}
+          <h1
+            style={{
+              fontSize: "32px",
+              fontWeight: "600",
+              color: "#1B1F27",
+              margin: "0 0 32px 0",
+              borderTop: `4px solid ${themeColor}`,
+              paddingTop: "16px",
+            }}
+          >
+            {node.axisTitle}
+          </h1>
 
-          {/* Live Counter */}
-          {node.domainCounter && (
+          {/* Live-Metric component */}
+          {metricData && (
             <div
               style={{
-                background: `${node.color}20`,
-                border: `1px solid ${node.color}40`,
-                borderRadius: "16px",
+                background: "white",
+                border: "1px solid #E4E7EC",
+                borderRadius: "8px",
                 padding: "24px",
                 marginBottom: "32px",
                 textAlign: "center",
+                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
               }}
             >
               <div
                 style={{
-                  fontSize: "36px",
+                  fontSize: "42px",
                   fontWeight: "700",
-                  color: node.color,
+                  color: themeColor,
                   fontFamily: "monospace",
                   marginBottom: "8px",
+                  lineHeight: 1,
                 }}
               >
-                {node.domainCounter.displayFormat === "currency"
-                  ? `$${nodeCounter.toLocaleString()}`
-                  : `${nodeCounter.toLocaleString()}`}
+                {formatMetric(liveMetric)}
+                {metricData.unit && metricData.format !== "currency" && (
+                  <span style={{ fontSize: "16px", marginLeft: "8px" }}>
+                    {metricData.unit}
+                  </span>
+                )}
               </div>
               <div
                 style={{
                   fontSize: "14px",
-                  color: "#E5E5E5",
-                  fontWeight: "500",
+                  color: "#6C7A89",
+                  fontWeight: "400",
                 }}
               >
-                {node.domainCounter.label || node.domainCounter.unit} since you
-                started exploring
+                {metricData.label} since you opened
               </div>
             </div>
           )}
 
-          {/* Sample Data Point */}
-          {node.dataPoint && (
-            <div
-              style={{
-                background: "rgba(255, 255, 255, 0.03)",
-                border: `1px solid ${node.color}30`,
-                borderRadius: "12px",
-                padding: "20px",
-                marginBottom: "24px",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "14px",
-                  color: node.color,
-                  margin: "0 0 8px 0",
-                  fontWeight: "600",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
-              >
-                📊 Sample Data Point
-              </h4>
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "#E5E5E5",
-                  margin: "0",
-                  lineHeight: "1.4",
-                }}
-              >
-                {node.dataPoint}
-              </p>
-            </div>
-          )}
-
-          {/* Actionable Output */}
-          {node.actionableOutput && (
-            <div
-              style={{
-                background: `${node.color}08`,
-                border: `1px solid ${node.color}25`,
-                borderRadius: "12px",
-                padding: "20px",
-                marginBottom: "32px",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "14px",
-                  color: node.color,
-                  margin: "0 0 8px 0",
-                  fontWeight: "600",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
-              >
-                🎯 Vigilum Output
-              </h4>
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "#FFFFFF",
-                  margin: "0",
-                  lineHeight: "1.4",
-                  fontWeight: "500",
-                }}
-              >
-                {node.actionableOutput}
-              </p>
-            </div>
-          )}
-
-          {/* Timeline Animation */}
+          {/* Body grid (4 vignettes) */}
           <div
             style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "16px",
               marginBottom: "32px",
-              background: "rgba(255, 255, 255, 0.02)",
-              borderRadius: "16px",
-              padding: "24px",
             }}
           >
-            <h3
-              style={{
-                fontSize: "18px",
-                color: "#9DE6C6",
-                margin: "0 0 20px 0",
-                fontWeight: "600",
-              }}
-            >
-              Process Timeline
-            </h3>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                gap: "16px",
-              }}
-            >
-              {node.timeline.map((step, index) => (
-                <motion.div
-                  key={index}
-                  style={{
-                    flex: 1,
-                    textAlign: "center",
-                    opacity: index <= currentStep ? 1 : 0.3,
-                    transform: index <= currentStep ? "scale(1)" : "scale(0.9)",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: "24px",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    {step.icon}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "14px",
-                      fontWeight: "600",
-                      color: index <= currentStep ? node.color : "#9CA3AF",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    {step.step}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "12px",
-                      color: "#9CA3AF",
-                      lineHeight: "1.3",
-                    }}
-                  >
-                    {step.description}
-                  </div>
-                  {index < node.timeline.length - 1 && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        right: "-12px",
-                        top: "20px",
-                        fontSize: "16px",
-                        color: index < currentStep ? node.color : "#9CA3AF",
-                      }}
-                    >
-                      →
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Facts */}
-          <div style={{ marginBottom: "32px" }}>
-            <h3
-              style={{
-                fontSize: "18px",
-                color: "#9DE6C6",
-                margin: "0 0 16px 0",
-                fontWeight: "600",
-              }}
-            >
-              Key Facts
-            </h3>
-            {node.facts.map((fact, idx) => (
+            {facts.map((fact, index) => (
               <div
-                key={idx}
+                key={index}
                 style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "12px",
-                  marginBottom: "16px",
-                  padding: "12px",
-                  background: "rgba(255, 255, 255, 0.02)",
+                  background: "white",
+                  border: "1px solid #E4E7EC",
                   borderRadius: "8px",
+                  padding: "20px",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  cursor: "default",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = "translateY(-2px)";
+                  e.target.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = "translateY(0)";
+                  e.target.style.boxShadow = "none";
                 }}
               >
-                <div
+                <h3
                   style={{
-                    fontSize: "20px",
-                    marginTop: "2px",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    color: "#1B1F27",
+                    margin: "0 0 8px 0",
                   }}
                 >
-                  {fact.icon}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      color: "#E5E5E5",
-                      fontWeight: "500",
-                      lineHeight: "1.4",
-                    }}
-                  >
-                    {fact.text}
-                  </span>
-                  <div
-                    style={{
-                      fontSize: "12px",
-                      color: "#9CA3AF",
-                      marginTop: "4px",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    Source: {fact.source}
-                  </div>
-                </div>
+                  {fact.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    color: "#6C7A89",
+                    margin: "0",
+                    lineHeight: "1.4",
+                    fontWeight: "400",
+                  }}
+                >
+                  {fact.text}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Micro-case */}
+          {/* System Interlinks footer */}
           <div
             style={{
-              background: `${node.color}10`,
-              border: `1px solid ${node.color}30`,
+              background: "#6C7A89",
+              margin: "0 -40px -40px -40px",
+              padding: "20px 40px",
+              borderRadius: "0 0 12px 12px",
+            }}
+          >
+            <h4
+              style={{
+                fontSize: "14px",
+                fontWeight: "500",
+                color: "white",
+                margin: "0 0 12px 0",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px",
+              }}
+            >
+              System Interlinks
+            </h4>
+            {interlinks.map((link, index) => (
+              <div
+                key={index}
+                style={{
+                  fontSize: "13px",
+                  color: "white",
+                  marginBottom: index < interlinks.length - 1 ? "8px" : "0",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+                onClick={() => {
+                  // Find the target node and switch to it
+                  const targetNode = impactNetworkData.nodes.find(n => n.id === link.target);
+                  if (targetNode && onNodeClick) {
+                    onNodeClick(targetNode);
+                  }
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.opacity = "0.8";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.opacity = "1";
+                }}
+              >
+                <span>↗</span>
+                <span>{link.text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
               borderRadius: "12px",
               padding: "20px",
               marginBottom: "24px",
