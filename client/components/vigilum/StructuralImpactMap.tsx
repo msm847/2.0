@@ -1757,7 +1757,8 @@ const StructuralImpactMap = ({
           }}
         >
           <p className="text-sm text-gray-400 font-light italic">
-            Click any sphere to explore the multi-dimensional impact of corruption
+            Click any sphere to explore the multi-dimensional impact of
+            corruption
           </p>
         </div>
         {/* Nodes */}
