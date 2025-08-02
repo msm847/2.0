@@ -114,7 +114,7 @@ const impactNetworkData = {
           icon: "⚖️",
         },
         {
-          text: "Trust in institutions 2–3x lower",
+          text: "Trust in institutions 2���3x lower",
           source: "OECD",
           icon: "🏛️",
         },
@@ -920,14 +920,14 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
             data-close-modal
             style={{
               position: "absolute",
-              top: "16px",
-              right: "16px",
+              top: "12px",
+              right: "12px",
               background: "transparent",
               border: "none",
-              color: "#6C7A89",
+              color: "#9DE6C6",
               cursor: "pointer",
-              fontSize: "24px",
-              padding: "8px",
+              fontSize: "20px",
+              padding: "4px",
               lineHeight: 1,
             }}
           >
