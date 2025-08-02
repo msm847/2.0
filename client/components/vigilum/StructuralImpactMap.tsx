@@ -43,7 +43,7 @@ const impactNetworkData = {
           source: "World Bank",
           icon: "💰",
         },
-        { text: "GDP growth up to 2% lower", source: "IMF", icon: "���" },
+        { text: "GDP growth up to 2% lower", source: "IMF", icon: "📉" },
         { text: "Investment falls by 20%", source: "WEF", icon: "📊" },
       ],
       timeline: [
@@ -1097,42 +1097,79 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
                 background: `linear-gradient(90deg, transparent, ${themeColor}40, transparent)`,
                 zIndex: 1
               }} />
-              {/* Interlinkage circles */}
+              {/* Interlinkage circles - Left side */}
               <div style={{
                 position: "absolute",
                 top: "50%",
-                left: "25%",
+                left: "5%",
+                width: "5px",
+                height: "5px",
+                borderRadius: "50%",
+                background: themeColor,
+                transform: "translateY(-50%)",
+                zIndex: 3,
+                boxShadow: `0 0 6px ${themeColor}60`,
+              }} />
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                left: "15%",
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
                 background: themeColor,
                 transform: "translateY(-50%)",
                 zIndex: 3,
-                boxShadow: `0 0 8px ${themeColor}60`,
+                boxShadow: `0 0 8px ${themeColor}70`,
               }} />
               <div style={{
                 position: "absolute",
                 top: "50%",
-                left: "50%",
-                width: "8px",
-                height: "8px",
+                left: "25%",
+                width: "7px",
+                height: "7px",
                 borderRadius: "50%",
                 background: themeColor,
-                transform: "translate(-50%, -50%)",
+                transform: "translateY(-50%)",
+                zIndex: 3,
+                boxShadow: `0 0 10px ${themeColor}80`,
+              }} />
+              {/* Interlinkage circles - Right side */}
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                right: "25%",
+                width: "7px",
+                height: "7px",
+                borderRadius: "50%",
+                background: themeColor,
+                transform: "translateY(-50%)",
                 zIndex: 3,
                 boxShadow: `0 0 10px ${themeColor}80`,
               }} />
               <div style={{
                 position: "absolute",
                 top: "50%",
-                right: "25%",
+                right: "15%",
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
                 background: themeColor,
                 transform: "translateY(-50%)",
                 zIndex: 3,
-                boxShadow: `0 0 8px ${themeColor}60`,
+                boxShadow: `0 0 8px ${themeColor}70`,
+              }} />
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                right: "5%",
+                width: "5px",
+                height: "5px",
+                borderRadius: "50%",
+                background: themeColor,
+                transform: "translateY(-50%)",
+                zIndex: 3,
+                boxShadow: `0 0 6px ${themeColor}60`,
               }} />
             </h4>
 
