@@ -898,18 +898,20 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           onClick={(e) => e.stopPropagation()}
-          data-theme="light"
+          data-theme="dark"
           style={{
-            background: "#F5F7FA",
+            background: "rgba(11, 30, 22, 0.95)",
+            backdropFilter: "blur(20px)",
             borderRadius: "12px",
-            padding: "40px",
+            border: `2px solid ${themeColor}40`,
+            padding: "24px",
             maxWidth: "640px",
             width: "100%",
             maxHeight: "90vh",
             overflowY: "auto",
             position: "relative",
             fontFamily: "Inter, sans-serif",
-            color: "#1B1F27",
+            color: "#E5F3ED",
           }}
         >
           {/* Close button */}
