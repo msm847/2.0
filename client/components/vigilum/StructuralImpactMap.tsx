@@ -114,7 +114,7 @@ const impactNetworkData = {
           icon: "⚖️",
         },
         {
-          text: "Trust in institutions 2���3x lower",
+          text: "Trust in institutions 2–3x lower",
           source: "OECD",
           icon: "🏛️",
         },
@@ -937,12 +937,12 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
           {/* Headline (H1) */}
           <h1
             style={{
-              fontSize: "32px",
+              fontSize: "28px",
               fontWeight: "600",
-              color: "#1B1F27",
-              margin: "0 0 32px 0",
-              borderTop: `4px solid ${themeColor}`,
-              paddingTop: "16px",
+              color: "#E5F3ED",
+              margin: "0 0 20px 0",
+              borderTop: `3px solid ${themeColor}`,
+              paddingTop: "12px",
             }}
           >
             {node.axisTitle}
