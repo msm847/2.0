@@ -1680,20 +1680,22 @@ const StructuralImpactMap = ({
       </div>
 
       {/* Node Detail Modal */}
-      <NodeDetailModal
-        node={selectedNode}
-        onClose={() => {
-          setSelectedNode(null);
-          setActiveNode(null);
-          setPropagatingConnections(new Set());
-          setPropagationTargets(new Set());
-        }}
-        userPath={userPath}
-        onNodeClick={(targetNode) => {
-          setSelectedNode(targetNode);
-          setActiveNode(targetNode.id);
-        }}
-      />
+      {selectedNode && (
+        <NodeDetailModal
+          node={selectedNode}
+          onClose={() => {
+            setSelectedNode(null);
+            setActiveNode(null);
+            setPropagatingConnections(new Set());
+            setPropagationTargets(new Set());
+          }}
+          userPath={userPath}
+          onNodeClick={(targetNode) => {
+            setSelectedNode(targetNode);
+            setActiveNode(targetNode.id);
+          }}
+        />
+      )}
 
       {/* Final Summary Overlay */}
       {showFinalSummary && (
