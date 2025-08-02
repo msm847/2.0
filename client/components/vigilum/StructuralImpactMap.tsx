@@ -1047,55 +1047,131 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
           {/* System Interlinks footer */}
           <div
             style={{
-              background: "rgba(157, 230, 198, 0.1)",
+              background: `linear-gradient(135deg, ${themeColor}15, ${themeColor}08)`,
               border: `1px solid ${themeColor}40`,
               margin: "0 -24px -24px -24px",
-              padding: "16px 24px",
+              padding: "20px 24px",
               borderRadius: "0 0 12px 12px",
+              position: "relative",
+              overflow: "hidden",
             }}
           >
+            {/* Decorative background pattern */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: "2px",
+                background: `linear-gradient(90deg, transparent, ${themeColor}60, transparent)`,
+              }}
+            />
+
             <h4
               style={{
-                fontSize: "12px",
-                fontWeight: "500",
-                color: "#9DE6C6",
-                margin: "0 0 10px 0",
+                fontSize: "13px",
+                fontWeight: "600",
+                color: themeColor,
+                margin: "0 0 16px 0",
                 textTransform: "uppercase",
-                letterSpacing: "0.5px",
+                letterSpacing: "1px",
+                textAlign: "center",
+                position: "relative",
               }}
             >
-              System Interlinks
+              <span style={{
+                background: `rgba(11, 30, 22, 0.95)`,
+                padding: "0 12px",
+                position: "relative",
+                zIndex: 2
+              }}>
+                System Interlinks
+              </span>
+              <div style={{
+                position: "absolute",
+                top: "50%",
+                left: 0,
+                right: 0,
+                height: "1px",
+                background: `linear-gradient(90deg, transparent, ${themeColor}40, transparent)`,
+                zIndex: 1
+              }} />
             </h4>
-            {interlinks.map((link, index) => (
-              <div
-                key={index}
-                style={{
-                  fontSize: "12px",
-                  color: "#E5F3ED",
-                  marginBottom: index < interlinks.length - 1 ? "6px" : "0",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                }}
-                onClick={() => {
-                  // Find the target node and switch to it
-                  const targetNode = impactNetworkData.nodes.find(n => n.id === link.target);
-                  if (targetNode && onNodeClick) {
-                    onNodeClick(targetNode);
-                  }
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.opacity = "0.8";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.opacity = "1";
-                }}
-              >
-                <span style={{ color: themeColor }}>↗</span>
-                <span>{link.text}</span>
-              </div>
-            ))}
+
+            <div style={{ textAlign: "center" }}>
+              {interlinks.map((link, index) => {
+                // Split the text to find section titles
+                const parts = link.text.split(/\b(Economic Devastation|Infrastructure Collapse|Political Capture|Judicial Impunity|Social Inequality|Environmental Degradation)\b/);
+
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      fontSize: "13px",
+                      color: "#E5F3ED",
+                      marginBottom: index < interlinks.length - 1 ? "12px" : "0",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "8px",
+                      padding: "8px 12px",
+                      borderRadius: "6px",
+                      border: `1px solid ${themeColor}20`,
+                      background: "rgba(255, 255, 255, 0.02)",
+                      transition: "all 0.3s ease",
+                      position: "relative",
+                    }}
+                    onClick={() => {
+                      // Find the target node and switch to it
+                      const targetNode = impactNetworkData.nodes.find(n => n.id === link.target);
+                      if (targetNode && onNodeClick) {
+                        onNodeClick(targetNode);
+                      }
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = `${themeColor}10`;
+                      e.currentTarget.style.borderColor = `${themeColor}60`;
+                      e.currentTarget.style.transform = "translateY(-1px)";
+                      e.currentTarget.style.boxShadow = `0 4px 12px ${themeColor}25`;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.02)";
+                      e.currentTarget.style.borderColor = `${themeColor}20`;
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                  >
+                    <span style={{
+                      color: themeColor,
+                      fontSize: "16px",
+                      fontWeight: "600"
+                    }}>
+                      ↗
+                    </span>
+                    <span style={{ textAlign: "center", lineHeight: "1.4" }}>
+                      {parts.map((part, partIndex) => {
+                        // Check if this part is a section title
+                        const isSectionTitle = /^(Economic Devastation|Infrastructure Collapse|Political Capture|Judicial Impunity|Social Inequality|Environmental Degradation)$/.test(part);
+
+                        return (
+                          <span
+                            key={partIndex}
+                            style={{
+                              fontWeight: isSectionTitle ? "700" : "400",
+                              color: isSectionTitle ? themeColor : "#E5F3ED",
+                            }}
+                          >
+                            {part}
+                          </span>
+                        );
+                      })}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </motion.div>
