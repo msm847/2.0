@@ -393,7 +393,7 @@ const impactNetworkData = {
       shockingFact:
         "In markets where anti-corruption action was purely symbolic, FDI inflows collapsed by 67% in 24 months following a major scandal.",
       dataPoint:
-        "After repeated corruption scandals with no high-level convictions, Lithuania's public trust in national government dropped from 56% to 21% in four years—mirrored by a 5x increase in non-performing loans and youth emigration.",
+        "After repeated corruption scandals with no high-level convictions, Lithuania's public trust in national government dropped from 56% to 21% in four years���mirrored by a 5x increase in non-performing loans and youth emigration.",
       actionableOutput:
         "Surface early-warning signals for systemic collapse: simultaneous audit failures, market outflows, and rising regulatory amendments in a 12-month period.",
       headline:
