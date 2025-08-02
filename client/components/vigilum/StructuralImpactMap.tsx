@@ -251,7 +251,7 @@ const impactNetworkData = {
       structuralLogic:
         "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
       shockingFact:
-        "In the wake of SOE procurement simulation, shadow banking ballooned to 3x formal lending in Eastern Europe—mostly via shell vehicles.",
+        "In the wake of SOE procurement simulation, shadow banking ballooned to 3x formal lending in Eastern Europe��mostly via shell vehicles.",
       dataPoint:
         "In environments with high regulatory arbitrage, shadow banking assets can reach 40% of GDP—up to 4x higher than reported official sector credit.",
       actionableOutput:
@@ -963,25 +963,25 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
             >
               <div
                 style={{
-                  fontSize: "42px",
+                  fontSize: "36px",
                   fontWeight: "700",
                   color: themeColor,
                   fontFamily: "monospace",
-                  marginBottom: "8px",
+                  marginBottom: "6px",
                   lineHeight: 1,
                 }}
               >
                 {formatMetric(liveMetric)}
                 {metricData.unit && metricData.format !== "currency" && (
-                  <span style={{ fontSize: "16px", marginLeft: "8px" }}>
+                  <span style={{ fontSize: "14px", marginLeft: "6px" }}>
                     {metricData.unit}
                   </span>
                 )}
               </div>
               <div
                 style={{
-                  fontSize: "14px",
-                  color: "#6C7A89",
+                  fontSize: "12px",
+                  color: "#9DE6C6",
                   fontWeight: "400",
                 }}
               >
