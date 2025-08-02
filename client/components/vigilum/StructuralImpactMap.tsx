@@ -246,7 +246,7 @@ const impactNetworkData = {
     {
       id: "markets",
       label: "Markets",
-      axisTitle: "Impact 4",
+      axisTitle: "Infrastructure Collapse",
       position: { x: 50, y: 20 }, // 4th in line
       structuralLogic:
         "Simulated constraint in formal systems shifts activity to semi-legal or off-ledger markets—fueling parallel economies and distorting true market signals.",
