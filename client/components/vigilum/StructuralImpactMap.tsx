@@ -1003,16 +1003,16 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
               <div
                 key={index}
                 style={{
-                  background: "white",
-                  border: "1px solid #E4E7EC",
-                  borderRadius: "8px",
-                  padding: "20px",
+                  background: "rgba(255, 255, 255, 0.03)",
+                  border: `1px solid ${themeColor}30`,
+                  borderRadius: "6px",
+                  padding: "14px",
                   transition: "transform 0.2s ease, box-shadow 0.2s ease",
                   cursor: "default",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.transform = "translateY(-2px)";
-                  e.target.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.15)";
+                  e.target.style.transform = "translateY(-1px)";
+                  e.target.style.boxShadow = `0 4px 12px ${themeColor}20`;
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.transform = "translateY(0)";
@@ -1021,20 +1021,20 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
               >
                 <h3
                   style={{
-                    fontSize: "16px",
+                    fontSize: "14px",
                     fontWeight: "500",
-                    color: "#1B1F27",
-                    margin: "0 0 8px 0",
+                    color: themeColor,
+                    margin: "0 0 6px 0",
                   }}
                 >
                   {fact.title}
                 </h3>
                 <p
                   style={{
-                    fontSize: "14px",
-                    color: "#6C7A89",
+                    fontSize: "13px",
+                    color: "#E5F3ED",
                     margin: "0",
-                    lineHeight: "1.4",
+                    lineHeight: "1.3",
                     fontWeight: "400",
                   }}
                 >
