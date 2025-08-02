@@ -763,40 +763,112 @@ const getLiveMetricData = (nodeId) => {
 const getFactsData = (nodeId) => {
   const facts = {
     economy: [
-      { title: "Global GDP drag", text: "corruption erodes 5% of output annually." },
-      { title: "Capital flight", text: "$1 of bribes → $3 of illegal outflows." },
-      { title: "SME choke-off", text: "1 in 3 firms worldwide admits paying facilitation fees." },
-      { title: "Productivity shock", text: "nations crossing CPI 50 gain 17% higher FDI inflow." },
+      {
+        title: "Global GDP drag",
+        text: "corruption erodes 5% of output annually.",
+      },
+      {
+        title: "Capital flight",
+        text: "$1 of bribes → $3 of illegal outflows.",
+      },
+      {
+        title: "SME choke-off",
+        text: "1 in 3 firms worldwide admits paying facilitation fees.",
+      },
+      {
+        title: "Productivity shock",
+        text: "nations crossing CPI 50 gain 17% higher FDI inflow.",
+      },
     ],
     markets: [
-      { title: "Siphoned funds", text: "20-25% of public-works spending vanishes in graft." },
-      { title: "Cost inflation", text: "$340 bn lost yearly on construction cost inflation alone." },
-      { title: "Project delays", text: "Mega-project delays average 31% longer in high-CPI countries." },
-      { title: "Waste projection", text: "By 2030 up to US$6 trillion in roads, rails, dams could be wasted." },
+      {
+        title: "Siphoned funds",
+        text: "20-25% of public-works spending vanishes in graft.",
+      },
+      {
+        title: "Cost inflation",
+        text: "$340 bn lost yearly on construction cost inflation alone.",
+      },
+      {
+        title: "Project delays",
+        text: "Mega-project delays average 31% longer in high-CPI countries.",
+      },
+      {
+        title: "Waste projection",
+        text: "By 2030 up to US$6 trillion in roads, rails, dams could be wasted.",
+      },
     ],
     institutions: [
-      { title: "Credit advantage", text: "Connected firms in captured states enjoy 28% cheaper public credit." },
-      { title: "Regulatory benefits", text: "Regulatory loopholes raise insiders' profit margins by up to 20%." },
-      { title: "Growth impact", text: "Every 1 pt fall in V-Dem Regulatory Quality → 0.5% GDP growth loss." },
-      { title: "PPP corruption", text: "One-third of global PPP value awarded to bidders with hidden cross-ownership links." },
+      {
+        title: "Credit advantage",
+        text: "Connected firms in captured states enjoy 28% cheaper public credit.",
+      },
+      {
+        title: "Regulatory benefits",
+        text: "Regulatory loopholes raise insiders' profit margins by up to 20%.",
+      },
+      {
+        title: "Growth impact",
+        text: "Every 1 pt fall in V-Dem Regulatory Quality → 0.5% GDP growth loss.",
+      },
+      {
+        title: "PPP corruption",
+        text: "One-third of global PPP value awarded to bidders with hidden cross-ownership links.",
+      },
     ],
     trust: [
-      { title: "Unofficial fees", text: "Up to 60% of court users in surveyed nations pay unofficial fees." },
-      { title: "Case backlogs", text: "Case backlogs exceed 100 million filings in low-capacity systems." },
-      { title: "Conviction rates", text: "Conviction rate for high-level graft averages < 1%." },
-      { title: "Expired fines", text: "Every year stalled cases let US$6 bn in fines expire unchecked." },
+      {
+        title: "Unofficial fees",
+        text: "Up to 60% of court users in surveyed nations pay unofficial fees.",
+      },
+      {
+        title: "Case backlogs",
+        text: "Case backlogs exceed 100 million filings in low-capacity systems.",
+      },
+      {
+        title: "Conviction rates",
+        text: "Conviction rate for high-level graft averages < 1%.",
+      },
+      {
+        title: "Expired fines",
+        text: "Every year stalled cases let US$6 bn in fines expire unchecked.",
+      },
     ],
     inequality: [
-      { title: "Child mortality", text: "Corruption in hospitals kills 140,000 children annually." },
-      { title: "Healthcare costs", text: "Informal payments eat 13% of poor households' clinic budgets." },
-      { title: "Education theft", text: "School-textbook theft reaches 50-90% in high-risk districts." },
-      { title: "Public concern", text: "54% of citizens worldwide call inequality a 'very big problem'." },
+      {
+        title: "Child mortality",
+        text: "Corruption in hospitals kills 140,000 children annually.",
+      },
+      {
+        title: "Healthcare costs",
+        text: "Informal payments eat 13% of poor households' clinic budgets.",
+      },
+      {
+        title: "Education theft",
+        text: "School-textbook theft reaches 50-90% in high-risk districts.",
+      },
+      {
+        title: "Public concern",
+        text: "54% of citizens worldwide call inequality a 'very big problem'.",
+      },
     ],
     environment: [
-      { title: "Illegal logging", text: "Illegal logging yields up to US$100 bn a year for criminal networks." },
-      { title: "Carbon impact", text: "Deforestation already drives 17% of global carbon emissions." },
-      { title: "Wildlife trafficking", text: "One-fifth of wildlife trade is trafficked through bribed border posts." },
-      { title: "CPI correlation", text: "Each 1% rise in CPI score cuts deforestation rates 2.4%." },
+      {
+        title: "Illegal logging",
+        text: "Illegal logging yields up to US$100 bn a year for criminal networks.",
+      },
+      {
+        title: "Carbon impact",
+        text: "Deforestation already drives 17% of global carbon emissions.",
+      },
+      {
+        title: "Wildlife trafficking",
+        text: "One-fifth of wildlife trade is trafficked through bribed border posts.",
+      },
+      {
+        title: "CPI correlation",
+        text: "Each 1% rise in CPI score cuts deforestation rates 2.4%.",
+      },
     ],
   };
   return facts[nodeId] || [];
@@ -806,28 +878,64 @@ const getFactsData = (nodeId) => {
 const getSystemInterlinks = (nodeId) => {
   const interlinks = {
     economy: [
-      { target: "markets", text: "Feeds Infrastructure Collapse by shrinking maintenance budgets" },
-      { target: "inequality", text: "Amplifies Social Inequality through regressive revenue gaps" },
+      {
+        target: "markets",
+        text: "Feeds Infrastructure Collapse by shrinking maintenance budgets",
+      },
+      {
+        target: "inequality",
+        text: "Amplifies Social Inequality through regressive revenue gaps",
+      },
     ],
     markets: [
-      { target: "economy", text: "Stokes Economic Devastation through dead-weight debt" },
-      { target: "institutions", text: "Entrenches Political Capture by rewarding allied contractors" },
+      {
+        target: "economy",
+        text: "Stokes Economic Devastation through dead-weight debt",
+      },
+      {
+        target: "institutions",
+        text: "Entrenches Political Capture by rewarding allied contractors",
+      },
     ],
     institutions: [
-      { target: "trust", text: "Breeds Judicial Impunity via appointment leverage" },
-      { target: "environment", text: "Drives Environmental Degradation when oversight chiefs are stakeholders" },
+      {
+        target: "trust",
+        text: "Breeds Judicial Impunity via appointment leverage",
+      },
+      {
+        target: "environment",
+        text: "Drives Environmental Degradation when oversight chiefs are stakeholders",
+      },
     ],
     trust: [
-      { target: "institutions", text: "Enables Political Capture by erasing legal risk" },
-      { target: "inequality", text: "Extends Social Inequality when only the wealthy secure outcomes" },
+      {
+        target: "institutions",
+        text: "Enables Political Capture by erasing legal risk",
+      },
+      {
+        target: "inequality",
+        text: "Extends Social Inequality when only the wealthy secure outcomes",
+      },
     ],
     inequality: [
-      { target: "economy", text: "Reinforces Economic Devastation via lost human capital" },
-      { target: "environment", text: "Ignites Environmental Degradation as poor rely on illicit logging" },
+      {
+        target: "economy",
+        text: "Reinforces Economic Devastation via lost human capital",
+      },
+      {
+        target: "environment",
+        text: "Ignites Environmental Degradation as poor rely on illicit logging",
+      },
     ],
     environment: [
-      { target: "markets", text: "Magnifies Infrastructure Collapse through landslide-prone terrains" },
-      { target: "economy", text: "Feeds Economic Devastation by erasing natural-capital revenues" },
+      {
+        target: "markets",
+        text: "Magnifies Infrastructure Collapse through landslide-prone terrains",
+      },
+      {
+        target: "economy",
+        text: "Feeds Economic Devastation by erasing natural-capital revenues",
+      },
     ],
   };
   return interlinks[nodeId] || [];
@@ -1080,103 +1188,121 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
                 position: "relative",
               }}
             >
-              <span style={{
-                background: `rgba(11, 30, 22, 0.95)`,
-                padding: "0 12px",
-                position: "relative",
-                zIndex: 2
-              }}>
+              <span
+                style={{
+                  background: `rgba(11, 30, 22, 0.95)`,
+                  padding: "0 12px",
+                  position: "relative",
+                  zIndex: 2,
+                }}
+              >
                 System Interlinks
               </span>
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                left: 0,
-                right: 0,
-                height: "1px",
-                background: `linear-gradient(90deg, transparent, ${themeColor}40, transparent)`,
-                zIndex: 1
-              }} />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: 0,
+                  right: 0,
+                  height: "1px",
+                  background: `linear-gradient(90deg, transparent, ${themeColor}40, transparent)`,
+                  zIndex: 1,
+                }}
+              />
               {/* Interlinkage circles - Left side */}
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                left: "5%",
-                width: "5px",
-                height: "5px",
-                borderRadius: "50%",
-                background: themeColor,
-                transform: "translateY(-50%)",
-                zIndex: 3,
-                boxShadow: `0 0 6px ${themeColor}60`,
-              }} />
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                left: "15%",
-                width: "6px",
-                height: "6px",
-                borderRadius: "50%",
-                background: themeColor,
-                transform: "translateY(-50%)",
-                zIndex: 3,
-                boxShadow: `0 0 8px ${themeColor}70`,
-              }} />
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                left: "25%",
-                width: "7px",
-                height: "7px",
-                borderRadius: "50%",
-                background: themeColor,
-                transform: "translateY(-50%)",
-                zIndex: 3,
-                boxShadow: `0 0 10px ${themeColor}80`,
-              }} />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "5%",
+                  width: "5px",
+                  height: "5px",
+                  borderRadius: "50%",
+                  background: themeColor,
+                  transform: "translateY(-50%)",
+                  zIndex: 3,
+                  boxShadow: `0 0 6px ${themeColor}60`,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "15%",
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  background: themeColor,
+                  transform: "translateY(-50%)",
+                  zIndex: 3,
+                  boxShadow: `0 0 8px ${themeColor}70`,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "25%",
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: themeColor,
+                  transform: "translateY(-50%)",
+                  zIndex: 3,
+                  boxShadow: `0 0 10px ${themeColor}80`,
+                }}
+              />
               {/* Interlinkage circles - Right side */}
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                right: "25%",
-                width: "7px",
-                height: "7px",
-                borderRadius: "50%",
-                background: themeColor,
-                transform: "translateY(-50%)",
-                zIndex: 3,
-                boxShadow: `0 0 10px ${themeColor}80`,
-              }} />
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                right: "15%",
-                width: "6px",
-                height: "6px",
-                borderRadius: "50%",
-                background: themeColor,
-                transform: "translateY(-50%)",
-                zIndex: 3,
-                boxShadow: `0 0 8px ${themeColor}70`,
-              }} />
-              <div style={{
-                position: "absolute",
-                top: "50%",
-                right: "5%",
-                width: "5px",
-                height: "5px",
-                borderRadius: "50%",
-                background: themeColor,
-                transform: "translateY(-50%)",
-                zIndex: 3,
-                boxShadow: `0 0 6px ${themeColor}60`,
-              }} />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "25%",
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: themeColor,
+                  transform: "translateY(-50%)",
+                  zIndex: 3,
+                  boxShadow: `0 0 10px ${themeColor}80`,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "15%",
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  background: themeColor,
+                  transform: "translateY(-50%)",
+                  zIndex: 3,
+                  boxShadow: `0 0 8px ${themeColor}70`,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "5%",
+                  width: "5px",
+                  height: "5px",
+                  borderRadius: "50%",
+                  background: themeColor,
+                  transform: "translateY(-50%)",
+                  zIndex: 3,
+                  boxShadow: `0 0 6px ${themeColor}60`,
+                }}
+              />
             </h4>
 
             <div style={{ textAlign: "center" }}>
               {interlinks.map((link, index) => {
                 // Split the text to find section titles
-                const parts = link.text.split(/\b(Economic Devastation|Infrastructure Collapse|Political Capture|Judicial Impunity|Social Inequality|Environmental Degradation)\b/);
+                const parts = link.text.split(
+                  /\b(Economic Devastation|Infrastructure Collapse|Political Capture|Judicial Impunity|Social Inequality|Environmental Degradation)\b/,
+                );
 
                 return (
                   <div
@@ -1184,7 +1310,8 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
                     style={{
                       fontSize: "13px",
                       color: "#E5F3ED",
-                      marginBottom: index < interlinks.length - 1 ? "12px" : "0",
+                      marginBottom:
+                        index < interlinks.length - 1 ? "12px" : "0",
                       cursor: "pointer",
                       display: "flex",
                       alignItems: "center",
@@ -1199,7 +1326,9 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
                     }}
                     onClick={() => {
                       // Find the target node and switch to it
-                      const targetNode = impactNetworkData.nodes.find(n => n.id === link.target);
+                      const targetNode = impactNetworkData.nodes.find(
+                        (n) => n.id === link.target,
+                      );
                       if (targetNode && onNodeClick) {
                         onNodeClick(targetNode);
                       }
@@ -1211,23 +1340,29 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
                       e.currentTarget.style.boxShadow = `0 4px 12px ${themeColor}25`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = "rgba(255, 255, 255, 0.02)";
+                      e.currentTarget.style.background =
+                        "rgba(255, 255, 255, 0.02)";
                       e.currentTarget.style.borderColor = `${themeColor}20`;
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "none";
                     }}
                   >
-                    <span style={{
-                      color: themeColor,
-                      fontSize: "16px",
-                      fontWeight: "600"
-                    }}>
+                    <span
+                      style={{
+                        color: themeColor,
+                        fontSize: "16px",
+                        fontWeight: "600",
+                      }}
+                    >
                       ↗
                     </span>
                     <span style={{ textAlign: "center", lineHeight: "1.4" }}>
                       {parts.map((part, partIndex) => {
                         // Check if this part is a section title
-                        const isSectionTitle = /^(Economic Devastation|Infrastructure Collapse|Political Capture|Judicial Impunity|Social Inequality|Environmental Degradation)$/.test(part);
+                        const isSectionTitle =
+                          /^(Economic Devastation|Infrastructure Collapse|Political Capture|Judicial Impunity|Social Inequality|Environmental Degradation)$/.test(
+                            part,
+                          );
 
                         return (
                           <span
@@ -1252,7 +1387,6 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
     </AnimatePresence>
   );
 };
-
 
 // Path visualization component
 const UserPathVisualization = ({ userPath, nodes }) => {
