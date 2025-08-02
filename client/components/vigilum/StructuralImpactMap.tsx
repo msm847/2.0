@@ -838,6 +838,8 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
   const [liveMetric, setLiveMetric] = useState(0);
 
   useEffect(() => {
+    if (!node || !node.id) return;
+
     const metricData = getLiveMetricData(node.id);
     if (metricData) {
       const interval = setInterval(() => {
@@ -845,7 +847,7 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [node.id]);
+  }, [node?.id]);
 
   if (!node) return null;
 
