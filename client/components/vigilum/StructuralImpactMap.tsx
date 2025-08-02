@@ -952,13 +952,13 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
           {metricData && (
             <div
               style={{
-                background: "white",
-                border: "1px solid #E4E7EC",
+                background: `${themeColor}15`,
+                border: `1px solid ${themeColor}40`,
                 borderRadius: "8px",
-                padding: "24px",
-                marginBottom: "32px",
+                padding: "16px",
+                marginBottom: "20px",
                 textAlign: "center",
-                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+                boxShadow: `0 0 20px ${themeColor}20`,
               }}
             >
               <div
