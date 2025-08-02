@@ -1687,6 +1687,10 @@ const StructuralImpactMap = ({
           setPropagationTargets(new Set());
         }}
         userPath={userPath}
+        onNodeClick={(targetNode) => {
+          setSelectedNode(targetNode);
+          setActiveNode(targetNode.id);
+        }}
       />
 
       {/* Final Summary Overlay */}
