@@ -43,7 +43,7 @@ const impactNetworkData = {
           source: "World Bank",
           icon: "💰",
         },
-        { text: "GDP growth up to 2% lower", source: "IMF", icon: "📉" },
+        { text: "GDP growth up to 2% lower", source: "IMF", icon: "����" },
         { text: "Investment falls by 20%", source: "WEF", icon: "📊" },
       ],
       timeline: [
@@ -712,7 +712,7 @@ const getThemeColor = (nodeId) => {
   const colors = {
     economy: "#FF6B6B",
     institutions: "#956AFF",
-    inequality: "#6C63FF",
+    inequality: "#E91E63",
     markets: "#FFB84D",
     environment: "#33C06F",
     trust: "#2EC4B6",
