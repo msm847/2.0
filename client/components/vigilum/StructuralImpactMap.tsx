@@ -1047,18 +1047,19 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
           {/* System Interlinks footer */}
           <div
             style={{
-              background: "#6C7A89",
-              margin: "0 -40px -40px -40px",
-              padding: "20px 40px",
+              background: "rgba(157, 230, 198, 0.1)",
+              border: `1px solid ${themeColor}40`,
+              margin: "0 -24px -24px -24px",
+              padding: "16px 24px",
               borderRadius: "0 0 12px 12px",
             }}
           >
             <h4
               style={{
-                fontSize: "14px",
+                fontSize: "12px",
                 fontWeight: "500",
-                color: "white",
-                margin: "0 0 12px 0",
+                color: "#9DE6C6",
+                margin: "0 0 10px 0",
                 textTransform: "uppercase",
                 letterSpacing: "0.5px",
               }}
@@ -1069,13 +1070,13 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
               <div
                 key={index}
                 style={{
-                  fontSize: "13px",
-                  color: "white",
-                  marginBottom: index < interlinks.length - 1 ? "8px" : "0",
+                  fontSize: "12px",
+                  color: "#E5F3ED",
+                  marginBottom: index < interlinks.length - 1 ? "6px" : "0",
                   cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
-                  gap: "8px",
+                  gap: "6px",
                 }}
                 onClick={() => {
                   // Find the target node and switch to it
@@ -1091,7 +1092,7 @@ const NodeDetailModal = ({ node, onClose, userPath, onNodeClick }) => {
                   e.target.style.opacity = "1";
                 }}
               >
-                <span>↗</span>
+                <span style={{ color: themeColor }}>↗</span>
                 <span>{link.text}</span>
               </div>
             ))}
